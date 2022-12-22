@@ -96,6 +96,7 @@
     "@grafana/eslint-config": "5.1.0",
     "@grafana/toolkit": "workspace:*",
     "@grafana/tsconfig": "^1.2.0-rc1",
+    "@ice/stark-app": "^1.5.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.8",
     "@react-types/button": "3.7.0",
     "@react-types/menu": "3.7.2",

@@ -104,7 +104,7 @@ if (process.env.NODE_ENV === 'development') {
 export class GrafanaApp {
   context!: GrafanaContextType;
 
-  async init() {
+  async init(container: HTMLElement | null = null) {
     try {
       // Let iframe container know grafana has started loading
       parent.postMessage('GrafanaAppInit', '*');
@@ -199,7 +199,7 @@ export class GrafanaApp {
         React.createElement(AppWrapper, {
           app: this,
         }),
-        document.getElementById('reactRoot')
+        container || document.getElementById('reactRoot')
       );
     } catch (error) {
       console.error('Failed to start Grafana', error);

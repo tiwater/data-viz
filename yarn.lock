@@ -5477,6 +5477,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ice/stark-app@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@ice/stark-app@npm:1.5.0"
+  checksum: d77517b40112cb58fec2a4d857956e0d5cf32ebdaba1f6ef9a96f43a7aafac275ddd0bdd694306dd56cd8ebc9e3eac1aa7c5d480a6e5d236e62116f6a2389c44
+  languageName: node
+  linkType: hard
+
 "@internationalized/date@npm:^3.0.1":
   version: 3.0.1
   resolution: "@internationalized/date@npm:3.0.1"
@@ -22038,6 +22045,7 @@ __metadata:
     "@grafana/toolkit": "workspace:*"
     "@grafana/tsconfig": ^1.2.0-rc1
     "@grafana/ui": "workspace:*"
+    "@ice/stark-app": ^1.5.0
     "@jaegertracing/jaeger-ui-components": "workspace:*"
     "@kusto/monaco-kusto": 5.3.6
     "@leeoniya/ufuzzy": 0.9.1

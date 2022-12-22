@@ -17,5 +17,24 @@ if (window.nonce) {
 // This is an indication to the window.onLoad failure check that the app bundle has loaded.
 window.__grafana_app_bundle_loaded = true;
 
+import { isInIcestark, setLibraryName } from '@ice/stark-app';
+import ReactDOM from 'react-dom';
+
 import app from './app';
-app.init();
+
+// 集成 ice-stark
+// https://micro-frontends.ice.work/docs/guide/use-child/react#%E5%B7%B2%E6%9C%89-react-%E9%A1%B9%E7%9B%AE%E6%94%B9%E9%80%A0%E4%B8%BA%E5%BE%AE%E5%BA%94%E7%94%A8
+export function mount(props: { container: HTMLElement | undefined }) {
+  app.init(props.container);
+}
+
+export function unmount(props: { container: HTMLElement }) {
+  ReactDOM.unmountComponentAtNode(props.container);
+}
+
+// 注意：`setLibraryName` 的入参需要与 webpack 工程配置的 output.library 保持一致
+setLibraryName('grafana');
+
+if (!isInIcestark()) {
+  app.init();
+}
