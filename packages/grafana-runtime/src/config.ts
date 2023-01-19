@@ -1,3 +1,4 @@
+import { isInIcestark, getBasename } from '@ice/stark-app';
 import { merge } from 'lodash';
 
 import {
@@ -221,6 +222,13 @@ const bootData = (window as any).grafanaBootData || {
 
 const options = bootData.settings;
 options.bootData = bootData;
+
+// 当作为微应用加载时，需要修改 appSubUrl，让路由可以正确地工作。
+// 详见：packages/grafana-runtime/src/services/LocationService.ts
+// 这个操作只能放在这里，在 app.init 的时候修改有点晚，会不起作用！
+if (isInIcestark()) {
+  options.appSubUrl = getBasename();
+}
 
 /**
  * Use this to access the {@link GrafanaBootConfig} for the current running Grafana instance.

@@ -1,10 +1,10 @@
-import { getBasename } from '@ice/stark-app';
+import { isInIcestark } from '@ice/stark-app';
 import { Action, KBarProvider } from 'kbar';
 import React, { ComponentType } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { Router, Route, Redirect, Switch } from 'react-router-dom';
 
-import { config, navigationLogger, reportInteraction } from '@grafana/runtime';
+import { config, locationService, navigationLogger, reportInteraction } from '@grafana/runtime';
 import { ErrorBoundaryAlert, GlobalStyles, ModalRoot, ModalsProvider, PortalContainer } from '@grafana/ui';
 import { SearchWrapper } from 'app/features/search';
 import { getAppRoutes } from 'app/routes/routes';
@@ -127,8 +127,9 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
                     <GlobalStyles />
                     {this.commandPaletteEnabled() && <CommandPalette />}
                     <div className="grafana-app">
-                      <Router basename={getBasename()}>
-                        {this.renderNavBar()}
+                      <Router history={locationService.getHistory()}>
+                        {/* 如果在微应用里，隐藏导航栏 */}
+                        {!isInIcestark() && this.renderNavBar()}
                         <AppChrome>
                           {pageBanners.map((Banner, index) => (
                             <Banner key={index.toString()} />

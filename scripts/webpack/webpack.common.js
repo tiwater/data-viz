@@ -13,7 +13,7 @@ module.exports = {
     // 设置模块导出规范为 umd
     libraryTarget: 'umd',
     // 可选，设置模块在 window 上暴露的名称
-    library: 'grafana',
+    library: '@ticos/data-viz',
     clean: true,
     path: path.resolve(__dirname, '../../public/build'),
     filename: '[name].[contenthash].js',
@@ -74,7 +74,10 @@ module.exports = {
         test: require.resolve('jquery'),
         loader: 'expose-loader',
         options: {
-          exposes: ['$', 'jQuery'],
+          exposes: [
+            { globalName: '$', override: true },
+            { globalName: 'jQuery', override: true },
+          ],
         },
       },
       {
@@ -114,43 +117,43 @@ module.exports = {
   },
   // https://webpack.js.org/plugins/split-chunks-plugin/#split-chunks-example-3
   optimization: {
-    // runtimeChunk: 'single',
-    // splitChunks: {
-    //   chunks: 'all',
-    //   minChunks: 1,
-    //   cacheGroups: {
-    //     unicons: {
-    //       test: /[\\/]node_modules[\\/]@iconscout[\\/]react-unicons[\\/].*[jt]sx?$/,
-    //       chunks: 'initial',
-    //       priority: 20,
-    //       enforce: true,
-    //     },
-    //     moment: {
-    //       test: /[\\/]node_modules[\\/]moment[\\/].*[jt]sx?$/,
-    //       chunks: 'initial',
-    //       priority: 20,
-    //       enforce: true,
-    //     },
-    //     angular: {
-    //       test: /[\\/]node_modules[\\/]angular[\\/].*[jt]sx?$/,
-    //       chunks: 'initial',
-    //       priority: 50,
-    //       enforce: true,
-    //     },
-    //     defaultVendors: {
-    //       test: /[\\/]node_modules[\\/].*[jt]sx?$/,
-    //       chunks: 'initial',
-    //       priority: -10,
-    //       reuseExistingChunk: true,
-    //       enforce: true,
-    //     },
-    //     default: {
-    //       priority: -20,
-    //       chunks: 'all',
-    //       test: /.*[jt]sx?$/,
-    //       reuseExistingChunk: true,
-    //     },
-    //   },
-    // },
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      minChunks: 1,
+      cacheGroups: {
+        unicons: {
+          test: /[\\/]node_modules[\\/]@iconscout[\\/]react-unicons[\\/].*[jt]sx?$/,
+          chunks: 'initial',
+          priority: 20,
+          enforce: true,
+        },
+        moment: {
+          test: /[\\/]node_modules[\\/]moment[\\/].*[jt]sx?$/,
+          chunks: 'initial',
+          priority: 20,
+          enforce: true,
+        },
+        angular: {
+          test: /[\\/]node_modules[\\/]angular[\\/].*[jt]sx?$/,
+          chunks: 'initial',
+          priority: 50,
+          enforce: true,
+        },
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/].*[jt]sx?$/,
+          chunks: 'initial',
+          priority: -10,
+          reuseExistingChunk: true,
+          enforce: true,
+        },
+        default: {
+          priority: -20,
+          chunks: 'all',
+          test: /.*[jt]sx?$/,
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
 };

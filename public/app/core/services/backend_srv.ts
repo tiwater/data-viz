@@ -208,7 +208,7 @@ export class BackendSrv implements BackendService {
     const url = parseUrlFromOptions(options);
     const init = parseInitFromOptions(options);
 
-    return this.dependencies.fromFetch(url, init).pipe(
+    return this.dependencies.fromFetch(`${config.appUrl}${url}`, init).pipe(
       mergeMap(async (response) => {
         const { status, statusText, ok, headers, url, type, redirected } = response;
 

@@ -10,11 +10,8 @@ export function getPageStyles(theme: GrafanaTheme2) {
     .grafana-app {
       display: flex;
       align-items: stretch;
-      position: absolute;
       width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      height: 100vh;
     }
 
     .main-view {
