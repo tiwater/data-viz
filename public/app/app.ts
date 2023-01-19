@@ -9,6 +9,7 @@ import 'jquery';
 
 import 'app/features/all';
 
+import type { LifecycleProps } from '@ice/stark-app';
 import _ from 'lodash'; // eslint-disable-line lodash/import-scope
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -104,7 +105,7 @@ if (process.env.NODE_ENV === 'development') {
 export class GrafanaApp {
   context!: GrafanaContextType;
 
-  async init(container: HTMLElement | null = null) {
+  async init(props: LifecycleProps) {
     try {
       // Let iframe container know grafana has started loading
       parent.postMessage('GrafanaAppInit', '*');
@@ -199,11 +200,21 @@ export class GrafanaApp {
         React.createElement(AppWrapper, {
           app: this,
         }),
-        container || document.getElementById('reactRoot')
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+        (props.container as HTMLElement) || document.getElementById('reactRoot')
       );
     } catch (error) {
       console.error('Failed to start Grafana', error);
       window.__grafana_load_failed();
+    }
+  }
+
+  async deinit(props: LifecycleProps) {
+    try {
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+      ReactDOM.unmountComponentAtNode(props.container as HTMLElement);
+    } catch (error) {
+      console.error('Failed to unload', error);
     }
   }
 }
