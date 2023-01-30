@@ -30,6 +30,11 @@ RUN yarn build
 
 FROM ${GO_IMAGE} as go-builder
 
+# go 使用国内的代理
+ENV GOPROXY https://goproxy.cn,direct
+# alpine 改用阿里的镜像
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 # Install build dependencies
 RUN if grep -i -q alpine /etc/issue; then \
       apk add --no-cache gcc g++ make; \
@@ -56,16 +61,17 @@ COPY conf conf
 
 RUN make build-go
 
-FROM ${BASE_IMAGE} as tgz-builder
+# 暂时不需要生成 tgz
+# FROM ${BASE_IMAGE} as tgz-builder
 
-WORKDIR /tmp/grafana
+# WORKDIR /tmp/grafana
 
-ARG GRAFANA_TGZ="grafana-latest.linux-x64-musl.tar.gz"
+# ARG GRAFANA_TGZ="grafana-latest.linux-x64-musl.tar.gz"
 
-COPY ${GRAFANA_TGZ} /tmp/grafana.tar.gz
+# COPY ${GRAFANA_TGZ} /tmp/grafana.tar.gz
 
-# add -v to make tar print every file it extracts
-RUN tar x -z -f /tmp/grafana.tar.gz --strip-components=1
+# # add -v to make tar print every file it extracts
+# RUN tar x -z -f /tmp/grafana.tar.gz --strip-components=1
 
 # helpers for COPY --from
 FROM ${GO_SRC} as go-src
@@ -88,6 +94,9 @@ ENV PATH="/usr/share/grafana/bin:$PATH" \
     GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 
 WORKDIR $GF_PATHS_HOME
+
+# alpine 改用阿里的镜像
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 # Install dependencies
 RUN if grep -i -q alpine /etc/issue; then \
