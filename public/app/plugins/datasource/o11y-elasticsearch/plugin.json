@@ -1,0 +1,30 @@
+{
+  "type": "datasource",
+  "name": "O11yElasticsearch",
+  "id": "o11y-elasticsearch",
+  "category": "logging",
+
+  "info": {
+    "description": "Open source logging & analytics database for Observability",
+    "author": {
+      "name": "Grafana Labs",
+      "url": "https://grafana.com"
+    },
+    "keywords": ["elasticsearch"],
+    "logos": {
+      "small": "img/elasticsearch.svg",
+      "large": "img/elasticsearch.svg"
+    },
+    "links": [{ "name": "Learn more", "url": "https://grafana.com/docs/features/datasources/elasticsearch/" }]
+  },
+
+  "alerting": true,
+  "annotations": true,
+  "metrics": true,
+  "logs": true,
+  "backend": false,
+
+  "queryOptions": {
+    "minInterval": true
+  }
+}

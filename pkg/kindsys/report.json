@@ -528,6 +528,30 @@
         0
       ]
     },
+    "o11y_elasticsearch_dsoptions": {
+      "name": "O11y-Elasticsearch-DSOptions",
+      "pluralName": "O11y-Elasticsearch-DSOptionss",
+      "machineName": "o11y_elasticsearch_dsoptions",
+      "pluralMachineName": "o11y_elasticsearch_dsoptionss",
+      "lineageIsGroup": true,
+      "maturity": "planned",
+      "currentVersion": [
+        0,
+        0
+      ]
+    },
+    "o11y_elasticsearch_query": {
+      "name": "O11y-Elasticsearch-Query",
+      "pluralName": "O11y-Elasticsearch-Querys",
+      "machineName": "o11y_elasticsearch_query",
+      "pluralMachineName": "o11y_elasticsearch_querys",
+      "lineageIsGroup": true,
+      "maturity": "planned",
+      "currentVersion": [
+        0,
+        0
+      ]
+    },
     "parca_dsoptions": {
       "name": "Parca-DSOptions",
       "pluralName": "Parca-DSOptionss",
@@ -934,6 +958,8 @@
           "mysql_query",
           "news_panel",
           "nodegraph_panel",
+          "o11y_elasticsearch_dsoptions",
+          "o11y_elasticsearch_query",
           "parca_dsoptions",
           "parca_query",
           "phlare_dsoptions",
@@ -958,7 +984,7 @@
           "zipkin_dsoptions",
           "zipkin_query"
         ],
-        "count": 63
+        "count": 65
       },
       "core": {
         "name": "core",
@@ -1047,6 +1073,8 @@
           "mysql_dsoptions",
           "mysql_query",
           "nodegraph_panel",
+          "o11y_elasticsearch_dsoptions",
+          "o11y_elasticsearch_query",
           "parca_dsoptions",
           "parca_query",
           "phlare_dsoptions",
@@ -1073,7 +1101,7 @@
           "zipkin_dsoptions",
           "zipkin_query"
         ],
-        "count": 61
+        "count": 63
       },
       "stable": {
         "name": "stable",
