@@ -182,3 +182,5 @@ public/locales/*/grafana_old.json
 deployment_tools_config.json
 
 .betterer.cache
+
+.direnv
