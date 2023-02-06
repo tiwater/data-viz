@@ -107,6 +107,21 @@
     "viewAll": "",
     "welcome": ""
   },
+  "explore": {
+    "add-to-dashboard-button": "添加到仪表盘",
+    "cancel-button": "取消",
+    "close-button": "关闭",
+    "close-split-pane-button": "关闭",
+    "copy-short-link-tooltip": "拷贝短链接",
+    "resize-tooltip": {
+      "narrow-pane": "更窄",
+      "widen-pane": "更宽"
+    },
+    "run-query-button": "运行查询",
+    "split-button": "拆分",
+    "split-pane-tooltip": "拆分区域",
+    "title": "探索"
+  },
   "folder-picker": {
     "loading": "正在加载文件夹..."
   },

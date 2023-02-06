@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { ToolbarButton } from '@grafana/ui';
+import { Trans } from 'app/core/internationalization';
 import { ExploreId, useSelector } from 'app/types';
 
 import { getExploreItemSelector } from '../state/selectors';
@@ -25,7 +26,7 @@ export const AddToDashboard = ({ exploreId }: Props) => {
         aria-label="Add to dashboard"
         disabled={!explorePaneHasQueries}
       >
-        Add to dashboard
+        <Trans i18nKey="explore.add-to-dashboard-button">Add to dashboard</Trans>
       </ToolbarButton>
 
       {isOpen && <AddToDashboardModal onClose={() => setIsOpen(false)} exploreId={exploreId} />}
