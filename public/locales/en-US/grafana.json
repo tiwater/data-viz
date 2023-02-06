@@ -107,6 +107,21 @@
     "viewAll": "View all",
     "welcome": "Welcome to Grafana dashboards!"
   },
+  "explore": {
+    "add-to-dashboard-button": "Add to dashboard",
+    "cancel-button": "Cancel",
+    "close-button": "Close",
+    "close-split-pane-button": "Close split pane",
+    "copy-short-link-tooltip": "Copy shortened link",
+    "resize-tooltip": {
+      "narrow-pane": "Narrow pane",
+      "widen-pane": "Widen pane"
+    },
+    "run-query-button": "Run query",
+    "split-button": "Split",
+    "split-pane-tooltip": "Split the pane",
+    "title": "Explore"
+  },
   "folder-picker": {
     "loading": "Loading folders..."
   },

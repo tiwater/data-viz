@@ -107,6 +107,21 @@
     "viewAll": "Ver todo",
     "welcome": "¡Te damos la bienvenida a los paneles de Grafana!"
   },
+  "explore": {
+    "add-to-dashboard-button": "",
+    "cancel-button": "",
+    "close-button": "",
+    "close-split-pane-button": "",
+    "copy-short-link-tooltip": "",
+    "resize-tooltip": {
+      "narrow-pane": "",
+      "widen-pane": ""
+    },
+    "run-query-button": "",
+    "split-button": "",
+    "split-pane-tooltip": "",
+    "title": ""
+  },
   "folder-picker": {
     "loading": "Cargando carpetas..."
   },

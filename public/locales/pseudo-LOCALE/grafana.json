@@ -107,6 +107,21 @@
     "viewAll": "Vįęŵ äľľ",
     "welcome": "Ŵęľčőmę ŧő Ğřäƒäŉä đäşĥþőäřđş!"
   },
+  "explore": {
+    "add-to-dashboard-button": "Åđđ ŧő đäşĥþőäřđ",
+    "cancel-button": "Cäŉčęľ",
+    "close-button": "Cľőşę",
+    "close-split-pane-button": "Cľőşę şpľįŧ päŉę",
+    "copy-short-link-tooltip": "Cőpy şĥőřŧęŉęđ ľįŉĸ",
+    "resize-tooltip": {
+      "narrow-pane": "Ńäřřőŵ päŉę",
+      "widen-pane": "Ŵįđęŉ päŉę"
+    },
+    "run-query-button": "Ŗūŉ qūęřy",
+    "split-button": "Ŝpľįŧ",
+    "split-pane-tooltip": "Ŝpľįŧ ŧĥę päŉę",
+    "title": "Ēχpľőřę"
+  },
   "folder-picker": {
     "loading": "Ŀőäđįŉģ ƒőľđęřş..."
   },

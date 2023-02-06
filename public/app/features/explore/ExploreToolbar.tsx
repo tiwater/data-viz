@@ -7,6 +7,7 @@ import { config, DataSourcePicker, reportInteraction } from '@grafana/runtime';
 import { defaultIntervals, PageToolbar, RefreshPicker, SetInterval, ToolbarButton, ButtonGroup } from '@grafana/ui';
 import { AppChromeUpdate } from 'app/core/components/AppChrome/AppChromeUpdate';
 import { contextSrv } from 'app/core/core';
+import { t, Trans } from 'app/core/internationalization';
 import { createAndCopyShortLink } from 'app/core/utils/shortLinks';
 import { AccessControlAction } from 'app/types';
 import { ExploreId } from 'app/types/explore';
@@ -96,7 +97,9 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
   renderRefreshPicker = (showSmallTimePicker: boolean) => {
     const { loading, refreshInterval, isLive } = this.props;
 
-    let refreshPickerText: string | undefined = loading ? 'Cancel' : 'Run query';
+    let refreshPickerText: string | undefined = loading
+      ? t('explore.cancel-button', 'Cancel')
+      : t('explore.run-query-button', 'Run query');
     let refreshPickerTooltip = undefined;
     let refreshPickerWidth = '108px';
     if (showSmallTimePicker) {
@@ -161,25 +164,34 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
         <ToolbarButton
           variant="canvas"
           key="split"
-          tooltip="Split the pane"
+          tooltip={t('explore.split-pane-tooltip', 'Split the pane')}
           onClick={this.onOpenSplitView}
           icon="columns"
           disabled={isLive}
         >
-          Split
+          <Trans i18nKey="explore.split-button">Split</Trans>
         </ToolbarButton>
       ) : (
         <ButtonGroup key="split-controls">
           <ToolbarButton
             variant="canvas"
-            tooltip={`${isLargerExploreId ? 'Narrow' : 'Widen'} pane`}
+            tooltip={
+              isLargerExploreId
+                ? t('explore.resize-tooltip.narrow-pane', 'Narrow pane')
+                : t('explore.resize-tooltip.widen-pane', 'Widen pane')
+            }
             onClick={onClickResize}
             icon={isLargerExploreId ? 'gf-movepane-left' : 'gf-movepane-right'}
             iconOnly={true}
             className={styles.rotateIcon}
           />
-          <ToolbarButton tooltip="Close split pane" onClick={this.onCloseSplitView} icon="times" variant="canvas">
-            Close
+          <ToolbarButton
+            tooltip={t('explore.close-split-pane-button', 'Close split pane')}
+            onClick={this.onCloseSplitView}
+            icon="times"
+            variant="canvas"
+          >
+            <Trans i18nKey="explore.close-button">Close</Trans>
           </ToolbarButton>
         </ButtonGroup>
       ),
@@ -248,7 +260,7 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
     const shareButton = (
       <DashNavButton
         key="share"
-        tooltip="Copy shortened link"
+        tooltip={t('explore.copy-short-link-tooltip', 'Copy shortened link')}
         icon="share-alt"
         onClick={this.onCopyShortLink}
         aria-label="Copy shortened link"
@@ -283,7 +295,7 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
         )}
         <PageToolbar
           aria-label="Explore toolbar"
-          title={exploreId === ExploreId.left && !isTopnav ? 'Explore' : undefined}
+          title={exploreId === ExploreId.left && !isTopnav ? t('explore.title', 'Explore') : undefined}
           pageIcon={exploreId === ExploreId.left && !isTopnav ? 'compass' : undefined}
           leftItems={toolbarLeftItems}
         >
