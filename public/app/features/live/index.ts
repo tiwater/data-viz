@@ -17,7 +17,7 @@ export const sessionId =
 
 export function initGrafanaLive() {
   const centrifugeServiceDeps = {
-    appUrl: `${config.appUrl}${config.appSubUrl}`,
+    appUrl: `${config.appUrl}`,
     orgId: contextSrv.user.orgId,
     orgRole: contextSrv.user.orgRole,
     liveEnabled: config.liveEnabled,

@@ -68,7 +68,7 @@ export class CentrifugeService implements CentrifugeSrv {
   constructor(private deps: CentrifugeSrvDeps) {
     this.dataStreamSubscriberReadiness = deps.dataStreamSubscriberReadiness.pipe(share(), startWith(true));
 
-    let liveUrl = `${deps.appUrl.replace(/^http/, 'ws')}/api/live/ws`;
+    let liveUrl = `${deps.appUrl.replace(/^http/, 'ws')}api/live/ws`;
 
     const token = deps.grafanaAuthToken;
     if (token !== null && token !== '') {
