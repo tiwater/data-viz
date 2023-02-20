@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { GrafanaTheme2 } from '@grafana/data';
 import { FetchError } from '@grafana/runtime';
 import { Button, ConfirmModal, Modal, useStyles2 } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 import { DashboardModel } from 'app/features/dashboard/state';
 
 import { SaveDashboardAsButton } from './SaveDashboardButton';
@@ -38,13 +39,21 @@ export const SaveDashboardErrorProxy: React.FC<SaveDashboardErrorProxyProps> = (
       {error.data && error.data.status === 'version-mismatch' && (
         <ConfirmModal
           isOpen={true}
-          title="Conflict"
+          title={t('dashboard.save-dashboard.conflict', 'Conflict')}
           body={
             <div>
-              Someone else has updated this dashboard <br /> <small>Would you still like to save this dashboard?</small>
+              <Trans i18nKey="dashboard.save-dashboard.someone-else-has-updated-this-dashboard">
+                Someone else has updated this dashboard
+              </Trans>
+              <br />{' '}
+              <small>
+                <Trans i18nKey="dashboard.save-dashboard.would-you-still-like-to-save-this-dashboard">
+                  Would you still like to save this dashboard?
+                </Trans>
+              </small>
             </div>
           }
-          confirmText="Save and overwrite"
+          confirmText={t('dashboard.save-dashboard.save-and-overwrite', 'Save and overwrite')}
           onConfirm={async () => {
             await onDashboardSave(dashboardSaveModel, { overwrite: true }, dashboard);
             onDismiss();
@@ -55,14 +64,22 @@ export const SaveDashboardErrorProxy: React.FC<SaveDashboardErrorProxyProps> = (
       {error.data && error.data.status === 'name-exists' && (
         <ConfirmModal
           isOpen={true}
-          title="Conflict"
+          title={t('dashboard.save-dashboard.conflict', 'Conflict')}
           body={
             <div>
-              A dashboard with the same name in selected folder already exists. <br />
-              <small>Would you still like to save this dashboard?</small>
+              <Trans i18nKey="dashboard.save-dashboard.a-dashboard-with-the-same-name-in-selected-folder">
+                A dashboard with the same name in selected folder already exists.
+              </Trans>
+              <br />
+              <small>
+                {' '}
+                <Trans i18nKey="dashboard.save-dashboard.would-you-still-like-to-save-this-dashboard">
+                  Would you still like to save this dashboard?
+                </Trans>
+              </small>
             </div>
           }
-          confirmText="Save and overwrite"
+          confirmText={t('dashboard.save-dashboard.save-and-overwrite', 'Save and overwrite')}
           onConfirm={async () => {
             await onDashboardSave(dashboardSaveModel, { overwrite: true }, dashboard);
             onDismiss();
@@ -82,17 +99,29 @@ const ConfirmPluginDashboardSaveModal = ({ onDismiss, dashboard }: SaveDashboard
   const styles = useStyles2(getConfirmPluginDashboardSaveModalStyles);
 
   return (
-    <Modal className={styles.modal} title="Plugin dashboard" icon="copy" isOpen={true} onDismiss={onDismiss}>
+    <Modal
+      className={styles.modal}
+      title={t('dashboard.save-dashboard.plugin-dashboard', 'Plugin dashboard')}
+      icon="copy"
+      isOpen={true}
+      onDismiss={onDismiss}
+    >
       <div className={styles.modalText}>
-        Your changes will be lost when you update the plugin.
+        <Trans i18nKey="dashboard.save-dashboard.your-changes-will-be-lost-when">
+          Your changes will be lost when you update the plugin.
+        </Trans>
         <br />
         <small>
-          Use <strong>Save As</strong> to create custom version.
+          <Trans i18nKey="dashboard.save-dashboard.use">Use</Trans>
+          <strong>
+            <Trans i18nKey="dashboard.save-dashboard.save-as">Save As</Trans>
+          </strong>{' '}
+          <Trans i18nKey="dashboard.save-dashboard.to-create-custom-version">to create custom version.</Trans>
         </small>
       </div>
       <Modal.ButtonRow>
         <Button variant="secondary" onClick={onDismiss} fill="outline">
-          Cancel
+          <Trans i18nKey="explore.cancel-button">Cancel</Trans>
         </Button>
         <SaveDashboardAsButton dashboard={dashboard} onSaveSuccess={onDismiss} />
         <Button
@@ -102,7 +131,7 @@ const ConfirmPluginDashboardSaveModal = ({ onDismiss, dashboard }: SaveDashboard
             onDismiss();
           }}
         >
-          Overwrite
+          <Trans i18nKey="dashboard.save-dashboard.overwrite-button">Overwrite</Trans>
         </Button>
       </Modal.ButtonRow>
     </Modal>

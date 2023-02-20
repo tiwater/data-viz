@@ -11,6 +11,7 @@ import { Icon, IconButton, useStyles2 } from '@grafana/ui';
 import { CardButton } from 'app/core/components/CardButton';
 import config from 'app/core/config';
 import { LS_PANEL_COPY_KEY } from 'app/core/constants';
+import { t } from 'app/core/internationalization';
 import store from 'app/core/store';
 import { addPanel } from 'app/features/dashboard/state/reducers';
 
@@ -74,7 +75,7 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
 
     const newPanel: Partial<PanelModel> = {
       type: 'timeseries',
-      title: 'Panel Title',
+      title: t('features.dashboard.panel-title', 'Panel Title'),
       datasource: panel.datasource,
       gridPos: { x: gridPos.x, y: gridPos.y, w: gridPos.w, h: gridPos.h },
     };
@@ -90,7 +91,7 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
 
     const newPanel: any = {
       type: panelPluginInfo.id,
-      title: 'Panel Title',
+      title: t('features.dashboard.panel-title', 'Panel Title'),
       gridPos: {
         x: gridPos.x,
         y: gridPos.y,
@@ -126,7 +127,7 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
   const onCreateNewRow = () => {
     const newRow: any = {
       type: 'row',
-      title: 'Row title',
+      title: t('features.dashboard.row-title', 'Row Title'),
       gridPos: { x: 0, y: 0 },
     };
 
@@ -141,7 +142,9 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
     <div className={styles.wrapper}>
       <div className={cx('panel-container', styles.callToAction)}>
         <AddPanelWidgetHandle onCancel={onCancelAddPanel} onBack={addPanelView ? onBack : undefined} styles={styles}>
-          {addPanelView ? 'Add panel from panel library' : 'Add panel'}
+          {addPanelView
+            ? t('features.dashboard.add-panel-from-panel-library', 'Add panel from panel library')
+            : t('features.dashboard.add-panel', 'Add panel')}
         </AddPanelWidgetHandle>
         {addPanelView ? (
           <LibraryPanelsSearch onClick={onAddLibraryPanel} variant={LibraryPanelsSearchVariant.Tight} showPanelFilter />

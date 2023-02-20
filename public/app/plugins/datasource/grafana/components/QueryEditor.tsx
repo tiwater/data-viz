@@ -12,6 +12,7 @@ import {
 import { config, getBackendSrv, getDataSourceSrv } from '@grafana/runtime';
 import { InlineField, Select, Alert, Input, InlineFieldRow, InlineLabel } from '@grafana/ui';
 import { hasAlphaPanels } from 'app/core/config';
+import { t, Trans } from 'app/core/internationalization';
 import { SearchQuery } from 'app/features/search/service';
 
 import { GrafanaDatasource } from '../datasource';
@@ -34,19 +35,28 @@ export class QueryEditor extends PureComponent<Props, State> {
 
   queryTypes: Array<SelectableValue<GrafanaQueryType>> = [
     {
-      label: 'Random Walk',
+      label: t('data-source.random-walk-options', 'Random Walk'),
       value: GrafanaQueryType.RandomWalk,
-      description: 'Random signal within the selected time range',
+      description: t(
+        'data-source.random-signal-within-the-selected-time-range',
+        'Random signal within the selected time range'
+      ),
     },
     {
-      label: 'Live Measurements',
+      label: t('data-source.live-measurements-options', 'Live Measurements'),
       value: GrafanaQueryType.LiveMeasurements,
-      description: 'Stream real-time measurements from Grafana',
+      description: t(
+        'data-source.stream-real-time-measurements-from-grafana',
+        'Stream real-time measurements from Grafana'
+      ),
     },
     {
-      label: 'List public files',
+      label: t('data-source.list-public-files-options', 'List public files'),
       value: GrafanaQueryType.List,
-      description: 'Show directory listings for public resources',
+      description: t(
+        'data-source.show-directory-listings-for-public-resources',
+        'Show directory listings for public resources'
+      ),
     },
   ];
 
@@ -251,32 +261,32 @@ export class QueryEditor extends PureComponent<Props, State> {
     return (
       <>
         <div className="gf-form">
-          <InlineField label="Channel" grow={true} labelWidth={labelWidth}>
+          <InlineField label={t('data-source.channel-label', 'Channel')} grow={true} labelWidth={labelWidth}>
             <Select
               options={channels}
               value={currentChannel || ''}
               onChange={this.onChannelChange}
               allowCustomValue={true}
               backspaceRemovesValue={true}
-              placeholder="Select measurements channel"
+              placeholder={t('data-source.select-measurements-channel-placeholder', 'Select measurements channel')}
               isClearable={true}
-              noOptionsMessage="Enter channel name"
+              noOptionsMessage={t('data-source.enter-channel-name', 'Enter channel name')}
               formatCreateLabel={(input: string) => `Connect to: ${input}`}
             />
           </InlineField>
         </div>
         {channel && (
           <div className="gf-form">
-            <InlineField label="Fields" grow={true} labelWidth={labelWidth}>
+            <InlineField label={t('data-source.fields-label', 'Fields')} grow={true} labelWidth={labelWidth}>
               <Select
                 options={fields}
                 value={filter?.fields || []}
                 onChange={this.onFieldNamesChange}
                 allowCustomValue={true}
                 backspaceRemovesValue={true}
-                placeholder="All fields"
+                placeholder={t('data-source.all-fields-placeholder', 'All fields')}
                 isClearable={true}
-                noOptionsMessage="Unable to list all fields"
+                noOptionsMessage={t('data-source.unable-to-list-all-fields', 'Unable to list all fields')}
                 formatCreateLabel={(input: string) => `Field: ${input}`}
                 isSearchable={true}
                 isMulti={true}
@@ -295,9 +305,14 @@ export class QueryEditor extends PureComponent<Props, State> {
           </div>
         )}
 
-        <Alert title="Grafana Live - Measurements" severity="info">
-          This supports real-time event streams in Grafana core. This feature is under heavy development. Expect the
-          interfaces and structures to change as this becomes more production ready.
+        <Alert
+          title={t('data-source.grafana-live-measurements-options', 'Grafana Live - Measurements')}
+          severity="info"
+        >
+          <Trans i18nKey="data-source.this-supports-real-time-event-streams">
+            This supports real-time event streams in Grafana core. This feature is under heavy development. Expect the
+            interfaces and structures to change as this becomes more production ready.
+          </Trans>
         </Alert>
       </>
     );
@@ -329,14 +344,14 @@ export class QueryEditor extends PureComponent<Props, State> {
 
     return (
       <InlineFieldRow>
-        <InlineField label="Path" grow={true} labelWidth={labelWidth}>
+        <InlineField label={t('data-source.path-label', 'Path')} grow={true} labelWidth={labelWidth}>
           <Select
             options={folders}
             value={currentFolder || ''}
             onChange={this.onFolderChanged}
             allowCustomValue={true}
             backspaceRemovesValue={true}
-            placeholder="Select folder"
+            placeholder={t('data-source.select-folder-placeholder', 'Select folder')}
             isClearable={true}
             formatCreateLabel={(input: string) => `Folder: ${input}`}
           />
@@ -390,13 +405,15 @@ export class QueryEditor extends PureComponent<Props, State> {
     return (
       <>
         {queryType === GrafanaQueryType.Search && (
-          <Alert title="Grafana Search" severity="info">
-            Using this datasource to call the new search system is experimental, and subject to change at any time
-            without notice.
+          <Alert title={t('data-source.grafana-search', 'Grafana Search')} severity="info">
+            <Trans i18nKey="data-source.using-this-datasource-to-call">
+              Using this datasource to call the new search system is experimental, and subject to change at any time
+              without notice.
+            </Trans>
           </Alert>
         )}
         <InlineFieldRow>
-          <InlineField label="Query type" grow={true} labelWidth={labelWidth}>
+          <InlineField label={t('data-source.query-type-label', 'Query type')} grow={true} labelWidth={labelWidth}>
             <Select
               options={queryTypes}
               value={queryTypes.find((v) => v.value === queryType) || queryTypes[0]}

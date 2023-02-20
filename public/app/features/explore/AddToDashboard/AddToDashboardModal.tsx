@@ -6,6 +6,7 @@ import { locationUtil, SelectableValue } from '@grafana/data';
 import { config, locationService, reportInteraction } from '@grafana/runtime';
 import { Alert, Button, Field, InputControl, Modal, RadioButtonGroup } from '@grafana/ui';
 import { DashboardPicker } from 'app/core/components/Select/DashboardPicker';
+import { t, Trans } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 import { removeDashboardToFetchFromLocalStorage } from 'app/features/dashboard/state/initDashboard';
 import { ExploreId, AccessControlAction, useSelector } from 'app/types';
@@ -78,20 +79,22 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
   const saveTargets: Array<SelectableValue<SaveTarget>> = [];
   if (canCreateDashboard) {
     saveTargets.push({
-      label: 'New dashboard',
+      label: t('datasource-onboarding.new-dashboard', 'New dashboard'),
       value: SaveTarget.NewDashboard,
     });
   }
   if (canWriteDashboard) {
     saveTargets.push({
-      label: 'Existing dashboard',
+      label: t('explore.existing-dashboard', 'Existing dashboard'),
       value: SaveTarget.ExistingDashboard,
     });
   }
 
   const saveTarget = saveTargets.length > 1 ? watch('saveTarget') : saveTargets[0].value;
 
-  const modalTitle = `Add panel to ${saveTargets.length > 1 ? 'dashboard' : saveTargets[0].label!.toLowerCase()}`;
+  const modalTitle = `${t('explore.add-panel-to', 'Add panel to')} ${
+    saveTargets.length > 1 ? t('nav.create-dashboard.title', 'Dashboard') : saveTargets[0].label!.toLowerCase()
+  }`;
 
   const onSubmit = async (openInNewTab: boolean, data: FormDTO) => {
     setSubmissionError(undefined);
@@ -154,7 +157,10 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
           <InputControl
             control={control}
             render={({ field: { ref, ...field } }) => (
-              <Field label="Target dashboard" description="Choose where to add the panel.">
+              <Field
+                label={t('explore.target-dashboard-label', 'Target dashboard')}
+                description={t('explore.choose-where-to-add-the-panel', 'Choose where to add the panel.')}
+              >
                 <RadioButtonGroup options={saveTargets} {...field} id="e2d-save-target" />
               </Field>
             )}
@@ -169,8 +175,11 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
               <InputControl
                 render={({ field: { ref, value, onChange, ...field } }) => (
                   <Field
-                    label="Dashboard"
-                    description="Select in which dashboard the panel will be created."
+                    label={t('nav.create-dashboard.title', 'Dashboard')}
+                    description={t(
+                      'explore.select-in-which-dashboard',
+                      'Select in which dashboard the panel will be created.'
+                    )}
                     error={errors.dashboardUid?.message}
                     invalid={!!errors.dashboardUid}
                   >
@@ -185,20 +194,22 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
                 control={control}
                 name="dashboardUid"
                 shouldUnregister
-                rules={{ required: { value: true, message: 'This field is required.' } }}
+                rules={{
+                  required: { value: true, message: t('explore.this-field-is-required', 'This field is required.') },
+                }}
               />
             );
           })()}
 
         {submissionError && (
-          <Alert severity="error" title="Error adding the panel">
+          <Alert severity="error" title={t('explore.error-adding-the-panel', 'Error adding the panel')}>
             {submissionError.message}
           </Alert>
         )}
 
         <Modal.ButtonRow>
           <Button type="reset" onClick={onClose} fill="outline" variant="secondary">
-            Cancel
+            <Trans i18nKey="export.cancel-button">Cancel</Trans>
           </Button>
           <Button
             type="submit"
@@ -206,10 +217,10 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
             onClick={handleSubmit(partial(onSubmit, true))}
             icon="external-link-alt"
           >
-            Open in new tab
+            <Trans i18nKey="explore.open-in-new-tab-button">Open in new tab</Trans>
           </Button>
           <Button type="submit" variant="primary" onClick={handleSubmit(partial(onSubmit, false))} icon="apps">
-            Open dashboard
+            <Trans i18nKey="explore.open-dashboard-button">Open dashboard</Trans>
           </Button>
         </Modal.ButtonRow>
       </form>

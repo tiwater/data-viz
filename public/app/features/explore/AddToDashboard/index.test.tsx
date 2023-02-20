@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { DataQuery } from '@grafana/data';
 import { locationService, setEchoSrv } from '@grafana/runtime';
 import { defaultDashboard } from '@grafana/schema';
+import { t, Trans } from 'app/core/internationalization';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { contextSrv } from 'app/core/services/context_srv';
 import { Echo } from 'app/core/services/echo/Echo';

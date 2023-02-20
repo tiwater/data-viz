@@ -30,6 +30,12 @@
     "save": "Enregistrer"
   },
   "dashboard": {
+    "dashboard-row": {
+      "are-you-sure-you-want-to": "",
+      "delete-row": "",
+      "delete-row-only": "",
+      "yes-button": ""
+    },
     "inspect": {
       "actions-tab": "Actions",
       "data-tab": "Données",
@@ -82,6 +88,32 @@
       "rows": "Nombre total de lignes",
       "table-title": "Statistiques"
     },
+    "row-options": {
+      "disable-repeating": "",
+      "no-template-variables-found": "",
+      "repeat-for-label": "",
+      "row-options": "",
+      "title-label": "",
+      "update-button": ""
+    },
+    "save-dashboard": {
+      "a-dashboard-with-the-same-name-in-selected-folder": "",
+      "conflict": "",
+      "discard": "",
+      "do-you-want-to-save-your-changes": "",
+      "overwrite-button": "",
+      "plugin-dashboard": "",
+      "provisioned-dashboard": "",
+      "save-and-overwrite": "",
+      "save-as": "",
+      "save-dashboard": "",
+      "someone-else-has-updated-this-dashboard": "",
+      "to-create-custom-version": "",
+      "unsaved-changes": "",
+      "use": "",
+      "would-you-still-like-to-save-this-dashboard": "",
+      "your-changes-will-be-lost-when": ""
+    },
     "toolbar": {
       "add-panel": "Ajouter un panneau",
       "comments-show": "Afficher les commentaires du tableau de bord",
@@ -98,6 +130,27 @@
       "unmark-favorite": "Supprimer des favoris"
     }
   },
+  "data-source": {
+    "all-fields-placeholder": "",
+    "channel-label": "",
+    "enter-channel-name": "",
+    "fields-label": "",
+    "grafana-live-measurements-options": "",
+    "grafana-search": "",
+    "list-public-files-options": "",
+    "live-measurements-options": "",
+    "path-label": "",
+    "query-type-label": "",
+    "random-signal-within-the-selected-time-range": "",
+    "random-walk-options": "",
+    "select-folder-placeholder": "",
+    "select-measurements-channel-placeholder": "",
+    "show-directory-listings-for-public-resources": "",
+    "stream-real-time-measurements-from-grafana": "",
+    "this-supports-real-time-event-streams": "",
+    "unable-to-list-all-fields": "",
+    "using-this-datasource-to-call": ""
+  },
   "datasource-onboarding": {
     "contact-admin": "Veuillez contacter votre administrateur pour configurer les sources de données.",
     "explanation": "Pour visualiser vos données, vous devrez d’abord les connecter.",
@@ -108,19 +161,47 @@
     "welcome": "Bienvenue aux tableaux de bord Grafana !"
   },
   "explore": {
+    "add-panel-to": "",
+    "add-query-button": "",
     "add-to-dashboard-button": "",
     "cancel-button": "",
+    "choose-where-to-add-the-panel": "",
     "close-button": "",
     "close-split-pane-button": "",
     "copy-short-link-tooltip": "",
+    "error-adding-the-panel": "",
+    "existing-dashboard": "",
+    "inspector-button": "",
+    "open-dashboard-button": "",
+    "open-in-new-tab-button": "",
+    "query-history-button": "",
     "resize-tooltip": {
       "narrow-pane": "",
       "widen-pane": ""
     },
     "run-query-button": "",
+    "select-in-which-dashboard": "",
     "split-button": "",
     "split-pane-tooltip": "",
+    "target-dashboard-label": "",
+    "this-field-is-required": "",
     "title": ""
+  },
+  "export": {
+    "cancel-button": ""
+  },
+  "features": {
+    "dashboard": {
+      "add-panel": "",
+      "add-panel-from-panel-library": "",
+      "panel-editor": {
+        "apply": "",
+        "discard": "",
+        "save-library-panel": ""
+      },
+      "panel-title": "",
+      "row-title": ""
+    }
   },
   "folder-picker": {
     "loading": "Chargement des dossiers..."
