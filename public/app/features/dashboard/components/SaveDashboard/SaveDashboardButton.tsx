@@ -2,6 +2,7 @@ import React from 'react';
 
 import { selectors } from '@grafana/e2e-selectors';
 import { Button, ButtonVariant, ComponentSize, ModalsController } from '@grafana/ui';
+import { Trans } from 'app/core/internationalization';
 import { DashboardModel } from 'app/features/dashboard/state';
 
 import { SaveDashboardDrawer } from './SaveDashboardDrawer';
@@ -28,7 +29,7 @@ export const SaveDashboardButton: React.FC<SaveDashboardButtonProps> = ({ dashbo
             }}
             aria-label={selectors.pages.Dashboard.Settings.General.saveDashBoard}
           >
-            Save dashboard
+            <Trans i18nKey="dashboard.save-dashboard.title">Save dashboard</Trans>
           </Button>
         );
       }}

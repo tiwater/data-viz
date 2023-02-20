@@ -30,6 +30,12 @@
     "save": "Save"
   },
   "dashboard": {
+    "dashboard-row": {
+      "are-you-sure-you-want-to": "Are you sure you want to remove this row and all its panels?",
+      "delete-row": "Delete row",
+      "delete-row-only": "Delete row only",
+      "yes-button": "Yes"
+    },
     "inspect": {
       "actions-tab": "Actions",
       "data-tab": "Data",
@@ -82,6 +88,33 @@
       "rows": "Total number rows",
       "table-title": "Stats"
     },
+    "row-options": {
+      "disable-repeating": "Disable repeating",
+      "no-template-variables-found": "No template variables found",
+      "repeat-for-label": "Repeat for",
+      "row-options": "Row options",
+      "title-label": "Title",
+      "update-button": "Update"
+    },
+    "save-dashboard": {
+      "a-dashboard-with-the-same-name-in-selected-folder": "A dashboard with the same name in selected folder already exists.",
+      "conflict": "Conflict",
+      "discard": "Discard",
+      "do-you-want-to-save-your-changes": "Do you want to save your changes?",
+      "overwrite-button": "Overwrite",
+      "plugin-dashboard": "Plugin dashboard",
+      "provisioned-dashboard": "Provisioned dashboard",
+      "save-and-overwrite": "Save and overwrite",
+      "save-as": "Save As",
+      "save-dashboard": "Save dashboard",
+      "someone-else-has-updated-this-dashboard": "Someone else has updated this dashboard",
+      "title": "Save dashboard",
+      "to-create-custom-version": "to create custom version.",
+      "unsaved-changes": "Unsaved changes",
+      "use": "Use",
+      "would-you-still-like-to-save-this-dashboard": "Would you still like to save this dashboard?",
+      "your-changes-will-be-lost": "Your changes will be lost when you update the plugin."
+    },
     "toolbar": {
       "add-panel": "Add panel",
       "comments-show": "Show dashboard comments",
@@ -98,6 +131,27 @@
       "unmark-favorite": "Unmark as favorite"
     }
   },
+  "data-source": {
+    "all-fields-placeholder": "All fields",
+    "channel-label": "Channel",
+    "enter-channel-name": "Enter channel name",
+    "fields-label": "Fields",
+    "grafana-live-measurements-options": "Grafana Live - Measurements",
+    "grafana-search": "Grafana Search",
+    "list-public-files-options": "List public files",
+    "live-measurements-options": "Live Measurements",
+    "path-label": "Path",
+    "query-type-label": "Query type",
+    "random-signal-within-the-selected-time-range": "Random signal within the selected time range",
+    "random-walk-options": "Random Walk",
+    "select-folder-placeholder": "Select folder",
+    "select-measurements-channel-placeholder": "Select measurements channel",
+    "show-directory-listings-for-public-resources": "Show directory listings for public resources",
+    "stream-real-time-measurements-from-grafana": "Stream real-time measurements from Grafana",
+    "this-supports-real-time-event-streams": "This supports real-time event streams in Grafana core. This feature is under heavy development. Expect the interfaces and structures to change as this becomes more production ready.",
+    "unable-to-list-all-fields": "Unable to list all fields",
+    "using-this-datasource-to-call": "Using this datasource to call the new search system is experimental, and subject to change at any time without notice."
+  },
   "datasource-onboarding": {
     "contact-admin": "Please contact your administrator to configure data sources.",
     "explanation": "To visualize your data, you'll need to connect it first.",
@@ -108,19 +162,47 @@
     "welcome": "Welcome to Grafana dashboards!"
   },
   "explore": {
+    "add-panel-to": "Add panel to",
+    "add-query-button": "Add query",
     "add-to-dashboard-button": "Add to dashboard",
     "cancel-button": "Cancel",
+    "choose-where-to-add-the-panel": "Choose where to add the panel.",
     "close-button": "Close",
     "close-split-pane-button": "Close split pane",
     "copy-short-link-tooltip": "Copy shortened link",
+    "error-adding-the-panel": "Error adding the panel",
+    "existing-dashboard": "Existing dashboard",
+    "inspector-button": "Inspector",
+    "open-dashboard-button": "Open dashboard",
+    "open-in-new-tab-button": "Open in new tab",
+    "query-history-button": "Query history",
     "resize-tooltip": {
       "narrow-pane": "Narrow pane",
       "widen-pane": "Widen pane"
     },
     "run-query-button": "Run query",
+    "select-in-which-dashboard": "Select in which dashboard the panel will be created.",
     "split-button": "Split",
     "split-pane-tooltip": "Split the pane",
+    "target-dashboard-label": "Target dashboard",
+    "this-field-is-required": "This field is required.",
     "title": "Explore"
+  },
+  "export": {
+    "cancel-button": "Cancel"
+  },
+  "features": {
+    "dashboard": {
+      "add-panel": "Add panel",
+      "add-panel-from-panel-library": "Add panel from panel library",
+      "panel-editor": {
+        "apply": "Apply",
+        "discard": "Discard",
+        "save-library-panel": "Save library panel"
+      },
+      "panel-title": "Panel Title",
+      "row-title": "Row Title"
+    }
   },
   "folder-picker": {
     "loading": "Loading folders..."

@@ -30,6 +30,12 @@
     "save": "Ŝävę"
   },
   "dashboard": {
+    "dashboard-row": {
+      "are-you-sure-you-want-to": "Åřę yőū şūřę yőū ŵäŉŧ ŧő řęmővę ŧĥįş řőŵ äŉđ äľľ įŧş päŉęľş?",
+      "delete-row": "Đęľęŧę řőŵ",
+      "delete-row-only": "Đęľęŧę řőŵ őŉľy",
+      "yes-button": "Ÿęş"
+    },
     "inspect": {
       "actions-tab": "Åčŧįőŉş",
       "data-tab": "Đäŧä",
@@ -82,6 +88,33 @@
       "rows": "Ŧőŧäľ ŉūmþęř řőŵş",
       "table-title": "Ŝŧäŧş"
     },
+    "row-options": {
+      "disable-repeating": "Đįşäþľę řępęäŧįŉģ",
+      "no-template-variables-found": "Ńő ŧęmpľäŧę väřįäþľęş ƒőūŉđ",
+      "repeat-for-label": "Ŗępęäŧ ƒőř",
+      "row-options": "Ŗőŵ őpŧįőŉş",
+      "title-label": "Ŧįŧľę",
+      "update-button": "Ůpđäŧę"
+    },
+    "save-dashboard": {
+      "a-dashboard-with-the-same-name-in-selected-folder": "Å đäşĥþőäřđ ŵįŧĥ ŧĥę şämę ŉämę įŉ şęľęčŧęđ ƒőľđęř äľřęäđy ęχįşŧş.",
+      "conflict": "Cőŉƒľįčŧ",
+      "discard": "Đįşčäřđ",
+      "do-you-want-to-save-your-changes": "Đő yőū ŵäŉŧ ŧő şävę yőūř čĥäŉģęş?",
+      "overwrite-button": "Øvęřŵřįŧę",
+      "plugin-dashboard": "Pľūģįŉ đäşĥþőäřđ",
+      "provisioned-dashboard": "Přővįşįőŉęđ đäşĥþőäřđ",
+      "save-and-overwrite": "Ŝävę äŉđ ővęřŵřįŧę",
+      "save-as": "Ŝävę Åş",
+      "save-dashboard": "Ŝävę đäşĥþőäřđ",
+      "someone-else-has-updated-this-dashboard": "Ŝőmęőŉę ęľşę ĥäş ūpđäŧęđ ŧĥįş đäşĥþőäřđ",
+      "title": "Ŝävę đäşĥþőäřđ",
+      "to-create-custom-version": "ŧő čřęäŧę čūşŧőm vęřşįőŉ.",
+      "unsaved-changes": "Ůŉşävęđ čĥäŉģęş",
+      "use": "Ůşę",
+      "would-you-still-like-to-save-this-dashboard": "Ŵőūľđ yőū şŧįľľ ľįĸę ŧő şävę ŧĥįş đäşĥþőäřđ?",
+      "your-changes-will-be-lost": "Ÿőūř čĥäŉģęş ŵįľľ þę ľőşŧ ŵĥęŉ yőū ūpđäŧę ŧĥę pľūģįŉ."
+    },
     "toolbar": {
       "add-panel": "Åđđ päŉęľ",
       "comments-show": "Ŝĥőŵ đäşĥþőäřđ čőmmęŉŧş",
@@ -98,6 +131,27 @@
       "unmark-favorite": "Ůŉmäřĸ äş ƒävőřįŧę"
     }
   },
+  "data-source": {
+    "all-fields-placeholder": "Åľľ ƒįęľđş",
+    "channel-label": "Cĥäŉŉęľ",
+    "enter-channel-name": "Ēŉŧęř čĥäŉŉęľ ŉämę",
+    "fields-label": "Fįęľđş",
+    "grafana-live-measurements-options": "Ğřäƒäŉä Ŀįvę - Męäşūřęmęŉŧş",
+    "grafana-search": "Ğřäƒäŉä Ŝęäřčĥ",
+    "list-public-files-options": "Ŀįşŧ pūþľįč ƒįľęş",
+    "live-measurements-options": "Ŀįvę Męäşūřęmęŉŧş",
+    "path-label": "Päŧĥ",
+    "query-type-label": "Qūęřy ŧypę",
+    "random-signal-within-the-selected-time-range": "Ŗäŉđőm şįģŉäľ ŵįŧĥįŉ ŧĥę şęľęčŧęđ ŧįmę řäŉģę",
+    "random-walk-options": "Ŗäŉđőm Ŵäľĸ",
+    "select-folder-placeholder": "Ŝęľęčŧ ƒőľđęř",
+    "select-measurements-channel-placeholder": "Ŝęľęčŧ męäşūřęmęŉŧş čĥäŉŉęľ",
+    "show-directory-listings-for-public-resources": "Ŝĥőŵ đįřęčŧőřy ľįşŧįŉģş ƒőř pūþľįč řęşőūřčęş",
+    "stream-real-time-measurements-from-grafana": "Ŝŧřęäm řęäľ-ŧįmę męäşūřęmęŉŧş ƒřőm Ğřäƒäŉä",
+    "this-supports-real-time-event-streams": "Ŧĥįş şūppőřŧş řęäľ-ŧįmę ęvęŉŧ şŧřęämş įŉ Ğřäƒäŉä čőřę. Ŧĥįş ƒęäŧūřę įş ūŉđęř ĥęävy đęvęľőpmęŉŧ. Ēχpęčŧ ŧĥę įŉŧęřƒäčęş äŉđ şŧřūčŧūřęş ŧő čĥäŉģę äş ŧĥįş þęčőmęş mőřę přőđūčŧįőŉ řęäđy.",
+    "unable-to-list-all-fields": "Ůŉäþľę ŧő ľįşŧ äľľ ƒįęľđş",
+    "using-this-datasource-to-call": "Ůşįŉģ ŧĥįş đäŧäşőūřčę ŧő čäľľ ŧĥę ŉęŵ şęäřčĥ şyşŧęm įş ęχpęřįmęŉŧäľ, äŉđ şūþĵęčŧ ŧő čĥäŉģę äŧ äŉy ŧįmę ŵįŧĥőūŧ ŉőŧįčę."
+  },
   "datasource-onboarding": {
     "contact-admin": "Pľęäşę čőŉŧäčŧ yőūř äđmįŉįşŧřäŧőř ŧő čőŉƒįģūřę đäŧä şőūřčęş.",
     "explanation": "Ŧő vįşūäľįžę yőūř đäŧä, yőū'ľľ ŉęęđ ŧő čőŉŉęčŧ įŧ ƒįřşŧ.",
@@ -108,19 +162,47 @@
     "welcome": "Ŵęľčőmę ŧő Ğřäƒäŉä đäşĥþőäřđş!"
   },
   "explore": {
+    "add-panel-to": "Åđđ päŉęľ ŧő",
+    "add-query-button": "Åđđ qūęřy",
     "add-to-dashboard-button": "Åđđ ŧő đäşĥþőäřđ",
     "cancel-button": "Cäŉčęľ",
+    "choose-where-to-add-the-panel": "Cĥőőşę ŵĥęřę ŧő äđđ ŧĥę päŉęľ.",
     "close-button": "Cľőşę",
     "close-split-pane-button": "Cľőşę şpľįŧ päŉę",
     "copy-short-link-tooltip": "Cőpy şĥőřŧęŉęđ ľįŉĸ",
+    "error-adding-the-panel": "Ēřřőř äđđįŉģ ŧĥę päŉęľ",
+    "existing-dashboard": "Ēχįşŧįŉģ đäşĥþőäřđ",
+    "inspector-button": "Ĩŉşpęčŧőř",
+    "open-dashboard-button": "Øpęŉ đäşĥþőäřđ",
+    "open-in-new-tab-button": "Øpęŉ įŉ ŉęŵ ŧäþ",
+    "query-history-button": "Qūęřy ĥįşŧőřy",
     "resize-tooltip": {
       "narrow-pane": "Ńäřřőŵ päŉę",
       "widen-pane": "Ŵįđęŉ päŉę"
     },
     "run-query-button": "Ŗūŉ qūęřy",
+    "select-in-which-dashboard": "Ŝęľęčŧ įŉ ŵĥįčĥ đäşĥþőäřđ ŧĥę päŉęľ ŵįľľ þę čřęäŧęđ.",
     "split-button": "Ŝpľįŧ",
     "split-pane-tooltip": "Ŝpľįŧ ŧĥę päŉę",
+    "target-dashboard-label": "Ŧäřģęŧ đäşĥþőäřđ",
+    "this-field-is-required": "Ŧĥįş ƒįęľđ įş řęqūįřęđ.",
     "title": "Ēχpľőřę"
+  },
+  "export": {
+    "cancel-button": "Cäŉčęľ"
+  },
+  "features": {
+    "dashboard": {
+      "add-panel": "Åđđ päŉęľ",
+      "add-panel-from-panel-library": "Åđđ päŉęľ ƒřőm päŉęľ ľįþřäřy",
+      "panel-editor": {
+        "apply": "Åppľy",
+        "discard": "Đįşčäřđ",
+        "save-library-panel": "Ŝävę ľįþřäřy päŉęľ"
+      },
+      "panel-title": "Päŉęľ Ŧįŧľę",
+      "row-title": "Ŗőŵ Ŧįŧľę"
+    }
   },
   "folder-picker": {
     "loading": "Ŀőäđįŉģ ƒőľđęřş..."

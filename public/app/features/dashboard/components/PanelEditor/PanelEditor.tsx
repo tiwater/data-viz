@@ -25,6 +25,7 @@ import { AppChromeUpdate } from 'app/core/components/AppChrome/AppChromeUpdate';
 import { Page } from 'app/core/components/Page/Page';
 import { SplitPaneWrapper } from 'app/core/components/SplitPaneWrapper/SplitPaneWrapper';
 import { appEvents } from 'app/core/core';
+import { Trans } from 'app/core/internationalization';
 import { SubMenuItems } from 'app/features/dashboard/components/SubMenu/SubMenuItems';
 import { SaveLibraryPanelModal } from 'app/features/library-panels/components/SaveLibraryPanelModal/SaveLibraryPanelModal';
 import { PanelModelWithLibraryPanel } from 'app/features/library-panels/types';
@@ -332,7 +333,9 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
         variant="destructive"
         fill="outline"
       >
-        Discard
+        {/* t("features.dashboard.panel-title",'Panel Title') */}
+
+        <Trans i18nKey="features.dashboard.panel-editor.discard">Discard</Trans>
       </Button>,
       this.props.panel.libraryPanel ? (
         <Button
@@ -342,7 +345,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
           title="Apply changes and save library panel"
           key="save-panel"
         >
-          Save library panel
+          <Trans i18nKey="features.dashboard.panel-editor.save-library-panel">Save library panel</Trans>
         </Button>
       ) : (
         <Button
@@ -352,7 +355,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
           size={size}
           variant="secondary"
         >
-          Save
+          <Trans i18nKey="common.save">Save</Trans>
         </Button>
       ),
       <Button
@@ -363,7 +366,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
         key="apply"
         size={size}
       >
-        Apply
+        <Trans i18nKey="features.dashboard.panel-editor.apply">Apply</Trans>
       </Button>,
     ];
 

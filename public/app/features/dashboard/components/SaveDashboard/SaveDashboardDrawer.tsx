@@ -3,6 +3,7 @@ import { useAsync } from 'react-use';
 
 import { config, isFetchError } from '@grafana/runtime';
 import { Drawer, Spinner, Tab, TabsBar } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { backendSrv } from 'app/core/services/backend_srv';
 
 import { jsonDiff } from '../VersionHistory/utils';
@@ -138,11 +139,11 @@ export const SaveDashboardDrawer = ({ dashboard, onDismiss, onSaveSuccess, isCop
     );
   }
 
-  let title = 'Save dashboard';
+  let title = t('dashboard.save-dashboard.title', 'Save dashboard');
   if (isCopy) {
-    title = 'Save dashboard copy';
+    title = `${t('dashboard.save-dashboard.title', 'Save dashboard')} ${t('panel.header-menu.copy', 'Copy')}`;
   } else if (isProvisioned) {
-    title = 'Provisioned dashboard';
+    title = t('dashboard.save-dashboard.provisioned-dashboard', 'Provisioned dashboard');
   }
 
   return (

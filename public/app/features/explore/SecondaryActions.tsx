@@ -3,6 +3,7 @@ import React from 'react';
 
 import { GrafanaTheme2 } from '@grafana/data';
 import { Button, HorizontalGroup, useTheme2 } from '@grafana/ui';
+import { Trans } from 'app/core/internationalization';
 
 type Props = {
   addQueryRowButtonDisabled?: boolean;
@@ -37,7 +38,7 @@ export function SecondaryActions(props: Props) {
             disabled={props.addQueryRowButtonDisabled}
             icon="plus"
           >
-            Add query
+            <Trans i18nKey="explore.add-query-button">Add query</Trans>
           </Button>
         )}
         {!props.richHistoryRowButtonHidden && (
@@ -48,7 +49,7 @@ export function SecondaryActions(props: Props) {
             onClick={props.onClickRichHistoryButton}
             icon="history"
           >
-            Query history
+            <Trans i18nKey="explore.query-history-button">Query history</Trans>
           </Button>
         )}
         <Button
@@ -58,7 +59,7 @@ export function SecondaryActions(props: Props) {
           onClick={props.onClickQueryInspectorButton}
           icon="info-circle"
         >
-          Inspector
+          <Trans i18nKey="explore.inspector-button">Inspector</Trans>
         </Button>
       </HorizontalGroup>
     </div>

@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 import React, { FC } from 'react';
 
 import { Modal, stylesFactory } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { OnRowOptionsUpdate, RowOptionsForm } from './RowOptionsForm';
 
@@ -15,7 +16,13 @@ export interface RowOptionsModalProps {
 export const RowOptionsModal: FC<RowOptionsModalProps> = ({ repeat, title, onDismiss, onUpdate }) => {
   const styles = getStyles();
   return (
-    <Modal isOpen={true} title="Row options" icon="copy" onDismiss={onDismiss} className={styles.modal}>
+    <Modal
+      isOpen={true}
+      title={t('dashboard.row-options.row-options', 'Row options')}
+      icon="copy"
+      onDismiss={onDismiss}
+      className={styles.modal}
+    >
       <RowOptionsForm repeat={repeat} title={title} onCancel={onDismiss} onUpdate={onUpdate} />
     </Modal>
   );

@@ -2,6 +2,7 @@ import React, { FC, useCallback, useMemo } from 'react';
 
 import { SelectableValue } from '@grafana/data';
 import { Select } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { useSelector } from 'app/types';
 
 import { getLastKey, getVariablesByKey } from '../../../variables/state/selectors';
@@ -24,13 +25,13 @@ export const RepeatRowSelect: FC<Props> = ({ repeat, onChange, id }) => {
 
     if (options.length === 0) {
       options.unshift({
-        label: 'No template variables found',
+        label: t('dashboard.row-options.no-template-variables-found', 'No template variables found'),
         value: null,
       });
     }
 
     options.unshift({
-      label: 'Disable repeating',
+      label: t('dashboard.row-options.disable-repeating', 'Disable repeating'),
       value: null,
     });
 

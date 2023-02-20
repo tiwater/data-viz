@@ -6,6 +6,7 @@ import { selectors } from '@grafana/e2e-selectors';
 import { getTemplateSrv, RefreshEvent } from '@grafana/runtime';
 import { Icon } from '@grafana/ui';
 import appEvents from 'app/core/app_events';
+import { t } from 'app/core/internationalization';
 
 import { ShowConfirmModalEvent } from '../../../../types/events';
 import { DashboardModel } from '../../state/DashboardModel';
@@ -49,10 +50,15 @@ export class DashboardRow extends React.Component<DashboardRowProps> {
   onDelete = () => {
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Delete row',
-        text: 'Are you sure you want to remove this row and all its panels?',
-        altActionText: 'Delete row only',
+        title: t('dashboard.dashboard-row.delete-row', 'Delete row'),
+        text: t(
+          'dashboard.dashboard-row.are-you-sure-you-want-to',
+          'Are you sure you want to remove this row and all its panels?'
+        ),
+        altActionText: t('dashboard.dashboard-row.delete-row-only', 'Delete row only'),
         icon: 'trash-alt',
+        yesText: t('dashboard.dashboard-row.yes-button', 'Yes'),
+        noText: t('explore.cancel-button', 'Cancel'),
         onConfirm: () => {
           this.props.dashboard.removeRow(this.props.panel, true);
         },
