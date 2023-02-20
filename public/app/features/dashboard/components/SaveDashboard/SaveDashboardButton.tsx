@@ -29,7 +29,7 @@ export const SaveDashboardButton: React.FC<SaveDashboardButtonProps> = ({ dashbo
             }}
             aria-label={selectors.pages.Dashboard.Settings.General.saveDashBoard}
           >
-            <Trans i18nKey="dashboard.save-dashboard.save-dashboard">Save dashboard</Trans>
+            <Trans i18nKey="dashboard.save-dashboard.title">Save dashboard</Trans>
           </Button>
         );
       }}
