@@ -8,7 +8,6 @@ export function getCustomStyles(theme: GrafanaTheme2) {
       background: none !important;
     }
     .css-xcflq3,
-    .css-mksfr6,
     .css-1vgnjsk,
     .css-pfdq40 {
       display: none !important;
