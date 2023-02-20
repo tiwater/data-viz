@@ -10,7 +10,6 @@ import { getFocusStyles } from '../../themes/mixins';
 import { IconName } from '../../types';
 import { Icon } from '../Icon/Icon';
 import { IconButton } from '../IconButton/IconButton';
-// import { t } from 'app/core/internationalization';
 
 export interface Props {
   pageIcon?: IconName;

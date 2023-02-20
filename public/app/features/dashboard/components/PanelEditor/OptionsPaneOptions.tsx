@@ -132,8 +132,8 @@ function getOptionRadioFilters(): Array<SelectableValue<OptionFilter>> {
 }
 
 export enum OptionFilter {
-  All = '全部',
-  Overrides = '覆盖',
+  All = 'All',
+  Overrides = 'Overrides',
   Recent = 'Recent',
 }
 

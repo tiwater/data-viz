@@ -96,7 +96,7 @@ export const SaveLibraryPanelModal = ({
         )}
         <Modal.ButtonRow>
           <Button variant="secondary" onClick={onDismiss} fill="outline">
-            Cancelqqq
+            Cancel
           </Button>
           {isUnsavedPrompt && (
             <Button variant="destructive" onClick={discardAndClose}>

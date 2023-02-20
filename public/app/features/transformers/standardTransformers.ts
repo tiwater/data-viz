@@ -1,5 +1,4 @@
 import { TransformerRegistryItem } from '@grafana/data';
-import { t } from 'app/core/internationalization';
 
 import { filterByValueTransformRegistryItem } from './FilterByValueTransformer/FilterByValueTransformerEditor';
 import { heatmapTransformRegistryItem } from './calculateHeatmap/HeatmapTransformerEditor';
