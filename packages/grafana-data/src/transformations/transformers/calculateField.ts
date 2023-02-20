@@ -64,7 +64,7 @@ type ValuesCreator = (data: DataFrame) => Vector;
 
 export const calculateFieldTransformer: DataTransformerInfo<CalculateFieldTransformerOptions> = {
   id: DataTransformerID.calculateField,
-  name: 'Add field from calculation122u',
+  name: 'Add field from calculation',
   description: 'Use the row values to calculate a new field',
   defaultOptions: {
     mode: CalculateFieldMode.ReduceRow,
