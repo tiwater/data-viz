@@ -46,19 +46,6 @@ export const PageToolbar: FC<Props> = React.memo(
     'aria-label': ariaLabel,
     buttonOverflowAlignment = 'right',
   }) => {
-    console.log(
-      title,
-      section,
-      parent,
-      pageIcon,
-      onGoBack,
-      children,
-      titleHref,
-      parentHref,
-      leftItems,
-      isFullscreen,
-      className
-    );
     const styles = useStyles2(getStyles);
 
     /**
