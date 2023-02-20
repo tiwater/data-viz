@@ -29,6 +29,11 @@
     },
     "save": "Save"
   },
+  "core": {
+    "clear-types": "Clear types",
+    "filter-by-type": "Filter by type",
+    "no-panel-types-found": "No Panel types found"
+  },
   "dashboard": {
     "dashboard-row": {
       "are-you-sure-you-want-to": "Are you sure you want to remove this row and all its panels?",
@@ -98,15 +103,17 @@
     },
     "save-dashboard": {
       "a-dashboard-with-the-same-name-in-selected-folder": "A dashboard with the same name in selected folder already exists.",
+      "cannot-be-the-same-as-folder-name": "Dashboard name cannot be the same as folder name",
       "conflict": "Conflict",
+      "dashboard-name": "Dashboard name",
       "discard": "Discard",
       "do-you-want-to-save-your-changes": "Do you want to save your changes?",
+      "folder": "Folder",
       "overwrite-button": "Overwrite",
       "plugin-dashboard": "Plugin dashboard",
       "provisioned-dashboard": "Provisioned dashboard",
       "save-and-overwrite": "Save and overwrite",
       "save-as": "Save As",
-      "save-dashboard": "Save dashboard",
       "someone-else-has-updated-this-dashboard": "Someone else has updated this dashboard",
       "title": "Save dashboard",
       "to-create-custom-version": "to create custom version.",
@@ -129,6 +136,14 @@
       "share": "Share dashboard or panel",
       "tv-button": "Cycle view mode",
       "unmark-favorite": "Unmark as favorite"
+    },
+    "transformations-editor": {
+      "add-transformation": "Add transformation",
+      "it-can-help-to-switch-to-the-table": " It can help to switch to the Table visualization to understand what a transformation is doing.",
+      "many-transforms-are-not-suitable-if-you": "Many transforms are not suitable if you&apos;re using the Graph visualization, as it currently only supports time series data.",
+      "read-more": "Read more",
+      "title": "Transformations",
+      "transformations-allow-you-to-join": "Transformations allow you to join, calculate, re-order, hide, and rename your query results before they are visualized."
     }
   },
   "data-source": {
@@ -192,16 +207,98 @@
     "cancel-button": "Cancel"
   },
   "features": {
+    "alerting": {
+      "unified": {
+        "cannot-create-alerts-from-this-panel": "Cannot create alerts from this panel because no query to an alerting capable datasource is found.",
+        "dashboard-must-be-saved-before": "Dashboard must be saved before alerts can be added.",
+        "dashboard-not-saved": "Dashboard not saved",
+        "no-alerting-capable-query-found": "No alerting capable query found",
+        "there-are-no-alert-rules-linked-to-this-panel": "There are no alert rules linked to this panel."
+      }
+    },
     "dashboard": {
       "add-panel": "Add panel",
       "add-panel-from-panel-library": "Add panel from panel library",
       "panel-editor": {
+        "add-field-override": "Add field override",
+        "add-override-property": "Add override property",
         "apply": "Apply",
+        "close": "Close",
         "discard": "Discard",
-        "save-library-panel": "Save library panel"
+        "disconnects-this-panel-from-the-library": "Disconnects this panel from the library panel so that you can edit it regularly.",
+        "frame-title": "Title",
+        "library-panels": "Library panels",
+        "library-panels-description": "Reusable panels you can share between multiple dashboards.",
+        "panel-options": {
+          "description": "Description",
+          "max-per-row": "Max per row",
+          "panel-links": "Panel links",
+          "repeat-by-variable": "Repeat  by variable",
+          "repeat-by-variable-description": "Repeat this panel for each value in the selected variable. This is not visible while in edit mode. You need to go back to dashboard and then update the variable or reload the dashboard.",
+          "repeat-direction": "Repeat direction",
+          "repeat-options": "Repeat options",
+          "title": "Panel options",
+          "transparent-background": "Transparent background"
+        },
+        "save-library-panel": "Save library panel",
+        "search-for": "Search for...",
+        "search-options": "Search options",
+        "suggestions": "Suggestions",
+        "table-view": "Table view",
+        "unlink": "Unlink",
+        "visualizations": "Visualizations"
       },
       "panel-title": "Panel Title",
-      "row-title": "Row Title"
+      "row-title": "Row Title",
+      "tabs-alert": "Alert",
+      "tabs-query": "Query",
+      "tabs-transform": "Transform"
+    },
+    "dimensions": {
+      "fill-opacity": "Fill opacity",
+      "gradient-mode": "Gradient mode",
+      "graph-styles": "Graph styles",
+      "line-width": "Line width",
+      "show-thresholds": "Show thresholds",
+      "thresholds": "Thresholds",
+      "thresholds-editor": {
+        "add-threshold": "Add threshold",
+        "percentage-means-thresholds": "Percentage means thresholds relative to min & max",
+        "threshold-mode": "Thresholds mode"
+      },
+      "time-zone": "Time zone"
+    },
+    "inspector": {
+      "collapse-all-button": "Collapse all",
+      "copy-to-clipboard-button": "Copy to clipboard",
+      "expand-all-button": "Expand all",
+      "no-request-and-response-collected-yet": "No request and response collected yet. Hit refresh button",
+      "query-inspector": "Query inspector",
+      "query-inspector-description": "Query inspector allows you to view raw request and response. To collect this data Grafana needs to issue a new query. Click refresh button below to trigger a new query.",
+      "refresh-button": "Refresh"
+    },
+    "library-panels": {
+      "create-new-library-panel": "Create new library panel",
+      "no-library-panels-found": "No library panels found."
+    },
+    "panel": {
+      "viz-type-picker": {
+        "based-on-current-data": "Based on current data",
+        "no-results-matched-your-query": "No results matched your query"
+      }
+    },
+    "query": {
+      "query-group": {
+        "data-source": "Data source",
+        "open-data-source-help": "Open data source help",
+        "saved-query": "Saved query"
+      }
+    },
+    "transformers": {
+      "editors": {
+        "label": "Label",
+        "name": "Name"
+      }
     }
   },
   "folder-picker": {
@@ -467,6 +564,13 @@
       "show-legend": "Show legend",
       "unlink-library-panel": "Unlink library panel",
       "view": "View"
+    }
+  },
+  "plugins": {
+    "data-source": {
+      "dashboard": {
+        "this-dashboard-does-not-have-any-other-panels": "This dashboard does not have any other panels. Add queries to other panels and try again."
+      }
     }
   },
   "refresh-picker": {

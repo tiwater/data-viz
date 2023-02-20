@@ -29,6 +29,11 @@
     },
     "save": "Speichern"
   },
+  "core": {
+    "clear-types": "",
+    "filter-by-type": "",
+    "no-panel-types-found": ""
+  },
   "dashboard": {
     "dashboard-row": {
       "are-you-sure-you-want-to": "",
@@ -98,15 +103,17 @@
     },
     "save-dashboard": {
       "a-dashboard-with-the-same-name-in-selected-folder": "",
+      "cannot-be-the-same-as-folder-name": "",
       "conflict": "",
+      "dashboard-name": "",
       "discard": "",
       "do-you-want-to-save-your-changes": "",
+      "folder": "",
       "overwrite-button": "",
       "plugin-dashboard": "",
       "provisioned-dashboard": "",
       "save-and-overwrite": "",
       "save-as": "",
-      "save-dashboard": "",
       "someone-else-has-updated-this-dashboard": "",
       "title": "",
       "to-create-custom-version": "",
@@ -129,6 +136,14 @@
       "share": "Dashboard oder Panel teilen",
       "tv-button": "Zyklus-Ansichtsmodus",
       "unmark-favorite": "Markierung als Favorit entfernen"
+    },
+    "transformations-editor": {
+      "add-transformation": "",
+      "it-can-help-to-switch-to-the-table": "",
+      "many-transforms-are-not-suitable-if-you": "",
+      "read-more": "",
+      "title": "",
+      "transformations-allow-you-to-join": ""
     }
   },
   "data-source": {
@@ -192,16 +207,98 @@
     "cancel-button": ""
   },
   "features": {
+    "alerting": {
+      "unified": {
+        "cannot-create-alerts-from-this-panel": "",
+        "dashboard-must-be-saved-before": "",
+        "dashboard-not-saved": "",
+        "no-alerting-capable-query-found": "",
+        "there-are-no-alert-rules-linked-to-this-panel": ""
+      }
+    },
     "dashboard": {
       "add-panel": "",
       "add-panel-from-panel-library": "",
       "panel-editor": {
+        "add-field-override": "",
+        "add-override-property": "",
         "apply": "",
+        "close": "",
         "discard": "",
-        "save-library-panel": ""
+        "disconnects-this-panel-from-the-library": "",
+        "frame-title": "",
+        "library-panels": "",
+        "library-panels-description": "",
+        "panel-options": {
+          "description": "",
+          "max-per-row": "",
+          "panel-links": "",
+          "repeat-by-variable": "",
+          "repeat-by-variable-description": "",
+          "repeat-direction": "",
+          "repeat-options": "",
+          "title": "",
+          "transparent-background": ""
+        },
+        "save-library-panel": "",
+        "search-for": "",
+        "search-options": "",
+        "suggestions": "",
+        "table-view": "",
+        "unlink": "",
+        "visualizations": ""
       },
       "panel-title": "",
-      "row-title": ""
+      "row-title": "",
+      "tabs-alert": "",
+      "tabs-query": "",
+      "tabs-transform": ""
+    },
+    "dimensions": {
+      "fill-opacity": "",
+      "gradient-mode": "",
+      "graph-styles": "",
+      "line-width": "",
+      "show-thresholds": "",
+      "thresholds": "",
+      "thresholds-editor": {
+        "add-threshold": "",
+        "percentage-means-thresholds": "",
+        "threshold-mode": ""
+      },
+      "time-zone": ""
+    },
+    "inspector": {
+      "collapse-all-button": "",
+      "copy-to-clipboard-button": "",
+      "expand-all-button": "",
+      "no-request-and-response-collected-yet": "",
+      "query-inspector": "",
+      "query-inspector-description": "",
+      "refresh-button": ""
+    },
+    "library-panels": {
+      "create-new-library-panel": "",
+      "no-library-panels-found": ""
+    },
+    "panel": {
+      "viz-type-picker": {
+        "based-on-current-data": "",
+        "no-results-matched-your-query": ""
+      }
+    },
+    "query": {
+      "query-group": {
+        "data-source": "",
+        "open-data-source-help": "",
+        "saved-query": ""
+      }
+    },
+    "transformers": {
+      "editors": {
+        "label": "",
+        "name": ""
+      }
     }
   },
   "folder-picker": {
@@ -467,6 +564,13 @@
       "show-legend": "Legende anzeigen",
       "unlink-library-panel": "",
       "view": "Anzeigen"
+    }
+  },
+  "plugins": {
+    "data-source": {
+      "dashboard": {
+        "this-dashboard-does-not-have-any-other-panels": ""
+      }
     }
   },
   "refresh-picker": {

@@ -4,6 +4,7 @@ import { useDebounce } from 'react-use';
 
 import { GrafanaTheme2, LoadingState } from '@grafana/data';
 import { Pagination, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { LibraryElementDTO } from '../../types';
 import { LibraryPanelCard } from '../LibraryPanelCard/LibraryPanelCard';
@@ -70,7 +71,9 @@ export const LibraryPanelsView: React.FC<LibraryPanelViewProps> = ({
         {loadingState === LoadingState.Loading ? (
           <p>Loading library panels...</p>
         ) : libraryPanels.length < 1 ? (
-          <p className={styles.noPanelsFound}>No library panels found.</p>
+          <p className={styles.noPanelsFound}>
+            {t('features.library-panels.no-library-panels-found', 'No library panels found.')}
+          </p>
         ) : (
           libraryPanels?.map((item, i) => (
             <LibraryPanelCard

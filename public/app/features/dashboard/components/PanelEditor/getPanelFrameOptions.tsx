@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { DataLinksInlineEditor, Input, RadioButtonGroup, Select, Switch, TextArea } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { getPanelLinksVariableSuggestions } from 'app/features/panel/panellinks/link_srv';
 
 import { RepeatRowSelect } from '../RepeatRowSelect/RepeatRowSelect';
@@ -12,7 +13,7 @@ import { OptionPaneRenderProps } from './types';
 export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPaneCategoryDescriptor {
   const { panel, onPanelConfigChange } = props;
   const descriptor = new OptionsPaneCategoryDescriptor({
-    title: 'Panel options',
+    title: t('features.dashboard.panel-editor.panel-options.title', 'Panel options'),
     id: 'Panel options',
     isOpenDefault: true,
   });
@@ -20,7 +21,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
   return descriptor
     .addItem(
       new OptionsPaneItemDescriptor({
-        title: 'Title',
+        title: t('features.dashboard.panel-editor.frame-title', 'Title'),
         value: panel.title,
         popularRank: 1,
         render: function renderTitle() {
@@ -36,7 +37,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addItem(
       new OptionsPaneItemDescriptor({
-        title: 'Description',
+        title: t('features.dashboard.panel-editor.panel-options.description', 'Description'),
         description: panel.description,
         value: panel.description,
         render: function renderDescription() {
@@ -52,7 +53,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addItem(
       new OptionsPaneItemDescriptor({
-        title: 'Transparent background',
+        title: t('features.dashboard.panel-editor.panel-options.transparent-background', 'Transparent background'),
         render: function renderTransparent() {
           return (
             <Switch
@@ -66,13 +67,13 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addCategory(
       new OptionsPaneCategoryDescriptor({
-        title: 'Panel links',
+        title: t('features.dashboard.panel-editor.panel-options.panel-links', 'Panel links'),
         id: 'Panel links',
         isOpenDefault: false,
         itemsCount: panel.links?.length,
       }).addItem(
         new OptionsPaneItemDescriptor({
-          title: 'Panel links',
+          title: t('features.dashboard.panel-editor.panel-options.panel-links', 'Panel links'),
           render: function renderLinks() {
             return (
               <DataLinksInlineEditor
@@ -88,15 +89,17 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addCategory(
       new OptionsPaneCategoryDescriptor({
-        title: 'Repeat options',
+        title: t('features.dashboard.panel-editor.panel-options.repeat-options', 'Repeat options'),
         id: 'Repeat options',
         isOpenDefault: false,
       })
         .addItem(
           new OptionsPaneItemDescriptor({
-            title: 'Repeat by variable',
-            description:
-              'Repeat this panel for each value in the selected variable. This is not visible while in edit mode. You need to go back to dashboard and then update the variable or reload the dashboard.',
+            title: t('features.dashboard.panel-editor.panel-options.repeat-by-variable', 'Repeat  by variable'),
+            description: t(
+              'features.dashboard.panel-editor.panel-options.repeat-by-variable-description',
+              'Repeat this panel for each value in the selected variable. This is not visible while in edit mode. You need to go back to dashboard and then update the variable or reload the dashboard.'
+            ),
             render: function renderRepeatOptions() {
               return (
                 <RepeatRowSelect
@@ -112,7 +115,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
         )
         .addItem(
           new OptionsPaneItemDescriptor({
-            title: 'Repeat direction',
+            title: t('features.dashboard.panel-editor.panel-options.repeat-direction', 'Repeat direction'),
             showIf: () => !!panel.repeat,
             render: function renderRepeatOptions() {
               const directionOptions = [
@@ -132,7 +135,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
         )
         .addItem(
           new OptionsPaneItemDescriptor({
-            title: 'Max per row',
+            title: t('features.dashboard.panel-editor.panel-options.max-per-row', 'Max per row'),
             showIf: () => Boolean(panel.repeat && panel.repeatDirection === 'h'),
             render: function renderOption() {
               const maxPerRowOptions = [2, 3, 4, 6, 8, 12].map((value) => ({ label: value.toString(), value }));

@@ -1,6 +1,7 @@
 import { PanelPlugin } from '@grafana/data';
 import { GraphFieldConfig } from '@grafana/schema';
 import { commonOptionsBuilder } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { TimeSeriesPanel } from './TimeSeriesPanel';
 import { TimezonesEditor } from './TimezonesEditor';
@@ -18,7 +19,7 @@ export const plugin = new PanelPlugin<TimeSeriesOptions, GraphFieldConfig>(TimeS
 
     builder.addCustomEditor({
       id: 'timezone',
-      name: 'Time zone',
+      name: t('features.dimensions.time-zone', 'Time zone'),
       path: 'timezone',
       category: ['Axis'],
       editor: TimezonesEditor,

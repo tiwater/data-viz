@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Button, Input, Switch, Form, Field, InputControl, HorizontalGroup } from '@grafana/ui';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
+import { t, Trans } from 'app/core/internationalization';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { validationSrv } from 'app/features/manage-dashboards/services/ValidationSrv';
 
@@ -56,7 +57,10 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
 
   const validateDashboardName = (getFormValues: () => SaveDashboardAsFormDTO) => async (dashboardName: string) => {
     if (dashboardName && dashboardName === getFormValues().$folder.title?.trim()) {
-      return 'Dashboard name cannot be the same as folder name';
+      return t(
+        'dashboard.save-dashboard.cannot-be-the-same-as-folder-name',
+        'Dashboard name cannot be the same as folder name'
+      );
     }
     try {
       await validationSrv.validateNewDashboardName(getFormValues().$folder.uid, dashboardName);
@@ -95,7 +99,11 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
     >
       {({ register, control, errors, getValues }) => (
         <>
-          <Field label="Dashboard name" invalid={!!errors.title} error={errors.title?.message}>
+          <Field
+            label={t('dashboard.save-dashboard.dashboard-name', 'Dashboard name')}
+            invalid={!!errors.title}
+            error={errors.title?.message}
+          >
             <Input
               {...register('title', {
                 validate: validateDashboardName(getValues),
@@ -104,7 +112,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
               autoFocus
             />
           </Field>
-          <Field label="Folder">
+          <Field label={t('dashboard.save-dashboard.folder', 'Folder')}>
             <InputControl
               render={({ field: { ref, ...field } }) => (
                 <FolderPicker
@@ -126,10 +134,11 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
           )}
           <HorizontalGroup>
             <Button type="button" variant="secondary" onClick={onCancel} fill="outline">
-              Cancel
+              <Trans i18nKey="explore.cancel-button">Cancel</Trans>
             </Button>
             <Button type="submit" aria-label="Save dashboard button">
               Save
+              <Trans i18nKey="common.save">Save</Trans>
             </Button>
           </HorizontalGroup>
         </>

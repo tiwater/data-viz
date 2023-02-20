@@ -25,6 +25,7 @@ import {
   ReduceOptions,
 } from '@grafana/data/src/transformations/transformers/calculateField';
 import { FilterPill, HorizontalGroup, Input, LegacyForms, Select, StatsPicker } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 interface CalculateFieldTransformerEditorProps extends TransformerUIProps<CalculateFieldTransformerOptions> {}
 

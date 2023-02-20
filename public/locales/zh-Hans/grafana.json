@@ -29,6 +29,11 @@
     },
     "save": "保存"
   },
+  "core": {
+    "clear-types": "清除类型",
+    "filter-by-type": "按类型筛选",
+    "no-panel-types-found": "未发现面板类型"
+  },
   "dashboard": {
     "dashboard-row": {
       "are-you-sure-you-want-to": "您确定要删除此行及其所有面板吗？",
@@ -97,22 +102,24 @@
       "update-button": "更新"
     },
     "save-dashboard": {
-      "a-dashboard-with-the-same-name-in-selected-folder": "选定文件夹中已经存在具有相同名称的仪表板。",
+      "a-dashboard-with-the-same-name-in-selected-folder": "选定文件夹中已经存在具有相同名称的看板。",
+      "cannot-be-the-same-as-folder-name": "仪表板名称不能与文件夹名称相同",
       "conflict": "冲突",
+      "dashboard-name": "看板名称",
       "discard": "放弃",
       "do-you-want-to-save-your-changes": "您要保存更改吗？",
+      "folder": "文件夹",
       "overwrite-button": "覆盖",
       "plugin-dashboard": "插件看板",
       "provisioned-dashboard": "预配看板",
       "save-and-overwrite": "保存并覆盖",
       "save-as": "另存为",
-      "save-dashboard": "保存看板",
       "someone-else-has-updated-this-dashboard": "其他人已经更新了此看板",
       "title": "保存看板",
       "to-create-custom-version": "创建自定义版本",
       "unsaved-changes": "未保存的更改",
       "use": "使用",
-      "would-you-still-like-to-save-this-dashboard": "您仍然想要保存此仪表板吗？",
+      "would-you-still-like-to-save-this-dashboard": "您仍然想要保存此看板吗？",
       "your-changes-will-be-lost": "当您更新插件时，您的更改将丢失。"
     },
     "toolbar": {
@@ -129,6 +136,14 @@
       "share": "分享看板或面板",
       "tv-button": "循环视图模式",
       "unmark-favorite": "取消标记为收藏"
+    },
+    "transformations-editor": {
+      "add-transformation": "新增转换",
+      "it-can-help-to-switch-to-the-table": "切换到表可视化可以有助于理解转换正在做什么。",
+      "many-transforms-are-not-suitable-if-you": "如果您正在使用Graph可视化，则许多转换不适用，因为它目前仅支持时间序列数据。",
+      "read-more": "了解更多信息。",
+      "title": "转换",
+      "transformations-allow-you-to-join": "转换允许您在可视化之前，将查询结果连接、计算、重新排序、隐藏和重命名。"
     }
   },
   "data-source": {
@@ -192,16 +207,98 @@
     "cancel-button": "取消"
   },
   "features": {
+    "alerting": {
+      "unified": {
+        "cannot-create-alerts-from-this-panel": "由于未找到到具有警报功能的数据源的查询，因此无法从此面板创建警报。",
+        "dashboard-must-be-saved-before": "在添加警报之前，必须先保存看板。",
+        "dashboard-not-saved": "看板尚未保存。",
+        "no-alerting-capable-query-found": "未找到具有警报功能的查询。",
+        "there-are-no-alert-rules-linked-to-this-panel": "此面板没有连接任何警报规则。"
+      }
+    },
     "dashboard": {
       "add-panel": "添加面板",
       "add-panel-from-panel-library": "从面板库中添加面板",
       "panel-editor": {
+        "add-field-override": "添加覆盖字段",
+        "add-override-property": "添加覆盖属性",
         "apply": "应用",
+        "close": "关闭",
         "discard": "放弃",
-        "save-library-panel": "保存面板"
+        "disconnects-this-panel-from-the-library": "将此面板从面板库中断开，以便您可以定期编辑它。",
+        "frame-title": "标题",
+        "library-panels": "面板库",
+        "library-panels-description": "可在多个仪表板之间共享的可重用面板。",
+        "panel-options": {
+          "description": "描述",
+          "max-per-row": "每行最大值",
+          "panel-links": "面板链接",
+          "repeat-by-variable": "按变量重复",
+          "repeat-by-variable-description": "对所选变量中的每个值重复此面板。编辑模式时不可见。您需要返回仪表板，然后更新变量或重新加载仪表板。",
+          "repeat-direction": "重复方向",
+          "repeat-options": "重复选项",
+          "title": "标题",
+          "transparent-background": "透明背景"
+        },
+        "save-library-panel": "保存面板",
+        "search-for": "搜索...",
+        "search-options": "搜索选项",
+        "suggestions": "建议",
+        "table-view": "表格视图",
+        "unlink": "断开连接",
+        "visualizations": "可视化"
       },
       "panel-title": "面板标题",
-      "row-title": "行标题"
+      "row-title": "行标题",
+      "tabs-alert": "警报",
+      "tabs-query": "查询",
+      "tabs-transform": "转换"
+    },
+    "dimensions": {
+      "fill-opacity": "填充不透明度",
+      "gradient-mode": "渐变模式",
+      "graph-styles": "图表样式",
+      "line-width": "标签宽度",
+      "show-thresholds": "显示阈值",
+      "thresholds": "阈值",
+      "thresholds-editor": {
+        "add-threshold": "添加阈值",
+        "percentage-means-thresholds": "百分比表示相对于最小值和最大值的阈值",
+        "threshold-mode": "阈值模式"
+      },
+      "time-zone": ""
+    },
+    "inspector": {
+      "collapse-all-button": "全部折叠",
+      "copy-to-clipboard-button": "复制到剪贴板",
+      "expand-all-button": "全部展开",
+      "no-request-and-response-collected-yet": "尚未收集到请求和响应。点击刷新按钮。",
+      "query-inspector": "查询检查器",
+      "query-inspector-description": "查询检查器允许您查看原始请求和响应。为了收集这些数据，Grafana需要发出新查询。点击下面的刷新按钮来触发新查询。",
+      "refresh-button": "重置"
+    },
+    "library-panels": {
+      "create-new-library-panel": "创建新的面板库",
+      "no-library-panels-found": "没有找到面板库。"
+    },
+    "panel": {
+      "viz-type-picker": {
+        "based-on-current-data": "根据目前的数据",
+        "no-results-matched-your-query": "没有结果与您的查询匹配"
+      }
+    },
+    "query": {
+      "query-group": {
+        "data-source": "数据源",
+        "open-data-source-help": "打开数据源帮助",
+        "saved-query": "保存查询"
+      }
+    },
+    "transformers": {
+      "editors": {
+        "label": "标签",
+        "name": "名称"
+      }
     }
   },
   "folder-picker": {
@@ -467,6 +564,13 @@
       "show-legend": "显示图例",
       "unlink-library-panel": "取消链接面板",
       "view": "查看"
+    }
+  },
+  "plugins": {
+    "data-source": {
+      "dashboard": {
+        "this-dashboard-does-not-have-any-other-panels": "此仪表板没有其他面板。 添加其他面板的查询，然后重试。"
+      }
     }
   },
   "refresh-picker": {

@@ -7,6 +7,7 @@ import { useAsync } from 'react-use';
 import { DataQuery, GrafanaTheme2, PanelData, SelectableValue, DataTopic } from '@grafana/data';
 import { Field, Select, useStyles2, VerticalGroup, Spinner, Switch, RadioButtonGroup, Icon } from '@grafana/ui';
 import config from 'app/core/config';
+import { Trans } from 'app/core/internationalization';
 import { getDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import { PanelModel } from 'app/features/dashboard/state';
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
@@ -135,7 +136,9 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
   if (panels.length < 1) {
     return (
       <p className={styles.noQueriesText}>
-        This dashboard does not have any other panels. Add queries to other panels and try again.
+        <Trans i18nKey="plugins.data-source.dashboard.this-dashboard-does-not-have-any-other-panels">
+          This dashboard does not have any other panels. Add queries to other panels and try again.
+        </Trans>
       </p>
     );
   }

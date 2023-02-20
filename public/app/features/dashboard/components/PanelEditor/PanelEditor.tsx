@@ -25,7 +25,7 @@ import { AppChromeUpdate } from 'app/core/components/AppChrome/AppChromeUpdate';
 import { Page } from 'app/core/components/Page/Page';
 import { SplitPaneWrapper } from 'app/core/components/SplitPaneWrapper/SplitPaneWrapper';
 import { appEvents } from 'app/core/core';
-import { Trans } from 'app/core/internationalization';
+import { t, Trans } from 'app/core/internationalization';
 import { SubMenuItems } from 'app/features/dashboard/components/SubMenu/SubMenuItems';
 import { SaveLibraryPanelModal } from 'app/features/library-panels/components/SaveLibraryPanelModal/SaveLibraryPanelModal';
 import { PanelModelWithLibraryPanel } from 'app/features/library-panels/types';
@@ -306,7 +306,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
           {this.renderTemplateVariables(styles)}
           <Stack gap={1}>
             <InlineSwitch
-              label="Table view"
+              label={t('features.dashboard.panel-editor.table-view', 'Table view')}
               showLabel={true}
               id="table-view"
               value={tableViewEnabled}
@@ -388,10 +388,13 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
                     isOpen: true,
                   });
                 }}
-                title="Disconnects this panel from the library panel so that you can edit it regularly."
+                title={t(
+                  'features.dashboard.panel-editor.disconnects-this-panel-from-the-library',
+                  'Disconnects this panel from the library panel so that you can edit it regularly.'
+                )}
                 key="unlink"
               >
-                Unlink
+                <Trans i18nKey="features.dashboard.panel-editor.unlink">Unlink</Trans>
               </ToolbarButton>
             );
           }}

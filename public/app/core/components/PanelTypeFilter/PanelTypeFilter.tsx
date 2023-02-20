@@ -3,6 +3,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { GrafanaTheme2, PanelPluginMeta, SelectableValue } from '@grafana/data';
 import { Icon, Button, MultiSelect, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { getAllPanelPluginMeta } from 'app/features/panel/state/util';
 
 export interface Props {
@@ -34,8 +35,8 @@ export const PanelTypeFilter = ({ onChange: propsOnChange, maxMenuHeight }: Prop
     defaultOptions: true,
     getOptionLabel: (i: any) => i.label,
     getOptionValue: (i: any) => i.value,
-    noOptionsMessage: 'No Panel types found',
-    placeholder: 'Filter by type',
+    noOptionsMessage: t('core.no-panel-types-found', 'No Panel types found'),
+    placeholder: t('core.filter-by-type', 'Filter by type'),
     maxMenuHeight,
     options,
     value,
@@ -51,9 +52,9 @@ export const PanelTypeFilter = ({ onChange: propsOnChange, maxMenuHeight }: Prop
           fill="text"
           className={styles.clear}
           onClick={() => onChange([])}
-          aria-label="Clear types"
+          aria-label={t('core.clear-types', 'Clear types')}
         >
-          Clear types
+          {t('core.clear-types', 'Clear types')}
         </Button>
       )}
       <MultiSelect {...selectOptions} prefix={<Icon name="filter" />} aria-label="Panel Type filter" />

@@ -21,12 +21,15 @@ import {
   stylesFactory,
   IconButton,
 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 const modes: Array<SelectableValue<ThresholdsMode>> = [
-  { value: ThresholdsMode.Absolute, label: 'Absolute', description: 'Pick thresholds based on the absolute values' },
+  //t("features.dimensions.thresholds-editor.absolute",'Absolute')
+  { value: ThresholdsMode.Absolute, label: '绝对值', description: 'Pick thresholds based on the absolute values' },
   {
     value: ThresholdsMode.Percentage,
-    label: 'Percentage',
+    //t("features.dimensions.thresholds-editor.percentage",'Percentage')
+    label: '百分比',
     description: 'Pick threshold based on the percent between min/max',
   },
 ];
@@ -227,7 +230,7 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
                 className={styles.addButton}
                 fullWidth
               >
-                Add threshold
+                {t('features.dimensions.thresholds-editor.add-threshold', 'Add threshold')}
               </Button>
               <div className={styles.thresholds}>
                 {steps
@@ -241,7 +244,14 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
               </div>
 
               <div>
-                <Label description="Percentage means thresholds relative to min & max">Thresholds mode</Label>
+                <Label
+                  description={t(
+                    'features.dimensions.thresholds-editor.percentage-means-thresholds',
+                    'Percentage means thresholds relative to min & max'
+                  )}
+                >
+                  {t('features.dimensions.thresholds-editor.threshold-mode', 'Thresholds mode')}
+                </Label>
                 <RadioButtonGroup options={modes} onChange={this.onModeChanged} value={thresholds.mode} />
               </div>
             </div>
