@@ -108,11 +108,12 @@
       "save-as": "Save As",
       "save-dashboard": "Save dashboard",
       "someone-else-has-updated-this-dashboard": "Someone else has updated this dashboard",
+      "title": "Save dashboard",
       "to-create-custom-version": "to create custom version.",
       "unsaved-changes": "Unsaved changes",
       "use": "Use",
       "would-you-still-like-to-save-this-dashboard": "Would you still like to save this dashboard?",
-      "your-changes-will-be-lost-when": "Your changes will be lost when you update the plugin."
+      "your-changes-will-be-lost": "Your changes will be lost when you update the plugin."
     },
     "toolbar": {
       "add-panel": "Add panel",

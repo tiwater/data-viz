@@ -108,11 +108,12 @@
       "save-as": "",
       "save-dashboard": "",
       "someone-else-has-updated-this-dashboard": "",
+      "title": "",
       "to-create-custom-version": "",
       "unsaved-changes": "",
       "use": "",
       "would-you-still-like-to-save-this-dashboard": "",
-      "your-changes-will-be-lost-when": ""
+      "your-changes-will-be-lost": ""
     },
     "toolbar": {
       "add-panel": "Ajouter un panneau",

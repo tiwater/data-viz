@@ -108,11 +108,12 @@
       "save-as": "另存为",
       "save-dashboard": "保存看板",
       "someone-else-has-updated-this-dashboard": "其他人已经更新了此看板",
+      "title": "保存看板",
       "to-create-custom-version": "创建自定义版本",
       "unsaved-changes": "未保存的更改",
       "use": "使用",
       "would-you-still-like-to-save-this-dashboard": "您仍然想要保存此仪表板吗？",
-      "your-changes-will-be-lost-when": "更新插件时，您的更改将会丢失"
+      "your-changes-will-be-lost": "当您更新插件时，您的更改将丢失。"
     },
     "toolbar": {
       "add-panel": "添加面板",

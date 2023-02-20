@@ -107,7 +107,7 @@ const ConfirmPluginDashboardSaveModal = ({ onDismiss, dashboard }: SaveDashboard
       onDismiss={onDismiss}
     >
       <div className={styles.modalText}>
-        <Trans i18nKey="dashboard.save-dashboard.your-changes-will-be-lost-when">
+        <Trans i18nKey="dashboard.save-dashboard.your-changes-will-be-lost">
           Your changes will be lost when you update the plugin.
         </Trans>
         <br />
