@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 
 import { GrafanaTheme2, SelectableValue } from '@grafana/data';
 import { CustomScrollbar, FilterInput, RadioButtonGroup, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { isPanelModelLibraryPanel } from '../../../library-panels/guard';
 
@@ -101,7 +102,12 @@ export const OptionsPaneOptions: React.FC<OptionPaneRenderProps> = (props) => {
     <div className={styles.wrapper}>
       <div className={styles.formBox}>
         <div className={styles.formRow}>
-          <FilterInput width={0} value={searchQuery} onChange={setSearchQuery} placeholder={'Search options'} />
+          <FilterInput
+            width={0}
+            value={searchQuery}
+            onChange={setSearchQuery}
+            placeholder={t('features.dashboard.panel-editor.search-options', 'Search options')}
+          />
         </div>
         {showSearchRadioButtons && (
           <div className={styles.formRow}>

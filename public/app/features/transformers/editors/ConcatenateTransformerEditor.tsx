@@ -12,6 +12,7 @@ import {
   ConcatenateTransformerOptions,
 } from '@grafana/data/src/transformations/transformers/concat';
 import { Input, Select } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 interface ConcatenateTransformerEditorProps extends TransformerUIProps<ConcatenateTransformerOptions> {}
 
@@ -56,7 +57,9 @@ export class ConcatenateTransformerEditor extends React.PureComponent<Concatenat
       <div>
         <div className="gf-form-inline">
           <div className="gf-form">
-            <div className="gf-form-label width-8">Name</div>
+            <div className="gf-form-label width-8">
+              <Trans i18nKey="features.transformers.editors.name">Name</Trans>
+            </div>
             <Select
               className="width-18"
               options={nameModes}
@@ -68,7 +71,9 @@ export class ConcatenateTransformerEditor extends React.PureComponent<Concatenat
         {frameNameMode === ConcatenateFrameNameMode.Label && (
           <div className="gf-form-inline">
             <div className="gf-form">
-              <div className="gf-form-label width-8">Label</div>
+              <div className="gf-form-label width-8">
+                <Trans i18nKey="features.transformers.editors.label">Label</Trans>
+              </div>
               <Input
                 className="width-18"
                 value={options.frameNameLabel ?? ''}

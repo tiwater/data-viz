@@ -5,6 +5,7 @@ import { useAsync } from 'react-use';
 import { urlUtil } from '@grafana/data';
 import { logInfo } from '@grafana/runtime';
 import { Alert, Button, LinkButton } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { useSelector } from 'app/types';
 
@@ -36,8 +37,13 @@ export const NewRuleFromPanelButton: FC<Props> = ({ dashboard, panel, className 
 
   if (!formValues) {
     return (
-      <Alert severity="info" title="No alerting capable query found">
-        Cannot create alerts from this panel because no query to an alerting capable datasource is found.
+      <Alert
+        severity="info"
+        title={t('features.alerting.unified.no-alerting-capable-query-found', 'No alerting capable query found')}
+      >
+        <Trans i18nKey="features.alerting.unified.cannot-create-alerts-from-this-panel">
+          Cannot create alerts from this panel because no query to an alerting capable datasource is found.
+        </Trans>
       </Alert>
     );
   }

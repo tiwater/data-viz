@@ -4,6 +4,7 @@ import { useAsync } from 'react-use';
 
 import { GrafanaTheme2 } from '@grafana/data/src';
 import { Button, Card, Icon, IconName, Spinner, useStyles2 } from '@grafana/ui/src';
+import { t } from 'app/core/internationalization';
 
 import { HorizontalGroup } from '../../plugins/admin/components/HorizontalGroup';
 import { getGrafanaSearcher, SearchQuery } from '../../search/service';
@@ -91,7 +92,7 @@ export const UsagesTab = ({ savedQuery }: Props) => {
                   {item.title}
                   <a
                     href={item.url}
-                    title={'Open in new tab'}
+                    title={t('explore.open-in-new-tab-button', 'Open in new tab')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.externalLink}

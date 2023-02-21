@@ -19,6 +19,7 @@ import {
   GraphTransform,
 } from '@grafana/schema';
 import { graphFieldOptions, commonOptionsBuilder } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { LineStyleEditor } from './LineStyleEditor';
 import { SpanNullsEditor } from './SpanNullsEditor';
@@ -208,7 +209,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig): SetFieldConfigOption
       builder.addCustomEditor({
         id: 'thresholdsStyle',
         path: 'thresholdsStyle',
-        name: 'Show thresholds',
+        name: t('features.dimensions.show-thresholds', 'Show thresholds'),
         category: ['Thresholds'],
         defaultValue: { mode: GraphTresholdsStyleMode.Off },
         settings: {

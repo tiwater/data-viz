@@ -11,6 +11,7 @@ import {
 import { config } from '@grafana/runtime';
 import { GraphTransform, GraphTresholdsStyleMode, StackingMode, VisibilityMode } from '@grafana/schema';
 import { graphFieldOptions, commonOptionsBuilder } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { ThresholdsStyleEditor } from '../timeseries/ThresholdsStyleEditor';
 
@@ -39,7 +40,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
       builder
         .addSliderInput({
           path: 'lineWidth',
-          name: 'Line width',
+          name: t('features.dimensions.line-width', 'Line width'),
           defaultValue: cfg.lineWidth,
           settings: {
             min: 0,
@@ -49,7 +50,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
         })
         .addSliderInput({
           path: 'fillOpacity',
-          name: 'Fill opacity',
+          name: t('features.dimensions.fill-opacity', 'Fill opacity'),
           defaultValue: cfg.fillOpacity,
           settings: {
             min: 0,
@@ -59,7 +60,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
         })
         .addRadio({
           path: 'gradientMode',
-          name: 'Gradient mode',
+          name: t('features.dimensions.gradient-mode', 'Gradient mode'),
           defaultValue: graphFieldOptions.fillGradient[0].value,
           settings: {
             options: graphFieldOptions.fillGradient,
@@ -67,7 +68,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
         });
 
       builder.addSelect({
-        category: ['Graph styles'],
+        category: [t('features.dimensions.graph-styles', 'Graph styles')],
         name: 'Transform',
         path: 'transform',
         settings: {
@@ -91,8 +92,8 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
       builder.addCustomEditor({
         id: 'thresholdsStyle',
         path: 'thresholdsStyle',
-        name: 'Show thresholds',
-        category: ['Thresholds'],
+        name: t('features.dimensions.show-thresholds', 'Show thresholds'),
+        category: [t('features.dimensions.thresholds', 'Thresholds')],
         defaultValue: { mode: GraphTresholdsStyleMode.Off },
         settings: {
           options: graphFieldOptions.thresholdsDisplayModes,

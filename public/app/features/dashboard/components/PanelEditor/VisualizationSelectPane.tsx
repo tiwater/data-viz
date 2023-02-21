@@ -7,6 +7,7 @@ import { selectors } from '@grafana/e2e-selectors';
 import { Button, CustomScrollbar, FilterInput, RadioButtonGroup, useStyles2 } from '@grafana/ui';
 import { Field } from '@grafana/ui/src/components/Forms/Field';
 import { LS_VISUALIZATION_SELECT_TAB_KEY } from 'app/core/constants';
+import { t } from 'app/core/internationalization';
 import { PanelLibraryOptionsGroup } from 'app/features/library-panels/components/PanelLibraryOptionsGroup/PanelLibraryOptionsGroup';
 import { VisualizationSuggestions } from 'app/features/panel/components/VizTypePicker/VisualizationSuggestions';
 import { VizTypeChangeDetails } from 'app/features/panel/components/VizTypePicker/types';
@@ -58,12 +59,21 @@ export const VisualizationSelectPane: FC<Props> = ({ panel, data }) => {
   }
 
   const radioOptions: Array<SelectableValue<VisualizationSelectPaneTab>> = [
-    { label: 'Visualizations', value: VisualizationSelectPaneTab.Visualizations },
-    { label: 'Suggestions', value: VisualizationSelectPaneTab.Suggestions },
     {
-      label: 'Library panels',
+      label: t('features.dashboard.panel-editor.visualizations', 'Visualizations'),
+      value: VisualizationSelectPaneTab.Visualizations,
+    },
+    {
+      label: t('features.dashboard.panel-editor.suggestions', 'Suggestions'),
+      value: VisualizationSelectPaneTab.Suggestions,
+    },
+    {
+      label: t('features.dashboard.panel-editor.library-panels', 'Library panels'),
       value: VisualizationSelectPaneTab.LibraryPanels,
-      description: 'Reusable panels you can share between multiple dashboards.',
+      description: t(
+        'features.dashboard.panel-editor.library-panels-description',
+        'Reusable panels you can share between multiple dashboards.'
+      ),
     },
   ];
 
@@ -76,10 +86,10 @@ export const VisualizationSelectPane: FC<Props> = ({ panel, data }) => {
             onChange={setSearchQuery}
             ref={searchRef}
             autoFocus={true}
-            placeholder="Search for..."
+            placeholder={t('features.dashboard.panel-editor.search-for', 'Search for...')}
           />
           <Button
-            title="Close"
+            title={t('features.dashboard.panel-editor.close', 'Close')}
             variant="secondary"
             icon="angle-up"
             className={styles.closeButton}

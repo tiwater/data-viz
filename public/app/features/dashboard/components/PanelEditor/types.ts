@@ -1,4 +1,5 @@
 import { DataFrame, FieldConfigSource, PanelData, PanelPlugin } from '@grafana/data';
+import { t } from 'app/core/internationalization';
 
 import { DashboardModel, PanelModel } from '../../state';
 
@@ -28,8 +29,10 @@ export enum PanelEditTableToggle {
 }
 
 export const displayModes = [
-  { value: DisplayMode.Fill, label: 'Fill', description: 'Use all available space' },
-  { value: DisplayMode.Exact, label: 'Actual', description: 'Make same size as on the dashboard' },
+  //Todo:t("features.dashboard.panel-editor.fill",'Fill')
+  { value: DisplayMode.Fill, label: '充满', description: 'Use all available space' },
+  //Todo:t("features.dashboard.panel-editor.actual",'Actual')
+  { value: DisplayMode.Exact, label: '实际', description: 'Make same size as on the dashboard' },
 ];
 
 export const panelEditTableModes = [

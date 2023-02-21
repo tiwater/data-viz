@@ -28,6 +28,7 @@ import {
   Card,
 } from '@grafana/ui';
 import { LocalStorageValueProvider } from 'app/core/components/LocalStorageValueProvider';
+import { t, Trans } from 'app/core/internationalization';
 import { getDocsLink } from 'app/core/utils/docsLinks';
 import { PluginStateInfo } from 'app/features/plugins/components/PluginStateInfo';
 
@@ -269,18 +270,27 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
 
                 return (
                   <Alert
-                    title="Transformations"
+                    title={t('dashboard.transformations-editor.title', 'Transformations')}
                     severity="info"
                     onRemove={() => {
                       onDismiss(true);
                     }}
                   >
                     <p>
-                      Transformations allow you to join, calculate, re-order, hide, and rename your query results before
-                      they are visualized. <br />
-                      Many transforms are not suitable if you&apos;re using the Graph visualization, as it currently
-                      only supports time series data. <br />
-                      It can help to switch to the Table visualization to understand what a transformation is doing.{' '}
+                      <Trans i18nKey="dashboard.transformations-editor.transformations-allow-you-to-join">
+                        Transformations allow you to join, calculate, re-order, hide, and rename your query results
+                        before they are visualized.
+                      </Trans>
+                      <br />
+                      <Trans i18nKey="dashboard.transformations-editor.many-transforms-are-not-suitable-if-you">
+                        Many transforms are not suitable if you&apos;re using the Graph visualization, as it currently
+                        only supports time series data.
+                      </Trans>
+                      <br />
+                      <Trans i18nKey="dashboard.transformations-editor.it-can-help-to-switch-to-the-table">
+                        {' '}
+                        It can help to switch to the Table visualization to understand what a transformation is doing.
+                      </Trans>{' '}
                     </p>
                     <a
                       href={getDocsLink(DocsId.Transformations)}
@@ -288,7 +298,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Read more
+                      <Trans i18nKey="dashboard.transformations-editor.read-more">Read more</Trans>
                     </a>
                   </Alert>
                 );
@@ -302,7 +312,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
               aria-label={selectors.components.Transforms.searchInput}
               value={search ?? ''}
               autoFocus={!noTransforms}
-              placeholder="Add transformation"
+              placeholder={t('dashboard.transformations-editor.add-transformation', 'Add transformation')}
               onChange={this.onSearchChange}
               onKeyDown={this.onSearchKeyDown}
               suffix={suffix}
@@ -328,7 +338,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
               this.setState({ showPicker: true });
             }}
           >
-            Add transformation
+            <Trans i18nKey="dashboard.transformations-editor.add-transformation">Add transformation</Trans>
           </Button>
         )}
       </>

@@ -16,12 +16,14 @@ import { DataSourcePicker, getDataSourceSrv } from '@grafana/runtime';
 import { Button, CustomScrollbar, HorizontalGroup, InlineFormLabel, Modal, stylesFactory } from '@grafana/ui';
 import { PluginHelp } from 'app/core/components/PluginHelp/PluginHelp';
 import config from 'app/core/config';
+import { Trans } from 'app/core/internationalization';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { addQuery, queryIsEmpty } from 'app/core/utils/query';
 import { dataSource as expressionDatasource } from 'app/features/expressions/ExpressionDatasource';
 import { DashboardQueryEditor, isSharedDashboardQuery } from 'app/plugins/datasource/dashboard';
 import { QueryGroupDataSource, QueryGroupOptions } from 'app/types';
 
+import { t } from '../../../core/internationalization/index';
 import { isQueryWithMixedDatasource } from '../../query-library/api/SavedQueriesApi';
 import { getSavedQuerySrv } from '../../query-library/api/SavedQueriesSrv';
 import { PanelQueryRunner } from '../state/PanelQueryRunner';
@@ -270,7 +272,7 @@ export class QueryGroup extends PureComponent<Props, State> {
       <div>
         <div className={styles.dataSourceRow}>
           <InlineFormLabel htmlFor="data-source-picker" width={'auto'}>
-            Data source
+            <Trans i18nKey="features.query.query-group.data-source">Data source</Trans>
           </InlineFormLabel>
           <div className={styles.dataSourceRowItem}>
             <DataSourcePicker
@@ -288,7 +290,7 @@ export class QueryGroup extends PureComponent<Props, State> {
                 <Button
                   variant="secondary"
                   icon="question-circle"
-                  title="Open data source help"
+                  title={t('features.query.query-group.open-data-source-help', 'Open data source help')}
                   onClick={this.onOpenHelp}
                 />
               </div>
@@ -307,7 +309,7 @@ export class QueryGroup extends PureComponent<Props, State> {
                     onClick={onOpenQueryInspector}
                     aria-label={selectors.components.QueryTab.queryInspectorButton}
                   >
-                    Query inspector
+                    <Trans i18nKey="features.inspector.query-inspector">Query inspector</Trans>
                   </Button>
                 </div>
               )}
@@ -318,7 +320,7 @@ export class QueryGroup extends PureComponent<Props, State> {
           <>
             <div className={styles.dataSourceRow}>
               <InlineFormLabel htmlFor="saved-query-picker" width={'auto'}>
-                Saved query
+                <Trans i18nKey="features.query.query-group.saved-query">Saved query</Trans>
               </InlineFormLabel>
               <div className={styles.dataSourceRowItem}>
                 <SavedQueryPicker current={this.state.savedQueryUid} onChange={this.onChangeSavedQuery} />

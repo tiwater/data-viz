@@ -5,6 +5,7 @@ import AutoSizer from 'react-virtualized-auto-sizer';
 
 import { GrafanaTheme2, PanelData, PanelPluginMeta, PanelModel, VisualizationSuggestion } from '@grafana/data';
 import { useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { getAllSuggestions } from '../../state/getAllSuggestions';
 
@@ -39,7 +40,9 @@ export function VisualizationSuggestions({ onChange, data, panel, searchQuery }:
         return (
           <div>
             <div className={styles.filterRow}>
-              <div className={styles.infoText}>Based on current data</div>
+              <div className={styles.infoText}>
+                {t('features.panel.viz-type-picker.based-on-current-data', 'Based on current data')}
+              </div>
             </div>
             <div className={styles.grid} style={{ gridTemplateColumns: `repeat(auto-fill, ${previewWidth - 1}px)` }}>
               {filteredSuggestions.map((suggestion, index) => (
@@ -52,7 +55,9 @@ export function VisualizationSuggestions({ onChange, data, panel, searchQuery }:
                 />
               ))}
               {searchQuery && filteredSuggestions.length === 0 && (
-                <div className={styles.infoText}>No results matched your query</div>
+                <div className={styles.infoText}>
+                  {t('features.panel.viz-type-picker.no-results-matched-your-query', 'No results matched your query')}
+                </div>
               )}
             </div>
           </div>

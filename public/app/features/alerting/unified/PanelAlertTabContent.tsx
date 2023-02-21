@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import { GrafanaTheme2 } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 import { Alert, CustomScrollbar, LoadingPlaceholder, useStyles2 } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 
@@ -63,13 +64,19 @@ export const PanelAlertTabContent: FC<Props> = ({ dashboard, panel }) => {
       {alert}
       {!!dashboard.uid && (
         <>
-          <p>There are no alert rules linked to this panel.</p>
+          <p>
+            <Trans i18nKey="features.alerting.unified.there-are-no-alert-rules-linked-to-this-panel">
+              There are no alert rules linked to this panel.
+            </Trans>
+          </p>
           {!!dashboard.meta.canSave && canCreateRules && <NewRuleFromPanelButton panel={panel} dashboard={dashboard} />}
         </>
       )}
       {!dashboard.uid && !!dashboard.meta.canSave && (
-        <Alert severity="info" title="Dashboard not saved">
-          Dashboard must be saved before alerts can be added.
+        <Alert severity="info" title={t('features.alerting.unified.dashboard-not-saved', 'Dashboard not saved')}>
+          <Trans i18nKey="features.alerting.unified.dashboard-must-be-saved-before">
+            Dashboard must be saved before alerts can be added.
+          </Trans>
         </Alert>
       )}
     </div>

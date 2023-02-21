@@ -7,6 +7,7 @@ import { selectors } from '@grafana/e2e-selectors';
 import { Stack } from '@grafana/experimental';
 import { config, RefreshEvent } from '@grafana/runtime';
 import { Button, ClipboardButton, JSONFormatter, LoadingPlaceholder } from '@grafana/ui';
+import { Trans } from 'app/core/internationalization';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { supportsDataQuery } from 'app/features/dashboard/components/PanelEditor/utils';
 import { PanelModel } from 'app/features/dashboard/state';
@@ -262,10 +263,14 @@ export class QueryInspector extends PureComponent<Props, State> {
     return (
       <div className={styles.wrap}>
         <div aria-label={selectors.components.PanelInspector.Query.content}>
-          <h3 className="section-heading">Query inspector</h3>
+          <h3 className="section-heading">
+            <Trans i18nKey="features.inspector.query-inspector">Query inspector</Trans>
+          </h3>
           <p className="small muted">
-            Query inspector allows you to view raw request and response. To collect this data Grafana needs to issue a
-            new query. Click refresh button below to trigger a new query.
+            <Trans i18nKey="features.inspector.query-inspector-description">
+              Query inspector allows you to view raw request and response. To collect this data Grafana needs to issue a
+              new query. Click refresh button below to trigger a new query.
+            </Trans>
           </p>
         </div>
         {this.renderExecutedQueries(executedQueries)}
@@ -275,17 +280,17 @@ export class QueryInspector extends PureComponent<Props, State> {
             onClick={onRefreshQuery}
             aria-label={selectors.components.PanelInspector.Query.refreshButton}
           >
-            Refresh
+            <Trans i18nKey="features.inspector.refresh-button">Refresh</Trans>
           </Button>
 
           {haveData && allNodesExpanded && (
             <Button icon="minus" variant="secondary" className={styles.toolbarItem} onClick={this.onToggleExpand}>
-              Collapse all
+              <Trans i18nKey="features.inspector.collapse-all-button">Collapse all</Trans>
             </Button>
           )}
           {haveData && !allNodesExpanded && (
             <Button icon="plus" variant="secondary" className={styles.toolbarItem} onClick={this.onToggleExpand}>
-              Expand all
+              <Trans i18nKey="features.inspector.expand-all-button">Expand all</Trans>
             </Button>
           )}
 
@@ -296,7 +301,7 @@ export class QueryInspector extends PureComponent<Props, State> {
               icon="copy"
               variant="secondary"
             >
-              Copy to clipboard
+              <Trans i18nKey="features.inspector.copy-to-clipboard-button">Copy to clipboard</Trans>
             </ClipboardButton>
           )}
           <div className="flex-grow-1" />
@@ -307,7 +312,11 @@ export class QueryInspector extends PureComponent<Props, State> {
             <JSONFormatter json={response} open={openNodes} onDidRender={this.setFormattedJson} />
           )}
           {!isLoading && !haveData && (
-            <p className="muted">No request and response collected yet. Hit refresh button</p>
+            <p className="muted">
+              <Trans i18nKey="features.inspector.no-request-and-response-collected-yet">
+                No request and response collected yet. Hit refresh button
+              </Trans>
+            </p>
           )}
         </div>
       </div>
