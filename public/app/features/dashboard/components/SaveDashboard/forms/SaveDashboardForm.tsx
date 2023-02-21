@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 import { selectors } from '@grafana/e2e-selectors';
 import { Stack } from '@grafana/experimental';
 import { Button, Checkbox, Form, TextArea } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { DashboardModel } from 'app/features/dashboard/state';
 
 import { SaveDashboardData, SaveDashboardOptions } from '../types';
@@ -70,7 +71,10 @@ export const SaveDashboardForm = ({
                     saveTimerange: !options.saveTimerange,
                   })
                 }
-                label="Save current time range as dashboard default"
+                label={t(
+                  'features.dashboard.save-dashboard.save-current-time-range',
+                  'Save current time range as dashboard default'
+                )}
                 aria-label={selectors.pages.SaveDashboardModal.saveTimerange}
               />
             )}
@@ -83,7 +87,10 @@ export const SaveDashboardForm = ({
                     saveVariables: !options.saveVariables,
                   })
                 }
-                label="Save current variable values as dashboard default"
+                label={t(
+                  'features.dashboard.save-dashboard.save-current-variable-values',
+                  'Save current variable values as dashboard default'
+                )}
                 aria-label={selectors.pages.SaveDashboardModal.saveVariables}
               />
             )}
@@ -98,14 +105,17 @@ export const SaveDashboardForm = ({
                 });
                 messageProps.onChange(e);
               }}
-              placeholder="Add a note to describe your changes."
+              placeholder={t(
+                'features.dashboard.save-dashboard.add-a-note-to-describe-your-changes',
+                'Add a note to describe your changes'
+              )}
               autoFocus
               rows={5}
             />
 
             <Stack alignItems="center">
               <Button variant="secondary" onClick={onCancel} fill="outline">
-                Cancel
+                {t('export.cancel-button', 'Cancel')}
               </Button>
               <Button
                 type="submit"
@@ -113,9 +123,11 @@ export const SaveDashboardForm = ({
                 icon={saving ? 'fa fa-spinner' : undefined}
                 aria-label={selectors.pages.SaveDashboardModal.save}
               >
-                Save
+                {t('common.save', 'Save')}
               </Button>
-              {!saveModel.hasChanges && <div>No changes to save</div>}
+              {!saveModel.hasChanges && (
+                <div>{t('features.dashboard.save-dashboard.no-changes-to-save', 'No changes to save')}</div>
+              )}
             </Stack>
           </Stack>
         );

@@ -250,6 +250,12 @@
       },
       "panel-title": "Päŉęľ Ŧįŧľę",
       "row-title": "Ŗőŵ Ŧįŧľę",
+      "save-dashboard": {
+        "add-a-note-to-describe-your-changes": "Åđđ ä ŉőŧę ŧő đęşčřįþę yőūř čĥäŉģęş",
+        "no-changes-to-save": "Ńő čĥäŉģęş ŧő şävę",
+        "save-current-time-range": "Ŝävę čūřřęŉŧ ŧįmę řäŉģę äş đäşĥþőäřđ đęƒäūľŧ",
+        "save-current-variable-values": "Ŝävę čūřřęŉŧ väřįäþľę väľūęş äş đäşĥþőäřđ đęƒäūľŧ"
+      },
       "tabs-alert": "Åľęřŧ",
       "tabs-query": "Qūęřy",
       "tabs-transform": "Ŧřäŉşƒőřm"

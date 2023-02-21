@@ -250,6 +250,12 @@
       },
       "panel-title": "",
       "row-title": "",
+      "save-dashboard": {
+        "add-a-note-to-describe-your-changes": "",
+        "no-changes-to-save": "",
+        "save-current-time-range": "",
+        "save-current-variable-values": ""
+      },
       "tabs-alert": "",
       "tabs-query": "",
       "tabs-transform": ""

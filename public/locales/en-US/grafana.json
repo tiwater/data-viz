@@ -250,6 +250,12 @@
       },
       "panel-title": "Panel Title",
       "row-title": "Row Title",
+      "save-dashboard": {
+        "add-a-note-to-describe-your-changes": "Add a note to describe your changes",
+        "no-changes-to-save": "No changes to save",
+        "save-current-time-range": "Save current time range as dashboard default",
+        "save-current-variable-values": "Save current variable values as dashboard default"
+      },
       "tabs-alert": "Alert",
       "tabs-query": "Query",
       "tabs-transform": "Transform"
