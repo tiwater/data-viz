@@ -258,7 +258,14 @@
       },
       "tabs-alert": "Åľęřŧ",
       "tabs-query": "Qūęřy",
-      "tabs-transform": "Ŧřäŉşƒőřm"
+      "tabs-transform": "Ŧřäŉşƒőřm",
+      "utils": {
+        "are-you-sure-you-want-to-remove": "Åřę yőū şūřę yőū ŵäŉŧ ŧő řęmővę ŧĥįş päŉęľ?",
+        "panel-includes-an-alert-rule": "Päŉęľ įŉčľūđęş äŉ äľęřŧ řūľę. řęmővįŉģ ŧĥę päŉęľ ŵįľľ äľşő řęmővę ŧĥę äľęřŧ řūľę",
+        "remove-button": "Ŗęmővę",
+        "remove-panel": "Ŗęmővę päŉęľ",
+        "yes": "ŸĒŜ"
+      }
     },
     "dimensions": {
       "fill-opacity": "Fįľľ őpäčįŧy",

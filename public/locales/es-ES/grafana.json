@@ -258,7 +258,14 @@
       },
       "tabs-alert": "",
       "tabs-query": "",
-      "tabs-transform": ""
+      "tabs-transform": "",
+      "utils": {
+        "are-you-sure-you-want-to-remove": "",
+        "panel-includes-an-alert-rule": "",
+        "remove-button": "",
+        "remove-panel": "",
+        "yes": ""
+      }
     },
     "dimensions": {
       "fill-opacity": "",

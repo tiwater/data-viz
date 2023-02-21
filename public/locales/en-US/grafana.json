@@ -258,7 +258,14 @@
       },
       "tabs-alert": "Alert",
       "tabs-query": "Query",
-      "tabs-transform": "Transform"
+      "tabs-transform": "Transform",
+      "utils": {
+        "are-you-sure-you-want-to-remove": "Are you sure you want to remove this panel?",
+        "panel-includes-an-alert-rule": "Panel includes an alert rule. removing the panel will also remove the alert rule",
+        "remove-button": "Remove",
+        "remove-panel": "Remove panel",
+        "yes": "YES"
+      }
     },
     "dimensions": {
       "fill-opacity": "Fill opacity",

@@ -5,6 +5,7 @@ import { getTemplateSrv } from '@grafana/runtime';
 import appEvents from 'app/core/app_events';
 import config from 'app/core/config';
 import { LS_PANEL_COPY_KEY, PANEL_BORDER } from 'app/core/constants';
+import { t } from 'app/core/internationalization';
 import store from 'app/core/store';
 import { ShareModal } from 'app/features/dashboard/components/ShareModal';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
@@ -21,18 +22,25 @@ export const removePanel = (dashboard: DashboardModel, panel: PanelModel, ask: b
   if (ask !== false) {
     const text2 =
       panel.alert && !config.unifiedAlertingEnabled
-        ? 'Panel includes an alert rule. removing the panel will also remove the alert rule'
+        ? t(
+            'features.dashboard.utils.panel-includes-an-alert-rule',
+            'Panel includes an alert rule. removing the panel will also remove the alert rule'
+          )
         : undefined;
-    const confirmText = panel.alert ? 'YES' : undefined;
+    const confirmText = panel.alert ? t('features.dashboard.utils.yes', 'YES') : undefined;
 
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Remove panel',
-        text: 'Are you sure you want to remove this panel?',
+        title: t('features.dashboard.utils.remove-panel', 'Remove panel'),
+        text: t(
+          'features.dashboard.utils.are-you-sure-you-want-to-remove',
+          'Are you sure you want to remove this panel?'
+        ),
         text2: text2,
         icon: 'trash-alt',
         confirmText: confirmText,
-        yesText: 'Remove',
+        yesText: t('features.dashboard.utils.remove-button', 'Remove'),
+        noText: t('explore.cancel-button', 'Cancel'),
         onConfirm: () => removePanel(dashboard, panel, false),
       })
     );
