@@ -446,25 +446,25 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
         {/* {datasourceMissing ? this.renderEmptyState(styles.exploreContainer) : null} */}
         {datasourceInstance && (
           <div className={styles.exploreContainer}>
-            {/* TODO: 隐藏explore中的查询 */}
-            {
-              !this.state.chatMode ? <PanelContainer className={styles.queryContainer}>
-              <QueryRows exploreId={exploreId} />
-              <SecondaryActions
-                addQueryRowButtonDisabled={isLive}
-                // We cannot show multiple traces at the same time right now so we do not show add query button.
-                //TODO:unification
-                addQueryRowButtonHidden={false}
-                richHistoryRowButtonHidden={richHistoryRowButtonHidden}
-                richHistoryButtonActive={showRichHistory}
-                queryInspectorButtonActive={showQueryInspector}
-                onClickAddQueryRowButton={this.onClickAddQueryRowButton}
-                onClickRichHistoryButton={this.toggleShowRichHistory}
-                onClickQueryInspectorButton={this.toggleShowQueryInspector}
-              />
-              <ResponseErrorContainer exploreId={exploreId} />
-            </PanelContainer> : null
-            }
+            <div style={{ display: this.state.chatMode? 'none': 'flex', flexDirection: "column" }}>
+              <PanelContainer className={styles.queryContainer}>
+                <QueryRows exploreId={exploreId} />
+                <SecondaryActions
+                  addQueryRowButtonDisabled={isLive}
+                  // We cannot show multiple traces at the same time right now so we do not show add query button.
+                  //TODO:unification
+                  addQueryRowButtonHidden={false}
+                  richHistoryRowButtonHidden={richHistoryRowButtonHidden}
+                  richHistoryButtonActive={showRichHistory}
+                  queryInspectorButtonActive={showQueryInspector}
+                  onClickAddQueryRowButton={this.onClickAddQueryRowButton}
+                  onClickRichHistoryButton={this.toggleShowRichHistory}
+                  onClickQueryInspectorButton={this.toggleShowQueryInspector}
+                />
+                <ResponseErrorContainer exploreId={exploreId} />
+              </PanelContainer>
+            </div>
+
             
             <AutoSizer onResize={this.onResize} disableHeight>
               {({ width }) => {
