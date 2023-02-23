@@ -143,7 +143,6 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
 
   componentDidMount() {
     const searchParams = locationService.getSearchObject();
-    console.log(searchParams.presentationReport, 'searchParams.presentationReport')
     if(searchParams.presentationReport){
       this.setState((state)=>{
         return {
