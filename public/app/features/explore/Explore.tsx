@@ -150,8 +150,6 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
         }
       })
     }
-    
-    console.log(searchParams, 'searchParams')
     this.absoluteTimeUnsubsciber = appEvents.subscribe(AbsoluteTimeEvent, this.onMakeAbsoluteTime);
   }
 
