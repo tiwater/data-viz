@@ -446,7 +446,7 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
         {/* {datasourceMissing ? this.renderEmptyState(styles.exploreContainer) : null} */}
         {datasourceInstance && (
           <div className={styles.exploreContainer}>
-            <div style={{ display: this.state.chatMode? 'none': 'block' }}>
+            <div style={{ display: this.state.chatMode? 'none': 'flex', flexDirection: "column" }}>
               <PanelContainer className={styles.queryContainer}>
                 <QueryRows exploreId={exploreId} />
                 <SecondaryActions
