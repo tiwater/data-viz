@@ -49,7 +49,7 @@
       "meta-tab": "元数据",
       "query-tab": "查询",
       "stats-tab": "统计信息",
-      "subtitle": " {{queryCount}} 次查询，总查询时间为 {{formatted}}",
+      "subtitle": "{{queryCount}} 次查询，总查询时间为 {{formatted}}",
       "title": "检查：{{panelTitle}}"
     },
     "inspect-data": {
@@ -73,8 +73,8 @@
       "transformations-label": "应用面板转换"
     },
     "inspect-json": {
-      "dataframe-description": "未应用转换和字段配置的原始数据。",
-      "dataframe-label": "DataFrame JSON （来自查询）",
+      "dataframe-description": "未应用转换和字段配置的原始数据。 ",
+      "dataframe-label": "DataFrame JSON (来自查询)",
       "panel-data-description": "发送至面板可视化的原始模型",
       "panel-data-label": "面板数据",
       "panel-json-description": "保存在看板 JSON 中的模型，用于配置整体运作方式。",
@@ -103,7 +103,7 @@
     },
     "save-dashboard": {
       "a-dashboard-with-the-same-name-in-selected-folder": "选定文件夹中已经存在具有相同名称的看板。",
-      "cannot-be-the-same-as-folder-name": "仪表板名称不能与文件夹名称相同",
+      "cannot-be-the-same-as-folder-name": "看板名称不能与文件夹名称相同",
       "conflict": "冲突",
       "dashboard-name": "看板名称",
       "discard": "放弃",
@@ -155,11 +155,11 @@
     "grafana-search": "搜索 Grafana",
     "list-public-files-options": "列出公共文件",
     "live-measurements-options": "实时测量",
-    "path-label": "",
+    "path-label": "路径",
     "query-type-label": "查询类型",
     "random-signal-within-the-selected-time-range": "在所选时间范围内的随机数据",
     "random-walk-options": "随机数据",
-    "select-folder-placeholder": "",
+    "select-folder-placeholder": "选择目录",
     "select-measurements-channel-placeholder": "选择测量渠道",
     "show-directory-listings-for-public-resources": "显示公共资源的目录列表",
     "stream-real-time-measurements-from-grafana": "从Grafana流式传输实时测量",
@@ -228,13 +228,13 @@
         "disconnects-this-panel-from-the-library": "将此面板从面板库中断开，以便您可以定期编辑它。",
         "frame-title": "标题",
         "library-panels": "面板库",
-        "library-panels-description": "可在多个仪表板之间共享的可重用面板。",
+        "library-panels-description": "可在多个看板之间共享的可重用面板。",
         "panel-options": {
           "description": "描述",
           "max-per-row": "每行最大值",
           "panel-links": "面板链接",
           "repeat-by-variable": "按变量重复",
-          "repeat-by-variable-description": "对所选变量中的每个值重复此面板。编辑模式时不可见。您需要返回仪表板，然后更新变量或重新加载仪表板。",
+          "repeat-by-variable-description": "对所选变量中的每个值重复此面板。编辑模式时不可见。您需要返回看板，然后更新变量或重新加载看板。",
           "repeat-direction": "重复方向",
           "repeat-options": "重复选项",
           "title": "标题",
@@ -250,9 +250,22 @@
       },
       "panel-title": "面板标题",
       "row-title": "行标题",
+      "save-dashboard": {
+        "add-a-note-to-describe-your-changes": "添加一个注释来描述您的更改",
+        "no-changes-to-save": "没有可保存的更改",
+        "save-current-time-range": "将当前时间范围保存为看板默认值",
+        "save-current-variable-values": "将当前变量值保存为看板默认值"
+      },
       "tabs-alert": "警报",
       "tabs-query": "查询",
-      "tabs-transform": "转换"
+      "tabs-transform": "转换",
+      "utils": {
+        "are-you-sure-you-want-to-remove": "您确定要删除此行及其所有面板吗？",
+        "panel-includes-an-alert-rule": "面板包含警报规则，删除面板也会删除警报规则",
+        "remove-button": "删除",
+        "remove-panel": "删除面板",
+        "yes": "确认"
+      }
     },
     "dimensions": {
       "fill-opacity": "填充不透明度",
@@ -266,7 +279,7 @@
         "percentage-means-thresholds": "百分比表示相对于最小值和最大值的阈值",
         "threshold-mode": "阈值模式"
       },
-      "time-zone": ""
+      "time-zone": "时区"
     },
     "inspector": {
       "collapse-all-button": "全部折叠",
@@ -347,7 +360,7 @@
       "title": "标题"
     },
     "alerting-legacy": {
-      "title": "警报（遗留）"
+      "title": "警报(已过期)"
     },
     "alerting-list": {
       "subtitle": "确定是否触发警报的规则",
@@ -412,7 +425,7 @@
       "title": "组织"
     },
     "global-users": {
-      "subtitle": "",
+      "subtitle": "管理Grafana 的用户",
       "title": "用户",
       "titleBeforeTopnav": "用户"
     },
@@ -423,7 +436,7 @@
     "help/documentation": "文档",
     "help/keyboard-shortcuts": "快捷键",
     "help/support": "支持",
-    "help/support-bundle": "",
+    "help/support-bundle": "支持包",
     "home": {
       "title": "首页"
     },
@@ -451,7 +464,7 @@
       "title": "正在监控"
     },
     "new": {
-      "title": ""
+      "title": "新建"
     },
     "new-dashboard": {
       "title": "新建看板"
@@ -461,7 +474,7 @@
     },
     "org-settings": {
       "subtitle": "管理整个组织的首选项",
-      "title": "",
+      "title": "默认选项",
       "titleBeforeTopnav": "首选项"
     },
     "playlists": {
@@ -489,15 +502,15 @@
       "placeholder": "搜索 Grafana"
     },
     "search-dashboards": {
-      "title": ""
+      "title": "搜索仪表盘"
     },
     "server-settings": {
       "subtitle": "查看 Grafana 配置中定义的设置",
       "title": "设置"
     },
     "service-accounts": {
-      "subtitle": "使用服务帐户在 Grafana 中运行自动化工作负载",
-      "title": "服务帐户"
+      "subtitle": "使用服务账户在 Grafana 中运行自动化工作负载",
+      "title": "服务账户"
     },
     "sign-in": "登录",
     "sign-out": {
@@ -518,8 +531,8 @@
       "title": "存储"
     },
     "support-bundles": {
-      "subtitle": "",
-      "title": ""
+      "subtitle": "下载支持包",
+      "title": "支持包"
     },
     "teams": {
       "subtitle": "具有共同看板和权限需求的用户组",
@@ -549,7 +562,7 @@
     "header-menu": {
       "copy": "复制",
       "create-library-panel": "创建面板",
-      "duplicate": "复制",
+      "duplicate": "克隆",
       "edit": "编辑",
       "explore": "探索",
       "get-help": "获取帮助",
@@ -569,33 +582,33 @@
   "plugins": {
     "data-source": {
       "dashboard": {
-        "this-dashboard-does-not-have-any-other-panels": "此仪表板没有其他面板。 添加其他面板的查询，然后重试。"
+        "this-dashboard-does-not-have-any-other-panels": "此看板没有其他面板。 添加其他面板的查询，然后重试。"
       }
     }
   },
   "refresh-picker": {
     "aria-label": {
       "choose-interval": "自动刷新已关闭。选择刷新时间间隔",
-      "duration-selected": ""
+      "duration-selected": "选择当前刷新时间间隔为 {{durationAriaLabel}}"
     },
     "live-option": {
-      "aria-label": "",
-      "label": ""
+      "aria-label": "开启直播流",
+      "label": "实时模式"
     },
     "off-option": {
       "aria-label": "关闭自动刷新",
       "label": "关"
     },
     "select-button": {
-      "auto-refresh": ""
+      "auto-refresh": "设置自动刷新间隔"
     }
   },
   "search": {
     "dashboard-actions": {
-      "import": "",
-      "new": "",
-      "new-dashboard": "",
-      "new-folder": ""
+      "import": "导入",
+      "new": "新建",
+      "new-dashboard": "新建仪表板",
+      "new-folder": "新建文件夹"
     }
   },
   "share-modal": {
@@ -626,7 +639,7 @@
       "info-text": "创建指向此看板或面板的直接链接，通过以下选项自定义。",
       "link-url": "链接网址",
       "render-alert": "未安装图像渲染器插件",
-      "render-instructions": "要渲染面板图像，需要安装 <1>Grafana 图像渲染器插件</1>。请联系您的 Grafana 管理员安装此插件。",
+      "render-instructions": "要渲染面板图像，需要安装&nbsp;<1>Grafana 图像渲染器插件</1>。请联系您的 Grafana 管理员安装此插件。",
       "rendered-image": "直接链接至渲染后的图像",
       "save-alert": "看板未保存",
       "save-dashboard": "要渲染面板图像，需要先保存看板。",
@@ -647,14 +660,14 @@
       "expire-hour": "1 小时",
       "expire-never": "从不",
       "expire-week": "7 天",
-      "info-text-1": "可通过快照即时、公开地分享交互式看板。创建后，我们会剥离敏感数据，如查询（指标、模板和注释）和面板链接，仅将可见指标数据和系列名称嵌入到看板中。",
+      "info-text-1": "可通过快照即时、公开地分享交互式仪表板。创建后，我们会剥离敏感数据，如查询（指标、模板和注释）和面板链接，仅将可见指标数据和系列名称嵌入到仪表板中。",
       "info-text-2": "请注意，知晓该链接并能够访问该网址的<1>任何人都可以</1>查看您的快照。分享需谨慎。",
       "local-button": "本地快照",
-      "mistake-message": "是不是弄错了什么？",
+      "mistake-message": "是不是弄错了什么？ ",
       "name": "快照名称",
       "timeout": "超时（秒）",
       "timeout-description": "如果需要很长时间才能收集看板指标，则可能需要配置超时值。",
-      "url-label": ""
+      "url-label": "取 URL 快照"
     },
     "tab-title": {
       "embed": "嵌入",
@@ -670,7 +683,7 @@
       "light": "浅色"
     },
     "view-json": {
-      "copy-button": ""
+      "copy-button": "复制"
     }
   },
   "shared-dashboard": {
@@ -700,46 +713,46 @@
       "title": "绝对时间范围"
     },
     "calendar": {
-      "apply-button": "应用",
+      "apply-button": "应用时间范围",
       "cancel-button": "取消",
-      "select-time": "选择时间"
+      "select-time": "选择时间范围"
     },
     "content": {
-      "empty-recent-list": "",
-      "filter-placeholder": ""
+      "empty-recent-list": "<0><0>你似乎从未使用过这个时间选取器。 一旦您输入一段时间，最近使用的间隔将出现在这里。 </0></0><1><0>阅读文档</0><1>，以了解关于如何输入自定义时间范围的更多信息。</1></1>",
+      "filter-placeholder": "搜索快捷范围"
     },
     "footer": {
-      "change-settings-button": "",
-      "fiscal-year-option": "",
-      "fiscal-year-start": "",
-      "time-zone-option": "",
-      "time-zone-selection": ""
+      "change-settings-button": "修改时间设置",
+      "fiscal-year-option": "会计年度",
+      "fiscal-year-start": "会计年度开始月",
+      "time-zone-option": "时区",
+      "time-zone-selection": "时区选择"
     },
     "range-content": {
-      "apply-button": "应用",
-      "default-error": "",
-      "fiscal-year": "",
-      "from-input": "",
-      "range-error": "",
-      "to-input": ""
+      "apply-button": "应用时间范围",
+      "default-error": "请输入一个过去的日期或者“now”",
+      "fiscal-year": "会计年度",
+      "from-input": "从",
+      "range-error": "“从”不能在“到”之后",
+      "to-input": "到"
     },
     "range-picker": {
-      "backwards-time-aria-label": "",
-      "current-time-selected": "",
-      "forwards-time-aria-label": "",
-      "to": "",
-      "zoom-out-button": "",
-      "zoom-out-tooltip": ""
+      "backwards-time-aria-label": "将时间范围向后移",
+      "current-time-selected": "选择的时间范围： {{currentTimeRange}}",
+      "forwards-time-aria-label": "将时间范围向后移",
+      "to": "到",
+      "zoom-out-button": "缩小时间范围",
+      "zoom-out-tooltip": "时间范围缩放<1></1> CTRL+Z"
     },
     "time-range": {
-      "aria-role": "",
-      "default-title": "",
-      "example-title": "",
-      "specify": ""
+      "aria-role": "时间范围选择",
+      "default-title": "时间范围",
+      "example-title": "示例时间范围",
+      "specify": "指定时间范围 <1></1>"
     },
     "zone": {
-      "select-aria-label": "",
-      "select-search-input": ""
+      "select-aria-label": "时区选择器",
+      "select-search-input": "搜索类型(国家、城市、缩写)"
     }
   },
   "user-orgs": {
@@ -757,7 +770,7 @@
       "name-label": "姓名",
       "username-label": "用户名"
     },
-    "title": "用户资料"
+    "title": "个人资料"
   },
   "user-session": {
     "browser-column": "浏览器和操作系统",
@@ -771,11 +784,11 @@
   },
   "variable": {
     "picker": {
-      "input": "",
-      "link-all": "",
-      "option-all": "",
-      "option-selected-values": "",
-      "option-tooltip": ""
+      "input": "输入变量值",
+      "link-all": "所有",
+      "option-all": "所有",
+      "option-selected-values": "已选择",
+      "option-tooltip": "清空选择"
     }
   }
 }

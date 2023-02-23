@@ -250,9 +250,22 @@
       },
       "panel-title": "Päŉęľ Ŧįŧľę",
       "row-title": "Ŗőŵ Ŧįŧľę",
+      "save-dashboard": {
+        "add-a-note-to-describe-your-changes": "Åđđ ä ŉőŧę ŧő đęşčřįþę yőūř čĥäŉģęş",
+        "no-changes-to-save": "Ńő čĥäŉģęş ŧő şävę",
+        "save-current-time-range": "Ŝävę čūřřęŉŧ ŧįmę řäŉģę äş đäşĥþőäřđ đęƒäūľŧ",
+        "save-current-variable-values": "Ŝävę čūřřęŉŧ väřįäþľę väľūęş äş đäşĥþőäřđ đęƒäūľŧ"
+      },
       "tabs-alert": "Åľęřŧ",
       "tabs-query": "Qūęřy",
-      "tabs-transform": "Ŧřäŉşƒőřm"
+      "tabs-transform": "Ŧřäŉşƒőřm",
+      "utils": {
+        "are-you-sure-you-want-to-remove": "Åřę yőū şūřę yőū ŵäŉŧ ŧő řęmővę ŧĥįş päŉęľ?",
+        "panel-includes-an-alert-rule": "Päŉęľ įŉčľūđęş äŉ äľęřŧ řūľę. řęmővįŉģ ŧĥę päŉęľ ŵįľľ äľşő řęmővę ŧĥę äľęřŧ řūľę",
+        "remove-button": "Ŗęmővę",
+        "remove-panel": "Ŗęmővę päŉęľ",
+        "yes": "ŸĒŜ"
+      }
     },
     "dimensions": {
       "fill-opacity": "Fįľľ őpäčįŧy",
