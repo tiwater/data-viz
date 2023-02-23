@@ -48,7 +48,7 @@ interface OwnProps {
   exploreId: ExploreId;
   onChangeTime: (range: RawTimeRange, changedByScanner?: boolean) => void;
   topOfViewRef: RefObject<HTMLDivElement>;
-  presentationReport: boolean;
+  chatMode: boolean;
 }
 
 type Props = OwnProps & ConnectedProps<typeof connector>;
@@ -143,7 +143,7 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
       hasLiveOption,
       containerWidth,
       largerExploreId,
-      presentationReport
+      chatMode
     } = this.props;
     const showSmallTimePicker = splitted || containerWidth < 1210;
     const isLargerExploreId = largerExploreId === exploreId;
@@ -163,7 +163,7 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
 
     return [
       !splitted ? (
-        !presentationReport?<ToolbarButton
+        !chatMode ? <ToolbarButton
           variant="canvas"
           key="split"
           tooltip={t('explore.split-pane-tooltip', 'Split the pane')}
@@ -172,7 +172,7 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
           disabled={isLive}
         >
           <Trans i18nKey="explore.split-button">Split</Trans>
-        </ToolbarButton>:null
+        </ToolbarButton> : null
       ) : (
         <ButtonGroup key="split-controls">
           <ToolbarButton
@@ -253,7 +253,7 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
   };
 
   render() {
-    const { datasourceMissing, exploreId, splitted, containerWidth, topOfViewRef, refreshInterval, loading, presentationReport } =
+    const { datasourceMissing, exploreId, splitted, containerWidth, topOfViewRef, refreshInterval, loading, chatMode } =
       this.props;
 
     const showSmallDataSourcePicker = (splitted ? containerWidth < 700 : containerWidth < 800) || false;
@@ -297,9 +297,9 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
         )}
         <PageToolbar
           aria-label="Explore toolbar"
-          title={!presentationReport?(exploreId === ExploreId.left && !isTopnav ? t('explore.title', 'Explore') : undefined):null}
+          title={!chatMode ? (exploreId === ExploreId.left && !isTopnav ? t('explore.title', 'Explore') : undefined) : null}
           pageIcon={exploreId === ExploreId.left && !isTopnav ? 'compass' : undefined}
-          leftItems={!presentationReport?toolbarLeftItems:null}
+          leftItems={!chatMode ? toolbarLeftItems : null}
         >
           {this.renderActions()}
         </PageToolbar>

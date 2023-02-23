@@ -135,7 +135,7 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
     super(props);
     this.state = {
       openDrawer: undefined,
-      presentationReport: false
+      chatMode: false
     };
     this.graphEventBus = props.eventBus.newScopedBus('graph', { onlyLocal: false });
     this.logsEventBus = props.eventBus.newScopedBus('logs', { onlyLocal: false });
@@ -143,12 +143,10 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
 
   componentDidMount() {
     const searchParams = locationService.getSearchObject();
-    if(searchParams.presentationReport){
-      this.setState((state)=>{
-        return {
-          presentationReport: true
-        }
-      })
+    if(searchParams.chatMode){
+      this.setState((state)=>({
+        chatMode: true
+      }))
     }
     this.absoluteTimeUnsubsciber = appEvents.subscribe(AbsoluteTimeEvent, this.onMakeAbsoluteTime);
   }
@@ -443,14 +441,14 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
         autoHeightMin={'100%'}
         scrollRefCallback={(scrollElement) => (this.scrollElement = scrollElement || undefined)}
       >
-        <ExploreToolbar exploreId={exploreId} onChangeTime={this.onChangeTime} topOfViewRef={this.topOfViewRef} presentationReport={this.state.presentationReport} />
+        <ExploreToolbar exploreId={exploreId} onChangeTime={this.onChangeTime} topOfViewRef={this.topOfViewRef} chatMode={this.state.chatMode} />
         {isFromCompactUrl ? this.renderCompactUrlWarning() : null}
         {/* {datasourceMissing ? this.renderEmptyState(styles.exploreContainer) : null} */}
         {datasourceInstance && (
           <div className={styles.exploreContainer}>
             {/* TODO: 隐藏explore中的查询 */}
             {
-              !this.state.presentationReport ?<PanelContainer className={styles.queryContainer}>
+              !this.state.chatMode ? <PanelContainer className={styles.queryContainer}>
               <QueryRows exploreId={exploreId} />
               <SecondaryActions
                 addQueryRowButtonDisabled={isLive}
@@ -465,7 +463,7 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
                 onClickQueryInspectorButton={this.toggleShowQueryInspector}
               />
               <ResponseErrorContainer exploreId={exploreId} />
-            </PanelContainer>: null
+            </PanelContainer> : null
             }
             
             <AutoSizer onResize={this.onResize} disableHeight>
