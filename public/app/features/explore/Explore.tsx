@@ -5,6 +5,7 @@ import React, { createRef } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { Unsubscribable } from 'rxjs';
+import { locationService } from '@grafana/runtime';
 
 import {
   AbsoluteTimeRange,
@@ -134,12 +135,19 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
     super(props);
     this.state = {
       openDrawer: undefined,
+      chatMode: false
     };
     this.graphEventBus = props.eventBus.newScopedBus('graph', { onlyLocal: false });
     this.logsEventBus = props.eventBus.newScopedBus('logs', { onlyLocal: false });
   }
 
   componentDidMount() {
+    const searchParams = locationService.getSearchObject();
+    if(searchParams.chatMode){
+      this.setState((state)=>({
+        chatMode: true
+      }))
+    }
     this.absoluteTimeUnsubsciber = appEvents.subscribe(AbsoluteTimeEvent, this.onMakeAbsoluteTime);
   }
 
@@ -433,12 +441,14 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
         autoHeightMin={'100%'}
         scrollRefCallback={(scrollElement) => (this.scrollElement = scrollElement || undefined)}
       >
-        <ExploreToolbar exploreId={exploreId} onChangeTime={this.onChangeTime} topOfViewRef={this.topOfViewRef} />
+        <ExploreToolbar exploreId={exploreId} onChangeTime={this.onChangeTime} topOfViewRef={this.topOfViewRef} chatMode={this.state.chatMode} />
         {isFromCompactUrl ? this.renderCompactUrlWarning() : null}
-        {datasourceMissing ? this.renderEmptyState(styles.exploreContainer) : null}
+        {/* {datasourceMissing ? this.renderEmptyState(styles.exploreContainer) : null} */}
         {datasourceInstance && (
           <div className={styles.exploreContainer}>
-            <PanelContainer className={styles.queryContainer}>
+            {/* TODO: 隐藏explore中的查询 */}
+            {
+              !this.state.chatMode ? <PanelContainer className={styles.queryContainer}>
               <QueryRows exploreId={exploreId} />
               <SecondaryActions
                 addQueryRowButtonDisabled={isLive}
@@ -453,7 +463,9 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
                 onClickQueryInspectorButton={this.toggleShowQueryInspector}
               />
               <ResponseErrorContainer exploreId={exploreId} />
-            </PanelContainer>
+            </PanelContainer> : null
+            }
+            
             <AutoSizer onResize={this.onResize} disableHeight>
               {({ width }) => {
                 if (width === 0) {
