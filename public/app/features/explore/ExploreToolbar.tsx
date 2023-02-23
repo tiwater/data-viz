@@ -163,16 +163,17 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
 
     return [
       !splitted ? (
-        !chatMode ? <ToolbarButton
+        <ToolbarButton
           variant="canvas"
           key="split"
           tooltip={t('explore.split-pane-tooltip', 'Split the pane')}
           onClick={this.onOpenSplitView}
           icon="columns"
           disabled={isLive}
+          style={{ display: chatMode ? 'none': 'flex' }}
         >
           <Trans i18nKey="explore.split-button">Split</Trans>
-        </ToolbarButton> : null
+        </ToolbarButton>
       ) : (
         <ButtonGroup key="split-controls">
           <ToolbarButton
