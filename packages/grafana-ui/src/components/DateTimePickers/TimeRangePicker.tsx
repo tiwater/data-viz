@@ -24,7 +24,7 @@ import { ToolbarButton } from '../ToolbarButton';
 import { Tooltip } from '../Tooltip/Tooltip';
 
 import { TimePickerContent } from './TimeRangePicker/TimePickerContent';
-import { quickOptions } from './options';
+import { getOptions } from './options';
 
 /** @public */
 export interface TimeRangePickerProps {
@@ -134,7 +134,7 @@ export function TimeRangePicker(props: TimeRangePickerProps) {
                 fiscalYearStartMonth={fiscalYearStartMonth}
                 value={value}
                 onChange={onChange}
-                quickOptions={quickOptions}
+                quickOptions={getOptions()}
                 history={history}
                 showHistory
                 widthOverride={widthOverride}

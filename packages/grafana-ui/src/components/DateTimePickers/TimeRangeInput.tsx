@@ -12,7 +12,7 @@ import { getInputStyles } from '../Input/Input';
 
 import { TimePickerButtonLabel } from './TimeRangePicker';
 import { TimePickerContent } from './TimeRangePicker/TimePickerContent';
-import { quickOptions } from './options';
+import { getOptions } from './options';
 
 const isValidTimeRange = (range: TimeRange) => {
   return dateMath.isValid(range.from) && dateMath.isValid(range.to);
@@ -105,7 +105,7 @@ export const TimeRangeInput: FC<TimeRangeInputProps> = ({
             timeZone={timeZone}
             value={isValidTimeRange(value) ? value : getDefaultTimeRange()}
             onChange={onRangeChange}
-            quickOptions={quickOptions}
+            quickOptions={getOptions()}
             onChangeTimeZone={onChangeTimeZone}
             className={styles.content}
             hideTimeZone={hideTimeZone}

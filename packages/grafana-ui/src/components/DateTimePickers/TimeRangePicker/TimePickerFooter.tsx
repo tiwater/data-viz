@@ -13,7 +13,7 @@ import { TimeZonePicker } from '../TimeZonePicker';
 import { TimeZoneDescription } from '../TimeZonePicker/TimeZoneDescription';
 import { TimeZoneOffset } from '../TimeZonePicker/TimeZoneOffset';
 import { TimeZoneTitle } from '../TimeZonePicker/TimeZoneTitle';
-import { monthOptions } from '../options';
+import { getMonthOptions } from '../options';
 
 interface Props {
   timeZone?: TimeZone;
@@ -117,7 +117,7 @@ export const TimePickerFooter: FC<Props> = (props) => {
                 <Select
                   value={fiscalYearStartMonth}
                   menuShouldPortal={false}
-                  options={monthOptions}
+                  options={getMonthOptions()}
                   onChange={(value) => {
                     if (onChangeFiscalYearStartMonth) {
                       onChangeFiscalYearStartMonth(value.value ?? 0);
