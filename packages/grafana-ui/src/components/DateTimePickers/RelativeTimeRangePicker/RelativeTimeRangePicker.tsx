@@ -18,7 +18,7 @@ import { Portal } from '../../Portal/Portal';
 import { Tooltip } from '../../Tooltip/Tooltip';
 import { TimePickerTitle } from '../TimeRangePicker/TimePickerTitle';
 import { TimeRangeList } from '../TimeRangePicker/TimeRangeList';
-import { quickOptions } from '../options';
+import { getOptions } from '../options';
 
 import {
   isRangeValid,
@@ -41,12 +41,11 @@ type InputState = {
   validation: RangeValidation;
 };
 
-const validOptions = quickOptions.filter((o) => isRelativeFormat(o.from));
-
 /**
  * @internal
  */
 export function RelativeTimeRangePicker(props: RelativeTimeRangePickerProps) {
+  const validOptions = getOptions().filter((o) => isRelativeFormat(o.from));
   const { timeRange, onChange } = props;
   const [isOpen, setIsOpen] = useState(false);
   const onClose = useCallback(() => setIsOpen(false), []);
@@ -108,7 +107,6 @@ export function RelativeTimeRangePicker(props: RelativeTimeRangePickerProps) {
     onChange(timeRange);
     setIsOpen(false);
   };
-
   return (
     <div className={styles.container} ref={setMarkerElement}>
       <button className={styles.pickerInput} type="button" onClick={onOpen}>

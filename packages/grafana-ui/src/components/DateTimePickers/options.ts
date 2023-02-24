@@ -1,5 +1,59 @@
 import { SelectableValue, TimeOption } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
+
+export const getOptions = () => {
+  return [
+    { from: 'now-5m', to: 'now', display: t('packages.grafana-ui.last-5-minutes', 'Last 5 minutes') },
+    { from: 'now-15m', to: 'now', display: t('packages.grafana-ui.last-15-minutes', 'Last 15 minutes') },
+    { from: 'now-30m', to: 'now', display: t('packages.grafana-ui.last-30-minutes', 'Last 30 minutes') },
+    { from: 'now-1h', to: 'now', display: t('packages.grafana-ui.last-1-hour', 'Last 1 hour') },
+    { from: 'now-3h', to: 'now', display: t('packages.grafana-ui.last-3-hour', 'Last 3 hour') },
+    { from: 'now-6h', to: 'now', display: t('packages.grafana-ui.last-6-hour', 'Last 6 hour') },
+    { from: 'now-12h', to: 'now', display: t('packages.grafana-ui.last-12-hour', 'Last 12 hour') },
+    { from: 'now-24h', to: 'now', display: t('packages.grafana-ui.last-24-hour', 'Last 24 hour') },
+    { from: 'now-2d', to: 'now', display: t('packages.grafana-ui.last-2-days', 'Last 2 days') },
+    { from: 'now-7d', to: 'now', display: t('packages.grafana-ui.last-7-days', 'Last 7 days') },
+    { from: 'now-30d', to: 'now', display: t('packages.grafana-ui.last-30-days', 'Last 30 days') },
+    { from: 'now-90d', to: 'now', display: t('packages.grafana-ui.last-90-days', 'Last 90 days') },
+    { from: 'now-6M', to: 'now', display: t('packages.grafana-ui.last-6-months', 'Last 6 months') },
+    { from: 'now-1y', to: 'now', display: t('packages.grafana-ui.last-1-year', 'Last 1 year') },
+    { from: 'now-2y', to: 'now', display: t('packages.grafana-ui.last-2-years', 'Last 2 years') },
+    { from: 'now-5y', to: 'now', display: t('packages.grafana-ui.last-5-years', 'Last 5 years') },
+    { from: 'now-1d/d', to: 'now-1d/d', display: t('packages.grafana-ui.yesterday', 'Yesterday') },
+    {
+      from: 'now-2d/d',
+      to: 'now-2d/d',
+      display: t('packages.grafana-ui.day-before-yesterday', 'Day before yesterday'),
+    },
+    { from: 'now-7d/d', to: 'now-7d/d', display: t('packages.grafana-ui.this-day-last-week', 'This day last week') },
+    { from: 'now-1w/w', to: 'now-1w/w', display: t('packages.grafana-ui.previous-week', 'Previous week') },
+    { from: 'now-1M/M', to: 'now-1M/M', display: t('packages.grafana-ui.previous-month', 'Previous month') },
+    { from: 'now-1Q/fQ', to: 'now-1Q/fQ', display: t('packages.grafana-ui.previous-fiscal-quarter', 'Previous month') },
+    { from: 'now-1y/y', to: 'now-1y/y', display: t('packages.grafana-ui.previous-year', 'Previous year') },
+    {
+      from: 'now-1y/fy',
+      to: 'now-1y/fy',
+      display: t('packages.grafana-ui.previous-fiscal-year', 'Previous fiscal year'),
+    },
+    { from: 'now/d', to: 'now/d', display: t('packages.grafana-ui.today', 'today') },
+    { from: 'now/d', to: 'now', display: t('packages.grafana-ui.today-so-far', 'Today so far') },
+    { from: 'now/w', to: 'now/w', display: t('packages.grafana-ui.this-week', 'This week') },
+    { from: 'now/w', to: 'now', display: t('packages.grafana-ui.this-week-so-far', 'This week so far') },
+    { from: 'now/M', to: 'now/M', display: t('packages.grafana-ui.this-month', 'This month') },
+    { from: 'now/M', to: 'now', display: t('packages.grafana-ui.this-month-so-far', 'This month  so far') },
+    { from: 'now/y', to: 'now/y', display: t('packages.grafana-ui.this-year', 'This year') },
+    { from: 'now/y', to: 'now', display: t('packages.grafana-ui.this-year-so-far', 'This year  so far') },
+    {
+      from: 'now/fQ',
+      to: 'now',
+      display: t('packages.grafana-ui.this-fiscal-quarter-so-far', 'This fiscal quarter so far'),
+    },
+    { from: 'now/fQ', to: 'now/fQ', display: t('packages.grafana-ui.this-fiscal-quarter', 'This fiscal quarter') },
+    { from: 'now/fy', to: 'now', display: t('packages.grafana-ui.this-fiscal-year-so-far', 'This fiscal year so far') },
+    { from: 'now/fy', to: 'now/fy', display: t('packages.grafana-ui.this-fiscal-year', 'This fiscal year') },
+  ];
+};
 export const quickOptions: TimeOption[] = [
   { from: 'now-5m', to: 'now', display: 'Last 5 minutes' },
   { from: 'now-15m', to: 'now', display: 'Last 15 minutes' },
@@ -38,7 +92,22 @@ export const quickOptions: TimeOption[] = [
   { from: 'now/fy', to: 'now', display: 'This fiscal year so far' },
   { from: 'now/fy', to: 'now/fy', display: 'This fiscal year' },
 ];
-
+export const getMonthOptions = (): Array<SelectableValue<number>> => {
+  return [
+    { label: t('packages.grafana-ui.january', 'January'), value: 0 },
+    { label: t('packages.grafana-ui.february', 'February'), value: 1 },
+    { label: t('packages.grafana-ui.march', 'March'), value: 2 },
+    { label: t('packages.grafana-ui.april', 'April'), value: 3 },
+    { label: t('packages.grafana-ui.may', 'May'), value: 4 },
+    { label: t('packages.grafana-ui.june', 'June'), value: 5 },
+    { label: t('packages.grafana-ui.july', 'July'), value: 6 },
+    { label: t('packages.grafana-ui.august', 'August'), value: 7 },
+    { label: t('packages.grafana-ui.september', 'September'), value: 8 },
+    { label: t('packages.grafana-ui.october', 'October'), value: 9 },
+    { label: t('packages.grafana-ui.november', 'November'), value: 10 },
+    { label: t('packages.grafana-ui.december', 'December'), value: 11 },
+  ];
+};
 export const monthOptions: Array<SelectableValue<number>> = [
   { label: 'January', value: 0 },
   { label: 'February', value: 1 },
