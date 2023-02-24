@@ -21,22 +21,22 @@ import {
   FilterByValueType,
 } from '@grafana/data/src/transformations/transformers/filterByValue';
 import { Button, RadioButtonGroup, stylesFactory } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 import { DataFrameFieldsInfo, FilterByValueFilterEditor } from './FilterByValueFilterEditor';
-
-const filterTypes: Array<SelectableValue<FilterByValueType>> = [
-  { label: 'Include', value: FilterByValueType.include },
-  { label: 'Exclude', value: FilterByValueType.exclude },
-];
-
-const filterMatch: Array<SelectableValue<FilterByValueMatch>> = [
-  { label: 'Match all', value: FilterByValueMatch.all },
-  { label: 'Match any', value: FilterByValueMatch.any },
-];
 
 export const FilterByValueTransformerEditor: React.FC<TransformerUIProps<FilterByValueTransformerOptions>> = (
   props
 ) => {
+  const filterTypes: Array<SelectableValue<FilterByValueType>> = [
+    { label: t('features.transformers.filter-by-value.includes', 'Include'), value: FilterByValueType.include },
+    { label: t('features.transformers.filter-by-value.exclude', 'Exclude'), value: FilterByValueType.exclude },
+  ];
+
+  const filterMatch: Array<SelectableValue<FilterByValueMatch>> = [
+    { label: t('features.transformers.filter-by-value.match-all', 'Match all'), value: FilterByValueMatch.all },
+    { label: t('features.transformers.filter-by-value.match-any', 'Match any'), value: FilterByValueMatch.any },
+  ];
   const { input, options, onChange } = props;
   const styles = getEditorStyles();
   const fieldsInfo = useFieldsInfo(input);
@@ -103,13 +103,17 @@ export const FilterByValueTransformerEditor: React.FC<TransformerUIProps<FilterB
   return (
     <div>
       <div className="gf-form gf-form-inline">
-        <div className="gf-form-label width-8">Filter type</div>
+        <div className="gf-form-label width-8">
+          <Trans i18nKey="features.transformers.filter-by-value.filter-type">Filter type</Trans>
+        </div>
         <div className="width-15">
           <RadioButtonGroup options={filterTypes} value={options.type} onChange={onChangeType} fullWidth />
         </div>
       </div>
       <div className="gf-form gf-form-inline">
-        <div className="gf-form-label width-8">Conditions</div>
+        <div className="gf-form-label width-8">
+          <Trans i18nKey="features.transformers.filter-by-value.conditions">Conditions</Trans>
+        </div>
         <div className="width-15">
           <RadioButtonGroup options={filterMatch} value={options.match} onChange={onChangeMatch} fullWidth />
         </div>
@@ -126,7 +130,7 @@ export const FilterByValueTransformerEditor: React.FC<TransformerUIProps<FilterB
         ))}
         <div className="gf-form">
           <Button icon="plus" size="sm" onClick={onAddFilter} variant="secondary">
-            Add condition
+            <Trans i18nKey="features.transformers.filter-by-value.add-condition">Add condition</Trans>
           </Button>
         </div>
       </div>
@@ -134,6 +138,18 @@ export const FilterByValueTransformerEditor: React.FC<TransformerUIProps<FilterB
   );
 };
 
+export const getFilterByValueTransformRegistryItem = (): TransformerRegistryItem<FilterByValueTransformerOptions> => {
+  return {
+    id: DataTransformerID.filterByValue,
+    editor: FilterByValueTransformerEditor,
+    transformation: standardTransformers.filterByValueTransformer,
+    name: t('features.transformers.filter-by-value.filter-data-by-values', 'Filter data by values'),
+    description: t(
+      'features.transformers.filter-by-value.removes-rows-of-the-query-results',
+      'Removes rows of the query results using user-defined filters. This is useful if you can not filter your data in the data source.'
+    ),
+  };
+};
 export const filterByValueTransformRegistryItem: TransformerRegistryItem<FilterByValueTransformerOptions> = {
   id: DataTransformerID.filterByValue,
   editor: FilterByValueTransformerEditor,

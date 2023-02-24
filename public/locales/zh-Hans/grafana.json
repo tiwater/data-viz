@@ -104,8 +104,10 @@
     "save-dashboard": {
       "a-dashboard-with-the-same-name-in-selected-folder": "选定文件夹中已经存在具有相同名称的看板。",
       "cannot-be-the-same-as-folder-name": "看板名称不能与文件夹名称相同",
+      "changes-label": "更改",
       "conflict": "冲突",
       "dashboard-name": "看板名称",
+      "details-label": "详情",
       "discard": "放弃",
       "do-you-want-to-save-your-changes": "您要保存更改吗？",
       "folder": "文件夹",
@@ -208,6 +210,7 @@
   },
   "features": {
     "alerting": {
+      "add-an-alert": "添加警报",
       "unified": {
         "cannot-create-alerts-from-this-panel": "由于未找到到具有警报功能的数据源的查询，因此无法从此面板创建警报。",
         "dashboard-must-be-saved-before": "在添加警报之前，必须先保存看板。",
@@ -217,8 +220,18 @@
       }
     },
     "dashboard": {
+      "add-a-new-panel": "添加新面板",
+      "add-a-new-row": "添加一行",
+      "add-a-panel-from-the-panel-library": "从面板库中添加面板",
       "add-panel": "添加面板",
       "add-panel-from-panel-library": "从面板库中添加面板",
+      "angular-support-disabled": "角度支持禁用，没有角度支持，旧版提醒无法运行",
+      "annotation": {
+        "apply-button": "应用",
+        "delete-button": "删除",
+        "preview-in-dashboard-button": "在看板预览"
+      },
+      "cancel-loading-dashboard": "取消加载看板",
       "panel-editor": {
         "add-field-override": "添加覆盖字段",
         "add-override-property": "添加覆盖属性",
@@ -249,12 +262,46 @@
         "visualizations": "可视化"
       },
       "panel-title": "面板标题",
+      "paste-panel-from-clipboard": "从剪贴板粘贴面板",
       "row-title": "行标题",
       "save-dashboard": {
         "add-a-note-to-describe-your-changes": "添加一个注释来描述您的更改",
         "no-changes-to-save": "没有可保存的更改",
         "save-current-time-range": "将当前时间范围保存为看板默认值",
         "save-current-variable-values": "将当前变量值保存为看板默认值"
+      },
+      "setting": {
+        "add-ng-alert": "添加 NG 警报",
+        "alerts-are-added-and-configured": "在任何仪表板图形面板的警报标签页中添加和配置警报，使您能够使用现有的查询建立和可视化警报。",
+        "annotations-sub-title": "批注查询返回可视化为整个看板图形中事件标记的事件。",
+        "annotations-title": "说明",
+        "are-you-sure-you-want": "您确定要删除此警报规则吗？",
+        "auto-refresh": "自动刷新",
+        "auto-refresh-description": "定义自动刷新列表中可用的自动刷新间隔。",
+        "close-button": "关闭",
+        "create-alert": "创建警报",
+        "delete-alert": "删除警报",
+        "delete-title": "删除",
+        "edit-alert": "编辑警报",
+        "general-title": "概述",
+        "how-to-add-an-alert": "如何添加警报",
+        "json-model-title": "JSON模型",
+        "links-title": "链接",
+        "make-editable-button": "可编辑",
+        "panel-has-no-alert-rule-defined": "面板没有定义警报规则",
+        "pause-button": "暂停",
+        "permissions-title": "权限",
+        "remember-to-save-the-dashboard": "记住保存看板以保持您的警报规则更改。",
+        "resume-button": "恢复",
+        "settings-text": "设置",
+        "state-history": "状态历史",
+        "states": "状态",
+        "test-rule": "测试规则",
+        "transformations-are-not-supported": "警报查询不支持转换",
+        "variables-sub-title": "变量可以使您的看板更加动态，并作为全局过滤器。",
+        "variables-title": "变量",
+        "versions-title": "版本",
+        "you-need-to-save-dashboard": "您需要保存仪表盘才能使删除生效。"
       },
       "tabs-alert": "警报",
       "tabs-query": "查询",
@@ -308,9 +355,255 @@
       }
     },
     "transformers": {
+      "add-field-from-calculation": {
+        "binary-operation": "二进制操作",
+        "description": "使用行值来计算新字段",
+        "field-name": "字段名",
+        "field-or-number": "字段或数字",
+        "name": "从计算添加字段",
+        "reduce-row": "减少行",
+        "replace-all-fields": "替换所有字段"
+      },
+      "concatenate-fields": "连接字段",
+      "config-from-query": {
+        "apply-to": "应用",
+        "apply-to-options": "应用到选项",
+        "below-the-configuration": "在上面列出的配置下，您会找到字段表。 此处在配置查询返回的数据中找到的所有字段将与**使用作为**和**选择** 选项一起列出。 这个表让您控制哪个字段应该映射到哪个配置属性，以及是否有多行要选择的值。",
+        "config-query": "配置查询",
+        "config-query-result": "配置查询结果",
+        "description": "从数据中设置单元，最小、最大和更多",
+        "each-row-in-the-source": "源数据中的每行都变成一个单独的字段。每个字段现在也有一个最大配置选项集。 诸如**min**、**max**、**unit**和 **theghold**等选项都是字段配置的一部分， 而且，如果他们像这样设置，他们将被可视化使用，而不是被手动配置的任何选项。 n 面板编辑器选项面板。",
+        "field-mapping-table": "字段映射表",
+        "in-the-field-mapping-specify": "在字段映射中指定",
+        "name": "查询结果配置",
+        "options": "选项",
+        "Select-the-query-that": "**配置查询**：选择返回您想要用作配置的数据的查询。",
+        "Select-what-fields": "**应用到**：选择要应用配置的字段或序列号。",
+        "this-transformation-allows": "此转换允许您选择一个查询并从中提取标准选项，例如**Min**， **Max**, **Unit**, 和 **Thresholds** 并应用于其他查询结果。 这将启用动态查询驱动的可视化配置。",
+        "ticos-will-build-the-value": "工单将从您查询结果生成值映射并应用它的真实数据查询结果。 您应该看到根据配置查询结果映射和颜色的值。",
+        "usually-a-field": "**应用于选项**：通常是一个字段类型或字段名正则表达式，取决于您在 **Apply to** 中选择的选项。",
+        "value-mappings": "值映射",
+        "you-can-also-transform": "您也可以将查询结果转换成值映射。 这有点不同，因为配置查询结果中的每一行都用来定义单一的值映射行。 参看下面的例子。"
+      },
+      "convert-field-type": {
+        "description": "将字段转换为指定字段类型",
+        "field": "字段",
+        "input-format": "输入格式",
+        "name": "转换字段类型",
+        "type": "类型"
+      },
+      "create-a-single-line": "在每行创建一个带顶点的单行功能",
+      "create-heatmap": {
+        "description": "从源数据计算热地图",
+        "name": "创建热地图"
+      },
       "editors": {
+        "add-a-label-with-the-frame-name": "添加带框架名称的标签",
+        "combine-all-fields-into-a-single-frame": "将所有字段合并为一个单一帧。值将被附加为未定义的值，如果不是相同的长度。",
+        "copy-frame-name-to-field-name": "将帧名称复制到字段名称",
+        "ignore-the-frame-name": "忽略帧名称",
         "label": "标签",
         "name": "名称"
+      },
+      "extract-fields": {
+        "auto": "自动",
+        "description": "从内容解析字段 (JSON、标签等)",
+        "format": "格式",
+        "name": "提取字段",
+        "replace-all-fields": "替换所有字段",
+        "select-field": "选择字段",
+        "source": "来源"
+      },
+      "field-lookup": {
+        "description": "使用字段值从外部来源查找额外的字段。这目前支持空间数据，但最终将支持更多的格式",
+        "field": "字段",
+        "lookup": "查询",
+        "name": "字段查询",
+        "no-text-fields-found": "未找到文本字段",
+        "select-text-field": "选择文本字段"
+      },
+      "filter-by-name": {
+        "identifier": "标识符",
+        "name": "按名称筛选",
+        "removes-part-of-the-query-results": "使用正则表达式模式删除部分查询结果。模式可以是包容性或排他性的。",
+        "series-ref-id": "系列refID"
+      },
+      "filter-by-value": {
+        "add-condition": "添加条件",
+        "conditions": "条件",
+        "exclude": "排除",
+        "filter-data-by-values": "按值过滤数据",
+        "filter-type": "筛选类型",
+        "includes": "包含",
+        "match-all": "匹配所有",
+        "match-any": "匹配任何",
+        "removes-rows-of-the-query-results": "使用用户定义的过滤器移除查询结果的行数。如果您不能在数据源中过滤您的数据，那么这将是有用的。"
+      },
+      "filter-data-by-query": {
+        "description": "按查询筛选数据。 如果您正在分享一个不同面板的结果，这是有用的，因为它有许多查询，您只想在这个面板中可视化一个子集。",
+        "name": "按查询筛选数据"
+      },
+      "group-by": {
+        "calculate": "计算",
+        "description": "按字段值分组数据，然后处理每个组的计算",
+        "ignored": "忽略",
+        "name": "分组方式",
+        "select-stats": "选择统计"
+      },
+      "grouping-to-matrix": {
+        "boolean-false-value": "布尔值 false",
+        "boolean-true-value": "布尔值 true",
+        "cell-value": "单元格值",
+        "column": "列",
+        "description": "使用三个字段组合并生成一个矩阵表",
+        "empty": "空",
+        "empty string": "空字符串",
+        "empty-value": "空值",
+        "false": "False",
+        "name": "分组到矩阵中",
+        "null": "Null",
+        "null-value": "空值",
+        "row": "行",
+        "true": "True"
+      },
+      "histogram": {
+        "description": "根据输入数据计算直方图",
+        "name": "直方图"
+      },
+      "join-by-field": {
+        "description": "根据两个或多个表格之间的相关字段将行组合在一起。 这可以在 _time_fields 上用于外部加入多个时间序列，以便在一个表中显示多个时间序列.",
+        "drop-rows-that-do": "丢弃所有表格中不匹配值的行",
+        "field": "字段",
+        "inner": "新建的",
+        "keep-all-rows-from": "保留任何表中所有行的一个值",
+        "mode": "模式",
+        "name": "通过字段加入",
+        "outer": "我的",
+        "time": "时间"
+      },
+      "join-by-labels": {
+        "description": "将标签结果平整为一个表格，加上标签",
+        "join": "加入",
+        "name": "通过标签加入",
+        "no-input-found": "未找到输入",
+        "no-labels-found": "未找到标签",
+        "the-input-does-not-contain": "输入中不包含任何标签",
+        "unable-to-join": "无法通过值标签加入",
+        "value": "值"
+      },
+      "labels-to-fields": {
+        "columns": "列",
+        "description": "按时间分组并返回标签或标签作为字段。 用于在表格中显示带标签的时间序列，每个标签键成为一个单独的列",
+        "labels": "标签",
+        "name": "字段标签",
+        "replace-the-value": "用标签替换值字段名称",
+        "rows": "行",
+        "select-label": "(可选) 选择标签"
+      },
+      "limit": {
+        "description": "限制显示的项目数量。",
+        "limit-count": "限制数量",
+        "name": "限制"
+      },
+      "merge": {
+        "description": "合并许多序列/表格，返回一个单一的表格，将可合并的值合并到同一行。 用于在表中显示多个序列、表或两种可视化组合。",
+        "merge-has-no-effect": "当应用于单帧时，合并没有任何效果。",
+        "name": "合并"
+      },
+      "organize-fields": {
+        "description": "允许用户重新排序、隐藏或重命名字段/列。当数据源不允许覆盖可视化数据时有用。",
+        "drag-and-drop-to-reorder": "拖拽以重新排序",
+        "name": "组织字段",
+        "organize-fields-only-works": "组织字段只适用于单个帧。请先应用一个联合转换。",
+        "rename": "重命名"
+      },
+      "partition-by-values": {
+        "description": "将一个单帧数据集分成多个序列，在一个或多个字段中被独特性/枚举值所歧视。",
+        "name": "按值分区",
+        "select-field": "选择字段"
+      },
+      "prepare-time-series": {
+        "all-values-are-numeric": "所有值都是数字",
+        "but-may-have-duplicates": "但可能有重复",
+        "description": "将数据框架从宽格式向长格式扩展。 这确实有助于保持不支持新的宽泛格式的面板的兼容性。",
+        "each-frame-has-two-fields": "每个帧有两个字段：时间、值",
+        "field-is-time-field": "第一个字段是时间字段",
+        "longInfo-description": "将每个帧转换为长格式",
+        "longInfo-name": "长时间序列",
+        "multiInfo-description": "为每个时间/数字对创建一个新框架",
+        "multiInfo-name": "多帧时间序列",
+        "multiple-frames": "多帧",
+        "multiple-value-fields-may-exist": "可能存在多个值字段",
+        "multiple-value-fields-of-any-type": "任何类型的多值字段",
+        "name": "准备时间顺序",
+        "separate-fields-rather": "字符串值代表单独字段而不是标签",
+        "single-frames": "单帧",
+        "string-values-are-represented": "字符串值作为标签显示",
+        "this-takes-query": "这需要查询结果并将其转换成可预测的时间序列格式。",
+        "this-transformer-may": "这种变压器在使用旧面板时可能特别有用，因为旧面板仅仅期望采用多帧时间格式。",
+        "time-in-ascending-order": "按时间升序排序",
+        "wideInfo-description": "创建一个按时间加入的单一帧",
+        "wideInfo-name": "宽时间系列"
+      },
+      "reduce": {
+        "calculations": "计算",
+        "choose-stat": "选择统计",
+        "collapse-each-field-into": "折叠每个字段到单个值",
+        "create-a-table-with-one-row": "为每个序列值创建一个带有一行的表",
+        "include-time": "包含时间",
+        "labels-to-fields": "字段标签",
+        "mode": "模式",
+        "name": "减少",
+        "reduce-all-rows-or-data-points": "使用像最大、最小、平均或最后一个函数将所有行或数据点减少到单个值",
+        "reduce-fields": "减少字段",
+        "series-to-rows": "序列行"
+      },
+      "rename-by-regex": {
+        "invalid-pattern": "无效模式",
+        "match": "匹配",
+        "name": "根据正则表达式重命名",
+        "regular-expression-pattern": "正则表达式模式",
+        "renames-part-of-the-query-result": "使用正则表达式重命名部分查询结果。",
+        "replace": "替换",
+        "replacement-pattern": "替换模式"
+      },
+      "rows-to-fields": {
+        "As-you-can-see-each": "你可以看到源数据中的每一行成为一个单独的字段。每个字段现在也有一个最大配置选项集。 选项 **Min**, **Max**, **单位** 和 **Threshold** 都是字段配置的一部分，如果设置类似，将被可视化使用，而不是在面板编辑器选项面板中手动配置的任何选项。",
+        "description": "将每行转换为带动态配置的字段",
+        "example": "示例",
+        "input": "输入",
+        "name": "字段行",
+        "output": "输出",
+        "this-transforms-rows-into": "这将行变成单独的字段。这可能是有用的，因为字段可以被样式和单独配置，有些行不可用。 它还可以使用其他字段作为动态字段配置的源或将它们映射到字段标签。 然后可以使用附加标签来更好地定义结果字段的显示名称。",
+        "use-cases": "使用案件",
+        "useful-when-visualization-data": "当可视化数据在:"
+      },
+      "series-to-rows": {
+        "description": "合并许多序列，返回一个单个序列，作为列的时间、度量和值。有助于显示表中可视化的多个时间序列。",
+        "name": "序列行"
+      },
+      "sort-by": {
+        "description": "按框架排序字段",
+        "field": "字段",
+        "name": "排序按",
+        "reverse": "反转",
+        "select-field": "选择字段"
+      },
+      "spatial-operations": {
+        "apply-spatial-operations": "将空间操作应用于几何体",
+        "area": "区域",
+        "as-line": "作为行",
+        "calculate-value": "计算值",
+        "create-a-line-between": "在两个点之间创建一条直线",
+        "description": "将空间操作应用于查询结果",
+        "distance": "距离",
+        "heading": "标题",
+        "line-builder": "行生成器",
+        "name": "空间业务",
+        "prepare-spatial-field": "准备空格",
+        "set-a-geometry": "根据其他字段的结果设置几何字段",
+        "transform": "转换",
+        "use-the-geometry": "Use the geometry to define a new field (heading/distance/area)"
       }
     }
   },

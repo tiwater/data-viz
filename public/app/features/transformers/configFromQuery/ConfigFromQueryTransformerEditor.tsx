@@ -10,6 +10,7 @@ import {
   TransformerUIProps,
 } from '@grafana/data';
 import { fieldMatchersUI, InlineField, InlineFieldRow, Select, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { FieldToConfigMappingEditor } from '../fieldToConfigMapping/FieldToConfigMappingEditor';
 
@@ -53,17 +54,21 @@ export function ConfigFromQueryTransformerEditor({ input, onChange, options }: P
   return (
     <>
       <InlineFieldRow>
-        <InlineField label="Config query" labelWidth={20}>
+        <InlineField label={t('features.transformers.config-from-query.config-query', 'Config query')} labelWidth={20}>
           <Select onChange={onRefIdChange} options={refIds} value={currentRefId} width={30} />
         </InlineField>
       </InlineFieldRow>
       <InlineFieldRow>
-        <InlineField label="Apply to" labelWidth={20}>
+        <InlineField label={t('features.transformers.config-from-query.apply-to', 'Apply to')} labelWidth={20}>
           <Select onChange={onMatcherChange} options={matchers} value={currentMatcher.id} width={30} />
         </InlineField>
       </InlineFieldRow>
       <InlineFieldRow>
-        <InlineField label="Apply to options" labelWidth={20} className={styles.matcherOptions}>
+        <InlineField
+          label={t('features.transformers.config-from-query.apply-to-options', 'Apply to options')}
+          labelWidth={20}
+          className={styles.matcherOptions}
+        >
           <matcherUI.component
             matcher={matcherUI.matcher}
             data={input}
@@ -85,6 +90,109 @@ export function ConfigFromQueryTransformerEditor({ input, onChange, options }: P
     </>
   );
 }
+
+export const getConfigFromQueryTransformRegistryItem =
+  (): TransformerRegistryItem<ConfigFromQueryTransformOptions> => ({
+    id: configFromDataTransformer.id,
+    editor: ConfigFromQueryTransformerEditor,
+    transformation: configFromDataTransformer,
+    name: t('features.transformers.config-from-query.name', 'Config from query results'),
+    description: t('features.transformers.config-from-query.description', 'Set unit, min, max and more from data'),
+    state: PluginState.beta,
+    help: `
+### ${t('features.transformers.rows-to-fields.use-cases', 'Use cases')} 
+
+${t(
+  'features.transformers.config-from-query.this-transformation-allows',
+  'This transformation allows you select one query and from it extract standard options such as **Min**, **Max**, **Unit**, and **Thresholds** and apply them to other query results. This enables dynamic query driven visualization configuration.'
+)}
+
+
+### ${t('features.transformers.config-from-query.options', 'Options')} 
+
+- ${t(
+      'features.transformers.config-from-query.Select-the-query-that',
+      '**Config query**: Select the query that returns the data you want to use as configuration.'
+    )} 
+- ${t(
+      'features.transformers.config-from-query.Select-what-fields',
+      '**Apply to**: Select what fields or series to apply the configuration to.'
+    )} 
+- ${t(
+      'features.transformers.config-from-query.usually-a-field',
+      '**Apply to options**: Usually a field type or field name regex depending on what option you selected in **Apply to**.'
+    )} 
+
+
+### ${t('features.transformers.config-from-query.field-mapping-table', 'Field mapping table')} 
+
+${t(
+  'features.transformers.config-from-query.below-the-configuration',
+  'Below the configuration listed above you will find the field table. Here all fields found in the data returned by the config query will be listed along with a **Use as** and **Select** option. This table gives you control over what field should be mapped to which config property and if there are multiple rows which value to select.'
+)}
+
+
+## ${t('features.transformers.rows-to-fields.example', 'Example')}
+
+Input[0] (From query: A, name: ServerA)
+
+| Time          | Value |
+| ------------- | ----- |
+| 1626178119127 | 10    |
+| 1626178119129 | 30    |
+
+Input[1] (From query: B)
+
+| Time          | Value |
+| ------------- | ----- |
+| 1626178119127 | 100   |
+| 1626178119129 | 100   |
+
+${t('features.transformers.rows-to-fields.output', 'Output')}: (Same as Input[0] but now with config on the Value field)
+
+| Time          | Value (config: Max=100) |
+| ------------- | ----------------------- |
+| 1626178119127 | 10                      |
+| 1626178119129 | 30                      |
+
+${t(
+  'features.transformers.config-from-query.each-row-in-the-source',
+  'Each row in the source data becomes a separate field. Each field now also has a maximum configuration option set. Options such as **min**, **max**, **unit**, and **thresholds** are all part of field configuration, and if they are set like this, they will be used by the visualization instead of any options that are manually configured.in the panel editor options pane.'
+)} 
+
+
+## ${t('features.transformers.config-from-query.value-mappings', 'Value mappings')}
+
+${t(
+  'features.transformers.config-from-query.you-can-also-transform',
+  'You can also transform a query result into value mappings. This is is a bit different because every row in the configuration query result is used to define a single value mapping row. See the following example.'
+)} 
+
+
+
+${t('features.transformers.config-from-query.config-query-result', 'Config query result')}:
+
+| Value | Text   | Color |
+| ----- | ------ | ----- |
+| L     | Low    | blue  |
+| M     | Medium | green |
+| H     | High   | red   |
+
+${t('features.transformers.config-from-query.in-the-field-mapping-specify', 'In the field mapping specify')}:
+
+| Field | Use as                  | Select     |
+| ----- | ----------------------- | ---------- |
+| Value | Value mappings / Value  | All values |
+| Text  | Value mappings / Text   | All values |
+| Color | Value mappings / Ciolor | All values |
+
+${t(
+  'features.transformers.config-from-query.ticos-will-build-the-value',
+  'Ticos will build the value mappings from you query result and apply it the the real data query results. You should see values being mapped and colored according to the config query results.'
+)}
+
+`,
+  });
 
 export const configFromQueryTransformRegistryItem: TransformerRegistryItem<ConfigFromQueryTransformOptions> = {
   id: configFromDataTransformer.id,

@@ -11,7 +11,7 @@ import { Icon, IconButton, useStyles2 } from '@grafana/ui';
 import { CardButton } from 'app/core/components/CardButton';
 import config from 'app/core/config';
 import { LS_PANEL_COPY_KEY } from 'app/core/constants';
-import { t } from 'app/core/internationalization';
+import { t, Trans } from 'app/core/internationalization';
 import store from 'app/core/store';
 import { addPanel } from 'app/features/dashboard/state/reducers';
 
@@ -158,7 +158,7 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
                 onCreateNewPanel();
               }}
             >
-              Add a new panel
+              <Trans i18nKey="features.dashboard.add-a-new-panel">Add a new panel</Trans>
             </CardButton>
             <CardButton
               icon="wrap-text"
@@ -168,7 +168,7 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
                 onCreateNewRow();
               }}
             >
-              Add a new row
+              <Trans i18nKey="features.dashboard.add-a-new-row">Add a new row</Trans>
             </CardButton>
             <CardButton
               icon="book-open"
@@ -178,7 +178,9 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
                 setAddPanelView(true);
               }}
             >
-              Add a panel from the panel library
+              <Trans i18nKey="features.dashboard.add-a-panel-from-the-panel-library">
+                Add a panel from the panel library
+              </Trans>
             </CardButton>
             {copiedPanelPlugins.length === 1 && (
               <CardButton
@@ -189,7 +191,7 @@ export const AddPanelWidgetUnconnected = ({ panel, dashboard }: Props) => {
                   onPasteCopiedPanel(copiedPanelPlugins[0]);
                 }}
               >
-                Paste panel from clipboard
+                <Trans i18nKey="features.dashboard.paste-panel-from-clipboard">Paste panel from clipboard</Trans>
               </CardButton>
             )}
           </div>

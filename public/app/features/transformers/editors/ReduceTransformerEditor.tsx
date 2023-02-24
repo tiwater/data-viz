@@ -11,6 +11,7 @@ import {
 import { ReduceTransformerMode, ReduceTransformerOptions } from '@grafana/data/src/transformations/transformers/reduce';
 import { selectors } from '@grafana/e2e-selectors';
 import { LegacyForms, Select, StatsPicker } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 // TODO:  Minimal implementation, needs some <3
 export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransformerOptions>> = ({
@@ -19,14 +20,20 @@ export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransfor
 }) => {
   const modes: Array<SelectableValue<ReduceTransformerMode>> = [
     {
-      label: 'Series to rows',
+      label: t('features.transformers.reduce.series-to-rows', 'Series to rows'),
       value: ReduceTransformerMode.SeriesToRows,
-      description: 'Create a table with one row for each series value',
+      description: t(
+        'features.transformers.reduce.create-a-table-with-one-row',
+        'Create a table with one row for each series value'
+      ),
     },
     {
-      label: 'Reduce fields',
+      label: t('features.transformers.reduce.reduce-fields', 'Reduce fields'),
       value: ReduceTransformerMode.ReduceFields,
-      description: 'Collapse each field into a single value',
+      description: t(
+        'features.transformers.reduce.collapse-each-field-into',
+        'Collapse each field into a single value'
+      ),
     },
   ];
 
@@ -61,7 +68,7 @@ export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransfor
       <div>
         <div className="gf-form gf-form--grow">
           <div className="gf-form-label width-8" aria-label={selectors.components.Transforms.Reduce.modeLabel}>
-            Mode
+            <Trans i18nKey="features.transformers.reduce.mode">Mode</Trans>
           </div>
           <Select
             options={modes}
@@ -74,11 +81,11 @@ export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransfor
       <div className="gf-form-inline">
         <div className="gf-form gf-form--grow">
           <div className="gf-form-label width-8" aria-label={selectors.components.Transforms.Reduce.calculationsLabel}>
-            Calculations
+            <Trans i18nKey="features.transformers.reduce.calculations">Calculations</Trans>
           </div>
           <StatsPicker
             className="flex-grow-1"
-            placeholder="Choose Stat"
+            placeholder={t('features.transformers.reduce.choose-stat', 'Choose Stat')}
             allowMultiple
             stats={options.reducers || []}
             onChange={(stats) => {
@@ -94,7 +101,7 @@ export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransfor
         <div className="gf-form-inline">
           <div className="gf-form">
             <LegacyForms.Switch
-              label="Include time"
+              label={t('features.transformers.reduce.include-time', 'Include time')}
               labelClass="width-8"
               checked={!!options.includeTimeField}
               onChange={onToggleTime}
@@ -106,7 +113,7 @@ export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransfor
         <div className="gf-form-inline">
           <div className="gf-form">
             <LegacyForms.Switch
-              label="Labels to fields"
+              label={t('features.transformers.reduce.labels-to-fields', 'Labels to fields')}
               labelClass="width-8"
               checked={!!options.labelsToFields}
               onChange={onToggleLabels}
@@ -117,6 +124,16 @@ export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransfor
     </>
   );
 };
+export const getReduceTransformRegistryItem = (): TransformerRegistryItem<ReduceTransformerOptions> => ({
+  id: DataTransformerID.reduce,
+  editor: ReduceTransformerEditor,
+  transformation: standardTransformers.reduceTransformer,
+  name: t('features.transformers.reduce.name', 'Reduce'),
+  description: t(
+    'features.transformers.reduce.reduce-all-rows-or-data-points',
+    'Reduce all rows or data points to a single value using a function like max, min, mean or last'
+  ),
+});
 
 export const reduceTransformRegistryItem: TransformerRegistryItem<ReduceTransformerOptions> = {
   id: DataTransformerID.reduce,

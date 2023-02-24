@@ -104,8 +104,10 @@
     "save-dashboard": {
       "a-dashboard-with-the-same-name-in-selected-folder": "",
       "cannot-be-the-same-as-folder-name": "",
+      "changes-label": "",
       "conflict": "",
       "dashboard-name": "",
+      "details-label": "",
       "discard": "",
       "do-you-want-to-save-your-changes": "",
       "folder": "",
@@ -208,6 +210,7 @@
   },
   "features": {
     "alerting": {
+      "add-an-alert": "",
       "unified": {
         "cannot-create-alerts-from-this-panel": "",
         "dashboard-must-be-saved-before": "",
@@ -217,8 +220,18 @@
       }
     },
     "dashboard": {
+      "add-a-new-panel": "",
+      "add-a-new-row": "",
+      "add-a-panel-from-the-panel-library": "",
       "add-panel": "",
       "add-panel-from-panel-library": "",
+      "angular-support-disabled": "",
+      "annotation": {
+        "apply-button": "",
+        "delete-button": "",
+        "preview-in-dashboard-button": ""
+      },
+      "cancel-loading-dashboard": "",
       "panel-editor": {
         "add-field-override": "",
         "add-override-property": "",
@@ -249,12 +262,46 @@
         "visualizations": ""
       },
       "panel-title": "",
+      "paste-panel-from-clipboard": "",
       "row-title": "",
       "save-dashboard": {
         "add-a-note-to-describe-your-changes": "",
         "no-changes-to-save": "",
         "save-current-time-range": "",
         "save-current-variable-values": ""
+      },
+      "setting": {
+        "add-ng-alert": "",
+        "alerts-are-added-and-configured": "",
+        "annotations-sub-title": "",
+        "annotations-title": "",
+        "are-you-sure-you-want": "",
+        "auto-refresh": "",
+        "auto-refresh-description": "",
+        "close-button": "",
+        "create-alert": "",
+        "delete-alert": "",
+        "delete-title": "",
+        "edit-alert": "",
+        "general-title": "",
+        "how-to-add-an-alert": "",
+        "json-model-title": "",
+        "links-title": "",
+        "make-editable-button": "",
+        "panel-has-no-alert-rule-defined": "",
+        "pause-button": "",
+        "permissions-title": "",
+        "remember-to-save-the-dashboard": "",
+        "resume-button": "",
+        "settings-text": "",
+        "state-history": "",
+        "states": "",
+        "test-rule": "",
+        "transformations-are-not-supported": "",
+        "variables-sub-title": "",
+        "variables-title": "",
+        "versions-title": "",
+        "you-need-to-save-dashboard": ""
       },
       "tabs-alert": "",
       "tabs-query": "",
@@ -308,9 +355,255 @@
       }
     },
     "transformers": {
+      "add-field-from-calculation": {
+        "binary-operation": "",
+        "description": "",
+        "field-name": "",
+        "field-or-number": "",
+        "name": "",
+        "reduce-row": "",
+        "replace-all-fields": ""
+      },
+      "concatenate-fields": "",
+      "config-from-query": {
+        "apply-to": "",
+        "apply-to-options": "",
+        "below-the-configuration": "",
+        "config-query": "",
+        "config-query-result": "",
+        "description": "",
+        "each-row-in-the-source": "",
+        "field-mapping-table": "",
+        "in-the-field-mapping-specify": "",
+        "name": "",
+        "options": "",
+        "Select-the-query-that": "",
+        "Select-what-fields": "",
+        "this-transformation-allows": "",
+        "ticos-will-build-the-value": "",
+        "usually-a-field": "",
+        "value-mappings": "",
+        "you-can-also-transform": ""
+      },
+      "convert-field-type": {
+        "description": "",
+        "field": "",
+        "input-format": "",
+        "name": "",
+        "type": ""
+      },
+      "create-a-single-line": "",
+      "create-heatmap": {
+        "description": "",
+        "name": ""
+      },
       "editors": {
+        "add-a-label-with-the-frame-name": "",
+        "combine-all-fields-into-a-single-frame": "",
+        "copy-frame-name-to-field-name": "",
+        "ignore-the-frame-name": "",
         "label": "",
         "name": ""
+      },
+      "extract-fields": {
+        "auto": "",
+        "description": "",
+        "format": "",
+        "name": "",
+        "replace-all-fields": "",
+        "select-field": "",
+        "source": ""
+      },
+      "field-lookup": {
+        "description": "",
+        "field": "",
+        "lookup": "",
+        "name": "",
+        "no-text-fields-found": "",
+        "select-text-field": ""
+      },
+      "filter-by-name": {
+        "identifier": "",
+        "name": "",
+        "removes-part-of-the-query-results": "",
+        "series-ref-id": ""
+      },
+      "filter-by-value": {
+        "add-condition": "",
+        "conditions": "",
+        "exclude": "",
+        "filter-data-by-values": "",
+        "filter-type": "",
+        "includes": "",
+        "match-all": "",
+        "match-any": "",
+        "removes-rows-of-the-query-results": ""
+      },
+      "filter-data-by-query": {
+        "description": "",
+        "name": ""
+      },
+      "group-by": {
+        "calculate": "",
+        "description": "",
+        "ignored": "",
+        "name": "",
+        "select-stats": ""
+      },
+      "grouping-to-matrix": {
+        "boolean-false-value": "",
+        "boolean-true-value": "",
+        "cell-value": "",
+        "column": "",
+        "description": "",
+        "empty": "",
+        "empty string": "",
+        "empty-value": "",
+        "false": "",
+        "name": "",
+        "null": "",
+        "null-value": "",
+        "row": "",
+        "true": ""
+      },
+      "histogram": {
+        "description": "",
+        "name": ""
+      },
+      "join-by-field": {
+        "description": "",
+        "drop-rows-that-do": "",
+        "field": "",
+        "inner": "",
+        "keep-all-rows-from": "",
+        "mode": "",
+        "name": "",
+        "outer": "",
+        "time": ""
+      },
+      "join-by-labels": {
+        "description": "",
+        "join": "",
+        "name": "",
+        "no-input-found": "",
+        "no-labels-found": "",
+        "the-input-does-not-contain": "",
+        "unable-to-join": "",
+        "value": ""
+      },
+      "labels-to-fields": {
+        "columns": "",
+        "description": "",
+        "labels": "",
+        "name": "",
+        "replace-the-value": "",
+        "rows": "",
+        "select-label": ""
+      },
+      "limit": {
+        "description": "",
+        "limit-count": "",
+        "name": ""
+      },
+      "merge": {
+        "description": "",
+        "merge-has-no-effect": "",
+        "name": ""
+      },
+      "organize-fields": {
+        "description": "",
+        "drag-and-drop-to-reorder": "",
+        "name": "",
+        "organize-fields-only-works": "",
+        "rename": ""
+      },
+      "partition-by-values": {
+        "description": "",
+        "name": "",
+        "select-field": ""
+      },
+      "prepare-time-series": {
+        "all-values-are-numeric": "",
+        "but-may-have-duplicates": "",
+        "description": "",
+        "each-frame-has-two-fields": "",
+        "field-is-time-field": "",
+        "longInfo-description": "",
+        "longInfo-name": "",
+        "multiInfo-description": "",
+        "multiInfo-name": "",
+        "multiple-frames": "",
+        "multiple-value-fields-may-exist": "",
+        "multiple-value-fields-of-any-type": "",
+        "name": "",
+        "separate-fields-rather": "",
+        "single-frames": "",
+        "string-values-are-represented": "",
+        "this-takes-query": "",
+        "this-transformer-may": "",
+        "time-in-ascending-order": "",
+        "wideInfo-description": "",
+        "wideInfo-name": ""
+      },
+      "reduce": {
+        "calculations": "",
+        "choose-stat": "",
+        "collapse-each-field-into": "",
+        "create-a-table-with-one-row": "",
+        "include-time": "",
+        "labels-to-fields": "",
+        "mode": "",
+        "name": "",
+        "reduce-all-rows-or-data-points": "",
+        "reduce-fields": "",
+        "series-to-rows": ""
+      },
+      "rename-by-regex": {
+        "invalid-pattern": "",
+        "match": "",
+        "name": "",
+        "regular-expression-pattern": "",
+        "renames-part-of-the-query-result": "",
+        "replace": "",
+        "replacement-pattern": ""
+      },
+      "rows-to-fields": {
+        "As-you-can-see-each": "",
+        "description": "",
+        "example": "",
+        "input": "",
+        "name": "",
+        "output": "",
+        "this-transforms-rows-into": "",
+        "use-cases": "",
+        "useful-when-visualization-data": ""
+      },
+      "series-to-rows": {
+        "description": "",
+        "name": ""
+      },
+      "sort-by": {
+        "description": "",
+        "field": "",
+        "name": "",
+        "reverse": "",
+        "select-field": ""
+      },
+      "spatial-operations": {
+        "apply-spatial-operations": "",
+        "area": "",
+        "as-line": "",
+        "calculate-value": "",
+        "create-a-line-between": "",
+        "description": "",
+        "distance": "",
+        "heading": "",
+        "line-builder": "",
+        "name": "",
+        "prepare-spatial-field": "",
+        "set-a-geometry": "",
+        "transform": "",
+        "use-the-geometry": ""
       }
     }
   },

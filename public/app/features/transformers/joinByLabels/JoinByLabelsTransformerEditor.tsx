@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 
 import { PluginState, SelectableValue, TransformerRegistryItem, TransformerUIProps } from '@grafana/data';
 import { Alert, HorizontalGroup, InlineField, InlineFieldRow, Select, ValuePicker } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { getDistinctLabels } from '../utils';
 
@@ -21,9 +22,20 @@ export function JoinByLabelsTransformerEditor({ input, options, onChange }: Prop
     }
 
     if (!input.length) {
-      warn = <Alert title="No input found">No input (or labels) found</Alert>;
+      warn = (
+        <Alert title={t('features.transformers.join-by-labels.no-input-found', 'No input found')}>
+          {t('features.transformers.join-by-labels.no-input-found', 'No input found')}
+        </Alert>
+      );
     } else if (distinct.size === 0) {
-      warn = <Alert title="No labels found">The input does not contain any labels</Alert>;
+      warn = (
+        <Alert title={t('features.transformers.join-by-labels.no-labels-found', 'No labels found')}>
+          {t(
+            'features.transformers.join-by-labels.the-input-does-not-contain',
+            'The input does not contain any labels'
+          )}
+        </Alert>
+      );
     }
 
     // Show the selected values
@@ -77,7 +89,7 @@ export function JoinByLabelsTransformerEditor({ input, options, onChange }: Prop
   };
 
   const labelWidth = 10;
-  const noOptionsMessage = 'No labels found';
+  const noOptionsMessage = t('features.transformers.join-by-labels.no-labels-found', 'No labels found');
 
   return (
     <div>
@@ -87,7 +99,7 @@ export function JoinByLabelsTransformerEditor({ input, options, onChange }: Prop
         <InlineField
           error="required"
           invalid={!Boolean(options.value?.length)}
-          label={'Value'}
+          label={t('features.transformers.join-by-labels.value', 'Value')}
           labelWidth={labelWidth}
           tooltip="Select the label indicating the values name"
         >
@@ -103,9 +115,9 @@ export function JoinByLabelsTransformerEditor({ input, options, onChange }: Prop
         options.join!.map((v, idx) => (
           <InlineFieldRow key={v + idx}>
             <InlineField
-              label={'Join'}
+              label={t('features.transformers.join-by-labels.join', 'Join')}
               labelWidth={labelWidth}
-              error="Unable to join by the value label"
+              error={t('features.transformers.join-by-labels.unable-to-join', 'Unable to join by the value label')}
               invalid={v === options.value}
             >
               <HorizontalGroup>
@@ -133,7 +145,7 @@ export function JoinByLabelsTransformerEditor({ input, options, onChange }: Prop
         <>
           {Boolean(info.addOptions.length) && (
             <InlineFieldRow>
-              <InlineField label={'Join'} labelWidth={labelWidth}>
+              <InlineField label={t('features.transformers.join-by-labels.join', 'Join')} labelWidth={labelWidth}>
                 <Select
                   options={info.addOptions}
                   placeholder={info.addText}
@@ -148,6 +160,23 @@ export function JoinByLabelsTransformerEditor({ input, options, onChange }: Prop
     </div>
   );
 }
+
+export const getJoinByLabelsTransformRegistryItem = (): TransformerRegistryItem<JoinByLabelsTransformOptions> => ({
+  id: joinByLabelsTransformer.id,
+  editor: JoinByLabelsTransformerEditor,
+  transformation: joinByLabelsTransformer,
+  name: t('features.transformers.join-by-labels.name', 'Join by labels'),
+  description: t(
+    'features.transformers.join-by-labels.description',
+    'Flatten labeled results into a table joined by labels'
+  ),
+  state: PluginState.beta,
+  //   help: `
+  // ### Use cases
+
+  // This transforms labeled results into a table
+  // `,
+});
 
 export const joinByLabelsTransformRegistryItem: TransformerRegistryItem<JoinByLabelsTransformOptions> = {
   id: joinByLabelsTransformer.id,

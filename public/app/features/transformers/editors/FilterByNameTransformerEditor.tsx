@@ -12,6 +12,7 @@ import {
 } from '@grafana/data';
 import { FilterFieldsByNameTransformerOptions } from '@grafana/data/src/transformations/transformers/filterByName';
 import { Field, Input, FilterPill, HorizontalGroup } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 interface FilterByNameTransformerEditorProps extends TransformerUIProps<FilterFieldsByNameTransformerOptions> {}
 
@@ -165,7 +166,9 @@ export class FilterByNameTransformerEditor extends React.PureComponent<
     return (
       <div className="gf-form-inline">
         <div className="gf-form gf-form--grow">
-          <div className="gf-form-label width-8">Identifier</div>
+          <div className="gf-form-label width-8">
+            <Trans i18nKey="features.transformers.filter-by-name.identifier">Identifier</Trans>
+          </div>
           <HorizontalGroup spacing="xs" align="flex-start" wrap>
             <Field
               invalid={!isRegexValid}
@@ -202,6 +205,17 @@ export class FilterByNameTransformerEditor extends React.PureComponent<
     );
   }
 }
+export const getFilterFieldsByNameTransformRegistryItem =
+  (): TransformerRegistryItem<FilterFieldsByNameTransformerOptions> => ({
+    id: DataTransformerID.filterFieldsByName,
+    editor: FilterByNameTransformerEditor,
+    transformation: standardTransformers.filterFieldsByNameTransformer,
+    name: t('features.transformers.filter-by-name.name', 'Filter by name'),
+    description: t(
+      'features.transformers.filter-by-name.removes-part-of-the-query-results',
+      'Removes part of the query results using a regex pattern. The pattern can be inclusive or exclusive.'
+    ),
+  });
 
 export const filterFieldsByNameTransformRegistryItem: TransformerRegistryItem<FilterFieldsByNameTransformerOptions> = {
   id: DataTransformerID.filterFieldsByName,

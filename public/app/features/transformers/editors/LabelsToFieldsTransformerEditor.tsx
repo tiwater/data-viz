@@ -13,17 +13,17 @@ import {
 } from '@grafana/data/src/transformations/transformers/labelsToFields';
 import { Stack } from '@grafana/experimental';
 import { InlineField, InlineFieldRow, RadioButtonGroup, Select, FilterPill } from '@grafana/ui';
-
-const modes: Array<SelectableValue<LabelsToFieldsMode>> = [
-  { value: LabelsToFieldsMode.Columns, label: 'Columns' },
-  { value: LabelsToFieldsMode.Rows, label: 'Rows' },
-];
+import { t } from 'app/core/internationalization';
 
 export const LabelsAsFieldsTransformerEditor: React.FC<TransformerUIProps<LabelsToFieldsOptions>> = ({
   input,
   options,
   onChange,
 }) => {
+  const modes: Array<SelectableValue<LabelsToFieldsMode>> = [
+    { value: LabelsToFieldsMode.Columns, label: t('features.transformers.labels-to-fields.columns', 'Columns') },
+    { value: LabelsToFieldsMode.Rows, label: t('features.transformers.labels-to-fields.rows', 'Rows') },
+  ];
   const labelWidth = 20;
 
   const { labelNames, selected } = useMemo(() => {
@@ -79,7 +79,7 @@ export const LabelsAsFieldsTransformerEditor: React.FC<TransformerUIProps<Labels
         </InlineField>
       </InlineFieldRow>
       <InlineFieldRow>
-        <InlineField label={'Labels'} labelWidth={labelWidth}>
+        <InlineField label={t('features.transformers.labels-to-fields.labels', 'Labels')} labelWidth={labelWidth}>
           <Stack gap={1} wrap>
             {labelNames.map((o, i) => {
               const label = o.label!;
@@ -100,14 +100,17 @@ export const LabelsAsFieldsTransformerEditor: React.FC<TransformerUIProps<Labels
           <InlineField
             label={'Value field name'}
             labelWidth={labelWidth}
-            tooltip="Replace the value field name with a label"
+            tooltip={t(
+              'features.transformers.labels-to-fields.replace-the-value',
+              'Replace the value field name with a label'
+            )}
             htmlFor="labels-to-fields-as-name"
           >
             <Select
               inputId="labels-to-fields-as-name"
               isClearable={true}
               allowCustomValue={false}
-              placeholder="(Optional) Select label"
+              placeholder={t('features.transformers.labels-to-fields.select-label', '(Optional) Select label')}
               options={labelNames}
               value={options?.valueLabel}
               onChange={onValueLabelChange}
@@ -119,6 +122,17 @@ export const LabelsAsFieldsTransformerEditor: React.FC<TransformerUIProps<Labels
     </div>
   );
 };
+
+export const getLabelsToFieldsTransformerRegistryItem = (): TransformerRegistryItem<LabelsToFieldsOptions> => ({
+  id: DataTransformerID.labelsToFields,
+  editor: LabelsAsFieldsTransformerEditor,
+  transformation: standardTransformers.labelsToFieldsTransformer,
+  name: t('features.transformers.labels-to-fields.name', 'Labels to fields'),
+  description: t(
+    'features.transformers.labels-to-fields.description',
+    'Groups series by time and return labels or tags as fields. Useful for showing time series with labels in a table where each label key becomes a separate column'
+  ),
+});
 
 export const labelsToFieldsTransformerRegistryItem: TransformerRegistryItem<LabelsToFieldsOptions> = {
   id: DataTransformerID.labelsToFields,

@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import Highlighter from 'react-highlight-words';
 
 import { Icon, Button, LinkButton, Card } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 import { AlertRule } from '../../types';
 
@@ -47,10 +48,12 @@ const AlertRuleItem = ({ rule, search, onTogglePause }: Props) => {
           icon={rule.state === 'paused' ? 'play' : 'pause'}
           onClick={onTogglePause}
         >
-          {rule.state === 'paused' ? 'Resume' : 'Pause'}
+          {rule.state === 'paused'
+            ? t('features.dashboard.setting.resume-button', 'Resume')
+            : t('features.dashboard.setting.pause-button', 'Pause')}
         </Button>
         <LinkButton key="edit" variant="secondary" href={ruleUrl} icon="cog">
-          Edit alert
+          <Trans i18nKey="features.dashboard.setting.edit-alert">Edit alert</Trans>
         </LinkButton>
       </Card.Actions>
     </Card>

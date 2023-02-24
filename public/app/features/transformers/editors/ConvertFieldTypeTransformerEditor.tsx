@@ -16,6 +16,7 @@ import {
 } from '@grafana/data/src/transformations/transformers/convertFieldType';
 import { Button, InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
 import { FieldNamePicker } from '@grafana/ui/src/components/MatchersUI/FieldNamePicker';
+import { t, Trans } from 'app/core/internationalization';
 
 const fieldNamePickerSettings: StandardEditorsRegistryItem<string, FieldNamePickerConfigSettings> = {
   settings: { width: 24 },
@@ -97,7 +98,7 @@ export const ConvertFieldTypeTransformerEditor = ({
       {options.conversions.map((c: ConvertFieldTypeOptions, idx: number) => {
         return (
           <InlineFieldRow key={`${c.targetField}-${idx}`}>
-            <InlineField label={'Field'}>
+            <InlineField label={t('features.transformers.convert-field-type.field', 'Field')}>
               <FieldNamePicker
                 context={{ data: input }}
                 value={c.targetField ?? ''}
@@ -109,14 +110,14 @@ export const ConvertFieldTypeTransformerEditor = ({
               <Select
                 options={allTypes}
                 value={c.destinationType}
-                placeholder={'Type'}
+                placeholder={t('features.transformers.convert-field-type.type', 'Type')}
                 onChange={onSelectDestinationType(idx)}
                 width={18}
               />
             </InlineField>
             {c.destinationType === FieldType.time && (
               <InlineField
-                label="Input format"
+                label={t('features.transformers.convert-field-type.input-format', 'Input format')}
                 tooltip="Specify the format of the input field so Grafana can parse the date string correctly."
               >
                 <Input value={c.dateFormat} placeholder={'e.g. YYYY-MM-DD'} onChange={onInputFormat(idx)} width={24} />
@@ -139,11 +140,20 @@ export const ConvertFieldTypeTransformerEditor = ({
         variant="secondary"
         aria-label={'Add a convert field type transformer'}
       >
-        {'Convert field type'}
+        <Trans i18nKey="features.transformers.convert-field-type.name">Convert field type</Trans>
       </Button>
     </>
   );
 };
+
+export const getConvertFieldTypeTransformRegistryItem =
+  (): TransformerRegistryItem<ConvertFieldTypeTransformerOptions> => ({
+    id: DataTransformerID.convertFieldType,
+    editor: ConvertFieldTypeTransformerEditor,
+    transformation: standardTransformers.convertFieldTypeTransformer,
+    name: t('features.transformers.convert-field-type.name', 'Convert field type'),
+    description: t('features.transformers.convert-field-type.description', 'Convert a field to a specified field type'),
+  });
 
 export const convertFieldTypeTransformRegistryItem: TransformerRegistryItem<ConvertFieldTypeTransformerOptions> = {
   id: DataTransformerID.convertFieldType,

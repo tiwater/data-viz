@@ -12,6 +12,7 @@ import {
 import { createOrderFieldsComparer } from '@grafana/data/src/transformations/transformers/order';
 import { OrganizeFieldsTransformerOptions } from '@grafana/data/src/transformations/transformers/organize';
 import { Input, IconButton, Icon, FieldValidationMessage, useStyles2 } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 import { useAllFieldNamesFromDataFrames } from '../utils';
 
@@ -75,7 +76,9 @@ const OrganizeFieldsTransformerEditor: React.FC<OrganizeFieldsTransformerEditorP
   if (input.length > 1) {
     return (
       <FieldValidationMessage>
-        Organize fields only works with a single frame. Consider applying a join transformation first.
+        <Trans i18nKey="features.transformers.organize-fields.organize-fields-only-works">
+          Organize fields only works with a single frame. Consider applying a join transformation first.
+        </Trans>
       </FieldValidationMessage>
     );
   }
@@ -135,7 +138,7 @@ const DraggableFieldName = ({
             <div className="gf-form-label gf-form-label--justify-left width-30">
               <Icon
                 name="draggabledots"
-                title="Drag and drop to reorder"
+                title={t('features.transformers.organize-fields.drag-and-drop-to-reorder', 'Drag and drop to reorder')}
                 size="lg"
                 className={styles.draggable}
                 {...provided.dragHandleProps}
@@ -153,7 +156,7 @@ const DraggableFieldName = ({
             <Input
               className="flex-grow-1"
               defaultValue={renamedFieldName || ''}
-              placeholder={`Rename ${fieldName}`}
+              placeholder={`${t('features.transformers.organize-fields.rename', 'Rename')} ${fieldName}`}
               onBlur={(event) => onRenameField(fieldName, event.currentTarget.value)}
             />
           </div>
@@ -204,6 +207,17 @@ const orderFieldNamesByIndex = (fieldNames: string[], indexByName: Record<string
   return fieldNames.sort(comparer);
 };
 
+export const getOrganizeFieldsTransformRegistryItem =
+  (): TransformerRegistryItem<OrganizeFieldsTransformerOptions> => ({
+    id: DataTransformerID.organize,
+    editor: OrganizeFieldsTransformerEditor,
+    transformation: standardTransformers.organizeFieldsTransformer,
+    name: t('features.transformers.organize-fields.name', 'Organize fields'),
+    description: t(
+      'features.transformers.organize-fields.description',
+      "Allows the user to re-order, hide, or rename fields / columns. Useful when data source doesn't allow overrides for visualizing data."
+    ),
+  });
 export const organizeFieldsTransformRegistryItem: TransformerRegistryItem<OrganizeFieldsTransformerOptions> = {
   id: DataTransformerID.organize,
   editor: OrganizeFieldsTransformerEditor,

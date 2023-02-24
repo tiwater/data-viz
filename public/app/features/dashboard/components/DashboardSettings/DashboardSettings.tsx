@@ -8,6 +8,7 @@ import { Button, PageToolbar } from '@grafana/ui';
 import { AppChromeUpdate } from 'app/core/components/AppChrome/AppChromeUpdate';
 import { Page } from 'app/core/components/PageNew/Page';
 import config from 'app/core/config';
+import { t, Trans } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 import { AccessControlAction } from 'app/types';
 import { DashboardMetaChangedEvent } from 'app/types/events';
@@ -60,7 +61,7 @@ export function DashboardSettings({ dashboard, editview, pageNav, sectionNav }: 
   const actions = [
     config.featureToggles.topnav && (
       <Button variant="secondary" key="close" fill="outline" size={size} onClick={onClose}>
-        Close
+        <Trans i18nKey="features.dashboard.setting.close-button">Close</Trans>
       </Button>
     ),
     canSaveAs && (
@@ -101,24 +102,29 @@ function getSettingsPages(dashboard: DashboardModel) {
     });
 
     pages.push({
-      title: 'Annotations',
+      title: t('features.dashboard.setting.annotations-title', 'Annotations'),
       id: 'annotations',
       icon: 'comment-alt',
       component: AnnotationsSettings,
-      subTitle:
-        'Annotation queries return events that can be visualized as event markers in graphs across the dashboard.',
+      subTitle: t(
+        'features.dashboard.setting.annotations-sub-title',
+        'Annotation queries return events that can be visualized as event markers in graphs across the dashboard.'
+      ),
     });
 
     pages.push({
-      title: 'Variables',
+      title: t('features.dashboard.setting.variables-title', 'Variables'),
       id: 'templating',
       icon: 'calculator-alt',
       component: VariableEditorContainer,
-      subTitle: 'Variables can make your dashboard more dynamic and act as global filters.',
+      subTitle: t(
+        'features.dashboard.setting.variables-sub-title',
+        'Variables can make your dashboard more dynamic and act as global filters.'
+      ),
     });
 
     pages.push({
-      title: 'Links',
+      title: t('features.dashboard.setting.links-title', 'Links'),
       id: 'links',
       icon: 'link',
       component: LinksSettings,
@@ -127,7 +133,7 @@ function getSettingsPages(dashboard: DashboardModel) {
 
   if (dashboard.meta.canMakeEditable) {
     pages.push({
-      title: 'General',
+      title: t('features.dashboard.setting.general-title', 'General'),
       icon: 'sliders-v-alt',
       id: 'settings',
       component: MakeEditable,
@@ -136,7 +142,7 @@ function getSettingsPages(dashboard: DashboardModel) {
 
   if (dashboard.id && dashboard.meta.canSave) {
     pages.push({
-      title: 'Versions',
+      title: t('features.dashboard.setting.versions-title', 'Versions'),
       id: 'versions',
       icon: 'history',
       component: VersionsSettings,
@@ -146,14 +152,14 @@ function getSettingsPages(dashboard: DashboardModel) {
   if (dashboard.id && dashboard.meta.canAdmin) {
     if (!config.rbacEnabled) {
       pages.push({
-        title: 'Permissions',
+        title: t('features.dashboard.setting.permissions-title', 'Permissions'),
         id: 'permissions',
         icon: 'lock',
         component: DashboardPermissions,
       });
     } else if (contextSrv.hasPermission(AccessControlAction.DashboardsPermissionsRead)) {
       pages.push({
-        title: 'Permissions',
+        title: t('features.dashboard.setting.permissions-title', 'Permissions'),
         id: 'permissions',
         icon: 'lock',
         component: AccessControlDashboardPermissions,
@@ -162,7 +168,7 @@ function getSettingsPages(dashboard: DashboardModel) {
   }
 
   pages.push({
-    title: 'JSON Model',
+    title: t('features.dashboard.setting.json-model-title', 'JSON Model'),
     id: 'dashboard_json',
     icon: 'arrow',
     component: JsonEditorSettings,
@@ -179,7 +185,7 @@ function getSectionNav(
   location: H.Location
 ): NavModel {
   const main: NavModelItem = {
-    text: 'Settings',
+    text: t('features.dashboard.setting.settings-text', 'Settings'),
     children: [],
     icon: 'apps',
     hideFromBreadcrumbs: true,
@@ -223,7 +229,7 @@ function MakeEditable({ dashboard, sectionNav }: SettingsPageProps) {
     <Page navModel={sectionNav}>
       <div className="dashboard-settings__header">Dashboard not editable</div>
       <Button type="submit" onClick={() => dashboard.makeEditable()}>
-        Make editable
+        <Trans i18nKey="features.dashboard.setting.make-editable-button">Make editable</Trans>
       </Button>
     </Page>
   );

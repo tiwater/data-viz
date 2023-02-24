@@ -104,8 +104,10 @@
     "save-dashboard": {
       "a-dashboard-with-the-same-name-in-selected-folder": "Å đäşĥþőäřđ ŵįŧĥ ŧĥę şämę ŉämę įŉ şęľęčŧęđ ƒőľđęř äľřęäđy ęχįşŧş.",
       "cannot-be-the-same-as-folder-name": "Đäşĥþőäřđ ŉämę čäŉŉőŧ þę ŧĥę şämę äş ƒőľđęř ŉämę",
+      "changes-label": "Cĥäŉģęş",
       "conflict": "Cőŉƒľįčŧ",
       "dashboard-name": "Đäşĥþőäřđ ŉämę",
+      "details-label": "Đęŧäįľş",
       "discard": "Đįşčäřđ",
       "do-you-want-to-save-your-changes": "Đő yőū ŵäŉŧ ŧő şävę yőūř čĥäŉģęş?",
       "folder": "Főľđęř",
@@ -208,6 +210,7 @@
   },
   "features": {
     "alerting": {
+      "add-an-alert": "Åđđįŉģ äŉ Åľęřŧ",
       "unified": {
         "cannot-create-alerts-from-this-panel": "Cäŉŉőŧ čřęäŧę äľęřŧş ƒřőm ŧĥįş päŉęľ þęčäūşę ŉő qūęřy ŧő äŉ äľęřŧįŉģ čäpäþľę đäŧäşőūřčę įş ƒőūŉđ.",
         "dashboard-must-be-saved-before": "Đäşĥþőäřđ mūşŧ þę şävęđ þęƒőřę äľęřŧş čäŉ þę äđđęđ.",
@@ -217,8 +220,18 @@
       }
     },
     "dashboard": {
+      "add-a-new-panel": "Åđđ ä ŉęŵ päŉęľ",
+      "add-a-new-row": "Åđđ ä ŉęŵ řőŵ",
+      "add-a-panel-from-the-panel-library": "Åđđ ä päŉęľ ƒřőm ŧĥę päŉęľ ľįþřäřy",
       "add-panel": "Åđđ päŉęľ",
       "add-panel-from-panel-library": "Åđđ päŉęľ ƒřőm päŉęľ ľįþřäřy",
+      "angular-support-disabled": "Åŉģūľäř şūppőřŧ đįşäþľęđ, ľęģäčy äľęřŧįŉģ čäŉŉőŧ ƒūŉčŧįőŉ ŵįŧĥőūŧ äŉģūľäř şūppőřŧ",
+      "annotation": {
+        "apply-button": "Åppľy",
+        "delete-button": "Đęľęŧę",
+        "preview-in-dashboard-button": "Přęvįęŵ įŉ đäşĥþőäřđ"
+      },
+      "cancel-loading-dashboard": "Cäŉčęľ ľőäđįŉģ đäşĥþőäřđ",
       "panel-editor": {
         "add-field-override": "Åđđ ƒįęľđ ővęřřįđę",
         "add-override-property": "Åđđ ővęřřįđę přőpęřŧy",
@@ -249,12 +262,46 @@
         "visualizations": "Vįşūäľįžäŧįőŉş"
       },
       "panel-title": "Päŉęľ Ŧįŧľę",
+      "paste-panel-from-clipboard": "Päşŧę päŉęľ ƒřőm čľįpþőäřđ",
       "row-title": "Ŗőŵ Ŧįŧľę",
       "save-dashboard": {
         "add-a-note-to-describe-your-changes": "Åđđ ä ŉőŧę ŧő đęşčřįþę yőūř čĥäŉģęş",
         "no-changes-to-save": "Ńő čĥäŉģęş ŧő şävę",
         "save-current-time-range": "Ŝävę čūřřęŉŧ ŧįmę řäŉģę äş đäşĥþőäřđ đęƒäūľŧ",
         "save-current-variable-values": "Ŝävę čūřřęŉŧ väřįäþľę väľūęş äş đäşĥþőäřđ đęƒäūľŧ"
+      },
+      "setting": {
+        "add-ng-alert": "Åđđ ŃĞ Åľęřŧ",
+        "alerts-are-added-and-configured": "Åľęřŧş äřę äđđęđ äŉđ čőŉƒįģūřęđ įŉ ŧĥę Åľęřŧ ŧäþ őƒ äŉy đäşĥþőäřđ ģřäpĥ päŉęľ, ľęŧŧįŉģ yőū þūįľđ äŉđ vįşūäľįžę äŉ äľęřŧ ūşįŉģ ęχįşŧįŉģ qūęřįęş.",
+        "annotations-sub-title": "Åŉŉőŧäŧįőŉ qūęřįęş řęŧūřŉ ęvęŉŧş ŧĥäŧ čäŉ þę vįşūäľįžęđ äş ęvęŉŧ mäřĸęřş įŉ ģřäpĥş äčřőşş ŧĥę đäşĥþőäřđ.",
+        "annotations-title": "Åŉŉőŧäŧįőŉş",
+        "are-you-sure-you-want": "Åřę yőū şūřę yőū ŵäŉŧ ŧő đęľęŧę ŧĥįş äľęřŧ řūľę?",
+        "auto-refresh": "Åūŧő řęƒřęşĥ",
+        "auto-refresh-description": "Đęƒįŉę ŧĥę äūŧő řęƒřęşĥ įŉŧęřväľş ŧĥäŧ şĥőūľđ þę äväįľäþľę įŉ ŧĥę äūŧő řęƒřęşĥ ľįşŧ.",
+        "close-button": "Cľőşę",
+        "create-alert": "Cřęäŧę Åľęřŧ",
+        "delete-alert": "Đęľęŧę äľęřŧ",
+        "delete-title": "Đęľęŧę",
+        "edit-alert": "Ēđįŧ äľęřŧ",
+        "general-title": "Ğęŉęřäľ",
+        "how-to-add-an-alert": "Ħőŵ ŧő äđđ äŉ äľęřŧ",
+        "json-model-title": "ĴŜØŃ Mőđęľ",
+        "links-title": "Ŀįŉĸş",
+        "make-editable-button": "Mäĸę ęđįŧäþľę",
+        "panel-has-no-alert-rule-defined": "Päŉęľ ĥäş ŉő äľęřŧ řūľę đęƒįŉęđ",
+        "pause-button": "Päūşę",
+        "permissions-title": "Pęřmįşşįőŉş",
+        "remember-to-save-the-dashboard": "Ŗęmęmþęř ŧő şävę ŧĥę đäşĥþőäřđ ŧő pęřşįşŧ yőūř äľęřŧ řūľę čĥäŉģęş.",
+        "resume-button": "Ŗęşūmę",
+        "settings-text": "Ŝęŧŧįŉģş",
+        "state-history": "Ŝŧäŧę ĥįşŧőřy",
+        "states": "Ŝŧäŧęş",
+        "test-rule": "Ŧęşŧ řūľę",
+        "transformations-are-not-supported": "Ŧřäŉşƒőřmäŧįőŉş äřę ŉőŧ şūppőřŧęđ įŉ äľęřŧ qūęřįęş",
+        "variables-sub-title": "Väřįäþľęş čäŉ mäĸę yőūř đäşĥþőäřđ mőřę đyŉämįč äŉđ äčŧ äş ģľőþäľ ƒįľŧęřş.",
+        "variables-title": "Väřįäþľęş",
+        "versions-title": "Vęřşįőŉş",
+        "you-need-to-save-dashboard": "Ÿőū ŉęęđ ŧő şävę đäşĥþőäřđ ƒőř ŧĥę đęľęŧę ŧő ŧäĸę ęƒƒęčŧ."
       },
       "tabs-alert": "Åľęřŧ",
       "tabs-query": "Qūęřy",
@@ -308,9 +355,255 @@
       }
     },
     "transformers": {
+      "add-field-from-calculation": {
+        "binary-operation": "ßįŉäřy őpęřäŧįőŉ",
+        "description": "Ůşę ŧĥę řőŵ väľūęş ŧő čäľčūľäŧę ä ŉęŵ ƒįęľđ",
+        "field-name": "Fįęľđ ŉämę",
+        "field-or-number": "Fįęľđ őř ŉūmþęř",
+        "name": "Åđđ ƒįęľđ ƒřőm čäľčūľäŧįőŉ",
+        "reduce-row": "Ŗęđūčę řőŵ",
+        "replace-all-fields": "Ŗępľäčę äľľ ƒįęľđş"
+      },
+      "concatenate-fields": "Cőŉčäŧęŉäŧę ƒįęľđş",
+      "config-from-query": {
+        "apply-to": "Åppľy ŧő",
+        "apply-to-options": "Åppľy ŧő őpŧįőŉş",
+        "below-the-configuration": "ßęľőŵ ŧĥę čőŉƒįģūřäŧįőŉ ľįşŧęđ äþővę yőū ŵįľľ ƒįŉđ ŧĥę ƒįęľđ ŧäþľę. Ħęřę äľľ ƒįęľđş ƒőūŉđ įŉ ŧĥę đäŧä řęŧūřŉęđ þy ŧĥę čőŉƒįģ qūęřy ŵįľľ þę ľįşŧęđ äľőŉģ ŵįŧĥ ä **Ůşę äş** äŉđ **Ŝęľęčŧ** őpŧįőŉ. Ŧĥįş ŧäþľę ģįvęş yőū čőŉŧřőľ ővęř ŵĥäŧ ƒįęľđ şĥőūľđ þę mäppęđ ŧő ŵĥįčĥ čőŉƒįģ přőpęřŧy äŉđ įƒ ŧĥęřę äřę mūľŧįpľę řőŵş ŵĥįčĥ väľūę ŧő şęľęčŧ.",
+        "config-query": "Cőŉƒįģ qūęřy",
+        "config-query-result": "Cőŉƒįģ qūęřy řęşūľŧ",
+        "description": "Ŝęŧ ūŉįŧ, mįŉ, mäχ äŉđ mőřę ƒřőm đäŧä",
+        "each-row-in-the-source": "Ēäčĥ řőŵ įŉ ŧĥę şőūřčę đäŧä þęčőmęş ä şępäřäŧę ƒįęľđ. Ēäčĥ ƒįęľđ ŉőŵ äľşő ĥäş ä mäχįmūm čőŉƒįģūřäŧįőŉ őpŧįőŉ şęŧ. Øpŧįőŉş şūčĥ äş **mįŉ**, **mäχ**, **ūŉįŧ**, äŉđ **ŧĥřęşĥőľđş** äřę äľľ päřŧ őƒ ƒįęľđ čőŉƒįģūřäŧįőŉ, äŉđ įƒ ŧĥęy äřę şęŧ ľįĸę ŧĥįş, ŧĥęy ŵįľľ þę ūşęđ þy ŧĥę vįşūäľįžäŧįőŉ įŉşŧęäđ őƒ äŉy őpŧįőŉş ŧĥäŧ äřę mäŉūäľľy čőŉƒįģūřęđ.įŉ ŧĥę päŉęľ ęđįŧőř őpŧįőŉş päŉę.",
+        "field-mapping-table": "Fįęľđ mäppįŉģ ŧäþľę",
+        "in-the-field-mapping-specify": "Ĩŉ ŧĥę ƒįęľđ mäppįŉģ şpęčįƒy",
+        "name": "Cőŉƒįģ ƒřőm qūęřy řęşūľŧş",
+        "options": "Øpŧįőŉş",
+        "Select-the-query-that": "**Cőŉƒįģ qūęřy**: Ŝęľęčŧ ŧĥę qūęřy ŧĥäŧ řęŧūřŉş ŧĥę đäŧä yőū ŵäŉŧ ŧő ūşę äş čőŉƒįģūřäŧįőŉ.",
+        "Select-what-fields": "**Åppľy ŧő**: Ŝęľęčŧ ŵĥäŧ ƒįęľđş őř şęřįęş ŧő äppľy ŧĥę čőŉƒįģūřäŧįőŉ ŧő.",
+        "this-transformation-allows": "Ŧĥįş ŧřäŉşƒőřmäŧįőŉ äľľőŵş yőū şęľęčŧ őŉę qūęřy äŉđ ƒřőm įŧ ęχŧřäčŧ şŧäŉđäřđ őpŧįőŉş şūčĥ äş **Mįŉ**, **Mäχ**, **Ůŉįŧ**, äŉđ **Ŧĥřęşĥőľđş** äŉđ äppľy ŧĥęm ŧő őŧĥęř qūęřy řęşūľŧş. Ŧĥįş ęŉäþľęş đyŉämįč qūęřy đřįvęŉ vįşūäľįžäŧįőŉ čőŉƒįģūřäŧįőŉ.",
+        "ticos-will-build-the-value": "Ŧįčőş ŵįľľ þūįľđ ŧĥę väľūę mäppįŉģş ƒřőm yőū qūęřy řęşūľŧ äŉđ äppľy įŧ ŧĥę ŧĥę řęäľ đäŧä qūęřy řęşūľŧş. Ÿőū şĥőūľđ şęę väľūęş þęįŉģ mäppęđ äŉđ čőľőřęđ äččőřđįŉģ ŧő ŧĥę čőŉƒįģ qūęřy řęşūľŧş.",
+        "usually-a-field": "**Åppľy ŧő őpŧįőŉş**: Ůşūäľľy ä ƒįęľđ ŧypę őř ƒįęľđ ŉämę řęģęχ đępęŉđįŉģ őŉ ŵĥäŧ őpŧįőŉ yőū şęľęčŧęđ įŉ **Åppľy ŧő**.",
+        "value-mappings": "Väľūę mäppįŉģş",
+        "you-can-also-transform": "Ÿőū čäŉ äľşő ŧřäŉşƒőřm ä qūęřy řęşūľŧ įŉŧő väľūę mäppįŉģş. Ŧĥįş įş įş ä þįŧ đįƒƒęřęŉŧ þęčäūşę ęvęřy řőŵ įŉ ŧĥę čőŉƒįģūřäŧįőŉ qūęřy řęşūľŧ įş ūşęđ ŧő đęƒįŉę ä şįŉģľę väľūę mäppįŉģ řőŵ. Ŝęę ŧĥę ƒőľľőŵįŉģ ęχämpľę."
+      },
+      "convert-field-type": {
+        "description": "Cőŉvęřŧ ä ƒįęľđ ŧő ä şpęčįƒįęđ ƒįęľđ ŧypę",
+        "field": "Fįęľđ",
+        "input-format": "Ĩŉpūŧ ƒőřmäŧ",
+        "name": "Cőŉvęřŧ ƒįęľđ ŧypę",
+        "type": "Ŧypę"
+      },
+      "create-a-single-line": "Cřęäŧę ä şįŉģľę ľįŉę ƒęäŧūřę ŵįŧĥ ä vęřŧęχ äŧ ęäčĥ řőŵ",
+      "create-heatmap": {
+        "description": "čäľčūľäŧę ĥęäŧmäp ƒřőm şőūřčę đäŧä",
+        "name": "Cřęäŧę ĥęäŧmäp"
+      },
       "editors": {
+        "add-a-label-with-the-frame-name": "Åđđ ä ľäþęľ ŵįŧĥ ŧĥę ƒřämę ŉämę",
+        "combine-all-fields-into-a-single-frame": "Cőmþįŉę äľľ ƒįęľđş įŉŧő ä şįŉģľę ƒřämę.  Väľūęş ŵįľľ þę äppęŉđęđ ŵįŧĥ ūŉđęƒįŉęđ väľūęş įƒ ŉőŧ ŧĥę şämę ľęŉģŧĥ.",
+        "copy-frame-name-to-field-name": "Cőpy ƒřämę ŉämę ŧő ƒįęľđ ŉämę",
+        "ignore-the-frame-name": "Ĩģŉőřę ŧĥę ƒřämę ŉämę",
         "label": "Ŀäþęľ",
         "name": "Ńämę"
+      },
+      "extract-fields": {
+        "auto": "Åūŧő",
+        "description": "Päřşę ƒįęľđş ƒřőm čőŉŧęŉŧ (ĴŜØŃ, ľäþęľş, ęŧč)",
+        "format": "Főřmäŧ",
+        "name": "Ēχŧřäčŧ ƒįęľđş",
+        "replace-all-fields": "Ŗępľäčę äľľ ƒįęľđş",
+        "select-field": "Ŝęľęčŧ ƒįęľđ",
+        "source": "Ŝőūřčę"
+      },
+      "field-lookup": {
+        "description": "Ůşę ä ƒįęľđ väľūę ŧő ľőőĸūp äđđįŧįőŉäľ ƒįęľđş ƒřőm äŉ ęχŧęřŉäľ şőūřčę.  Ŧĥįş čūřřęŉŧľy şūppőřŧş şpäŧįäľ đäŧä, þūŧ ŵįľľ ęvęŉŧūäľľy şūppőřŧ mőřę ƒőřmäŧş",
+        "field": "Fįęľđ",
+        "lookup": "Ŀőőĸūp",
+        "name": "Fįęľđ ľőőĸūp",
+        "no-text-fields-found": "Ńő ŧęχŧ ƒįęľđş ƒőūŉđ",
+        "select-text-field": "Ŝęľęčŧ ŧęχŧ ƒįęľđ"
+      },
+      "filter-by-name": {
+        "identifier": "Ĩđęŉŧįƒįęř",
+        "name": "Fįľŧęř þy ŉämę",
+        "removes-part-of-the-query-results": "Ŗęmővęş päřŧ őƒ ŧĥę qūęřy řęşūľŧş ūşįŉģ ä řęģęχ päŧŧęřŉ. Ŧĥę päŧŧęřŉ čäŉ þę įŉčľūşįvę őř ęχčľūşįvę.",
+        "series-ref-id": "Ŝęřįęş řęƒĨđ"
+      },
+      "filter-by-value": {
+        "add-condition": "Åđđ čőŉđįŧįőŉ",
+        "conditions": "Cőŉđįŧįőŉş",
+        "exclude": "Ēχčľūđę",
+        "filter-data-by-values": "Fįľŧęř đäŧä þy väľūęş",
+        "filter-type": "Fįľŧęř ŧypę",
+        "includes": "Ĩŉčľūđę",
+        "match-all": "Mäŧčĥ äľľ",
+        "match-any": "Mäŧčĥ äŉy",
+        "removes-rows-of-the-query-results": "Ŗęmővęş řőŵş őƒ ŧĥę qūęřy řęşūľŧş ūşįŉģ ūşęř-đęƒįŉęđ ƒįľŧęřş. Ŧĥįş įş ūşęƒūľ įƒ yőū čäŉ ŉőŧ ƒįľŧęř yőūř đäŧä įŉ ŧĥę đäŧä şőūřčę."
+      },
+      "filter-data-by-query": {
+        "description": "Fįľŧęř đäŧä þy qūęřy. Ŧĥįş įş ūşęƒūľ įƒ yőū äřę şĥäřįŉģ ŧĥę řęşūľŧş ƒřőm ä đįƒƒęřęŉŧ päŉęľ ŧĥäŧ ĥäş mäŉy qūęřįęş äŉđ yőū ŵäŉŧ ŧő őŉľy vįşūäľįžę ä şūþşęŧ őƒ ŧĥäŧ įŉ ŧĥįş päŉęľ.",
+        "name": "Fįľŧęř đäŧä þy qūęřy"
+      },
+      "group-by": {
+        "calculate": "Cäľčūľäŧę",
+        "description": "Ğřőūp ŧĥę đäŧä þy ä ƒįęľđ väľūęş ŧĥęŉ přőčęşş čäľčūľäŧįőŉş ƒőř ęäčĥ ģřőūp",
+        "ignored": "Ĩģŉőřęđ",
+        "name": "Ğřőūp þy",
+        "select-stats": "Ŝęľęčŧ Ŝŧäŧş"
+      },
+      "grouping-to-matrix": {
+        "boolean-false-value": "ßőőľęäŉ ƒäľşę väľūę",
+        "boolean-true-value": "ßőőľęäŉ ŧřūę väľūę",
+        "cell-value": "Cęľľ Väľūę",
+        "column": "Cőľūmŉ",
+        "description": "Ŧäĸęş ä ŧĥřęę ƒįęľđş čőmþįŉäŧįőŉ äŉđ přőđūčęş ä Mäŧřįχ",
+        "empty": "Ēmpŧy",
+        "empty string": "Ēmpŧy şŧřįŉģ",
+        "empty-value": "Ēmpŧy Väľūę",
+        "false": "Fäľşę",
+        "name": "Ğřőūpįŉģ ŧő mäŧřįχ",
+        "null": "Ńūľľ",
+        "null-value": "Ńūľľ väľūę",
+        "row": "Ŗőŵ",
+        "true": "Ŧřūę"
+      },
+      "histogram": {
+        "description": "Cäľčūľäŧę ä ĥįşŧőģřäm ƒřőm įŉpūŧ đäŧä",
+        "name": "Ħįşŧőģřäm"
+      },
+      "join-by-field": {
+        "description": "Cőmþįŉę řőŵş ƒřőm ŧŵő őř mőřę ŧäþľęş, þäşęđ őŉ ä řęľäŧęđ ƒįęľđ þęŧŵęęŉ ŧĥęm.  Ŧĥįş čäŉ þę ūşęđ ŧő őūŧęř ĵőįŉ mūľŧįpľę ŧįmę şęřįęş őŉ ŧĥę _ŧįmę_ ƒįęľđ ŧő şĥőŵ mäŉy ŧįmę şęřįęş įŉ őŉę ŧäþľę.",
+        "drop-rows-that-do": "Đřőp řőŵş ŧĥäŧ đő ŉőŧ mäŧčĥ ä väľūę įŉ äľľ ŧäþľęş",
+        "field": "Fįęľđ",
+        "inner": "ĨŃŃĒŖ",
+        "keep-all-rows-from": "Ķęęp äľľ řőŵş ƒřőm äŉy ŧäþľę ŵįŧĥ ä väľūę",
+        "mode": "Mőđę",
+        "name": "Ĵőįŉ þy ƒįęľđ",
+        "outer": "ØŮŦĒŖ",
+        "time": "ŧįmę"
+      },
+      "join-by-labels": {
+        "description": "Fľäŧŧęŉ ľäþęľęđ řęşūľŧş įŉŧő ä ŧäþľę ĵőįŉęđ þy ľäþęľş",
+        "join": "Ĵőįŉ",
+        "name": "Ĵőįŉ þy ľäþęľş",
+        "no-input-found": "Ńő įŉpūŧ ƒőūŉđ",
+        "no-labels-found": "Ńő ľäþęľş ƒőūŉđ",
+        "the-input-does-not-contain": "Ŧĥę įŉpūŧ đőęş ŉőŧ čőŉŧäįŉ äŉy ľäþęľş",
+        "unable-to-join": "Ůŉäþľę ŧő ĵőįŉ þy ŧĥę väľūę ľäþęľ",
+        "value": "Väľūę"
+      },
+      "labels-to-fields": {
+        "columns": "Cőľūmŉş",
+        "description": "Ğřőūpş şęřįęş þy ŧįmę äŉđ řęŧūřŉ ľäþęľş őř ŧäģş äş ƒįęľđş. Ůşęƒūľ ƒőř şĥőŵįŉģ ŧįmę şęřįęş ŵįŧĥ ľäþęľş įŉ ä ŧäþľę ŵĥęřę ęäčĥ ľäþęľ ĸęy þęčőmęş ä şępäřäŧę čőľūmŉ",
+        "labels": "Ŀäþęľş",
+        "name": "Ŀäþęľş ŧő ƒįęľđş",
+        "replace-the-value": "Ŗępľäčę ŧĥę väľūę ƒįęľđ ŉämę ŵįŧĥ ä ľäþęľ",
+        "rows": "Ŗőŵş",
+        "select-label": "(Øpŧįőŉäľ) Ŝęľęčŧ ľäþęľ"
+      },
+      "limit": {
+        "description": "Ŀįmįŧ ŧĥę ŉūmþęř őƒ įŧęmş đįşpľäyęđ.",
+        "limit-count": "Ŀįmįŧ čőūŉŧ",
+        "name": "Ŀįmįŧ"
+      },
+      "merge": {
+        "description": "Męřģę mäŉy şęřįęş/ŧäþľęş äŉđ řęŧūřŉ ä şįŉģľę ŧäþľę ŵĥęřę męřģęäþľę väľūęş ŵįľľ þę čőmþįŉęđ įŉŧő ŧĥę şämę řőŵ. Ůşęƒūľ ƒőř şĥőŵįŉģ mūľŧįpľę şęřįęş, ŧäþľęş őř ä čőmþįŉäŧįőŉ őƒ þőŧĥ vįşūäľįžęđ įŉ ä ŧäþľę.",
+        "merge-has-no-effect": "Męřģę ĥäş ŉő ęƒƒęčŧ ŵĥęŉ äppľįęđ őŉ ä şįŉģľę ƒřämę.",
+        "name": "Męřģę"
+      },
+      "organize-fields": {
+        "description": "Åľľőŵş ŧĥę ūşęř ŧő řę-őřđęř, ĥįđę, őř řęŉämę ƒįęľđş / čőľūmŉş. Ůşęƒūľ ŵĥęŉ đäŧä şőūřčę đőęşŉ'ŧ äľľőŵ ővęřřįđęş ƒőř vįşūäľįžįŉģ đäŧä.",
+        "drag-and-drop-to-reorder": "Đřäģ äŉđ đřőp ŧő řęőřđęř",
+        "name": "Øřģäŉįžę ƒįęľđş",
+        "organize-fields-only-works": "Øřģäŉįžę ƒįęľđş őŉľy ŵőřĸş ŵįŧĥ ä şįŉģľę ƒřämę. Cőŉşįđęř äppľyįŉģ ä ĵőįŉ ŧřäŉşƒőřmäŧįőŉ ƒįřşŧ.",
+        "rename": "Ŗęŉämę"
+      },
+      "partition-by-values": {
+        "description": "Ŝpľįŧş ä őŉę-ƒřämę đäŧäşęŧ įŉŧő mūľŧįpľę şęřįęş đįşčřįmįŉäŧęđ þy ūŉįqūę/ęŉūm väľūęş įŉ őŉę őř mőřę ƒįęľđş.",
+        "name": "Päřŧįŧįőŉ þy väľūęş",
+        "select-field": "Ŝęľęčŧ ƒįęľđ"
+      },
+      "prepare-time-series": {
+        "all-values-are-numeric": "Åľľ väľūęş äřę ŉūmęřįč",
+        "but-may-have-duplicates": "þūŧ mäy ĥävę đūpľįčäŧęş",
+        "description": "Ŵįľľ şŧřęŧčĥ đäŧä ƒřämęş ƒřőm ŧĥę ŵįđę ƒőřmäŧ įŉŧő ŧĥę ľőŉģ ƒőřmäŧ. Ŧĥįş įş řęäľľy ĥęľpƒūľ ŧő þę äþľę ŧő ĸęęp þäčĸŵäřđş čőmpäŧįþįľįŧy ƒőř päŉęľş ŉőŧ şūppőřŧįŉģ ŧĥę ŉęŵ ŵįđę ƒőřmäŧ.",
+        "each-frame-has-two-fields": "Ēäčĥ ƒřämę ĥäş ŧŵő ƒįęľđş: ŧįmę, väľūę",
+        "field-is-time-field": "1şŧ ƒįęľđ įş ŧįmę ƒįęľđ",
+        "longInfo-description": "Cőŉvęřŧ ęäčĥ ƒřämę ŧő ľőŉģ ƒőřmäŧ",
+        "longInfo-name": "Ŀőŉģ ŧįmę şęřįęş",
+        "multiInfo-description": "Cřęäŧęş ä ŉęŵ ƒřämę ƒőř ęäčĥ ŧįmę/ŉūmþęř päįř",
+        "multiInfo-name": "Mūľŧį-ƒřämę ŧįmę şęřįęş",
+        "multiple-frames": "Mūľŧįpľę ƒřämęş",
+        "multiple-value-fields-may-exist": "Mūľŧįpľę väľūę ƒįęľđş mäy ęχįşŧ",
+        "multiple-value-fields-of-any-type": "Mūľŧįpľę väľūę ƒįęľđş őƒ äŉy ŧypę",
+        "name": "Přępäřę ŧįmę şęřįęş",
+        "separate-fields-rather": "Ŝŧřįŉģ väľūęş äřę řępřęşęŉŧęđ äş şępäřäŧę ƒįęľđş řäŧĥęř ŧĥäŉ äş ľäþęľş",
+        "single-frames": "Ŝįŉģľę ƒřämęş",
+        "string-values-are-represented": "Ŝŧřįŉģ väľūęş äřę řępřęşęŉŧęđ äş ľäþęľş",
+        "this-takes-query": "Ŧĥįş ŧäĸęş qūęřy řęşūľŧş äŉđ ŧřäŉşƒőřmş ŧĥęm įŉŧő ä přęđįčŧäþľę ŧįmę şęřįęş ƒőřmäŧ.",
+        "this-transformer-may": "Ŧĥįş ŧřäŉşƒőřmęř mäy þę ęşpęčįäľľy ūşęƒūľ ŵĥęŉ ūşįŉģ őľđ päŉęľş ŧĥäŧ őŉľy ęχpęčŧ ŧĥę mäŉy-ƒřämę ŧįmęşęřįęş ƒőřmäŧ.",
+        "time-in-ascending-order": "Ŧįmę įŉ äşčęŉđįŉģ őřđęř",
+        "wideInfo-description": "Cřęäŧęş ä şįŉģľę ƒřämę ĵőįŉęđ þy ŧįmę",
+        "wideInfo-name": "Ŵįđę ŧįmę şęřįęş"
+      },
+      "reduce": {
+        "calculations": "Cäľčūľäŧįőŉş",
+        "choose-stat": "Cĥőőşę Ŝŧäŧ",
+        "collapse-each-field-into": "Cőľľäpşę ęäčĥ ƒįęľđ įŉŧő ä şįŉģľę väľūę",
+        "create-a-table-with-one-row": "Cřęäŧę ä ŧäþľę ŵįŧĥ őŉę řőŵ ƒőř ęäčĥ şęřįęş väľūę",
+        "include-time": "Ĩŉčľūđę ŧįmę",
+        "labels-to-fields": "Ŀäþęľş ŧő ƒįęľđş",
+        "mode": "Mőđę",
+        "name": "Ŗęđūčę",
+        "reduce-all-rows-or-data-points": "Ŗęđūčę äľľ řőŵş őř đäŧä pőįŉŧş ŧő ä şįŉģľę väľūę ūşįŉģ ä ƒūŉčŧįőŉ ľįĸę mäχ, mįŉ, męäŉ őř ľäşŧ",
+        "reduce-fields": "Ŗęđūčę ƒįęľđş",
+        "series-to-rows": "Ŝęřįęş ŧő řőŵş"
+      },
+      "rename-by-regex": {
+        "invalid-pattern": "Ĩŉväľįđ päŧŧęřŉ",
+        "match": "Mäŧčĥ",
+        "name": "Ŗęŉämę þy řęģęχ",
+        "regular-expression-pattern": "Ŗęģūľäř ęχpřęşşįőŉ päŧŧęřŉ",
+        "renames-part-of-the-query-result": "Ŗęŉämęş päřŧ őƒ ŧĥę qūęřy řęşūľŧ þy ūşįŉģ řęģūľäř ęχpřęşşįőŉ ŵįŧĥ pľäčęĥőľđęřş.",
+        "replace": "Ŗępľäčę",
+        "replacement-pattern": "Ŗępľäčęmęŉŧ päŧŧęřŉ"
+      },
+      "rows-to-fields": {
+        "As-you-can-see-each": "Åş yőū čäŉ şęę ęäčĥ řőŵ įŉ ŧĥę şőūřčę đäŧä þęčőmęş ä şępäřäŧę ƒįęľđ. Ēäčĥ ƒįęľđ ŉőŵ äľşő ĥäş ä mäχ čőŉƒįģ őpŧįőŉ şęŧ. Øpŧįőŉş ľįĸę **Mįŉ**, **Mäχ**, **Ůŉįŧ** äŉđ **Ŧĥřęşĥőľđş** äřę äľľ päřŧ őƒ ƒįęľđ čőŉƒįģūřäŧįőŉ äŉđ įƒ şęŧ ľįĸę ŧĥįş ŵįľľ þę ūşęđ þy ŧĥę vįşūäľįžäŧįőŉ įŉşŧęäđ őƒ äŉy őpŧįőŉş mäŉūäľľy čőŉƒįģūřęđ įŉ ŧĥę päŉęľ ęđįŧőř őpŧįőŉş päŉę.",
+        "description": "Cőŉvęřŧ ęäčĥ řőŵ įŉŧő ä ƒįęľđ ŵįŧĥ đyŉämįč čőŉƒįģ",
+        "example": "Ēχämpľę",
+        "input": "Ĩŉpūŧ",
+        "name": "Ŗőŵş ŧő ƒįęľđş",
+        "output": "Øūŧpūŧ",
+        "this-transforms-rows-into": "Ŧĥįş ŧřäŉşƒőřmş řőŵş įŉŧő şępäřäŧę ƒįęľđş. Ŧĥįş čäŉ þę ūşęƒūľ äş ƒįęľđş čäŉ þę şŧyľęđ äŉđ čőŉƒįģūřęđ įŉđįvįđūäľľy, şőmęŧĥįŉģ řőŵş čäŉŉőŧ. Ĩŧ čäŉ äľşő ūşę äđđįŧįőŉäľ ƒįęľđş äş şőūřčęş ƒőř đyŉämįč ƒįęľđ čőŉƒįģūřäŧįőŉ őř mäp ŧĥęm ŧő ƒįęľđ ľäþęľş. Ŧĥę äđđįŧįőŉäľ ľäþęľş čäŉ ŧĥęŉ þę ūşęđ ŧő đęƒįŉę þęŧŧęř đįşpľäy ŉämęş ƒőř ŧĥę řęşūľŧįŉģ ƒįęľđş.",
+        "use-cases": "Ůşę čäşęş",
+        "useful-when-visualization-data": "Ůşęƒūľ ŵĥęŉ vįşūäľįžäŧįőŉ đäŧä įŉ:"
+      },
+      "series-to-rows": {
+        "description": "Męřģę mäŉy şęřįęş äŉđ řęŧūřŉ ä şįŉģľę şęřįęş ŵįŧĥ ŧįmę, męŧřįč äŉđ väľūę äş čőľūmŉş. Ůşęƒūľ ƒőř şĥőŵįŉģ mūľŧįpľę ŧįmę şęřįęş vįşūäľįžęđ įŉ ä ŧäþľę.",
+        "name": "Ŝęřįęş ŧő řőŵş"
+      },
+      "sort-by": {
+        "description": "Ŝőřŧ ƒįęľđş įŉ ä ƒřämę",
+        "field": "Fįęľđ",
+        "name": "Ŝőřŧ þy",
+        "reverse": "Ŗęvęřşę",
+        "select-field": "Ŝęľęčŧ ƒįęľđ"
+      },
+      "spatial-operations": {
+        "apply-spatial-operations": "Åppľy şpäŧįäľ őpęřäŧįőŉş ŧő ŧĥę ģęőmęŧřy",
+        "area": "Åřęä",
+        "as-line": "Åş ľįŉę",
+        "calculate-value": "Cäľčūľäŧę väľūę",
+        "create-a-line-between": "Cřęäŧę ä ľįŉę þęŧŵęęŉ ŧŵő pőįŉŧş",
+        "description": "Åppľy şpäŧįäľ őpęřäŧįőŉş ŧő qūęřy řęşūľŧş",
+        "distance": "Đįşŧäŉčę",
+        "heading": "Ħęäđįŉģ",
+        "line-builder": "Ŀįŉę þūįľđęř",
+        "name": "Ŝpäŧįäľ őpęřäŧįőŉş",
+        "prepare-spatial-field": "Přępäřę şpäŧįäľ ƒįęľđ",
+        "set-a-geometry": "Ŝęŧ ä ģęőmęŧřy ƒįęľđ þäşęđ őŉ ŧĥę řęşūľŧş őƒ őŧĥęř ƒįęľđş",
+        "transform": "Ŧřäŉşƒőřm",
+        "use-the-geometry": "Ůşę ŧĥę ģęőmęŧřy ŧő đęƒįŉę ä ŉęŵ ƒįęľđ (ĥęäđįŉģ/đįşŧäŉčę/äřęä)"
       }
     }
   },

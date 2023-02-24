@@ -104,8 +104,10 @@
     "save-dashboard": {
       "a-dashboard-with-the-same-name-in-selected-folder": "A dashboard with the same name in selected folder already exists.",
       "cannot-be-the-same-as-folder-name": "Dashboard name cannot be the same as folder name",
+      "changes-label": "Changes",
       "conflict": "Conflict",
       "dashboard-name": "Dashboard name",
+      "details-label": "Details",
       "discard": "Discard",
       "do-you-want-to-save-your-changes": "Do you want to save your changes?",
       "folder": "Folder",
@@ -208,6 +210,7 @@
   },
   "features": {
     "alerting": {
+      "add-an-alert": "Adding an Alert",
       "unified": {
         "cannot-create-alerts-from-this-panel": "Cannot create alerts from this panel because no query to an alerting capable datasource is found.",
         "dashboard-must-be-saved-before": "Dashboard must be saved before alerts can be added.",
@@ -217,8 +220,18 @@
       }
     },
     "dashboard": {
+      "add-a-new-panel": "Add a new panel",
+      "add-a-new-row": "Add a new row",
+      "add-a-panel-from-the-panel-library": "Add a panel from the panel library",
       "add-panel": "Add panel",
       "add-panel-from-panel-library": "Add panel from panel library",
+      "angular-support-disabled": "Angular support disabled, legacy alerting cannot function without angular support",
+      "annotation": {
+        "apply-button": "Apply",
+        "delete-button": "Delete",
+        "preview-in-dashboard-button": "Preview in dashboard"
+      },
+      "cancel-loading-dashboard": "Cancel loading dashboard",
       "panel-editor": {
         "add-field-override": "Add field override",
         "add-override-property": "Add override property",
@@ -249,12 +262,46 @@
         "visualizations": "Visualizations"
       },
       "panel-title": "Panel Title",
+      "paste-panel-from-clipboard": "Paste panel from clipboard",
       "row-title": "Row Title",
       "save-dashboard": {
         "add-a-note-to-describe-your-changes": "Add a note to describe your changes",
         "no-changes-to-save": "No changes to save",
         "save-current-time-range": "Save current time range as dashboard default",
         "save-current-variable-values": "Save current variable values as dashboard default"
+      },
+      "setting": {
+        "add-ng-alert": "Add NG Alert",
+        "alerts-are-added-and-configured": "Alerts are added and configured in the Alert tab of any dashboard graph panel, letting you build and visualize an alert using existing queries.",
+        "annotations-sub-title": "Annotation queries return events that can be visualized as event markers in graphs across the dashboard.",
+        "annotations-title": "Annotations",
+        "are-you-sure-you-want": "Are you sure you want to delete this alert rule?",
+        "auto-refresh": "Auto refresh",
+        "auto-refresh-description": "Define the auto refresh intervals that should be available in the auto refresh list.",
+        "close-button": "Close",
+        "create-alert": "Create Alert",
+        "delete-alert": "Delete alert",
+        "delete-title": "Delete",
+        "edit-alert": "Edit alert",
+        "general-title": "General",
+        "how-to-add-an-alert": "How to add an alert",
+        "json-model-title": "JSON Model",
+        "links-title": "Links",
+        "make-editable-button": "Make editable",
+        "panel-has-no-alert-rule-defined": "Panel has no alert rule defined",
+        "pause-button": "Pause",
+        "permissions-title": "Permissions",
+        "remember-to-save-the-dashboard": "Remember to save the dashboard to persist your alert rule changes.",
+        "resume-button": "Resume",
+        "settings-text": "Settings",
+        "state-history": "State history",
+        "states": "States",
+        "test-rule": "Test rule",
+        "transformations-are-not-supported": "Transformations are not supported in alert queries",
+        "variables-sub-title": "Variables can make your dashboard more dynamic and act as global filters.",
+        "variables-title": "Variables",
+        "versions-title": "Versions",
+        "you-need-to-save-dashboard": "You need to save dashboard for the delete to take effect."
       },
       "tabs-alert": "Alert",
       "tabs-query": "Query",
@@ -308,9 +355,255 @@
       }
     },
     "transformers": {
+      "add-field-from-calculation": {
+        "binary-operation": "Binary operation",
+        "description": "Use the row values to calculate a new field",
+        "field-name": "Field name",
+        "field-or-number": "Field or number",
+        "name": "Add field from calculation",
+        "reduce-row": "Reduce row",
+        "replace-all-fields": "Replace all fields"
+      },
+      "concatenate-fields": "Concatenate fields",
+      "config-from-query": {
+        "apply-to": "Apply to",
+        "apply-to-options": "Apply to options",
+        "below-the-configuration": "Below the configuration listed above you will find the field table. Here all fields found in the data returned by the config query will be listed along with a **Use as** and **Select** option. This table gives you control over what field should be mapped to which config property and if there are multiple rows which value to select.",
+        "config-query": "Config query",
+        "config-query-result": "Config query result",
+        "description": "Set unit, min, max and more from data",
+        "each-row-in-the-source": "Each row in the source data becomes a separate field. Each field now also has a maximum configuration option set. Options such as **min**, **max**, **unit**, and **thresholds** are all part of field configuration, and if they are set like this, they will be used by the visualization instead of any options that are manually configured.in the panel editor options pane.",
+        "field-mapping-table": "Field mapping table",
+        "in-the-field-mapping-specify": "In the field mapping specify",
+        "name": "Config from query results",
+        "options": "Options",
+        "Select-the-query-that": "**Config query**: Select the query that returns the data you want to use as configuration.",
+        "Select-what-fields": "**Apply to**: Select what fields or series to apply the configuration to.",
+        "this-transformation-allows": "This transformation allows you select one query and from it extract standard options such as **Min**, **Max**, **Unit**, and **Thresholds** and apply them to other query results. This enables dynamic query driven visualization configuration.",
+        "ticos-will-build-the-value": "Ticos will build the value mappings from you query result and apply it the the real data query results. You should see values being mapped and colored according to the config query results.",
+        "usually-a-field": "**Apply to options**: Usually a field type or field name regex depending on what option you selected in **Apply to**.",
+        "value-mappings": "Value mappings",
+        "you-can-also-transform": "You can also transform a query result into value mappings. This is is a bit different because every row in the configuration query result is used to define a single value mapping row. See the following example."
+      },
+      "convert-field-type": {
+        "description": "Convert a field to a specified field type",
+        "field": "Field",
+        "input-format": "Input format",
+        "name": "Convert field type",
+        "type": "Type"
+      },
+      "create-a-single-line": "Create a single line feature with a vertex at each row",
+      "create-heatmap": {
+        "description": "calculate heatmap from source data",
+        "name": "Create heatmap"
+      },
       "editors": {
+        "add-a-label-with-the-frame-name": "Add a label with the frame name",
+        "combine-all-fields-into-a-single-frame": "Combine all fields into a single frame.  Values will be appended with undefined values if not the same length.",
+        "copy-frame-name-to-field-name": "Copy frame name to field name",
+        "ignore-the-frame-name": "Ignore the frame name",
         "label": "Label",
         "name": "Name"
+      },
+      "extract-fields": {
+        "auto": "Auto",
+        "description": "Parse fields from content (JSON, labels, etc)",
+        "format": "Format",
+        "name": "Extract fields",
+        "replace-all-fields": "Replace all fields",
+        "select-field": "Select field",
+        "source": "Source"
+      },
+      "field-lookup": {
+        "description": "Use a field value to lookup additional fields from an external source.  This currently supports spatial data, but will eventually support more formats",
+        "field": "Field",
+        "lookup": "Lookup",
+        "name": "Field lookup",
+        "no-text-fields-found": "No text fields found",
+        "select-text-field": "Select text field"
+      },
+      "filter-by-name": {
+        "identifier": "Identifier",
+        "name": "Filter by name",
+        "removes-part-of-the-query-results": "Removes part of the query results using a regex pattern. The pattern can be inclusive or exclusive.",
+        "series-ref-id": "Series refId"
+      },
+      "filter-by-value": {
+        "add-condition": "Add condition",
+        "conditions": "Conditions",
+        "exclude": "Exclude",
+        "filter-data-by-values": "Filter data by values",
+        "filter-type": "Filter type",
+        "includes": "Include",
+        "match-all": "Match all",
+        "match-any": "Match any",
+        "removes-rows-of-the-query-results": "Removes rows of the query results using user-defined filters. This is useful if you can not filter your data in the data source."
+      },
+      "filter-data-by-query": {
+        "description": "Filter data by query. This is useful if you are sharing the results from a different panel that has many queries and you want to only visualize a subset of that in this panel.",
+        "name": "Filter data by query"
+      },
+      "group-by": {
+        "calculate": "Calculate",
+        "description": "Group the data by a field values then process calculations for each group",
+        "ignored": "Ignored",
+        "name": "Group by",
+        "select-stats": "Select Stats"
+      },
+      "grouping-to-matrix": {
+        "boolean-false-value": "Boolean false value",
+        "boolean-true-value": "Boolean true value",
+        "cell-value": "Cell Value",
+        "column": "Column",
+        "description": "Takes a three fields combination and produces a Matrix",
+        "empty": "Empty",
+        "empty string": "Empty string",
+        "empty-value": "Empty Value",
+        "false": "False",
+        "name": "Grouping to matrix",
+        "null": "Null",
+        "null-value": "Null value",
+        "row": "Row",
+        "true": "True"
+      },
+      "histogram": {
+        "description": "Calculate a histogram from input data",
+        "name": "Histogram"
+      },
+      "join-by-field": {
+        "description": "Combine rows from two or more tables, based on a related field between them.  This can be used to outer join multiple time series on the _time_ field to show many time series in one table.",
+        "drop-rows-that-do": "Drop rows that do not match a value in all tables",
+        "field": "Field",
+        "inner": "INNER",
+        "keep-all-rows-from": "Keep all rows from any table with a value",
+        "mode": "Mode",
+        "name": "Join by field",
+        "outer": "OUTER",
+        "time": "time"
+      },
+      "join-by-labels": {
+        "description": "Flatten labeled results into a table joined by labels",
+        "join": "Join",
+        "name": "Join by labels",
+        "no-input-found": "No input found",
+        "no-labels-found": "No labels found",
+        "the-input-does-not-contain": "The input does not contain any labels",
+        "unable-to-join": "Unable to join by the value label",
+        "value": "Value"
+      },
+      "labels-to-fields": {
+        "columns": "Columns",
+        "description": "Groups series by time and return labels or tags as fields. Useful for showing time series with labels in a table where each label key becomes a separate column",
+        "labels": "Labels",
+        "name": "Labels to fields",
+        "replace-the-value": "Replace the value field name with a label",
+        "rows": "Rows",
+        "select-label": "(Optional) Select label"
+      },
+      "limit": {
+        "description": "Limit the number of items displayed.",
+        "limit-count": "Limit count",
+        "name": "Limit"
+      },
+      "merge": {
+        "description": "Merge many series/tables and return a single table where mergeable values will be combined into the same row. Useful for showing multiple series, tables or a combination of both visualized in a table.",
+        "merge-has-no-effect": "Merge has no effect when applied on a single frame.",
+        "name": "Merge"
+      },
+      "organize-fields": {
+        "description": "Allows the user to re-order, hide, or rename fields / columns. Useful when data source doesn't allow overrides for visualizing data.",
+        "drag-and-drop-to-reorder": "Drag and drop to reorder",
+        "name": "Organize fields",
+        "organize-fields-only-works": "Organize fields only works with a single frame. Consider applying a join transformation first.",
+        "rename": "Rename"
+      },
+      "partition-by-values": {
+        "description": "Splits a one-frame dataset into multiple series discriminated by unique/enum values in one or more fields.",
+        "name": "Partition by values",
+        "select-field": "Select field"
+      },
+      "prepare-time-series": {
+        "all-values-are-numeric": "All values are numeric",
+        "but-may-have-duplicates": "but may have duplicates",
+        "description": "Will stretch data frames from the wide format into the long format. This is really helpful to be able to keep backwards compatibility for panels not supporting the new wide format.",
+        "each-frame-has-two-fields": "Each frame has two fields: time, value",
+        "field-is-time-field": "1st field is time field",
+        "longInfo-description": "Convert each frame to long format",
+        "longInfo-name": "Long time series",
+        "multiInfo-description": "Creates a new frame for each time/number pair",
+        "multiInfo-name": "Multi-frame time series",
+        "multiple-frames": "Multiple frames",
+        "multiple-value-fields-may-exist": "Multiple value fields may exist",
+        "multiple-value-fields-of-any-type": "Multiple value fields of any type",
+        "name": "Prepare time series",
+        "separate-fields-rather": "String values are represented as separate fields rather than as labels",
+        "single-frames": "Single frames",
+        "string-values-are-represented": "String values are represented as labels",
+        "this-takes-query": "This takes query results and transforms them into a predictable time series format.",
+        "this-transformer-may": "This transformer may be especially useful when using old panels that only expect the many-frame timeseries format.",
+        "time-in-ascending-order": "Time in ascending order",
+        "wideInfo-description": "Creates a single frame joined by time",
+        "wideInfo-name": "Wide time series"
+      },
+      "reduce": {
+        "calculations": "Calculations",
+        "choose-stat": "Choose Stat",
+        "collapse-each-field-into": "Collapse each field into a single value",
+        "create-a-table-with-one-row": "Create a table with one row for each series value",
+        "include-time": "Include time",
+        "labels-to-fields": "Labels to fields",
+        "mode": "Mode",
+        "name": "Reduce",
+        "reduce-all-rows-or-data-points": "Reduce all rows or data points to a single value using a function like max, min, mean or last",
+        "reduce-fields": "Reduce fields",
+        "series-to-rows": "Series to rows"
+      },
+      "rename-by-regex": {
+        "invalid-pattern": "Invalid pattern",
+        "match": "Match",
+        "name": "Rename by regex",
+        "regular-expression-pattern": "Regular expression pattern",
+        "renames-part-of-the-query-result": "Renames part of the query result by using regular expression with placeholders.",
+        "replace": "Replace",
+        "replacement-pattern": "Replacement pattern"
+      },
+      "rows-to-fields": {
+        "As-you-can-see-each": "As you can see each row in the source data becomes a separate field. Each field now also has a max config option set. Options like **Min**, **Max**, **Unit** and **Thresholds** are all part of field configuration and if set like this will be used by the visualization instead of any options manually configured in the panel editor options pane.",
+        "description": "Convert each row into a field with dynamic config",
+        "example": "Example",
+        "input": "Input",
+        "name": "Rows to fields",
+        "output": "Output",
+        "this-transforms-rows-into": "This transforms rows into separate fields. This can be useful as fields can be styled and configured individually, something rows cannot. It can also use additional fields as sources for dynamic field configuration or map them to field labels. The additional labels can then be used to define better display names for the resulting fields.",
+        "use-cases": "Use cases",
+        "useful-when-visualization-data": "Useful when visualization data in:"
+      },
+      "series-to-rows": {
+        "description": "Merge many series and return a single series with time, metric and value as columns. Useful for showing multiple time series visualized in a table.",
+        "name": "Series to rows"
+      },
+      "sort-by": {
+        "description": "Sort fields in a frame",
+        "field": "Field",
+        "name": "Sort by",
+        "reverse": "Reverse",
+        "select-field": "Select field"
+      },
+      "spatial-operations": {
+        "apply-spatial-operations": "Apply spatial operations to the geometry",
+        "area": "Area",
+        "as-line": "As line",
+        "calculate-value": "Calculate value",
+        "create-a-line-between": "Create a line between two points",
+        "description": "Apply spatial operations to query results",
+        "distance": "Distance",
+        "heading": "Heading",
+        "line-builder": "Line builder",
+        "name": "Spatial operations",
+        "prepare-spatial-field": "Prepare spatial field",
+        "set-a-geometry": "Set a geometry field based on the results of other fields",
+        "transform": "Transform",
+        "use-the-geometry": "Use the geometry to define a new field (heading/distance/area)"
       }
     }
   },
