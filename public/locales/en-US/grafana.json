@@ -330,14 +330,21 @@
     },
     "explore": {
       "bars": "Bars",
+      "compact-URL-deprecation": "Compact URL Deprecation Notice",
+      "data": "Data",
+      "error": "Error",
       "graph": "Graph",
       "lines": "Lines",
       "logs": "Logs",
       "points": "Points",
+      "query": "Query",
       "series-returned": "0 series returned",
       "stacked-bars": "Stacked bars",
       "stacked-lines": "Stacked lines",
-      "table": "Table"
+      "stats": "Stats",
+      "table": "Table",
+      "the-URL-that-brought-you ": "The URL that brought you here was a compact URL - this format will soon be deprecated. Please replace the URL previously saved with the URL available now.",
+      "variable-values-are-fetched": "Variable values are fetched from a datasource query"
     },
     "inspector": {
       "collapse-all-button": "Collapse all",

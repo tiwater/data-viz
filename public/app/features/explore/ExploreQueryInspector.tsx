@@ -4,6 +4,7 @@ import { connect, ConnectedProps } from 'react-redux';
 import { CoreApp, TimeZone } from '@grafana/data';
 import { reportInteraction } from '@grafana/runtime/src';
 import { TabbedContainer, TabConfig } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { ExploreDrawer } from 'app/features/explore/ExploreDrawer';
 import { InspectDataTab } from 'app/features/inspector/InspectDataTab';
 import { InspectErrorTab } from 'app/features/inspector/InspectErrorTab';
@@ -33,7 +34,7 @@ export function ExploreQueryInspector(props: Props) {
   }, []);
 
   const statsTab: TabConfig = {
-    label: 'Stats',
+    label: t('features.explore.stats', 'Stats'),
     value: 'stats',
     icon: 'chart-line',
     content: <InspectStatsTab data={queryResponse!} timeZone={queryResponse?.request?.timezone as TimeZone} />,
@@ -47,7 +48,7 @@ export function ExploreQueryInspector(props: Props) {
   };
 
   const dataTab: TabConfig = {
-    label: 'Data',
+    label: t('features.explore.data', 'Data'),
     value: 'data',
     icon: 'database',
     content: (
@@ -62,7 +63,7 @@ export function ExploreQueryInspector(props: Props) {
   };
 
   const queryTab: TabConfig = {
-    label: 'Query',
+    label: t('features.explore.query', 'Query'),
     value: 'query',
     icon: 'info-circle',
     content: <QueryInspector data={dataFrames} onRefreshQuery={() => props.runQueries(props.exploreId)} />,
@@ -71,7 +72,7 @@ export function ExploreQueryInspector(props: Props) {
   const tabs = [statsTab, queryTab, jsonTab, dataTab];
   if (error) {
     const errorTab: TabConfig = {
-      label: 'Error',
+      label: t('features.explore.error', 'Error'),
       value: 'error',
       icon: 'exclamation-triangle',
       content: <InspectErrorTab error={error} />,

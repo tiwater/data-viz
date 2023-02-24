@@ -330,14 +330,21 @@
     },
     "explore": {
       "bars": "ßäřş",
+      "compact-URL-deprecation": "Cőmpäčŧ ŮŖĿ Đępřęčäŧįőŉ Ńőŧįčę",
+      "data": "Đäŧä",
+      "error": "Ēřřőř",
       "graph": "Ğřäpĥ",
       "lines": "Ŀįŉęş",
       "logs": "Ŀőģş",
       "points": "Pőįŉŧş",
+      "query": "Qūęřy",
       "series-returned": "0 şęřįęş řęŧūřŉęđ",
       "stacked-bars": "Ŝŧäčĸęđ þäřş",
       "stacked-lines": "Ŝŧäčĸęđ ľįŉęş",
-      "table": "Ŧäþľę"
+      "stats": "Ŝŧäŧş",
+      "table": "Ŧäþľę",
+      "the-URL-that-brought-you ": "Ŧĥę ŮŖĿ ŧĥäŧ þřőūģĥŧ yőū ĥęřę ŵäş ä čőmpäčŧ ŮŖĿ - ŧĥįş ƒőřmäŧ ŵįľľ şőőŉ þę đępřęčäŧęđ. Pľęäşę řępľäčę ŧĥę ŮŖĿ přęvįőūşľy şävęđ ŵįŧĥ ŧĥę ŮŖĿ äväįľäþľę ŉőŵ.",
+      "variable-values-are-fetched": "Väřįäþľę väľūęş äřę ƒęŧčĥęđ ƒřőm ä đäŧäşőūřčę qūęřy"
     },
     "inspector": {
       "collapse-all-button": "Cőľľäpşę äľľ",

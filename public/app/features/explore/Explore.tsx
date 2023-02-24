@@ -5,7 +5,7 @@ import React, { createRef } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { Unsubscribable } from 'rxjs';
-import { locationService } from '@grafana/runtime';
+// import { locationService } from '@grafana/runtime';
 
 import {
   AbsoluteTimeRange,
@@ -18,12 +18,13 @@ import {
   SplitOpenOptions,
 } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
-import { config, getDataSourceSrv, reportInteraction } from '@grafana/runtime';
+import { config, getDataSourceSrv, reportInteraction, locationService } from '@grafana/runtime';
 import { CustomScrollbar, ErrorBoundaryAlert, Themeable2, withTheme2, PanelContainer, Alert } from '@grafana/ui';
 import { FILTER_FOR_OPERATOR, FILTER_OUT_OPERATOR, FilterItem } from '@grafana/ui/src/components/Table/types';
 import appEvents from 'app/core/app_events';
 import { FadeIn } from 'app/core/components/Animations/FadeIn';
 import { supportedFeatures } from 'app/core/history/richHistoryStorageProvider';
+import { t } from 'app/core/internationalization';
 import { MIXED_DATASOURCE_NAME } from 'app/plugins/datasource/mixed/MixedDataSource';
 import { getNodeGraphDataFrames } from 'app/plugins/panel/nodeGraph/utils';
 import { StoreState } from 'app/types';
@@ -135,7 +136,7 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
     super(props);
     this.state = {
       openDrawer: undefined,
-      chatMode: false
+      chatMode: false,
     };
     this.graphEventBus = props.eventBus.newScopedBus('graph', { onlyLocal: false });
     this.logsEventBus = props.eventBus.newScopedBus('logs', { onlyLocal: false });
@@ -143,10 +144,10 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
 
   componentDidMount() {
     const searchParams = locationService.getSearchObject();
-    if(searchParams.chatMode){
-      this.setState((state)=>({
-        chatMode: true
-      }))
+    if (searchParams.chatMode) {
+      this.setState((state) => ({
+        chatMode: true,
+      }));
     }
     this.absoluteTimeUnsubsciber = appEvents.subscribe(AbsoluteTimeEvent, this.onMakeAbsoluteTime);
   }
@@ -280,9 +281,15 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
   renderCompactUrlWarning() {
     return (
       <FadeIn in={true} duration={100}>
-        <Alert severity="warning" title="Compact URL Deprecation Notice" topSpacing={2}>
-          The URL that brought you here was a compact URL - this format will soon be deprecated. Please replace the URL
-          previously saved with the URL available now.
+        <Alert
+          severity="warning"
+          title={t('features.explore.compact-URL-deprecation', 'Compact URL Deprecation Notice')}
+          topSpacing={2}
+        >
+          {t(
+            'features.explore.the-URL-that-brought-you ',
+            'The URL that brought you here was a compact URL - this format will soon be deprecated. Please replace the URL previously saved with the URL available now.'
+          )}
         </Alert>
       </FadeIn>
     );
@@ -441,12 +448,17 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
         autoHeightMin={'100%'}
         scrollRefCallback={(scrollElement) => (this.scrollElement = scrollElement || undefined)}
       >
-        <ExploreToolbar exploreId={exploreId} onChangeTime={this.onChangeTime} topOfViewRef={this.topOfViewRef} chatMode={this.state.chatMode} />
+        <ExploreToolbar
+          exploreId={exploreId}
+          onChangeTime={this.onChangeTime}
+          topOfViewRef={this.topOfViewRef}
+          chatMode={this.state.chatMode}
+        />
         {isFromCompactUrl ? this.renderCompactUrlWarning() : null}
         {/* {datasourceMissing ? this.renderEmptyState(styles.exploreContainer) : null} */}
         {datasourceInstance && (
           <div className={styles.exploreContainer}>
-            <div style={{ display: this.state.chatMode? 'none': 'flex', flexDirection: "column" }}>
+            <div style={{ display: this.state.chatMode ? 'none' : 'flex', flexDirection: 'column' }}>
               <PanelContainer className={styles.queryContainer}>
                 <QueryRows exploreId={exploreId} />
                 <SecondaryActions
@@ -465,7 +477,6 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
               </PanelContainer>
             </div>
 
-            
             <AutoSizer onResize={this.onResize} disableHeight>
               {({ width }) => {
                 if (width === 0) {

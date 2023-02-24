@@ -330,14 +330,21 @@
     },
     "explore": {
       "bars": "",
+      "compact-URL-deprecation": "",
+      "data": "",
+      "error": "",
       "graph": "",
       "lines": "",
       "logs": "",
       "points": "",
+      "query": "",
       "series-returned": "",
       "stacked-bars": "",
       "stacked-lines": "",
-      "table": ""
+      "stats": "",
+      "table": "",
+      "the-URL-that-brought-you ": "",
+      "variable-values-are-fetched": ""
     },
     "inspector": {
       "collapse-all-button": "",

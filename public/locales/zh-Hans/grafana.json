@@ -330,14 +330,21 @@
     },
     "explore": {
       "bars": "柱状图",
+      "compact-URL-deprecation": "简洁的 URL 过时通知",
+      "data": "数据",
+      "error": "错误",
       "graph": "图表",
       "lines": "线条",
       "logs": "日志",
       "points": "点",
+      "query": "查询",
       "series-returned": "系列返回",
       "stacked-bars": "堆积柱状图",
       "stacked-lines": "堆积线",
-      "table": "表格"
+      "stats": "统计",
+      "table": "表格",
+      "the-URL-that-brought-you ": "带你到这里的URL是一个紧凑的 URL - 这个格式很快将被废弃。 请替换先前保存的URL，现在可以使用 URL。",
+      "variable-values-are-fetched": "从数据源查询获取变量值"
     },
     "inspector": {
       "collapse-all-button": "全部折叠",
