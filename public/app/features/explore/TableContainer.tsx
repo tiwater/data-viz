@@ -6,6 +6,7 @@ import { Collapse, Table } from '@grafana/ui';
 import { FilterItem } from '@grafana/ui/src/components/Table/types';
 import { config } from 'app/core/config';
 import { PANEL_BORDER } from 'app/core/constants';
+import { t } from 'app/core/internationalization';
 import { StoreState } from 'app/types';
 import { ExploreId, ExploreItemState } from 'app/types/explore';
 
@@ -91,7 +92,7 @@ export class TableContainer extends PureComponent<Props> {
     const subFrames = dataFrames?.filter((df) => df.meta?.custom?.parentRowIndex !== undefined);
 
     return (
-      <Collapse label="Table" loading={loading} isOpen>
+      <Collapse label={t('features.explore.table', 'Table')} loading={loading} isOpen>
         {mainFrame?.length ? (
           <Table
             ariaLabel={ariaLabel}
@@ -103,7 +104,7 @@ export class TableContainer extends PureComponent<Props> {
             onCellFilterAdded={onCellFilterAdded}
           />
         ) : (
-          <MetaInfoText metaItems={[{ value: '0 series returned' }]} />
+          <MetaInfoText metaItems={[{ value: t('features.explore.series-returned', '0 series returned') }]} />
         )}
       </Collapse>
     );

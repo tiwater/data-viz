@@ -328,6 +328,17 @@
       },
       "time-zone": "时区"
     },
+    "explore": {
+      "bars": "柱状图",
+      "graph": "图表",
+      "lines": "线条",
+      "logs": "日志",
+      "points": "点",
+      "series-returned": "系列返回",
+      "stacked-bars": "堆积柱状图",
+      "stacked-lines": "堆积线",
+      "table": "表格"
+    },
     "inspector": {
       "collapse-all-button": "全部折叠",
       "copy-to-clipboard-button": "复制到剪贴板",
@@ -348,6 +359,13 @@
       }
     },
     "query": {
+      "editor-row": {
+        "duplicate-query": "复制查询",
+        "enable-query": "停用/启用查询",
+        "remove-query": "删除查询",
+        "toggle-data-source-help": "切换数据源帮助",
+        "toggle-text-edit-mode": "切换文本编辑方式"
+      },
       "query-group": {
         "data-source": "数据源",
         "open-data-source-help": "打开数据源帮助",
@@ -603,7 +621,7 @@
         "prepare-spatial-field": "准备空格",
         "set-a-geometry": "根据其他字段的结果设置几何字段",
         "transform": "转换",
-        "use-the-geometry": "Use the geometry to define a new field (heading/distance/area)"
+        "use-the-geometry": "使用几何形状来定义一个新字段 (头/距离/面积)"
       }
     }
   },

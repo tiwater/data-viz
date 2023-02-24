@@ -30,6 +30,7 @@ import {
   QueryOperationRow,
   QueryOperationRowRenderProps,
 } from 'app/core/components/QueryOperationRow/QueryOperationRow';
+import { t } from 'app/core/internationalization';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
 import { PanelModel } from 'app/features/dashboard/state/PanelModel';
@@ -421,7 +422,7 @@ export class QueryEditorRow<TQuery extends DataQuery> extends PureComponent<Prop
       <HorizontalGroup width="auto">
         {hasEditorHelp && (
           <QueryOperationAction
-            title="Toggle data source help"
+            title={t('features.query.editor-row.toggle-data-source-help', 'Toggle data source help')}
             icon="question-circle"
             onClick={this.onToggleHelp}
             active={showingHelp}
@@ -429,7 +430,7 @@ export class QueryEditorRow<TQuery extends DataQuery> extends PureComponent<Prop
         )}
         {hasTextEditMode && (
           <QueryOperationAction
-            title="Toggle text edit mode"
+            title={t('features.query.editor-row.toggle-text-edit-mode', 'Toggle text edit mode')}
             icon="pen"
             onClick={(e) => {
               this.onToggleEditMode(e, props);
@@ -437,16 +438,24 @@ export class QueryEditorRow<TQuery extends DataQuery> extends PureComponent<Prop
           />
         )}
         {this.renderExtraActions()}
-        <QueryOperationAction title="Duplicate query" icon="copy" onClick={this.onCopyQuery} />
+        <QueryOperationAction
+          title={t('features.query.editor-row.duplicate-query', 'Duplicate query')}
+          icon="copy"
+          onClick={this.onCopyQuery}
+        />
         {!hideDisableQuery ? (
           <QueryOperationAction
-            title="Disable/enable query"
+            title={t('features.query.editor-row.enable-query', 'Disable/enable query')}
             icon={isDisabled ? 'eye-slash' : 'eye'}
             active={isDisabled}
             onClick={this.onDisableQuery}
           />
         ) : null}
-        <QueryOperationAction title="Remove query" icon="trash-alt" onClick={this.onRemoveQuery} />
+        <QueryOperationAction
+          title={t('features.query.editor-row.remove-query', 'Remove query')}
+          icon="trash-alt"
+          onClick={this.onRemoveQuery}
+        />
       </HorizontalGroup>
     );
   };

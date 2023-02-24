@@ -328,6 +328,17 @@
       },
       "time-zone": "Time zone"
     },
+    "explore": {
+      "bars": "Bars",
+      "graph": "Graph",
+      "lines": "Lines",
+      "logs": "Logs",
+      "points": "Points",
+      "series-returned": "0 series returned",
+      "stacked-bars": "Stacked bars",
+      "stacked-lines": "Stacked lines",
+      "table": "Table"
+    },
     "inspector": {
       "collapse-all-button": "Collapse all",
       "copy-to-clipboard-button": "Copy to clipboard",
@@ -348,6 +359,13 @@
       }
     },
     "query": {
+      "editor-row": {
+        "duplicate-query": "Duplicate query",
+        "enable-query": "Disable/enable query",
+        "remove-query": "Remove query",
+        "toggle-data-source-help": "Toggle data source help",
+        "toggle-text-edit-mode": "Toggle text edit mode"
+      },
       "query-group": {
         "data-source": "Data source",
         "open-data-source-help": "Open data source help",

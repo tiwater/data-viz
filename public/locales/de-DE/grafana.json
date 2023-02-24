@@ -328,6 +328,17 @@
       },
       "time-zone": ""
     },
+    "explore": {
+      "bars": "",
+      "graph": "",
+      "lines": "",
+      "logs": "",
+      "points": "",
+      "series-returned": "",
+      "stacked-bars": "",
+      "stacked-lines": "",
+      "table": ""
+    },
     "inspector": {
       "collapse-all-button": "",
       "copy-to-clipboard-button": "",
@@ -348,6 +359,13 @@
       }
     },
     "query": {
+      "editor-row": {
+        "duplicate-query": "",
+        "enable-query": "",
+        "remove-query": "",
+        "toggle-data-source-help": "",
+        "toggle-text-edit-mode": ""
+      },
       "query-group": {
         "data-source": "",
         "open-data-source-help": "",

@@ -13,6 +13,7 @@ import {
   DataFrame,
 } from '@grafana/data';
 import { Collapse } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { StoreState } from 'app/types';
 import { ExploreId, ExploreItemState, SupplementaryQueryType } from 'app/types/explore';
 
@@ -113,7 +114,7 @@ class LogsContainer extends PureComponent<LogsContainerProps> {
     return (
       <>
         <LogsCrossFadeTransition visible={isLive}>
-          <Collapse label="Logs" loading={false} isOpen>
+          <Collapse label={t('features.explore.logs', 'Logs')} loading={false} isOpen>
             <LiveTailControls exploreId={exploreId}>
               {(controls) => (
                 <LiveLogsWithTheme

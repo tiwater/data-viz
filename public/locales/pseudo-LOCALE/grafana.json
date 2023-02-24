@@ -328,6 +328,17 @@
       },
       "time-zone": "Ŧįmę žőŉę"
     },
+    "explore": {
+      "bars": "ßäřş",
+      "graph": "Ğřäpĥ",
+      "lines": "Ŀįŉęş",
+      "logs": "Ŀőģş",
+      "points": "Pőįŉŧş",
+      "series-returned": "0 şęřįęş řęŧūřŉęđ",
+      "stacked-bars": "Ŝŧäčĸęđ þäřş",
+      "stacked-lines": "Ŝŧäčĸęđ ľįŉęş",
+      "table": "Ŧäþľę"
+    },
     "inspector": {
       "collapse-all-button": "Cőľľäpşę äľľ",
       "copy-to-clipboard-button": "Cőpy ŧő čľįpþőäřđ",
@@ -348,6 +359,13 @@
       }
     },
     "query": {
+      "editor-row": {
+        "duplicate-query": "Đūpľįčäŧę qūęřy",
+        "enable-query": "Đįşäþľę/ęŉäþľę qūęřy",
+        "remove-query": "Ŗęmővę qūęřy",
+        "toggle-data-source-help": "Ŧőģģľę đäŧä şőūřčę ĥęľp",
+        "toggle-text-edit-mode": "Ŧőģģľę ŧęχŧ ęđįŧ mőđę"
+      },
       "query-group": {
         "data-source": "Đäŧä şőūřčę",
         "open-data-source-help": "Øpęŉ đäŧä şőūřčę ĥęľp",
