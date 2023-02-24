@@ -82,7 +82,7 @@ export const quickOptions: TimeOption[] = [
   { from: 'now/d', to: 'now/d', display: 'Today' },
   { from: 'now/d', to: 'now', display: 'Today so far' },
   { from: 'now/w', to: 'now/w', display: 'This week' },
-  { from: 'now/w', to: 'now', display: 'This week so far11' },
+  { from: 'now/w', to: 'now', display: 'This week so far' },
   { from: 'now/M', to: 'now/M', display: 'This month' },
   { from: 'now/M', to: 'now', display: 'This month so far' },
   { from: 'now/y', to: 'now/y', display: 'This year' },
