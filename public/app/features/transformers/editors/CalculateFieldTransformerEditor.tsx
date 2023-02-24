@@ -25,7 +25,7 @@ import {
   ReduceOptions,
 } from '@grafana/data/src/transformations/transformers/calculateField';
 import { FilterPill, HorizontalGroup, Input, LegacyForms, Select, StatsPicker } from '@grafana/ui';
-import { t } from 'app/core/internationalization';
+import { t, Trans } from 'app/core/internationalization';
 
 interface CalculateFieldTransformerEditorProps extends TransformerUIProps<CalculateFieldTransformerOptions> {}
 
@@ -40,6 +40,16 @@ const calculationModes = [
   { value: CalculateFieldMode.ReduceRow, label: 'Reduce row' },
 ];
 
+const getCalculationModes = () => [
+  {
+    value: CalculateFieldMode.BinaryOperation,
+    label: t('features.transformers.add-field-from-calculation.binary-operation', 'Binary operation'),
+  },
+  {
+    value: CalculateFieldMode.ReduceRow,
+    label: t('features.transformers.add-field-from-calculation.reduce-row', 'Reduce row'),
+  },
+];
 const okTypes = new Set<FieldType>([FieldType.time, FieldType.number, FieldType.string]);
 
 export class CalculateFieldTransformerEditor extends React.PureComponent<
@@ -204,7 +214,9 @@ export class CalculateFieldTransformerEditor extends React.PureComponent<
       <>
         <div className="gf-form-inline">
           <div className="gf-form gf-form--grow">
-            <div className="gf-form-label width-8">Field name</div>
+            <div className="gf-form-label width-8">
+              <Trans i18nKey="features.transformers.add-field-from-calculation.field-name">Field name</Trans>
+            </div>
             <HorizontalGroup spacing="xs" align="flex-start" wrap>
               {names.map((o, i) => {
                 return (
@@ -303,7 +315,7 @@ export class CalculateFieldTransformerEditor extends React.PureComponent<
         <div className="gf-form">
           <Select
             allowCustomValue={true}
-            placeholder="Field or number"
+            placeholder={t('features.transformers.add-field-from-calculation.field-or-number', 'Field or number')}
             options={leftNames}
             className="min-width-18 gf-form-spacing"
             value={options?.left}
@@ -317,7 +329,7 @@ export class CalculateFieldTransformerEditor extends React.PureComponent<
           />
           <Select
             allowCustomValue={true}
-            placeholder="Field or number"
+            placeholder={t('features.transformers.add-field-from-calculation.field-or-number', 'Field or number')}
             className="min-width-10"
             options={rightNames}
             value={options?.right}
@@ -344,8 +356,8 @@ export class CalculateFieldTransformerEditor extends React.PureComponent<
             <div className="gf-form-label width-8">Mode</div>
             <Select
               className="width-18"
-              options={calculationModes}
-              value={calculationModes.find((v) => v.value === mode)}
+              options={getCalculationModes()}
+              value={getCalculationModes().find((v) => v.value === mode)}
               onChange={this.onModeChanged}
             />
           </div>
@@ -366,7 +378,7 @@ export class CalculateFieldTransformerEditor extends React.PureComponent<
         <div className="gf-form-inline">
           <div className="gf-form">
             <LegacyForms.Switch
-              label="Replace all fields"
+              label={t('features.transformers.add-field-from-calculation.replace-all-fields', 'Replace all fields')}
               labelClass="width-8"
               checked={!!options.replaceFields}
               onChange={this.onToggleReplaceFields}
@@ -377,7 +389,17 @@ export class CalculateFieldTransformerEditor extends React.PureComponent<
     );
   }
 }
-
+export const getCalculateFieldTransformRegistryItem =
+  (): TransformerRegistryItem<CalculateFieldTransformerOptions> => ({
+    id: DataTransformerID.calculateField,
+    editor: CalculateFieldTransformerEditor,
+    transformation: standardTransformers.calculateFieldTransformer,
+    name: t('features.transformers.add-field-from-calculation.name', 'Add field from calculation'),
+    description: t(
+      'features.transformers.add-field-from-calculation.description',
+      'Use the row values to calculate a new field'
+    ),
+  });
 export const calculateFieldTransformRegistryItem: TransformerRegistryItem<CalculateFieldTransformerOptions> = {
   id: DataTransformerID.calculateField,
   editor: CalculateFieldTransformerEditor,

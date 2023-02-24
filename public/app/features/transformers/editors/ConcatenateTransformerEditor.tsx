@@ -21,6 +21,20 @@ const nameModes: Array<SelectableValue<ConcatenateFrameNameMode>> = [
   { value: ConcatenateFrameNameMode.Label, label: 'Add a label with the frame name' },
   { value: ConcatenateFrameNameMode.Drop, label: 'Ignore the frame name' },
 ];
+const getNameModes = () => [
+  {
+    value: ConcatenateFrameNameMode.FieldName,
+    label: t('features.transformers.editors.copy-frame-name-to-field-name', 'Copy frame name to field name'),
+  },
+  {
+    value: ConcatenateFrameNameMode.Label,
+    label: t('features.transformers.editors.add-a-label-with-the-frame-name', 'Add a label with the frame name'),
+  },
+  {
+    value: ConcatenateFrameNameMode.Drop,
+    label: t('features.transformers.editors.ignore-the-frame-name', 'Ignore the frame name'),
+  },
+];
 
 export class ConcatenateTransformerEditor extends React.PureComponent<ConcatenateTransformerEditorProps> {
   constructor(props: ConcatenateTransformerEditorProps) {
@@ -62,8 +76,8 @@ export class ConcatenateTransformerEditor extends React.PureComponent<Concatenat
             </div>
             <Select
               className="width-18"
-              options={nameModes}
-              value={nameModes.find((v) => v.value === frameNameMode)}
+              options={getNameModes()}
+              value={getNameModes().find((v) => v.value === frameNameMode)}
               onChange={this.onModeChanged}
             />
           </div>
@@ -87,12 +101,26 @@ export class ConcatenateTransformerEditor extends React.PureComponent<Concatenat
     );
   }
 }
-
+export const getConcatenateTransformRegistryItem = (): TransformerRegistryItem<ConcatenateTransformerOptions> => {
+  return {
+    id: DataTransformerID.concatenate,
+    editor: ConcatenateTransformerEditor,
+    transformation: standardTransformers.concatenateTransformer,
+    name: t('features.transformers.concatenate-fields', 'Concatenate fields'),
+    description: t(
+      'features.transformers.editors.combine-all-fields-into-a-single-frame',
+      'Combine all fields into a single frame.  Values will be appended with undefined values if not the same length.'
+    ),
+  };
+};
+//  <Trans i18nKey="features.dashboard.setting.delete-title">Delete</Trans>/
 export const concatenateTransformRegistryItem: TransformerRegistryItem<ConcatenateTransformerOptions> = {
   id: DataTransformerID.concatenate,
   editor: ConcatenateTransformerEditor,
   transformation: standardTransformers.concatenateTransformer,
-  name: 'Concatenate fields',
-  description:
-    'Combine all fields into a single frame.  Values will be appended with undefined values if not the same length.',
+  name: t('features.transformers.concatenate-fields', 'Concatenate fields'),
+  description: t(
+    'features.transformers.editors.combine-all-fields-into-a-single-frame',
+    'Combine all fields into a single frame.  Values will be appended with undefined values if not the same length.'
+  ),
 };

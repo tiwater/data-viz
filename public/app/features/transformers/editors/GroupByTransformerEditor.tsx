@@ -15,6 +15,7 @@ import {
   GroupByTransformerOptions,
 } from '@grafana/data/src/transformations/transformers/groupBy';
 import { Select, StatsPicker, stylesFactory } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { useAllFieldNamesFromDataFrames } from '../utils';
 
@@ -60,14 +61,12 @@ export const GroupByTransformerEditor: React.FC<TransformerUIProps<GroupByTransf
   );
 };
 
-const options = [
-  { label: 'Group by', value: GroupByOperationID.groupBy },
-  { label: 'Calculate', value: GroupByOperationID.aggregate },
-];
-
 export const GroupByFieldConfiguration: React.FC<FieldProps> = ({ fieldName, config, onConfigChange }) => {
   const styles = getStyling();
-
+  const options = [
+    { label: t('features.transformers.group-by.name', 'Group by'), value: GroupByOperationID.groupBy },
+    { label: t('features.transformers.group-by.calculate', 'Calculate'), value: GroupByOperationID.aggregate },
+  ];
   const onChange = useCallback(
     (value: SelectableValue<GroupByOperationID | null>) => {
       onConfigChange({
@@ -90,7 +89,7 @@ export const GroupByFieldConfiguration: React.FC<FieldProps> = ({ fieldName, con
             className="width-12"
             options={options}
             value={config?.operation}
-            placeholder="Ignored"
+            placeholder={t('features.transformers.group-by.ignored', 'Ignored')}
             onChange={onChange}
             isClearable
           />
@@ -101,7 +100,7 @@ export const GroupByFieldConfiguration: React.FC<FieldProps> = ({ fieldName, con
         <div className={cx('gf-form', 'gf-form--grow', styles.calculations)}>
           <StatsPicker
             className={cx('flex-grow-1', styles.rowSpacing)}
-            placeholder="Select Stats"
+            placeholder={t('features.transformers.group-by.select-stats', 'Select Stats')}
             allowMultiple
             stats={config.aggregations}
             onChange={(stats) => {
@@ -137,6 +136,17 @@ const getStyling = stylesFactory(() => {
       width: 99%;
     `,
   };
+});
+
+export const getGroupByTransformRegistryItem = (): TransformerRegistryItem<GroupByTransformerOptions> => ({
+  id: DataTransformerID.groupBy,
+  editor: GroupByTransformerEditor,
+  transformation: standardTransformers.groupByTransformer,
+  name: t('features.transformers.group-by.name', 'Group by'),
+  description: t(
+    'features.transformers.group-by.description',
+    'Group the data by a field values then process calculations for each group'
+  ),
 });
 
 export const groupByTransformRegistryItem: TransformerRegistryItem<GroupByTransformerOptions> = {

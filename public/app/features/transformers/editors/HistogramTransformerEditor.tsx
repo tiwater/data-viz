@@ -7,6 +7,7 @@ import {
 } from '@grafana/data/src/transformations/transformers/histogram';
 import { InlineField, InlineFieldRow, InlineSwitch } from '@grafana/ui';
 import { NumberInput } from 'app/core/components/OptionsUI/NumberInput';
+import { t } from 'app/core/internationalization';
 
 export const HistogramTransformerEditor: React.FC<TransformerUIProps<HistogramTransformerOptions>> = ({
   input,
@@ -74,6 +75,14 @@ export const HistogramTransformerEditor: React.FC<TransformerUIProps<HistogramTr
     </div>
   );
 };
+
+export const getHistogramTransformRegistryItem = (): TransformerRegistryItem<HistogramTransformerOptions> => ({
+  id: DataTransformerID.histogram,
+  editor: HistogramTransformerEditor,
+  transformation: standardTransformers.histogramTransformer,
+  name: t('features.transformers.histogram.name', 'Histogram'),
+  description: t('features.transformers.histogram.description', 'Calculate a histogram from input data'),
+});
 
 export const histogramTransformRegistryItem: TransformerRegistryItem<HistogramTransformerOptions> = {
   id: DataTransformerID.histogram,

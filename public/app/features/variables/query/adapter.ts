@@ -1,5 +1,7 @@
 import { cloneDeep } from 'lodash';
 
+import { t } from 'app/core/internationalization';
+
 import { dispatch } from '../../../store/store';
 import { VariableAdapter } from '../adapters';
 import { ALL_VARIABLE_TEXT } from '../constants';
@@ -15,8 +17,11 @@ import { initialQueryVariableModelState, queryVariableReducer } from './reducer'
 export const createQueryVariableAdapter = (): VariableAdapter<QueryVariableModel> => {
   return {
     id: 'query',
-    description: 'Variable values are fetched from a datasource query',
-    name: 'Query',
+    description: t(
+      'features.explore.variable-values-are-fetched',
+      'Variable values are fetched from a datasource query'
+    ),
+    name: t('features.explore.query', 'Query'),
     initialState: initialQueryVariableModelState,
     reducer: queryVariableReducer,
     picker: optionPickerFactory<QueryVariableModel>(),

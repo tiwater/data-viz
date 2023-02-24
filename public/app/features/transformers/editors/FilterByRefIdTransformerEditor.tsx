@@ -9,6 +9,7 @@ import {
 } from '@grafana/data';
 import { FilterFramesByRefIdTransformerOptions } from '@grafana/data/src/transformations/transformers/filterByRefId';
 import { HorizontalGroup, FilterPill } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 interface FilterByRefIdTransformerEditorProps extends TransformerUIProps<FilterFramesByRefIdTransformerOptions> {}
 
@@ -106,7 +107,9 @@ export class FilterByRefIdTransformerEditor extends React.PureComponent<
     return (
       <div className="gf-form-inline">
         <div className="gf-form gf-form--grow">
-          <div className="gf-form-label width-8">Series refId</div>
+          <div className="gf-form-label width-8">
+            <Trans i18nKey="features.transformers.filter-by-name.series-ref-id">Series refId</Trans>
+          </div>
           <HorizontalGroup spacing="xs" align="flex-start" wrap>
             {options.map((o, i) => {
               const label = `${o.refId}${o.count > 1 ? ' (' + o.count + ')' : ''}`;
@@ -128,6 +131,17 @@ export class FilterByRefIdTransformerEditor extends React.PureComponent<
     );
   }
 }
+export const getFilterFramesByRefIdTransformRegistryItem =
+  (): TransformerRegistryItem<FilterFramesByRefIdTransformerOptions> => ({
+    id: DataTransformerID.filterByRefId,
+    editor: FilterByRefIdTransformerEditor,
+    transformation: standardTransformers.filterFramesByRefIdTransformer,
+    name: t('features.transformers.filter-data-by-query.name', 'Filter data by query'),
+    description: t(
+      'features.transformers.filter-data-by-query.description',
+      'Filter data by query. This is useful if you are sharing the results from a different panel that has many queries and you want to only visualize a subset of that in this panel.'
+    ),
+  });
 
 export const filterFramesByRefIdTransformRegistryItem: TransformerRegistryItem<FilterFramesByRefIdTransformerOptions> =
   {

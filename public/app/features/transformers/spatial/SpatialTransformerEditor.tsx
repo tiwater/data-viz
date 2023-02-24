@@ -13,6 +13,7 @@ import {
   TransformerUIProps,
 } from '@grafana/data';
 import { useTheme2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { addLocationFields } from 'app/features/geo/editor/locationEditor';
 
 import { SpatialCalculation, SpatialOperation, SpatialAction, SpatialTransformOptions } from './models.gen';
@@ -35,15 +36,28 @@ const supplier = (
       options: [
         {
           value: SpatialAction.Prepare,
-          label: 'Prepare spatial field',
-          description: 'Set a geometry field based on the results of other fields',
+          label: t('features.transformers.spatial-operations.prepare-spatial-field', 'Prepare spatial field'),
+          description: t(
+            'features.transformers.spatial-operations.set-a-geometry',
+            'Set a geometry field based on the results of other fields'
+          ),
         },
         {
           value: SpatialAction.Calculate,
-          label: 'Calculate value',
-          description: 'Use the geometry to define a new field (heading/distance/area)',
+          label: t('features.transformers.spatial-operations.calculate-value', 'Calculate value'),
+          description: t(
+            'features.transformers.spatial-operations.use-the-geometry',
+            'Use the geometry to define a new field (heading/distance/area)'
+          ),
         },
-        { value: SpatialAction.Modify, label: 'Transform', description: 'Apply spatial operations to the geometry' },
+        {
+          value: SpatialAction.Modify,
+          label: t('features.transformers.spatial-operations.transform', 'Transform'),
+          description: t(
+            'features.transformers.spatial-operations.apply-spatial-operations',
+            'Apply spatial operations to the geometry'
+          ),
+        },
       ],
     },
   });
@@ -56,9 +70,15 @@ const supplier = (
       defaultValue: SpatialCalculation.Heading,
       settings: {
         options: [
-          { value: SpatialCalculation.Heading, label: 'Heading' },
-          { value: SpatialCalculation.Area, label: 'Area' },
-          { value: SpatialCalculation.Distance, label: 'Distance' },
+          {
+            value: SpatialCalculation.Heading,
+            label: t('features.transformers.spatial-operations.heading', 'Heading'),
+          },
+          { value: SpatialCalculation.Area, label: t('features.transformers.spatial-operations.area', 'Area') },
+          {
+            value: SpatialCalculation.Distance,
+            label: t('features.transformers.spatial-operations.distance', 'Distance'),
+          },
         ],
       },
     });
@@ -72,13 +92,19 @@ const supplier = (
         options: [
           {
             value: SpatialOperation.AsLine,
-            label: 'As line',
-            description: 'Create a single line feature with a vertex at each row',
+            label: t('features.transformers.spatial-operations.as-line', 'As line'),
+            description: t(
+              'features.transformers.create-a-single-line',
+              'Create a single line feature with a vertex at each row'
+            ),
           },
           {
             value: SpatialOperation.LineBuilder,
-            label: 'Line builder',
-            description: 'Create a line between two points',
+            label: t('features.transformers.spatial-operations.line-builder', 'Line builder'),
+            description: t(
+              'features.transformers.spatial-operations.create-a-line-between',
+              'Create a line between two points'
+            ),
           },
         ],
       },
@@ -156,6 +182,15 @@ const getStyles = (theme: GrafanaTheme2) => {
     `,
   };
 };
+
+export const getSpatialTransformRegistryItem = (): TransformerRegistryItem<SpatialTransformOptions> => ({
+  id: DataTransformerID.spatial,
+  editor: SetGeometryTransformerEditor,
+  transformation: spatialTransformer,
+  name: t('features.transformers.spatial-operations.name', 'Spatial operations'),
+  description: t('features.transformers.spatial-operations.description', 'Apply spatial operations to query results'),
+  state: PluginState.alpha,
+});
 
 export const spatialTransformRegistryItem: TransformerRegistryItem<SpatialTransformOptions> = {
   id: DataTransformerID.spatial,

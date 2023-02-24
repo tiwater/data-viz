@@ -7,6 +7,7 @@ import { Stack } from '@grafana/experimental';
 import { DataSourcePicker, getDataSourceSrv, locationService } from '@grafana/runtime';
 import { Button, Checkbox, Field, FieldSet, HorizontalGroup, Input } from '@grafana/ui';
 import { ColorValueEditor } from 'app/core/components/OptionsUI/color';
+import { t, Trans } from 'app/core/internationalization';
 import StandardAnnotationQueryEditor from 'app/features/annotations/components/StandardAnnotationQueryEditor';
 
 import { DashboardModel } from '../../state/DashboardModel';
@@ -130,14 +131,14 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
       <Stack>
         {!annotation.builtIn && (
           <Button variant="destructive" onClick={onDelete}>
-            Delete
+            <Trans i18nKey="features.dashboard.annotation.delete-button">Delete</Trans>
           </Button>
         )}
         <Button variant="secondary" onClick={onPreview}>
-          Preview in dashboard
+          <Trans i18nKey="features.dashboard.annotation.preview-in-dashboard-button">Preview in dashboard</Trans>
         </Button>
         <Button variant="primary" onClick={onApply}>
-          Apply
+          <Trans i18nKey="features.dashboard.annotation.apply-button">Apply</Trans>
         </Button>
       </Stack>
     </div>

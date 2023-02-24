@@ -6,6 +6,7 @@ import { selectors } from '@grafana/e2e-selectors';
 import { AngularComponent, config, getAngularLoader, getDataSourceSrv } from '@grafana/runtime';
 import { Alert, Button, ConfirmModal, Container, CustomScrollbar, HorizontalGroup, Modal } from '@grafana/ui';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
+import { t, Trans } from 'app/core/internationalization';
 import { getPanelStateForModel } from 'app/features/panel/state/selectors';
 import { AppNotificationSeverity, StoreState } from 'app/types';
 
@@ -63,7 +64,12 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
       this.loadAlertTab();
     } else {
       // TODO probably need to migrate AlertTab to react
-      alert('Angular support disabled, legacy alerting cannot function without angular support');
+      alert(
+        t(
+          'features.dashboard.angular-support-disabled.',
+          'Angular support disabled, legacy alerting cannot function without angular support'
+        )
+      );
     }
   }
 
@@ -170,15 +176,22 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
       <ConfirmModal
         isOpen={true}
         icon="trash-alt"
-        title="Delete"
+        title={t('features.dashboard.setting.delete-title', 'Delete')}
         body={
           <div>
-            Are you sure you want to delete this alert rule?
+            <Trans i18nKey="features.dashboard.setting.are-you-sure-you-want">
+              Are you sure you want to delete this alert rule?
+            </Trans>
+
             <br />
-            <small>You need to save dashboard for the delete to take effect.</small>
+            <small>
+              <Trans i18nKey="features.dashboard.setting.you-need-to-save-dashboard">
+                You need to save dashboard for the delete to take effect.
+              </Trans>
+            </small>
           </div>
         }
-        confirmText="Delete alert"
+        confirmText={t('features.dashboard.setting.delete-alert', 'Delete alert')}
         onDismiss={onDismiss}
         onConfirm={() => {
           delete panel.alert;
@@ -203,7 +216,13 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
     const onDismiss = () => this.onToggleModal('showStateHistory');
 
     return (
-      <Modal isOpen={true} icon="history" title="State history" onDismiss={onDismiss} onClickBackdrop={onDismiss}>
+      <Modal
+        isOpen={true}
+        icon="history"
+        title={t('features.dashboard.setting.state-history', 'State history')}
+        onDismiss={onDismiss}
+        onClickBackdrop={onDismiss}
+      >
         <StateHistory dashboard={dashboard} panelId={panel.id} onRefresh={() => this.panelCtrl?.refresh()} />
       </Modal>
     );
@@ -219,10 +238,10 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
     }
 
     const model = {
-      title: 'Panel has no alert rule defined',
+      title: t('features.dashboard.setting.panel-has-no-alert-rule-defined', 'Panel has no alert rule defined'),
       buttonIcon: 'bell' as const,
       onClick: this.onAddAlert,
-      buttonTitle: 'Create Alert',
+      buttonTitle: t('features.dashboard.setting.create-alert', 'Create Alert'),
     };
 
     return (
@@ -233,7 +252,10 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
               {alert && hasTransformations && (
                 <Alert
                   severity={AppNotificationSeverity.Error}
-                  title="Transformations are not supported in alert queries"
+                  title={t(
+                    'features.dashboard.setting.transformations-are-not-supported',
+                    'Transformations are not supported in alert queries'
+                  )}
                 />
               )}
 
@@ -241,13 +263,13 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
               {alert && (
                 <HorizontalGroup>
                   <Button onClick={() => this.onToggleModal('showStateHistory')} variant="secondary">
-                    State history
+                    <Trans i18nKey="features.dashboard.setting.state-history">State history</Trans>
                   </Button>
                   <Button onClick={() => this.onToggleModal('showTestRule')} variant="secondary">
-                    Test rule
+                    <Trans i18nKey="features.dashboard.setting.test-rule">Test rule</Trans>
                   </Button>
                   <Button onClick={() => this.onToggleModal('showDeleteConfirmation')} variant="destructive">
-                    Delete
+                    <Trans i18nKey="features.dashboard.setting.delete-title">Delete</Trans>
                   </Button>
                 </HorizontalGroup>
               )}

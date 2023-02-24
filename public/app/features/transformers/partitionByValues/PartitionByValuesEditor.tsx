@@ -9,6 +9,7 @@ import {
 } from '@grafana/data';
 import { InlineField, InlineFieldRow, ValuePicker, Button, HorizontalGroup, FieldValidationMessage } from '@grafana/ui';
 import { useFieldDisplayNames, useSelectOptions } from '@grafana/ui/src/components/MatchersUI/utils';
+import { t } from 'app/core/internationalization';
 
 import { partitionByValuesTransformer, PartitionByValuesTransformerOptions } from './partitionByValues';
 
@@ -86,7 +87,7 @@ export function PartitionByValuesEditor({
                 size="md"
                 options={selectOptions}
                 onChange={addField}
-                label="Select field"
+                label={t('features.transformers.partition-by-values.select-field', 'Select field')}
                 icon="plus"
               />
             )}
@@ -96,6 +97,19 @@ export function PartitionByValuesEditor({
     </div>
   );
 }
+
+export const getPartitionByValuesTransformRegistryItem =
+  (): TransformerRegistryItem<PartitionByValuesTransformerOptions> => ({
+    id: DataTransformerID.partitionByValues,
+    editor: PartitionByValuesEditor,
+    transformation: partitionByValuesTransformer,
+    name: t('features.transformers.partition-by-values.name', 'Partition by values'),
+    description: t(
+      'features.transformers.partition-by-values.description',
+      'Splits a one-frame dataset into multiple series discriminated by unique/enum values in one or more fields.'
+    ),
+    state: PluginState.alpha,
+  });
 
 export const partitionByValuesTransformRegistryItem: TransformerRegistryItem<PartitionByValuesTransformerOptions> = {
   id: DataTransformerID.partitionByValues,

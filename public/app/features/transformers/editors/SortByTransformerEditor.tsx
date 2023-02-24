@@ -3,6 +3,7 @@ import React, { useCallback } from 'react';
 import { DataTransformerID, standardTransformers, TransformerRegistryItem, TransformerUIProps } from '@grafana/data';
 import { SortByField, SortByTransformerOptions } from '@grafana/data/src/transformations/transformers/sortBy';
 import { InlineField, InlineSwitch, InlineFieldRow, Select } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { useAllFieldNamesFromDataFrames } from '../utils';
 
@@ -28,17 +29,17 @@ export const SortByTransformerEditor: React.FC<TransformerUIProps<SortByTransfor
       {sorts.map((s, index) => {
         return (
           <InlineFieldRow key={`${s.field}/${index}`}>
-            <InlineField label="Field" labelWidth={10} grow={true}>
+            <InlineField label={t('features.transformers.sort-by.field', 'Field')} labelWidth={10} grow={true}>
               <Select
                 options={fieldNames}
                 value={s.field}
-                placeholder="Select field"
+                placeholder={t('features.transformers.sort-by.select-field', 'Select field')}
                 onChange={(v) => {
                   onSortChange(index, { ...s, field: v.value! });
                 }}
               />
             </InlineField>
-            <InlineField label="Reverse">
+            <InlineField label={t('features.transformers.sort-by.reverse', 'Reverse')}>
               <InlineSwitch
                 value={!!s.desc}
                 onChange={() => {
@@ -52,6 +53,14 @@ export const SortByTransformerEditor: React.FC<TransformerUIProps<SortByTransfor
     </div>
   );
 };
+
+export const getSortByTransformRegistryItem = (): TransformerRegistryItem<SortByTransformerOptions> => ({
+  id: DataTransformerID.sortBy,
+  editor: SortByTransformerEditor,
+  transformation: standardTransformers.sortByTransformer,
+  name: t('features.transformers.sort-by.name', 'Sort by'),
+  description: t('features.transformers.sort-by.description', 'Sort fields in a frame'),
+});
 
 export const sortByTransformRegistryItem: TransformerRegistryItem<SortByTransformerOptions> = {
   id: DataTransformerID.sortBy,

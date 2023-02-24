@@ -4,6 +4,7 @@ import React from 'react';
 import { GrafanaTheme2 } from '@grafana/data';
 import { locationService } from '@grafana/runtime';
 import { Button, HorizontalGroup, Spinner, useStyles2, VerticalGroup } from '@grafana/ui';
+import { Trans } from 'app/core/internationalization';
 import { DashboardInitPhase } from 'app/types';
 
 export interface Props {
@@ -25,7 +26,7 @@ export const DashboardLoading = ({ initPhase }: Props) => {
           </HorizontalGroup>{' '}
           <HorizontalGroup align="center" justify="center">
             <Button variant="secondary" size="md" icon="repeat" onClick={cancelVariables}>
-              Cancel loading dashboard
+              <Trans i18nKey="features.dashboard.cancel-loading-dashboard">Cancel loading dashboard</Trans>
             </Button>
           </HorizontalGroup>
         </VerticalGroup>

@@ -3,6 +3,7 @@ import React, { FormEvent, useCallback } from 'react';
 import { DataTransformerID, standardTransformers, TransformerRegistryItem, TransformerUIProps } from '@grafana/data';
 import { LimitTransformerOptions } from '@grafana/data/src/transformations/transformers/limit';
 import { InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 export const LimitTransformerEditor: React.FC<TransformerUIProps<LimitTransformerOptions>> = ({
   options,
@@ -21,9 +22,9 @@ export const LimitTransformerEditor: React.FC<TransformerUIProps<LimitTransforme
   return (
     <>
       <InlineFieldRow>
-        <InlineField label="Limit" labelWidth={8}>
+        <InlineField label={t('features.transformers.limit.name', 'Limit')} labelWidth={8}>
           <Input
-            placeholder="Limit count"
+            placeholder={t('features.transformers.limit.limit-count', 'Limit count')}
             pattern="[0-9]*"
             value={options.limitField}
             onChange={onSetLimit}
@@ -35,10 +36,18 @@ export const LimitTransformerEditor: React.FC<TransformerUIProps<LimitTransforme
   );
 };
 
+export const getLimitTransformRegistryItem = (): TransformerRegistryItem<LimitTransformerOptions> => ({
+  id: DataTransformerID.limit,
+  editor: LimitTransformerEditor,
+  transformation: standardTransformers.limitTransformer,
+  name: t('features.transformers.limit.name', 'Limit'),
+  description: t('features.transformers.limit.description', 'Limit the number of items displayed.'),
+});
+
 export const limitTransformRegistryItem: TransformerRegistryItem<LimitTransformerOptions> = {
   id: DataTransformerID.limit,
   editor: LimitTransformerEditor,
   transformation: standardTransformers.limitTransformer,
-  name: 'Limit',
-  description: `Limit the number of items displayed.`,
+  name: t('features.transformers.limit.name', 'Limit'),
+  description: t('features.transformers.limit.description', 'Limit the number of items displayed.'),
 };

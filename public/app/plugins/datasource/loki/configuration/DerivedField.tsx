@@ -5,6 +5,7 @@ import { usePrevious } from 'react-use';
 import { GrafanaTheme2, VariableSuggestion } from '@grafana/data';
 import { DataSourcePicker } from '@grafana/runtime';
 import { Button, DataLinkInput, LegacyForms, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DerivedFieldConfig } from '../types';
 
@@ -99,7 +100,7 @@ export const DerivedField = (props: Props) => {
       <div className="gf-form">
         <FormField
           labelWidth={10}
-          label={showInternalLink ? 'Query' : 'URL'}
+          label={showInternalLink ? t('features.explore.query', 'Query') : 'URL'}
           inputEl={
             <DataLinkInput
               placeholder={showInternalLink ? '${__value.raw}' : 'http://example.com/${__value.raw}'}

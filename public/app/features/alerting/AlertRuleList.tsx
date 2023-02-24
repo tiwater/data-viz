@@ -6,6 +6,7 @@ import { config, locationService } from '@grafana/runtime';
 import { Button, FilterInput, LinkButton, Select, VerticalGroup } from '@grafana/ui';
 import appEvents from 'app/core/app_events';
 import { Page } from 'app/core/components/Page/Page';
+import { Trans } from 'app/core/internationalization';
 import { GrafanaRouteComponentProps } from 'app/core/navigation/types';
 import { AlertRule, StoreState } from 'app/types';
 
@@ -103,7 +104,7 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
             </div>
             <div className="gf-form">
               <label className="gf-form-label" htmlFor="alert-state-filter">
-                States
+                <Trans i18nKey="features.dashboard.setting.states">States</Trans>
               </label>
 
               <div className="width-13">
@@ -118,11 +119,11 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
             <div className="page-action-bar__spacer" />
             {config.unifiedAlertingEnabled && (
               <LinkButton variant="primary" href="alerting/ng/new">
-                Add NG Alert
+                <Trans i18nKey="features.dashboard.setting.add-ng-alert">Add NG Alert</Trans>
               </LinkButton>
             )}
             <Button variant="secondary" onClick={this.onOpenHowTo}>
-              How to add an alert
+              <Trans i18nKey="features.dashboard.setting.how-to-add-an-alert">How to add an alert</Trans>
             </Button>
           </div>
           <DeprecationNotice />

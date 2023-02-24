@@ -10,6 +10,7 @@ import {
   SpecialValue,
 } from '@grafana/data';
 import { InlineField, InlineFieldRow, Select } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { useAllFieldNamesFromDataFrames } from '../utils';
 
@@ -51,10 +52,26 @@ export const GroupingToMatrixTransformerEditor: React.FC<TransformerUIProps<Grou
   );
 
   const specialValueOptions: Array<SelectableValue<SpecialValue>> = [
-    { label: 'Null', value: SpecialValue.Null, description: 'Null value' },
-    { label: 'True', value: SpecialValue.True, description: 'Boolean true value' },
-    { label: 'False', value: SpecialValue.False, description: 'Boolean false value' },
-    { label: 'Empty', value: SpecialValue.Empty, description: 'Empty string' },
+    {
+      label: t('features.transformers.grouping-to-matrix.null', 'Null'),
+      value: SpecialValue.Null,
+      description: t('features.transformers.grouping-to-matrix.null-value', 'Null value'),
+    },
+    {
+      label: t('features.transformers.grouping-to-matrix.true', 'True'),
+      value: SpecialValue.True,
+      description: t('features.transformers.grouping-to-matrix.boolean-true-value', 'Boolean true value'),
+    },
+    {
+      label: t('features.transformers.grouping-to-matrix.false', 'False'),
+      value: SpecialValue.False,
+      description: t('features.transformers.grouping-to-matrix.boolean-false-value', 'Boolean false value'),
+    },
+    {
+      label: t('features.transformers.grouping-to-matrix.empty', 'Empty'),
+      value: SpecialValue.Empty,
+      description: t('features.transformers.grouping-to-matrix.empty string', 'Empty string'),
+    },
   ];
 
   const onSelectEmptyValue = useCallback(
@@ -70,22 +87,34 @@ export const GroupingToMatrixTransformerEditor: React.FC<TransformerUIProps<Grou
   return (
     <>
       <InlineFieldRow>
-        <InlineField label="Column" labelWidth={8}>
+        <InlineField label={t('features.transformers.grouping-to-matrix.column', 'Column')} labelWidth={8}>
           <Select options={fieldNames} value={options.columnField} onChange={onSelectColumn} isClearable />
         </InlineField>
-        <InlineField label="Row" labelWidth={8}>
+        <InlineField label={t('features.transformers.grouping-to-matrix.row', 'Row')} labelWidth={8}>
           <Select options={fieldNames} value={options.rowField} onChange={onSelectRow} isClearable />
         </InlineField>
-        <InlineField label="Cell Value" labelWidth={10}>
+        <InlineField label={t('features.transformers.grouping-to-matrix.cell-value', 'Cell Value')} labelWidth={10}>
           <Select options={fieldNames} value={options.valueField} onChange={onSelectValue} isClearable />
         </InlineField>
-        <InlineField label="Empty Value">
+        <InlineField label={t('features.transformers.grouping-to-matrix.empty-value', 'Empty Value')}>
           <Select options={specialValueOptions} value={options.emptyValue} onChange={onSelectEmptyValue} isClearable />
         </InlineField>
       </InlineFieldRow>
     </>
   );
 };
+
+export const getGroupingToMatrixTransformRegistryItem =
+  (): TransformerRegistryItem<GroupingToMatrixTransformerOptions> => ({
+    id: DataTransformerID.groupingToMatrix,
+    editor: GroupingToMatrixTransformerEditor,
+    transformation: standardTransformers.groupingToMatrixTransformer,
+    name: t('features.transformers.grouping-to-matrix.name', 'Grouping to matrix'),
+    description: t(
+      'features.transformers.grouping-to-matrix.description',
+      'Takes a three fields combination and produces a Matrix'
+    ),
+  });
 
 export const groupingToMatrixTransformRegistryItem: TransformerRegistryItem<GroupingToMatrixTransformerOptions> = {
   id: DataTransformerID.groupingToMatrix,

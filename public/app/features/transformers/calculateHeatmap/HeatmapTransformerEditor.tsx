@@ -7,6 +7,7 @@ import {
   TransformerRegistryItem,
   TransformerUIProps,
 } from '@grafana/data';
+import { t } from 'app/core/internationalization';
 
 import { getDefaultOptions, getTransformerOptionPane } from '../spatial/optionsHelper';
 
@@ -40,6 +41,15 @@ export const HeatmapTransformerEditor: React.FC<TransformerUIProps<HeatmapTransf
     </div>
   );
 };
+
+export const getHeatmapTransformRegistryItem = (): TransformerRegistryItem<HeatmapTransformerOptions> => ({
+  id: heatmapTransformer.id,
+  editor: HeatmapTransformerEditor,
+  transformation: heatmapTransformer,
+  name: t('features.transformers.create-heatmap.name', 'Create heatmap'),
+  description: t('features.transformers.create-heatmap.description', 'calculate heatmap from source data'),
+  state: PluginState.alpha,
+});
 
 export const heatmapTransformRegistryItem: TransformerRegistryItem<HeatmapTransformerOptions> = {
   id: heatmapTransformer.id,
