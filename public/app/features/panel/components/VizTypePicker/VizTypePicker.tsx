@@ -3,6 +3,8 @@ import React, { useMemo } from 'react';
 
 import { GrafanaTheme2, PanelData, PanelPluginMeta } from '@grafana/data';
 import { EmptySearchResult, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
+import { setFilteredPluginTypes } from 'app/utils';
 
 import { filterPluginList, getAllPanelPluginMeta } from '../../state/util';
 
@@ -28,12 +30,15 @@ export function VizTypePicker({ searchQuery, onChange, current, data }: Props) {
   }, [current, pluginsList, searchQuery]);
 
   if (filteredPluginTypes.length === 0) {
-    return <EmptySearchResult>Could not find anything matching your query</EmptySearchResult>;
+    return (
+      <EmptySearchResult>
+        {t('features.panel.viz-type-picker.could-not-find-anything', 'Could not find anything matching your query')}
+      </EmptySearchResult>
+    );
   }
-
   return (
     <div className={styles.grid}>
-      {filteredPluginTypes.map((plugin, index) => (
+      {setFilteredPluginTypes(filteredPluginTypes).map((plugin, index) => (
         <VizTypePickerPlugin
           disabled={false}
           key={plugin.id}

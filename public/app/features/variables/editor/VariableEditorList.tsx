@@ -6,6 +6,7 @@ import { Stack } from '@grafana/experimental';
 import { reportInteraction } from '@grafana/runtime';
 import { Button } from '@grafana/ui';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
+import { t } from 'app/core/internationalization';
 
 import { VariablesDependenciesButton } from '../inspect/VariablesDependenciesButton';
 import { UsagesToNetwork, VariableUsageTree } from '../inspect/utils';
@@ -58,8 +59,8 @@ export function VariableEditorList({
             >
               <thead>
                 <tr>
-                  <th>Variable</th>
-                  <th>Definition</th>
+                  <th>{t('features.variables.editor.variable', 'Variable')}</th>
+                  <th>{t('features.variables.editor.definition', 'Definition')}</th>
                   <th colSpan={5} />
                 </tr>
               </thead>
@@ -92,7 +93,7 @@ export function VariableEditorList({
                 onClick={onAdd}
                 icon="plus"
               >
-                New variable
+                {t('features.variables.editor.new-variable', 'New variable')}
               </Button>
             </Stack>
           </Stack>
@@ -106,22 +107,25 @@ function EmptyVariablesList({ onAdd }: { onAdd: () => void }): ReactElement {
   return (
     <div>
       <EmptyListCTA
-        title="There are no variables yet"
+        title={t('features.variables.editor.there-are-no-variables-yet', 'There are no variables yet')}
         buttonIcon="calculator-alt"
-        buttonTitle="Add variable"
+        buttonTitle={t('features.variables.editor.add-variable', 'Add variable')}
         infoBox={{
-          __html: ` <p>
-                    Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server
-                    or sensor names in your metric queries you can use variables in their place. Variables are shown as
-                    list boxes at the top of the dashboard. These drop-down lists make it easy to change the data
-                    being displayed in your dashboard. Check out the
+          __html: ` <p>${t(
+            'features.variables.editor.variables-enable-more-interactive',
+            'Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server or sensor names in your metric queries you can use variables in their place. Variables are shown as list boxes at the top of the dashboard. These drop-down lists make it easy to change the data being displayed in your dashboard. Check out the'
+          )}
+                    
                     <a class="external-link" href="https://grafana.com/docs/grafana/latest/variables/" target="_blank">
-                      Templates and variables documentation
+                    ${t(
+                      'features.variables.editor.templates-and-variables-documentation',
+                      'Templates and variables documentation'
+                    )}
                     </a>
-                    for more information.
+                    ${t('features.variables.editor.for-more-information', 'for more information.')}
                   </p>`,
         }}
-        infoBoxTitle="What do variables do?"
+        infoBoxTitle={t('features.variables.editor.what-do-variables-do', 'What do variables do?')}
         onClick={(event) => {
           event.preventDefault();
           onAdd();

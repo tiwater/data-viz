@@ -6,6 +6,7 @@ import { LoadingState, SelectableValue, VariableType } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 import { locationService } from '@grafana/runtime';
 import { Button, HorizontalGroup, Icon } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { StoreState, ThunkDispatch } from '../../../types';
 import { variableAdapters } from '../adapters';
@@ -155,9 +156,12 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
           <VariableTextField
             value={this.props.editor.name}
             onChange={this.onNameChange}
-            name="Name"
-            placeholder="Variable name"
-            description="The name of the template variable. (Max. 50 characters)"
+            name={t('features.variables.editor.name', 'Name')}
+            placeholder={t('features.variables.editor.variable-name', 'Variable name')}
+            description={t(
+              'features.variables.editor.the-name-of-the-template-variable',
+              'The name of the template variable. (Max. 50 characters)'
+            )}
             invalid={!!this.props.editor.errors.name}
             error={this.props.editor.errors.name}
             testId={selectors.pages.Dashboard.Settings.Variables.Edit.General.generalNameInputV2}
@@ -166,17 +170,17 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
           />
 
           <VariableTextField
-            name="Label"
-            description="Optional display name"
+            name={t('features.variables.editor.label', 'Label')}
+            description={t('features.variables.editor.optional-display-name', 'Optional display name')}
             value={this.props.variable.label ?? ''}
-            placeholder="Label name"
+            placeholder={t('features.variables.editor.label-name', 'Label name')}
             onChange={this.onLabelChange}
             testId={selectors.pages.Dashboard.Settings.Variables.Edit.General.generalLabelInputV2}
           />
           <VariableTextAreaField
-            name="Description"
+            name={t('features.variables.editor.description', 'Description')}
             value={variable.description ?? ''}
-            placeholder="Descriptive text"
+            placeholder={t('features.variables.editor.description-text', 'Descriptive text')}
             onChange={this.onDescriptionChange}
             width={52}
           />
@@ -193,7 +197,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
           <div style={{ marginTop: '16px' }}>
             <HorizontalGroup spacing="md" height="inherit">
               <Button variant="destructive" fill="outline" onClick={this.onModalOpen}>
-                Delete
+                {t('features.variables.editor.delete', 'Delete')}
               </Button>
               <Button
                 type="submit"
@@ -201,7 +205,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
                 disabled={loading}
                 variant="secondary"
               >
-                Run query
+                {t('features.variables.editor.run-query', 'Run query')}
                 {loading && <Icon className="spin-clockwise" name="sync" size="sm" style={{ marginLeft: '2px' }} />}
               </Button>
               <Button
@@ -209,7 +213,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props, State>
                 onClick={this.onApply}
                 data-testid={selectors.pages.Dashboard.Settings.Variables.Edit.General.applyButton}
               >
-                Apply
+                {t('features.variables.editor.apply', 'Apply')}
               </Button>
             </HorizontalGroup>
           </div>

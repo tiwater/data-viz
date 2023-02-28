@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 import React from 'react';
 
 import { Checkbox, Button, Tag, ModalsController } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DecoratedRevisionModel } from '../DashboardSettings/VersionsSettings';
 
@@ -18,10 +19,10 @@ export const VersionHistoryTable = ({ versions, canCompare, onCheck }: VersionsT
     <thead>
       <tr>
         <th className="width-4"></th>
-        <th className="width-4">Version</th>
-        <th className="width-14">Date</th>
-        <th className="width-10">Updated by</th>
-        <th>Notes</th>
+        <th className="width-4">{t('features.variables.editor.version', 'Version')}</th>
+        <th className="width-14">{t('features.variables.editor.date', 'Date')}</th>
+        <th className="width-10">{t('features.variables.editor.updated-by', 'Updated by')}</th>
+        <th>{t('features.variables.editor.notes', 'Notes')}</th>
         <th></th>
       </tr>
     </thead>
