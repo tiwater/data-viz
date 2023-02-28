@@ -15,9 +15,12 @@ export function importPanelPlugin(id: string): Promise<PanelPlugin> {
   }
 
   const meta = config.panels[id];
-
   if (!meta) {
     throw new Error(`Plugin ${id} not found`);
+  }
+  const list = ['bilibala-echarts-panel', 'yesoreyeram-boomtheme-panel'];
+  if (list.indexOf(meta.id) > -1) {
+    meta.module = `https://data-viz.ticos.cn/public/${meta.module}.js`;
   }
 
   promiseCache[id] = getPanelPlugin(meta);
