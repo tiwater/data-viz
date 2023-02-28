@@ -60,7 +60,7 @@ export const SaveDashboardAsButton: React.FC<SaveDashboardButtonProps & { varian
             variant={variant}
             aria-label={selectors.pages.Dashboard.Settings.General.saveAsDashBoard}
           >
-            Save as
+            <Trans i18nKey="dashboard.save-dashboard.save-as">Save As</Trans>
           </Button>
         );
       }}

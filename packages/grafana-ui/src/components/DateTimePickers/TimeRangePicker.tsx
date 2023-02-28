@@ -183,7 +183,7 @@ const ZoomOutTooltip = () => (
 
 const TimePickerTooltip = ({ timeRange, timeZone }: { timeRange: TimeRange; timeZone?: TimeZone }) => {
   const styles = useStyles2(getLabelStyles);
-
+  const timeZoneFormat = timeZoneFormatUserFriendly(timeZone);
   return (
     <>
       {dateTimeFormat(timeRange.from, { timeZone })}
@@ -192,7 +192,11 @@ const TimePickerTooltip = ({ timeRange, timeZone }: { timeRange: TimeRange; time
       </div>
       {dateTimeFormat(timeRange.to, { timeZone })}
       <div className="text-center">
-        <span className={styles.utc}>{timeZoneFormatUserFriendly(timeZone)}</span>
+        <span className={styles.utc}>
+          {timeZoneFormat === 'Local browser time'
+            ? t('grafana-data.Local browser time', 'Local browser time')
+            : timeZoneFormat}
+        </span>
       </div>
     </>
   );

@@ -5,6 +5,7 @@ import { GrafanaTheme2 } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 
 import { HorizontalGroup, Input } from '..';
+import { t } from '../../../src/utils/i18n';
 import { useStyles2 } from '../../themes';
 import { IconName } from '../../types/icon';
 import { Button, ButtonVariant } from '../Button';
@@ -53,7 +54,7 @@ export const ConfirmModal = ({
   confirmText,
   confirmVariant = 'destructive',
   confirmationText,
-  dismissText = 'Cancel',
+  dismissText = t('grafana-ui.confirm-modal.dismissText', 'Cancel'),
   dismissVariant = 'secondary',
   alternativeText,
   modalClass,

@@ -5,6 +5,7 @@ import { useAsync } from 'react-use';
 import { GrafanaTheme2 } from '@grafana/data';
 import { reportInteraction } from '@grafana/runtime';
 import { CollapsableSection, HorizontalGroup, Icon, Spinner, Tooltip, useStyles2, VerticalGroup } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DashboardModel } from '../../dashboard/state';
 import { VariableModel } from '../types';
@@ -77,8 +78,13 @@ function CollapseLabel(): ReactElement {
   const style = useStyles2(getStyles);
   return (
     <h5>
-      Renamed or missing variables
-      <Tooltip content="Click to expand a list with all variable references that have been renamed or are missing from the dashboard.">
+      {t('features.variables.editor.renamed-or-missing-variables', 'Renamed or missing variables')}
+      <Tooltip
+        content={t(
+          'features.variables.editor.click-to-expand-a-list-with-all',
+          'Click to expand a list with all variable references that have been renamed or are missing from the dashboard.'
+        )}
+      >
         <Icon name="info-circle" className={style.infoIcon} />
       </Tooltip>
     </h5>
@@ -86,7 +92,11 @@ function CollapseLabel(): ReactElement {
 }
 
 function NoUnknowns(): ReactElement {
-  return <span>No renamed or missing variables found.</span>;
+  return (
+    <span>
+      {t('features.variables.editor.no-renamed-or-missing-variables', 'No renamed or missing variables found.')}
+    </span>
+  );
 }
 
 function UnknownTable({ usages }: { usages: UsagesToNetwork[] }): ReactElement {
@@ -95,7 +105,7 @@ function UnknownTable({ usages }: { usages: UsagesToNetwork[] }): ReactElement {
     <table className="filter-table filter-table--hover">
       <thead>
         <tr>
-          <th>Variable</th>
+          <th>{t('features.variables.editor.variable', 'Variable')}</th>
           <th colSpan={5} />
         </tr>
       </thead>

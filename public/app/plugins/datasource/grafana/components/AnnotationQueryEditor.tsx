@@ -4,28 +4,10 @@ import React from 'react';
 import { SelectableValue } from '@grafana/data';
 import { Field, FieldSet, Select, Switch } from '@grafana/ui';
 import { TagFilter } from 'app/core/components/TagFilter/TagFilter';
+import { t } from 'app/core/internationalization';
 import { getAnnotationTags } from 'app/features/annotations/api';
 
 import { GrafanaAnnotationQuery, GrafanaAnnotationType, GrafanaQuery } from '../types';
-
-const matchTooltipContent = 'Enabling this returns annotations that match any of the tags specified below';
-
-const tagsTooltipContent = (
-  <div>Specify a list of tags to match. To specify a key and value tag use `key:value` syntax.</div>
-);
-
-const annotationTypes = [
-  {
-    label: 'Dashboard',
-    value: GrafanaAnnotationType.Dashboard,
-    description: 'Query for events created on this dashboard and show them in the panels where they where created',
-  },
-  {
-    label: 'Tags',
-    value: GrafanaAnnotationType.Tags,
-    description: 'This will fetch any annotation events that match the tags filter',
-  },
-];
 
 const limitOptions = [10, 50, 100, 200, 300, 500, 1000, 2000].map((limit) => ({
   label: String(limit),
@@ -38,6 +20,38 @@ interface Props {
 }
 
 export default function AnnotationQueryEditor({ query, onChange }: Props) {
+  const matchTooltipContent = t(
+    'features.dashboard.setting.enabling-this-returns-annotations',
+    'Enabling this returns annotations that match any of the tags specified below'
+  );
+
+  const tagsTooltipContent = (
+    <div>
+      {t(
+        'features.dashboard.setting.specify-a-list-of-tags-to-match',
+        'Specify a list of tags to match. To specify a key and value tag use `key:value` syntax.'
+      )}
+    </div>
+  );
+
+  const annotationTypes = [
+    {
+      label: t('features.dashboard.setting.dashboard', 'Dashboard'),
+      value: GrafanaAnnotationType.Dashboard,
+      description: t(
+        'features.dashboard.setting.query-for-events-created-on',
+        'Query for events created on this dashboard and show them in the panels where they where created'
+      ),
+    },
+    {
+      label: t('features.dashboard.setting.tags', 'Tags'),
+      value: GrafanaAnnotationType.Tags,
+      description: t(
+        'features.dashboard.setting.this-will-fetch-any-annotation',
+        'This will fetch any annotation events that match the tags filter'
+      ),
+    },
+  ];
   const annotationQuery = query as GrafanaAnnotationQuery;
   const { limit, matchAny, tags, type } = annotationQuery;
   const styles = getStyles();
@@ -68,7 +82,7 @@ export default function AnnotationQueryEditor({ query, onChange }: Props) {
 
   return (
     <FieldSet className={styles.container}>
-      <Field label="Filter by">
+      <Field label={t('features.dashboard.setting.filter-by', 'Filter by')}>
         <Select
           inputId="grafana-annotations__filter-by"
           options={annotationTypes}
@@ -76,7 +90,7 @@ export default function AnnotationQueryEditor({ query, onChange }: Props) {
           onChange={onFilterByChange}
         />
       </Field>
-      <Field label="Max limit">
+      <Field label={t('features.dashboard.setting.max-limit', 'Max limit')}>
         <Select
           inputId="grafana-annotations__limit"
           width={16}
@@ -87,10 +101,10 @@ export default function AnnotationQueryEditor({ query, onChange }: Props) {
       </Field>
       {type === GrafanaAnnotationType.Tags && (
         <>
-          <Field label="Match any" description={matchTooltipContent}>
+          <Field label={t('features.dashboard.setting.match-any', 'Match any')} description={matchTooltipContent}>
             <Switch id="grafana-annotations__match-any" value={matchAny} onChange={onMatchAnyChange} />
           </Field>
-          <Field label="Tags" description={tagsTooltipContent}>
+          <Field label={t('features.dashboard.setting.tags', 'Tags')} description={tagsTooltipContent}>
             <TagFilter
               allowCustomValue
               inputId="grafana-annotations__tags"
