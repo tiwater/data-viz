@@ -307,6 +307,7 @@
         "auto-refresh": "Åūŧő řęƒřęşĥ",
         "auto-refresh-description": "Đęƒįŉę ŧĥę äūŧő řęƒřęşĥ įŉŧęřväľş ŧĥäŧ şĥőūľđ þę äväįľäþľę įŉ ŧĥę äūŧő řęƒřęşĥ ľįşŧ.",
         "close-button": "Cľőşę",
+        "continuously-re-draw-panels": "Cőŉŧįŉūőūşľy řę-đřäŵ päŉęľş ŵĥęřę ŧĥę ŧįmę řäŉģę řęƒęřęŉčęş 'ŉőŵ'",
         "controls-tooltip-and-hover": "Cőŉŧřőľş ŧőőľŧįp äŉđ ĥővęř ĥįģĥľįģĥŧ þęĥävįőř äčřőşş đįƒƒęřęŉŧ päŉęľş. Ŗęľőäđ ŧĥę đäşĥþőäřđ ƒőř čĥäŉģęş ŧő ŧäĸę ęƒƒęčŧ",
         "create-a-new-link": "Cřęäŧę ä ŉęŵ ľįŉĸ őŉ yőūř đäşĥþőäřđ",
         "create-alert": "Cřęäŧę Åľęřŧ",
@@ -321,6 +322,7 @@
         "edit-link": "Ēđįŧ ľįŉĸ",
         "editable": "Ēđįŧäþľę",
         "editable-label": "Ēđįŧäþľę",
+        "exclude-recent-data-that-may": "Ēχčľūđę řęčęŉŧ đäŧä ŧĥäŧ mäy þę įŉčőmpľęŧę.",
         "fetching-changes": "Fęŧčĥįŉģ čĥäŉģęş&ĥęľľįp;",
         "fetching-history-list": "Fęŧčĥįŉģ ĥįşŧőřy ľįşŧ&ĥęľľįp;",
         "fetching-more-entries": "Fęŧčĥįŉģ mőřę ęŉŧřįęş&ĥęľľįp;",
@@ -366,6 +368,7 @@
         "resume-button": "Ŗęşūmę",
         "save-changes": "Ŝävę čĥäŉģęş",
         "set-to-read-only": "Ŝęŧ ŧő řęäđ-őŉľy ŧő đįşäþľę äľľ ęđįŧįŉģ. Ŗęľőäđ ŧĥę đäşĥþőäřđ ƒőř čĥäŉģęş ŧő ŧäĸę ęƒƒęčŧ",
+        "settings": "Ŝęŧŧįŉģş",
         "settings-text": "Ŝęŧŧįŉģş",
         "shared-crosshair": "Ŝĥäřęđ čřőşşĥäįř",
         "shared-tooltip": "Ŝĥäřęđ Ŧőőľŧįp",
@@ -734,6 +737,12 @@
     "loading": "Ŀőäđįŉģ ƒőľđęřş..."
   },
   "grafana-ui": {
+    "date-time": {
+      "default": "Đęƒäūľŧ",
+      "monday": "Mőŉđäy",
+      "saturday": "Ŝäŧūřđäy",
+      "sunday": "Ŝūŉđäy"
+    },
     "tags-input": {
       "add-button": "Åđđ",
       "new-tag": "Ńęŵ ŧäģ (ęŉŧęř ĸęy ŧő äđđ)"

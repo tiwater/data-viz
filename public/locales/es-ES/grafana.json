@@ -307,6 +307,7 @@
         "auto-refresh": "",
         "auto-refresh-description": "",
         "close-button": "",
+        "continuously-re-draw-panels": "",
         "controls-tooltip-and-hover": "",
         "create-a-new-link": "",
         "create-alert": "",
@@ -321,6 +322,7 @@
         "edit-link": "",
         "editable": "",
         "editable-label": "",
+        "exclude-recent-data-that-may": "",
         "fetching-changes": "",
         "fetching-history-list": "",
         "fetching-more-entries": "",
@@ -366,6 +368,7 @@
         "resume-button": "",
         "save-changes": "",
         "set-to-read-only": "",
+        "settings": "",
         "settings-text": "",
         "shared-crosshair": "",
         "shared-tooltip": "",
@@ -734,6 +737,12 @@
     "loading": "Cargando carpetas..."
   },
   "grafana-ui": {
+    "date-time": {
+      "default": "",
+      "monday": "",
+      "saturday": "",
+      "sunday": ""
+    },
     "tags-input": {
       "add-button": "",
       "new-tag": ""

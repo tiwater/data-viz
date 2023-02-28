@@ -307,6 +307,7 @@
         "auto-refresh": "Auto refresh",
         "auto-refresh-description": "Define the auto refresh intervals that should be available in the auto refresh list.",
         "close-button": "Close",
+        "continuously-re-draw-panels": "Continuously re-draw panels where the time range references 'now'",
         "controls-tooltip-and-hover": "Controls tooltip and hover highlight behavior across different panels. Reload the dashboard for changes to take effect",
         "create-a-new-link": "Create a new link on your dashboard",
         "create-alert": "Create Alert",
@@ -321,6 +322,7 @@
         "edit-link": "Edit link",
         "editable": "Editable",
         "editable-label": "Editable",
+        "exclude-recent-data-that-may": "Exclude recent data that may be incomplete.",
         "fetching-changes": "Fetching changes&hellip;",
         "fetching-history-list": "Fetching history list&hellip;",
         "fetching-more-entries": "Fetching more entries&hellip;",
@@ -366,6 +368,7 @@
         "resume-button": "Resume",
         "save-changes": "Save changes",
         "set-to-read-only": "Set to read-only to disable all editing. Reload the dashboard for changes to take effect",
+        "settings": "Settings",
         "settings-text": "Settings",
         "shared-crosshair": "Shared crosshair",
         "shared-tooltip": "Shared Tooltip",
@@ -734,6 +737,12 @@
     "loading": "Loading folders..."
   },
   "grafana-ui": {
+    "date-time": {
+      "default": "Default",
+      "monday": "Monday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
     "tags-input": {
       "add-button": "Add",
       "new-tag": "New tag (enter key to add)"
