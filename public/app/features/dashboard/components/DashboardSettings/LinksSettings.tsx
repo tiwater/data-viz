@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavModelItem } from '@grafana/data';
 import { locationService } from '@grafana/runtime';
 import { Page } from 'app/core/components/PageNew/Page';
+import { t } from 'app/core/internationalization';
 
 import { LinkSettingsEdit, LinkSettingsList } from '../LinksSettings';
 import { newLink } from '../LinksSettings/LinkSettingsEdit';
@@ -34,8 +35,12 @@ export function LinksSettings({ dashboard, sectionNav, editIndex }: SettingsPage
 
   let pageNav: NavModelItem | undefined;
   if (isEditing) {
-    const title = isNew ? 'New link' : 'Edit link';
-    const description = isNew ? 'Create a new link on your dashboard' : 'Edit a specific link of your dashboard';
+    const title = isNew
+      ? t('features.dashboard.setting.new-link', 'New link')
+      : t('features.dashboard.setting.edit-link', 'Edit link');
+    const description = isNew
+      ? t('features.dashboard.setting.create-a-new-link', 'Create a new link on your dashboard')
+      : t('features.dashboard.setting.edit-a-specific-link', 'Edit a specific link of your dashboard');
     pageNav = {
       text: title,
       subTitle: description,

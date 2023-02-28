@@ -6,6 +6,7 @@ import { config } from '@grafana/runtime';
 import { CollapsableSection, Field, Input, RadioButtonGroup, TagsInput } from '@grafana/ui';
 import { Page } from 'app/core/components/PageNew/Page';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
+import { t } from 'app/core/internationalization';
 import { updateTimeZoneDashboard, updateWeekStartDashboard } from 'app/features/dashboard/state/actions';
 
 import { DeleteDashboardButton } from '../DeleteDashboard/DeleteDashboardButton';
@@ -16,12 +17,6 @@ import { SettingsPageProps } from './types';
 
 export type Props = SettingsPageProps & ConnectedProps<typeof connector>;
 
-const GRAPH_TOOLTIP_OPTIONS = [
-  { value: 0, label: 'Default' },
-  { value: 1, label: 'Shared crosshair' },
-  { value: 2, label: 'Shared Tooltip' },
-];
-
 export function GeneralSettingsUnconnected({
   dashboard,
   updateTimeZone,
@@ -29,7 +24,11 @@ export function GeneralSettingsUnconnected({
   sectionNav,
 }: Props): JSX.Element {
   const [renderCounter, setRenderCounter] = useState(0);
-
+  const GRAPH_TOOLTIP_OPTIONS = [
+    { value: 0, label: t('features.dashboard.setting.default', 'Default') },
+    { value: 1, label: t('features.dashboard.setting.shared-crosshair', 'Shared crosshair') },
+    { value: 2, label: t('features.dashboard.setting.shared-tooltip', 'Shared Tooltip') },
+  ];
   const onFolderChange = (folder: { uid: string; title: string }) => {
     dashboard.meta.folderUid = folder.uid;
     dashboard.meta.folderTitle = folder.title;
@@ -88,24 +87,24 @@ export function GeneralSettingsUnconnected({
   };
 
   const editableOptions = [
-    { label: 'Editable', value: true },
-    { label: 'Read-only', value: false },
+    { label: t('features.dashboard.setting.editable', 'Editable'), value: true },
+    { label: t('features.dashboard.setting.read-only', 'Read-only'), value: false },
   ];
 
   return (
     <Page navModel={sectionNav}>
       <div style={{ maxWidth: '600px' }}>
         <div className="gf-form-group">
-          <Field label="Name">
+          <Field label={t('features.dashboard.setting.name-label', 'Name')}>
             <Input id="title-input" name="title" onBlur={onBlur} defaultValue={dashboard.title} />
           </Field>
-          <Field label="Description">
+          <Field label={t('features.dashboard.setting.description-label', 'Description')}>
             <Input id="description-input" name="description" onBlur={onBlur} defaultValue={dashboard.description} />
           </Field>
-          <Field label="Tags">
+          <Field label={t('features.dashboard.setting.tags-label', 'Tags')}>
             <TagsInput id="tags-input" tags={dashboard.tags} onChange={onTagsChange} width={40} />
           </Field>
-          <Field label="Folder">
+          <Field label={t('features.dashboard.setting.folder-label', 'Folder')}>
             <FolderPicker
               inputId="dashboard-folder-input"
               initialTitle={dashboard.meta.folderTitle}
@@ -118,8 +117,11 @@ export function GeneralSettingsUnconnected({
           </Field>
 
           <Field
-            label="Editable"
-            description="Set to read-only to disable all editing. Reload the dashboard for changes to take effect"
+            label={t('features.dashboard.setting.editable-label', 'Editable')}
+            description={t(
+              'features.dashboard.setting.set-to-read-only',
+              'Set to read-only to disable all editing. Reload the dashboard for changes to take effect'
+            )}
           >
             <RadioButtonGroup value={dashboard.editable} options={editableOptions} onChange={onEditableChange} />
           </Field>
@@ -145,10 +147,13 @@ export function GeneralSettingsUnconnected({
         />
 
         {/* @todo: Update "Graph tooltip" description to remove prompt about reloading when resolving #46581 */}
-        <CollapsableSection label="Panel options" isOpen={true}>
+        <CollapsableSection label={t('features.dashboard.setting.panel-options-label', 'Panel options')} isOpen={true}>
           <Field
-            label="Graph tooltip"
-            description="Controls tooltip and hover highlight behavior across different panels. Reload the dashboard for changes to take effect"
+            label={t('features.dashboard.setting.graph-tooltip', 'Graph tooltip')}
+            description={t(
+              'features.dashboard.setting.controls-tooltip-and-hover',
+              'Controls tooltip and hover highlight behavior across different panels. Reload the dashboard for changes to take effect'
+            )}
           >
             <RadioButtonGroup
               onChange={onTooltipChange}

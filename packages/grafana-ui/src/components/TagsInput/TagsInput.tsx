@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react';
 
 import { GrafanaTheme2 } from '@grafana/data';
 
+import { t, Trans } from '../../../src/utils/i18n';
 import { useStyles2, useTheme2 } from '../../themes/ThemeContext';
 import { Button } from '../Button';
 import { Input } from '../Input/Input';
@@ -26,7 +27,7 @@ export interface Props {
 }
 
 export const TagsInput = ({
-  placeholder = 'New tag (enter key to add)',
+  placeholder = t('grafana-ui.tags-input.new-tag', 'New tag (enter key to add)'),
   tags = [],
   onChange,
   width,
@@ -87,7 +88,7 @@ export const TagsInput = ({
             size="md"
             disabled={newTagName.length <= 0}
           >
-            Add
+            {t('grafana-ui.tags-input.add-button', 'Add')}
           </Button>
         }
       />

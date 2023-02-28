@@ -7,6 +7,7 @@ import { Page } from 'app/core/components/PageNew/Page';
 import AddPermission from 'app/core/components/PermissionList/AddPermission';
 import PermissionList from 'app/core/components/PermissionList/PermissionList';
 import PermissionsInfo from 'app/core/components/PermissionList/PermissionsInfo';
+import { t } from 'app/core/internationalization';
 import { StoreState } from 'app/types';
 import { DashboardAcl, PermissionLevel, NewDashboardAclItem } from 'app/types/acl';
 
@@ -94,7 +95,12 @@ export class DashboardPermissionsUnconnected extends PureComponent<Props, State>
     if (dashboard.meta.hasUnsavedFolderChange) {
       return (
         <Page navModel={sectionNav}>
-          <h5>You have changed a folder, please save to view permissions.</h5>
+          <h5>
+            {t(
+              'features.dashboard.you-have-changed-a-folder',
+              'You have changed a folder, please save to view permissions.'
+            )}
+          </h5>
         </Page>
       );
     }
@@ -107,7 +113,7 @@ export class DashboardPermissionsUnconnected extends PureComponent<Props, State>
           </Tooltip>
           <div className="page-action-bar__spacer" />
           <Button className="pull-right" onClick={this.onOpenAddPermissions} disabled={isAdding}>
-            Add permission
+            {t('features.dashboard.add-permission', 'Add permission')}
           </Button>
         </div>
         <SlideDown in={isAdding}>

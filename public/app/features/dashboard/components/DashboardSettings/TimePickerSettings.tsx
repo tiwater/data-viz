@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react';
 import { rangeUtil, TimeZone } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 import { CollapsableSection, Field, Input, Switch, TimeZonePicker, WeekStartPicker } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { AutoRefreshIntervals } from './AutoRefreshIntervals';
 
@@ -66,8 +67,11 @@ export class TimePickerSettings extends PureComponent<Props, State> {
 
   render() {
     return (
-      <CollapsableSection label="Time options" isOpen={true}>
-        <Field label="Time zone" data-testid={selectors.components.TimeZonePicker.containerV2}>
+      <CollapsableSection label={t('features.dashboard.setting.time-options', 'Time options')} isOpen={true}>
+        <Field
+          label={t('features.dashboard.setting.time-zone', 'Time zone')}
+          data-testid={selectors.components.TimeZonePicker.containerV2}
+        >
           <TimeZonePicker
             inputId="time-options-input"
             includeInternal={true}
@@ -76,7 +80,10 @@ export class TimePickerSettings extends PureComponent<Props, State> {
             width={40}
           />
         </Field>
-        <Field label="Week start" data-testid={selectors.components.WeekStartPicker.containerV2}>
+        <Field
+          label={t('features.dashboard.setting.week-start', 'Week start')}
+          data-testid={selectors.components.WeekStartPicker.containerV2}
+        >
           <WeekStartPicker
             inputId="week-start-input"
             width={40}
@@ -88,7 +95,10 @@ export class TimePickerSettings extends PureComponent<Props, State> {
           refreshIntervals={this.props.refreshIntervals}
           onRefreshIntervalChange={this.props.onRefreshIntervalChange}
         />
-        <Field label="Now delay" description="Exclude recent data that may be incomplete.">
+        <Field
+          label={t('features.dashboard.setting.now-delay', 'Now delay')}
+          description="Exclude recent data that may be incomplete."
+        >
           <Input
             id="now-delay-input"
             invalid={!this.state.isNowDelayValid}
@@ -97,7 +107,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
             defaultValue={this.props.nowDelay}
           />
         </Field>
-        <Field label="Hide time picker">
+        <Field label={t('features.dashboard.setting.hide-time-picker', 'Hide time picker')}>
           <Switch
             id="hide-time-picker-toggle"
             value={!!this.props.timePickerHidden}
@@ -105,7 +115,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
           />
         </Field>
         <Field
-          label="Refresh live dashboards"
+          label={t('features.dashboard.setting.refresh-live-dashboards', 'Refresh live dashboards')}
           description="Continuously re-draw panels where the time range references 'now'"
         >
           <Switch id="refresh-live-dashboards-toggle" value={!!this.props.liveNow} onChange={this.onLiveNowChange} />

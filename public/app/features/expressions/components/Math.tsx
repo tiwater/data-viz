@@ -108,7 +108,7 @@ export const Math: FC<Props> = ({ labelWidth, onChange, query, onRunQuery }) => 
               }
             >
               <span>
-                Expression <Icon name="info-circle" />
+                Expression11 <Icon name="info-circle" />
               </span>
             </HoverCard>
           </InlineLabel>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Input } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { LibraryPanelInformation } from 'app/features/library-panels/components/LibraryPanelInfo/LibraryPanelInfo';
 
 import { isPanelModelLibraryPanel } from '../../../library-panels/guard';
@@ -12,7 +13,7 @@ import { OptionPaneRenderProps } from './types';
 export function getLibraryPanelOptionsCategory(props: OptionPaneRenderProps): OptionsPaneCategoryDescriptor {
   const { panel, onPanelConfigChange, dashboard } = props;
   const descriptor = new OptionsPaneCategoryDescriptor({
-    title: 'Library panel options',
+    title: t('features.dashboard.setting.library-panel-options', 'Library panel options'),
     id: 'Library panel options',
     isOpenDefault: true,
   });
@@ -21,7 +22,7 @@ export function getLibraryPanelOptionsCategory(props: OptionPaneRenderProps): Op
     descriptor
       .addItem(
         new OptionsPaneItemDescriptor({
-          title: 'Name',
+          title: t('features.dashboard.setting.name', 'Name'),
           value: panel.libraryPanel.name,
           popularRank: 1,
           render: function renderName() {
@@ -39,7 +40,7 @@ export function getLibraryPanelOptionsCategory(props: OptionPaneRenderProps): Op
       )
       .addItem(
         new OptionsPaneItemDescriptor({
-          title: 'Information',
+          title: t('features.dashboard.setting.information', 'Information'),
           render: function renderLibraryPanelInformation() {
             return <LibraryPanelInformation panel={panel} formatDate={dashboard.formatDate} />;
           },

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, ModalsController } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DashboardModel } from '../../state';
 
@@ -23,7 +24,7 @@ export const DeleteDashboardButton = ({ dashboard }: Props) => (
         }}
         aria-label="Dashboard settings page delete dashboard button"
       >
-        Delete Dashboard
+        {t('features.dashboard.delete-dashboard', 'Delete Dashboard')}
       </Button>
     )}
   </ModalsController>

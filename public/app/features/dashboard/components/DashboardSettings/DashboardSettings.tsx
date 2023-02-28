@@ -95,7 +95,7 @@ function getSettingsPages(dashboard: DashboardModel) {
 
   if (dashboard.meta.canEdit) {
     pages.push({
-      title: 'General',
+      title: t('features.dashboard.setting.general', 'General'),
       id: 'settings',
       icon: 'sliders-v-alt',
       component: GeneralSettings,
