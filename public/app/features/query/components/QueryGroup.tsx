@@ -432,7 +432,7 @@ export class QueryGroup extends PureComponent<Props, State> {
             variant="secondary"
             aria-label={selectors.components.QueryTab.addQuery}
           >
-            Query
+            {t('features.query.query-group.query', 'Query')}
           </Button>
         )}
         {config.expressionsEnabled && this.isExpressionsSupported(dsSettings) && (
@@ -442,7 +442,7 @@ export class QueryGroup extends PureComponent<Props, State> {
             variant="secondary"
             className={styles.expressionButton}
           >
-            <span>Expression&nbsp;</span>
+            <span>{t('features.query.query-group.expression', 'Expression')}&nbsp;</span>
           </Button>
         )}
         {this.renderExtraActions()}

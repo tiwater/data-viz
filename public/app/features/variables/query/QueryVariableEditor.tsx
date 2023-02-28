@@ -5,6 +5,7 @@ import { DataSourceInstanceSettings, getDataSourceRef, LoadingState, SelectableV
 import { selectors } from '@grafana/e2e-selectors';
 import { DataSourcePicker, getTemplateSrv } from '@grafana/runtime';
 import { Field } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { StoreState } from '../../../types';
 import { getTimeSrv } from '../../dashboard/services/TimeSrv';
@@ -155,7 +156,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
     if (isQueryEditor(VariableQueryEditor, datasource)) {
       return (
-        <Field label="Query">
+        <Field label={t('features.query.query', 'Query')}>
           <VariableQueryEditor
             datasource={datasource}
             query={query}
@@ -176,8 +177,8 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
   render() {
     return (
       <>
-        <VariableLegend>Query options</VariableLegend>
-        <Field label="Data source" htmlFor="data-source-picker">
+        <VariableLegend>{t('features.query.query-options', 'Query options')}</VariableLegend>
+        <Field label={t('features.query.data-source', 'Data source')} htmlFor="data-source-picker">
           <DataSourcePicker
             current={this.props.variable.datasource}
             onChange={this.onDataSourceChange}
@@ -190,18 +191,24 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
         <VariableTextAreaField
           value={this.state.regex ?? this.props.variable.regex}
-          name="Regex"
+          name={t('features.query.regex', 'Regex')}
           description={
             <div>
-              Optional, if you want to extract part of a series name or metric node segment.
+              {t(
+                'features.query.if-you-want-to-extract-part',
+                ' Optional, if you want to extract part of a series name or metric node segment.'
+              )}
               <br />
-              Named capture groups can be used to separate the display text and value (
+              {t(
+                'features.query.named-capture-groups-can-be',
+                'Named capture groups can be used to separate the display text and value ('
+              )}
               <a
                 className="external-link"
                 href="https://grafana.com/docs/grafana/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
                 target="__blank"
               >
-                see examples
+                {t('features.query.see-examples', 'see examples')}
               </a>
               ).
             </div>

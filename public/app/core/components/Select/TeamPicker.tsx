@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { SelectableValue } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { AsyncSelect } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { Team } from 'app/types';
 
 export interface Props {
@@ -63,9 +64,9 @@ export class TeamPicker extends Component<Props, State> {
           loadOptions={this.debouncedSearch}
           onChange={onSelected}
           className={className}
-          placeholder="Select a team"
-          noOptionsMessage="No teams found"
-          aria-label="Team picker"
+          placeholder={t('app.core.select-a-team', 'Select a team')}
+          noOptionsMessage={t('app.core.no-teams-found', 'No teams found')}
+          aria-label={t('app.core.team-picker', 'Team picker')}
         />
       </div>
     );

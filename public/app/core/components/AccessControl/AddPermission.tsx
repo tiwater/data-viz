@@ -4,6 +4,7 @@ import { Button, Form, HorizontalGroup, Select } from '@grafana/ui';
 import { CloseButton } from 'app/core/components/CloseButton/CloseButton';
 import { TeamPicker } from 'app/core/components/Select/TeamPicker';
 import { UserPicker } from 'app/core/components/Select/UserPicker';
+import { t } from 'app/core/internationalization';
 import { OrgRole } from 'app/types/acl';
 
 import { Assignments, PermissionTarget, SetPermission } from './types';
@@ -16,7 +17,13 @@ export interface Props {
   onAdd: (state: SetPermission) => void;
 }
 
-export const AddPermission = ({ title = 'Add Permission For', permissions, assignments, onAdd, onCancel }: Props) => {
+export const AddPermission = ({
+  title = t('app.core.add-permission-for', 'Add Permission For'),
+  permissions,
+  assignments,
+  onAdd,
+  onCancel,
+}: Props) => {
   const [target, setPermissionTarget] = useState<PermissionTarget>(PermissionTarget.None);
   const [teamId, setTeamId] = useState(0);
   const [userId, setUserId] = useState(0);
@@ -26,13 +33,13 @@ export const AddPermission = ({ title = 'Add Permission For', permissions, assig
   const targetOptions = useMemo(() => {
     const options = [];
     if (assignments.users) {
-      options.push({ value: PermissionTarget.User, label: 'User' });
+      options.push({ value: PermissionTarget.User, label: t('app.core.user', 'User') });
     }
     if (assignments.teams) {
-      options.push({ value: PermissionTarget.Team, label: 'Team' });
+      options.push({ value: PermissionTarget.Team, label: t('app.core.team', 'Team') });
     }
     if (assignments.builtInRoles) {
-      options.push({ value: PermissionTarget.BuiltInRole, label: 'Role' });
+      options.push({ value: PermissionTarget.BuiltInRole, label: t('app.core.role', 'Role') });
     }
     return options;
   }, [assignments]);
@@ -63,6 +70,7 @@ export const AddPermission = ({ title = 'Add Permission For', permissions, assig
             <Select
               aria-label="Role to add new permission to"
               value={target}
+              placeholder={t('app.core.choose', 'Choose')}
               options={targetOptions}
               onChange={(v) => setPermissionTarget(v.value!)}
               disabled={targetOptions.length === 0}
@@ -93,7 +101,7 @@ export const AddPermission = ({ title = 'Add Permission For', permissions, assig
               onChange={(v) => setPermission(v.value || '')}
             />
             <Button type="submit" disabled={!isValid()}>
-              Save
+              {t('app.core.save', 'Save')}
             </Button>
           </HorizontalGroup>
         )}

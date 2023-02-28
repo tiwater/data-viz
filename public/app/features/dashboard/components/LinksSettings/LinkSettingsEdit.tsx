@@ -8,7 +8,7 @@ import { DashboardLink, DashboardModel } from '../../state/DashboardModel';
 
 export const newLink: DashboardLink = {
   icon: 'external link',
-  title: 'New link',
+  title: '新链接',
   tooltip: '',
   type: 'dashboards',
   url: '',
@@ -18,11 +18,6 @@ export const newLink: DashboardLink = {
   keepTime: false,
   includeVars: false,
 };
-
-const linkTypeOptions = [
-  { value: 'dashboards', label: 'Dashboards' },
-  { value: 'link', label: 'Link' },
-];
 
 export const linkIconMap: Record<string, IconName | undefined> = {
   'external link': 'external-link-alt',
@@ -43,6 +38,10 @@ type LinkSettingsEditProps = {
 };
 
 export const LinkSettingsEdit: React.FC<LinkSettingsEditProps> = ({ editLinkIdx, dashboard, onGoBack }) => {
+  const linkTypeOptions = [
+    { value: 'dashboards', label: t('features.dashboard.setting.dashboards', 'Dashboards') },
+    { value: 'link', label: t('features.dashboard.setting.link', 'Link') },
+  ];
   const [linkSettings, setLinkSettings] = useState(editLinkIdx !== null ? dashboard.links[editLinkIdx] : newLink);
 
   const onUpdate = (link: DashboardLink) => {

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import { InlineFormLabel, TextArea } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import InfluxDatasource from '../datasource';
 
@@ -38,8 +39,8 @@ export default class VariableQueryEditor extends PureComponent<Props> {
         <InlineFormLabel width={10}>Query</InlineFormLabel>
         <div className="gf-form-inline gf-form--grow">
           <TextArea
-            defaultValue={query || ''}
-            placeholder="metric name or tags query"
+            defaultValue={t('features.variables.editor.query', 'Query') || ''}
+            placeholder={t('features.variables.editor.metric-name-or-tags-query', 'Metric name or tags query')}
             rows={1}
             className="gf-form-input"
             onBlur={(e) => onChange(e.currentTarget.value)}

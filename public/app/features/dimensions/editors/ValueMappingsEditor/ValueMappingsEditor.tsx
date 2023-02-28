@@ -3,6 +3,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import { GrafanaTheme2, MappingType, StandardEditorProps, ValueMapping } from '@grafana/data';
 import { useStyles2, VerticalGroup, Icon, ColorPicker, Button, Modal } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { MediaType, ResourceFolderName, ResourcePickerSize } from '../../types';
 import { ResourcePicker } from '../ResourcePicker';
@@ -88,12 +89,12 @@ export const ValueMappingsEditor = React.memo((props: Props) => {
       </table>
 
       <Button variant="secondary" size="sm" fullWidth onClick={() => setIsEditorOpen(true)}>
-        {rows.length > 0 && <span>Edit value mappings</span>}
-        {rows.length === 0 && <span>Add value mappings</span>}
+        {rows.length > 0 && <span>{t('features.editors.edit-value-mappings', 'Edit value mappings')}</span>}
+        {rows.length === 0 && <span>{t('features.editors.add-value-mappings', 'Add value mappings')}</span>}
       </Button>
       <Modal
         isOpen={isEditorOpen}
-        title="Value mappings"
+        title={t('features.editors.value-mappings', 'Value mappings')}
         onDismiss={onCloseEditor}
         className={styles.modal}
         closeOnBackdropClick={false}

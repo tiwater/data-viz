@@ -1,5 +1,22 @@
 {
   "_comment": "Đő ŉőŧ mäŉūäľľy ęđįŧ ŧĥįş ƒįľę, őř ūpđäŧę ŧĥęşę şőūřčę pĥřäşęş įŉ Cřőŵđįŉ. Ŧĥę şőūřčę őƒ ŧřūŧĥ ƒőř Ēŉģľįşĥ şŧřįŉģş äřę įŉ ŧĥę čőđę şőūřčę",
+  "app": {
+    "core": {
+      "add-permission-for": "Åđđ Pęřmįşşįőŉ Főř",
+      "can": "Cäŉ",
+      "choose": "Cĥőőşę",
+      "inherited-permission": "Ĩŉĥęřįŧęđ Pęřmįşşįőŉ",
+      "no-teams-found": "Ńő ŧęämş ƒőūŉđ",
+      "permission": "Pęřmįşşįőŉ",
+      "provisioned-permission": "Přővįşįőŉęđ Pęřmįşşįőŉ",
+      "role": "Ŗőľę",
+      "save": "Ŝävę",
+      "select-a-team": "Ŝęľęčŧ ä ŧęäm",
+      "team": "Ŧęäm",
+      "team-picker": "Ŧęäm pįčĸęř",
+      "user": "Ůşęř"
+    }
+  },
   "clipboard-button": {
     "inline-toast": {
       "success": "Cőpįęđ"
@@ -211,6 +228,14 @@
   "features": {
     "alerting": {
       "add-an-alert": "Åđđįŉģ äŉ Åľęřŧ",
+      "rule-editor": {
+        "add-expression": "Åđđ ęχpřęşşįőŉ",
+        "add-query": "Åđđ qūęřy",
+        "cancel": "Cäŉčęľ",
+        "create-at-least-one-query": "Cřęäŧę äŧ ľęäşŧ őŉę qūęřy őř ęχpřęşşįőŉ ŧő þę äľęřŧęđ őŉ",
+        "no-queries-or-expressions": "Ńő qūęřįęş őř ęχpřęşşįőŉş ĥävę þęęŉ čőŉƒįģūřęđ",
+        "preview": "Přęvįęŵ"
+      },
       "unified": {
         "cannot-create-alerts-from-this-panel": "Cäŉŉőŧ čřęäŧę äľęřŧş ƒřőm ŧĥįş päŉęľ þęčäūşę ŉő qūęřy ŧő äŉ äľęřŧįŉģ čäpäþľę đäŧäşőūřčę įş ƒőūŉđ.",
         "dashboard-must-be-saved-before": "Đäşĥþőäřđ mūşŧ þę şävęđ þęƒőřę äľęřŧş čäŉ þę äđđęđ.",
@@ -320,6 +345,7 @@
         "DARK": "ĐÅŖĶ",
         "dashboard": "Đäşĥþőäřđ",
         "dashboard-Links-allow": "Đäşĥþőäřđ Ŀįŉĸş äľľőŵ yőū ŧő pľäčę ľįŉĸş ŧő őŧĥęř đäşĥþőäřđş äŉđ ŵęþ şįŧęş đįřęčŧľy þęľőŵ ŧĥę đäşĥþőäřđ ĥęäđęř.",
+        "dashboards": "Đäşĥþőäřđş",
         "default": "Đęƒäūľŧ",
         "delete-alert": "Đęľęŧę äľęřŧ",
         "delete-title": "Đęľęŧę",
@@ -351,6 +377,7 @@
         "just-so-we-have-an-upload": "ĐŮMMŸ ŮĨ ĵūşŧ şő ŵę ĥävę äŉ ūpľőäđ þūŧŧőŉ!",
         "library-panel-options": "Ŀįþřäřy päŉęľ őpŧįőŉş",
         "LIGHT": "ĿĨĞĦŦ",
+        "link": "Ŀįŉĸ",
         "links-title": "Ŀįŉĸş",
         "make-editable-button": "Mäĸę ęđįŧäþľę",
         "mark-as-stale": "Mäřĸ äş şŧäľę",
@@ -446,6 +473,26 @@
       },
       "time-zone": "Ŧįmę žőŉę"
     },
+    "editors": {
+      "add-a-new-mapping": "Åđđ ä ŉęŵ mäppįŉģ",
+      "add-value-mappings": "Åđđ väľūę mäppįŉģş",
+      "cancel": "Cäŉčęľ",
+      "color": "Cőľőř",
+      "condition": "Cőŉđįŧįőŉ",
+      "display-text": "Đįşpľäy ŧęχŧ",
+      "edit-value-mappings": "Ēđįŧ väľūę mäppįŉģş",
+      "icon": "Ĩčőŉ",
+      "match-a-numerical-range-of-value": "Mäŧčĥ ä ŉūmęřįčäľ řäŉģę őƒ väľūęş",
+      "match-a-regular-expression-with-replacement": "Mäŧčĥ ä řęģūľäř ęχpřęşşįőŉ ŵįŧĥ řępľäčęmęŉŧ",
+      "match-a-specific-text-value": "Mäŧčĥ ä şpęčįƒįč ŧęχŧ väľūę",
+      "match-on-null": "Mäŧčĥ őŉ ŉūľľ, ŃäŃ, þőőľęäŉ äŉđ ęmpŧy väľūęş",
+      "range": "Ŗäŉģę",
+      "regex": "Ŗęģęχ",
+      "special": "Ŝpęčįäľ",
+      "update": "Ůpđäŧę",
+      "value": "Väľūę",
+      "value-mappings": "Väľūę mäppįŉģş"
+    },
     "explore": {
       "bars": "ßäřş",
       "compact-URL-deprecation": "Cőmpäčŧ ŮŖĿ Đępřęčäŧįőŉ Ńőŧįčę",
@@ -485,6 +532,12 @@
       }
     },
     "query": {
+      "alphabetical-asc": "Åľpĥäþęŧįčäľ (äşč)",
+      "alphabetical-case-insensitive-asc": "Åľpĥäþęŧįčäľ (čäşę-įŉşęŉşįŧįvę, äşč)",
+      "alphabetical-case-insensitive-desc": "Åľpĥäþęŧįčäľ (čäşę-įŉşęŉşįŧįvę, đęşč)",
+      "alphabetical-desc": "Åľpĥäþęŧįčäľ (đęşč)",
+      "data-source": "Đäŧä şőūřčę",
+      "disabled": "Đįşäþľęđ",
       "editor-row": {
         "duplicate-query": "Đūpľįčäŧę qūęřy",
         "enable-query": "Đįşäþľę/ęŉäþľę qūęřy",
@@ -492,11 +545,23 @@
         "toggle-data-source-help": "Ŧőģģľę đäŧä şőūřčę ĥęľp",
         "toggle-text-edit-mode": "Ŧőģģľę ŧęχŧ ęđįŧ mőđę"
       },
+      "how-to-sort-the-values": "Ħőŵ ŧő şőřŧ ŧĥę väľūęş őƒ ŧĥįş väřįäþľę",
+      "if-you-want-to-extract-part": " Øpŧįőŉäľ, įƒ yőū ŵäŉŧ ŧő ęχŧřäčŧ päřŧ őƒ ä şęřįęş ŉämę őř męŧřįč ŉőđę şęģmęŉŧ.",
+      "named-capture-groups-can-be": "Ńämęđ čäpŧūřę ģřőūpş čäŉ þę ūşęđ ŧő şępäřäŧę ŧĥę đįşpľäy ŧęχŧ äŉđ väľūę (",
+      "numerical-asc": "Ńūmęřįčäľ (äşč)",
+      "numerical-desc": "Ńūmęřįčäľ (đęşč)",
+      "query": "Qūęřy",
       "query-group": {
         "data-source": "Đäŧä şőūřčę",
+        "expression": "Ēχpřęşşįőŉ",
         "open-data-source-help": "Øpęŉ đäŧä şőūřčę ĥęľp",
+        "query": "Qūęřy",
         "saved-query": "Ŝävęđ qūęřy"
-      }
+      },
+      "query-options": "Qūęřy őpŧįőŉş",
+      "regex": "Ŗęģęχ",
+      "see-examples": "şęę ęχämpľęş",
+      "sort": "Ŝőřŧ"
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -764,27 +829,53 @@
         "description-text": "Đęşčřįpŧįvę ŧęχŧ",
         "for-more-information": "ƒőř mőřę įŉƒőřmäŧįőŉ.",
         "label": "Ŀäþęľ",
+        "label-and-value": "Ŀäþęľ äŉđ väľūę",
         "label-name": "Ŀäþęľ ŉämę",
+        "latest": "Ŀäŧęşŧ",
+        "metric-name-or-tags-query": "Męŧřįč ŉämę őř ŧäģş qūęřy",
         "name": "Ńämę",
         "new-variable": "Ńęŵ väřįäþľę",
         "no-renamed-or-missing-variables": "Ńő řęŉämęđ őř mįşşįŉģ väřįäþľęş ƒőūŉđ.",
         "notes": "Ńőŧęş",
+        "nothing": "Ńőŧĥįŉģ",
         "optional-display-name": "Øpŧįőŉäľ đįşpľäy ŉämę",
+        "query": "Qūęřy",
         "renamed-or-missing-variables": "Ŗęŉämęđ őř mįşşįŉģ väřįäþľęş",
+        "restore": "Ŗęşŧőřę",
         "run-query": "Ŗūŉ qūęřy",
         "select-two-versions-to-start-comparing": "Ŝęľęčŧ ŧŵő vęřşįőŉş ŧő şŧäřŧ čőmpäřįŉģ",
         "show-more-versions": "Ŝĥőŵ mőřę vęřşįőŉş",
+        "show-on-dashboard": "Ŝĥőŵ őŉ đäşĥþőäřđ",
         "templates-and-variables-documentation": "Ŧęmpľäŧęş äŉđ väřįäþľęş đőčūmęŉŧäŧįőŉ",
         "the-name-of-the-template-variable": "Ŧĥę ŉämę őƒ ŧĥę ŧęmpľäŧę väřįäþľę. (Mäχ. 50 čĥäřäčŧęřş)",
         "there-are-no-variables-yet": "Ŧĥęřę äřę ŉő väřįäþľęş yęŧ",
         "updated-by": "Ůpđäŧęđ þy",
+        "value": "Väľūę",
         "variable": "Väřįäþľę",
         "variable-name": "Väřįäþľę ŉämę",
         "variables-enable-more-interactive": "Väřįäþľęş ęŉäþľę mőřę įŉŧęřäčŧįvę äŉđ đyŉämįč đäşĥþőäřđş. Ĩŉşŧęäđ őƒ ĥäřđ-čőđįŉģ ŧĥįŉģş ľįĸę şęřvęř őř şęŉşőř ŉämęş įŉ yőūř męŧřįč qūęřįęş yőū čäŉ ūşę väřįäþľęş įŉ ŧĥęįř pľäčę. Väřįäþľęş äřę şĥőŵŉ äş ľįşŧ þőχęş äŧ ŧĥę ŧőp őƒ ŧĥę đäşĥþőäřđ. Ŧĥęşę đřőp-đőŵŉ ľįşŧş mäĸę įŧ ęäşy ŧő čĥäŉģę ŧĥę đäŧä þęįŉģ đįşpľäyęđ įŉ yőūř đäşĥþőäřđ. Cĥęčĸ őūŧ ŧĥę",
         "version": "Vęřşįőŉ",
         "want-to-delete-variable": "Åřę yőū şūřę yőū ŵäŉŧ ŧő đęľęŧę väřįäþľę",
         "what-do-variables-do": "Ŵĥäŧ đő väřįäþľęş đő?"
-      }
+      },
+      "permissions": "Pęřmįşşįőŉş",
+      "query": {
+        "add-a-permission": "Åđđ ä pęřmįşşįőŉ",
+        "blank-auto": "þľäŉĸ = äūŧő",
+        "custom-all-value": "Cūşŧőm äľľ väľūę",
+        "enables-an-option-to-include-all-variables": "Ēŉäþľęş äŉ őpŧįőŉ ŧő įŉčľūđę äľľ väřįäþľęş",
+        "enables-multiple-values-to-be": "Ēŉäþľęş mūľŧįpľę väľūęş ŧő þę şęľęčŧęđ äŧ ŧĥę şämę ŧįmę",
+        "include-all-option": "Ĩŉčľūđę Åľľ őpŧįőŉ",
+        "multi-value": "Mūľŧį-väľūę",
+        "on-dashboard-load": "Øŉ đäşĥþőäřđ ľőäđ",
+        "on-time-range-change": "Øŉ ŧįmę řäŉģę čĥäŉģę",
+        "refresh": "Ŗęƒřęşĥ",
+        "there-are-no-permissions": "Ŧĥęřę äřę ŉő pęřmįşşįőŉş",
+        "when to update the values": "Ŵĥęŉ ŧő ūpđäŧę ŧĥę väľūęş őƒ ŧĥįş väřįäþľę"
+      },
+      "role": "Ŗőľę",
+      "team": "Ŧęäm",
+      "user": "Ůşęř"
     }
   },
   "folder-picker": {
