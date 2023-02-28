@@ -18,8 +18,9 @@ export function importPanelPlugin(id: string): Promise<PanelPlugin> {
   if (!meta) {
     throw new Error(`Plugin ${id} not found`);
   }
-  const list = ['bilibala-echarts-panel', 'yesoreyeram-boomtheme-panel'];
-  if (list.indexOf(meta.id) > -1) {
+  // 项目作为子应用时,相对路径无法找到自定义插件
+  // meta.module.substr(0, 18) !== 'app/plugins/panel/' 判断是否为自定义插件
+  if (meta.module.substr(0, 18) !== 'app/plugins/panel/') {
     meta.module = `https://data-viz.ticos.cn/public/${meta.module}.js`;
   }
 
