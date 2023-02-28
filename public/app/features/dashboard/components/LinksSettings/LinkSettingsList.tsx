@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { arrayUtils } from '@grafana/data';
 import { DeleteButton, HorizontalGroup, Icon, IconButton, TagList } from '@grafana/ui';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
+import { t } from 'app/core/internationalization';
 
 import { DashboardModel, DashboardLink } from '../../state/DashboardModel';
 import { ListNewButton } from '../DashboardSettings/ListNewButton';
@@ -38,13 +39,15 @@ export const LinkSettingsList: React.FC<LinkSettingsListProps> = ({ dashboard, o
       <div>
         <EmptyListCTA
           onClick={onNew}
-          title="There are no dashboard links added yet"
+          title={t('features.dashboard.setting.there-are-no-dashboard', 'There are no dashboard links added yet')}
           buttonIcon="link"
-          buttonTitle="Add dashboard link"
-          infoBoxTitle="What are dashboard links?"
+          buttonTitle={t('features.dashboard.setting.add-dashboard-link', 'Add dashboard link')}
+          infoBoxTitle={t('features.dashboard.setting.what-are-dashboard-links', 'What are dashboard links?')}
           infoBox={{
-            __html:
-              '<p>Dashboard Links allow you to place links to other dashboards and web sites directly below the dashboard header.</p>',
+            __html: `<p>${t(
+              'features.dashboard.setting.dashboard-Links-allow',
+              'Dashboard Links allow you to place links to other dashboards and web sites directly below the dashboard header.'
+            )}</p>`,
           }}
         />
       </div>
@@ -56,8 +59,8 @@ export const LinkSettingsList: React.FC<LinkSettingsListProps> = ({ dashboard, o
       <table role="grid" className="filter-table filter-table--hover">
         <thead>
           <tr>
-            <th>Type</th>
-            <th>Info</th>
+            <th>{t('features.dashboard.setting.type', 'Type')}</th>
+            <th>{t('features.dashboard.setting.info', 'Info')}</th>
             <th colSpan={3} />
           </tr>
         </thead>
@@ -96,7 +99,7 @@ export const LinkSettingsList: React.FC<LinkSettingsListProps> = ({ dashboard, o
           ))}
         </tbody>
       </table>
-      <ListNewButton onClick={onNew}>New link</ListNewButton>
+      <ListNewButton onClick={onNew}>{t('features.dashboard.setting.new-link', 'New link')}</ListNewButton>
     </>
   );
 };

@@ -79,7 +79,11 @@ export function DashboardSettings({ dashboard, editview, pageNav, sectionNav }: 
   return (
     <>
       {!config.featureToggles.topnav ? (
-        <PageToolbar title={`${dashboard.title} / Settings`} parent={folderTitle} onGoBack={onClose}>
+        <PageToolbar
+          title={`${dashboard.title} / ${t('features.dashboard.setting.settings', 'Settings')}`}
+          parent={folderTitle}
+          onGoBack={onClose}
+        >
           {actions}
         </PageToolbar>
       ) : (
@@ -95,7 +99,7 @@ function getSettingsPages(dashboard: DashboardModel) {
 
   if (dashboard.meta.canEdit) {
     pages.push({
-      title: 'General',
+      title: t('features.dashboard.setting.general', 'General'),
       id: 'settings',
       icon: 'sliders-v-alt',
       component: GeneralSettings,

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 
 import { Spinner, HorizontalGroup } from '@grafana/ui';
 import { Page } from 'app/core/components/PageNew/Page';
+import { t } from 'app/core/internationalization';
 
 import {
   historySrv,
@@ -149,7 +150,9 @@ export class VersionsSettings extends PureComponent<Props, State> {
             isNewLatest={isNewLatest}
           />
           {isLoading ? (
-            <VersionsHistorySpinner msg="Fetching changes&hellip;" />
+            <VersionsHistorySpinner
+              msg={t('features.dashboard.setting.fetching-changes', 'Fetching changes&hellip;')}
+            />
           ) : (
             <VersionHistoryComparison
               newInfo={newInfo!}
@@ -165,11 +168,17 @@ export class VersionsSettings extends PureComponent<Props, State> {
     return (
       <Page navModel={this.props.sectionNav}>
         {isLoading ? (
-          <VersionsHistorySpinner msg="Fetching history list&hellip;" />
+          <VersionsHistorySpinner
+            msg={t('features.dashboard.setting.fetching-history-list', 'Fetching history list&hellip;')}
+          />
         ) : (
           <VersionHistoryTable versions={versions} onCheck={this.onCheck} canCompare={canCompare} />
         )}
-        {this.state.isAppending && <VersionsHistorySpinner msg="Fetching more entries&hellip;" />}
+        {this.state.isAppending && (
+          <VersionsHistorySpinner
+            msg={t('features.dashboard.setting.fetching-more-entries', 'Fetching more entries&hellip;')}
+          />
+        )}
         {showButtons && (
           <VersionsHistoryButtons
             hasMore={hasMore}

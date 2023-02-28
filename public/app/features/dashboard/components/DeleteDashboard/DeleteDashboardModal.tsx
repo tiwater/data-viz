@@ -6,6 +6,7 @@ import useAsyncFn from 'react-use/lib/useAsyncFn';
 
 import { Modal, ConfirmModal, Button } from '@grafana/ui';
 import { config } from 'app/core/config';
+import { t } from 'app/core/internationalization';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { cleanUpDashboardAndVariables } from 'app/features/dashboard/state/actions';
 
@@ -45,7 +46,7 @@ const DeleteDashboardModalUnconnected = ({ hideModal, cleanUpDashboardAndVariabl
       body={modalBody}
       onConfirm={onConfirm}
       onDismiss={hideModal}
-      title="Delete"
+      title={t('features.dashboard.delete', 'Delete')}
       icon="trash-alt"
       confirmText="Delete"
     />
@@ -56,7 +57,7 @@ const getModalBody = (panels: PanelModel[], title: string) => {
   const totalAlerts = sumBy(panels, (panel) => (panel.alert ? 1 : 0));
   return totalAlerts > 0 && !config.unifiedAlertingEnabled ? (
     <>
-      <p>Do you want to delete this dashboard?</p>
+      <p>{t('features.dashboard.do-you-want-to-delete', 'Do you want to delete this dashboard?')}</p>
       <p>
         This dashboard contains {totalAlerts} alert{totalAlerts > 1 ? 's' : ''}. Deleting this dashboard also deletes
         those alerts.
@@ -64,7 +65,7 @@ const getModalBody = (panels: PanelModel[], title: string) => {
     </>
   ) : (
     <>
-      <p>Do you want to delete this dashboard?</p>
+      <p>{t('features.dashboard.do-you-want-to-delete', 'Do you want to delete this dashboard?')}</p>
       <p>{title}</p>
     </>
   );
@@ -73,7 +74,7 @@ const getModalBody = (panels: PanelModel[], title: string) => {
 const ProvisionedDeleteModal = ({ hideModal, provisionedId }: { hideModal(): void; provisionedId: string }) => (
   <Modal
     isOpen={true}
-    title="Cannot delete provisioned dashboard"
+    title={t('features.dashboard.cannot-delete-provisioned-dashboard', 'Cannot delete provisioned dashboard')}
     icon="trash-alt"
     onDismiss={hideModal}
     className={css`
@@ -81,28 +82,31 @@ const ProvisionedDeleteModal = ({ hideModal, provisionedId }: { hideModal(): voi
     `}
   >
     <p>
-      This dashboard is managed by Grafana provisioning and cannot be deleted. Remove the dashboard from the config file
-      to delete it.
+      {t(
+        'features.dashboard.this-dashboard-is-managed-by-Grafana',
+        'This dashboard is managed by Grafana provisioning and cannot be deleted. Remove the dashboard from the config file to delete it.'
+      )}
     </p>
     <p>
       <i>
-        See{' '}
+        {t('features.dashboard.see', 'See')}{' '}
         <a
           className="external-link"
           href="https://grafana.com/docs/grafana/latest/administration/provisioning/#dashboards"
           target="_blank"
           rel="noreferrer"
         >
-          documentation
+          {t('features.dashboard.documentation', 'documentation')}
         </a>{' '}
-        for more information about provisioning.
+        {t('features.dashboard.for-more-information', 'for more information about provisioning.')}
       </i>
       <br />
-      File path: {provisionedId}
+      {t('features.dashboard.file-path', 'File path: ')}
+      {provisionedId}
     </p>
     <Modal.ButtonRow>
       <Button variant="primary" onClick={hideModal}>
-        OK
+        {t('features.dashboard.OK', 'OK')}
       </Button>
     </Modal.ButtonRow>
   </Modal>

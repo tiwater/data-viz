@@ -22,6 +22,7 @@ import {
   ClipboardButton,
   Icon,
 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 import { PanelModel } from 'app/features/dashboard/state';
 
@@ -66,13 +67,13 @@ export function HelpWizard({ panel, plugin, onClose }: Props) {
   }
 
   const tabs = [
-    { label: 'Snapshot', value: SnapshotTab.Support },
-    { label: 'Data', value: SnapshotTab.Data },
+    { label: t('features.dashboard.snapshot', 'Snapshot'), value: SnapshotTab.Support },
+    { label: t('features.dashboard.data', 'Data'), value: SnapshotTab.Data },
   ];
 
   return (
     <Drawer
-      title={`Get help with this panel`}
+      title={t('features.dashboard.get-help-with-this-panel', 'Get help with this panel')}
       width="90%"
       onClose={onClose}
       expandable
@@ -87,12 +88,14 @@ export function HelpWizard({ panel, plugin, onClose }: Props) {
               className="external-link"
               rel="noopener noreferrer"
             >
-              Troubleshooting docs <Icon name="external-link-alt" />
+              {t('features.dashboard.troubleshooting-docs', 'Troubleshooting docs')} <Icon name="external-link-alt" />
             </a>
           </Stack>
           <span className="muted">
-            To request troubleshooting help, send a snapshot of this panel to Grafana Labs Technical Support. The
-            snapshot contains query response data and panel settings.
+            {t(
+              'features.dashboard.to-request-troubleshooting-help',
+              'To request troubleshooting help, send a snapshot of this panel to Grafana Labs Technical Support. The snapshot contains query response data and panel settings.'
+            )}
           </span>
         </Stack>
       }

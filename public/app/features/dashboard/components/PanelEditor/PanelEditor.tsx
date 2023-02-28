@@ -446,7 +446,11 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
     }
 
     return (
-      <PageToolbar title={this.props.dashboard.title} section="Edit Panel" onGoBack={this.onGoBackToDashboard}>
+      <PageToolbar
+        title={this.props.dashboard.title}
+        section={t('features.dashboard.edit-panel', 'Edit Panel')}
+        onGoBack={this.onGoBackToDashboard}
+      >
         {this.renderEditorActions()}
       </PageToolbar>
     );

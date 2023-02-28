@@ -4,6 +4,7 @@ import { arrayUtils, AnnotationQuery } from '@grafana/data';
 import { getDataSourceSrv } from '@grafana/runtime';
 import { DeleteButton, Icon, IconButton, VerticalGroup } from '@grafana/ui';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
+import { t } from 'app/core/internationalization';
 
 import { DashboardModel } from '../../state/DashboardModel';
 import { ListNewButton } from '../DashboardSettings/ListNewButton';
@@ -60,8 +61,8 @@ export const AnnotationSettingsList = ({ dashboard, onNew, onEdit }: Props) => {
         <table role="grid" className="filter-table filter-table--hover">
           <thead>
             <tr>
-              <th>Query name</th>
-              <th>Data source</th>
+              <th>{t('features.dashboard.query-name', 'Query name')}</th>
+              <th>{t('features.dashboard.data-source', 'Data source')}</th>
               <th colSpan={3}></th>
             </tr>
           </thead>

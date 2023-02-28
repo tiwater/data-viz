@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { SelectableValue } from '@grafana/data';
 import { CollapsableSection, TagsInput, Select, Field, Input, Checkbox, Button, IconName } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DashboardLink, DashboardModel } from '../../state/DashboardModel';
 
@@ -85,41 +86,46 @@ export const LinkSettingsEdit: React.FC<LinkSettingsEditProps> = ({ editLinkIdx,
 
   return (
     <div style={{ maxWidth: '600px' }}>
-      <Field label="Title">
+      <Field label={t('features.dashboard.setting.title', 'Title')}>
         <Input name="title" id="title" value={linkSettings.title} onChange={onChange} autoFocus={isNew} />
       </Field>
-      <Field label="Type">
+      <Field label={t('features.dashboard.setting.type', 'Type')}>
         <Select inputId="link-type-input" value={linkSettings.type} options={linkTypeOptions} onChange={onTypeChange} />
       </Field>
       {linkSettings.type === 'dashboards' && (
         <>
-          <Field label="With tags">
+          <Field label={t('features.dashboard.setting.with-tags', 'With tags')}>
             <TagsInput tags={linkSettings.tags} onChange={onTagsChange} />
           </Field>
         </>
       )}
       {linkSettings.type === 'link' && (
         <>
-          <Field label="URL">
+          <Field label={t('features.dashboard.setting.url', 'URL')}>
             <Input name="url" value={linkSettings.url} onChange={onChange} />
           </Field>
-          <Field label="Tooltip">
+          <Field label={t('features.dashboard.setting.tooltip', 'Tooltip')}>
             <Input name="tooltip" value={linkSettings.tooltip} onChange={onChange} placeholder="Open dashboard" />
           </Field>
-          <Field label="Icon">
+          <Field label={t('features.dashboard.setting.icon', 'Icon')}>
             <Select value={linkSettings.icon} options={linkIconOptions} onChange={onIconChange} />
           </Field>
         </>
       )}
-      <CollapsableSection label="Options" isOpen={true}>
+      <CollapsableSection label={t('features.dashboard.setting.options', 'Options')} isOpen={true}>
         {linkSettings.type === 'dashboards' && (
           <Field>
-            <Checkbox label="Show as dropdown" name="asDropdown" value={linkSettings.asDropdown} onChange={onChange} />
+            <Checkbox
+              label={t('features.dashboard.setting.show-as-dropdown', 'Show as dropdown')}
+              name="asDropdown"
+              value={linkSettings.asDropdown}
+              onChange={onChange}
+            />
           </Field>
         )}
         <Field>
           <Checkbox
-            label="Include current time range"
+            label={t('features.dashboard.setting.include-current-time-range', 'Include current time range')}
             name="keepTime"
             value={linkSettings.keepTime}
             onChange={onChange}
@@ -127,7 +133,10 @@ export const LinkSettingsEdit: React.FC<LinkSettingsEditProps> = ({ editLinkIdx,
         </Field>
         <Field>
           <Checkbox
-            label="Include current template variable values"
+            label={t(
+              'features.dashboard.setting.include-current-template-variable',
+              'Include current template variable values'
+            )}
             name="includeVars"
             value={linkSettings.includeVars}
             onChange={onChange}
@@ -135,14 +144,14 @@ export const LinkSettingsEdit: React.FC<LinkSettingsEditProps> = ({ editLinkIdx,
         </Field>
         <Field>
           <Checkbox
-            label="Open link in new tab"
+            label={t('features.dashboard.setting.open-link-in-new-tab', 'Open link in new tab')}
             name="targetBlank"
             value={linkSettings.targetBlank}
             onChange={onChange}
           />
         </Field>
       </CollapsableSection>
-      <Button onClick={onGoBack}>Apply</Button>
+      <Button onClick={onGoBack}>{t('features.dashboard.setting.apply', 'Apply')}</Button>
     </div>
   );
 };

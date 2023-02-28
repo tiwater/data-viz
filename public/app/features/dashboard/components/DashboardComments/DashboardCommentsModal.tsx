@@ -3,6 +3,7 @@ import React from 'react';
 
 import { GrafanaTheme2 } from '@grafana/data';
 import { Modal, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { CommentManager } from 'app/features/comments/CommentManager';
 
 import { DashboardModel } from '../../state/DashboardModel';
@@ -16,7 +17,13 @@ export const DashboardCommentsModal = ({ dashboard, onDismiss }: Props) => {
   const styles = useStyles2(getStyles);
 
   return (
-    <Modal isOpen={true} title="Dashboard comments" icon="save" onDismiss={onDismiss} className={styles.modal}>
+    <Modal
+      isOpen={true}
+      title={t('features.dashboard.dashboard-comments', 'Dashboard comments')}
+      icon="save"
+      onDismiss={onDismiss}
+      className={styles.modal}
+    >
       <CommentManager objectType={'dashboard'} objectId={dashboard.uid} />
     </Modal>
   );

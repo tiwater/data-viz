@@ -52,7 +52,10 @@ export const OptionsPaneOptions: React.FC<OptionPaneRenderProps> = (props) => {
     if (props.plugin.angularPanelCtrl) {
       mainBoxElements.push(
         <div className={styles.searchNotice} key="Search notice">
-          This is an old visualization type that does not support searching all options.
+          {t(
+            'features.dashboard.setting.this-is-an-old-visualization',
+            'This is an old visualization type that does not support searching all options.'
+          )}
         </div>
       );
     }
@@ -87,7 +90,12 @@ export const OptionsPaneOptions: React.FC<OptionPaneRenderProps> = (props) => {
         break;
       case OptionFilter.Recent:
         mainBoxElements.push(
-          <OptionsPaneCategory id="Recent options" title="Recent options" key="Recent options" forceOpen={1}>
+          <OptionsPaneCategory
+            id="Recent options"
+            title={t('features.dashboard.setting.recent-options', 'Recent options')}
+            key="Recent options"
+            forceOpen={1}
+          >
             {getRecentOptions(allOptions).map((item) => item.render())}
           </OptionsPaneCategory>
         );
@@ -126,8 +134,8 @@ export const OptionsPaneOptions: React.FC<OptionPaneRenderProps> = (props) => {
 
 function getOptionRadioFilters(): Array<SelectableValue<OptionFilter>> {
   return [
-    { label: OptionFilter.All, value: OptionFilter.All },
-    { label: OptionFilter.Overrides, value: OptionFilter.Overrides },
+    { label: t('features.dashboard.setting.all', 'All'), value: OptionFilter.All },
+    { label: t('features.dashboard.setting.overrides', 'Overrides'), value: OptionFilter.Overrides },
   ];
 }
 
@@ -149,7 +157,10 @@ function renderSearchHits(
     <div key="search results">
       <OptionsPaneCategory
         id="Found options"
-        title={`Matched ${optionHits.length}/${totalCount} options`}
+        title={`${t('features.dashboard.setting.matched', 'Matched')} ${optionHits.length}/${totalCount} ${t(
+          'features.dashboard.setting.options',
+          'Options'
+        )}`}
         key="Normal options"
         forceOpen={1}
       >

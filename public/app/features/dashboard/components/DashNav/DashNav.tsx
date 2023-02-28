@@ -102,18 +102,22 @@ export const DashNav = React.memo<Props>((props) => {
           new ShowModalReactEvent({
             component: ConfirmModal,
             props: {
-              title: 'Proceed to external site?',
+              title: t('features.dashboard.setting.proceed-to-external-site', 'Proceed to external site?'),
               modalClass: modalStyles,
               body: (
                 <>
                   <p>
-                    {`This link connects to an external website at`} <code>{originalUrl}</code>
+                    {`${t(
+                      'features.dashboard.setting.this-link-connects',
+                      'This link connects to an external website at'
+                    )}`}{' '}
+                    <code>{originalUrl}</code>
                   </p>
-                  <p>{"Are you sure you'd like to proceed?"}</p>
+                  <p>{t('features.dashboard.setting.are-you-sure', "Are you sure you'd like to proceed?")}</p>
                 </>
               ),
               confirmVariant: 'primary',
-              confirmText: 'Proceed',
+              confirmText: t('features.dashboard.setting.proceed', 'Proceed'),
               onConfirm: gotoSnapshotOrigin,
             },
           })
@@ -122,7 +126,10 @@ export const DashNav = React.memo<Props>((props) => {
         gotoSnapshotOrigin();
       }
     } catch (err) {
-      notifyApp.error('Invalid URL', err instanceof Error ? err.message : undefined);
+      notifyApp.error(
+        t('features.dashboard.setting.invalid-URL', 'Invalid URL'),
+        err instanceof Error ? err.message : undefined
+      );
     }
   };
 

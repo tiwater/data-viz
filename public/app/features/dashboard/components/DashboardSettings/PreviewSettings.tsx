@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import { Button, CollapsableSection, FileUpload } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import { getThumbnailURL } from 'app/features/search/components/SearchCard';
 
@@ -47,24 +48,26 @@ export class PreviewSettings extends PureComponent<Props, State> {
     const imgstyle = { maxWidth: 300, maxHeight: 300 };
     return (
       <CollapsableSection label="Preview settings" isOpen={true}>
-        <div>DUMMY UI just so we have an upload button!</div>
+        <div>
+          {t('features.dashboard.setting.just-so-we-have-an-upload', 'DUMMY UI just so we have an upload button!')}
+        </div>
         <table cellSpacing="4">
           <thead>
             <tr>
-              <td>[DARK]</td>
-              <td>[LIGHT]</td>
+              <td>[{t('features.dashboard.setting.DARK', 'DARK')}]</td>
+              <td>[{t('features.dashboard.setting.LIGHT', 'LIGHT')}]</td>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
                 <Button type="button" variant="primary" onClick={this.markAsStale(false)} fill="outline">
-                  Mark as stale
+                  {t('features.dashboard.setting.mark-as-stale', 'Mark as stale')}
                 </Button>
               </td>
               <td>
                 <Button type="button" variant="primary" onClick={this.markAsStale(true)} fill="outline">
-                  Mark as stale
+                  {t('features.dashboard.setting.mark-as-stale', 'Mark as stale')}
                 </Button>
               </td>
             </tr>
@@ -82,7 +85,7 @@ export class PreviewSettings extends PureComponent<Props, State> {
                   accept="image/png, image/webp"
                   onFileUpload={({ currentTarget }) => this.doUpload(currentTarget, false)}
                 >
-                  Upload dark
+                  {t('features.dashboard.setting.upload-dark', 'Upload dark')}
                 </FileUpload>
               </td>
               <td>
@@ -90,7 +93,7 @@ export class PreviewSettings extends PureComponent<Props, State> {
                   accept="image/png, image/webp"
                   onFileUpload={({ currentTarget }) => this.doUpload(currentTarget, true)}
                 >
-                  Upload light
+                  {t('features.dashboard.setting.upload-light', 'Upload light')}
                 </FileUpload>
               </td>
             </tr>

@@ -94,7 +94,7 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
             width={50}
           />
         </Field>
-        <Field label="Data source" htmlFor="data-source-picker">
+        <Field label={t('features.dashboard.data-source', 'Data source')} htmlFor="data-source-picker">
           <DataSourcePicker
             width={50}
             annotations
@@ -103,21 +103,36 @@ export const AnnotationSettingsEdit = ({ editIdx, dashboard }: Props) => {
             onChange={onDataSourceChange}
           />
         </Field>
-        <Field label="Enabled" description="When enabled the annotation query is issued every dashboard refresh">
+        <Field
+          label={t('features.dashboard.enabled', 'Enabled')}
+          description={t(
+            'features.dashboard.when-enabled-the-annotation-query',
+            'When enabled the annotation query is issued every dashboard refresh'
+          )}
+        >
           <Checkbox name="enable" id="enable" value={annotation.enable} onChange={onChange} />
         </Field>
         <Field
-          label="Hidden"
-          description="Annotation queries can be toggled on or off at the top of the dashboard. With this option checked this toggle will be hidden."
+          label={t('features.dashboard.hidden', 'Hidden')}
+          description={t(
+            'features.dashboard.annotation-queries-can-be-toggled',
+            'Annotation queries can be toggled on or off at the top of the dashboard. With this option checked this toggle will be hidden.'
+          )}
         >
           <Checkbox name="hide" id="hide" value={annotation.hide} onChange={onChange} />
         </Field>
-        <Field label="Color" description="Color to use for the annotation event markers">
+        <Field
+          label={t('features.dashboard.color', 'Color')}
+          description={t(
+            'features.dashboard.color-to-use-for-the-annotation',
+            'Color to use for the annotation event markers'
+          )}
+        >
           <HorizontalGroup>
             <ColorValueEditor value={annotation?.iconColor} onChange={onColorChange} />
           </HorizontalGroup>
         </Field>
-        <h3 className="page-heading">Query</h3>
+        <h3 className="page-heading">{t('features.dashboard.query', 'Query')}</h3>
         {ds?.annotations && dsi && (
           <StandardAnnotationQueryEditor
             datasource={ds}

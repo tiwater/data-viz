@@ -3,6 +3,7 @@ import React, { useCallback } from 'react';
 import { SelectableValue } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 
+import { t } from '../../../src/utils/i18n';
 import { Select } from '../Select/Select';
 
 export interface Props {
@@ -15,14 +16,13 @@ export interface Props {
   inputId?: string;
 }
 
-const weekStarts: Array<SelectableValue<string>> = [
-  { value: '', label: 'Default' },
-  { value: 'saturday', label: 'Saturday' },
-  { value: 'sunday', label: 'Sunday' },
-  { value: 'monday', label: 'Monday' },
-];
-
 export const WeekStartPicker = (props: Props) => {
+  const weekStarts: Array<SelectableValue<string>> = [
+    { value: '', label: t('grafana-ui.date-time.default', 'Default') },
+    { value: 'saturday', label: t('grafana-ui.date-time.saturday', 'Saturday') },
+    { value: 'sunday', label: t('grafana-ui.date-time.sunday', 'Sunday') },
+    { value: 'monday', label: t('grafana-ui.date-time.monday', 'Monday') },
+  ];
   const { onChange, width, autoFocus = false, onBlur, value, disabled = false, inputId } = props;
 
   const onChangeWeekStart = useCallback(

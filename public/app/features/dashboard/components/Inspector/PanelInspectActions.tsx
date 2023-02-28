@@ -1,6 +1,7 @@
 import React, { ComponentType } from 'react';
 
 import { PanelData } from '@grafana/data';
+import { t } from 'app/core/internationalization';
 
 import { PanelModel } from '../../state';
 
@@ -63,12 +64,12 @@ interface InspectActionsTabProps {
 export const InspectActionsTab: React.FC<InspectActionsTabProps> = ({ panel, data }) => {
   const supplier = (window as any).grafanaPanelInspectActionSupplier as PanelInspectActionSupplier;
   if (!supplier) {
-    return <div>Missing actions</div>;
+    return <div>{t('features.dashboard.setting.missing-actions', 'Missing actions')}</div>;
   }
 
   const actions = supplier.getActions(panel);
   if (!actions?.length) {
-    return <div>No actions avaliable</div>;
+    return <div>{t('features.dashboard.setting.no-actions-available', 'No actions available')}</div>;
   }
 
   return (
