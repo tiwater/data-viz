@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Button } from '@grafana/ui';
 import { SlideDown } from 'app/core/components/Animations/SlideDown';
+import { t } from 'app/core/internationalization';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 
 import { AddPermission } from './AddPermission';
@@ -34,9 +35,9 @@ export type Props = {
 };
 
 export const Permissions = ({
-  title = 'Permissions',
-  buttonLabel = 'Add a permission',
-  emptyLabel = 'There are no permissions',
+  title = t('features.variables.permissions', 'Permissions'),
+  buttonLabel = t('features.variables.query.add-a-permission', 'Add a permission'),
+  emptyLabel = t('features.variables.query.there-are-no-permissions', 'There are no permissions'),
   resource,
   resourceId,
   canSetPermissions,
@@ -157,7 +158,7 @@ export const Permissions = ({
           </table>
         )}
         <PermissionList
-          title="Role"
+          title={t('features.variables.role', 'Role')}
           items={builtInRoles}
           compareKey={'builtInRole'}
           permissionLevels={desc.permissions}
@@ -166,7 +167,7 @@ export const Permissions = ({
           canSet={canSetPermissions}
         />
         <PermissionList
-          title="User"
+          title={t('features.variables.user', 'User')}
           items={users}
           compareKey={'userLogin'}
           permissionLevels={desc.permissions}
@@ -175,7 +176,7 @@ export const Permissions = ({
           canSet={canSetPermissions}
         />
         <PermissionList
-          title="Team"
+          title={t('features.variables.team', 'Team')}
           items={teams}
           compareKey={'team'}
           permissionLevels={desc.permissions}

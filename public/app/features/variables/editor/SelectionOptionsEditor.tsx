@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, FunctionComponent, useCallback } from 'r
 
 import { selectors } from '@grafana/e2e-selectors';
 import { VerticalGroup } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { KeyedVariableIdentifier } from '../state/types';
 import { VariableWithMultiSupport } from '../types';
@@ -46,22 +47,28 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
     <VerticalGroup spacing="md" height="inherit">
       <VariableCheckboxField
         value={variable.multi}
-        name="Multi-value"
-        description="Enables multiple values to be selected at the same time"
+        name={t('features.variables.query.multi-value', 'Multi-value')}
+        description={t(
+          'features.variables.query.enables-multiple-values-to-be',
+          'Enables multiple values to be selected at the same time'
+        )}
         onChange={onMultiChanged}
       />
       <VariableCheckboxField
         value={variable.includeAll}
-        name="Include All option"
-        description="Enables an option to include all variables"
+        name={t('features.variables.query.include-all-option', 'Include All option')}
+        description={t(
+          'features.variables.query.enables-an-option-to-include-all-variables',
+          'Enables an option to include all variables'
+        )}
         onChange={onIncludeAllChanged}
       />
       {variable.includeAll && (
         <VariableTextField
           value={variable.allValue ?? ''}
           onChange={onAllValueChanged}
-          name="Custom all value"
-          placeholder="blank = auto"
+          name={t('features.variables.query.custom-all-value', 'Custom all value')}
+          placeholder={t('features.variables.query.blank-auto', 'blank = auto')}
           testId={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsCustomAllInputV2}
         />
       )}

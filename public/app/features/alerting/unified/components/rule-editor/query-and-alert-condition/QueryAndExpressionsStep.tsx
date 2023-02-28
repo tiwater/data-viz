@@ -6,6 +6,7 @@ import { selectors } from '@grafana/e2e-selectors';
 import { Stack } from '@grafana/experimental';
 import { config } from '@grafana/runtime';
 import { Alert, Button, Field, InputControl, Tooltip } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { isExpressionQuery } from 'app/features/expressions/guards';
 import { AlertQuery } from 'app/types/unified-alerting-dto';
 
@@ -219,7 +220,7 @@ export const QueryAndExpressionsStep: FC<Props> = ({ editingExistingRule }) => {
                 aria-label={selectors.components.QueryTab.addQuery}
                 disabled={noCompatibleDataSources}
               >
-                Add query
+                {t('features.alerting.rule-editor.add-query', 'Add query')}
               </Button>
             </Tooltip>
 
@@ -232,26 +233,35 @@ export const QueryAndExpressionsStep: FC<Props> = ({ editingExistingRule }) => {
                 }}
                 variant="secondary"
               >
-                Add expression
+                {t('features.alerting.rule-editor.add-expression', 'Add expression')}
               </Button>
             )}
 
             {isDataLoading && (
               <Button icon="fa fa-spinner" type="button" variant="destructive" onClick={cancelQueries}>
-                Cancel
+                {t('features.alerting.rule-editor.cancel', 'Cancel')}
               </Button>
             )}
             {!isDataLoading && (
               <Button icon="sync" type="button" onClick={() => runQueries()} disabled={emptyQueries}>
-                Preview
+                {t('features.alerting.rule-editor.preview', 'Preview')}
               </Button>
             )}
           </Stack>
 
           {/* No Queries */}
           {emptyQueries && (
-            <Alert title="No queries or expressions have been configured" severity="warning">
-              Create at least one query or expression to be alerted on
+            <Alert
+              title={t(
+                'features.alerting.rule-editor.no-queries-or-expressions',
+                'No queries or expressions have been configured'
+              )}
+              severity="warning"
+            >
+              {t(
+                'features.alerting.rule-editor.create-at-least-one-query',
+                'Create at least one query or expression to be alerted on'
+              )}
             </Alert>
           )}
         </Stack>

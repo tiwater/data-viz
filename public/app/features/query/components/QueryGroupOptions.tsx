@@ -5,6 +5,7 @@ import { rangeUtil, PanelData, DataSourceApi } from '@grafana/data';
 import { Switch, Input, InlineField, InlineFormLabel, stylesFactory } from '@grafana/ui';
 import { QueryOperationRow } from 'app/core/components/QueryOperationRow/QueryOperationRow';
 import { config } from 'app/core/config';
+import { t } from 'app/core/internationalization';
 import { QueryGroupOptions } from 'app/types';
 
 interface Props {
@@ -303,7 +304,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
       <QueryOperationRow
         id="Query options"
         index={0}
-        title="Query options"
+        title={t('features.query.query-options', 'Query options')}
         headerElement={this.renderCollapsedText(styles)}
         isOpen={isOpen}
         onOpen={this.onOpenOptions}

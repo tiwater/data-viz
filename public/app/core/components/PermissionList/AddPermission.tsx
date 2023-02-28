@@ -6,6 +6,7 @@ import { Button, Form, HorizontalGroup, Select, stylesFactory } from '@grafana/u
 import { TeamPicker } from 'app/core/components/Select/TeamPicker';
 import { UserPicker } from 'app/core/components/Select/UserPicker';
 import config from 'app/core/config';
+import { t } from 'app/core/internationalization';
 import { OrgUser, Team } from 'app/types';
 import {
   dashboardPermissionLevels,
@@ -97,7 +98,7 @@ class AddPermissions extends Component<Props, NewDashboardAclItem> {
     return (
       <div className="cta-form">
         <CloseButton onClick={onCancel} />
-        <h5>Add Permission For</h5>
+        <h5>{t('app.core.add-permission-for', 'Add Permission For')}</h5>
         <Form maxWidth="none" onSubmit={this.onSubmit}>
           {() => (
             <HorizontalGroup>
@@ -117,7 +118,7 @@ class AddPermissions extends Component<Props, NewDashboardAclItem> {
                 <TeamPicker onSelected={this.onTeamSelected} className={pickerClassName} />
               ) : null}
 
-              <span className={styles.label}>Can</span>
+              <span className={styles.label}>{t('app.core.can', 'Can')}</span>
 
               <Select
                 aria-label="Permission level"
@@ -128,7 +129,7 @@ class AddPermissions extends Component<Props, NewDashboardAclItem> {
                 width={25}
               />
               <Button data-save-permission type="submit" disabled={!isValid}>
-                Save
+                {t('app.core.save', 'Save')}
               </Button>
             </HorizontalGroup>
           )}

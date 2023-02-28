@@ -1,5 +1,22 @@
 {
   "_comment": "Do not manually edit this file. Translations must be made in Crowdin which will sync them back into this file",
+  "app": {
+    "core": {
+      "add-permission-for": "添加权限",
+      "can": "可以",
+      "choose": "选择",
+      "inherited-permission": "继承权限",
+      "no-teams-found": "未找到团队",
+      "permission": "权限",
+      "provisioned-permission": "预设权限",
+      "role": "角色",
+      "save": "保存",
+      "select-a-team": "选择团队",
+      "team": "团队",
+      "team-picker": "团队选择器",
+      "user": "用户"
+    }
+  },
   "clipboard-button": {
     "inline-toast": {
       "success": "成功"
@@ -211,6 +228,14 @@
   "features": {
     "alerting": {
       "add-an-alert": "添加警报",
+      "rule-editor": {
+        "add-expression": "新增表达式",
+        "add-query": "新增查询",
+        "cancel": "取消",
+        "create-at-least-one-query": "创建至少一个要提醒的查询或表达式",
+        "no-queries-or-expressions": "未配置任何查询或表达式",
+        "preview": "预览"
+      },
       "unified": {
         "cannot-create-alerts-from-this-panel": "由于未找到到具有警报功能的数据源的查询，因此无法从此面板创建警报。",
         "dashboard-must-be-saved-before": "在添加警报之前，必须先保存看板。",
@@ -320,6 +345,7 @@
         "DARK": "深色",
         "dashboard": "看板",
         "dashboard-Links-allow": "看板链接允许您将链接放置在仪表板头下方的其他仪表板和网站。",
+        "dashboards": "看板",
         "default": "默认",
         "delete-alert": "删除警报",
         "delete-title": "删除",
@@ -351,6 +377,7 @@
         "just-so-we-have-an-upload": "DUMYUI，这样我们就有了一个上传按钮!",
         "library-panel-options": "面板库选项",
         "LIGHT": "浅色",
+        "link": "链接",
         "links-title": "链接",
         "make-editable-button": "可编辑",
         "mark-as-stale": "标记为旧版",
@@ -446,6 +473,26 @@
       },
       "time-zone": "时区"
     },
+    "editors": {
+      "add-a-new-mapping": "添加新的映射",
+      "add-value-mappings": "添加值映射",
+      "cancel": "取消",
+      "color": "颜色",
+      "condition": "条件",
+      "display-text": "显示文本",
+      "edit-value-mappings": "编辑值映射",
+      "icon": "图标",
+      "match-a-numerical-range-of-value": "匹配一个数值范围",
+      "match-a-regular-expression-with-replacement": "匹配正则表达式与替换",
+      "match-a-specific-text-value": "匹配一个特定的文本值",
+      "match-on-null": "匹配为 null、NAN、布尔值和空值",
+      "range": "范围",
+      "regex": "正则表达式",
+      "special": "特殊的",
+      "update": "更新",
+      "value": "值",
+      "value-mappings": "值映射"
+    },
     "explore": {
       "bars": "柱状图",
       "compact-URL-deprecation": "简洁的 URL 过时通知",
@@ -485,6 +532,12 @@
       }
     },
     "query": {
+      "alphabetical-asc": "字母顺序(升序)",
+      "alphabetical-case-insensitive-asc": "按字母顺序排列(不分大小写，升序)",
+      "alphabetical-case-insensitive-desc": "按字母顺序排列(不分大小写，降序)",
+      "alphabetical-desc": "按字母顺序排列(降序)",
+      "data-source": "数据源",
+      "disabled": "禁用",
       "editor-row": {
         "duplicate-query": "复制查询",
         "enable-query": "停用/启用查询",
@@ -492,11 +545,23 @@
         "toggle-data-source-help": "切换数据源帮助",
         "toggle-text-edit-mode": "切换文本编辑方式"
       },
+      "how-to-sort-the-values": "如何排序此变量的值",
+      "if-you-want-to-extract-part": " 可选。如果您想要提取一个系列名称或公式节点段的一部分。",
+      "named-capture-groups-can-be": "命名抓取组可以用来分隔显示文字和值 (",
+      "numerical-asc": "数值(升序)",
+      "numerical-desc": "数值(降序)",
+      "query": "查询",
       "query-group": {
         "data-source": "数据源",
+        "expression": "表达式",
         "open-data-source-help": "打开数据源帮助",
+        "query": "查询",
         "saved-query": "保存查询"
-      }
+      },
+      "query-options": "查询选项",
+      "regex": "正则表达式",
+      "see-examples": "查看示例",
+      "sort": "排序"
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -764,27 +829,53 @@
         "description-text": "描述文本",
         "for-more-information": "获取更多信息。",
         "label": "标签",
+        "label-and-value": "标签和值",
         "label-name": "标签名称",
+        "latest": "最新的",
+        "metric-name-or-tags-query": "计量名称或标签查询",
         "name": "名称",
         "new-variable": "新的变量",
         "no-renamed-or-missing-variables": "未找到重命名或缺少变量。",
         "notes": "注",
+        "nothing": "无",
         "optional-display-name": "可选显示名称",
+        "query": "查询",
         "renamed-or-missing-variables": "重命名或缺失变量",
+        "restore": "还原",
         "run-query": "运行查询",
         "select-two-versions-to-start-comparing": "选择两个版本开始比较",
         "show-more-versions": "显示更多版本",
+        "show-on-dashboard": "显示在看板",
         "templates-and-variables-documentation": "模板和变量文档",
         "the-name-of-the-template-variable": "模板变量的名称(最大50个字符)",
         "there-are-no-variables-yet": "还没有变量",
         "updated-by": "更新者",
+        "value": "值",
         "variable": "变量",
         "variable-name": "变量名称",
         "variables-enable-more-interactive": "变量启用了更多交互式动态仪表板。 在您的度量查询中，您可以使用变量，而不是硬编码事项，如服务器或传感器名称，而是可以代替变量。 变量显示在仪表盘顶部的列表框。 这些下拉列表使得更改您的控制面板中显示的数据变得容易。请查看。",
         "version": "版本",
         "want-to-delete-variable": "您确定要删除变量",
         "what-do-variables-do": "变量是什么？"
-      }
+      },
+      "permissions": "权限",
+      "query": {
+        "add-a-permission": "添加权限",
+        "blank-auto": "空白 = 自动",
+        "custom-all-value": "自定义所有值",
+        "enables-an-option-to-include-all-variables": "启用选项以包含所有变量",
+        "enables-multiple-values-to-be": "启用同时选择多个值",
+        "include-all-option": "包含全部选项",
+        "multi-value": "多值",
+        "on-dashboard-load": "在看板加载",
+        "on-time-range-change": "时间范围变化",
+        "refresh": "刷新",
+        "there-are-no-permissions": "没有任何权限",
+        "when to update the values": "何时更新此变量的值"
+      },
+      "role": "角色",
+      "team": "团队",
+      "user": "用户"
     }
   },
   "folder-picker": {

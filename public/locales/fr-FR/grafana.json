@@ -1,5 +1,22 @@
 {
   "_comment": "Do not manually edit this file. Translations must be made in Crowdin which will sync them back into this file",
+  "app": {
+    "core": {
+      "add-permission-for": "",
+      "can": "",
+      "choose": "",
+      "inherited-permission": "",
+      "no-teams-found": "",
+      "permission": "",
+      "provisioned-permission": "",
+      "role": "",
+      "save": "",
+      "select-a-team": "",
+      "team": "",
+      "team-picker": "",
+      "user": ""
+    }
+  },
   "clipboard-button": {
     "inline-toast": {
       "success": "Copié"
@@ -211,6 +228,14 @@
   "features": {
     "alerting": {
       "add-an-alert": "",
+      "rule-editor": {
+        "add-expression": "",
+        "add-query": "",
+        "cancel": "",
+        "create-at-least-one-query": "",
+        "no-queries-or-expressions": "",
+        "preview": ""
+      },
       "unified": {
         "cannot-create-alerts-from-this-panel": "",
         "dashboard-must-be-saved-before": "",
@@ -320,6 +345,7 @@
         "DARK": "",
         "dashboard": "",
         "dashboard-Links-allow": "",
+        "dashboards": "",
         "default": "",
         "delete-alert": "",
         "delete-title": "",
@@ -351,6 +377,7 @@
         "just-so-we-have-an-upload": "",
         "library-panel-options": "",
         "LIGHT": "",
+        "link": "",
         "links-title": "",
         "make-editable-button": "",
         "mark-as-stale": "",
@@ -446,6 +473,26 @@
       },
       "time-zone": ""
     },
+    "editors": {
+      "add-a-new-mapping": "",
+      "add-value-mappings": "",
+      "cancel": "",
+      "color": "",
+      "condition": "",
+      "display-text": "",
+      "edit-value-mappings": "",
+      "icon": "",
+      "match-a-numerical-range-of-value": "",
+      "match-a-regular-expression-with-replacement": "",
+      "match-a-specific-text-value": "",
+      "match-on-null": "",
+      "range": "",
+      "regex": "",
+      "special": "",
+      "update": "",
+      "value": "",
+      "value-mappings": ""
+    },
     "explore": {
       "bars": "",
       "compact-URL-deprecation": "",
@@ -485,6 +532,12 @@
       }
     },
     "query": {
+      "alphabetical-asc": "",
+      "alphabetical-case-insensitive-asc": "",
+      "alphabetical-case-insensitive-desc": "",
+      "alphabetical-desc": "",
+      "data-source": "",
+      "disabled": "",
       "editor-row": {
         "duplicate-query": "",
         "enable-query": "",
@@ -492,11 +545,23 @@
         "toggle-data-source-help": "",
         "toggle-text-edit-mode": ""
       },
+      "how-to-sort-the-values": "",
+      "if-you-want-to-extract-part": "",
+      "named-capture-groups-can-be": "",
+      "numerical-asc": "",
+      "numerical-desc": "",
+      "query": "",
       "query-group": {
         "data-source": "",
+        "expression": "",
         "open-data-source-help": "",
+        "query": "",
         "saved-query": ""
-      }
+      },
+      "query-options": "",
+      "regex": "",
+      "see-examples": "",
+      "sort": ""
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -764,27 +829,53 @@
         "description-text": "",
         "for-more-information": "",
         "label": "",
+        "label-and-value": "",
         "label-name": "",
+        "latest": "",
+        "metric-name-or-tags-query": "",
         "name": "",
         "new-variable": "",
         "no-renamed-or-missing-variables": "",
         "notes": "",
+        "nothing": "",
         "optional-display-name": "",
+        "query": "",
         "renamed-or-missing-variables": "",
+        "restore": "",
         "run-query": "",
         "select-two-versions-to-start-comparing": "",
         "show-more-versions": "",
+        "show-on-dashboard": "",
         "templates-and-variables-documentation": "",
         "the-name-of-the-template-variable": "",
         "there-are-no-variables-yet": "",
         "updated-by": "",
+        "value": "",
         "variable": "",
         "variable-name": "",
         "variables-enable-more-interactive": "",
         "version": "",
         "want-to-delete-variable": "",
         "what-do-variables-do": ""
-      }
+      },
+      "permissions": "",
+      "query": {
+        "add-a-permission": "",
+        "blank-auto": "",
+        "custom-all-value": "",
+        "enables-an-option-to-include-all-variables": "",
+        "enables-multiple-values-to-be": "",
+        "include-all-option": "",
+        "multi-value": "",
+        "on-dashboard-load": "",
+        "on-time-range-change": "",
+        "refresh": "",
+        "there-are-no-permissions": "",
+        "when to update the values": ""
+      },
+      "role": "",
+      "team": "",
+      "user": ""
     }
   },
   "folder-picker": {

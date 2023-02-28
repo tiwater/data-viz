@@ -5,6 +5,7 @@ import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 
 import { GrafanaTheme2, MappingType, SelectableValue, SpecialValueMatch, ValueMapping } from '@grafana/data';
 import { useStyles2, Modal, ValuePicker, Button } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { ValueMappingEditRow, ValueMappingEditRowModel } from './ValueMappingEditRow';
 
@@ -48,10 +49,29 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
   };
 
   const mappingTypes: Array<SelectableValue<MappingType>> = [
-    { label: 'Value', value: MappingType.ValueToText, description: 'Match a specific text value' },
-    { label: 'Range', value: MappingType.RangeToText, description: 'Match a numerical range of values' },
-    { label: 'Regex', value: MappingType.RegexToText, description: 'Match a regular expression with replacement' },
-    { label: 'Special', value: MappingType.SpecialValue, description: 'Match on null, NaN, boolean and empty values' },
+    {
+      label: t('features.editors.value', 'Value'),
+      value: MappingType.ValueToText,
+      description: t('features.editors.match-a-specific-text-value', 'Match a specific text value'),
+    },
+    {
+      label: t('features.editors.range', 'Range'),
+      value: MappingType.RangeToText,
+      description: t('features.editors.match-a-numerical-range-of-value', 'Match a numerical range of values'),
+    },
+    {
+      label: t('features.editors.regex', 'Regex'),
+      value: MappingType.RegexToText,
+      description: t(
+        'features.editors.match-a-regular-expression-with-replacement',
+        'Match a regular expression with replacement'
+      ),
+    },
+    {
+      label: t('features.editors.special', 'Special'),
+      value: MappingType.SpecialValue,
+      description: t('features.editors.match-on-null', 'Match on null, NaN, boolean and empty values'),
+    },
   ];
 
   const onAddValueMapping = (value: SelectableValue<MappingType>) => {
@@ -91,11 +111,11 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
             <tr>
               <th style={{ width: '1%' }}></th>
               <th style={{ width: '40%', textAlign: 'left' }} colSpan={2}>
-                Condition
+                {t('features.editors.condition', 'Condition')}
               </th>
-              <th style={{ textAlign: 'left' }}>Display text</th>
-              <th style={{ width: '10%' }}>Color</th>
-              {showIconPicker && <th style={{ width: '10%' }}>Icon</th>}
+              <th style={{ textAlign: 'left' }}> {t('features.editors.display-text', 'Display text')}</th>
+              <th style={{ width: '10%' }}>{t('features.editors.color', 'Color')}</th>
+              {showIconPicker && <th style={{ width: '10%' }}>{t('features.editors.icon', 'Icon')}</th>}
               <th style={{ width: '1%' }}></th>
             </tr>
           </thead>
@@ -125,7 +145,7 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
       <Modal.ButtonRow
         leftItems={
           <ValuePicker
-            label="Add a new mapping"
+            label={t('features.editors.add-a-new-mapping', 'Add a new mapping')}
             variant="secondary"
             size="md"
             icon="plus"
@@ -137,10 +157,10 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
         }
       >
         <Button variant="secondary" fill="outline" onClick={onClose}>
-          Cancel
+          {t('features.editors.cancel', 'Cancel')}
         </Button>
         <Button variant="primary" onClick={onUpdate}>
-          Update
+          {t('features.editors.update', 'Update')}
         </Button>
       </Modal.ButtonRow>
     </>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Icon, Select, Tooltip } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { ResourcePermission } from './types';
 
@@ -44,7 +45,13 @@ export const PermissionListItem = ({ item, permissionLevels, canSet, onRemove, o
           aria-label={`Remove permission for ${getName(item)}`}
         />
       ) : (
-        <Tooltip content={item.isInherited ? 'Inherited Permission' : 'Provisioned Permission'}>
+        <Tooltip
+          content={
+            item.isInherited
+              ? t('app.core.inherited-permission', 'Inherited Permission')
+              : t('app.core.provisioned-permission', 'Provisioned Permission')
+          }
+        >
           <Button size="sm" icon="lock" />
         </Tooltip>
       )}

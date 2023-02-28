@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
 
+import { t } from 'app/core/internationalization';
+
 import { PermissionListItem } from './PermissionListItem';
 import { ResourcePermission } from './types';
 
@@ -42,7 +44,7 @@ export const PermissionList = ({ title, items, compareKey, permissionLevels, can
             <th style={{ width: '1%' }} />
             <th>{title}</th>
             <th style={{ width: '1%' }} />
-            <th>Permission</th>
+            <th>{t('app.core.permission', 'Permission')}</th>
             <th style={{ width: '1%' }} />
             <th style={{ width: '1%' }} />
           </tr>

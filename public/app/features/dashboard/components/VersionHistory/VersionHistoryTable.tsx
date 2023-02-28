@@ -46,7 +46,7 @@ export const VersionHistoryTable = ({ versions, canCompare, onCheck }: VersionsT
           <td>{version.message}</td>
           <td className="text-right">
             {idx === 0 ? (
-              <Tag name="Latest" colorIndex={17} />
+              <Tag name={t('features.variables.editor.latest', 'Latest')} colorIndex={17} />
             ) : (
               <ModalsController>
                 {({ showModal, hideModal }) => (
@@ -61,7 +61,7 @@ export const VersionHistoryTable = ({ versions, canCompare, onCheck }: VersionsT
                       });
                     }}
                   >
-                    Restore
+                    {t('features.variables.editor.restore', 'Restore')}
                   </Button>
                 )}
               </ModalsController>

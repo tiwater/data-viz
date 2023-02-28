@@ -1,5 +1,22 @@
 {
   "_comment": "Do not manually edit this file, or update these source phrases in Crowdin. The source of truth for English strings are in the code source",
+  "app": {
+    "core": {
+      "add-permission-for": "Add Permission For",
+      "can": "Can",
+      "choose": "Choose",
+      "inherited-permission": "Inherited Permission",
+      "no-teams-found": "No teams found",
+      "permission": "Permission",
+      "provisioned-permission": "Provisioned Permission",
+      "role": "Role",
+      "save": "Save",
+      "select-a-team": "Select a team",
+      "team": "Team",
+      "team-picker": "Team picker",
+      "user": "User"
+    }
+  },
   "clipboard-button": {
     "inline-toast": {
       "success": "Copied"
@@ -211,6 +228,14 @@
   "features": {
     "alerting": {
       "add-an-alert": "Adding an Alert",
+      "rule-editor": {
+        "add-expression": "Add expression",
+        "add-query": "Add query",
+        "cancel": "Cancel",
+        "create-at-least-one-query": "Create at least one query or expression to be alerted on",
+        "no-queries-or-expressions": "No queries or expressions have been configured",
+        "preview": "Preview"
+      },
       "unified": {
         "cannot-create-alerts-from-this-panel": "Cannot create alerts from this panel because no query to an alerting capable datasource is found.",
         "dashboard-must-be-saved-before": "Dashboard must be saved before alerts can be added.",
@@ -320,6 +345,7 @@
         "DARK": "DARK",
         "dashboard": "Dashboard",
         "dashboard-Links-allow": "Dashboard Links allow you to place links to other dashboards and web sites directly below the dashboard header.",
+        "dashboards": "Dashboards",
         "default": "Default",
         "delete-alert": "Delete alert",
         "delete-title": "Delete",
@@ -351,6 +377,7 @@
         "just-so-we-have-an-upload": "DUMMY UI just so we have an upload button!",
         "library-panel-options": "Library panel options",
         "LIGHT": "LIGHT",
+        "link": "Link",
         "links-title": "Links",
         "make-editable-button": "Make editable",
         "mark-as-stale": "Mark as stale",
@@ -446,6 +473,26 @@
       },
       "time-zone": "Time zone"
     },
+    "editors": {
+      "add-a-new-mapping": "Add a new mapping",
+      "add-value-mappings": "Add value mappings",
+      "cancel": "Cancel",
+      "color": "Color",
+      "condition": "Condition",
+      "display-text": "Display text",
+      "edit-value-mappings": "Edit value mappings",
+      "icon": "Icon",
+      "match-a-numerical-range-of-value": "Match a numerical range of values",
+      "match-a-regular-expression-with-replacement": "Match a regular expression with replacement",
+      "match-a-specific-text-value": "Match a specific text value",
+      "match-on-null": "Match on null, NaN, boolean and empty values",
+      "range": "Range",
+      "regex": "Regex",
+      "special": "Special",
+      "update": "Update",
+      "value": "Value",
+      "value-mappings": "Value mappings"
+    },
     "explore": {
       "bars": "Bars",
       "compact-URL-deprecation": "Compact URL Deprecation Notice",
@@ -485,6 +532,12 @@
       }
     },
     "query": {
+      "alphabetical-asc": "Alphabetical (asc)",
+      "alphabetical-case-insensitive-asc": "Alphabetical (case-insensitive, asc)",
+      "alphabetical-case-insensitive-desc": "Alphabetical (case-insensitive, desc)",
+      "alphabetical-desc": "Alphabetical (desc)",
+      "data-source": "Data source",
+      "disabled": "Disabled",
       "editor-row": {
         "duplicate-query": "Duplicate query",
         "enable-query": "Disable/enable query",
@@ -492,11 +545,23 @@
         "toggle-data-source-help": "Toggle data source help",
         "toggle-text-edit-mode": "Toggle text edit mode"
       },
+      "how-to-sort-the-values": "How to sort the values of this variable",
+      "if-you-want-to-extract-part": " Optional, if you want to extract part of a series name or metric node segment.",
+      "named-capture-groups-can-be": "Named capture groups can be used to separate the display text and value (",
+      "numerical-asc": "Numerical (asc)",
+      "numerical-desc": "Numerical (desc)",
+      "query": "Query",
       "query-group": {
         "data-source": "Data source",
+        "expression": "Expression",
         "open-data-source-help": "Open data source help",
+        "query": "Query",
         "saved-query": "Saved query"
-      }
+      },
+      "query-options": "Query options",
+      "regex": "Regex",
+      "see-examples": "see examples",
+      "sort": "Sort"
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -764,27 +829,53 @@
         "description-text": "Descriptive text",
         "for-more-information": "for more information.",
         "label": "Label",
+        "label-and-value": "Label and value",
         "label-name": "Label name",
+        "latest": "Latest",
+        "metric-name-or-tags-query": "Metric name or tags query",
         "name": "Name",
         "new-variable": "New variable",
         "no-renamed-or-missing-variables": "No renamed or missing variables found.",
         "notes": "Notes",
+        "nothing": "Nothing",
         "optional-display-name": "Optional display name",
+        "query": "Query",
         "renamed-or-missing-variables": "Renamed or missing variables",
+        "restore": "Restore",
         "run-query": "Run query",
         "select-two-versions-to-start-comparing": "Select two versions to start comparing",
         "show-more-versions": "Show more versions",
+        "show-on-dashboard": "Show on dashboard",
         "templates-and-variables-documentation": "Templates and variables documentation",
         "the-name-of-the-template-variable": "The name of the template variable. (Max. 50 characters)",
         "there-are-no-variables-yet": "There are no variables yet",
         "updated-by": "Updated by",
+        "value": "Value",
         "variable": "Variable",
         "variable-name": "Variable name",
         "variables-enable-more-interactive": "Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server or sensor names in your metric queries you can use variables in their place. Variables are shown as list boxes at the top of the dashboard. These drop-down lists make it easy to change the data being displayed in your dashboard. Check out the",
         "version": "Version",
         "want-to-delete-variable": "Are you sure you want to delete variable",
         "what-do-variables-do": "What do variables do?"
-      }
+      },
+      "permissions": "Permissions",
+      "query": {
+        "add-a-permission": "Add a permission",
+        "blank-auto": "blank = auto",
+        "custom-all-value": "Custom all value",
+        "enables-an-option-to-include-all-variables": "Enables an option to include all variables",
+        "enables-multiple-values-to-be": "Enables multiple values to be selected at the same time",
+        "include-all-option": "Include All option",
+        "multi-value": "Multi-value",
+        "on-dashboard-load": "On dashboard load",
+        "on-time-range-change": "On time range change",
+        "refresh": "Refresh",
+        "there-are-no-permissions": "There are no permissions",
+        "when to update the values": "When to update the values of this variable"
+      },
+      "role": "Role",
+      "team": "Team",
+      "user": "User"
     }
   },
   "folder-picker": {
