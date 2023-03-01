@@ -12,6 +12,9 @@
       "role": "Role",
       "save": "Save",
       "select-a-team": "Select a team",
+      "service": {
+        "unexpected-error": "Unexpected error"
+      },
       "team": "Team",
       "team-picker": "Team picker",
       "user": "User"
@@ -283,6 +286,7 @@
       "documentation": "documentation",
       "edit-panel": "Edit Panel",
       "enabled": "Enabled",
+      "failed-to-fetch-dashboard": "Failed to fetch dashboard",
       "file-path": "File path: ",
       "for-more": "for more information.",
       "for-more-information": "for more information about provisioning.",
@@ -319,8 +323,10 @@
         "unlink": "Unlink",
         "visualizations": "Visualizations"
       },
+      "panel-not-found": "Panel not found",
       "panel-title": "Panel Title",
       "paste-panel-from-clipboard": "Paste panel from clipboard",
+      "permission-to-edit-panel-denied": "Permission to edit panel denied",
       "query": "Query",
       "query-name": "Query name",
       "row-title": "Row Title",

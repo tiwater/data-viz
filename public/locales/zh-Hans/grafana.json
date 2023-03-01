@@ -12,6 +12,9 @@
       "role": "角色",
       "save": "保存",
       "select-a-team": "选择团队",
+      "service": {
+        "unexpected-error": "未知错误"
+      },
       "team": "团队",
       "team-picker": "团队选择器",
       "user": "用户"
@@ -283,6 +286,7 @@
       "documentation": "文档",
       "edit-panel": "编辑面板",
       "enabled": "启用",
+      "failed-to-fetch-dashboard": "获取看板失败",
       "file-path": "文件路径： ",
       "for-more": "获取更多信息。",
       "for-more-information": "获取更多关于预置的信息。",
@@ -319,8 +323,10 @@
         "unlink": "断开连接",
         "visualizations": "可视化"
       },
+      "panel-not-found": "未找到面板",
       "panel-title": "面板标题",
       "paste-panel-from-clipboard": "从剪贴板粘贴面板",
+      "permission-to-edit-panel-denied": "编辑面板的权限被拒绝",
       "query": "查询",
       "query-name": "查询名称",
       "row-title": "行标题",

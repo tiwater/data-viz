@@ -12,6 +12,9 @@
       "role": "Ŗőľę",
       "save": "Ŝävę",
       "select-a-team": "Ŝęľęčŧ ä ŧęäm",
+      "service": {
+        "unexpected-error": "Ůŉęχpęčŧęđ ęřřőř"
+      },
       "team": "Ŧęäm",
       "team-picker": "Ŧęäm pįčĸęř",
       "user": "Ůşęř"
@@ -283,6 +286,7 @@
       "documentation": "đőčūmęŉŧäŧįőŉ",
       "edit-panel": "Ēđįŧ Päŉęľ",
       "enabled": "Ēŉäþľęđ",
+      "failed-to-fetch-dashboard": "Fäįľęđ ŧő ƒęŧčĥ đäşĥþőäřđ",
       "file-path": "Fįľę päŧĥ: ",
       "for-more": "ƒőř mőřę įŉƒőřmäŧįőŉ.",
       "for-more-information": "ƒőř mőřę įŉƒőřmäŧįőŉ äþőūŧ přővįşįőŉįŉģ.",
@@ -319,8 +323,10 @@
         "unlink": "Ůŉľįŉĸ",
         "visualizations": "Vįşūäľįžäŧįőŉş"
       },
+      "panel-not-found": "Päŉęľ ŉőŧ ƒőūŉđ",
       "panel-title": "Päŉęľ Ŧįŧľę",
       "paste-panel-from-clipboard": "Päşŧę päŉęľ ƒřőm čľįpþőäřđ",
+      "permission-to-edit-panel-denied": "Pęřmįşşįőŉ ŧő ęđįŧ päŉęľ đęŉįęđ",
       "query": "Qūęřy",
       "query-name": "Qūęřy ŉämę",
       "row-title": "Ŗőŵ Ŧįŧľę",

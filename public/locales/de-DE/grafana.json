@@ -12,6 +12,9 @@
       "role": "",
       "save": "",
       "select-a-team": "",
+      "service": {
+        "unexpected-error": ""
+      },
       "team": "",
       "team-picker": "",
       "user": ""
@@ -283,6 +286,7 @@
       "documentation": "",
       "edit-panel": "",
       "enabled": "",
+      "failed-to-fetch-dashboard": "",
       "file-path": "",
       "for-more": "",
       "for-more-information": "",
@@ -319,8 +323,10 @@
         "unlink": "",
         "visualizations": ""
       },
+      "panel-not-found": "",
       "panel-title": "",
       "paste-panel-from-clipboard": "",
+      "permission-to-edit-panel-denied": "",
       "query": "",
       "query-name": "",
       "row-title": "",

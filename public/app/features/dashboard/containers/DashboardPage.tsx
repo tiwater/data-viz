@@ -10,6 +10,7 @@ import { notifyApp } from 'app/core/actions';
 import { Page } from 'app/core/components/Page/Page';
 import { GrafanaContext, GrafanaContextType } from 'app/core/context/GrafanaContext';
 import { createErrorNotification } from 'app/core/copy/appNotification';
+import { t } from 'app/core/internationalization';
 import { getKioskMode } from 'app/core/navigation/kiosk';
 import { GrafanaRouteComponentProps } from 'app/core/navigation/types';
 import { getNavModel } from 'app/core/selectors/navModel';
@@ -199,12 +200,16 @@ export class UnthemedDashboardPage extends PureComponent<Props, State> {
     }
 
     if (this.state.editPanelAccessDenied) {
-      this.props.notifyApp(createErrorNotification('Permission to edit panel denied'));
+      this.props.notifyApp(
+        createErrorNotification(
+          t('features.dashboard.permission-to-edit-panel-denied', 'Permission to edit panel denied')
+        )
+      );
       locationService.partial({ editPanel: null });
     }
 
     if (this.state.panelNotFound) {
-      this.props.notifyApp(createErrorNotification(`Panel not found`));
+      this.props.notifyApp(createErrorNotification(`${t('features.dashboard.panel-not-found', 'Panel not found')}`));
       locationService.partial({ editPanel: null, viewPanel: null });
     }
   }
