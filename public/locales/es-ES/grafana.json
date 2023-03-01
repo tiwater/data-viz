@@ -83,6 +83,7 @@
       "formatted": "Datos formateados",
       "formatted-data-description": "Los datos de la tabla están formateados con opciones definidas en las pestañas Campo y Anulación.",
       "formatted-data-label": "Datos formateados",
+      "no-data": "",
       "panel-transforms": "Transformaciones de panel",
       "series-to-columns": "Series unidas por el tiempo",
       "transformation": "Series unidas por el tiempo",
@@ -90,6 +91,7 @@
       "transformations-label": "Aplicar transformaciones de panel"
     },
     "inspect-json": {
+      "apply": "",
       "dataframe-description": "Datos brutos sin configuración de campo ni transformaciones aplicadas. ",
       "dataframe-label": "JSON del marco de datos (de la consulta)",
       "panel-data-description": "El modelo bruto (RAW) ha pasado a la visualización del panel",
@@ -97,6 +99,7 @@
       "panel-json-description": "El modelo guardado en el panel de control JSON que configura cómo funciona todo.",
       "panel-json-label": "JSON de panel",
       "select-source": "Seleccionar fuente",
+      "support": "",
       "unknown": "Objeto desconocido: {{show}}"
     },
     "inspect-meta": {
@@ -123,6 +126,9 @@
       "cannot-be-the-same-as-folder-name": "",
       "changes-label": "",
       "conflict": "",
+      "copy": "",
+      "copy-tags": "",
+      "dashboard name is invalid": "",
       "dashboard-name": "",
       "details-label": "",
       "discard": "",
@@ -538,6 +544,10 @@
       "alphabetical-desc": "",
       "data-source": "",
       "disabled": "",
+      "editor": {
+        "an-empty-query-name": "",
+        "query-name-already-exists": ""
+      },
       "editor-row": {
         "duplicate-query": "",
         "enable-query": "",

@@ -83,6 +83,7 @@
       "formatted": "格式化数据",
       "formatted-data-description": "按照\"字段\"和\"覆盖\"选项卡中定义的选项将表格数据格式化。",
       "formatted-data-label": "格式化数据",
+      "no-data": "没有数据",
       "panel-transforms": "面板转换",
       "series-to-columns": "按时间拼接的系列",
       "transformation": "按时间拼接的系列",
@@ -90,6 +91,7 @@
       "transformations-label": "应用面板转换"
     },
     "inspect-json": {
+      "apply": "应用",
       "dataframe-description": "未应用转换和字段配置的原始数据。 ",
       "dataframe-label": "DataFrame JSON (来自查询)",
       "panel-data-description": "发送至面板可视化的原始模型",
@@ -97,6 +99,7 @@
       "panel-json-description": "保存在看板 JSON 中的模型，用于配置整体运作方式。",
       "panel-json-label": "面板 JSON",
       "select-source": "选择源",
+      "support": "支持",
       "unknown": "未知对象：{{show}}"
     },
     "inspect-meta": {
@@ -123,6 +126,9 @@
       "cannot-be-the-same-as-folder-name": "看板名称不能与文件夹名称相同",
       "changes-label": "更改",
       "conflict": "冲突",
+      "copy": "复制",
+      "copy-tags": "复制标签",
+      "dashboard name is invalid": "看板名称无效",
       "dashboard-name": "看板名称",
       "details-label": "详情",
       "discard": "放弃",
@@ -538,6 +544,10 @@
       "alphabetical-desc": "按字母顺序排列(降序)",
       "data-source": "数据源",
       "disabled": "禁用",
+      "editor": {
+        "an-empty-query-name": "不允许输入空查询名称",
+        "query-name-already-exists": "查询名称已存在"
+      },
       "editor-row": {
         "duplicate-query": "复制查询",
         "enable-query": "停用/启用查询",

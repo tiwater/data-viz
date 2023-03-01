@@ -21,7 +21,7 @@ export function importPanelPlugin(id: string): Promise<PanelPlugin> {
   // 项目作为子应用时,相对路径无法找到自定义插件
   // meta.module.substr(0, 18) !== 'app/plugins/panel/' 判断是否为自定义插件
   if (meta.module.substr(0, 18) !== 'app/plugins/panel/') {
-    meta.module = `https://data-viz.ticos.cn/public/${meta.module}.js`;
+    meta.module = `https://data-viz.ticos.cn/public/${meta.module}.js?${new Date().getTime()}`;
   }
 
   promiseCache[id] = getPanelPlugin(meta);

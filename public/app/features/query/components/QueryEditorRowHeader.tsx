@@ -5,6 +5,7 @@ import { DataQuery, DataSourceInstanceSettings, GrafanaTheme2 } from '@grafana/d
 import { selectors } from '@grafana/e2e-selectors';
 import { DataSourcePicker } from '@grafana/runtime';
 import { Icon, Input, FieldValidationMessage, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 export interface Props<TQuery extends DataQuery = DataQuery> {
   query: TQuery;
@@ -51,13 +52,13 @@ export const QueryEditorRowHeader = <TQuery extends DataQuery>(props: Props<TQue
     const newName = event.currentTarget.value.trim();
 
     if (newName.length === 0) {
-      setValidationError('An empty query name is not allowed');
+      setValidationError(t('features.query.editor.an-empty-query-name', 'An empty query name is not allowed'));
       return;
     }
 
     for (const otherQuery of queries) {
       if (otherQuery !== query && newName === otherQuery.refId) {
-        setValidationError('Query name already exists');
+        setValidationError(t('features.query.editor.query-name-already-exists', 'Query name already exists'));
         return;
       }
     }

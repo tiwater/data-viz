@@ -127,12 +127,12 @@ export function InspectJSONTab({ panel, dashboard, data, onClose }: Props) {
         </Field>
         {panel && isPanelJSON && canEdit && (
           <Button className={styles.toolbarItem} onClick={onApplyPanelModel}>
-            Apply
+            {t('dashboard.inspect-json.apply', 'Apply')}
           </Button>
         )}
         {show === ShowContent.DataFrames && (
           <Button className={styles.toolbarItem} onClick={onShowHelpWizard}>
-            Support
+            {t('dashboard.inspect-json.support', 'Support')}
           </Button>
         )}
       </div>
