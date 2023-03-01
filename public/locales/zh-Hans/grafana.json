@@ -725,6 +725,18 @@
       "create-new-library-panel": "创建新的面板库",
       "no-library-panels-found": "没有找到面板库。"
     },
+    "live": {
+      "dashboard": {
+        "continue-editing": "继续编辑",
+        "dashboard-changed": "看板已更改",
+        "discard-local-changes": "放弃本地更改",
+        "keep-your-local-changes-and-continue": "保留您的本地更改并继续编辑。注意：保存时将覆盖最近的更改",
+        "load-the-latest-saved-version": "加载此看板的最新保存版本",
+        "this-dashboard-has-been-deleted": "此看板已被另一个会话删除",
+        "this-dashboard-has-been-modifed": "此看已被另一个会话修改",
+        "view-grafana-homepage": "查看 Ticos 主页"
+      }
+    },
     "panel": {
       "viz-type-picker": {
         "based-on-current-data": "根据目前的数据",

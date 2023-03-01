@@ -725,6 +725,18 @@
       "create-new-library-panel": "Cřęäŧę ŉęŵ ľįþřäřy päŉęľ",
       "no-library-panels-found": "Ńő ľįþřäřy päŉęľş ƒőūŉđ."
     },
+    "live": {
+      "dashboard": {
+        "continue-editing": "Cőŉŧįŉūę ęđįŧįŉģ",
+        "dashboard-changed": "Đäşĥþőäřđ Cĥäŉģęđ",
+        "discard-local-changes": "Đįşčäřđ Ŀőčäľ čĥäŉģęş",
+        "keep-your-local-changes-and-continue": "Ķęęp yőūř ľőčäľ čĥäŉģęş äŉđ čőŉŧįŉūę ęđįŧįŉģ.  Ńőŧę: ŵĥęŉ yőū şävę, ŧĥįş ŵįľľ ővęřŵřįŧę ŧĥę mőşŧ řęčęŉŧ čĥäŉģęş",
+        "load-the-latest-saved-version": "Ŀőäđ ŧĥę ľäŧęşŧ şävęđ vęřşįőŉ ƒőř ŧĥįş đäşĥþőäřđ",
+        "this-dashboard-has-been-deleted": "Ŧĥįş đäşĥþőäřđ ĥäş þęęŉ đęľęŧęđ þy äŉőŧĥęř şęşşįőŉ",
+        "this-dashboard-has-been-modifed": "Ŧĥįş đäşĥþőäřđ ĥäş þęęŉ mőđįƒęđ þy äŉőŧĥęř şęşşįőŉ",
+        "view-grafana-homepage": "vįęŵ ģřäƒäŉä ĥőmępäģę"
+      }
+    },
     "panel": {
       "viz-type-picker": {
         "based-on-current-data": "ßäşęđ őŉ čūřřęŉŧ đäŧä",

@@ -725,6 +725,18 @@
       "create-new-library-panel": "Create new library panel",
       "no-library-panels-found": "No library panels found."
     },
+    "live": {
+      "dashboard": {
+        "continue-editing": "Continue editing",
+        "dashboard-changed": "Dashboard Changed",
+        "discard-local-changes": "Discard Local changes",
+        "keep-your-local-changes-and-continue": "Keep your local changes and continue editing.  Note: when you save, this will overwrite the most recent changes",
+        "load-the-latest-saved-version": "Load the latest saved version for this dashboard",
+        "this-dashboard-has-been-deleted": "This dashboard has been deleted by another session",
+        "this-dashboard-has-been-modifed": "This dashboard has been modifed by another session",
+        "view-grafana-homepage": "view grafana homepage"
+      }
+    },
     "panel": {
       "viz-type-picker": {
         "based-on-current-data": "Based on current data",

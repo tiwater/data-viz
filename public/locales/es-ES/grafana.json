@@ -725,6 +725,18 @@
       "create-new-library-panel": "",
       "no-library-panels-found": ""
     },
+    "live": {
+      "dashboard": {
+        "continue-editing": "",
+        "dashboard-changed": "",
+        "discard-local-changes": "",
+        "keep-your-local-changes-and-continue": "",
+        "load-the-latest-saved-version": "",
+        "this-dashboard-has-been-deleted": "",
+        "this-dashboard-has-been-modifed": "",
+        "view-grafana-homepage": ""
+      }
+    },
     "panel": {
       "viz-type-picker": {
         "based-on-current-data": "",
