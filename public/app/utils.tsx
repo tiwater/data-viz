@@ -1,5 +1,6 @@
 import { PanelPluginMeta } from '@grafana/data';
 
+import config from './core/config';
 import { t } from './core/internationalization';
 
 const getPluginIn18 = (): { [key: string]: { [key: string]: string } } => ({
@@ -159,8 +160,8 @@ export const setFilteredPluginTypes = (pluginTypes: PanelPluginMeta[]) => {
         ...plugin.info,
         description: pluginIn18[plugin.id] ? pluginIn18[plugin.id].description : plugin.info.description,
         logos: {
-          small: `https://data-viz.ticos.cn/${plugin.info.logos.small}`,
-          large: `https://data-viz.ticos.cn/${plugin.info.logos.large}`,
+          small: `${config.appUrl}${plugin.info.logos.small}`,
+          large: `${config.appUrl}${plugin.info.logos.large}`,
         },
       },
     }));

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 import { DataFrame, DataLink, GrafanaTheme2, VariableSuggestion } from '@grafana/data';
 
+import { t } from '../../../../src/utils/i18n';
 import { stylesFactory, useTheme2 } from '../../../themes';
 import { Button } from '../../Button/Button';
 import { Modal } from '../../Modal/Modal';
@@ -90,7 +91,7 @@ export const DataLinksInlineEditor: React.FC<DataLinksInlineEditorProps> = ({
 
       {isEditing && editIndex !== null && (
         <Modal
-          title="Edit link"
+          title={t('grafana-ui.data-links.edit-link', 'Edit link')}
           isOpen={true}
           closeOnBackdropClick={false}
           onDismiss={() => {
@@ -109,7 +110,7 @@ export const DataLinksInlineEditor: React.FC<DataLinksInlineEditorProps> = ({
       )}
 
       <Button size="sm" icon="plus" onClick={onDataLinkAdd} variant="secondary">
-        Add link
+        {t('grafana-ui.data-links.add-link', 'Add link')}
       </Button>
     </>
   );

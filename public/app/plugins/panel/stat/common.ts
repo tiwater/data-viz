@@ -9,21 +9,22 @@ import {
   standardEditorsRegistry,
 } from '@grafana/data';
 import { SingleStatBaseOptions, VizOrientation } from '@grafana/schema';
+import { t } from 'app/core/internationalization';
 
 export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   builder: PanelOptionsEditorBuilder<T>,
   includeFieldMatcher = true
 ) {
-  const valueOptionsCategory = ['Value options'];
+  const valueOptionsCategory = [t('app.panel.common.value-options','Value options')];
 
   builder.addRadio({
     path: 'reduceOptions.values',
-    name: 'Show',
-    description: 'Calculate a single value per column or series or show each row',
+    name: t('app.panel.common.show','Show'),
+    description: t('app.panel.common.valueOptionsDescription','Calculate a single value per column or series or show each row'),
     settings: {
       options: [
-        { value: false, label: 'Calculate' },
-        { value: true, label: 'All values' },
+        { value: false, label: t('app.panel.common.calculate','Calculate') },
+        { value: true, label: t('app.panel.common.all-values','All values') },
       ],
     },
     category: valueOptionsCategory,
@@ -32,8 +33,8 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
 
   builder.addNumberInput({
     path: 'reduceOptions.limit',
-    name: 'Limit',
-    description: 'Max number of rows to display',
+    name: t('app.panel.common.limit','Limit'),
+    description: t('app.panel.common.limitDescription','Max number of rows to display'),
     category: valueOptionsCategory,
     settings: {
       placeholder: '25',
@@ -47,8 +48,8 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   builder.addCustomEditor({
     id: 'reduceOptions.calcs',
     path: 'reduceOptions.calcs',
-    name: 'Calculation',
-    description: 'Choose a reducer function / calculation',
+    name: t('app.panel.common.calculation','Calculation'),
+    description: t('app.panel.common.calculationDescription','Choose a reducer function / calculation'),
     category: valueOptionsCategory,
     editor: standardEditorsRegistry.get('stats-picker').editor,
     // TODO: Get ReducerID from generated schema one day?
@@ -60,16 +61,16 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   if (includeFieldMatcher) {
     builder.addSelect({
       path: 'reduceOptions.fields',
-      name: 'Fields',
-      description: 'Select the fields that should be included in the panel',
+      name: t('app.panel.common.fields','Fields'),
+      description: t('app.panel.common.fieldsDescription','Select the fields that should be included in the panel'),
       category: valueOptionsCategory,
       settings: {
         allowCustomValue: true,
         options: [],
         getOptions: async (context: FieldOverrideContext) => {
           const options = [
-            { value: '', label: 'Numeric Fields' },
-            { value: '/.*/', label: 'All Fields' },
+            { value: '', label: t('app.panel.common.numeric-fields','Numeric Fields') },
+            { value: '/.*/', label: t('app.panel.common.all-fields','All Fields') },
           ];
           if (context && context.data) {
             for (const frame of context.data) {
@@ -94,14 +95,14 @@ export function addOrientationOption<T extends SingleStatBaseOptions>(
 ) {
   builder.addRadio({
     path: 'orientation',
-    name: 'Orientation',
-    description: 'Layout orientation',
+    name: t('app.panel.common.orientation','Orientation'),
+    description: t('app.panel.common.layout-orientation','Layout orientation'),
     category,
     settings: {
       options: [
-        { value: VizOrientation.Auto, label: 'Auto' },
-        { value: VizOrientation.Horizontal, label: 'Horizontal' },
-        { value: VizOrientation.Vertical, label: 'Vertical' },
+        { value: VizOrientation.Auto, label: t('app.panel.common.auto','Auto') },
+        { value: VizOrientation.Horizontal, label: t('app.panel.common.horizontal','Horizontal') },
+        { value: VizOrientation.Vertical, label: t('app.panel.common.vertical','Vertical') },
       ],
     },
     defaultValue: VizOrientation.Auto,

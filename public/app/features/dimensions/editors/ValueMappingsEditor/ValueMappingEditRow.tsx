@@ -4,6 +4,7 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import { GrafanaTheme2, MappingType, SpecialValueMatch, SelectableValue, ValueMappingResult } from '@grafana/data';
 import { useStyles2, Icon, Select, HorizontalGroup, ColorPicker, IconButton, Input, Button } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { ResourcePickerSize, ResourceFolderName, MediaType } from '../../types';
 import { ResourcePicker } from '../ResourcePicker';
@@ -143,7 +144,7 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
                 type="text"
                 value={key ?? ''}
                 onChange={onUpdateMatchValue}
-                placeholder="Exact value to match"
+                placeholder={t('features.dimensions.editors.exact-value-to-match', 'Exact value to match')}
               />
             )}
             {mapping.type === MappingType.RangeToText && (
@@ -194,7 +195,7 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
               <ColorPicker color={'gray'} onChange={onChangeColor} enableNamedColors={true}>
                 {(props) => (
                   <Button variant="primary" fill="text" onClick={props.showColorPicker} ref={props.ref} size="sm">
-                    Set color
+                    {t('features.dimensions.editors.set-color', 'Set color')}
                   </Button>
                 )}
               </ColorPicker>

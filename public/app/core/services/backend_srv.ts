@@ -25,6 +25,7 @@ import { TokenRevokedModal } from 'app/features/users/TokenRevokedModal';
 import { DashboardDTO, FolderDTO } from 'app/types';
 
 import { ShowModalReactEvent } from '../../types/events';
+import { t } from '../internationalization';
 import {
   isContentTypeApplicationJson,
   parseInitFromOptions,
@@ -340,7 +341,7 @@ export class BackendSrv implements BackendService {
    * @see DataQueryError.data
    */
   processRequestError(options: BackendSrvRequest, err: FetchError): FetchError<{ message: string; error?: string }> {
-    err.data = err.data ?? { message: 'Unexpected error' };
+    err.data = err.data ?? { message: t('app.core.service.unexpected-error', 'Unexpected error') };
 
     if (typeof err.data === 'string') {
       err.data = {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { DataFrame, DataLink, VariableSuggestion } from '@grafana/data';
 
+import { t } from '../../../../src/utils/i18n';
 import { Button } from '../../Button';
 import { Modal } from '../../Modal/Modal';
 import { DataLinkEditor } from '../DataLinkEditor';
@@ -36,14 +37,14 @@ export const DataLinkEditorModalContent = ({
       />
       <Modal.ButtonRow>
         <Button variant="secondary" onClick={() => onCancel(index)} fill="outline">
-          Cancel
+          {t('grafana-ui.data-links.cancel', 'Cancel')}
         </Button>
         <Button
           onClick={() => {
             onSave(index, dirtyLink);
           }}
         >
-          Save
+          {t('grafana-ui.data-links.save', 'Save')}
         </Button>
       </Modal.ButtonRow>
     </>
