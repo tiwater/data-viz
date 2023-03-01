@@ -3,20 +3,21 @@ import React, { useMemo } from 'react';
 import { FieldOverrideEditorProps, SelectableValue } from '@grafana/data';
 import { LineStyle } from '@grafana/schema';
 import { HorizontalGroup, IconButton, RadioButtonGroup, Select } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 type LineFill = 'solid' | 'dash' | 'dot';
 
 const lineFillOptions: Array<SelectableValue<LineFill>> = [
   {
-    label: 'Solid',
+    label: t('app.panel.timeseries.line.solid','Solid'),
     value: 'solid',
   },
   {
-    label: 'Dash',
+    label: t('app.panel.timeseries.line.dash','Dash'),
     value: 'dash',
   },
   {
-    label: 'Dots',
+    label: t('app.panel.timeseries.line.dots','Dots'),
     value: 'dot',
   },
 ];
@@ -106,7 +107,7 @@ export const LineStyleEditor: React.FC<FieldOverrideEditorProps<LineStyle, any>>
           <div>
             &nbsp;
             <a
-              title="The input expects a segment list"
+              title={t('app.panel.timeseries.line.aTitle','The input expects a segment list')}
               href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash#Parameters"
               target="_blank"
               rel="noreferrer"

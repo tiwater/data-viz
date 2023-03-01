@@ -8,6 +8,8 @@ import {
 } from '@grafana/data';
 import { StackingConfig, StackingMode } from '@grafana/schema';
 
+import { t } from '../../../src/utils/i18n';
+
 import {
   GraphFieldConfig,
   graphFieldOptions,
@@ -39,7 +41,7 @@ export const StackingEditor: React.FC<FieldOverrideEditorProps<StackingConfig, a
       {context.isOverride && value?.mode && value?.mode !== StackingMode.None && (
         <Input
           type="text"
-          placeholder="Group"
+          placeholder={t('grafana-ui.options.group', 'Group')}
           suffix={
             <Tooltip content="Name of the stacking group" placement="top">
               <IconButton name="question-circle" />
@@ -61,18 +63,18 @@ export const StackingEditor: React.FC<FieldOverrideEditorProps<StackingConfig, a
 export function addStackingConfig(
   builder: FieldConfigEditorBuilder<GraphFieldConfig>,
   defaultConfig?: StackingConfig,
-  category = ['Graph styles']
+  category = [t('grafana-ui.options.graph-styles', 'Graph styles')]
 ) {
   builder.addCustomEditor({
     id: 'stacking',
     path: 'stacking',
-    name: 'Stack series',
+    name: t('grafana-ui.options.stack-series', 'Stack series'),
     category: category,
     defaultValue: defaultConfig,
     editor: StackingEditor,
     override: StackingEditor,
     settings: {
-      options: graphFieldOptions.stacking,
+      options: graphFieldOptions().stacking,
     },
     process: identityOverrideProcessor,
     shouldApply: (f) => f.type === FieldType.number,
