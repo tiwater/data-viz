@@ -147,22 +147,22 @@ export const setPluginMeta = (plugin: PanelPluginMeta): PanelPluginMeta => {
   return {
     ...plugin,
     name: pluginIn18[plugin.id] ? pluginIn18[plugin.id].name : plugin.name,
+    info: {
+      ...plugin.info,
+      description: pluginIn18[plugin.id] ? pluginIn18[plugin.id].description : plugin.info.description,
+      logos: {
+        small:
+          plugin.info.logos.small.indexOf(config.appUrl) > -1
+            ? plugin.info.logos.small
+            : `${config.appUrl}${plugin.info.logos.small}`,
+        large:
+          plugin.info.logos.large.indexOf(config.appUrl) > -1
+            ? plugin.info.logos.large
+            : `${config.appUrl}${plugin.info.logos.large}`,
+      },
+    },
   };
 };
 export const setFilteredPluginTypes = (pluginTypes: PanelPluginMeta[]) => {
-  const pluginIn18 = getPluginIn18();
-  return pluginTypes
-    .filter((plugin) => !(plugin.id === 'geomap'))
-    .map((plugin) => ({
-      ...plugin,
-      name: pluginIn18[plugin.id] ? pluginIn18[plugin.id].name : plugin.name,
-      info: {
-        ...plugin.info,
-        description: pluginIn18[plugin.id] ? pluginIn18[plugin.id].description : plugin.info.description,
-        logos: {
-          small: `${config.appUrl}${plugin.info.logos.small}`,
-          large: `${config.appUrl}${plugin.info.logos.large}`,
-        },
-      },
-    }));
+  return pluginTypes.filter((plugin) => !(plugin.id === 'geomap')).map((plugin) => setPluginMeta(plugin));
 };

@@ -184,7 +184,7 @@ export class DataSourcePicker extends PureComponent<DataSourcePickerProps, DataS
     }));
     const value = this.getCurrentValue();
     const isClearable = typeof onClear === 'function';
-
+    value.imgUrl = `${config.appUrl}${value.imgUrl}`;
     return (
       <div aria-label={selectors.components.DataSourcePicker.container}>
         <Select

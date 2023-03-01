@@ -7,7 +7,7 @@ import { useAsync } from 'react-use';
 import { DataQuery, GrafanaTheme2, PanelData, SelectableValue, DataTopic } from '@grafana/data';
 import { Field, Select, useStyles2, VerticalGroup, Spinner, Switch, RadioButtonGroup, Icon } from '@grafana/ui';
 import config from 'app/core/config';
-import { Trans } from 'app/core/internationalization';
+import { t, Trans } from 'app/core/internationalization';
 import { getDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import { PanelModel } from 'app/features/dashboard/state';
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
@@ -26,12 +26,15 @@ interface Props {
   onRunQueries: () => void;
 }
 
-const topics = [
-  { label: 'All data', value: false },
-  { label: 'Annotations', value: true, description: 'Include annotations as regular data' },
-];
-
 export function DashboardQueryEditor({ panelData, queries, onChange, onRunQueries }: Props) {
+  const topics = [
+    { label: t('app.plugins.dashboard.all-data', 'All data'), value: false },
+    {
+      label: t('app.plugins.dashboard.annotations', 'Annotations'),
+      value: true,
+      description: t('app.plugins.dashboard.include-annotations-as-regular', 'Include annotations as regular data'),
+    },
+  ];
   const { value: defaultDatasource } = useAsync(() => getDatasourceSrv().get());
   const query = queries[0] as DashboardQuery;
 
@@ -150,10 +153,13 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
 
   return (
     <>
-      <Field label="Source" description="Use the same results as panel">
+      <Field
+        label={t('app.plugins.dashboard.source', 'Source')}
+        description={t('app.plugins.dashboard.use-the-same-results-as-panel', 'Use the same results as panel')}
+      >
         <Select
           inputId={selectId}
-          placeholder="Choose panel"
+          placeholder={t('app.plugins.dashboard.choose-panel', 'Choose panel')}
           isSearchable={true}
           options={panels}
           value={selected}
@@ -166,7 +172,7 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
       ) : (
         <>
           {results && Boolean(results.length) && (
-            <Field label="Queries">
+            <Field label={t('app.plugins.dashboard.queries', 'Queries')}>
               <VerticalGroup spacing="sm">
                 {results.map((target, i) => (
                   <div className={styles.queryEditorRowHeader} key={`DashboardQueryRow-${i}`}>
@@ -190,12 +196,18 @@ export function DashboardQueryEditor({ panelData, queries, onChange, onRunQuerie
       )}
 
       {showTransforms && (
-        <Field label="Transform" description="Apply panel transformations from the source panel">
+        <Field
+          label={t('app.plugins.dashboard.transform', 'Transform')}
+          description={t(
+            'app.plugins.dashboard.apply-panel-transformations-from',
+            'Apply panel transformations from the source panel'
+          )}
+        >
           <Switch value={Boolean(query.withTransforms)} onChange={onTransformToggle} />
         </Field>
       )}
 
-      <Field label="Data">
+      <Field label={t('app.plugins.dashboard.data', 'Data')}>
         <RadioButtonGroup options={topics} value={query.topic === DataTopic.Annotations} onChange={onTopicChanged} />
       </Field>
     </>

@@ -119,12 +119,42 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
   };
 
   const specialMatchOptions: Array<SelectableValue<SpecialValueMatch>> = [
-    { label: 'Null', value: SpecialValueMatch.Null, description: 'Matches null and undefined values' },
-    { label: 'NaN', value: SpecialValueMatch.NaN, description: 'Matches against Number.NaN (not a number)' },
-    { label: 'Null + NaN', value: SpecialValueMatch.NullAndNaN, description: 'Matches null, undefined and NaN' },
-    { label: 'True', value: SpecialValueMatch.True, description: 'Boolean true values' },
-    { label: 'False', value: SpecialValueMatch.False, description: 'Boolean false values' },
-    { label: 'Empty', value: SpecialValueMatch.Empty, description: 'Empty string' },
+    {
+      label: 'Null',
+      value: SpecialValueMatch.Null,
+      description: t(
+        'features.dimensions.editors.matches-null-and-undefined-values',
+        'Matches null and undefined values'
+      ),
+    },
+    {
+      label: 'NaN',
+      value: SpecialValueMatch.NaN,
+      description: t('features.dimensions.editors.matches-against-number', 'Matches against Number.NaN (not a number)'),
+    },
+    {
+      label: 'Null + NaN',
+      value: SpecialValueMatch.NullAndNaN,
+      description: t(
+        'features.dimensions.editors.matches-null-and-undefined-and-NaN',
+        'Matches null, undefined and NaN'
+      ),
+    },
+    {
+      label: 'True',
+      value: SpecialValueMatch.True,
+      description: t('features.dimensions.editors.boolean-true-values', 'Boolean true values'),
+    },
+    {
+      label: 'False',
+      value: SpecialValueMatch.False,
+      description: t('features.dimensions.editors.boolean-false-values', 'Boolean false values'),
+    },
+    {
+      label: t('features.dimensions.editors.empty', 'Empty'),
+      value: SpecialValueMatch.Empty,
+      description: t('features.dimensions.editors.empty-string', 'Empty string'),
+    },
   ];
 
   return (
@@ -152,14 +182,14 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
                 <Input
                   type="number"
                   value={mapping.from ?? ''}
-                  placeholder="Range start"
+                  placeholder={t('features.dimensions.editors.range-start', 'Range start')}
                   onChange={onChangeFrom}
                   prefix="From"
                 />
                 <Input
                   type="number"
                   value={mapping.to ?? ''}
-                  placeholder="Range end"
+                  placeholder={t('features.dimensions.editors.range-end', 'Range end')}
                   onChange={onChangeTo}
                   prefix="To"
                 />
@@ -169,7 +199,7 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
               <Input
                 type="text"
                 value={mapping.pattern ?? ''}
-                placeholder="Regular expression"
+                placeholder={t('features.dimensions.editors.regular-expression', 'Regular expression')}
                 onChange={onChangePattern}
               />
             )}
@@ -182,13 +212,23 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
             )}
           </td>
           <td>
-            <Input type="text" value={result.text ?? ''} onChange={onChangeText} placeholder="Optional display text" />
+            <Input
+              type="text"
+              value={result.text ?? ''}
+              onChange={onChangeText}
+              placeholder={t('features.dimensions.editors.optional-display-text', 'Optional display text')}
+            />
           </td>
           <td className={styles.textAlignCenter}>
             {result.color && (
               <HorizontalGroup spacing="sm" justify="center">
                 <ColorPicker color={result.color} onChange={onChangeColor} enableNamedColors={true} />
-                <IconButton name="times" onClick={onClearColor} tooltip="Remove color" tooltipPlacement="top" />
+                <IconButton
+                  name="times"
+                  onClick={onClearColor}
+                  tooltip={t('features.dimensions.editors.remove-color', 'Remove color')}
+                  tooltipPlacement="top"
+                />
               </HorizontalGroup>
             )}
             {!result.color && (
@@ -214,7 +254,12 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
                   color={result.color}
                 />
                 {result.icon && (
-                  <IconButton name="times" onClick={onClearIcon} tooltip="Remove icon" tooltipPlacement="top" />
+                  <IconButton
+                    name="times"
+                    onClick={onClearIcon}
+                    tooltip={t('features.dimensions.editors.remove-icon', 'Remove icon')}
+                    tooltipPlacement="top"
+                  />
                 )}
               </HorizontalGroup>
             </td>
