@@ -12,6 +12,7 @@ import {
 import { selectors } from '@grafana/e2e-selectors';
 import { ActionMeta, HorizontalGroup, PluginSignatureBadge, Select } from '@grafana/ui';
 
+import { config } from '../../src/config';
 import { getDataSourceSrv } from '../services/dataSourceSrv';
 
 import { ExpressionDatasourceRef } from './../utils/DataSourceWithBackend';
@@ -179,7 +180,7 @@ export class DataSourcePicker extends PureComponent<DataSourcePickerProps, DataS
     const options = this.getDataSourceOptions().map((o) => ({
       ...o,
       // 解决编辑面板数据图图片无法找到问题
-      imgUrl: `https://data-viz.ticos.cn/${o.imgUrl}`,
+      imgUrl: `${config.appUrl}${o.imgUrl}`,
     }));
     const value = this.getCurrentValue();
     const isClearable = typeof onClear === 'function';
