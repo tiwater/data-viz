@@ -122,6 +122,22 @@
       }
     },
     "plugins": {
+      "bar-chart": {
+        "large": "",
+        "medium": "",
+        "none": "",
+        "require-100px-spacing": "",
+        "require-200px-spacing": "",
+        "require-300px-spacing": "",
+        "show all tick marks": "",
+        "small": ""
+      },
+      "canvas": {
+        "enable-editing-the-panel": "",
+        "inline-editing": "",
+        "show-advanced-element-types": ""
+      },
+      "first-string-or-time-field": "",
       "panel": {
         "always": "",
         "never": "",
@@ -598,6 +614,10 @@
       "connect-null-values": "",
       "constant": "",
       "constantDescription": "",
+      "editors": {
+        "exact-value-to-match": "",
+        "set-color": ""
+      },
       "fill-below-to": "",
       "fill-opacity": "",
       "gradient-mode": "",
@@ -1047,6 +1067,18 @@
   "grafana-ui": {
     "confirm-modal": {
       "dismissText": ""
+    },
+    "data-links": {
+      "add-link": "",
+      "cancel": "",
+      "data-link-is-an-explore-URL": "",
+      "edit-link": "",
+      "open-in-new-tab": "",
+      "save": "",
+      "show-details": "",
+      "title": "",
+      "URL": "",
+      "with-data-links-you-can-reference": ""
     },
     "date-time": {
       "default": "",

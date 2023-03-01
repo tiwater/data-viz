@@ -3,6 +3,7 @@ import React, { ChangeEvent } from 'react';
 
 import { VariableSuggestion, GrafanaTheme2, DataLink } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { useStyles2 } from '../../themes/index';
 import { isCompactUrl } from '../../utils/dataLinks';
 import { Field } from '../Forms/Field';
@@ -47,26 +48,35 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
 
     return (
       <div className={styles.listItem}>
-        <Field label="Title">
-          <Input value={value.title} onChange={onTitleChange} placeholder="Show details" />
+        <Field label={t('grafana-ui.data-links.title', 'Title')}>
+          <Input
+            value={value.title}
+            onChange={onTitleChange}
+            placeholder={t('grafana-ui.data-links.show-details', 'Show details')}
+          />
         </Field>
 
         <Field
-          label="URL"
+          label={t('grafana-ui.data-links.URL', 'URL')}
           invalid={isCompactUrl(value.url)}
-          error="Data link is an Explore URL in a deprecated format. Please visit the URL to be redirected, and edit this data link to use that URL."
+          error={t(
+            'grafana-ui.data-links.data-link-is-an-explore-URL',
+            'Data link is an Explore URL in a deprecated format. Please visit the URL to be redirected, and edit this data link to use that URL.'
+          )}
         >
           <DataLinkInput value={value.url} onChange={onUrlChange} suggestions={suggestions} />
         </Field>
 
-        <Field label="Open in new tab">
+        <Field label={t('grafana-ui.data-links.open-in-new-tab', 'Open in new tab')}>
           <Switch value={value.targetBlank || false} onChange={onOpenInNewTabChanged} />
         </Field>
 
         {isLast && (
           <div className={styles.infoText}>
-            With data links you can reference data variables like series name, labels and values. Type CMD+Space,
-            CTRL+Space, or $ to open variable suggestions.
+            {t(
+              'grafana-ui.data-links.with-data-links-you-can-reference',
+              'With data links you can reference data variables like series name, labels and values. Type CMD+Space, CTRL+Space, or $ to open variable suggestions.'
+            )}
           </div>
         )}
       </div>

@@ -122,6 +122,22 @@
       }
     },
     "plugins": {
+      "bar-chart": {
+        "large": "Large",
+        "medium": "Medium",
+        "none": "None",
+        "require-100px-spacing": "Require 100px spacing",
+        "require-200px-spacing": "Require 200px spacing",
+        "require-300px-spacing": "Require 300px spacing",
+        "show all tick marks": "Show all tick marks",
+        "small": "Small"
+      },
+      "canvas": {
+        "enable-editing-the-panel": "Enable editing the panel directly",
+        "inline-editing": "Inline editing",
+        "show-advanced-element-types": "Show advanced element types"
+      },
+      "first-string-or-time-field": "First string or time field",
       "panel": {
         "always": "Always",
         "never": "Never",
@@ -598,6 +614,10 @@
       "connect-null-values": "Connect null values",
       "constant": "Constant",
       "constantDescription": "The first value will be shown as a constant line",
+      "editors": {
+        "exact-value-to-match": "Exact value to match",
+        "set-color": "Set color"
+      },
       "fill-below-to": "Fill below to",
       "fill-opacity": "Fill opacity",
       "gradient-mode": "Gradient mode",
@@ -1047,6 +1067,18 @@
   "grafana-ui": {
     "confirm-modal": {
       "dismissText": "Cancel"
+    },
+    "data-links": {
+      "add-link": "Add link",
+      "cancel": "Cancel",
+      "data-link-is-an-explore-URL": "Data link is an Explore URL in a deprecated format. Please visit the URL to be redirected, and edit this data link to use that URL.",
+      "edit-link": "Edit link",
+      "open-in-new-tab": "Open in new tab",
+      "save": "Save",
+      "show-details": "Show details",
+      "title": "Title",
+      "URL": "URL",
+      "with-data-links-you-can-reference": "With data links you can reference data variables like series name, labels and values. Type CMD+Space, CTRL+Space, or $ to open variable suggestions."
     },
     "date-time": {
       "default": "Default",

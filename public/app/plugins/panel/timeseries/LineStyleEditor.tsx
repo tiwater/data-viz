@@ -7,21 +7,6 @@ import { t } from 'app/core/internationalization';
 
 type LineFill = 'solid' | 'dash' | 'dot';
 
-const lineFillOptions: Array<SelectableValue<LineFill>> = [
-  {
-    label: t('app.panel.timeseries.line.solid','Solid'),
-    value: 'solid',
-  },
-  {
-    label: t('app.panel.timeseries.line.dash','Dash'),
-    value: 'dash',
-  },
-  {
-    label: t('app.panel.timeseries.line.dots','Dots'),
-    value: 'dot',
-  },
-];
-
 const dashOptions: Array<SelectableValue<string>> = [
   '10, 10', // default
   '10, 15',
@@ -54,6 +39,20 @@ const dotOptions: Array<SelectableValue<string>> = [
 }));
 
 export const LineStyleEditor: React.FC<FieldOverrideEditorProps<LineStyle, any>> = ({ value, onChange }) => {
+  const lineFillOptions: Array<SelectableValue<LineFill>> = [
+    {
+      label: t('app.panel.timeseries.line.solid', 'Solid'),
+      value: 'solid',
+    },
+    {
+      label: t('app.panel.timeseries.line.dash', 'Dash'),
+      value: 'dash',
+    },
+    {
+      label: t('app.panel.timeseries.line.dots', 'Dots'),
+      value: 'dot',
+    },
+  ];
   const options = useMemo(() => (value?.fill === 'dash' ? dashOptions : dotOptions), [value]);
   const current = useMemo(() => {
     if (!value?.dash?.length) {
@@ -107,7 +106,7 @@ export const LineStyleEditor: React.FC<FieldOverrideEditorProps<LineStyle, any>>
           <div>
             &nbsp;
             <a
-              title={t('app.panel.timeseries.line.aTitle','The input expects a segment list')}
+              title={t('app.panel.timeseries.line.aTitle', 'The input expects a segment list')}
               href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash#Parameters"
               target="_blank"
               rel="noreferrer"

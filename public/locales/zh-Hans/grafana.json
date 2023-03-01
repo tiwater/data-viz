@@ -122,6 +122,22 @@
       }
     },
     "plugins": {
+      "bar-chart": {
+        "large": "大",
+        "medium": "中",
+        "none": "无",
+        "require-100px-spacing": "需要 100px 间距",
+        "require-200px-spacing": "需要 200px 间距",
+        "require-300px-spacing": "需要 300px 间距",
+        "show all tick marks": "显示所有刻度",
+        "small": "小"
+      },
+      "canvas": {
+        "enable-editing-the-panel": "允许直接编辑面板",
+        "inline-editing": "内联编辑",
+        "show-advanced-element-types": "显示高级元素类型"
+      },
+      "first-string-or-time-field": "首个字符串或时间字段",
       "panel": {
         "always": "总是",
         "never": "从不",
@@ -598,6 +614,10 @@
       "connect-null-values": "连接空值",
       "constant": "常量",
       "constantDescription": "第一个值将显示为常量行",
+      "editors": {
+        "exact-value-to-match": "精确值匹配",
+        "set-color": "设置颜色"
+      },
       "fill-below-to": "填写以下内容",
       "fill-opacity": "填充不透明度",
       "gradient-mode": "渐变模式",
@@ -1047,6 +1067,18 @@
   "grafana-ui": {
     "confirm-modal": {
       "dismissText": "取消"
+    },
+    "data-links": {
+      "add-link": "添加链接",
+      "cancel": "取消",
+      "data-link-is-an-explore-URL": "数据链接是一个使用过时格式的Explore URL。 请访问要重定向的 URL，并编辑此数据链接以使用该URL。",
+      "edit-link": "编辑链接",
+      "open-in-new-tab": "在新标签中打开",
+      "save": "保存",
+      "show-details": "显示详细信息",
+      "title": "标题",
+      "URL": "URL",
+      "with-data-links-you-can-reference": "有数据链接，您可以引用数据变量，如序列名称、标签和值。输入 CMD+Space, CTRL+Space, 或 $ 来打开变量建议。"
     },
     "date-time": {
       "default": "默认",

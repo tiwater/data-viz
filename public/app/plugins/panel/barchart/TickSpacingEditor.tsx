@@ -2,31 +2,31 @@ import React from 'react';
 
 import { SelectableValue, StandardEditorProps } from '@grafana/data';
 import { Checkbox, HorizontalGroup, RadioButtonGroup, Tooltip } from '@grafana/ui';
-
-const GAPS_OPTIONS: Array<SelectableValue<number>> = [
-  {
-    label: 'None',
-    value: 0,
-    description: 'Show all tick marks',
-  },
-  {
-    label: 'Small',
-    value: 100,
-    description: 'Require 100px spacing',
-  },
-  {
-    label: 'Medium',
-    value: 200,
-    description: 'Require 200px spacing',
-  },
-  {
-    label: 'Large',
-    value: 300,
-    description: 'Require 300px spacing',
-  },
-];
+import { t } from 'app/core/internationalization';
 
 export const TickSpacingEditor: React.FC<StandardEditorProps<number>> = (props) => {
+  const GAPS_OPTIONS: Array<SelectableValue<number>> = [
+    {
+      label: t('app.plugins.bar-chart.none', 'None'),
+      value: 0,
+      description: t('app.plugins.bar-chart.show all tick marks', 'Show all tick marks'),
+    },
+    {
+      label: t('app.plugins.bar-chart.small', 'Small'),
+      value: 100,
+      description: t('app.plugins.bar-chart.require-100px-spacing', 'Require 100px spacing'),
+    },
+    {
+      label: t('app.plugins.bar-chart.medium', 'Medium'),
+      value: 200,
+      description: t('app.plugins.bar-chart.require-200px-spacing', 'Require 200px spacing'),
+    },
+    {
+      label: t('app.plugins.bar-chart.large', 'Large'),
+      value: 300,
+      description: t('app.plugins.bar-chart.require-300px-spacing', 'Require 300px spacing'),
+    },
+  ];
   let value = props.value ?? 0;
   const isRTL = value < 0;
   if (isRTL) {

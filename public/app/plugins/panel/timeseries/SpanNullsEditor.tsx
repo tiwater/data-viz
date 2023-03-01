@@ -4,24 +4,21 @@ import { FieldOverrideEditorProps, rangeUtil, SelectableValue } from '@grafana/d
 import { HorizontalGroup, Input, RadioButtonGroup } from '@grafana/ui';
 import { t } from 'app/core/internationalization';
 
-
-
-const GAPS_OPTIONS: Array<SelectableValue<boolean | number>> = [
-  {
-    label: t('app.plugins.panel.never','Never'),
-    value: false,
-  },
-  {
-    label: t('app.plugins.panel.always','Always'),
-    value: true,
-  },
-  {
-    label: t('app.plugins.panel.threshold','Threshold'),
-    value: 3600000, // 1h
-  },
-];
-
 export const SpanNullsEditor: React.FC<FieldOverrideEditorProps<boolean | number, any>> = ({ value, onChange }) => {
+  const GAPS_OPTIONS: Array<SelectableValue<boolean | number>> = [
+    {
+      label: t('app.plugins.panel.never', 'Never'),
+      value: false,
+    },
+    {
+      label: t('app.plugins.panel.always', 'Always'),
+      value: true,
+    },
+    {
+      label: t('app.plugins.panel.threshold', 'Threshold'),
+      value: 3600000, // 1h
+    },
+  ];
   const isThreshold = typeof value === 'number';
   const formattedTime = isThreshold ? rangeUtil.secondsToHms((value as number) / 1000) : undefined;
   GAPS_OPTIONS[2].value = isThreshold ? (value as number) : 3600000; // 1h

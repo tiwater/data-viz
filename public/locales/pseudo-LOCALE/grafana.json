@@ -122,6 +122,22 @@
       }
     },
     "plugins": {
+      "bar-chart": {
+        "large": "Ŀäřģę",
+        "medium": "Męđįūm",
+        "none": "Ńőŉę",
+        "require-100px-spacing": "Ŗęqūįřę 100pχ şpäčįŉģ",
+        "require-200px-spacing": "Ŗęqūįřę 200pχ şpäčįŉģ",
+        "require-300px-spacing": "Ŗęqūįřę 300pχ şpäčįŉģ",
+        "show all tick marks": "Ŝĥőŵ äľľ ŧįčĸ mäřĸş",
+        "small": "Ŝmäľľ"
+      },
+      "canvas": {
+        "enable-editing-the-panel": "Ēŉäþľę ęđįŧįŉģ ŧĥę päŉęľ đįřęčŧľy",
+        "inline-editing": "Ĩŉľįŉę ęđįŧįŉģ",
+        "show-advanced-element-types": "Ŝĥőŵ äđväŉčęđ ęľęmęŉŧ ŧypęş"
+      },
+      "first-string-or-time-field": "Fįřşŧ şŧřįŉģ őř ŧįmę ƒįęľđ",
       "panel": {
         "always": "Åľŵäyş",
         "never": "Ńęvęř",
@@ -598,6 +614,10 @@
       "connect-null-values": "Cőŉŉęčŧ ŉūľľ väľūęş",
       "constant": "Cőŉşŧäŉŧ",
       "constantDescription": "Ŧĥę ƒįřşŧ väľūę ŵįľľ þę şĥőŵŉ äş ä čőŉşŧäŉŧ ľįŉę",
+      "editors": {
+        "exact-value-to-match": "Ēχäčŧ väľūę ŧő mäŧčĥ",
+        "set-color": "Ŝęŧ čőľőř"
+      },
       "fill-below-to": "Fįľľ þęľőŵ ŧő",
       "fill-opacity": "Fįľľ őpäčįŧy",
       "gradient-mode": "Ğřäđįęŉŧ mőđę",
@@ -1047,6 +1067,18 @@
   "grafana-ui": {
     "confirm-modal": {
       "dismissText": "Cäŉčęľ"
+    },
+    "data-links": {
+      "add-link": "Åđđ ľįŉĸ",
+      "cancel": "Cäŉčęľ",
+      "data-link-is-an-explore-URL": "Đäŧä ľįŉĸ įş äŉ Ēχpľőřę ŮŖĿ įŉ ä đępřęčäŧęđ ƒőřmäŧ. Pľęäşę vįşįŧ ŧĥę ŮŖĿ ŧő þę řęđįřęčŧęđ, äŉđ ęđįŧ ŧĥįş đäŧä ľįŉĸ ŧő ūşę ŧĥäŧ ŮŖĿ.",
+      "edit-link": "Ēđįŧ ľįŉĸ",
+      "open-in-new-tab": "Øpęŉ įŉ ŉęŵ ŧäþ",
+      "save": "Ŝävę",
+      "show-details": "Ŝĥőŵ đęŧäįľş",
+      "title": "Ŧįŧľę",
+      "URL": "ŮŖĿ",
+      "with-data-links-you-can-reference": "Ŵįŧĥ đäŧä ľįŉĸş yőū čäŉ řęƒęřęŉčę đäŧä väřįäþľęş ľįĸę şęřįęş ŉämę, ľäþęľş äŉđ väľūęş. Ŧypę CMĐ+Ŝpäčę, CŦŖĿ+Ŝpäčę, őř $ ŧő őpęŉ väřįäþľę şūģģęşŧįőŉş."
     },
     "date-time": {
       "default": "Đęƒäūľŧ",

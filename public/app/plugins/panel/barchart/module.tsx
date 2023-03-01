@@ -110,7 +110,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
   })
   .setPanelOptions((builder, context) => {
     const disp = prepareBarChartDisplayValues(context.data, config.theme2, context.options ?? ({} as any));
-    let xaxisPlaceholder = 'First string or time field';
+    let xaxisPlaceholder = t('app.plugins.first-string-or-time-field', 'First string or time field');
     const viz = 'viz' in disp ? disp.viz[0] : undefined;
     if (viz?.fields?.length) {
       const first = viz.fields[0];
@@ -152,7 +152,10 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
       .addNumberInput({
         path: 'xTickLabelMaxLength',
         name: t('features.dimensions.addNumberInputValue', 'X tick label max length'),
-        description: t('features.dimensions.addNumberInputDescription', 'X labels will be truncated to the length provided'),
+        description: t(
+          'features.dimensions.addNumberInputDescription',
+          'X labels will be truncated to the length provided'
+        ),
         settings: {
           placeholder: t('features.dimensions.none', 'None'),
           min: 0,
@@ -231,7 +234,10 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
     builder.addFieldNamePicker({
       path: 'colorByField',
       name: t('features.dimensions.addFieldNamePickerName', 'Color by field'),
-      description: t('features.dimensions.addFieldNamePickerDescription', 'Use the color value for a sibling field to color each bar value.'),
+      description: t(
+        'features.dimensions.addFieldNamePickerDescription',
+        'Use the color value for a sibling field to color each bar value.'
+      ),
     });
 
     if (!context.options?.fullHighlight || context.options?.stacking === StackingMode.None) {

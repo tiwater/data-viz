@@ -1,4 +1,5 @@
 import { FieldConfigProperty, PanelOptionsEditorBuilder, PanelPlugin } from '@grafana/data';
+import { t } from 'app/core/internationalization';
 import { FrameState } from 'app/features/canvas/runtime/frame';
 
 import { CanvasPanel, InstanceState } from './CanvasPanel';
@@ -10,14 +11,14 @@ import { PanelOptions } from './models.gen';
 export const addStandardCanvasEditorOptions = (builder: PanelOptionsEditorBuilder<PanelOptions>) => {
   builder.addBooleanSwitch({
     path: 'inlineEditing',
-    name: 'Inline editing',
-    description: 'Enable editing the panel directly',
+    name: t('app.plugins.canvas.inline-editing', 'Inline editing'),
+    description: t('app.plugins.canvas.enable-editing-the-panel', 'Enable editing the panel directly'),
     defaultValue: true,
   });
 
   builder.addBooleanSwitch({
     path: 'showAdvancedTypes',
-    name: 'Show advanced element types',
+    name: t('app.plugins.canvas.show-advanced-element-types', 'Show advanced element types'),
     description: '',
     defaultValue: false,
   });
