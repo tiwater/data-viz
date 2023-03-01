@@ -5,6 +5,7 @@ import { GrafanaTheme2, PanelPluginMeta, SelectableValue } from '@grafana/data';
 import { Icon, Button, MultiSelect, useStyles2 } from '@grafana/ui';
 import { t } from 'app/core/internationalization';
 import { getAllPanelPluginMeta } from 'app/features/panel/state/util';
+import { setFilteredPluginTypes } from 'app/utils';
 
 export interface Props {
   onChange: (plugins: PanelPluginMeta[]) => void;
@@ -15,7 +16,7 @@ export const PanelTypeFilter = ({ onChange: propsOnChange, maxMenuHeight }: Prop
   const plugins = useMemo<PanelPluginMeta[]>(() => getAllPanelPluginMeta(), []);
   const options = useMemo(
     () =>
-      plugins
+      setFilteredPluginTypes(plugins)
         .map((p) => ({ label: p.name, imgUrl: p.info.logos.small, value: p }))
         .sort((a, b) => a.label?.localeCompare(b.label)),
     [plugins]
