@@ -83,6 +83,7 @@
       "formatted": "Données formatées",
       "formatted-data-description": "Les données du tableau sont formatées avec les options définies dans les onglets Champ et Remplacer.",
       "formatted-data-label": "Données formatées",
+      "no-data": "",
       "panel-transforms": "Transformations du panneau",
       "series-to-columns": "Séries jointes par une chronologie",
       "transformation": "Séries jointes par une chronologie",
@@ -90,6 +91,7 @@
       "transformations-label": "Appliquer les transformations du panneau"
     },
     "inspect-json": {
+      "apply": "",
       "dataframe-description": "Données brutes sans transformations et configuration de champ appliquée. ",
       "dataframe-label": "DataFrame JSON (à partir de Requête)",
       "panel-data-description": "Le modèle brut passé à la visualisation du panneau",
@@ -97,6 +99,7 @@
       "panel-json-description": "Le modèle enregistré dans le tableau de bord JSON qui configure comment tout fonctionne.",
       "panel-json-label": "Panneau JSON",
       "select-source": "Sélectionner la source",
+      "support": "",
       "unknown": "Objet inconnu\u00a0: {{show}}"
     },
     "inspect-meta": {
@@ -123,6 +126,9 @@
       "cannot-be-the-same-as-folder-name": "",
       "changes-label": "",
       "conflict": "",
+      "copy": "",
+      "copy-tags": "",
+      "dashboard name is invalid": "",
       "dashboard-name": "",
       "details-label": "",
       "discard": "",
@@ -538,6 +544,10 @@
       "alphabetical-desc": "",
       "data-source": "",
       "disabled": "",
+      "editor": {
+        "an-empty-query-name": "",
+        "query-name-already-exists": ""
+      },
       "editor-row": {
         "duplicate-query": "",
         "enable-query": "",

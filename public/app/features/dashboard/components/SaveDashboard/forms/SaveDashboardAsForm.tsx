@@ -47,7 +47,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
   onSuccess,
 }) => {
   const defaultValues: SaveDashboardAsFormDTO = {
-    title: isNew ? dashboard.title : `${dashboard.title} Copy`,
+    title: isNew ? dashboard.title : `${dashboard.title} ${t('dashboard.save-dashboard.copy', 'Copy')}`,
     $folder: {
       uid: dashboard.meta.folderUid,
       title: dashboard.meta.folderTitle,
@@ -66,7 +66,9 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
       await validationSrv.validateNewDashboardName(getFormValues().$folder.uid, dashboardName);
       return true;
     } catch (e) {
-      return e instanceof Error ? e.message : 'Dashboard name is invalid';
+      return e instanceof Error
+        ? e.message
+        : t('dashboard.save-dashboard.dashboard name is invalid', 'Dashboard name is invalid');
     }
   };
 
@@ -128,7 +130,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
             />
           </Field>
           {!isNew && (
-            <Field label="Copy tags">
+            <Field label={t('dashboard.save-dashboard.copy-tags', 'Copy tags')}>
               <Switch {...register('copyTags')} />
             </Field>
           )}
@@ -137,7 +139,6 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
               <Trans i18nKey="explore.cancel-button">Cancel</Trans>
             </Button>
             <Button type="submit" aria-label="Save dashboard button">
-              Save
               <Trans i18nKey="common.save">Save</Trans>
             </Button>
           </HorizontalGroup>

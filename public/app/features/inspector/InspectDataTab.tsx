@@ -206,7 +206,11 @@ export class InspectDataTab extends PureComponent<Props, State> {
     const dataFrames = this.getProcessedData();
 
     if (!dataFrames || !dataFrames.length) {
-      return <div>No Data</div>;
+      return (
+        <div>
+          <Trans i18nKey="dashboard.inspect-data.no-data">No Data</Trans>
+        </div>
+      );
     }
 
     // let's make sure we don't try to render a frame that doesn't exists

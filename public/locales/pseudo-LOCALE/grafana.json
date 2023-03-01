@@ -83,6 +83,7 @@
       "formatted": "Főřmäŧŧęđ đäŧä",
       "formatted-data-description": "Ŧäþľę đäŧä įş ƒőřmäŧŧęđ ŵįŧĥ őpŧįőŉş đęƒįŉęđ įŉ ŧĥę Fįęľđ äŉđ Øvęřřįđę ŧäþş.",
       "formatted-data-label": "Főřmäŧŧęđ đäŧä",
+      "no-data": "Ńő Đäŧä",
       "panel-transforms": "Päŉęľ ŧřäŉşƒőřmş",
       "series-to-columns": "Ŝęřįęş ĵőįŉęđ þy ŧįmę",
       "transformation": "Ŝęřįęş ĵőįŉęđ þy ŧįmę",
@@ -90,6 +91,7 @@
       "transformations-label": "Åppľy päŉęľ ŧřäŉşƒőřmäŧįőŉş"
     },
     "inspect-json": {
+      "apply": "Åppľy",
       "dataframe-description": "Ŗäŵ đäŧä ŵįŧĥőūŧ ŧřäŉşƒőřmäŧįőŉş äŉđ ƒįęľđ čőŉƒįģ äppľįęđ. ",
       "dataframe-label": "ĐäŧäFřämę ĴŜØŃ (ƒřőm Qūęřy)",
       "panel-data-description": "Ŧĥę řäŵ mőđęľ päşşęđ ŧő ŧĥę päŉęľ vįşūäľįžäŧįőŉ",
@@ -97,6 +99,7 @@
       "panel-json-description": "Ŧĥę mőđęľ şävęđ įŉ ŧĥę đäşĥþőäřđ ĴŜØŃ ŧĥäŧ čőŉƒįģūřęş ĥőŵ ęvęřyŧĥįŉģ ŵőřĸş.",
       "panel-json-label": "Päŉęľ ĴŜØŃ",
       "select-source": "Ŝęľęčŧ şőūřčę",
+      "support": "Ŝūppőřŧ",
       "unknown": "Ůŉĸŉőŵŉ Øþĵęčŧ: {{show}}"
     },
     "inspect-meta": {
@@ -123,6 +126,9 @@
       "cannot-be-the-same-as-folder-name": "Đäşĥþőäřđ ŉämę čäŉŉőŧ þę ŧĥę şämę äş ƒőľđęř ŉämę",
       "changes-label": "Cĥäŉģęş",
       "conflict": "Cőŉƒľįčŧ",
+      "copy": "Cőpy",
+      "copy-tags": "Cőpy ŧäģş",
+      "dashboard name is invalid": "Đäşĥþőäřđ ŉämę įş įŉväľįđ",
       "dashboard-name": "Đäşĥþőäřđ ŉämę",
       "details-label": "Đęŧäįľş",
       "discard": "Đįşčäřđ",
@@ -538,6 +544,10 @@
       "alphabetical-desc": "Åľpĥäþęŧįčäľ (đęşč)",
       "data-source": "Đäŧä şőūřčę",
       "disabled": "Đįşäþľęđ",
+      "editor": {
+        "an-empty-query-name": "Åŉ ęmpŧy qūęřy ŉämę įş ŉőŧ äľľőŵęđ",
+        "query-name-already-exists": "Qūęřy ŉämę äľřęäđy ęχįşŧş"
+      },
       "editor-row": {
         "duplicate-query": "Đūpľįčäŧę qūęřy",
         "enable-query": "Đįşäþľę/ęŉäþľę qūęřy",

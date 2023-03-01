@@ -83,6 +83,7 @@
       "formatted": "Formatted data",
       "formatted-data-description": "Table data is formatted with options defined in the Field and Override tabs.",
       "formatted-data-label": "Formatted data",
+      "no-data": "No Data",
       "panel-transforms": "Panel transforms",
       "series-to-columns": "Series joined by time",
       "transformation": "Series joined by time",
@@ -90,6 +91,7 @@
       "transformations-label": "Apply panel transformations"
     },
     "inspect-json": {
+      "apply": "Apply",
       "dataframe-description": "Raw data without transformations and field config applied. ",
       "dataframe-label": "DataFrame JSON (from Query)",
       "panel-data-description": "The raw model passed to the panel visualization",
@@ -97,6 +99,7 @@
       "panel-json-description": "The model saved in the dashboard JSON that configures how everything works.",
       "panel-json-label": "Panel JSON",
       "select-source": "Select source",
+      "support": "Support",
       "unknown": "Unknown Object: {{show}}"
     },
     "inspect-meta": {
@@ -123,6 +126,9 @@
       "cannot-be-the-same-as-folder-name": "Dashboard name cannot be the same as folder name",
       "changes-label": "Changes",
       "conflict": "Conflict",
+      "copy": "Copy",
+      "copy-tags": "Copy tags",
+      "dashboard name is invalid": "Dashboard name is invalid",
       "dashboard-name": "Dashboard name",
       "details-label": "Details",
       "discard": "Discard",
@@ -538,6 +544,10 @@
       "alphabetical-desc": "Alphabetical (desc)",
       "data-source": "Data source",
       "disabled": "Disabled",
+      "editor": {
+        "an-empty-query-name": "An empty query name is not allowed",
+        "query-name-already-exists": "Query name already exists"
+      },
       "editor-row": {
         "duplicate-query": "Duplicate query",
         "enable-query": "Disable/enable query",

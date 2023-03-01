@@ -83,6 +83,7 @@
       "formatted": "Formatierte Daten",
       "formatted-data-description": "Tabellendaten werden mit den in den Tabs „Feld“ und „Überschreiben“ definierten Optionen formatiert",
       "formatted-data-label": "Formatierte Daten",
+      "no-data": "",
       "panel-transforms": "Panel-Transformationen",
       "series-to-columns": "Serie durch Zeit verbunden",
       "transformation": "Serie durch Zeit verbunden",
@@ -90,6 +91,7 @@
       "transformations-label": "Panel-Transformationen anwenden"
     },
     "inspect-json": {
+      "apply": "",
       "dataframe-description": "Rohdaten ohne Transformationen und angewendete Feldkonfiguration. ",
       "dataframe-label": "Datenrahmen-JSON (aus Abfrage)",
       "panel-data-description": "Das Rohmodell wurde an die Panel-Visualisierung übertragen",
@@ -97,6 +99,7 @@
       "panel-json-description": "Das im Dashboard-JSON gespeicherte Modell, das konfiguriert, wie alles funktioniert.",
       "panel-json-label": "Panel-JSON",
       "select-source": "Quelle auswählen",
+      "support": "",
       "unknown": "Unbekanntes Objekt: {{show}}"
     },
     "inspect-meta": {
@@ -123,6 +126,9 @@
       "cannot-be-the-same-as-folder-name": "",
       "changes-label": "",
       "conflict": "",
+      "copy": "",
+      "copy-tags": "",
+      "dashboard name is invalid": "",
       "dashboard-name": "",
       "details-label": "",
       "discard": "",
@@ -538,6 +544,10 @@
       "alphabetical-desc": "",
       "data-source": "",
       "disabled": "",
+      "editor": {
+        "an-empty-query-name": "",
+        "query-name-already-exists": ""
+      },
       "editor-row": {
         "duplicate-query": "",
         "enable-query": "",
