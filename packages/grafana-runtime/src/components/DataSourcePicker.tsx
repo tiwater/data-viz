@@ -176,7 +176,12 @@ export class DataSourcePicker extends PureComponent<DataSourcePickerProps, DataS
       isLoading = false,
     } = this.props;
     const { error } = this.state;
-    const options = this.getDataSourceOptions();
+    const options = this.getDataSourceOptions().map((o) => ({
+      ...o,
+      // 解决编辑面板数据图图片无法找到问题
+      imgUrl: `https://data-viz.ticos.cn/${o.imgUrl}`,
+    }));
+    console.log('optionsoptions', options);
     const value = this.getCurrentValue();
     const isClearable = typeof onClear === 'function';
 
