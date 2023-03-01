@@ -44,42 +44,44 @@ import { StringValueEditor } from './string';
 import { StringArrayEditor } from './strings';
 import { UnitValueEditor } from './units';
 
+import { t } from 'app/core/internationalization';
+
 /**
  * Returns collection of standard option editors definitions
  */
 export const getAllOptionEditors = () => {
   const number: StandardEditorsRegistryItem<number> = {
     id: 'number',
-    name: 'Number',
-    description: 'Allows numeric values input',
+    name: t('app.core.optionsUi.registry.number','Number'),
+    description: t('app.core.optionsUi.registry.numberDescription','Allows numeric values input'),
     editor: NumberValueEditor as any,
   };
 
   const slider: StandardEditorsRegistryItem<number> = {
     id: 'slider',
-    name: 'Slider',
-    description: 'Allows numeric values input',
+    name: t('app.core.optionsUi.registry.slider','Slider'),
+    description: t('app.core.optionsUi.registry.sliderDescription','Allows numeric values input'),
     editor: SliderValueEditor as any,
   };
 
   const text: StandardEditorsRegistryItem<string> = {
     id: 'text',
-    name: 'Text',
-    description: 'Allows string values input',
+    name: t('app.core.optionsUi.registry.text','Text'),
+    description: t('app.core.optionsUi.registry.textDescription','Allows string values input'),
     editor: StringValueEditor as any,
   };
 
   const strings: StandardEditorsRegistryItem<string[]> = {
     id: 'strings',
-    name: 'String array',
-    description: 'An array of strings',
+    name: t('app.core.optionsUi.registry.string-array','String array'),
+    description: t('app.core.optionsUi.registry.stringDescription','An array of strings'),
     editor: StringArrayEditor as any,
   };
 
   const boolean: StandardEditorsRegistryItem<boolean> = {
     id: 'boolean',
-    name: 'Boolean',
-    description: 'Allows boolean values input',
+    name: t('app.core.optionsUi.registry.boolean','Boolean'),
+    description: t('app.core.optionsUi.registry.booleanDescription','Allows boolean values input'),
     editor(props) {
       const { id, ...rest } = props; // Remove id from properties passed into switch
       return <Switch {...rest} onChange={(e) => props.onChange(e.currentTarget.checked)} />;
@@ -88,22 +90,22 @@ export const getAllOptionEditors = () => {
 
   const select: StandardEditorsRegistryItem<any> = {
     id: 'select',
-    name: 'Select',
-    description: 'Allows option selection',
+    name: t('app.core.optionsUi.registry.select','Select'),
+    description: t('app.core.optionsUi.registry.selectDescription','Allows option selection'),
     editor: SelectValueEditor as any,
   };
 
   const multiSelect: StandardEditorsRegistryItem<any> = {
     id: 'multi-select',
-    name: 'Multi select',
-    description: 'Allows for multiple option selection',
+    name: t('app.core.optionsUi.registry.multi-select','Multi select'),
+    description: t('app.core.optionsUi.registry.multiSelectDescription','Allows for multiple option selection'),
     editor: MultiSelectValueEditor as any,
   };
 
   const radio: StandardEditorsRegistryItem<any> = {
     id: 'radio',
-    name: 'Radio',
-    description: 'Allows option selection',
+    name: t('app.core.optionsUi.registry.radio','Radio'),
+    description: t('app.core.optionsUi.registry.radioDescription','Allows option selection'),
     editor(props) {
       return <RadioButtonGroup {...props} options={props.item.settings?.options} />;
     },
@@ -111,15 +113,15 @@ export const getAllOptionEditors = () => {
 
   const unit: StandardEditorsRegistryItem<string> = {
     id: 'unit',
-    name: 'Unit',
-    description: 'Allows unit input',
+    name: t('app.core.optionsUi.registry.unit','Unit'),
+    description: t('app.core.optionsUi.registry.unitDescription','Allows unit input'),
     editor: UnitValueEditor as any,
   };
 
   const color: StandardEditorsRegistryItem<string> = {
     id: 'color',
-    name: 'Color',
-    description: 'Allows color selection',
+    name: t('app.core.optionsUi.registry.color','Color'),
+    description: t('app.core.optionsUi.registry.colorDescription','Allows color selection'),
     editor(props) {
       return <ColorValueEditor value={props.value} onChange={props.onChange} />;
     },
@@ -127,57 +129,57 @@ export const getAllOptionEditors = () => {
 
   const fieldColor: StandardEditorsRegistryItem<FieldColor> = {
     id: 'fieldColor',
-    name: 'Field Color',
-    description: 'Field color selection',
+    name: t('app.core.optionsUi.registry.field-color','Field Color'),
+    description: t('app.core.optionsUi.registry.fieldColorDescription','Field color selection'),
     editor: FieldColorEditor as any,
   };
 
   const links: StandardEditorsRegistryItem<DataLink[]> = {
     id: 'links',
-    name: 'Links',
-    description: 'Allows defining data links',
+    name: t('app.core.optionsUi.registry.links','Links'),
+    description: t('app.core.optionsUi.registry.linksDescription','Allows defining data links'),
     editor: DataLinksValueEditor as any,
   };
 
   const statsPicker: StandardEditorsRegistryItem<string[], StatsPickerConfigSettings> = {
     id: 'stats-picker',
-    name: 'Stats Picker',
+    name: t('app.core.optionsUi.registry.stats-picker','Stats Picker'),
     editor: StatsPickerEditor as any,
     description: '',
   };
 
   const timeZone: StandardEditorsRegistryItem<TimeZone> = {
     id: 'timezone',
-    name: 'Time zone',
-    description: 'Time zone selection',
+    name: t('app.core.optionsUi.registry.time-zone','Time zone'),
+    description: t('app.core.optionsUi.registry.timeZoneDescription','Time zone selection'),
     editor: TimeZonePicker as any,
   };
 
   const fieldName: StandardEditorsRegistryItem<string, FieldNamePickerConfigSettings> = {
     id: 'field-name',
-    name: 'Field name',
-    description: 'Allows selecting a field name from a data frame',
+    name: t('app.core.optionsUi.registry.field-name','Field name'),
+    description: t('app.core.optionsUi.registry.fieldNameDescription','Allows selecting a field name from a data frame'),
     editor: FieldNamePicker as any,
   };
 
   const dashboardPicker: StandardEditorsRegistryItem<string, DashboardPickerOptions> = {
     id: 'dashboard-uid',
-    name: 'Dashboard',
-    description: 'Select dashboard',
+    name: t('app.core.optionsUi.registry.dashboard','Dashboard'),
+    description: t('app.core.optionsUi.registry.dashboardDescription','Select dashboard'),
     editor: DashboardPicker as any,
   };
 
   const mappings: StandardEditorsRegistryItem<ValueMapping[]> = {
     id: 'mappings',
-    name: 'Mappings',
-    description: 'Allows defining value mappings',
+    name: t('app.core.optionsUi.registry.mappings','Mappings'),
+    description: t('app.core.optionsUi.registry.mappingsDescription','Allows defining value mappings'),
     editor: ValueMappingsEditor as any,
   };
 
   const thresholds: StandardEditorsRegistryItem<ThresholdsConfig> = {
     id: 'thresholds',
-    name: 'Thresholds',
-    description: 'Allows defining thresholds',
+    name: t('app.core.optionsUi.registry.thresholds','Thresholds'),
+    description: t('app.core.optionsUi.registry.thresholdsDescription','Allows defining thresholds'),
     editor: ThresholdsValueEditor as any,
   };
 
@@ -207,17 +209,17 @@ export const getAllOptionEditors = () => {
  * Returns collection of common field config properties definitions
  */
 export const getAllStandardFieldConfigs = () => {
-  const category = ['Standard options'];
+  const category = [t('app.core.optionsUi.registry.standard-options','Standard options')];
   const displayName: FieldConfigPropertyItem<any, string, StringFieldConfigSettings> = {
     id: 'displayName',
     path: 'displayName',
-    name: 'Display name',
-    description: 'Change the field or series name',
+    name: t('app.core.optionsUi.registry.display-name','Display name'),
+    description: t('app.core.optionsUi.registry.displayNameDescription','Change the field or series name'),
     editor: standardEditorsRegistry.get('text').editor as any,
     override: standardEditorsRegistry.get('text').editor as any,
     process: displayNameOverrideProcessor,
     settings: {
-      placeholder: 'none',
+      placeholder: t('app.core.optionsUi.registry.none','none'),
       expandTemplateVars: true,
     },
     shouldApply: () => true,
@@ -227,7 +229,7 @@ export const getAllStandardFieldConfigs = () => {
   const unit: FieldConfigPropertyItem<any, string, StringFieldConfigSettings> = {
     id: 'unit',
     path: 'unit',
-    name: 'Unit',
+    name: t('app.core.optionsUi.registry.unit','Unit'),
     description: '',
 
     editor: standardEditorsRegistry.get('unit').editor as any,
@@ -235,7 +237,7 @@ export const getAllStandardFieldConfigs = () => {
     process: stringOverrideProcessor,
 
     settings: {
-      placeholder: 'none',
+      placeholder: t('app.core.optionsUi.registry.none','none'),
     },
 
     shouldApply: () => true,
@@ -245,15 +247,15 @@ export const getAllStandardFieldConfigs = () => {
   const min: FieldConfigPropertyItem<any, number, NumberFieldConfigSettings> = {
     id: 'min',
     path: 'min',
-    name: 'Min',
-    description: 'Leave empty to calculate based on all values',
+    name: t('app.core.optionsUi.registry.min','Min'),
+    description: t('app.core.optionsUi.registry.minDescription','Leave empty to calculate based on all values'),
 
     editor: standardEditorsRegistry.get('number').editor as any,
     override: standardEditorsRegistry.get('number').editor as any,
     process: numberOverrideProcessor,
 
     settings: {
-      placeholder: 'auto',
+      placeholder: t('app.core.optionsUi.registry.auto','auto'),
     },
     shouldApply: (field) => field.type === FieldType.number,
     category,
@@ -262,15 +264,15 @@ export const getAllStandardFieldConfigs = () => {
   const max: FieldConfigPropertyItem<any, number, NumberFieldConfigSettings> = {
     id: 'max',
     path: 'max',
-    name: 'Max',
-    description: 'Leave empty to calculate based on all values',
+    name: t('app.core.optionsUi.registry.max','Max'),
+    description: t('app.core.optionsUi.registry.maxDescription','Leave empty to calculate based on all values'),
 
     editor: standardEditorsRegistry.get('number').editor as any,
     override: standardEditorsRegistry.get('number').editor as any,
     process: numberOverrideProcessor,
 
     settings: {
-      placeholder: 'auto',
+      placeholder: t('app.core.optionsUi.registry.auto','auto'),
     },
 
     shouldApply: (field) => field.type === FieldType.number,
@@ -280,14 +282,14 @@ export const getAllStandardFieldConfigs = () => {
   const decimals: FieldConfigPropertyItem<any, number, NumberFieldConfigSettings> = {
     id: 'decimals',
     path: 'decimals',
-    name: 'Decimals',
+    name: t('app.core.optionsUi.registry.decimals','Decimals'),
 
     editor: standardEditorsRegistry.get('number').editor as any,
     override: standardEditorsRegistry.get('number').editor as any,
     process: numberOverrideProcessor,
 
     settings: {
-      placeholder: 'auto',
+      placeholder: t('app.core.optionsUi.registry.auto','auto'),
       min: 0,
       max: 15,
       integer: true,
@@ -300,8 +302,8 @@ export const getAllStandardFieldConfigs = () => {
   const noValue: FieldConfigPropertyItem<any, string, StringFieldConfigSettings> = {
     id: 'noValue',
     path: 'noValue',
-    name: 'No value',
-    description: 'What to show when there is no value',
+    name: t('app.core.optionsUi.registry.no-value','No value'),
+    description: t('app.core.optionsUi.registry.noValueDescription','What to show when there is no value'),
 
     editor: standardEditorsRegistry.get('text').editor as any,
     override: standardEditorsRegistry.get('text').editor as any,
@@ -318,7 +320,7 @@ export const getAllStandardFieldConfigs = () => {
   const links: FieldConfigPropertyItem<any, DataLink[], StringFieldConfigSettings> = {
     id: 'links',
     path: 'links',
-    name: 'Data links',
+    name: t('app.core.optionsUi.registry.data-links','Data links'),
     editor: standardEditorsRegistry.get('links').editor as any,
     override: standardEditorsRegistry.get('links').editor as any,
     process: dataLinksOverrideProcessor,
@@ -326,14 +328,14 @@ export const getAllStandardFieldConfigs = () => {
       placeholder: '-',
     },
     shouldApply: () => true,
-    category: ['Data links'],
+    category: [t('app.core.optionsUi.registry.data-links','Data links')],
     getItemsCount: (value) => (value ? value.length : 0),
   };
 
   const color: FieldConfigPropertyItem<any, FieldColor | undefined, FieldColorConfigSettings> = {
     id: 'color',
     path: 'color',
-    name: 'Color scheme',
+    name: t('app.core.optionsUi.registry.color-scheme','Color scheme'),
     editor: standardEditorsRegistry.get('fieldColor').editor as any,
     override: standardEditorsRegistry.get('fieldColor').editor as any,
     process: identityOverrideProcessor,
@@ -348,8 +350,8 @@ export const getAllStandardFieldConfigs = () => {
   const mappings: FieldConfigPropertyItem<any, ValueMapping[], ValueMappingFieldConfigSettings> = {
     id: 'mappings',
     path: 'mappings',
-    name: 'Value mappings',
-    description: 'Modify the display text based on input value',
+    name: t('app.core.optionsUi.registry.value-mappings','Value mappings'),
+    description: t('app.core.optionsUi.registry.valueMappingsDescription','Modify the display text based on input value'),
 
     editor: standardEditorsRegistry.get('mappings').editor as any,
     override: standardEditorsRegistry.get('mappings').editor as any,
@@ -357,14 +359,14 @@ export const getAllStandardFieldConfigs = () => {
     settings: {},
     defaultValue: [],
     shouldApply: (x) => x.type !== FieldType.time,
-    category: ['Value mappings'],
+    category: [t('app.core.optionsUi.registry.value-mappings','Value mappings')],
     getItemsCount: (value?) => (value ? value.length : 0),
   };
 
   const thresholds: FieldConfigPropertyItem<any, ThresholdsConfig, ThresholdsFieldConfigSettings> = {
     id: 'thresholds',
     path: 'thresholds',
-    name: 'Thresholds',
+    name: t('app.core.optionsUi.registry.thresholds','Thresholds'),
     editor: standardEditorsRegistry.get('thresholds').editor as any,
     override: standardEditorsRegistry.get('thresholds').editor as any,
     process: thresholdsOverrideProcessor,
@@ -377,7 +379,7 @@ export const getAllStandardFieldConfigs = () => {
       ],
     },
     shouldApply: () => true,
-    category: ['Thresholds'],
+    category: [t('app.core.optionsUi.registry.thresholds','Thresholds')],
     getItemsCount: (value) => (value ? value.steps.length : 0),
   };
 

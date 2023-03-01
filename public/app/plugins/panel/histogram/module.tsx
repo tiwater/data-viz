@@ -88,9 +88,9 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(HistogramP
         .addRadio({
           path: 'gradientMode',
           name: 'Gradient mode',
-          defaultValue: graphFieldOptions.fillGradient[0].value,
+          defaultValue: graphFieldOptions().fillGradient[0].value,
           settings: {
-            options: graphFieldOptions.fillGradient,
+            options: graphFieldOptions().fillGradient,
           },
         });
 

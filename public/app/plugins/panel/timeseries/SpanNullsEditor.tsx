@@ -2,18 +2,21 @@ import React from 'react';
 
 import { FieldOverrideEditorProps, rangeUtil, SelectableValue } from '@grafana/data';
 import { HorizontalGroup, Input, RadioButtonGroup } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
+
+
 
 const GAPS_OPTIONS: Array<SelectableValue<boolean | number>> = [
   {
-    label: 'Never',
+    label: t('app.plugins.panel.never','Never'),
     value: false,
   },
   {
-    label: 'Always',
+    label: t('app.plugins.panel.always','Always'),
     value: true,
   },
   {
-    label: 'Threshold',
+    label: t('app.plugins.panel.threshold','Threshold'),
     value: 3600000, // 1h
   },
 ];

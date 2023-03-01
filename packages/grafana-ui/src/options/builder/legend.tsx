@@ -1,5 +1,6 @@
 import { PanelOptionsEditorBuilder, standardEditorsRegistry, StatsPickerConfigSettings } from '@grafana/data';
 import { LegendDisplayMode, OptionsWithLegend } from '@grafana/schema';
+import { t } from '../../../src/utils/i18n';
 
 /**
  * @alpha
@@ -11,45 +12,45 @@ export function addLegendOptions<T extends OptionsWithLegend>(
   builder
     .addBooleanSwitch({
       path: 'legend.showLegend',
-      name: 'Visibility',
-      category: ['Legend'],
+      name: t('grafana-ui.options.visibility', 'Visibility'),
+      category: [t('grafana-ui.options.legend', 'Legend')],
       description: '',
       defaultValue: true,
     })
     .addRadio({
       path: 'legend.displayMode',
-      name: 'Mode',
-      category: ['Legend'],
+      name: t('grafana-ui.options.mode', 'Mode'),
+      category: [t('grafana-ui.options.legend', 'Legend')],
       description: '',
       defaultValue: LegendDisplayMode.List,
       settings: {
         options: [
-          { value: LegendDisplayMode.List, label: 'List' },
-          { value: LegendDisplayMode.Table, label: 'Table' },
+          { value: LegendDisplayMode.List, label: t('grafana-ui.options.list', 'List') },
+          { value: LegendDisplayMode.Table, label: t('grafana-ui.options.table', 'Table') },
         ],
       },
       showIf: (c) => c.legend.showLegend,
     })
     .addRadio({
       path: 'legend.placement',
-      name: 'Placement',
-      category: ['Legend'],
+      name: t('grafana-ui.options.placement', 'Placement'),
+      category: [t('grafana-ui.options.legend', 'Legend')],
       description: '',
       defaultValue: 'bottom',
       settings: {
         options: [
-          { value: 'bottom', label: 'Bottom' },
-          { value: 'right', label: 'Right' },
+          { value: 'bottom', label: t('grafana-ui.options.bottom', 'Bottom') },
+          { value: 'right', label: t('grafana-ui.options.right', 'Right') },
         ],
       },
       showIf: (c) => c.legend.showLegend,
     })
     .addNumberInput({
       path: 'legend.width',
-      name: 'Width',
-      category: ['Legend'],
+      name: t('grafana-ui.options.width', 'Width'),
+      category: [t('grafana-ui.options.legend', 'Legend')],
       settings: {
-        placeholder: 'Auto',
+        placeholder: t('grafana-ui.options.auto', 'Auto'),
       },
       showIf: (c) => c.legend.showLegend && c.legend.placement === 'right',
     });
@@ -58,9 +59,9 @@ export function addLegendOptions<T extends OptionsWithLegend>(
     builder.addCustomEditor<StatsPickerConfigSettings, string[]>({
       id: 'legend.calcs',
       path: 'legend.calcs',
-      name: 'Values',
-      category: ['Legend'],
-      description: 'Select values or calculations to show in legend',
+      name: t('grafana-ui.options.values', 'Values'),
+      category: [t('grafana-ui.options.legend', 'Legend')],
+      description: t('grafana-ui.options.select-description', 'Select values or calculations to show in legend'),
       editor: standardEditorsRegistry.get('stats-picker').editor,
       defaultValue: [],
       settings: {

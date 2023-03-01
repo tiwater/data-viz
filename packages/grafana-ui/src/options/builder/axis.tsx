@@ -11,6 +11,8 @@ import { AxisColorMode, AxisConfig, AxisPlacement, ScaleDistribution, ScaleDistr
 
 import { graphFieldOptions, Select, RadioButtonGroup, Input, Field } from '../../index';
 
+import { t } from '../../../src/utils/i18n';
+
 /**
  * @alpha
  */
@@ -19,26 +21,26 @@ export function addAxisConfig(
   defaultConfig: AxisConfig,
   hideScale?: boolean
 ) {
-  const category = ['Axis'];
+  const category = [t('grafana-ui.options.axis', 'Axis')];
 
   // options for axis appearance
   builder
     .addRadio({
       path: 'axisPlacement',
-      name: 'Placement',
+      name: t('grafana-ui.options.placement', 'Placement'),
       category,
-      defaultValue: graphFieldOptions.axisPlacement[0].value,
+      defaultValue: graphFieldOptions().axisPlacement[0].value,
       settings: {
-        options: graphFieldOptions.axisPlacement,
+        options: graphFieldOptions().axisPlacement,
       },
     })
     .addTextInput({
       path: 'axisLabel',
-      name: 'Label',
+      name: t('grafana-ui.options.label', 'Label'),
       category,
       defaultValue: '',
       settings: {
-        placeholder: 'Optional text',
+        placeholder: t('grafana-ui.options.optional-text', 'Optional text'),
       },
       showIf: (c) => c.axisPlacement !== AxisPlacement.Hidden,
       // Do not apply default settings to time and string fields which are used as x-axis fields in Time series and Bar chart panels
@@ -46,35 +48,35 @@ export function addAxisConfig(
     })
     .addNumberInput({
       path: 'axisWidth',
-      name: 'Width',
+      name: t('grafana-ui.options.width', 'Width'),
       category,
       settings: {
-        placeholder: 'Auto',
+        placeholder: t('grafana-ui.options.auto', 'Auto'),
       },
       showIf: (c) => c.axisPlacement !== AxisPlacement.Hidden,
     })
     .addRadio({
       path: 'axisGridShow',
-      name: 'Show grid lines',
+      name: t('grafana-ui.options.show-grid-lines', 'Show grid lines'),
       category,
       defaultValue: undefined,
       settings: {
         options: [
-          { value: undefined, label: 'Auto' },
-          { value: true, label: 'On' },
-          { value: false, label: 'Off' },
+          { value: undefined, label: t('grafana-ui.options.auto', 'Auto') },
+          { value: true, label: t('grafana-ui.options.on', 'On') },
+          { value: false, label: t('grafana-ui.options.off', 'Off') },
         ],
       },
     })
     .addRadio({
       path: 'axisColorMode',
-      name: 'Color',
+      name: t('grafana-ui.options.color', 'Color'),
       category,
       defaultValue: AxisColorMode.Text,
       settings: {
         options: [
-          { value: AxisColorMode.Text, label: 'Text' },
-          { value: AxisColorMode.Series, label: 'Series' },
+          { value: AxisColorMode.Text, label: t('grafana-ui.options.text', 'Text') },
+          { value: AxisColorMode.Series, label: t('grafana-ui.options.series', 'Series') },
         ],
       },
     });
@@ -84,7 +86,7 @@ export function addAxisConfig(
     .addCustomEditor<void, ScaleDistributionConfig>({
       id: 'scaleDistribution',
       path: 'scaleDistribution',
-      name: 'Scale',
+      name: t('grafana-ui.options.scale', 'Scale'),
       category,
       editor: ScaleDistributionEditor as any,
       override: ScaleDistributionEditor as any,
@@ -94,45 +96,32 @@ export function addAxisConfig(
     })
     .addBooleanSwitch({
       path: 'axisCenteredZero',
-      name: 'Centered zero',
+      name: t('grafana-ui.options.centered-zero', 'Centered zero'),
       category,
       defaultValue: false,
       showIf: (c) => c.scaleDistribution?.type !== ScaleDistribution.Log,
     })
     .addNumberInput({
       path: 'axisSoftMin',
-      name: 'Soft min',
+      name: t('grafana-ui.options.soft-min', 'Soft min'),
       defaultValue: defaultConfig.axisSoftMin,
       category,
       settings: {
-        placeholder: 'See: Standard options > Min',
+        placeholder: t('grafana-ui.options.axis-soft-min-placeholder', 'See: Standard options > Min'),
       },
     })
     .addNumberInput({
       path: 'axisSoftMax',
-      name: 'Soft max',
+      name: t('grafana-ui.options.soft-max', 'Soft max'),
       defaultValue: defaultConfig.axisSoftMax,
       category,
       settings: {
-        placeholder: 'See: Standard options > Max',
+        placeholder: t('grafana-ui.options.axis-soft-max-placeholder', 'See: Standard options > Max'),
       },
     });
 }
 
-const DISTRIBUTION_OPTIONS: Array<SelectableValue<ScaleDistribution>> = [
-  {
-    label: 'Linear',
-    value: ScaleDistribution.Linear,
-  },
-  {
-    label: 'Logarithmic',
-    value: ScaleDistribution.Log,
-  },
-  {
-    label: 'Symlog',
-    value: ScaleDistribution.Symlog,
-  },
-];
+
 
 const LOG_DISTRIBUTION_OPTIONS: Array<SelectableValue<number>> = [
   {
@@ -149,7 +138,25 @@ const LOG_DISTRIBUTION_OPTIONS: Array<SelectableValue<number>> = [
  * @internal
  */
 export const ScaleDistributionEditor = ({ value, onChange }: StandardEditorProps<ScaleDistributionConfig>) => {
+  
+  const DISTRIBUTION_OPTIONS: Array<SelectableValue<ScaleDistribution>> = [
+    {
+      label: t('grafana-ui.options.linear', 'Linear'),
+      value: ScaleDistribution.Linear,
+    },
+    {
+      label: t('grafana-ui.options.logarithmic', 'Logarithmic'),
+      value: ScaleDistribution.Log,
+    },
+    {
+      label: t('grafana-ui.options.symlog', 'Symlog'),
+      value: ScaleDistribution.Symlog,
+    },
+  ];
+
   const type = value?.type ?? ScaleDistribution.Linear;
+
+
   return (
     <>
       <div style={{ marginBottom: 16 }}>

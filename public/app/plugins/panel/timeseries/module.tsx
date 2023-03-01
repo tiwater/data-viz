@@ -21,7 +21,7 @@ export const plugin = new PanelPlugin<TimeSeriesOptions, GraphFieldConfig>(TimeS
       id: 'timezone',
       name: t('features.dimensions.time-zone', 'Time zone'),
       path: 'timezone',
-      category: ['Axis'],
+      category: [t('features.dimensions.axis', 'Axis')],
       editor: TimezonesEditor,
       defaultValue: undefined,
     });

@@ -6,6 +6,8 @@ import { HideableFieldConfig, HideSeriesConfig } from '@grafana/schema';
 
 import { FilterPill, HorizontalGroup } from '../../index';
 
+import { t } from '../../../src/utils/i18n';
+
 const SeriesConfigEditor: React.FC<FieldConfigEditorProps<HideSeriesConfig, {}>> = (props) => {
   const { value, onChange } = props;
 
@@ -40,8 +42,8 @@ const SeriesConfigEditor: React.FC<FieldConfigEditorProps<HideSeriesConfig, {}>>
 export function addHideFrom(builder: FieldConfigEditorBuilder<HideableFieldConfig>) {
   builder.addCustomEditor({
     id: 'hideFrom',
-    name: 'Hide in area',
-    category: ['Series'],
+    name: t('grafana-ui.options.hide-in-area', 'Hide in area'),
+    category: [t('grafana-ui.options.series', 'Series')],
     path: 'hideFrom',
     defaultValue: {
       tooltip: false,
