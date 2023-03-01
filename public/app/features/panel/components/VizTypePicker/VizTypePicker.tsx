@@ -4,7 +4,7 @@ import React, { useMemo } from 'react';
 import { GrafanaTheme2, PanelData, PanelPluginMeta } from '@grafana/data';
 import { EmptySearchResult, useStyles2 } from '@grafana/ui';
 import { t } from 'app/core/internationalization';
-import { setFilteredPluginTypes } from 'app/utils';
+import { setFilteredPluginTypes, setPluginMeta } from 'app/utils';
 
 import { filterPluginList, getAllPanelPluginMeta } from '../../state/util';
 
@@ -26,7 +26,11 @@ export function VizTypePicker({ searchQuery, onChange, current, data }: Props) {
   }, []);
 
   const filteredPluginTypes = useMemo((): PanelPluginMeta[] => {
-    return filterPluginList(pluginsList, searchQuery, current);
+    return filterPluginList(
+      pluginsList.map((plugin) => setPluginMeta(plugin)),
+      searchQuery,
+      current
+    );
   }, [current, pluginsList, searchQuery]);
 
   if (filteredPluginTypes.length === 0) {

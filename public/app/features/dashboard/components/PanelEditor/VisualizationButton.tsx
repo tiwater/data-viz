@@ -4,6 +4,7 @@ import React from 'react';
 import { selectors } from '@grafana/e2e-selectors';
 import { ToolbarButton, ButtonGroup } from '@grafana/ui';
 import { useDispatch, useSelector } from 'app/types';
+import { setPluginMeta } from 'app/utils';
 
 import { PanelModel } from '../../state';
 import { getPanelPluginWithFallback } from '../../state/selectors';
@@ -28,7 +29,7 @@ export const VisualizationButton = ({ panel }: Props) => {
   const onToggleOptionsPane = () => {
     dispatch(updatePanelEditorUIState({ isPanelOptionsVisible: !isPanelOptionsVisible }));
   };
-
+  plugin.meta = setPluginMeta(plugin.meta);
   if (!plugin) {
     return null;
   }

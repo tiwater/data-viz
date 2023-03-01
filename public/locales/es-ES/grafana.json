@@ -1418,6 +1418,7 @@
   },
   "utils": {
     "plugin": {
+      "aceiot-svg-panel-description": "",
       "aidanmountford-html-panel": "",
       "aidanmountford-html-panel-description": "",
       "alertlist": "",
@@ -1450,12 +1451,15 @@
       "news-description": "",
       "nodeGraph": "",
       "nodeGraph-description": "",
+      "orchestracities-iconstat-panel": "",
       "orchestracities-map-panel": "",
       "orchestracities-map-panel-description": "",
       "piechart": "",
       "piechart-description": "",
       "ryantxu-annolist-panel": "",
       "ryantxu-annolist-panel-description": "",
+      "snuids-svg-panel": "",
+      "snuids-svg-panel-description": "",
       "speakyourcode-button-panel": "",
       "speakyourcode-button-panel-description": "",
       "stat": "",
@@ -1474,6 +1478,8 @@
       "traces-description": "",
       "volkovlabs-echarts-panel": "",
       "volkovlabs-echarts-panel-description": "",
+      "volkovlabs-image-panel": "",
+      "volkovlabs-image-panel-description": "",
       "xychart": "",
       "yesoreyeram-boomtheme-panel": "",
       "yesoreyeram-boomtheme-panel-description": ""

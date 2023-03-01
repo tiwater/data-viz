@@ -1418,6 +1418,7 @@
   },
   "utils": {
     "plugin": {
+      "aceiot-svg-panel-description": "SVG Visualization Panel",
       "aidanmountford-html-panel": "HTML",
       "aidanmountford-html-panel-description": "HTML panel for grafana",
       "alertlist": "Alert list",
@@ -1450,12 +1451,15 @@
       "news-description": "RSS feed reader",
       "nodeGraph": "Node Graph",
       "nodeGraph-description": "Node Graph",
+      "orchestracities-iconstat-panel": "Orchestra Cities Icon Stat Panel",
       "orchestracities-map-panel": "Orchestra Cities Map",
       "orchestracities-map-panel-description": "Orchestra Cities Map",
       "piechart": "Pie chart",
       "piechart-description": "The new core pie chart visualization",
       "ryantxu-annolist-panel": "Annotation List",
       "ryantxu-annolist-panel-description": "List of builtin Annotations",
+      "snuids-svg-panel": "Colored SVG Panel",
+      "snuids-svg-panel-description": "A panel that displays values as colored svg images",
       "speakyourcode-button-panel": "Button Panel",
       "speakyourcode-button-panel-description": "button control panel",
       "stat": "Stat",
@@ -1474,6 +1478,8 @@
       "traces-description": "Traces",
       "volkovlabs-echarts-panel": "Apache ECharts",
       "volkovlabs-echarts-panel-description": "Apache ECharts panel",
+      "volkovlabs-image-panel": "Base64 Image/Video/Audio/PDF",
+      "volkovlabs-image-panel-description": "Base64 Image/Video/Audio/PDF panel",
       "xychart": "XY Chart",
       "yesoreyeram-boomtheme-panel": "Boom Theme",
       "yesoreyeram-boomtheme-panel-description": "Themes for Ticos"

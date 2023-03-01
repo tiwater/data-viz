@@ -1418,6 +1418,7 @@
   },
   "utils": {
     "plugin": {
+      "aceiot-svg-panel-description": "SVG 可视化面板",
       "aidanmountford-html-panel": "HTML",
       "aidanmountford-html-panel-description": "Ticos 的 HTML 面板",
       "alertlist": "警报列表",
@@ -1450,12 +1451,15 @@
       "news-description": "RSS订阅器",
       "nodeGraph": "节点图",
       "nodeGraph-description": "节点图",
+      "orchestracities-iconstat-panel": "Orchestra城市图标台面板",
       "orchestracities-map-panel": "管道城市地图",
       "orchestracities-map-panel-description": "管道城市地图",
       "piechart": "饼图",
       "piechart-description": "新的核心饼图可视化",
       "ryantxu-annolist-panel": "注释列表",
       "ryantxu-annolist-panel-description": "内置注释列表",
+      "snuids-svg-panel": "着色SVG 面板",
+      "snuids-svg-panel-description": "显示颜色的 svg 图像的面板",
       "speakyourcode-button-panel": "按钮面板",
       "speakyourcode-button-panel-description": "按钮控制面板",
       "stat": "统计",
@@ -1474,6 +1478,8 @@
       "traces-description": "轨道",
       "volkovlabs-echarts-panel": "Apache 图表",
       "volkovlabs-echarts-panel-description": "Apache 图表面板",
+      "volkovlabs-image-panel": "Base64 图像/视频/音频/PDF",
+      "volkovlabs-image-panel-description": "Base64 图像/视频/音频/PDF 面板",
       "xychart": "XY 图",
       "yesoreyeram-boomtheme-panel": "启动主题",
       "yesoreyeram-boomtheme-panel-description": "Ticos 主题"

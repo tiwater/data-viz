@@ -1418,6 +1418,7 @@
   },
   "utils": {
     "plugin": {
+      "aceiot-svg-panel-description": "ŜVĞ Vįşūäľįžäŧįőŉ Päŉęľ",
       "aidanmountford-html-panel": "ĦŦMĿ",
       "aidanmountford-html-panel-description": "ĦŦMĿ päŉęľ ƒőř ģřäƒäŉä",
       "alertlist": "Åľęřŧ ľįşŧ",
@@ -1450,12 +1451,15 @@
       "news-description": "ŖŜŜ ƒęęđ řęäđęř",
       "nodeGraph": "Ńőđę Ğřäpĥ",
       "nodeGraph-description": "Ńőđę Ğřäpĥ",
+      "orchestracities-iconstat-panel": "Øřčĥęşŧřä Cįŧįęş Ĩčőŉ Ŝŧäŧ Päŉęľ",
       "orchestracities-map-panel": "Øřčĥęşŧřä Cįŧįęş Mäp",
       "orchestracities-map-panel-description": "Øřčĥęşŧřä Cįŧįęş Mäp",
       "piechart": "Pįę čĥäřŧ",
       "piechart-description": "Ŧĥę ŉęŵ čőřę pįę čĥäřŧ vįşūäľįžäŧįőŉ",
       "ryantxu-annolist-panel": "Åŉŉőŧäŧįőŉ Ŀįşŧ",
       "ryantxu-annolist-panel-description": "Ŀįşŧ őƒ þūįľŧįŉ Åŉŉőŧäŧįőŉş",
+      "snuids-svg-panel": "Cőľőřęđ ŜVĞ Päŉęľ",
+      "snuids-svg-panel-description": "Å päŉęľ ŧĥäŧ đįşpľäyş väľūęş äş čőľőřęđ şvģ įmäģęş",
       "speakyourcode-button-panel": "ßūŧŧőŉ Päŉęľ",
       "speakyourcode-button-panel-description": "þūŧŧőŉ čőŉŧřőľ päŉęľ",
       "stat": "Ŝŧäŧ",
@@ -1474,6 +1478,8 @@
       "traces-description": "Ŧřäčęş",
       "volkovlabs-echarts-panel": "Åpäčĥę ĒCĥäřŧş",
       "volkovlabs-echarts-panel-description": "Åpäčĥę ĒCĥäřŧş päŉęľ",
+      "volkovlabs-image-panel": "ßäşę64 Ĩmäģę/Vįđęő/Åūđįő/PĐF",
+      "volkovlabs-image-panel-description": "ßäşę64 Ĩmäģę/Vįđęő/Åūđįő/PĐF päŉęľ",
       "xychart": "XŸ Cĥäřŧ",
       "yesoreyeram-boomtheme-panel": "ßőőm Ŧĥęmę",
       "yesoreyeram-boomtheme-panel-description": "Ŧĥęmęş ƒőř Ŧįčőş"

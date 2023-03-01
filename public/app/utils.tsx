@@ -124,8 +124,30 @@ const getPluginIn18 = (): { [key: string]: { [key: string]: string } } => ({
     name: t('utils.plugin.yesoreyeram-boomtheme-panel', 'Boom Theme'),
     description: t('utils.plugin.yesoreyeram-boomtheme-panel-description', 'Themes for Ticos'),
   },
+  'aceiot-svg-panel': {
+    name: 'ACE.SVG',
+    description: t('utils.plugin.aceiot-svg-panel-description', 'SVG Visualization Panel'),
+  },
+  'orchestracities-iconstat-panel': {
+    name: t('utils.plugin.orchestracities-iconstat-panel', 'Orchestra Cities Icon Stat Panel'),
+    description: '',
+  },
+  'volkovlabs-image-panel': {
+    name: t('utils.plugin.volkovlabs-image-panel', 'Base64 Image/Video/Audio/PDF'),
+    description: t('utils.plugin.volkovlabs-image-panel-description', 'Base64 Image/Video/Audio/PDF panel'),
+  },
+  'snuids-svg-panel': {
+    name: t('utils.plugin.snuids-svg-panel', 'Colored SVG Panel'),
+    description: t('utils.plugin.snuids-svg-panel-description', 'A panel that displays values as colored svg images'),
+  },
 });
-
+export const setPluginMeta = (plugin: PanelPluginMeta): PanelPluginMeta => {
+  const pluginIn18 = getPluginIn18();
+  return {
+    ...plugin,
+    name: pluginIn18[plugin.id] ? pluginIn18[plugin.id].name : plugin.name,
+  };
+};
 export const setFilteredPluginTypes = (pluginTypes: PanelPluginMeta[]) => {
   const pluginIn18 = getPluginIn18();
   return pluginTypes
