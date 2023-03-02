@@ -775,7 +775,7 @@
       },
       "how-to-sort-the-values": "Ħőŵ ŧő şőřŧ ŧĥę väľūęş őƒ ŧĥįş väřįäþľę",
       "if-you-want-to-extract-part": " Øpŧįőŉäľ, įƒ yőū ŵäŉŧ ŧő ęχŧřäčŧ päřŧ őƒ ä şęřįęş ŉämę őř męŧřįč ŉőđę şęģmęŉŧ.",
-      "named-capture-groups-can-be": "Ńämęđ čäpŧūřę ģřőūpş čäŉ þę ūşęđ ŧő şępäřäŧę ŧĥę đįşpľäy ŧęχŧ äŉđ väľūę (",
+      "named-capture-groups-can-be": "Ńämęđ čäpŧūřę ģřőūpş čäŉ þę ūşęđ ŧő şępäřäŧę ŧĥę đįşpľäy ŧęχŧ äŉđ väľūę ",
       "numerical-asc": "Ńūmęřįčäľ (äşč)",
       "numerical-desc": "Ńūmęřįčäľ (đęşč)",
       "query": "Qūęřy",
@@ -788,7 +788,7 @@
       },
       "query-options": "Qūęřy őpŧįőŉş",
       "regex": "Ŗęģęχ",
-      "see-examples": "şęę ęχämpľęş",
+      "selection-options": "Ŝęľęčŧįőŉ őpŧįőŉş",
       "sort": "Ŝőřŧ"
     },
     "transformers": {

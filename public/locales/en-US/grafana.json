@@ -775,7 +775,7 @@
       },
       "how-to-sort-the-values": "How to sort the values of this variable",
       "if-you-want-to-extract-part": " Optional, if you want to extract part of a series name or metric node segment.",
-      "named-capture-groups-can-be": "Named capture groups can be used to separate the display text and value (",
+      "named-capture-groups-can-be": "Named capture groups can be used to separate the display text and value ",
       "numerical-asc": "Numerical (asc)",
       "numerical-desc": "Numerical (desc)",
       "query": "Query",
@@ -788,7 +788,7 @@
       },
       "query-options": "Query options",
       "regex": "Regex",
-      "see-examples": "see examples",
+      "selection-options": "Selection options",
       "sort": "Sort"
     },
     "transformers": {
