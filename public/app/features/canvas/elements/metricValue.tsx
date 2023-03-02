@@ -166,7 +166,7 @@ export const metricValueItem = (): CanvasElementItem<TextConfig, TextData> => ({
   },
 
   registerOptionsUI: (builder) => {
-    const category = ['Metric value'];
+    const category = [t('plugins.canvas.metric-value', 'Metric Value')];
     builder
       .addCustomEditor({
         category,
