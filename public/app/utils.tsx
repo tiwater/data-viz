@@ -164,5 +164,19 @@ export const setPluginMeta = (plugin: PanelPluginMeta): PanelPluginMeta => {
   };
 };
 export const setFilteredPluginTypes = (pluginTypes: PanelPluginMeta[]) => {
-  return pluginTypes.filter((plugin) => !(plugin.id === 'geomap')).map((plugin) => setPluginMeta(plugin));
+  const list = [
+    'timeseries',
+    'barchart',
+    'stat',
+    'gauge',
+    'bargauge',
+    'table',
+    'piechart',
+    'text',
+    'bilibala-echarts-panel',
+    'canvas',
+    'snuids-svg-panel',
+    'yesoreyeram-boomtheme-panel',
+  ];
+  return pluginTypes.filter((plugin) => list.indexOf(plugin.id) > -1).map((plugin) => setPluginMeta(plugin));
 };

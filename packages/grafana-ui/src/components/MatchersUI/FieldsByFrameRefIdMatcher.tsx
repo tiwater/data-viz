@@ -2,6 +2,7 @@ import React, { memo, useMemo, useCallback } from 'react';
 
 import { FieldMatcherID, fieldMatchers, SelectableValue, DataFrame } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { Select } from '../Select/Select';
 
 import { MatcherUIProps, FieldMatcherUIRegistryItem } from './types';
@@ -35,14 +36,17 @@ FieldsByFrameRefIdMatcher.displayName = 'FieldsByFrameRefIdMatcher';
  * Registry item for UI to configure "fields by frame refId"-matcher.
  * @public
  */
-export const fieldsByFrameRefIdItem: FieldMatcherUIRegistryItem<string> = {
+export const fieldsByFrameRefIdItem = (): FieldMatcherUIRegistryItem<string> => ({
   id: FieldMatcherID.byFrameRefID,
   component: FieldsByFrameRefIdMatcher,
   matcher: fieldMatchers.get(FieldMatcherID.byFrameRefID),
-  name: 'Fields returned by query',
-  description: 'Set properties for fields from a specific query',
+  name: t('grafana-ui.matchers-ui.fields-returned-by-query', 'Fields returned by query'),
+  description: t(
+    'grafana-ui.matchers-ui.set-properties-for-fields-from-a-specific-query',
+    'Set properties for fields from a specific query'
+  ),
   optionsToLabel: (options) => options,
-};
+});
 
 const useFrameRefIds = (data: DataFrame[]): Set<string> => {
   return useMemo(() => {

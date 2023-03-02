@@ -8,6 +8,7 @@ import {
   identityOverrideProcessor,
 } from '@grafana/data';
 import { TableFieldOptions, TableCellOptions, TableCellDisplayMode } from '@grafana/schema';
+import { t } from 'app/core/internationalization';
 
 import { PaginationEditor } from './PaginationEditor';
 import { TableCellOptionEditor } from './TableCellOptionEditor';
@@ -16,8 +17,8 @@ import { tableMigrationHandler, tablePanelChangedHandler } from './migrations';
 import { PanelOptions, defaultPanelOptions, defaultPanelFieldConfig } from './models.gen';
 import { TableSuggestionsSupplier } from './suggestions';
 
-const footerCategory = 'Table footer';
-const cellCategory = ['Cell Options'];
+// const footerCategory = 'Table footer';
+// const cellCategory = ['Cell Options'];
 
 export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePanel)
   .setPanelChangeHandler(tablePanelChangedHandler)
@@ -27,8 +28,8 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
       builder
         .addNumberInput({
           path: 'minWidth',
-          name: 'Minimum column width',
-          description: 'The minimum width for column auto resizing',
+          name: t('plugins.table.minimum-column-width', 'Minimum column width'),
+          description: t('plugins.table.the-minimum-width-for-column', 'The minimum width for column auto resizing'),
           settings: {
             placeholder: '150',
             min: 50,
@@ -39,9 +40,9 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
         })
         .addNumberInput({
           path: 'width',
-          name: 'Column width',
+          name: t('plugins.table.column-width', 'Column width'),
           settings: {
-            placeholder: 'auto',
+            placeholder: t('plugins.table.auto', 'auto'),
             min: 20,
             max: 300,
           },
@@ -50,13 +51,13 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
         })
         .addRadio({
           path: 'align',
-          name: 'Column alignment',
+          name: t('plugins.table.column-alignment', 'Column alignment'),
           settings: {
             options: [
-              { label: 'auto', value: 'auto' },
-              { label: 'left', value: 'left' },
-              { label: 'center', value: 'center' },
-              { label: 'right', value: 'right' },
+              { value: 'auto', label: t('plugins.table.auto', 'auto') },
+              { value: 'left', label: t('plugins.table.left', 'left') },
+              { value: 'center', label: t('plugins.table.center', 'center') },
+              { value: 'right', label: t('plugins.table.right', 'right') },
             ],
           },
           defaultValue: defaultPanelFieldConfig.align,
@@ -64,20 +65,23 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
         .addCustomEditor<void, TableCellOptions>({
           id: 'cellOptions',
           path: 'cellOptions',
-          name: 'Cell Type',
+          name: t('plugins.table.cell-type', 'Cell Type'),
           editor: TableCellOptionEditor,
           override: TableCellOptionEditor,
           defaultValue: defaultPanelFieldConfig.cellOptions,
           process: identityOverrideProcessor,
-          category: cellCategory,
+          category: [t('plugins.table.cell-options', 'Cell Options')],
           shouldApply: () => true,
         })
         .addBooleanSwitch({
           path: 'inspect',
-          name: 'Cell value inspect',
-          description: 'Enable cell value inspection in a modal window',
+          name: t('plugins.table.cell-value-inspect', 'Cell value inspect'),
+          description: t(
+            'plugins.table.enable-cell-value-inspection',
+            'Enable cell value inspection in a modal window'
+          ),
           defaultValue: false,
-          category: cellCategory,
+          category: [t('plugins.table.cell-options', 'Cell Options')],
           showIf: (cfg) => {
             return (
               cfg.cellOptions.type === TableCellDisplayMode.Auto ||
@@ -89,13 +93,13 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
         })
         .addBooleanSwitch({
           path: 'filterable',
-          name: 'Column filter',
-          description: 'Enables/disables field filters in table',
+          name: t('plugins.table.column-filter', 'Column filter'),
+          description: t('plugins.table.disables-field-filters-in-table', 'Enables/disables field filters in table'),
           defaultValue: defaultPanelFieldConfig.filterable,
         })
         .addBooleanSwitch({
           path: 'hidden',
-          name: 'Hide in table',
+          name: t('plugins.table.hide-in-table', 'Hide in table'),
           defaultValue: undefined,
           hideFromDefaults: true,
         });
@@ -105,42 +109,42 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
     builder
       .addBooleanSwitch({
         path: 'showHeader',
-        name: 'Show table header',
+        name: t('plugins.table.show-table-header', 'Show table header'),
         defaultValue: defaultPanelOptions.showHeader,
       })
       .addBooleanSwitch({
         path: 'footer.show',
-        category: [footerCategory],
-        name: 'Show table footer',
+        category: [t('plugins.table.table-footer', 'Table footer')],
+        name: t('plugins.table.show-table-footer', 'Show table footer'),
         defaultValue: defaultPanelOptions.footer?.show,
       })
       .addCustomEditor({
         id: 'footer.reducer',
-        category: [footerCategory],
+        category: [t('plugins.table.table-footer', 'Table footer')],
         path: 'footer.reducer',
-        name: 'Calculation',
-        description: 'Choose a reducer function / calculation',
+        name: t('plugins.table.calculation', 'Calculation'),
+        description: t('plugins.table.choose-a-reducer-function', 'Choose a reducer function / calculation'),
         editor: standardEditorsRegistry.get('stats-picker').editor as any,
         defaultValue: [ReducerID.sum],
         showIf: (cfg) => cfg.footer?.show,
       })
       .addBooleanSwitch({
         path: 'footer.countRows',
-        category: [footerCategory],
-        name: 'Count rows',
-        description: 'Display a single count for all data rows',
+        category: [t('plugins.table.table-footer', 'Table footer')],
+        name: t('plugins.table.count-rows', 'Count rows'),
+        description: t('plugins.table.display-a-single-count-for', 'Display a single count for all data rows'),
         defaultValue: defaultPanelOptions.footer?.countRows,
         showIf: (cfg) => cfg.footer?.reducer?.length === 1 && cfg.footer?.reducer[0] === ReducerID.count,
       })
       .addMultiSelect({
         path: 'footer.fields',
-        category: [footerCategory],
-        name: 'Fields',
-        description: 'Select the fields that should be calculated',
+        category: [t('plugins.table.table-footer', 'Table footer')],
+        name: t('plugins.table.fields', 'Fields'),
+        description: t('plugins.table.select-the-fields-that-should', 'Select the fields that should be calculated'),
         settings: {
           allowCustomValue: false,
           options: [],
-          placeholder: 'All Numeric Fields',
+          placeholder: t('plugins.table.all-numeric-fields', 'All Numeric Fields'),
           getOptions: async (context: FieldOverrideContext) => {
             const options = [];
             if (context && context.data && context.data.length > 0) {
@@ -164,7 +168,7 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
       .addCustomEditor({
         id: 'footer.enablePagination',
         path: 'footer.enablePagination',
-        name: 'Enable pagination',
+        name: t('plugins.table.enable-pagination', 'Enable pagination'),
         editor: PaginationEditor,
       });
   })

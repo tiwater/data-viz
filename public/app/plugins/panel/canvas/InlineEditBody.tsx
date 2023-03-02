@@ -8,6 +8,7 @@ import { PanelOptionsSupplier } from '@grafana/data/src/panel/PanelPlugin';
 import { NestedValueAccess } from '@grafana/data/src/utils/OptionsUIBuilders';
 import { useStyles2 } from '@grafana/ui/src';
 import { AddLayerButton } from 'app/core/components/Layers/AddLayerButton';
+import { t } from 'app/core/internationalization';
 import { FrameState } from 'app/features/canvas/runtime/frame';
 import { OptionsPaneCategory } from 'app/features/dashboard/components/PanelEditor/OptionsPaneCategory';
 import { OptionsPaneCategoryDescriptor } from 'app/features/dashboard/components/PanelEditor/OptionsPaneCategoryDescriptor';
@@ -47,7 +48,7 @@ export function InlineEditBody() {
         if (element && !(element instanceof FrameState)) {
           builder.addNestedOptions(
             getElementEditor({
-              category: [`Selected element (${element.options.name})`],
+              category: [`${t('plugins.canvas.selected-element', 'Selected Element')} (${element.options.name})`],
               element,
               scene: state.scene,
             })
@@ -87,12 +88,20 @@ export function InlineEditBody() {
     <>
       <div style={topLevelItemsContainerStyle}>{pane.items.map((item) => item.render())}</div>
       <div style={topLevelItemsContainerStyle}>
-        <AddLayerButton onChange={(sel) => onAddItem(sel, rootLayer)} options={typeOptions} label={'Add item'} />
+        <AddLayerButton
+          onChange={(sel) => onAddItem(sel, rootLayer)}
+          options={typeOptions}
+          label={t('plugins.canvas.add-item', 'Add item')}
+        />
       </div>
       <div style={topLevelItemsContainerStyle}>
         <TabsEditor onTabChange={onTabChange} />
         {pane.categories.map((p) => renderOptionsPaneCategoryDescriptor(p))}
-        {noElementSelected && <div className={styles.selectElement}>Please select an element</div>}
+        {noElementSelected && (
+          <div className={styles.selectElement}>
+            {t('plugins.canvas.please-select-an-element', 'Please select an element')}
+          </div>
+        )}
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 
 import { FieldNamePickerConfigSettings, SelectableValue, StandardEditorProps } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { Select } from '../Select/Select';
 
 import { useFieldDisplayNames, useSelectOptions, frameHasName } from './utils';
@@ -32,7 +33,7 @@ export const FieldNamePicker: React.FC<StandardEditorProps<string, FieldNamePick
     <>
       <Select
         value={selectedOption}
-        placeholder={settings.placeholderText ?? 'Select field'}
+        placeholder={settings.placeholderText ?? t('granfana-ui.matchers-ui.select-field', 'Select field')}
         options={selectOptions}
         onChange={onSelectChange}
         noOptionsMessage={settings.noFieldsMessage}

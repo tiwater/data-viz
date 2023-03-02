@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 
 import { DataFrame, GrafanaTheme2 } from '@grafana/data';
 import { Input, usePanelContext, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { DimensionContext } from 'app/features/dimensions/context';
 import { ColorDimensionEditor } from 'app/features/dimensions/editors/ColorDimensionEditor';
 import { TextDimensionEditor } from 'app/features/dimensions/editors/TextDimensionEditor';
@@ -116,10 +117,10 @@ const getStyles = (data: TextData | undefined) => (theme: GrafanaTheme2) => ({
   `,
 });
 
-export const textItem: CanvasElementItem<TextConfig, TextData> = {
+export const textItem = (): CanvasElementItem<TextConfig, TextData> => ({
   id: 'text',
-  name: 'Text',
-  description: 'Display text',
+  name: t('plugins.canvas.text', 'Text'),
+  description: t('plugins.canvas.display-text', 'Display text'),
 
   display: TextDisplay,
 
@@ -162,20 +163,20 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
   },
 
   registerOptionsUI: (builder) => {
-    const category = ['Text'];
+    const category = [t('plugins.canvas.text', 'Text')];
     builder
       .addCustomEditor({
         category,
         id: 'textSelector',
         path: 'config.text',
-        name: 'Text',
+        name: t('plugins.canvas.text', 'Text'),
         editor: TextDimensionEditor,
       })
       .addCustomEditor({
         category,
         id: 'config.color',
         path: 'config.color',
-        name: 'Text color',
+        name: t('plugins.canvas.text-color', 'Text color'),
         editor: ColorDimensionEditor,
         settings: {},
         defaultValue: {},
@@ -183,12 +184,12 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.align',
-        name: 'Align text',
+        name: t('plugins.canvas.align-text', 'Align text'),
         settings: {
           options: [
-            { value: Align.Left, label: 'Left' },
-            { value: Align.Center, label: 'Center' },
-            { value: Align.Right, label: 'Right' },
+            { value: Align.Left, label: t('plugins.canvas.left', 'Left') },
+            { value: Align.Center, label: t('plugins.canvas.center', 'Center') },
+            { value: Align.Right, label: t('plugins.canvas.right', 'Right') },
           ],
         },
         defaultValue: Align.Left,
@@ -196,12 +197,12 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.valign',
-        name: 'Vertical align',
+        name: t('plugins.canvas.vertical-align', 'Vertical align'),
         settings: {
           options: [
-            { value: VAlign.Top, label: 'Top' },
-            { value: VAlign.Middle, label: 'Middle' },
-            { value: VAlign.Bottom, label: 'Bottom' },
+            { value: VAlign.Top, label: t('plugins.canvas.top', 'Top') },
+            { value: VAlign.Middle, label: t('plugins.canvas.middle', 'Middle') },
+            { value: VAlign.Bottom, label: t('plugins.canvas.bottom', 'Bottom') },
           ],
         },
         defaultValue: VAlign.Middle,
@@ -215,4 +216,4 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
         },
       });
   },
-};
+});

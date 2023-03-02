@@ -1,5 +1,6 @@
 import { FieldColorModeId, FieldConfigProperty, PanelPlugin } from '@grafana/data';
 import { commonOptionsBuilder } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { addStandardDataReduceOptions } from '../stat/common';
 
@@ -32,26 +33,29 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(PieChartPa
     addStandardDataReduceOptions(builder);
     builder
       .addRadio({
-        name: 'Piechart type',
-        description: 'How the piechart should be rendered',
+        name: t('plugins.pie-chart.pie-chart-type', 'Piechart type'),
+        description: t('plugins.pie-chart.how-the-piechart-should-be-rendered', 'How the piechart should be rendered'),
         path: 'pieType',
         settings: {
           options: [
-            { value: PieChartType.Pie, label: 'Pie' },
-            { value: PieChartType.Donut, label: 'Donut' },
+            { value: PieChartType.Pie, label: t('plugins.pie-chart.pie', 'Pie') },
+            { value: PieChartType.Donut, label: t('plugins.pie-chart.donut', 'Donut') },
           ],
         },
         defaultValue: PieChartType.Pie,
       })
       .addMultiSelect({
-        name: 'Labels',
+        name: t('plugins.pie-chart.labels', 'Labels'),
         path: 'displayLabels',
-        description: 'Select the labels to be displayed in the pie chart',
+        description: t(
+          'plugins.pie-chart.select-the-labels-to-be-displayed',
+          'Select the labels to be displayed in the pie chart'
+        ),
         settings: {
           options: [
-            { value: PieChartLabels.Percent, label: 'Percent' },
-            { value: PieChartLabels.Name, label: 'Name' },
-            { value: PieChartLabels.Value, label: 'Value' },
+            { value: PieChartLabels.Percent, label: t('plugins.pie-chart.percent', 'Percent') },
+            { value: PieChartLabels.Name, label: t('plugins.pie-chart.name', 'Name') },
+            { value: PieChartLabels.Value, label: t('plugins.pie-chart.value', 'Value') },
           ],
         },
       });
@@ -60,13 +64,13 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(PieChartPa
     commonOptionsBuilder.addLegendOptions(builder, false);
 
     builder.addMultiSelect({
-      name: 'Legend values',
+      name: t('plugins.pie-chart.legend-values', 'Legend values'),
       path: 'legend.values',
-      category: ['Legend'],
+      category: [t('plugins.pie-chart.legend', 'Legend')],
       settings: {
         options: [
-          { value: PieChartLegendValues.Percent, label: 'Percent' },
-          { value: PieChartLegendValues.Value, label: 'Value' },
+          { value: PieChartLegendValues.Percent, label: t('plugins.pie-chart.percent', 'Percent') },
+          { value: PieChartLegendValues.Value, label: t('plugins.pie-chart.value', 'Value') },
         ],
       },
       showIf: (c) => c.legend.showLegend !== false,

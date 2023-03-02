@@ -394,6 +394,9 @@
         "there-are-no-alert-rules-linked-to-this-panel": "此面板没有连接任何警报规则。"
       }
     },
+    "canvas": {
+      "double-click-to-set-field": "双击设置字段"
+    },
     "dashboard": {
       "add-a-new-panel": "添加新面板",
       "add-a-new-row": "添加一行",
@@ -427,6 +430,9 @@
       "do-you-want-to-delete": "您想要删除此看板吗？",
       "documentation": "文档",
       "edit-panel": "编辑面板",
+      "editor": {
+        "override": "覆盖"
+      },
       "enabled": "启用",
       "error-saving-dashboard": "保存看板时出错",
       "failed-to-fetch-dashboard": "获取看板失败",
@@ -633,12 +639,16 @@
       "connect-null-values": "连接空值",
       "constant": "常量",
       "constantDescription": "第一个值将显示为常量行",
+      "editor": {
+        "set-icon": "设置图标"
+      },
       "editors": {
         "boolean-false-values": "布尔值 false",
         "boolean-true-values": "布尔值 true",
         "empty": "空",
         "empty-string": "空字符串",
         "exact-value-to-match": "精确值匹配",
+        "fixed-color": "固定颜色",
         "matches-against-number": "匹配 Number.NaN (非数字)",
         "matches-null-and-undefined-and-NaN": "匹配空、 未定义的 NaN",
         "matches-null-and-undefined-values": "匹配无效和未定义的值",
@@ -1137,6 +1147,17 @@
       "saturday": "星期六",
       "sunday": "星期日"
     },
+    "matchers-ui": {
+      "enter-regular-expression": "输入正则表达式",
+      "fields-returned-by-query": "按查询返回的字段",
+      "fields-with-name": "字段名称",
+      "fields-with-name-matching-regex": "名字匹配正则表达式的字段",
+      "fields-with-type": "字段类型",
+      "set-properties-for-a-specific-field": "设置特定字段的属性",
+      "set-properties-for-a-specific-field-number": "设置特定类型字段的属性 (数字，字符串，布尔值)",
+      "set-properties-for-fields-from-a-specific-query": "设置指定查询字段的属性",
+      "set-properties-for-fields-with-names-matching": "设置匹配正则表达式字段的属性"
+    },
     "options": {
       "all": "全部",
       "ascending": "升序",
@@ -1189,6 +1210,9 @@
       "add-button": "添加",
       "new-tag": "新标签 (输入要添加的键)"
     },
+    "tool-bar-buttom": {
+      "show-more-items": "显示更多"
+    },
     "u-plot": {
       "config": {
         "after": "之后",
@@ -1219,6 +1243,11 @@
         "step-after": "下一步",
         "step-before": "上一步"
       }
+    }
+  },
+  "granfana-ui": {
+    "matchers-ui": {
+      "select-field": "选择字段"
     }
   },
   "library-panel": {
@@ -1536,10 +1565,161 @@
     }
   },
   "plugins": {
+    "bar-gauge": {
+      "basic": "基础",
+      "display-mode": "显示模式",
+      "gradient": "渐变",
+      "min-height": "最小高度",
+      "min-width": "最小宽度",
+      "minimum-column-width": "最小列宽",
+      "minimum-row-height": "最小行高",
+      "retro-LCD": "复古LCD",
+      "show-unfilled-area": "显示未填充区域",
+      "when-enabled-renders-the-unfilled": "启用时将未填充区域变为灰度"
+    },
+    "canvas": {
+      "add-item": "添加项",
+      "align-text": "文本对齐",
+      "auto": "自动",
+      "background": "背景",
+      "border": "边框",
+      "bottom": "底部",
+      "bring-to-front": "置于前端",
+      "canvas-item": "画布项",
+      "center": "居中",
+      "clear-selection": "清空选择",
+      "close-editor": "关闭编辑器",
+      "color": "颜色",
+      "constraints": "限制",
+      "contain": "Contain",
+      "cover": "Cover",
+      "delete": "删除",
+      "display-a-field-value": "显示字段值",
+      "display-text": "显示文本",
+      "duplicate": "克隆",
+      "edit": "编辑",
+      "element": "内容",
+      "element-management": "元素管理",
+      "elements": "元素",
+      "field": "字段",
+      "fill": "Fill",
+      "fill-color": "填充色",
+      "fixed": "固定",
+      "frame-selection": "选择框架",
+      "height": "高",
+      "icon": "图标",
+      "image": "图片",
+      "image-size": "图片尺寸",
+      "layer": "图层",
+      "layout": "布局",
+      "left": "左",
+      "left-right": "左 & 右",
+      "mappings": "映射",
+      "mappings-editor": "待办事项映射编辑器！",
+      "metric-value": "公式值",
+      "middle": "中",
+      "missing-layer": "缺少图层？",
+      "no-settings": "无设置",
+      "node-icon": "节点图标",
+      "open-editor": "打开编辑器",
+      "original": "Original",
+      "please-select-an-element": "请选择一个元素",
+      "position": "位置",
+      "quick-placement": "快速设置",
+      "rectangle": "矩形",
+      "right": "右",
+      "scale": "缩放",
+      "select-a-value": "选择值",
+      "selected-element": "选中元素",
+      "selected-element-type-is-not-supported": "当前设置不支持所选元素类型。请启用高级元素类型。",
+      "send-to-back": "置于后端",
+      "set-background": "设置背景",
+      "source": "源",
+      "SVG-icon-display": "SVG 图标",
+      "SVG-path": "SVG 路径",
+      "template": "模板",
+      "text": "文本",
+      "text-color": "字体颜色",
+      "text-size": "字体大小",
+      "tile": "Tile",
+      "top": "顶部",
+      "top-bottom": "顶部&底部",
+      "value": "值",
+      "vertical-align": "垂直对齐",
+      "width": "宽"
+    },
+    "canvas-editor": {
+      "icon": "图标",
+      "metric-value": "公式值",
+      "rectangle": "矩形",
+      "text": "文本"
+    },
     "data-source": {
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": "此看板没有其他面板。 添加其他面板的查询，然后重试。"
       }
+    },
+    "gauge": {
+      "auto": "自动",
+      "gauge": "仪表盘",
+      "leave-empty-to-use-Min-as-neutral-point": "留空则使用最小值作为中点",
+      "neutral": "中性的",
+      "render-the-threshold-values": "在仪表条周围渲染阈值",
+      "renders-the-thresholds-as-an-outer-bar": "将阈值呈现为外部栏",
+      "show-threshold-labels": "显示阈值标签",
+      "show-threshold-markers": "显示阈值标记"
+    },
+    "pie-chart": {
+      "donut": "圆环",
+      "how-the-piechart-should-be-rendered": "碎片应如何渲染",
+      "labels": "标签",
+      "legend": "图例",
+      "legend-values": "图例值",
+      "name": "名称",
+      "percent": "百分比",
+      "pie": "饼状图",
+      "pie-chart-type": "饼图类型",
+      "select-the-labels-to-be-displayed": "选择将显示在饼图中的标签",
+      "value": "值"
+    },
+    "table": {
+      "all-numeric-fields": "全部数字字段",
+      "auto": "自动",
+      "background-display-mode": "背景显示模式",
+      "basic": "基础",
+      "calculation": "计算",
+      "cell-options": "单元格选项",
+      "cell-type": "单元格类型",
+      "cell-value-inspect": "单元格值检查",
+      "center": "居中",
+      "choose-a-reducer-function": "选择减速器功能/计算",
+      "colored-background": "彩色背景",
+      "colored-text": "彩色文字",
+      "column-alignment": "列对齐",
+      "column-filter": "列过滤器",
+      "column-width": "列宽度",
+      "count-rows": "行数",
+      "disables-field-filters-in-table": "启用/禁用表中的字段过滤器",
+      "display-a-single-count-for": "显示所有数据行的单个计数",
+      "enable-cell-value-inspection": "在模式窗口中启用单元格值检查",
+      "enable-pagination": "开启分页",
+      "fields": "字段",
+      "gauge": "仪表盘",
+      "gradient": "渐变",
+      "hide-in-table": "在表格中隐藏",
+      "image": "图片",
+      "JSON-View": "JSON 视图",
+      "left": "左",
+      "minimum-column-width": "最小列宽度",
+      "right": "右",
+      "select-the-fields-that-should": "选择需要计算的字段",
+      "show-table-footer": "显示页脚",
+      "show-table-header": "显示表头",
+      "table-footer": "表格页脚",
+      "the-minimum-width-for-column": "自动调整列最小宽度"
+    },
+    "table-cell": {
+      "auto": "自动"
     }
   },
   "refresh-picker": {
@@ -1574,7 +1754,7 @@
     "embed": {
       "copy": "复制到剪贴板",
       "html": "嵌入 HTML",
-      "html-description": "可将以下 HTML 代码粘贴并纳入另一网页。除非启用了匿名访问，否则查看该页面的用户需要登录 Ticos 才能加载图表。",
+      "html-description": "可将以下 HTML 代码粘贴并纳入另一网页。除非启用了匿名访问，否则查看该页面的用户需要登录 Grafana 才能加载图表。",
       "info": "生成用于对此面板嵌入 iframe 的 HTML。",
       "time-range": "当前时间范围",
       "time-range-description": "将当前相对时间范围转换为绝对时间范围"

@@ -4,13 +4,14 @@ import React, { FC, useCallback } from 'react';
 import { GrafanaTheme2, SelectableValue, StandardEditorProps } from '@grafana/data';
 import { Select, ColorPicker, useStyles2 } from '@grafana/ui';
 import { useFieldDisplayNames, useSelectOptions } from '@grafana/ui/src/components/MatchersUI/utils';
+import { t } from 'app/core/internationalization';
 
 import { ColorDimensionConfig } from '../types';
 
-const fixedColorOption: SelectableValue<string> = {
-  label: 'Fixed color',
+const fixedColorOption = (): SelectableValue<string> => ({
+  label: t('features.dimensions.editors.fixed-color', 'Fixed color'),
   value: '_____fixed_____',
-};
+});
 
 export const ColorDimensionEditor: FC<StandardEditorProps<ColorDimensionConfig, any, any>> = (props) => {
   const { value, context, onChange } = props;
@@ -21,12 +22,12 @@ export const ColorDimensionEditor: FC<StandardEditorProps<ColorDimensionConfig, 
   const fieldName = value?.field;
   const isFixed = Boolean(!fieldName);
   const names = useFieldDisplayNames(context.data);
-  const selectOptions = useSelectOptions(names, fieldName, fixedColorOption);
+  const selectOptions = useSelectOptions(names, fieldName, fixedColorOption());
 
   const onSelectChange = useCallback(
     (selection: SelectableValue<string>) => {
       const field = selection.value;
-      if (field && field !== fixedColorOption.value) {
+      if (field && field !== fixedColorOption().value) {
         onChange({
           ...value,
           field,
@@ -53,7 +54,7 @@ export const ColorDimensionEditor: FC<StandardEditorProps<ColorDimensionConfig, 
     [onChange]
   );
 
-  const selectedOption = isFixed ? fixedColorOption : selectOptions.find((v) => v.value === fieldName);
+  const selectedOption = isFixed ? fixedColorOption() : selectOptions.find((v) => v.value === fieldName);
   return (
     <>
       <div className={styles.container}>

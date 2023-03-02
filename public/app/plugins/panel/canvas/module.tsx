@@ -50,7 +50,7 @@ export const plugin = new PanelPlugin<PanelOptions>(CanvasPanel)
         if (!(element instanceof FrameState)) {
           builder.addNestedOptions(
             getElementEditor({
-              category: [`Selected element (${element.options.name})`],
+              category: [`${t('plugins.canvas.selected-element', 'Selected Element')} (${element.options.name})`],
               element,
               scene: state.scene,
             })

@@ -8,9 +8,9 @@ import { fieldsByFrameRefIdItem } from './FieldsByFrameRefIdMatcher';
 import { FieldMatcherUIRegistryItem } from './types';
 
 export const fieldMatchersUI = new Registry<FieldMatcherUIRegistryItem<any>>(() => [
-  fieldNameMatcherItem,
-  fieldNameByRegexMatcherItem,
-  fieldTypeMatcherItem,
-  fieldsByFrameRefIdItem,
-  fieldNamesMatcherItem,
+  fieldNameMatcherItem(),
+  fieldNameByRegexMatcherItem(),
+  fieldTypeMatcherItem(),
+  fieldsByFrameRefIdItem(),
+  fieldNamesMatcherItem(),
 ]);

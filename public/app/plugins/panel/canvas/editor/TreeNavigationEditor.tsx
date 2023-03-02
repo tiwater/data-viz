@@ -6,6 +6,7 @@ import React, { Key, useEffect, useMemo, useState } from 'react';
 import { GrafanaTheme2, StandardEditorProps } from '@grafana/data';
 import { config } from '@grafana/runtime';
 import { Button, HorizontalGroup, Icon, useStyles2, useTheme2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { ElementState } from 'app/features/canvas/runtime/element';
 
 import { AddLayerButton } from '../../../../core/components/Layers/AddLayerButton';
@@ -49,12 +50,12 @@ export const TreeNavigationEditor = ({ item }: StandardEditorProps<any, TreeView
   }, [item?.settings?.scene.root, selectedBgColor, selection, selectionByUID]);
 
   if (!settings) {
-    return <div>No settings</div>;
+    return <div>{t('plugins.canvas.no-settings', 'No settings')}</div>;
   }
 
   const layer = settings.layer;
   if (!layer) {
-    return <div>Missing layer?</div>;
+    return <div>{t('plugins.canvas.missing-layer', 'Missing layer?')}</div>;
   }
 
   const onSelect = (selectedKeys: Key[], info: { node: { dataRef: ElementState } }) => {
@@ -94,7 +95,7 @@ export const TreeNavigationEditor = ({ item }: StandardEditorProps<any, TreeView
     return (
       <Icon
         name="angle-right"
-        title={'Node Icon'}
+        title={t('plugins.canvas.node-icon', 'Node Icon')}
         style={{
           transform: `rotate(${obj.expanded ? 90 : 0}deg)`,
           fill: theme.colors.text.primary,
@@ -149,16 +150,20 @@ export const TreeNavigationEditor = ({ item }: StandardEditorProps<any, TreeView
 
       <HorizontalGroup justify="space-between">
         <div className={styles.addLayerButton}>
-          <AddLayerButton onChange={(sel) => onAddItem(sel, layer)} options={typeOptions} label={'Add item'} />
+          <AddLayerButton
+            onChange={(sel) => onAddItem(sel, layer)}
+            options={typeOptions}
+            label={t('plugins.canvas.add-item', 'Add item')}
+          />
         </div>
         {selection.length > 0 && (
           <Button size="sm" variant="secondary" onClick={onClearSelection}>
-            Clear selection
+            {t('plugins.canvas.clear-selection', 'Clear selection')}
           </Button>
         )}
         {selection.length > 1 && config.featureToggles.canvasPanelNesting && (
           <Button size="sm" variant="secondary" onClick={onFrameSelection}>
-            Frame selection
+            {t('plugins.canvas.frame-selection', 'Frame selection')}
           </Button>
         )}
       </HorizontalGroup>

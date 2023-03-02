@@ -3,6 +3,7 @@ import React, { useCallback } from 'react';
 import { FieldNamePickerConfigSettings, StandardEditorProps, StandardEditorsRegistryItem } from '@grafana/data';
 import { InlineField, InlineFieldRow, RadioButtonGroup } from '@grafana/ui';
 import { FieldNamePicker } from '@grafana/ui/src/components/MatchersUI/FieldNamePicker';
+import { t } from 'app/core/internationalization';
 
 import { getPublicOrAbsoluteUrl, ResourceFolderName } from '..';
 import {
@@ -15,12 +16,6 @@ import {
 
 import { ResourcePicker } from './ResourcePicker';
 
-const resourceOptions = [
-  { label: 'Fixed', value: ResourceDimensionMode.Fixed, description: 'Fixed value' },
-  { label: 'Field', value: ResourceDimensionMode.Field, description: 'Use a string field result' },
-  //  { label: 'Mapping', value: ResourceDimensionMode.Mapping, description: 'Map the results of a value to an svg' },
-];
-
 const dummyFieldSettings: StandardEditorsRegistryItem<string, FieldNamePickerConfigSettings> = {
   settings: {},
 } as any;
@@ -28,6 +23,15 @@ const dummyFieldSettings: StandardEditorsRegistryItem<string, FieldNamePickerCon
 export const ResourceDimensionEditor = (
   props: StandardEditorProps<ResourceDimensionConfig, ResourceDimensionOptions, unknown>
 ) => {
+  const resourceOptions = [
+    { label: t('plugins.canvas.fixed', 'Fixed'), value: ResourceDimensionMode.Fixed, description: 'Fixed value' },
+    {
+      label: t('plugins.canvas.field', 'Field'),
+      value: ResourceDimensionMode.Field,
+      description: 'Use a string field result',
+    },
+    //  { label: 'Mapping', value: ResourceDimensionMode.Mapping, description: 'Map the results of a value to an svg' },
+  ];
   const { value, context, onChange, item } = props;
   const labelWidth = 9;
 
@@ -83,14 +87,14 @@ export const ResourceDimensionEditor = (
     <>
       {showSourceRadio && (
         <InlineFieldRow>
-          <InlineField label="Source" labelWidth={labelWidth} grow={true}>
+          <InlineField label={t('plugins.canvas.source', 'Source')} labelWidth={labelWidth} grow={true}>
             <RadioButtonGroup value={mode} options={resourceOptions} onChange={onModeChange} fullWidth />
           </InlineField>
         </InlineFieldRow>
       )}
       {mode !== ResourceDimensionMode.Fixed && (
         <InlineFieldRow>
-          <InlineField label="Field" labelWidth={labelWidth} grow={true}>
+          <InlineField label={t('plugins.canvas.field', 'Field')} labelWidth={labelWidth} grow={true}>
             <FieldNamePicker
               context={context}
               value={value.field ?? ''}
@@ -106,7 +110,7 @@ export const ResourceDimensionEditor = (
           onClear={onClear}
           value={value?.fixed}
           src={srcPath}
-          placeholder={item.settings?.placeholderText ?? 'Select a value'}
+          placeholder={item.settings?.placeholderText ?? t('plugins.canvas.select-a-value', 'Select a value')}
           name={niceName(value?.fixed) ?? ''}
           mediaType={mediaType}
           folderName={folderName}
@@ -115,8 +119,8 @@ export const ResourceDimensionEditor = (
       )}
       {mode === ResourceDimensionMode.Mapping && (
         <InlineFieldRow>
-          <InlineField label="Mappings" labelWidth={labelWidth} grow={true}>
-            <div>TODO mappings editor!</div>
+          <InlineField label={t('plugins.canvas.mappings', 'Mappings')} labelWidth={labelWidth} grow={true}>
+            <div>{t('plugins.canvas.mappings-editor', 'TODO mappings editor!')}</div>
           </InlineField>
         </InlineFieldRow>
       )}

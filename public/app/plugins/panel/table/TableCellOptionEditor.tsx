@@ -4,18 +4,10 @@ import React, { ReactNode, useState } from 'react';
 import { SelectableValue } from '@grafana/data';
 import { TableCellOptions } from '@grafana/schema';
 import { Field, HorizontalGroup, Select, TableCellDisplayMode } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { BarGaugeCellOptionsEditor } from './cells/BarGaugeCellOptionsEditor';
 import { ColorBackgroundCellOptionsEditor } from './cells/ColorBackgroundCellOptionsEditor';
-
-const cellDisplayModeOptions = [
-  { value: TableCellDisplayMode.Auto, label: 'Auto' },
-  { value: TableCellDisplayMode.ColorText, label: 'Colored text' },
-  { value: TableCellDisplayMode.ColorBackground, label: 'Colored background' },
-  { value: TableCellDisplayMode.Gauge, label: 'Gauge' },
-  { value: TableCellDisplayMode.JSONView, label: 'JSON View' },
-  { value: TableCellDisplayMode.Image, label: 'Image' },
-];
 
 // The props that any cell type editor are expected
 // to handle. In this case the generic type should
@@ -54,6 +46,14 @@ interface Props {
 }
 
 export const TableCellOptionEditor = ({ value, onChange }: Props) => {
+  const cellDisplayModeOptions = [
+    { value: TableCellDisplayMode.Auto, label: t('plugins.table-cell.auto', 'Auto') },
+    { value: TableCellDisplayMode.ColorText, label: t('plugins.table.colored-text', 'Colored text') },
+    { value: TableCellDisplayMode.ColorBackground, label: t('plugins.table.colored-background', 'Colored background') },
+    { value: TableCellDisplayMode.Gauge, label: t('plugins.table.gauge', 'Gauge') },
+    { value: TableCellDisplayMode.JSONView, label: t('plugins.table.JSON-View', 'JSON View') },
+    { value: TableCellDisplayMode.Image, label: t('plugins.table.image', 'Image') },
+  ];
   const cellType = value.type;
   let editor: ReactNode | null = null;
   let [settingCache, setSettingCache] = useState<SettingMap>({});

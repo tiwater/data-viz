@@ -394,6 +394,9 @@
         "there-are-no-alert-rules-linked-to-this-panel": ""
       }
     },
+    "canvas": {
+      "double-click-to-set-field": ""
+    },
     "dashboard": {
       "add-a-new-panel": "",
       "add-a-new-row": "",
@@ -427,6 +430,9 @@
       "do-you-want-to-delete": "",
       "documentation": "",
       "edit-panel": "",
+      "editor": {
+        "override": ""
+      },
       "enabled": "",
       "error-saving-dashboard": "",
       "failed-to-fetch-dashboard": "",
@@ -633,12 +639,16 @@
       "connect-null-values": "",
       "constant": "",
       "constantDescription": "",
+      "editor": {
+        "set-icon": ""
+      },
       "editors": {
         "boolean-false-values": "",
         "boolean-true-values": "",
         "empty": "",
         "empty-string": "",
         "exact-value-to-match": "",
+        "fixed-color": "",
         "matches-against-number": "",
         "matches-null-and-undefined-and-NaN": "",
         "matches-null-and-undefined-values": "",
@@ -1137,6 +1147,17 @@
       "saturday": "",
       "sunday": ""
     },
+    "matchers-ui": {
+      "enter-regular-expression": "",
+      "fields-returned-by-query": "",
+      "fields-with-name": "",
+      "fields-with-name-matching-regex": "",
+      "fields-with-type": "",
+      "set-properties-for-a-specific-field": "",
+      "set-properties-for-a-specific-field-number": "",
+      "set-properties-for-fields-from-a-specific-query": "",
+      "set-properties-for-fields-with-names-matching": ""
+    },
     "options": {
       "all": "",
       "ascending": "",
@@ -1189,6 +1210,9 @@
       "add-button": "",
       "new-tag": ""
     },
+    "tool-bar-buttom": {
+      "show-more-items": ""
+    },
     "u-plot": {
       "config": {
         "after": "",
@@ -1219,6 +1243,11 @@
         "step-after": "",
         "step-before": ""
       }
+    }
+  },
+  "granfana-ui": {
+    "matchers-ui": {
+      "select-field": ""
     }
   },
   "library-panel": {
@@ -1536,10 +1565,161 @@
     }
   },
   "plugins": {
+    "bar-gauge": {
+      "basic": "",
+      "display-mode": "",
+      "gradient": "",
+      "min-height": "",
+      "min-width": "",
+      "minimum-column-width": "",
+      "minimum-row-height": "",
+      "retro-LCD": "",
+      "show-unfilled-area": "",
+      "when-enabled-renders-the-unfilled": ""
+    },
+    "canvas": {
+      "add-item": "",
+      "align-text": "",
+      "auto": "",
+      "background": "",
+      "border": "",
+      "bottom": "",
+      "bring-to-front": "",
+      "canvas-item": "",
+      "center": "",
+      "clear-selection": "",
+      "close-editor": "",
+      "color": "",
+      "constraints": "",
+      "contain": "",
+      "cover": "",
+      "delete": "",
+      "display-a-field-value": "",
+      "display-text": "",
+      "duplicate": "",
+      "edit": "",
+      "element": "",
+      "element-management": "",
+      "elements": "",
+      "field": "",
+      "fill": "",
+      "fill-color": "",
+      "fixed": "",
+      "frame-selection": "",
+      "height": "",
+      "icon": "",
+      "image": "",
+      "image-size": "",
+      "layer": "",
+      "layout": "",
+      "left": "",
+      "left-right": "",
+      "mappings": "",
+      "mappings-editor": "",
+      "metric-value": "",
+      "middle": "",
+      "missing-layer": "",
+      "no-settings": "",
+      "node-icon": "",
+      "open-editor": "",
+      "original": "",
+      "please-select-an-element": "",
+      "position": "",
+      "quick-placement": "",
+      "rectangle": "",
+      "right": "",
+      "scale": "",
+      "select-a-value": "",
+      "selected-element": "",
+      "selected-element-type-is-not-supported": "",
+      "send-to-back": "",
+      "set-background": "",
+      "source": "",
+      "SVG-icon-display": "",
+      "SVG-path": "",
+      "template": "",
+      "text": "",
+      "text-color": "",
+      "text-size": "",
+      "tile": "",
+      "top": "",
+      "top-bottom": "",
+      "value": "",
+      "vertical-align": "",
+      "width": ""
+    },
+    "canvas-editor": {
+      "icon": "",
+      "metric-value": "",
+      "rectangle": "",
+      "text": ""
+    },
     "data-source": {
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": ""
       }
+    },
+    "gauge": {
+      "auto": "",
+      "gauge": "",
+      "leave-empty-to-use-Min-as-neutral-point": "",
+      "neutral": "",
+      "render-the-threshold-values": "",
+      "renders-the-thresholds-as-an-outer-bar": "",
+      "show-threshold-labels": "",
+      "show-threshold-markers": ""
+    },
+    "pie-chart": {
+      "donut": "",
+      "how-the-piechart-should-be-rendered": "",
+      "labels": "",
+      "legend": "",
+      "legend-values": "",
+      "name": "",
+      "percent": "",
+      "pie": "",
+      "pie-chart-type": "",
+      "select-the-labels-to-be-displayed": "",
+      "value": ""
+    },
+    "table": {
+      "all-numeric-fields": "",
+      "auto": "",
+      "background-display-mode": "",
+      "basic": "",
+      "calculation": "",
+      "cell-options": "",
+      "cell-type": "",
+      "cell-value-inspect": "",
+      "center": "",
+      "choose-a-reducer-function": "",
+      "colored-background": "",
+      "colored-text": "",
+      "column-alignment": "",
+      "column-filter": "",
+      "column-width": "",
+      "count-rows": "",
+      "disables-field-filters-in-table": "",
+      "display-a-single-count-for": "",
+      "enable-cell-value-inspection": "",
+      "enable-pagination": "",
+      "fields": "",
+      "gauge": "",
+      "gradient": "",
+      "hide-in-table": "",
+      "image": "",
+      "JSON-View": "",
+      "left": "",
+      "minimum-column-width": "",
+      "right": "",
+      "select-the-fields-that-should": "",
+      "show-table-footer": "",
+      "show-table-header": "",
+      "table-footer": "",
+      "the-minimum-width-for-column": ""
+    },
+    "table-cell": {
+      "auto": ""
     }
   },
   "refresh-picker": {

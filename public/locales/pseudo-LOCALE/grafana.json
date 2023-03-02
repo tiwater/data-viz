@@ -394,6 +394,9 @@
         "there-are-no-alert-rules-linked-to-this-panel": "Ŧĥęřę äřę ŉő äľęřŧ řūľęş ľįŉĸęđ ŧő ŧĥįş päŉęľ."
       }
     },
+    "canvas": {
+      "double-click-to-set-field": "Đőūþľę čľįčĸ ŧő şęŧ ƒįęľđ"
+    },
     "dashboard": {
       "add-a-new-panel": "Åđđ ä ŉęŵ päŉęľ",
       "add-a-new-row": "Åđđ ä ŉęŵ řőŵ",
@@ -427,6 +430,9 @@
       "do-you-want-to-delete": "Đő yőū ŵäŉŧ ŧő đęľęŧę ŧĥįş đäşĥþőäřđ?",
       "documentation": "đőčūmęŉŧäŧįőŉ",
       "edit-panel": "Ēđįŧ Päŉęľ",
+      "editor": {
+        "override": "Øvęřřįđę"
+      },
       "enabled": "Ēŉäþľęđ",
       "error-saving-dashboard": "Ēřřőř şävįŉģ đäşĥþőäřđ",
       "failed-to-fetch-dashboard": "Fäįľęđ ŧő ƒęŧčĥ đäşĥþőäřđ",
@@ -633,12 +639,16 @@
       "connect-null-values": "Cőŉŉęčŧ ŉūľľ väľūęş",
       "constant": "Cőŉşŧäŉŧ",
       "constantDescription": "Ŧĥę ƒįřşŧ väľūę ŵįľľ þę şĥőŵŉ äş ä čőŉşŧäŉŧ ľįŉę",
+      "editor": {
+        "set-icon": "Ŝęŧ įčőŉ"
+      },
       "editors": {
         "boolean-false-values": "ßőőľęäŉ ƒäľşę väľūęş",
         "boolean-true-values": "ßőőľęäŉ ŧřūę väľūęş",
         "empty": "Ēmpŧy",
         "empty-string": "Ēmpŧy şŧřįŉģ",
         "exact-value-to-match": "Ēχäčŧ väľūę ŧő mäŧčĥ",
+        "fixed-color": "Fįχęđ čőľőř",
         "matches-against-number": "Mäŧčĥęş äģäįŉşŧ Ńūmþęř.ŃäŃ (ŉőŧ ä ŉūmþęř)",
         "matches-null-and-undefined-and-NaN": "Mäŧčĥęş ŉūľľ, ūŉđęƒįŉęđ äŉđ ŃäŃ",
         "matches-null-and-undefined-values": "Mäŧčĥęş ŉūľľ äŉđ ūŉđęƒįŉęđ väľūęş",
@@ -1137,6 +1147,17 @@
       "saturday": "Ŝäŧūřđäy",
       "sunday": "Ŝūŉđäy"
     },
+    "matchers-ui": {
+      "enter-regular-expression": "Ēŉŧęř řęģūľäř ęχpřęşşįőŉ",
+      "fields-returned-by-query": "Fįęľđş řęŧūřŉęđ þy qūęřy",
+      "fields-with-name": "Fįęľđş ŵįŧĥ ŉämę",
+      "fields-with-name-matching-regex": "Fįęľđş ŵįŧĥ ŉämę mäŧčĥįŉģ řęģęχ",
+      "fields-with-type": "Fįęľđş ŵįŧĥ ŧypę",
+      "set-properties-for-a-specific-field": "Ŝęŧ přőpęřŧįęş ƒőř ä şpęčįƒįč ƒįęľđ",
+      "set-properties-for-a-specific-field-number": "Ŝęŧ přőpęřŧįęş ƒőř ƒįęľđş őƒ ä şpęčįƒįč ŧypę (ŉūmþęř, şŧřįŉģ, þőőľęäŉ)",
+      "set-properties-for-fields-from-a-specific-query": "Ŝęŧ přőpęřŧįęş ƒőř ƒįęľđş ƒřőm ä şpęčįƒįč qūęřy",
+      "set-properties-for-fields-with-names-matching": "Ŝęŧ přőpęřŧįęş ƒőř ƒįęľđş ŵįŧĥ ŉämęş mäŧčĥįŉģ ä řęģęχ"
+    },
     "options": {
       "all": "Åľľ",
       "ascending": "Åşčęŉđįŉģ",
@@ -1189,6 +1210,9 @@
       "add-button": "Åđđ",
       "new-tag": "Ńęŵ ŧäģ (ęŉŧęř ĸęy ŧő äđđ)"
     },
+    "tool-bar-buttom": {
+      "show-more-items": "Ŝĥőŵ mőřę įŧęmş"
+    },
     "u-plot": {
       "config": {
         "after": "Åƒŧęř",
@@ -1219,6 +1243,11 @@
         "step-after": "Ŝŧęp äƒŧęř",
         "step-before": "Ŝŧęp þęƒőřę"
       }
+    }
+  },
+  "granfana-ui": {
+    "matchers-ui": {
+      "select-field": "Ŝęľęčŧ ƒįęľđ"
     }
   },
   "library-panel": {
@@ -1536,10 +1565,161 @@
     }
   },
   "plugins": {
+    "bar-gauge": {
+      "basic": "ßäşįč",
+      "display-mode": "Đįşpľäy mőđę",
+      "gradient": "Ğřäđįęŉŧ",
+      "min-height": "Mįŉ ĥęįģĥŧ",
+      "min-width": "Mįŉ ŵįđŧĥ",
+      "minimum-column-width": "Mįŉįmūm čőľūmŉ ŵįđŧĥ",
+      "minimum-row-height": "Mįŉįmūm řőŵ ĥęįģĥŧ",
+      "retro-LCD": "Ŗęŧřő ĿCĐ",
+      "show-unfilled-area": "Ŝĥőŵ ūŉƒįľľęđ äřęä",
+      "when-enabled-renders-the-unfilled": "Ŵĥęŉ ęŉäþľęđ řęŉđęřş ŧĥę ūŉƒįľľęđ řęģįőŉ äş ģřäy"
+    },
+    "canvas": {
+      "add-item": "Åđđ įŧęm",
+      "align-text": "Åľįģŉ ŧęχŧ",
+      "auto": "Åūŧő",
+      "background": "ßäčĸģřőūŉđ",
+      "border": "ßőřđęř",
+      "bottom": "ßőŧŧőm",
+      "bring-to-front": "ßřįŉģ ŧő ƒřőŉŧ",
+      "canvas-item": "Cäŉväş įŧęm",
+      "center": "Cęŉŧęř",
+      "clear-selection": "Cľęäř şęľęčŧįőŉ",
+      "close-editor": "Cľőşę Ēđįŧőř",
+      "color": "Cőľőř",
+      "constraints": "Cőŉşŧřäįŉŧş",
+      "contain": "Cőŉŧäįŉ",
+      "cover": "Cővęř",
+      "delete": "Đęľęŧę",
+      "display-a-field-value": "Đįşpľäy ä ƒįęľđ väľūę",
+      "display-text": "Đįşpľäy ŧęχŧ",
+      "duplicate": "Đūpľįčäŧę",
+      "edit": "Ēđįŧ",
+      "element": "Ēľęmęŉŧ",
+      "element-management": "Ēľęmęŉŧ Mäŉäģęmęŉŧ",
+      "elements": "Ēľęmęŉŧş",
+      "field": "Fįęľđ",
+      "fill": "Fįľľ",
+      "fill-color": "Fįľľ čőľőř",
+      "fixed": "Fįχęđ",
+      "frame-selection": "Fřämę şęľęčŧįőŉ",
+      "height": "ĥęįģĥŧ",
+      "icon": "Ĩčőŉ",
+      "image": "Ĩmäģę",
+      "image-size": "Ĩmäģę şįžę",
+      "layer": "Ŀäyęř",
+      "layout": "Ŀäyőūŧ",
+      "left": "Ŀęƒŧ",
+      "left-right": "Ŀęƒŧ & řįģĥŧ",
+      "mappings": "Mäppįŉģş",
+      "mappings-editor": "ŦØĐØ mäppįŉģş ęđįŧőř!",
+      "metric-value": "Męŧřįč Väľūę",
+      "middle": "Mįđđľę",
+      "missing-layer": "Mįşşįŉģ ľäyęř?",
+      "no-settings": "Ńő şęŧŧįŉģş",
+      "node-icon": "Ńőđę Ĩčőŉ",
+      "open-editor": "Øpęŉ Ēđįŧőř",
+      "original": "Øřįģįŉäľ",
+      "please-select-an-element": "Pľęäşę şęľęčŧ äŉ ęľęmęŉŧ",
+      "position": "Pőşįŧįőŉ",
+      "quick-placement": "Qūįčĸ pľäčęmęŉŧ",
+      "rectangle": "Ŗęčŧäŉģľę",
+      "right": "Ŗįģĥŧ",
+      "scale": "Ŝčäľę",
+      "select-a-value": "Ŝęľęčŧ ä väľūę",
+      "selected-element": "Ŝęľęčŧęđ Ēľęmęŉŧ",
+      "selected-element-type-is-not-supported": "Ŝęľęčŧęđ ęľęmęŉŧ ŧypę įş ŉőŧ şūppőřŧęđ þy čūřřęŉŧ şęŧŧįŉģş. Pľęäşę ęŉäþľę äđväŉčęđ ęľęmęŉŧ ŧypęş.",
+      "send-to-back": "Ŝęŉđ ŧő þäčĸ",
+      "set-background": "Ŝęŧ þäčĸģřőūŉđ",
+      "source": "Ŝőūřčę",
+      "SVG-icon-display": "ŜVĞ Ĩčőŉ đįşpľäy",
+      "SVG-path": "ŜVĞ Päŧĥ",
+      "template": "Ŧęmpľäŧę",
+      "text": "Ŧęχŧ",
+      "text-color": "Ŧęχŧ čőľőř",
+      "text-size": "Ŧęχŧ şįžę",
+      "tile": "Ŧįľę",
+      "top": "Ŧőp",
+      "top-bottom": "Ŧőp & þőŧŧőm",
+      "value": "Väľūę",
+      "vertical-align": "Vęřŧįčäľ äľįģŉ",
+      "width": "ŵįđŧĥ"
+    },
+    "canvas-editor": {
+      "icon": "įčőŉ",
+      "metric-value": "męŧřįč-väľūę",
+      "rectangle": "řęčŧäŉģľę",
+      "text": "ŧęχŧ"
+    },
     "data-source": {
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": "Ŧĥįş đäşĥþőäřđ đőęş ŉőŧ ĥävę äŉy őŧĥęř päŉęľş. Åđđ qūęřįęş ŧő őŧĥęř päŉęľş äŉđ ŧřy äģäįŉ."
       }
+    },
+    "gauge": {
+      "auto": "äūŧő",
+      "gauge": "Ğäūģę",
+      "leave-empty-to-use-Min-as-neutral-point": "Ŀęävę ęmpŧy ŧő ūşę Mįŉ äş ŉęūŧřäľ pőįŉŧ",
+      "neutral": "Ńęūŧřäľ",
+      "render-the-threshold-values": "Ŗęŉđęř ŧĥę ŧĥřęşĥőľđ väľūęş äřőūŉđ ŧĥę ģäūģę þäř",
+      "renders-the-thresholds-as-an-outer-bar": "Ŗęŉđęřş ŧĥę ŧĥřęşĥőľđş äş äŉ őūŧęř þäř",
+      "show-threshold-labels": "Ŝĥőŵ ŧĥřęşĥőľđ ľäþęľş",
+      "show-threshold-markers": "Ŝĥőŵ ŧĥřęşĥőľđ mäřĸęřş"
+    },
+    "pie-chart": {
+      "donut": "Đőŉūŧ",
+      "how-the-piechart-should-be-rendered": "Ħőŵ ŧĥę pįęčĥäřŧ şĥőūľđ þę řęŉđęřęđ",
+      "labels": "Ŀäþęľş",
+      "legend": "Ŀęģęŉđ",
+      "legend-values": "Ŀęģęŉđ väľūęş",
+      "name": "Ńämę",
+      "percent": "Pęřčęŉŧ",
+      "pie": "Pįę",
+      "pie-chart-type": "Pįęčĥäřŧ ŧypę",
+      "select-the-labels-to-be-displayed": "Ŝęľęčŧ ŧĥę ľäþęľş ŧő þę đįşpľäyęđ įŉ ŧĥę pįę čĥäřŧ",
+      "value": "Väľūę"
+    },
+    "table": {
+      "all-numeric-fields": "Åľľ Ńūmęřįč Fįęľđş",
+      "auto": "äūŧő",
+      "background-display-mode": "ßäčĸģřőūŉđ đįşpľäy mőđę",
+      "basic": "ßäşįč",
+      "calculation": "Cäľčūľäŧįőŉ",
+      "cell-options": "Cęľľ Øpŧįőŉş",
+      "cell-type": "Cęľľ Ŧypę",
+      "cell-value-inspect": "Cęľľ väľūę įŉşpęčŧ",
+      "center": "čęŉŧęř",
+      "choose-a-reducer-function": "Cĥőőşę ä řęđūčęř ƒūŉčŧįőŉ / čäľčūľäŧįőŉ",
+      "colored-background": "Cőľőřęđ þäčĸģřőūŉđ",
+      "colored-text": "Cőľőřęđ ŧęχŧ",
+      "column-alignment": "Cőľūmŉ äľįģŉmęŉŧ",
+      "column-filter": "Cőľūmŉ ƒįľŧęř",
+      "column-width": "Cőľūmŉ ŵįđŧĥ",
+      "count-rows": "Cőūŉŧ řőŵş",
+      "disables-field-filters-in-table": "Ēŉäþľęş/đįşäþľęş ƒįęľđ ƒįľŧęřş įŉ ŧäþľę",
+      "display-a-single-count-for": "Đįşpľäy ä şįŉģľę čőūŉŧ ƒőř äľľ đäŧä řőŵş",
+      "enable-cell-value-inspection": "Ēŉäþľę čęľľ väľūę įŉşpęčŧįőŉ įŉ ä mőđäľ ŵįŉđőŵ",
+      "enable-pagination": "Ēŉäþľę päģįŉäŧįőŉ",
+      "fields": "Fįęľđş",
+      "gauge": "Ğäūģę",
+      "gradient": "Ğřäđįęŉŧ",
+      "hide-in-table": "Ħįđę įŉ ŧäþľę",
+      "image": "Ĩmäģę",
+      "JSON-View": "ĴŜØŃ Vįęŵ",
+      "left": "ľęƒŧ",
+      "minimum-column-width": "Mįŉįmūm čőľūmŉ ŵįđŧĥ",
+      "right": "řįģĥŧ",
+      "select-the-fields-that-should": "Ŝęľęčŧ ŧĥę ƒįęľđş ŧĥäŧ şĥőūľđ þę čäľčūľäŧęđ",
+      "show-table-footer": "Ŝĥőŵ ŧäþľę ƒőőŧęř",
+      "show-table-header": "Ŝĥőŵ ŧäþľę ĥęäđęř",
+      "table-footer": "Ŧäþľę ƒőőŧęř",
+      "the-minimum-width-for-column": "Ŧĥę mįŉįmūm ŵįđŧĥ ƒőř čőľūmŉ äūŧő řęşįžįŉģ"
+    },
+    "table-cell": {
+      "auto": "Åūŧő"
     }
   },
   "refresh-picker": {

@@ -3,6 +3,7 @@ import { isString } from 'lodash';
 import React, { CSSProperties } from 'react';
 import SVG from 'react-inlinesvg';
 
+import { t } from 'app/core/internationalization';
 import {
   ColorDimensionConfig,
   ResourceDimensionConfig,
@@ -68,10 +69,10 @@ export function IconDisplay(props: CanvasElementProps) {
   );
 }
 
-export const iconItem: CanvasElementItem<IconConfig, IconData> = {
+export const iconItem = (): CanvasElementItem<IconConfig, IconData> => ({
   id: 'icon',
-  name: 'Icon',
-  description: 'SVG Icon display',
+  name: t('plugins.canvas.icon', 'Icon'),
+  description: t('plugins.canvas.SVG-icon-display', 'SVG Icon display'),
 
   display: IconDisplay,
 
@@ -130,7 +131,7 @@ export const iconItem: CanvasElementItem<IconConfig, IconData> = {
         category,
         id: 'iconSelector',
         path: 'config.path',
-        name: 'SVG Path',
+        name: t('plugins.canvas.SVG-path', 'SVG Path'),
         editor: ResourceDimensionEditor,
         settings: {
           resourceType: 'icon',
@@ -140,7 +141,7 @@ export const iconItem: CanvasElementItem<IconConfig, IconData> = {
         category,
         id: 'config.fill',
         path: 'config.fill',
-        name: 'Fill color',
+        name: t('plugins.canvas.fill-color', 'Fill color'),
         editor: ColorDimensionEditor,
         settings: {},
         defaultValue: {
@@ -179,4 +180,4 @@ export const iconItem: CanvasElementItem<IconConfig, IconData> = {
     //   editor: APIEditor,
     // });
   },
-};
+});

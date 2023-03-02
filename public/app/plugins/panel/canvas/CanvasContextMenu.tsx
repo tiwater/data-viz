@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 
 import { SelectableValue } from '@grafana/data';
 import { ContextMenu, MenuItem, MenuItemProps } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { Scene } from 'app/features/canvas/runtime/scene';
 
 import { ElementState } from '../../../features/canvas/runtime/element';
@@ -71,7 +72,11 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
   const renderMenuItems = () => {
     const openCloseEditorMenuItem = !scene.isPanelEditing && (
       <MenuItem
-        label={inlineEditorOpen ? 'Close Editor' : 'Open Editor'}
+        label={
+          inlineEditorOpen
+            ? t('plugins.canvas.close-editor', 'Close Editor')
+            : t('plugins.canvas.open-editor', 'Open Editor')
+        }
         onClick={() => {
           if (scene.inlineEditingCallback) {
             if (inlineEditorOpen) {
@@ -97,7 +102,11 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
         return (
           element &&
           element.item.hasEditMode && (
-            <MenuItem label="Edit" onClick={onClickEditElementMenuItem} className={styles.menuItem} />
+            <MenuItem
+              label={t('plugins.canvas.edit', 'Edit')}
+              onClick={onClickEditElementMenuItem}
+              className={styles.menuItem}
+            />
           )
         );
       }
@@ -129,7 +138,11 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
 
       typeOptions.map((option) => {
         submenuItems.push(
-          <MenuItem key={option.value} label={option.label ?? 'Canvas item'} onClick={() => onClickItem(option)} />
+          <MenuItem
+            key={option.value}
+            label={option.label ?? t('plugins.canvas.canvas-item', 'Canvas item')}
+            onClick={() => onClickItem(option)}
+          />
         );
       });
 
@@ -138,7 +151,7 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
 
     const addItemMenuItem = !scene.isPanelEditing && (
       <MenuItem
-        label="Add item"
+        label={t('plugins.canvas.add-item', 'Add item')}
         className={styles.menuItem}
         childItems={getTypeOptionsSubmenu()}
         customSubMenuContainerStyles={{ maxHeight: '150px', overflowY: 'auto' }}
@@ -147,7 +160,7 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
 
     const setBackgroundMenuItem = !scene.isPanelEditing && (
       <MenuItem
-        label={'Set background'}
+        label={t('plugins.canvas.set-background', 'Set background')}
         onClick={() => {
           if (scene.setBackgroundCallback) {
             scene.setBackgroundCallback(anchorPoint);
@@ -163,7 +176,7 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
         <>
           {editElementMenuItem()}
           <MenuItem
-            label="Delete"
+            label={t('plugins.canvas.delete', 'Delete')}
             onClick={() => {
               contextMenuAction(LayerActionID.Delete);
               closeContextMenu();
@@ -171,7 +184,7 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
             className={styles.menuItem}
           />
           <MenuItem
-            label="Duplicate"
+            label={t('plugins.canvas.duplicate', 'Duplicate')}
             onClick={() => {
               contextMenuAction(LayerActionID.Duplicate);
               closeContextMenu();
@@ -179,7 +192,7 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
             className={styles.menuItem}
           />
           <MenuItem
-            label="Bring to front"
+            label={t('plugins.canvas.bring-to-front', 'Bring to front')}
             onClick={() => {
               contextMenuAction(LayerActionID.MoveTop);
               closeContextMenu();
@@ -187,7 +200,7 @@ export const CanvasContextMenu = ({ scene, panel }: Props) => {
             className={styles.menuItem}
           />
           <MenuItem
-            label="Send to back"
+            label={t('plugins.canvas.send-to-back', 'Send to back')}
             onClick={() => {
               contextMenuAction(LayerActionID.MoveBottom);
               closeContextMenu();

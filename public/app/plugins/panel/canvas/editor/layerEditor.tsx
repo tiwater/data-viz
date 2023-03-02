@@ -1,6 +1,7 @@
 import { get as lodashGet } from 'lodash';
 
 import { NestedPanelOptions, NestedValueAccess } from '@grafana/data/src/utils/OptionsUIBuilders';
+import { t } from 'app/core/internationalization';
 import { ElementState } from 'app/features/canvas/runtime/element';
 import { FrameState } from 'app/features/canvas/runtime/frame';
 import { Scene } from 'app/features/canvas/runtime/scene';
@@ -42,7 +43,7 @@ export function getLayerEditor(opts: InstanceState): NestedPanelOptions<LayerEdi
   const options = scene.currentLayer.options || { elements: [] };
 
   return {
-    category: ['Layer'],
+    category: [t('plugins.canvas.layer', 'Layer')],
     path: '--', // not used!
 
     // Note that canvas editor writes things to the scene!
@@ -71,7 +72,7 @@ export function getLayerEditor(opts: InstanceState): NestedPanelOptions<LayerEdi
       builder.addCustomEditor({
         id: 'content',
         path: 'root',
-        name: 'Elements',
+        name: t('plugins.canvas.elements', 'Elements'),
         editor: TreeNavigationEditor,
         settings: { scene, layer: scene.currentLayer, selected },
       });
@@ -82,7 +83,7 @@ export function getLayerEditor(opts: InstanceState): NestedPanelOptions<LayerEdi
 
       if (currentLayer && !currentLayer.isRoot()) {
         builder.addCustomEditor({
-          category: ['Layout'],
+          category: [t('plugins.canvas.layout', 'Layout')],
           id: 'content',
           path: '__', // not used
           name: 'Constraints',
