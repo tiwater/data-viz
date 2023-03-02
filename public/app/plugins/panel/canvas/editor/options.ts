@@ -18,7 +18,13 @@ const getCategoryName = (str: string, type: string | undefined) => {
 
 export const optionBuilder: OptionSuppliers = {
   addBackground: (builder, context) => {
-    const category = getCategoryName(t('plugins.canvas.background', 'Background'), context.options?.type);
+    const typeText: { [key: string]: string } = {
+      text: t('plugins.canvas-editor.text', 'text'),
+      rectangle: t('plugins.canvas-editor.rectangle', 'rectangle'),
+      'metric-value': t('plugins.canvas-editor.metric-value', 'metric-value'),
+      icon: t('plugins.canvas-editor.icon', 'icon'),
+    };
+    const category = getCategoryName(t('plugins.canvas.background', 'Background'), typeText[context.options?.type]);
     builder
       .addCustomEditor({
         category,
@@ -55,7 +61,13 @@ export const optionBuilder: OptionSuppliers = {
   },
 
   addBorder: (builder, context) => {
-    const category = getCategoryName(t('plugins.canvas.border', 'Border'), context.options?.type);
+    const typeText: { [key: string]: string } = {
+      text: t('plugins.canvas-editor.text', 'text'),
+      rectangle: t('plugins.canvas-editor.rectangle', 'rectangle'),
+      'metric-value': t('plugins.canvas-editor.metric-value', 'metric-value'),
+      icon: t('plugins.canvas-editor.icon', 'icon'),
+    };
+    const category = getCategoryName(t('plugins.canvas.border', 'Border'), typeText[context.options?.type]);
     builder.addSliderInput({
       category,
       path: 'border.width',
