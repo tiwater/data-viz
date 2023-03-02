@@ -431,7 +431,10 @@
       "documentation": "đőčūmęŉŧäŧįőŉ",
       "edit-panel": "Ēđįŧ Päŉęľ",
       "editor": {
-        "override": "Øvęřřįđę"
+        "click-to-change-visualization": "Cľįčĸ ŧő čĥäŉģę vįşūäľįžäŧįőŉ",
+        "close-options-pane": "Cľőşę őpŧįőŉş päŉę",
+        "override": "Øvęřřįđę",
+        "show-options-pane": "Ŝĥőŵ őpŧįőŉş päŉę"
       },
       "enabled": "Ēŉäþľęđ",
       "error-saving-dashboard": "Ēřřőř şävįŉģ đäşĥþőäřđ",

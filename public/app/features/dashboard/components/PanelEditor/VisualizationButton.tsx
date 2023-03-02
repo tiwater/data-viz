@@ -3,6 +3,7 @@ import React from 'react';
 
 import { selectors } from '@grafana/e2e-selectors';
 import { ToolbarButton, ButtonGroup } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { useDispatch, useSelector } from 'app/types';
 import { setPluginMeta } from 'app/utils';
 
@@ -39,7 +40,7 @@ export const VisualizationButton = ({ panel }: Props) => {
       <ButtonGroup>
         <ToolbarButton
           className={styles.vizButton}
-          tooltip="Click to change visualization"
+          tooltip={t('features.dashboard.editor.click-to-change-visualization', 'Click to change visualization')}
           imgSrc={plugin.meta.info.logos.small}
           isOpen={isVizPickerOpen}
           onClick={onToggleOpen}
@@ -50,7 +51,11 @@ export const VisualizationButton = ({ panel }: Props) => {
           {plugin.meta.name}
         </ToolbarButton>
         <ToolbarButton
-          tooltip={isPanelOptionsVisible ? 'Close options pane' : 'Show options pane'}
+          tooltip={
+            isPanelOptionsVisible
+              ? t('features.dashboard.editor.close-options-pane', 'Close options pane')
+              : t('features.dashboard.editor.show-options-pane', 'Show options pane')
+          }
           icon={isPanelOptionsVisible ? 'angle-right' : 'angle-left'}
           onClick={onToggleOptionsPane}
           variant="canvas"

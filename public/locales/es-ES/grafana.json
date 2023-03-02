@@ -431,7 +431,10 @@
       "documentation": "",
       "edit-panel": "",
       "editor": {
-        "override": ""
+        "click-to-change-visualization": "",
+        "close-options-pane": "",
+        "override": "",
+        "show-options-pane": ""
       },
       "enabled": "",
       "error-saving-dashboard": "",

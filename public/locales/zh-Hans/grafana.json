@@ -431,7 +431,10 @@
       "documentation": "文档",
       "edit-panel": "编辑面板",
       "editor": {
-        "override": "覆盖"
+        "click-to-change-visualization": "点击更改可视化",
+        "close-options-pane": "关闭选项面板",
+        "override": "覆盖",
+        "show-options-pane": "显示选项面板"
       },
       "enabled": "启用",
       "error-saving-dashboard": "保存看板时出错",
@@ -1481,7 +1484,7 @@
   },
   "navigation": {
     "kiosk": {
-      "tv-alert": "按 ESC 退出 kiosk 模式"
+      "tv-alert": "按 ESC 退出全屏模式"
     }
   },
   "news": {

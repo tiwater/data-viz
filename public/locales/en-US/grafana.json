@@ -431,7 +431,10 @@
       "documentation": "documentation",
       "edit-panel": "Edit Panel",
       "editor": {
-        "override": "Override"
+        "click-to-change-visualization": "Click to change visualization",
+        "close-options-pane": "Close options pane",
+        "override": "Override",
+        "show-options-pane": "Show options pane"
       },
       "enabled": "Enabled",
       "error-saving-dashboard": "Error saving dashboard",
