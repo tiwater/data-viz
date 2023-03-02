@@ -137,6 +137,18 @@
         "inline-editing": "内联编辑",
         "show-advanced-element-types": "显示高级元素类型"
       },
+      "dashboard": {
+        "all-data": "全部数据",
+        "annotations": "说明",
+        "apply-panel-transformations-from": "应用源面板转换",
+        "choose-panel": "选择面板",
+        "data": "数据",
+        "include-annotations-as-regular": "包含批注作为常规数据",
+        "queries": "查询",
+        "source": "源",
+        "transform": "转换",
+        "use-the-same-results-as-panel": "使用与面板相同的结果"
+      },
       "first-string-or-time-field": "首个字符串或时间字段",
       "panel": {
         "always": "总是",
@@ -615,7 +627,20 @@
       "constant": "常量",
       "constantDescription": "第一个值将显示为常量行",
       "editors": {
+        "boolean-false-values": "布尔值 false",
+        "boolean-true-values": "布尔值 true",
+        "empty": "空",
+        "empty-string": "空字符串",
         "exact-value-to-match": "精确值匹配",
+        "matches-against-number": "匹配 Number.NaN (非数字)",
+        "matches-null-and-undefined-and-NaN": "匹配空、 未定义的 NaN",
+        "matches-null-and-undefined-values": "匹配无效和未定义的值",
+        "optional-display-text": "可选显示文本",
+        "range-end": "结束范围",
+        "range-start": "开始范围",
+        "regular-expression": "正则表达式",
+        "remove-color": "移除颜色",
+        "remove-icon": "移除图标",
         "set-color": "设置颜色"
       },
       "fill-below-to": "填写以下内容",
@@ -699,6 +724,18 @@
     "library-panels": {
       "create-new-library-panel": "创建新的面板库",
       "no-library-panels-found": "没有找到面板库。"
+    },
+    "live": {
+      "dashboard": {
+        "continue-editing": "继续编辑",
+        "dashboard-changed": "看板已更改",
+        "discard-local-changes": "放弃本地更改",
+        "keep-your-local-changes-and-continue": "保留您的本地更改并继续编辑。注意：保存时将覆盖最近的更改",
+        "load-the-latest-saved-version": "加载此看板的最新保存版本",
+        "this-dashboard-has-been-deleted": "此看板已被另一个会话删除",
+        "this-dashboard-has-been-modifed": "此看已被另一个会话修改",
+        "view-grafana-homepage": "查看 Ticos 主页"
+      }
     },
     "panel": {
       "viz-type-picker": {

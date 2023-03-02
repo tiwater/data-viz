@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react';
 import { GrafanaTheme2 } from '@grafana/data';
 import { config } from '@grafana/runtime';
 import { Modal, stylesFactory } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { dashboardWatcher } from './dashboardWatcher';
 import { DashboardEvent, DashboardEventAction } from './types';
@@ -26,8 +27,11 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
   state: State = {};
 
   discardAndReload: ActionInfo = {
-    label: 'Discard local changes',
-    description: 'Load the latest saved version for this dashboard',
+    label: t('features.live.dashboard.discard-local-changes', 'Discard Local changes'),
+    description: t(
+      'features.live.dashboard.load-the-latest-saved-version',
+      'Load the latest saved version for this dashboard'
+    ),
     action: () => {
       dashboardWatcher.reloadPage();
       this.onDismiss();
@@ -35,17 +39,19 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
   };
 
   continueEditing: ActionInfo = {
-    label: 'Continue editing',
-    description:
-      'Keep your local changes and continue editing.  Note: when you save, this will overwrite the most recent changes',
+    label: t('features.live.dashboard.continue-editing', 'Continue editing'),
+    description: t(
+      'features.live.dashboard.keep-your-local-changes-and-continue',
+      'Keep your local changes and continue editing.  Note: when you save, this will overwrite the most recent changes'
+    ),
     action: () => {
       this.onDismiss();
     },
   };
 
   acceptDelete: ActionInfo = {
-    label: 'Discard Local changes',
-    description: 'view grafana homepage',
+    label: t('features.live.dashboard.discard-local-changes', 'Discard Local changes'),
+    description: t('features.live.dashboard.view-grafana-homepage', 'view grafana homepage'),
     action: () => {
       // Navigate to the root URL
       document.location.href = config.appUrl;
@@ -70,7 +76,7 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
     return (
       <Modal
         isOpen={!dismiss}
-        title="Dashboard Changed"
+        title={t('features.live.dashboard.dashboard-changed', 'Dashboard Changed')}
         icon="copy"
         onDismiss={this.onDismiss}
         onClickBackdrop={() => {}}
@@ -78,9 +84,19 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
       >
         <div>
           {isDelete ? (
-            <div>This dashboard has been deleted by another session</div>
+            <div>
+              {t(
+                'features.live.dashboard.this-dashboard-has-been-deleted',
+                'This dashboard has been deleted by another session'
+              )}
+            </div>
           ) : (
-            <div>This dashboard has been modifed by another session</div>
+            <div>
+              {t(
+                'features.live.dashboard.this-dashboard-has-been-modifed',
+                'This dashboard has been modifed by another session'
+              )}
+            </div>
           )}
           <br />
           {options.map((opt) => {

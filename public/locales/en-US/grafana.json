@@ -137,6 +137,18 @@
         "inline-editing": "Inline editing",
         "show-advanced-element-types": "Show advanced element types"
       },
+      "dashboard": {
+        "all-data": "All data",
+        "annotations": "Annotations",
+        "apply-panel-transformations-from": "Apply panel transformations from the source panel",
+        "choose-panel": "Choose panel",
+        "data": "Data",
+        "include-annotations-as-regular": "Include annotations as regular data",
+        "queries": "Queries",
+        "source": "Source",
+        "transform": "Transform",
+        "use-the-same-results-as-panel": "Use the same results as panel"
+      },
       "first-string-or-time-field": "First string or time field",
       "panel": {
         "always": "Always",
@@ -615,7 +627,20 @@
       "constant": "Constant",
       "constantDescription": "The first value will be shown as a constant line",
       "editors": {
+        "boolean-false-values": "Boolean false values",
+        "boolean-true-values": "Boolean true values",
+        "empty": "Empty",
+        "empty-string": "Empty string",
         "exact-value-to-match": "Exact value to match",
+        "matches-against-number": "Matches against Number.NaN (not a number)",
+        "matches-null-and-undefined-and-NaN": "Matches null, undefined and NaN",
+        "matches-null-and-undefined-values": "Matches null and undefined values",
+        "optional-display-text": "Optional display text",
+        "range-end": "Range end",
+        "range-start": "Range start",
+        "regular-expression": "Regular expression",
+        "remove-color": "Remove color",
+        "remove-icon": "Remove icon",
         "set-color": "Set color"
       },
       "fill-below-to": "Fill below to",
@@ -699,6 +724,18 @@
     "library-panels": {
       "create-new-library-panel": "Create new library panel",
       "no-library-panels-found": "No library panels found."
+    },
+    "live": {
+      "dashboard": {
+        "continue-editing": "Continue editing",
+        "dashboard-changed": "Dashboard Changed",
+        "discard-local-changes": "Discard Local changes",
+        "keep-your-local-changes-and-continue": "Keep your local changes and continue editing.  Note: when you save, this will overwrite the most recent changes",
+        "load-the-latest-saved-version": "Load the latest saved version for this dashboard",
+        "this-dashboard-has-been-deleted": "This dashboard has been deleted by another session",
+        "this-dashboard-has-been-modifed": "This dashboard has been modifed by another session",
+        "view-grafana-homepage": "view grafana homepage"
+      }
     },
     "panel": {
       "viz-type-picker": {

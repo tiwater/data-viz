@@ -137,6 +137,18 @@
         "inline-editing": "",
         "show-advanced-element-types": ""
       },
+      "dashboard": {
+        "all-data": "",
+        "annotations": "",
+        "apply-panel-transformations-from": "",
+        "choose-panel": "",
+        "data": "",
+        "include-annotations-as-regular": "",
+        "queries": "",
+        "source": "",
+        "transform": "",
+        "use-the-same-results-as-panel": ""
+      },
       "first-string-or-time-field": "",
       "panel": {
         "always": "",
@@ -615,7 +627,20 @@
       "constant": "",
       "constantDescription": "",
       "editors": {
+        "boolean-false-values": "",
+        "boolean-true-values": "",
+        "empty": "",
+        "empty-string": "",
         "exact-value-to-match": "",
+        "matches-against-number": "",
+        "matches-null-and-undefined-and-NaN": "",
+        "matches-null-and-undefined-values": "",
+        "optional-display-text": "",
+        "range-end": "",
+        "range-start": "",
+        "regular-expression": "",
+        "remove-color": "",
+        "remove-icon": "",
         "set-color": ""
       },
       "fill-below-to": "",
@@ -699,6 +724,18 @@
     "library-panels": {
       "create-new-library-panel": "",
       "no-library-panels-found": ""
+    },
+    "live": {
+      "dashboard": {
+        "continue-editing": "",
+        "dashboard-changed": "",
+        "discard-local-changes": "",
+        "keep-your-local-changes-and-continue": "",
+        "load-the-latest-saved-version": "",
+        "this-dashboard-has-been-deleted": "",
+        "this-dashboard-has-been-modifed": "",
+        "view-grafana-homepage": ""
+      }
     },
     "panel": {
       "viz-type-picker": {

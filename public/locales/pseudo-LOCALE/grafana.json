@@ -137,6 +137,18 @@
         "inline-editing": "Ĩŉľįŉę ęđįŧįŉģ",
         "show-advanced-element-types": "Ŝĥőŵ äđväŉčęđ ęľęmęŉŧ ŧypęş"
       },
+      "dashboard": {
+        "all-data": "Åľľ đäŧä",
+        "annotations": "Åŉŉőŧäŧįőŉş",
+        "apply-panel-transformations-from": "Åppľy päŉęľ ŧřäŉşƒőřmäŧįőŉş ƒřőm ŧĥę şőūřčę päŉęľ",
+        "choose-panel": "Cĥőőşę päŉęľ",
+        "data": "Đäŧä",
+        "include-annotations-as-regular": "Ĩŉčľūđę äŉŉőŧäŧįőŉş äş řęģūľäř đäŧä",
+        "queries": "Qūęřįęş",
+        "source": "Ŝőūřčę",
+        "transform": "Ŧřäŉşƒőřm",
+        "use-the-same-results-as-panel": "Ůşę ŧĥę şämę řęşūľŧş äş päŉęľ"
+      },
       "first-string-or-time-field": "Fįřşŧ şŧřįŉģ őř ŧįmę ƒįęľđ",
       "panel": {
         "always": "Åľŵäyş",
@@ -615,7 +627,20 @@
       "constant": "Cőŉşŧäŉŧ",
       "constantDescription": "Ŧĥę ƒįřşŧ väľūę ŵįľľ þę şĥőŵŉ äş ä čőŉşŧäŉŧ ľįŉę",
       "editors": {
+        "boolean-false-values": "ßőőľęäŉ ƒäľşę väľūęş",
+        "boolean-true-values": "ßőőľęäŉ ŧřūę väľūęş",
+        "empty": "Ēmpŧy",
+        "empty-string": "Ēmpŧy şŧřįŉģ",
         "exact-value-to-match": "Ēχäčŧ väľūę ŧő mäŧčĥ",
+        "matches-against-number": "Mäŧčĥęş äģäįŉşŧ Ńūmþęř.ŃäŃ (ŉőŧ ä ŉūmþęř)",
+        "matches-null-and-undefined-and-NaN": "Mäŧčĥęş ŉūľľ, ūŉđęƒįŉęđ äŉđ ŃäŃ",
+        "matches-null-and-undefined-values": "Mäŧčĥęş ŉūľľ äŉđ ūŉđęƒįŉęđ väľūęş",
+        "optional-display-text": "Øpŧįőŉäľ đįşpľäy ŧęχŧ",
+        "range-end": "Ŗäŉģę ęŉđ",
+        "range-start": "Ŗäŉģę şŧäřŧ",
+        "regular-expression": "Ŗęģūľäř ęχpřęşşįőŉ",
+        "remove-color": "Ŗęmővę čőľőř",
+        "remove-icon": "Ŗęmővę įčőŉ",
         "set-color": "Ŝęŧ čőľőř"
       },
       "fill-below-to": "Fįľľ þęľőŵ ŧő",
@@ -699,6 +724,18 @@
     "library-panels": {
       "create-new-library-panel": "Cřęäŧę ŉęŵ ľįþřäřy päŉęľ",
       "no-library-panels-found": "Ńő ľįþřäřy päŉęľş ƒőūŉđ."
+    },
+    "live": {
+      "dashboard": {
+        "continue-editing": "Cőŉŧįŉūę ęđįŧįŉģ",
+        "dashboard-changed": "Đäşĥþőäřđ Cĥäŉģęđ",
+        "discard-local-changes": "Đįşčäřđ Ŀőčäľ čĥäŉģęş",
+        "keep-your-local-changes-and-continue": "Ķęęp yőūř ľőčäľ čĥäŉģęş äŉđ čőŉŧįŉūę ęđįŧįŉģ.  Ńőŧę: ŵĥęŉ yőū şävę, ŧĥįş ŵįľľ ővęřŵřįŧę ŧĥę mőşŧ řęčęŉŧ čĥäŉģęş",
+        "load-the-latest-saved-version": "Ŀőäđ ŧĥę ľäŧęşŧ şävęđ vęřşįőŉ ƒőř ŧĥįş đäşĥþőäřđ",
+        "this-dashboard-has-been-deleted": "Ŧĥįş đäşĥþőäřđ ĥäş þęęŉ đęľęŧęđ þy äŉőŧĥęř şęşşįőŉ",
+        "this-dashboard-has-been-modifed": "Ŧĥįş đäşĥþőäřđ ĥäş þęęŉ mőđįƒęđ þy äŉőŧĥęř şęşşįőŉ",
+        "view-grafana-homepage": "vįęŵ ģřäƒäŉä ĥőmępäģę"
+      }
     },
     "panel": {
       "viz-type-picker": {
