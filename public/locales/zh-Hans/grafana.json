@@ -316,8 +316,8 @@
     "channel-label": "渠道",
     "enter-channel-name": "输入渠道名称",
     "fields-label": "字段",
-    "grafana-live-measurements-options": "Grafana实时-测量",
-    "grafana-search": "搜索 Grafana",
+    "grafana-live-measurements-options": "实时-测量",
+    "grafana-search": "搜索",
     "list-public-files-options": "列出公共文件",
     "live-measurements-options": "实时测量",
     "path-label": "路径",
@@ -327,8 +327,8 @@
     "select-folder-placeholder": "选择目录",
     "select-measurements-channel-placeholder": "选择测量渠道",
     "show-directory-listings-for-public-resources": "显示公共资源的目录列表",
-    "stream-real-time-measurements-from-grafana": "从Grafana流式传输实时测量",
-    "this-supports-real-time-event-streams": "此功能支持Grafana核心中的实时事件流。这项功能正处于紧张的开发中。预计随着这项功能越来越适合生产，接口和结构将发生变化。",
+    "stream-real-time-measurements-from-grafana": "流式传输实时测量",
+    "this-supports-real-time-event-streams": "此功能支持实时事件流。这项功能正处于紧张的开发中。预计随着这项功能越来越适合生产，接口和结构将发生变化。",
     "unable-to-list-all-fields": "无法列出所有字段",
     "using-this-datasource-to-call": "使用此数据源调用新的搜索系统是实验性的，并可随时在不事先通知的情况下更改。"
   },
@@ -342,7 +342,7 @@
     "welcome": "欢迎"
   },
   "explore": {
-    "add-panel-to": "添加面板至",
+    "add-panel-to": "添加到",
     "add-query-button": "新增查询",
     "add-to-dashboard-button": "添加到看板",
     "cancel-button": "取消",
@@ -350,6 +350,9 @@
     "close-button": "关闭",
     "close-split-pane-button": "关闭",
     "copy-short-link-tooltip": "拷贝短链接",
+    "could-not-add-panel-to-dashboard": "无法将面板添加到看板。请重试。",
+    "could-not-fetch-dashboard": "无法获取看板信息，请重试。",
+    "could-not-navigate-to-the-selected-dashboard": "无法导航到选中的看板，请重试。",
     "error-adding-the-panel": "添加面板时出错",
     "existing-dashboard": "现有看板",
     "inspector-button": "检查",
@@ -362,6 +365,7 @@
     },
     "run-query-button": "运行查询",
     "select-in-which-dashboard": "选择将要创建面板的看板",
+    "something-went-wrong": "出错了，请重试。",
     "split-button": "拆分",
     "split-pane-tooltip": "拆分区域",
     "target-dashboard-label": "目标看板",
@@ -398,6 +402,7 @@
       "add-panel": "添加面板",
       "add-panel-from-panel-library": "从面板库中添加面板",
       "add-permission": "添加权限",
+      "all-unsaved-changes-will-be-lost": "所有未保存的更改都将丢失。",
       "angular-support-disabled": "角度支持禁用，没有角度支持，旧版提醒无法运行",
       "annotation": {
         "apply-button": "应用",
@@ -405,16 +410,16 @@
         "preview-in-dashboard-button": "在看板预览"
       },
       "annotation-queries-can-be-toggled": "批注查询可以在仪表板顶部切换或关闭。选中此选项将隐藏此项。",
-      "annotations-documentation": "注释文档",
-      "annotations-provide-a-way": "注释提供了将事件数据整合到您的图表中的方式。它们被视为垂直线和所有图形面板上的图标。 当你在注解图标上悬停时，你可以获得事件的文本 &amp; 标签。 您可以通过按住 CTRL 或 CMD + 点击图形(或拖动区域)直接从Grafana 添加批注事件。 这些将保存在Grafana注释数据库中。",
+      "annotations-provide-a-way": "注释提供了将事件数据整合到您的图表中的方式。它们被视为垂直线和所有图形面板上的图标。 当你在注解图标上悬停时，你可以获得事件的文本 &amp; 标签。 您可以通过按住 CTRL 或 CMD + 点击图形(或拖动区域)直接添加批注事件。 这些将保存在注释数据库中。",
+      "are-you-sure-you-want-to-restore": "您确定要将看板还原到版本 ",
       "cancel-loading-dashboard": "取消加载看板",
       "cannot-delete-provisioned-dashboard": "无法删除预设的看板",
-      "checkout-the": "签出",
       "color": "颜色",
       "color-to-use-for-the-annotation": "注解事件标记使用的颜色",
       "dashboard-comments": "看板注释",
       "dashboard-deleted": "看板已删除",
       "dashboard-has-been-deleted": "已删除",
+      "dashboard-saved": "看板已保存",
       "data": "数据",
       "data-source": "数据源",
       "delete": "删除",
@@ -423,9 +428,9 @@
       "documentation": "文档",
       "edit-panel": "编辑面板",
       "enabled": "启用",
+      "error-saving-dashboard": "保存看板时出错",
       "failed-to-fetch-dashboard": "获取看板失败",
       "file-path": "文件路径： ",
-      "for-more": "获取更多信息。",
       "for-more-information": "获取更多关于预置的信息。",
       "get-help-with-this-panel": "获得此面板的帮助",
       "hidden": "隐藏",
@@ -466,6 +471,7 @@
       "permission-to-edit-panel-denied": "编辑面板的权限被拒绝",
       "query": "查询",
       "query-name": "查询名称",
+      "restore-version-title": "还原版本",
       "row-title": "行标题",
       "save-dashboard": {
         "add-a-note-to-describe-your-changes": "添加一个注释来描述您的更改",
@@ -606,6 +612,7 @@
       },
       "what-are-annotation-queries": "什么是注释查询？",
       "when-enabled-the-annotation-query": "启用此项后，每次刷新看板时都会发布批注查询",
+      "yes-restore-to-version": "是，还原到版本",
       "you-have-changed-a-folder": "您已更改文件夹，请保存以查看权限。"
     },
     "dimensions": {
@@ -718,7 +725,7 @@
       "expand-all-button": "全部展开",
       "no-request-and-response-collected-yet": "尚未收集到请求和响应。点击刷新按钮。",
       "query-inspector": "查询检查器",
-      "query-inspector-description": "查询检查器允许您查看原始请求和响应。为了收集这些数据，Grafana需要发出新查询。点击下面的刷新按钮来触发新查询。",
+      "query-inspector-description": "查询检查器允许您查看原始请求和响应。为了收集这些数据，DataViz需要发出新查询。点击下面的刷新按钮来触发新查询。",
       "refresh-button": "重置"
     },
     "library-panels": {
@@ -753,7 +760,11 @@
       "disabled": "禁用",
       "editor": {
         "an-empty-query-name": "不允许输入空查询名称",
-        "query-name-already-exists": "查询名称已存在"
+        "could-not-load-query-editor-due": "无法加载查询编辑器，因为：",
+        "data-source-plugin-does-not-export": "数据源插件不导出任何查询编辑器组件",
+        "preview-alerts": "预览警报",
+        "query-name-already-exists": "查询名称已存在",
+        "there-are-no-firing-alerts-for": "没有您查询的警报。"
       },
       "editor-row": {
         "duplicate-query": "复制查询",
@@ -1044,7 +1055,6 @@
         "delete-variable": "删除变量",
         "description": "描述",
         "description-text": "描述文本",
-        "for-more-information": "获取更多信息。",
         "label": "标签",
         "label-and-value": "标签和值",
         "label-name": "标签名称",
@@ -1061,16 +1071,16 @@
         "restore": "还原",
         "run-query": "运行查询",
         "select-two-versions-to-start-comparing": "选择两个版本开始比较",
+        "select-variable-type": "选择变量类型",
         "show-more-versions": "显示更多版本",
         "show-on-dashboard": "显示在看板",
-        "templates-and-variables-documentation": "模板和变量文档",
         "the-name-of-the-template-variable": "模板变量的名称(最大50个字符)",
         "there-are-no-variables-yet": "还没有变量",
         "updated-by": "更新者",
         "value": "值",
         "variable": "变量",
         "variable-name": "变量名称",
-        "variables-enable-more-interactive": "变量启用了更多交互式动态仪表板。 在您的度量查询中，您可以使用变量，而不是硬编码事项，如服务器或传感器名称，而是可以代替变量。 变量显示在仪表盘顶部的列表框。 这些下拉列表使得更改您的控制面板中显示的数据变得容易。请查看。",
+        "variables-enable-more-interactive": "变量启用了更多交互式动态仪表板。 在您的度量查询中，您可以使用变量，而不是硬编码事项，如服务器或传感器名称，而是可以代替变量。 变量显示在仪表盘顶部的列表框。 这些下拉列表使得更改您的控制面板中显示的数据变得容易。",
         "version": "版本",
         "want-to-delete-variable": "您确定要删除变量",
         "what-do-variables-do": "变量是什么？"
@@ -1082,11 +1092,15 @@
         "custom-all-value": "自定义所有值",
         "enables-an-option-to-include-all-variables": "启用选项以包含所有变量",
         "enables-multiple-values-to-be": "启用同时选择多个值",
+        "example": "示例",
         "include-all-option": "包含全部选项",
+        "instance-name-filter": "实例名称过滤器",
         "multi-value": "多值",
         "on-dashboard-load": "在看板加载",
         "on-time-range-change": "时间范围变化",
         "refresh": "刷新",
+        "regex-filter-for-which-data-source-instances": "正则表达式筛选器，在变量值列表中选择数据源实例。留空对所有数据源。",
+        "selection-options": "选择选项",
         "there-are-no-permissions": "没有任何权限",
         "when to update the values": "何时更新此变量的值"
       },
@@ -1269,11 +1283,11 @@
       "title": "警报和事件"
     },
     "api-keys": {
-      "subtitle": "管理和创建用于与 Grafana HTTP API 交互的 API 密钥",
+      "subtitle": "管理和创建用于与 Ticos HTTP API 交互的 API 密钥",
       "title": "API 密钥"
     },
     "apps": {
-      "subtitle": "扩展 Grafana 体验的应用插件",
+      "subtitle": "扩展 DataViz 体验的应用插件",
       "title": "应用"
     },
     "config": {
@@ -1311,11 +1325,11 @@
       "title": "探索"
     },
     "global-orgs": {
-      "subtitle": "在同一服务器上运行的 Grafana 的孤立实例",
+      "subtitle": "在同一服务器上运行的 DataViz 的孤立实例",
       "title": "组织"
     },
     "global-users": {
-      "subtitle": "管理Grafana 的用户",
+      "subtitle": "管理 Ticos 的用户",
       "title": "用户",
       "titleBeforeTopnav": "用户"
     },
@@ -1372,7 +1386,7 @@
       "title": "播放列表"
     },
     "plugins": {
-      "subtitle": "使用插件扩展 Grafana 体验",
+      "subtitle": "使用插件扩展 DataViz 体验",
       "title": "插件"
     },
     "profile/notifications": {
@@ -1389,17 +1403,17 @@
       "title": "场景"
     },
     "search": {
-      "placeholder": "搜索 Grafana"
+      "placeholder": "搜索"
     },
     "search-dashboards": {
       "title": "搜索仪表盘"
     },
     "server-settings": {
-      "subtitle": "查看 Grafana 配置中定义的设置",
+      "subtitle": "查看 DataViz 配置中定义的设置",
       "title": "设置"
     },
     "service-accounts": {
-      "subtitle": "使用服务账户在 Grafana 中运行自动化工作负载",
+      "subtitle": "使用服务账户在 DataViz 中运行自动化工作负载",
       "title": "服务账户"
     },
     "sign-in": "登录",
@@ -1560,7 +1574,7 @@
     "embed": {
       "copy": "复制到剪贴板",
       "html": "嵌入 HTML",
-      "html-description": "可将以下 HTML 代码粘贴并纳入另一网页。除非启用了匿名访问，否则查看该页面的用户需要登录 Grafana 才能加载图表。",
+      "html-description": "可将以下 HTML 代码粘贴并纳入另一网页。除非启用了匿名访问，否则查看该页面的用户需要登录 Ticos 才能加载图表。",
       "info": "生成用于对此面板嵌入 iframe 的 HTML。",
       "time-range": "当前时间范围",
       "time-range-description": "将当前相对时间范围转换为绝对时间范围"
@@ -1581,7 +1595,7 @@
       "info-text": "创建指向此看板或面板的直接链接，通过以下选项自定义。",
       "link-url": "链接网址",
       "render-alert": "未安装图像渲染器插件",
-      "render-instructions": "要渲染面板图像，需要安装&nbsp;<1>Grafana 图像渲染器插件</1>。请联系您的 Grafana 管理员安装此插件。",
+      "render-instructions": "要渲染面板图像，需要安装&nbsp;<1> DataViz 图像渲染器插件</1>。请联系您的 Ticos 管理员安装此插件。",
       "rendered-image": "直接链接至渲染后的图像",
       "save-alert": "看板未保存",
       "save-dashboard": "要渲染面板图像，需要先保存看板。",
@@ -1660,7 +1674,7 @@
       "select-time": "选择时间范围"
     },
     "content": {
-      "empty-recent-list": "<0><0>你似乎从未使用过这个时间选取器。 一旦您输入一段时间，最近使用的间隔将出现在这里。 </0></0><1><0>阅读文档</0><1>，以了解关于如何输入自定义时间范围的更多信息。</1></1>",
+      "empty-recent-list": "<0><0>你似乎从未使用过这个时间选取器。 一旦您输入一段时间，最近使用的间隔将出现在这里。 </0></0>",
       "filter-placeholder": "搜索快捷范围"
     },
     "footer": {

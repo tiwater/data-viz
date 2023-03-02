@@ -25,6 +25,7 @@ export const AnnotationSettingsList = ({ dashboard, onNew, onEdit }: Props) => {
 
   const onDelete = (idx: number) => {
     dashboard.annotations.list = [...annotations.slice(0, idx), ...annotations.slice(idx + 1)];
+
     updateAnnotations(dashboard.annotations.list);
   };
 
@@ -119,12 +120,8 @@ export const AnnotationSettingsList = ({ dashboard, onNew, onEdit }: Props) => {
               "Annotations provide a way to integrate event data into your graphs. They are visualized as vertical lines and icons on all graph panels. When you hover over an annotation icon you can get event text &amp; tags for the event. You can add annotation events directly from grafana by holding CTRL or CMD + click on graph (or drag region). These will be stored in Grafana's annotation database."
             )}
         </p>
-        
-        ${t('features.dashboard.checkout-the', 'Checkout the')}
-        <a class='external-link' target='_blank' href='http://docs.grafana.org/reference/annotations/'
-          >${t('features.dashboard.annotations-documentation', 'Annotations documentation')}</a
-        >
-        ${t('features.dashboard.for-more', 'for more information.')}`,
+         
+        `,
           }}
         />
       )}
@@ -134,3 +131,8 @@ export const AnnotationSettingsList = ({ dashboard, onNew, onEdit }: Props) => {
     </VerticalGroup>
   );
 };
+// ${t('features.dashboard.checkout-the', 'Checkout the')}
+//         <a class='external-link' target='_blank' href='http://docs.grafana.org/reference/annotations/'
+//           >${t('features.dashboard.annotations-documentation', 'Annotations documentation')}</a
+//         >
+//         ${t('features.dashboard.for-more', 'for more information.')}

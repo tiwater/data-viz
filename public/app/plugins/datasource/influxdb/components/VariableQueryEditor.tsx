@@ -36,7 +36,7 @@ export default class VariableQueryEditor extends PureComponent<Props> {
 
     return (
       <div className="gf-form-inline">
-        <InlineFormLabel width={10}>Query</InlineFormLabel>
+        <InlineFormLabel width={10}>{t('features.variables.editor.query', 'Query')}</InlineFormLabel>
         <div className="gf-form-inline gf-form--grow">
           <TextArea
             defaultValue={t('features.variables.editor.query', 'Query') || ''}

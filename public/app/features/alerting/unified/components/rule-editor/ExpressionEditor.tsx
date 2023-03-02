@@ -6,6 +6,7 @@ import { useAsync } from 'react-use';
 import { CoreApp, DataQuery, DataSourcePluginContextProvider, GrafanaTheme2, LoadingState } from '@grafana/data';
 import { getDataSourceSrv } from '@grafana/runtime';
 import { Alert, Button, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { LokiQuery } from 'app/plugins/datasource/loki/types';
 import { PromQuery } from 'app/plugins/datasource/prometheus/types';
 
@@ -52,8 +53,18 @@ export const ExpressionEditor: FC<ExpressionEditorProps> = ({ value, onChange, d
   const dsi = getDataSourceSrv().getInstanceSettings(dataSourceName);
 
   if (error || !dataSource || !dataSource?.components?.QueryEditor || !dsi) {
-    const errorMessage = error?.message || 'Data source plugin does not export any Query Editor component';
-    return <div>Could not load query editor due to: {errorMessage}</div>;
+    const errorMessage =
+      error?.message ||
+      t(
+        'features.query.editor.data-source-plugin-does-not-export',
+        'Data source plugin does not export any Query Editor component'
+      );
+    return (
+      <div>
+        {t('features.query.editor.could-not-load-query-editor-due', 'Could not load query editor due to')}:{' '}
+        {errorMessage}
+      </div>
+    );
   }
 
   const previewLoaded = alertPreview?.data.state === LoadingState.Done;
@@ -79,11 +90,11 @@ export const ExpressionEditor: FC<ExpressionEditorProps> = ({ value, onChange, d
       </DataSourcePluginContextProvider>
       <div className={styles.preview}>
         <Button type="button" onClick={onRunQueriesClick} disabled={alertPreview?.data.state === LoadingState.Loading}>
-          Preview alerts
+          {t('features.query.editor.preview-alerts', 'Preview alerts')}
         </Button>
         {previewLoaded && !previewHasAlerts && (
           <Alert title="Alerts preview" severity="info" className={styles.previewAlert}>
-            There are no firing alerts for your query.
+            {t('features.query.editor.there-are-no-firing-alerts-for', 'There are no firing alerts for your query.')}
           </Alert>
         )}
         {previewHasAlerts && <CloudAlertPreview preview={previewDataFrame} />}

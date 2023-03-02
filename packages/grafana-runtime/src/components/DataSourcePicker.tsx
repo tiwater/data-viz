@@ -177,13 +177,17 @@ export class DataSourcePicker extends PureComponent<DataSourcePickerProps, DataS
       isLoading = false,
     } = this.props;
     const { error } = this.state;
+
     const options = this.getDataSourceOptions().map((o) => ({
       ...o,
       // 解决编辑面板数据图图片无法找到问题
       imgUrl: `${config.appUrl}${o.imgUrl}`,
+      label: o.label === '-- Grafana --' ? '-- DataViz --' : o.label,
     }));
+
     const value = this.getCurrentValue();
     const isClearable = typeof onClear === 'function';
+    value.label = value.label === '-- Grafana --' ? '-- DataViz --' : value.label;
     value.imgUrl = `${config.appUrl}${value.imgUrl}`;
     return (
       <div aria-label={selectors.components.DataSourcePicker.container}>

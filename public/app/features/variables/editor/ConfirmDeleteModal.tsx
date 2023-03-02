@@ -25,7 +25,7 @@ export function ConfirmDeleteModal({ varName, isOpen = false, onConfirm, onDismi
       )} "${varName}"?
     `}
       modalClass={styles.modal}
-      confirmText="Delete"
+      confirmText={t('features.variables.editor.delete', 'Delete')}
     />
   );
 }

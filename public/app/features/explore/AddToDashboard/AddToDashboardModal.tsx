@@ -92,7 +92,7 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
 
   const saveTarget = saveTargets.length > 1 ? watch('saveTarget') : saveTargets[0].value;
 
-  const modalTitle = `${t('explore.add-panel-to', 'Add panel to')} ${
+  const modalTitle = `${t('explore.add-panel-to', 'Add panel to')}${
     saveTargets.length > 1 ? t('nav.create-dashboard.title', 'Dashboard') : saveTargets[0].label!.toLowerCase()
   }`;
 
@@ -116,13 +116,25 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
     } catch (error) {
       switch (error) {
         case AddToDashboardError.FETCH_DASHBOARD:
-          setSubmissionError({ error, message: 'Could not fetch dashboard information. Please try again.' });
+          setSubmissionError({
+            error,
+            message: t('explore.could-not-fetch-dashboard', 'Could not fetch dashboard information. Please try again.'),
+          });
           break;
         case AddToDashboardError.SET_DASHBOARD_LS:
-          setSubmissionError({ error, message: 'Could not add panel to dashboard. Please try again.' });
+          setSubmissionError({
+            error,
+            message: t(
+              'explore.could-not-add-panel-to-dashboard',
+              'Could not add panel to dashboard. Please try again.'
+            ),
+          });
           break;
         default:
-          setSubmissionError({ error: GenericError.UNKNOWN, message: 'Something went wrong. Please try again.' });
+          setSubmissionError({
+            error: GenericError.UNKNOWN,
+            message: t('explore.something-went-wrong', 'Something went wrong. Please try again.'),
+          });
       }
       return;
     }
@@ -138,7 +150,10 @@ export const AddToDashboardModal = ({ onClose, exploreId }: Props) => {
     if (!didTabOpen) {
       setSubmissionError({
         error: GenericError.NAVIGATION,
-        message: 'Could not navigate to the selected dashboard. Please try again.',
+        message: t(
+          'explore.could-not-navigate-to-the-selected-dashboard',
+          'Could not navigate to the selected dashboard. Please try again.'
+        ),
       });
       removeDashboardToFetchFromLocalStorage();
       return;

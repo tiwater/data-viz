@@ -281,7 +281,14 @@ export class QueryEditorRow<TQuery extends DataQuery> extends PureComponent<Prop
       }
     }
 
-    return <div>Data source plugin does not export any Query Editor component</div>;
+    return (
+      <div>
+        {t(
+          'features.query.editor.data-source-plugin-does-not-export',
+          'Data source plugin does not export any Query Editor component'
+        )}
+      </div>
+    );
   };
 
   onToggleEditMode = (e: React.MouseEvent, props: QueryOperationRowRenderProps) => {
