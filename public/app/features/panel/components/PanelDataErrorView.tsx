@@ -6,6 +6,7 @@ import { PanelDataErrorViewProps } from '@grafana/runtime';
 import { usePanelContext, useStyles2 } from '@grafana/ui';
 import { CardButton } from 'app/core/components/CardButton';
 import { LS_VISUALIZATION_SELECT_TAB_KEY } from 'app/core/constants';
+import { t } from 'app/core/internationalization';
 import store from 'app/core/store';
 import { toggleVizPicker } from 'app/features/dashboard/components/PanelEditor/state/reducers';
 import { VisualizationSelectPaneTab } from 'app/features/dashboard/components/PanelEditor/types';
@@ -47,10 +48,10 @@ export function PanelDataErrorView(props: PanelDataErrorViewProps) {
       {context.app === CoreApp.PanelEditor && dataSummary.hasData && (
         <div className={styles.actions}>
           <CardButton icon="table" onClick={switchToTable}>
-            Switch to table
+            {t('features.panel-data.switch-to-table', 'Switch to table')}
           </CardButton>
           <CardButton icon="chart-line" onClick={openVizPicker}>
-            Open visualization suggestions
+            {t('features.panel-data.open-visualization-suggestions', 'Open visualization suggestions')}
           </CardButton>
         </div>
       )}
@@ -68,22 +69,22 @@ function getMessageFor(
 
   // In some cases there is a data frame but with no fields
   if (!data.series || data.series.length === 0 || (data.series.length === 1 && data.series[0].length === 0)) {
-    return fieldConfig?.defaults.noValue ?? 'No data';
+    return fieldConfig?.defaults.noValue ?? t('features.panel-data.no-data', 'No data');
   }
 
   if (needsStringField && !dataSummary.hasStringField) {
-    return 'Data is missing a string field';
+    return t('features.panel-data.data-is-missing-a-string-field', 'Data is missing a string field');
   }
 
   if (needsNumberField && !dataSummary.hasNumberField) {
-    return 'Data is missing a number field';
+    return t('features.panel-data.data-is-missing-a-number-field', 'Data is missing a number field');
   }
 
   if (needsTimeField && !dataSummary.hasTimeField) {
-    return 'Data is missing a time field';
+    return t('features.panel-data.data-is-missing-a-time-field', 'Data is missing a time field');
   }
 
-  return 'Cannot visualize data';
+  return t('features.panel-data.cannot-visualize-data', 'Cannot visualize data');
 }
 
 const getStyles = (theme: GrafanaTheme2) => {

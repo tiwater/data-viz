@@ -10,6 +10,7 @@ import {
   LinkModel,
 } from '@grafana/data';
 import { MenuItem, SeriesTableRow, useTheme2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { findNextStateIndex, fmtDuration } from './utils';
 
@@ -110,7 +111,13 @@ export const StateTimelineTooltip: React.FC<StateTimelineTooltipProps> = ({
           borderTop: `1px solid ${theme.colors.border.weak}`,
         }}
       >
-        {onAnnotationAdd && <MenuItem label={'Add annotation'} icon={'comment-alt'} onClick={onAnnotationAdd} />}
+        {onAnnotationAdd && (
+          <MenuItem
+            label={t('plugins.panel.timeseries.add-annotation', 'Add annotation')}
+            icon={'comment-alt'}
+            onClick={onAnnotationAdd}
+          />
+        )}
         {links.length > 0 &&
           links.map((link, i) => (
             <MenuItem

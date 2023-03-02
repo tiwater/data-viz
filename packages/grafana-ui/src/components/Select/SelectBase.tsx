@@ -6,6 +6,7 @@ import Creatable from 'react-select/creatable';
 
 import { SelectableValue } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { useTheme2 } from '../../themes';
 import { Icon } from '../Icon/Icon';
 import { Spinner } from '../Spinner/Spinner';
@@ -123,7 +124,7 @@ export function SelectBase<T>({
   menuPlacement = 'auto',
   menuPosition,
   menuShouldPortal = true,
-  noOptionsMessage = 'No options found',
+  noOptionsMessage = t('grafana-ui.segment.no-options-found', 'No options found'),
   onBlur,
   onChange,
   onCloseMenu,

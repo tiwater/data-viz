@@ -40,6 +40,7 @@ import { graphTickFormatter, graphTimeFormat, MenuItemProps, MenuItemsGroup } fr
 import { coreModule } from 'app/angular/core_module';
 import config from 'app/core/config';
 import { updateLegendValues } from 'app/core/core';
+import { t } from 'app/core/internationalization';
 import { ContextSrv } from 'app/core/services/context_srv';
 import { provideTheme } from 'app/core/utils/ConfigProvider';
 import { tickStep } from 'app/core/utils/ticks';
@@ -234,8 +235,8 @@ class GraphElement {
             {
               items: [
                 {
-                  label: 'Add annotation',
-                  ariaLabel: 'Add annotation',
+                  label: t('plugins.panel.timeseries.add-annotation', 'Add annotation'),
+                  ariaLabel: t('plugins.panel.timeseries.add-annotation', 'Add annotation'),
                   icon: 'comment-alt',
                   onClick: () => this.eventManager.updateTime({ from: flotPosition.x, to: null }),
                 },

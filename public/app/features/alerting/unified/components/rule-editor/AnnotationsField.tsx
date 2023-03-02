@@ -7,6 +7,7 @@ import { useToggle } from 'react-use';
 import { GrafanaTheme2 } from '@grafana/data';
 import { Stack } from '@grafana/experimental';
 import { Button, Field, Input, InputControl, Label, TextArea, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { RuleFormValues } from '../../types/rule-form';
 import { Annotation } from '../../utils/constants';
@@ -124,10 +125,10 @@ const AnnotationsField = () => {
               append({ key: '', value: '' });
             }}
           >
-            Add annotation
+            {t('plugins.panel.timeseries.add-annotation', 'Add annotation')}
           </Button>
           <Button type="button" variant="secondary" icon="dashboard" onClick={() => setShowPanelSelector(true)}>
-            Set dashboard and panel
+            {t('features.alerting.set-dashboard-and-panel', 'Set dashboard and panel')}
           </Button>
         </Stack>
         {showPanelSelector && (

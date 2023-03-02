@@ -6,6 +6,7 @@ import useClickAway from 'react-use/lib/useClickAway';
 import { AnnotationEventUIModel, GrafanaTheme2 } from '@grafana/data';
 import { Button, Field, Form, HorizontalGroup, InputControl, TextArea, usePanelContext, useStyles2 } from '@grafana/ui';
 import { TagFilter } from 'app/core/components/TagFilter/TagFilter';
+import { t } from 'app/core/internationalization';
 import { getAnnotationTags } from 'app/features/annotations/api';
 
 import { AnnotationsDataFrameViewDTO } from '../types';
@@ -74,7 +75,7 @@ export const AnnotationEditorForm = React.forwardRef<HTMLDivElement, AnnotationE
       >
         <div className={styles.header}>
           <HorizontalGroup justify={'space-between'} align={'center'}>
-            <div className={styles.title}>Add annotation</div>
+            <div className={styles.title}>{t('plugins.panel.timeseries.add-annotation', 'Add annotation')}</div>
             <div className={styles.ts}>{ts}</div>
           </HorizontalGroup>
         </div>

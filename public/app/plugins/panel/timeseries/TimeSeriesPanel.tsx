@@ -5,6 +5,7 @@ import { PanelDataErrorView } from '@grafana/runtime';
 import { TooltipDisplayMode } from '@grafana/schema';
 import { KeyboardPlugin, TimeSeries, TooltipPlugin, usePanelContext, ZoomPlugin } from '@grafana/ui';
 import { config } from 'app/core/config';
+import { t } from 'app/core/internationalization';
 import { getFieldLinksForExplore } from 'app/features/explore/utils/links';
 
 import { AnnotationEditorPlugin } from './plugins/AnnotationEditorPlugin';
@@ -105,8 +106,8 @@ export const TimeSeriesPanel: React.FC<TimeSeriesPanelProps> = ({
                         {
                           items: [
                             {
-                              label: 'Add annotation',
-                              ariaLabel: 'Add annotation',
+                              label: t('plugins.panel.timeseries.add-annotation', 'Add annotation'),
+                              ariaLabel: t('plugins.panel.timeseries.add-annotation', 'Add annotation'),
                               icon: 'comment-alt',
                               onClick: (e, p) => {
                                 if (!p) {

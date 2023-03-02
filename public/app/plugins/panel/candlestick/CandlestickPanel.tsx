@@ -11,6 +11,7 @@ import { TimeSeries, TooltipPlugin, UPlotConfigBuilder, usePanelContext, useThem
 import { AxisProps } from '@grafana/ui/src/components/uPlot/config/UPlotAxisBuilder';
 import { ScaleProps } from '@grafana/ui/src/components/uPlot/config/UPlotScaleBuilder';
 import { config } from 'app/core/config';
+import { t } from 'app/core/internationalization';
 import { getFieldLinksForExplore } from 'app/features/explore/utils/links';
 
 import { AnnotationEditorPlugin } from '../timeseries/plugins/AnnotationEditorPlugin';
@@ -288,8 +289,8 @@ export const CandlestickPanel: React.FC<CandlestickPanelProps> = ({
                               {
                                 items: [
                                   {
-                                    label: 'Add annotation',
-                                    ariaLabel: 'Add annotation',
+                                    label: t('plugins.panel.timeseries.add-annotation', 'Add annotation'),
+                                    ariaLabel: t('plugins.panel.timeseries.add-annotation', 'Add annotation'),
                                     icon: 'comment-alt',
                                     onClick: (e, p) => {
                                       if (!p) {

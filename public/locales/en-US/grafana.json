@@ -386,6 +386,7 @@
         "no-queries-or-expressions": "No queries or expressions have been configured",
         "preview": "Preview"
       },
+      "set-dashboard-and-panel": "Set dashboard and panel",
       "unified": {
         "cannot-create-alerts-from-this-panel": "Cannot create alerts from this panel because no query to an alerting capable datasource is found.",
         "dashboard-must-be-saved-before": "Dashboard must be saved before alerts can be added.",
@@ -763,6 +764,13 @@
         "could-not-find-anything": "Could not find anything matching your query",
         "no-results-matched-your-query": "No results matched your query"
       }
+    },
+    "panel-data": {
+      "cannot-visualize-data": "Cannot visualize data",
+      "data-is-missing-a-number-field": "Data is missing a number field",
+      "data-is-missing-a-string-field": "Data is missing a string field",
+      "data-is-missing-a-time-field": "Data is missing a time field",
+      "no-data": "No data"
     },
     "query": {
       "alphabetical-asc": "Alphabetical (asc)",
@@ -1208,6 +1216,11 @@
       "values-sort-order": "Values sort order",
       "visibility": "Visibility",
       "width": "Width"
+    },
+    "segment": {
+      "failed-to-load-options": "Failed to load options",
+      "loading-options": "Loading options...",
+      "no-options-found": "No options found"
     },
     "tags-input": {
       "add-button": "Add",
@@ -1671,6 +1684,28 @@
       "renders-the-thresholds-as-an-outer-bar": "Renders the thresholds as an outer bar",
       "show-threshold-labels": "Show threshold labels",
       "show-threshold-markers": "Show threshold markers"
+    },
+    "panel": {
+      "graph": {
+        "axes": "Axes",
+        "can-be-caused-by-timezone-mismatch": "Can be caused by timezone mismatch or missing time filter in query",
+        "data-exists-but-is-not-timeseries": "Data exists, but is not timeseries",
+        "data-outside-time-range": "Data outside time range",
+        "display": "Display",
+        "legend": "Legend",
+        "no-data": "No data",
+        "no-data-returned-from-query": "No data returned from query",
+        "series-overrides": "Series overrides",
+        "switch-to-table-view": "Switch to table view",
+        "thresholds": "Thresholds",
+        "time-regions": "Time regions",
+        "toggle-legend": "Toggle legend",
+        "unable-to-graph-data": "Unable to graph data",
+        "zoom-to-data": "Zoom to data"
+      },
+      "timeseries": {
+        "add-annotation": "Add annotation"
+      }
     },
     "pie-chart": {
       "donut": "Donut",

@@ -12,6 +12,7 @@ import { DataFrame, FieldConfigProperty, PanelEvents, PanelPlugin } from '@grafa
 import { locationService } from '@grafana/runtime';
 import { MetricsPanelCtrl } from 'app/angular/panel/metrics_panel_ctrl';
 import config from 'app/core/config';
+import { t } from 'app/core/internationalization';
 import TimeSeries from 'app/core/time_series2';
 import { ThresholdMapper } from 'app/features/alerting/state/ThresholdMapper';
 import { changePanelPlugin } from 'app/features/panel/state/actions';
@@ -172,18 +173,31 @@ export class GraphCtrl extends MetricsPanelCtrl {
   }
 
   onInitEditMode() {
-    this.addEditorTab('Display', 'public/app/plugins/panel/graph/tab_display.html');
-    this.addEditorTab('Series overrides', 'public/app/plugins/panel/graph/tab_series_overrides.html');
-    this.addEditorTab('Axes', axesEditorComponent);
-    this.addEditorTab('Legend', 'public/app/plugins/panel/graph/tab_legend.html');
-    this.addEditorTab('Thresholds', 'public/app/plugins/panel/graph/tab_thresholds.html');
-    this.addEditorTab('Time regions', 'public/app/plugins/panel/graph/tab_time_regions.html');
+    this.addEditorTab(t('plugins.panel.graph.display', 'Display'), 'public/app/plugins/panel/graph/tab_display.html');
+    this.addEditorTab(
+      t('plugins.panel.graph.series-overrides', 'Series overrides'),
+      'public/app/plugins/panel/graph/tab_series_overrides.html'
+    );
+    this.addEditorTab(t('plugins.panel.graph.axes', 'Axes'), axesEditorComponent);
+    this.addEditorTab(t('plugins.panel.graph.legend', 'Legend'), 'public/app/plugins/panel/graph/tab_legend.html');
+    this.addEditorTab(
+      t('plugins.panel.graph.thresholds', 'Thresholds'),
+      'public/app/plugins/panel/graph/tab_thresholds.html'
+    );
+    this.addEditorTab(
+      t('plugins.panel.graph.time-regions', 'Time regions'),
+      'public/app/plugins/panel/graph/tab_time_regions.html'
+    );
     this.subTabIndex = 0;
     this.hiddenSeriesTainted = false;
   }
 
   onInitPanelActions(actions: any[]) {
-    actions.push({ text: 'Toggle legend', click: 'ctrl.toggleLegend()', shortcut: 'p l' });
+    actions.push({
+      text: t('plugins.panel.graph.toggle-legend', 'Toggle legend'),
+      click: 'ctrl.toggleLegend()',
+      shortcut: 'p l',
+    });
   }
 
   zoomOut(evt: any) {
@@ -231,9 +245,9 @@ export class GraphCtrl extends MetricsPanelCtrl {
         for (const frame of this.dataList) {
           if (frame.length && frame.fields?.length) {
             return {
-              title: 'Unable to graph data',
-              tip: 'Data exists, but is not timeseries',
-              actionText: 'Switch to table view',
+              title: t('plugins.panel.graph.unable-to-graph-data', 'Unable to graph data'),
+              tip: t('plugins.panel.graph.data-exists-but-is-not-timeseries', 'Data exists, but is not timeseries'),
+              actionText: t('plugins.panel.graph.switch-to-table-view', 'Switch to table view'),
               action: () => {
                 dispatch(changePanelPlugin({ panel: this.panel, pluginId: 'table' }));
               },
@@ -243,8 +257,8 @@ export class GraphCtrl extends MetricsPanelCtrl {
       }
 
       return {
-        title: 'No data',
-        tip: 'No data returned from query',
+        title: t('plugins.panel.graph.no-data', 'No data'),
+        tip: t('plugins.panel.graph.no-data-returned-from-query', 'No data returned from query'),
       };
     }
 
@@ -257,14 +271,17 @@ export class GraphCtrl extends MetricsPanelCtrl {
 
     // All data is outside the time range
     const dataWarning: DataWarning = {
-      title: 'Data outside time range',
-      tip: 'Can be caused by timezone mismatch or missing time filter in query',
+      title: t('plugins.panel.graph.data-outside-time-range', 'Data outside time range'),
+      tip: t(
+        'plugins.panel.graph.can-be-caused-by-timezone-mismatch',
+        'Can be caused by timezone mismatch or missing time filter in query'
+      ),
     };
 
     const range = getDataTimeRange(this.dataList);
 
     if (range) {
-      dataWarning.actionText = 'Zoom to data';
+      dataWarning.actionText = t('plugins.panel.graph.zoom-to-data', 'Zoom to data');
       dataWarning.action = () => {
         locationService.partial({
           from: range.from,

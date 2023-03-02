@@ -6,6 +6,7 @@ import { AsyncState } from 'react-use/lib/useAsync';
 
 import { SelectableValue } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { useStyles2 } from '../../themes';
 import { InlineLabel } from '../Forms/InlineLabel';
 
@@ -101,15 +102,15 @@ export function SegmentAsync<T>({
 
 function mapStateToNoOptionsMessage<T>(state: AsyncState<Array<SelectableValue<T>>>): string {
   if (state.loading) {
-    return 'Loading options...';
+    return t('grafana-ui.segment.loading-options', 'Loading options...');
   }
 
   if (state.error) {
-    return 'Failed to load options';
+    return t('grafana-ui.segment.failed-to-load-options', 'Failed to load options');
   }
 
   if (!Array.isArray(state.value) || state.value.length === 0) {
-    return 'No options found';
+    return t('grafana-ui.segment.no-options-found', 'No options found');
   }
 
   return '';
