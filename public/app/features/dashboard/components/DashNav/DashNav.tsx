@@ -212,22 +212,20 @@ export const DashNav = React.memo<Props>((props) => {
     }
 
     // 隐藏收藏功能
-    if(!isInIcestark()){
-      if (canStar) {
-        let desc = isStarred
-          ? t('dashboard.toolbar.unmark-favorite', 'Unmark as favorite')
-          : t('dashboard.toolbar.mark-favorite', 'Mark as favorite');
-        buttons.push(
-          <DashNavButton
-            tooltip={desc}
-            icon={isStarred ? 'favorite' : 'star'}
-            iconType={isStarred ? 'mono' : 'default'}
-            iconSize="lg"
-            onClick={onStarDashboard}
-            key="button-star"
-          />
-        );
-      }
+    if (!isInIcestark() && canStar) {
+      let desc = isStarred
+        ? t('dashboard.toolbar.unmark-favorite', 'Unmark as favorite')
+        : t('dashboard.toolbar.mark-favorite', 'Mark as favorite');
+      buttons.push(
+        <DashNavButton
+          tooltip={desc}
+          icon={isStarred ? 'favorite' : 'star'}
+          iconType={isStarred ? 'mono' : 'default'}
+          iconSize="lg"
+          onClick={onStarDashboard}
+          key="button-star"
+        />
+      );
     }
 
     if (canShare) {
