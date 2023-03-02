@@ -40,6 +40,8 @@ import { DashboardModel } from '../../state';
 import { DashNavButton } from './DashNavButton';
 import { DashNavTimeControls } from './DashNavTimeControls';
 
+import { isInIcestark } from '@ice/stark-app';
+
 const mapDispatchToProps = {
   setStarred,
   updateTimeZoneForSession,
@@ -209,7 +211,8 @@ export const DashNav = React.memo<Props>((props) => {
       return [];
     }
 
-    if (canStar) {
+    // 隐藏收藏功能
+    if (!isInIcestark() && canStar) {
       let desc = isStarred
         ? t('dashboard.toolbar.unmark-favorite', 'Unmark as favorite')
         : t('dashboard.toolbar.mark-favorite', 'Mark as favorite');
