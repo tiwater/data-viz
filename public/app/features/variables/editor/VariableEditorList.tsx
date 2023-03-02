@@ -113,17 +113,10 @@ function EmptyVariablesList({ onAdd }: { onAdd: () => void }): ReactElement {
         infoBox={{
           __html: ` <p>${t(
             'features.variables.editor.variables-enable-more-interactive',
-            'Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server or sensor names in your metric queries you can use variables in their place. Variables are shown as list boxes at the top of the dashboard. These drop-down lists make it easy to change the data being displayed in your dashboard. Check out the'
+            'Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server or sensor names in your metric queries you can use variables in their place. Variables are shown as list boxes at the top of the dashboard. These drop-down lists make it easy to change the data being displayed in your dashboard.'
           )}
                     
-                    <a class="external-link" href="https://grafana.com/docs/grafana/latest/variables/" target="_blank">
-                    ${t(
-                      'features.variables.editor.templates-and-variables-documentation',
-                      'Templates and variables documentation'
-                    )}
-                    </a>
-                    ${t('features.variables.editor.for-more-information', 'for more information.')}
-                  </p>`,
+                    `,
         }}
         infoBoxTitle={t('features.variables.editor.what-do-variables-do', 'What do variables do?')}
         onClick={(event) => {

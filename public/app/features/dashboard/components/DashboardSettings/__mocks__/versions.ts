@@ -129,7 +129,7 @@ export const diffs = {
         list: [
           {
             builtIn: 1,
-            datasource: '-- Grafana --',
+            datasource: '-- DataViz --',
             enable: true,
             hide: true,
             iconColor: 'rgba(0, 211, 255, 1)',
@@ -172,11 +172,11 @@ export const diffs = {
         list: [
           {
             builtIn: 1,
-            datasource: '-- Grafana --',
+            datasource: '-- DataViz--',
             enable: true,
             hide: true,
             iconColor: 'rgba(0, 211, 255, 1)',
-            name: 'Annotations & Alerts',
+            name: 'Annotations & Alerts22',
             type: 'dashboard',
           },
         ],

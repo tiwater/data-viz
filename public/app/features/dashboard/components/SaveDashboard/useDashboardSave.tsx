@@ -6,6 +6,7 @@ import { locationService, reportInteraction } from '@grafana/runtime';
 import appEvents from 'app/core/app_events';
 import { useAppNotification } from 'app/core/copy/appNotification';
 import { contextSrv } from 'app/core/core';
+import { t } from 'app/core/internationalization';
 import { updateDashboardName } from 'app/core/reducers/navBarTree';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { saveDashboard as saveDashboardApiCall } from 'app/features/manage-dashboards/state/actions';
@@ -37,7 +38,7 @@ export const useDashboardSave = (dashboard: DashboardModel) => {
   const notifyApp = useAppNotification();
   useEffect(() => {
     if (state.error && !state.loading) {
-      notifyApp.error(state.error.message ?? 'Error saving dashboard');
+      notifyApp.error(state.error.message ?? t('features.dashboard.error-saving-dashboard', 'Error saving dashboard'));
     }
     if (state.value) {
       dashboard.version = state.value.version;
@@ -45,7 +46,7 @@ export const useDashboardSave = (dashboard: DashboardModel) => {
 
       // important that these happen before location redirect below
       appEvents.publish(new DashboardSavedEvent());
-      notifyApp.success('Dashboard saved');
+      notifyApp.success(t('features.dashboard.dashboard-saved', 'Dashboard saved'));
       reportInteraction(`grafana_dashboard_${dashboard.id ? 'saved' : 'created'}`, {
         name: dashboard.title,
         url: state.value.url,

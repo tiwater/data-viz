@@ -350,6 +350,9 @@
     "close-button": "Close",
     "close-split-pane-button": "Close split pane",
     "copy-short-link-tooltip": "Copy shortened link",
+    "could-not-add-panel-to-dashboard": "Could not add panel to dashboard. Please try again.",
+    "could-not-fetch-dashboard": "Could not fetch dashboard information. Please try again.",
+    "could-not-navigate-to-the-selected-dashboard": "Could not navigate to the selected dashboard. Please try again.",
     "error-adding-the-panel": "Error adding the panel",
     "existing-dashboard": "Existing dashboard",
     "inspector-button": "Inspector",
@@ -362,6 +365,7 @@
     },
     "run-query-button": "Run query",
     "select-in-which-dashboard": "Select in which dashboard the panel will be created.",
+    "something-went-wrong": "Something went wrong. Please try again.",
     "split-button": "Split",
     "split-pane-tooltip": "Split the pane",
     "target-dashboard-label": "Target dashboard",
@@ -398,6 +402,7 @@
       "add-panel": "Add panel",
       "add-panel-from-panel-library": "Add panel from panel library",
       "add-permission": "Add permission",
+      "all-unsaved-changes-will-be-lost": "All unsaved changes will be lost.",
       "angular-support-disabled": "Angular support disabled, legacy alerting cannot function without angular support",
       "annotation": {
         "apply-button": "Apply",
@@ -405,16 +410,16 @@
         "preview-in-dashboard-button": "Preview in dashboard"
       },
       "annotation-queries-can-be-toggled": "Annotation queries can be toggled on or off at the top of the dashboard. With this option checked this toggle will be hidden.",
-      "annotations-documentation": "Annotations documentation",
       "annotations-provide-a-way": "Annotations provide a way to integrate event data into your graphs. They are visualized as vertical lines and icons on all graph panels. When you hover over an annotation icon you can get event text &amp; tags for the event. You can add annotation events directly from grafana by holding CTRL or CMD + click on graph (or drag region). These will be stored in Grafana's annotation database.",
+      "are-you-sure-you-want-to-restore": "Are you sure you want to restore the dashboard to version ",
       "cancel-loading-dashboard": "Cancel loading dashboard",
       "cannot-delete-provisioned-dashboard": "Cannot delete provisioned dashboard",
-      "checkout-the": "Checkout the",
       "color": "Color",
       "color-to-use-for-the-annotation": "Color to use for the annotation event markers",
       "dashboard-comments": "Dashboard comments",
       "dashboard-deleted": "Dashboard Deleted",
       "dashboard-has-been-deleted": "has been deleted",
+      "dashboard-saved": "Dashboard saved",
       "data": "Data",
       "data-source": "Data source",
       "delete": "Delete",
@@ -423,9 +428,9 @@
       "documentation": "documentation",
       "edit-panel": "Edit Panel",
       "enabled": "Enabled",
+      "error-saving-dashboard": "Error saving dashboard",
       "failed-to-fetch-dashboard": "Failed to fetch dashboard",
       "file-path": "File path: ",
-      "for-more": "for more information.",
       "for-more-information": "for more information about provisioning.",
       "get-help-with-this-panel": "Get help with this panel",
       "hidden": "Hidden",
@@ -466,6 +471,7 @@
       "permission-to-edit-panel-denied": "Permission to edit panel denied",
       "query": "Query",
       "query-name": "Query name",
+      "restore-version-title": "Restore Version",
       "row-title": "Row Title",
       "save-dashboard": {
         "add-a-note-to-describe-your-changes": "Add a note to describe your changes",
@@ -606,6 +612,7 @@
       },
       "what-are-annotation-queries": "What are annotation queries?",
       "when-enabled-the-annotation-query": "When enabled the annotation query is issued every dashboard refresh",
+      "yes-restore-to-version": "Yes, restore to version",
       "you-have-changed-a-folder": "You have changed a folder, please save to view permissions."
     },
     "dimensions": {
@@ -753,7 +760,11 @@
       "disabled": "Disabled",
       "editor": {
         "an-empty-query-name": "An empty query name is not allowed",
-        "query-name-already-exists": "Query name already exists"
+        "could-not-load-query-editor-due": "Could not load query editor due to",
+        "data-source-plugin-does-not-export": "Data source plugin does not export any Query Editor component",
+        "preview-alerts": "Preview alerts",
+        "query-name-already-exists": "Query name already exists",
+        "there-are-no-firing-alerts-for": "There are no firing alerts for your query."
       },
       "editor-row": {
         "duplicate-query": "Duplicate query",
@@ -1044,7 +1055,6 @@
         "delete-variable": "Delete variable",
         "description": "Description",
         "description-text": "Descriptive text",
-        "for-more-information": "for more information.",
         "label": "Label",
         "label-and-value": "Label and value",
         "label-name": "Label name",
@@ -1061,16 +1071,16 @@
         "restore": "Restore",
         "run-query": "Run query",
         "select-two-versions-to-start-comparing": "Select two versions to start comparing",
+        "select-variable-type": "Select variable type",
         "show-more-versions": "Show more versions",
         "show-on-dashboard": "Show on dashboard",
-        "templates-and-variables-documentation": "Templates and variables documentation",
         "the-name-of-the-template-variable": "The name of the template variable. (Max. 50 characters)",
         "there-are-no-variables-yet": "There are no variables yet",
         "updated-by": "Updated by",
         "value": "Value",
         "variable": "Variable",
         "variable-name": "Variable name",
-        "variables-enable-more-interactive": "Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server or sensor names in your metric queries you can use variables in their place. Variables are shown as list boxes at the top of the dashboard. These drop-down lists make it easy to change the data being displayed in your dashboard. Check out the",
+        "variables-enable-more-interactive": "Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server or sensor names in your metric queries you can use variables in their place. Variables are shown as list boxes at the top of the dashboard. These drop-down lists make it easy to change the data being displayed in your dashboard.",
         "version": "Version",
         "want-to-delete-variable": "Are you sure you want to delete variable",
         "what-do-variables-do": "What do variables do?"
@@ -1082,11 +1092,15 @@
         "custom-all-value": "Custom all value",
         "enables-an-option-to-include-all-variables": "Enables an option to include all variables",
         "enables-multiple-values-to-be": "Enables multiple values to be selected at the same time",
+        "example": "Example",
         "include-all-option": "Include All option",
+        "instance-name-filter": "Instance name filter",
         "multi-value": "Multi-value",
         "on-dashboard-load": "On dashboard load",
         "on-time-range-change": "On time range change",
         "refresh": "Refresh",
+        "regex-filter-for-which-data-source-instances": "Regex filter for which data source instances to choose from in the variable value list. Leave empty for all.",
+        "selection-options": "Selection options",
         "there-are-no-permissions": "There are no permissions",
         "when to update the values": "When to update the values of this variable"
       },
@@ -1660,7 +1674,7 @@
       "select-time": "Select a time range"
     },
     "content": {
-      "empty-recent-list": "<0><0>It looks like you haven&apos;t used this time picker before. As soon as you enter some time intervals, recently used intervals will appear here.</0></0><1><0>Read the documentation</0><1> to find out more about how to enter custom time ranges.</1></1>",
+      "empty-recent-list": "<0><0>It looks like you haven&apos;t used this time picker before. As soon as you enter some time intervals, recently used intervals will appear here.</0></0>",
       "filter-placeholder": "Search quick ranges"
     },
     "footer": {

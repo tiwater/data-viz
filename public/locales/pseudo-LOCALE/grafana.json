@@ -350,6 +350,9 @@
     "close-button": "Cľőşę",
     "close-split-pane-button": "Cľőşę şpľįŧ päŉę",
     "copy-short-link-tooltip": "Cőpy şĥőřŧęŉęđ ľįŉĸ",
+    "could-not-add-panel-to-dashboard": "Cőūľđ ŉőŧ äđđ päŉęľ ŧő đäşĥþőäřđ. Pľęäşę ŧřy äģäįŉ.",
+    "could-not-fetch-dashboard": "Cőūľđ ŉőŧ ƒęŧčĥ đäşĥþőäřđ įŉƒőřmäŧįőŉ. Pľęäşę ŧřy äģäįŉ.",
+    "could-not-navigate-to-the-selected-dashboard": "Cőūľđ ŉőŧ ŉävįģäŧę ŧő ŧĥę şęľęčŧęđ đäşĥþőäřđ. Pľęäşę ŧřy äģäįŉ.",
     "error-adding-the-panel": "Ēřřőř äđđįŉģ ŧĥę päŉęľ",
     "existing-dashboard": "Ēχįşŧįŉģ đäşĥþőäřđ",
     "inspector-button": "Ĩŉşpęčŧőř",
@@ -362,6 +365,7 @@
     },
     "run-query-button": "Ŗūŉ qūęřy",
     "select-in-which-dashboard": "Ŝęľęčŧ įŉ ŵĥįčĥ đäşĥþőäřđ ŧĥę päŉęľ ŵįľľ þę čřęäŧęđ.",
+    "something-went-wrong": "Ŝőmęŧĥįŉģ ŵęŉŧ ŵřőŉģ. Pľęäşę ŧřy äģäįŉ.",
     "split-button": "Ŝpľįŧ",
     "split-pane-tooltip": "Ŝpľįŧ ŧĥę päŉę",
     "target-dashboard-label": "Ŧäřģęŧ đäşĥþőäřđ",
@@ -398,6 +402,7 @@
       "add-panel": "Åđđ päŉęľ",
       "add-panel-from-panel-library": "Åđđ päŉęľ ƒřőm päŉęľ ľįþřäřy",
       "add-permission": "Åđđ pęřmįşşįőŉ",
+      "all-unsaved-changes-will-be-lost": "Åľľ ūŉşävęđ čĥäŉģęş ŵįľľ þę ľőşŧ.",
       "angular-support-disabled": "Åŉģūľäř şūppőřŧ đįşäþľęđ, ľęģäčy äľęřŧįŉģ čäŉŉőŧ ƒūŉčŧįőŉ ŵįŧĥőūŧ äŉģūľäř şūppőřŧ",
       "annotation": {
         "apply-button": "Åppľy",
@@ -405,16 +410,16 @@
         "preview-in-dashboard-button": "Přęvįęŵ įŉ đäşĥþőäřđ"
       },
       "annotation-queries-can-be-toggled": "Åŉŉőŧäŧįőŉ qūęřįęş čäŉ þę ŧőģģľęđ őŉ őř őƒƒ äŧ ŧĥę ŧőp őƒ ŧĥę đäşĥþőäřđ. Ŵįŧĥ ŧĥįş őpŧįőŉ čĥęčĸęđ ŧĥįş ŧőģģľę ŵįľľ þę ĥįđđęŉ.",
-      "annotations-documentation": "Åŉŉőŧäŧįőŉş đőčūmęŉŧäŧįőŉ",
       "annotations-provide-a-way": "Åŉŉőŧäŧįőŉş přővįđę ä ŵäy ŧő įŉŧęģřäŧę ęvęŉŧ đäŧä įŉŧő yőūř ģřäpĥş. Ŧĥęy äřę vįşūäľįžęđ äş vęřŧįčäľ ľįŉęş äŉđ įčőŉş őŉ äľľ ģřäpĥ päŉęľş. Ŵĥęŉ yőū ĥővęř ővęř äŉ äŉŉőŧäŧįőŉ įčőŉ yőū čäŉ ģęŧ ęvęŉŧ ŧęχŧ &ämp; ŧäģş ƒőř ŧĥę ęvęŉŧ. Ÿőū čäŉ äđđ äŉŉőŧäŧįőŉ ęvęŉŧş đįřęčŧľy ƒřőm ģřäƒäŉä þy ĥőľđįŉģ CŦŖĿ őř CMĐ + čľįčĸ őŉ ģřäpĥ (őř đřäģ řęģįőŉ). Ŧĥęşę ŵįľľ þę şŧőřęđ įŉ Ğřäƒäŉä'ş äŉŉőŧäŧįőŉ đäŧäþäşę.",
+      "are-you-sure-you-want-to-restore": "Åřę yőū şūřę yőū ŵäŉŧ ŧő řęşŧőřę ŧĥę đäşĥþőäřđ ŧő vęřşįőŉ ",
       "cancel-loading-dashboard": "Cäŉčęľ ľőäđįŉģ đäşĥþőäřđ",
       "cannot-delete-provisioned-dashboard": "Cäŉŉőŧ đęľęŧę přővįşįőŉęđ đäşĥþőäřđ",
-      "checkout-the": "Cĥęčĸőūŧ ŧĥę",
       "color": "Cőľőř",
       "color-to-use-for-the-annotation": "Cőľőř ŧő ūşę ƒőř ŧĥę äŉŉőŧäŧįőŉ ęvęŉŧ mäřĸęřş",
       "dashboard-comments": "Đäşĥþőäřđ čőmmęŉŧş",
       "dashboard-deleted": "Đäşĥþőäřđ Đęľęŧęđ",
       "dashboard-has-been-deleted": "ĥäş þęęŉ đęľęŧęđ",
+      "dashboard-saved": "Đäşĥþőäřđ şävęđ",
       "data": "Đäŧä",
       "data-source": "Đäŧä şőūřčę",
       "delete": "Đęľęŧę",
@@ -423,9 +428,9 @@
       "documentation": "đőčūmęŉŧäŧįőŉ",
       "edit-panel": "Ēđįŧ Päŉęľ",
       "enabled": "Ēŉäþľęđ",
+      "error-saving-dashboard": "Ēřřőř şävįŉģ đäşĥþőäřđ",
       "failed-to-fetch-dashboard": "Fäįľęđ ŧő ƒęŧčĥ đäşĥþőäřđ",
       "file-path": "Fįľę päŧĥ: ",
-      "for-more": "ƒőř mőřę įŉƒőřmäŧįőŉ.",
       "for-more-information": "ƒőř mőřę įŉƒőřmäŧįőŉ äþőūŧ přővįşįőŉįŉģ.",
       "get-help-with-this-panel": "Ğęŧ ĥęľp ŵįŧĥ ŧĥįş päŉęľ",
       "hidden": "Ħįđđęŉ",
@@ -466,6 +471,7 @@
       "permission-to-edit-panel-denied": "Pęřmįşşįőŉ ŧő ęđįŧ päŉęľ đęŉįęđ",
       "query": "Qūęřy",
       "query-name": "Qūęřy ŉämę",
+      "restore-version-title": "Ŗęşŧőřę Vęřşįőŉ",
       "row-title": "Ŗőŵ Ŧįŧľę",
       "save-dashboard": {
         "add-a-note-to-describe-your-changes": "Åđđ ä ŉőŧę ŧő đęşčřįþę yőūř čĥäŉģęş",
@@ -606,6 +612,7 @@
       },
       "what-are-annotation-queries": "Ŵĥäŧ äřę äŉŉőŧäŧįőŉ qūęřįęş?",
       "when-enabled-the-annotation-query": "Ŵĥęŉ ęŉäþľęđ ŧĥę äŉŉőŧäŧįőŉ qūęřy įş įşşūęđ ęvęřy đäşĥþőäřđ řęƒřęşĥ",
+      "yes-restore-to-version": "Ÿęş, řęşŧőřę ŧő vęřşįőŉ",
       "you-have-changed-a-folder": "Ÿőū ĥävę čĥäŉģęđ ä ƒőľđęř, pľęäşę şävę ŧő vįęŵ pęřmįşşįőŉş."
     },
     "dimensions": {
@@ -753,7 +760,11 @@
       "disabled": "Đįşäþľęđ",
       "editor": {
         "an-empty-query-name": "Åŉ ęmpŧy qūęřy ŉämę įş ŉőŧ äľľőŵęđ",
-        "query-name-already-exists": "Qūęřy ŉämę äľřęäđy ęχįşŧş"
+        "could-not-load-query-editor-due": "Cőūľđ ŉőŧ ľőäđ qūęřy ęđįŧőř đūę ŧő",
+        "data-source-plugin-does-not-export": "Đäŧä şőūřčę pľūģįŉ đőęş ŉőŧ ęχpőřŧ äŉy Qūęřy Ēđįŧőř čőmpőŉęŉŧ",
+        "preview-alerts": "Přęvįęŵ äľęřŧş",
+        "query-name-already-exists": "Qūęřy ŉämę äľřęäđy ęχįşŧş",
+        "there-are-no-firing-alerts-for": "Ŧĥęřę äřę ŉő ƒįřįŉģ äľęřŧş ƒőř yőūř qūęřy."
       },
       "editor-row": {
         "duplicate-query": "Đūpľįčäŧę qūęřy",
@@ -1044,7 +1055,6 @@
         "delete-variable": "Đęľęŧę väřįäþľę",
         "description": "Đęşčřįpŧįőŉ",
         "description-text": "Đęşčřįpŧįvę ŧęχŧ",
-        "for-more-information": "ƒőř mőřę įŉƒőřmäŧįőŉ.",
         "label": "Ŀäþęľ",
         "label-and-value": "Ŀäþęľ äŉđ väľūę",
         "label-name": "Ŀäþęľ ŉämę",
@@ -1061,16 +1071,16 @@
         "restore": "Ŗęşŧőřę",
         "run-query": "Ŗūŉ qūęřy",
         "select-two-versions-to-start-comparing": "Ŝęľęčŧ ŧŵő vęřşįőŉş ŧő şŧäřŧ čőmpäřįŉģ",
+        "select-variable-type": "Ŝęľęčŧ väřįäþľę ŧypę",
         "show-more-versions": "Ŝĥőŵ mőřę vęřşįőŉş",
         "show-on-dashboard": "Ŝĥőŵ őŉ đäşĥþőäřđ",
-        "templates-and-variables-documentation": "Ŧęmpľäŧęş äŉđ väřįäþľęş đőčūmęŉŧäŧįőŉ",
         "the-name-of-the-template-variable": "Ŧĥę ŉämę őƒ ŧĥę ŧęmpľäŧę väřįäþľę. (Mäχ. 50 čĥäřäčŧęřş)",
         "there-are-no-variables-yet": "Ŧĥęřę äřę ŉő väřįäþľęş yęŧ",
         "updated-by": "Ůpđäŧęđ þy",
         "value": "Väľūę",
         "variable": "Väřįäþľę",
         "variable-name": "Väřįäþľę ŉämę",
-        "variables-enable-more-interactive": "Väřįäþľęş ęŉäþľę mőřę įŉŧęřäčŧįvę äŉđ đyŉämįč đäşĥþőäřđş. Ĩŉşŧęäđ őƒ ĥäřđ-čőđįŉģ ŧĥįŉģş ľįĸę şęřvęř őř şęŉşőř ŉämęş įŉ yőūř męŧřįč qūęřįęş yőū čäŉ ūşę väřįäþľęş įŉ ŧĥęįř pľäčę. Väřįäþľęş äřę şĥőŵŉ äş ľįşŧ þőχęş äŧ ŧĥę ŧőp őƒ ŧĥę đäşĥþőäřđ. Ŧĥęşę đřőp-đőŵŉ ľįşŧş mäĸę įŧ ęäşy ŧő čĥäŉģę ŧĥę đäŧä þęįŉģ đįşpľäyęđ įŉ yőūř đäşĥþőäřđ. Cĥęčĸ őūŧ ŧĥę",
+        "variables-enable-more-interactive": "Väřįäþľęş ęŉäþľę mőřę įŉŧęřäčŧįvę äŉđ đyŉämįč đäşĥþőäřđş. Ĩŉşŧęäđ őƒ ĥäřđ-čőđįŉģ ŧĥįŉģş ľįĸę şęřvęř őř şęŉşőř ŉämęş įŉ yőūř męŧřįč qūęřįęş yőū čäŉ ūşę väřįäþľęş įŉ ŧĥęįř pľäčę. Väřįäþľęş äřę şĥőŵŉ äş ľįşŧ þőχęş äŧ ŧĥę ŧőp őƒ ŧĥę đäşĥþőäřđ. Ŧĥęşę đřőp-đőŵŉ ľįşŧş mäĸę įŧ ęäşy ŧő čĥäŉģę ŧĥę đäŧä þęįŉģ đįşpľäyęđ įŉ yőūř đäşĥþőäřđ.",
         "version": "Vęřşįőŉ",
         "want-to-delete-variable": "Åřę yőū şūřę yőū ŵäŉŧ ŧő đęľęŧę väřįäþľę",
         "what-do-variables-do": "Ŵĥäŧ đő väřįäþľęş đő?"
@@ -1082,11 +1092,15 @@
         "custom-all-value": "Cūşŧőm äľľ väľūę",
         "enables-an-option-to-include-all-variables": "Ēŉäþľęş äŉ őpŧįőŉ ŧő įŉčľūđę äľľ väřįäþľęş",
         "enables-multiple-values-to-be": "Ēŉäþľęş mūľŧįpľę väľūęş ŧő þę şęľęčŧęđ äŧ ŧĥę şämę ŧįmę",
+        "example": "Ēχämpľę",
         "include-all-option": "Ĩŉčľūđę Åľľ őpŧįőŉ",
+        "instance-name-filter": "Ĩŉşŧäŉčę ŉämę ƒįľŧęř",
         "multi-value": "Mūľŧį-väľūę",
         "on-dashboard-load": "Øŉ đäşĥþőäřđ ľőäđ",
         "on-time-range-change": "Øŉ ŧįmę řäŉģę čĥäŉģę",
         "refresh": "Ŗęƒřęşĥ",
+        "regex-filter-for-which-data-source-instances": "Ŗęģęχ ƒįľŧęř ƒőř ŵĥįčĥ đäŧä şőūřčę įŉşŧäŉčęş ŧő čĥőőşę ƒřőm įŉ ŧĥę väřįäþľę väľūę ľįşŧ. Ŀęävę ęmpŧy ƒőř äľľ.",
+        "selection-options": "Ŝęľęčŧįőŉ őpŧįőŉş",
         "there-are-no-permissions": "Ŧĥęřę äřę ŉő pęřmįşşįőŉş",
         "when to update the values": "Ŵĥęŉ ŧő ūpđäŧę ŧĥę väľūęş őƒ ŧĥįş väřįäþľę"
       },
@@ -1660,7 +1674,7 @@
       "select-time": "Ŝęľęčŧ ä ŧįmę řäŉģę"
     },
     "content": {
-      "empty-recent-list": "<0><0>Ĩŧ ľőőĸş ľįĸę yőū ĥävęŉ&äpőş;ŧ ūşęđ ŧĥįş ŧįmę pįčĸęř þęƒőřę. Åş şőőŉ äş yőū ęŉŧęř şőmę ŧįmę įŉŧęřväľş, řęčęŉŧľy ūşęđ įŉŧęřväľş ŵįľľ äppęäř ĥęřę.</0></0><1><0>Ŗęäđ ŧĥę đőčūmęŉŧäŧįőŉ</0><1> ŧő ƒįŉđ őūŧ mőřę äþőūŧ ĥőŵ ŧő ęŉŧęř čūşŧőm ŧįmę řäŉģęş.</1></1>",
+      "empty-recent-list": "<0><0>Ĩŧ ľőőĸş ľįĸę yőū ĥävęŉ&äpőş;ŧ ūşęđ ŧĥįş ŧįmę pįčĸęř þęƒőřę. Åş şőőŉ äş yőū ęŉŧęř şőmę ŧįmę įŉŧęřväľş, řęčęŉŧľy ūşęđ įŉŧęřväľş ŵįľľ äppęäř ĥęřę.</0></0>",
       "filter-placeholder": "Ŝęäřčĥ qūįčĸ řäŉģęş"
     },
     "footer": {

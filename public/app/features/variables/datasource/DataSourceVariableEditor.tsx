@@ -3,6 +3,7 @@ import { connect, ConnectedProps } from 'react-redux';
 
 import { SelectableValue } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
+import { t } from 'app/core/internationalization';
 
 import { StoreState } from '../../../types';
 import { SelectionOptionsEditor } from '../editor/SelectionOptionsEditor';
@@ -114,22 +115,24 @@ export class DataSourceVariableEditorUnConnected extends PureComponent<Props> {
 
         <VariableTextField
           value={this.props.variable.regex}
-          name="Instance name filter"
+          name={t('features.variables.query.instance-name-filter', 'Instance name filter')}
           placeholder="/.*-(.*)-.*/"
           onChange={this.onRegExChange}
           onBlur={this.onRegExBlur}
           description={
             <div>
-              Regex filter for which data source instances to choose from in the variable value list. Leave empty for
-              all.
+              {t(
+                'features.variables.query.regex-filter-for-which-data-source-instances',
+                'Regex filter for which data source instances to choose from in the variable value list. Leave empty for all.'
+              )}
               <br />
               <br />
-              Example: <code>/^prod/</code>
+              {t('features.variables.query.example', 'Example')}: <code>/^prod/</code>
             </div>
           }
         />
 
-        <VariableLegend>Selection options</VariableLegend>
+        <VariableLegend>{t('features.variables.query.selection-options', 'Selection options')}</VariableLegend>
         <SelectionOptionsEditor
           variable={variable}
           onPropChange={this.onSelectionOptionsChange}

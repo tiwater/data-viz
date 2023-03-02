@@ -226,7 +226,7 @@ const EmptyRecentList = memo(() => {
             recently used intervals will appear here.
           </span>
         </div>
-        <div>
+        {/* <div>
           <a
             className={styles.link}
             href="https://grafana.com/docs/grafana/latest/dashboards/time-range-controls"
@@ -235,7 +235,7 @@ const EmptyRecentList = memo(() => {
             Read the documentation
           </a>
           <span> to find out more about how to enter custom time ranges.</span>
-        </div>
+        </div> */}
       </Trans>
     </div>
   );
