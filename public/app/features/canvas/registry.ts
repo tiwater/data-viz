@@ -12,17 +12,17 @@ import { textItem } from './elements/text';
 import { windTurbineItem } from './elements/windTurbine';
 
 export const DEFAULT_CANVAS_ELEMENT_CONFIG: CanvasElementOptions = {
-  ...metricValueItem.getNewOptions(),
-  placement: { ...metricValueItem.getNewOptions().placement, ...metricValueItem.defaultSize },
-  type: metricValueItem.id,
+  ...metricValueItem().getNewOptions(),
+  placement: { ...metricValueItem().getNewOptions().placement, ...metricValueItem().defaultSize },
+  type: metricValueItem().id,
   name: `Element 1`,
 };
 
 export const defaultElementItems = [
-  metricValueItem, // default for now
-  textItem,
-  rectangleItem,
-  iconItem,
+  metricValueItem(), // default for now
+  textItem(),
+  rectangleItem(),
+  iconItem(),
 ];
 
 export const advancedElementItems = [buttonItem, windTurbineItem, droneTopItem, droneFrontItem, droneSideItem];

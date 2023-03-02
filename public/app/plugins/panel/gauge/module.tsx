@@ -1,5 +1,6 @@
 import { PanelPlugin } from '@grafana/data';
 import { commonOptionsBuilder } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { addOrientationOption, addStandardDataReduceOptions } from '../stat/common';
 
@@ -13,11 +14,14 @@ export const plugin = new PanelPlugin<PanelOptions>(GaugePanel)
     useCustomConfig: (builder) => {
       builder.addNumberInput({
         path: 'neutral',
-        name: 'Neutral',
-        description: 'Leave empty to use Min as neutral point',
-        category: ['Gauge'],
+        name: t('plugins.gauge.neutral', 'Neutral'),
+        description: t(
+          'plugins.gauge.leave-empty-to-use-Min-as-neutral-point',
+          'Leave empty to use Min as neutral point'
+        ),
+        category: [t('plugins.gauge.gauge', 'Gauge')],
         settings: {
-          placeholder: 'auto',
+          placeholder: t('plugins.gauge.auto', 'auto'),
         },
       });
     },
@@ -28,14 +32,17 @@ export const plugin = new PanelPlugin<PanelOptions>(GaugePanel)
     builder
       .addBooleanSwitch({
         path: 'showThresholdLabels',
-        name: 'Show threshold labels',
-        description: 'Render the threshold values around the gauge bar',
+        name: t('plugins.gauge.show-threshold-labels', 'Show threshold labels'),
+        description: t('plugins.gauge.render-the-threshold-values', 'Render the threshold values around the gauge bar'),
         defaultValue: defaultPanelOptions.showThresholdLabels,
       })
       .addBooleanSwitch({
         path: 'showThresholdMarkers',
-        name: 'Show threshold markers',
-        description: 'Renders the thresholds as an outer bar',
+        name: t('plugins.gauge.show-threshold-markers', 'Show threshold markers'),
+        description: t(
+          'plugins.gauge.renders-the-thresholds-as-an-outer-bar',
+          'Renders the thresholds as an outer bar'
+        ),
         defaultValue: defaultPanelOptions.showThresholdMarkers,
       });
 

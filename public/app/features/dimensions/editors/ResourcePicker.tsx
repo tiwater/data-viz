@@ -15,6 +15,7 @@ import {
   useTheme2,
 } from '@grafana/ui';
 import { closePopover } from '@grafana/ui/src/utils/closePopover';
+import { t } from 'app/core/internationalization';
 
 import { getPublicOrAbsoluteUrl } from '../resource';
 import { MediaType, ResourceFolderName, ResourcePickerSize } from '../types';
@@ -60,7 +61,7 @@ export const ResourcePicker = (props: Props) => {
     } else {
       return (
         <LinkButton variant="primary" fill="text" size="sm">
-          Set icon
+          {t('features.dimensions.editor.set-icon', 'Set icon')}
         </LinkButton>
       );
     }

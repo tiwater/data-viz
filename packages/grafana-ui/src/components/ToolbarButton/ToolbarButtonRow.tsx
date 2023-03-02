@@ -6,6 +6,7 @@ import React, { forwardRef, HTMLAttributes, useState, useRef, useLayoutEffect, c
 
 import { GrafanaTheme2 } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { useTheme2 } from '../../themes';
 
 import { ToolbarButton } from './ToolbarButton';
@@ -83,7 +84,7 @@ export const ToolbarButtonRow = forwardRef<HTMLDivElement, Props>(
           <div ref={overflowRef} className={styles.overflowButton}>
             <ToolbarButton
               variant={showOverflowItems ? 'active' : 'default'}
-              tooltip="Show more items"
+              tooltip={t('grafana-ui.tool-bar-buttom.show-more-items', 'Show more items')}
               onClick={() => setShowOverflowItems(!showOverflowItems)}
               icon="ellipsis-v"
               iconOnly

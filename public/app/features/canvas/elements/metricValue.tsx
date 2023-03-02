@@ -6,6 +6,7 @@ import { of } from 'rxjs';
 import { DataFrame, FieldNamePickerConfigSettings, GrafanaTheme2, StandardEditorsRegistryItem } from '@grafana/data';
 import { usePanelContext, useStyles2 } from '@grafana/ui';
 import { FieldNamePicker } from '@grafana/ui/src/components/MatchersUI/FieldNamePicker';
+import { t } from 'app/core/internationalization';
 import { TextDimensionMode } from 'app/features/dimensions';
 import { DimensionContext } from 'app/features/dimensions/context';
 import { ColorDimensionEditor } from 'app/features/dimensions/editors/ColorDimensionEditor';
@@ -34,7 +35,9 @@ const MetricValueDisplay = (props: CanvasElementProps<TextConfig, TextData>) => 
   }
   return (
     <div className={styles.container}>
-      <span className={styles.span}>{data?.text ? data.text : 'Double click to set field'}</span>
+      <span className={styles.span}>
+        {data?.text ? data.text : t('features.canvas.double-click-to-set-field', 'Double click to set field')}
+      </span>
     </div>
   );
 };
@@ -111,10 +114,10 @@ const getStyles = (data: TextData | undefined) => (theme: GrafanaTheme2) => ({
   `,
 });
 
-export const metricValueItem: CanvasElementItem<TextConfig, TextData> = {
+export const metricValueItem = (): CanvasElementItem<TextConfig, TextData> => ({
   id: 'metric-value',
-  name: 'Metric Value',
-  description: 'Display a field value',
+  name: t('plugins.canvas.metric-value', 'Metric Value'),
+  description: t('plugins.canvas.display-a-field-value', 'Display a field value'),
 
   display: MetricValueDisplay,
 
@@ -169,14 +172,14 @@ export const metricValueItem: CanvasElementItem<TextConfig, TextData> = {
         category,
         id: 'textSelector',
         path: 'config.text',
-        name: 'Text',
+        name: t('plugins.canvas.text', 'Text'),
         editor: TextDimensionEditor,
       })
       .addCustomEditor({
         category,
         id: 'config.color',
         path: 'config.color',
-        name: 'Text color',
+        name: t('plugins.canvas.text-color', 'Text color'),
         editor: ColorDimensionEditor,
         settings: {},
         defaultValue: {},
@@ -184,12 +187,12 @@ export const metricValueItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.align',
-        name: 'Align text',
+        name: t('plugins.canvas.align-text', 'Align text'),
         settings: {
           options: [
-            { value: Align.Left, label: 'Left' },
-            { value: Align.Center, label: 'Center' },
-            { value: Align.Right, label: 'Right' },
+            { value: Align.Left, label: t('plugins.canvas.left', 'Left') },
+            { value: Align.Center, label: t('plugins.canvas.center', 'Center') },
+            { value: Align.Right, label: t('plugins.canvas.right', 'Right') },
           ],
         },
         defaultValue: Align.Left,
@@ -197,12 +200,12 @@ export const metricValueItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.valign',
-        name: 'Vertical align',
+        name: t('plugins.canvas.vertical-align', 'Vertical align'),
         settings: {
           options: [
-            { value: VAlign.Top, label: 'Top' },
-            { value: VAlign.Middle, label: 'Middle' },
-            { value: VAlign.Bottom, label: 'Bottom' },
+            { value: VAlign.Top, label: t('plugins.canvas.top', 'Top') },
+            { value: VAlign.Middle, label: t('plugins.canvas.middle', 'Middle') },
+            { value: VAlign.Bottom, label: t('plugins.canvas.bottom', 'Bottom') },
           ],
         },
         defaultValue: VAlign.Middle,
@@ -210,10 +213,10 @@ export const metricValueItem: CanvasElementItem<TextConfig, TextData> = {
       .addNumberInput({
         category,
         path: 'config.size',
-        name: 'Text size',
+        name: t('plugins.canvas.text-size', 'Text size'),
         settings: {
-          placeholder: 'Auto',
+          placeholder: t('plugins.canvas.auto', 'Auto'),
         },
       });
   },
-};
+});

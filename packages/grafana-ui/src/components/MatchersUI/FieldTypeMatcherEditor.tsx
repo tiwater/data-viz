@@ -2,6 +2,7 @@ import React, { memo, useMemo, useCallback } from 'react';
 
 import { FieldMatcherID, fieldMatchers, SelectableValue, FieldType, DataFrame } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { Select } from '../Select/Select';
 
 import { MatcherUIProps, FieldMatcherUIRegistryItem } from './types';
@@ -79,11 +80,14 @@ const useSelectOptions = (counts: Map<string, number>, opt?: string): Array<Sele
   }, [counts, opt]);
 };
 
-export const fieldTypeMatcherItem: FieldMatcherUIRegistryItem<string> = {
+export const fieldTypeMatcherItem = (): FieldMatcherUIRegistryItem<string> => ({
   id: FieldMatcherID.byType,
   component: FieldTypeMatcherEditor,
   matcher: fieldMatchers.get(FieldMatcherID.byType),
-  name: 'Fields with type',
-  description: 'Set properties for fields of a specific type (number, string, boolean)',
+  name: t('grafana-ui.matchers-ui.fields-with-type', 'Fields with type'),
+  description: t(
+    'grafana-ui.matchers-ui.set-properties-for-a-specific-field-number',
+    'Set properties for fields of a specific type (number, string, boolean)'
+  ),
   optionsToLabel: (options) => options,
-};
+});

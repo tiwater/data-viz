@@ -2,6 +2,7 @@ import React, { memo, useCallback } from 'react';
 
 import { FieldMatcherID, fieldMatchers, SelectableValue, ByNamesMatcherOptions } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { Input } from '../Input/Input';
 import { MultiSelect } from '../Select/Select';
 
@@ -43,12 +44,12 @@ export const FieldNamesMatcherEditor = memo<MatcherUIProps<ByNamesMatcherOptions
 });
 FieldNamesMatcherEditor.displayName = 'FieldNameMatcherEditor';
 
-export const fieldNamesMatcherItem: FieldMatcherUIRegistryItem<ByNamesMatcherOptions> = {
+export const fieldNamesMatcherItem = (): FieldMatcherUIRegistryItem<ByNamesMatcherOptions> => ({
   id: FieldMatcherID.byNames,
   component: FieldNamesMatcherEditor,
   matcher: fieldMatchers.get(FieldMatcherID.byNames),
-  name: 'Fields with name',
-  description: 'Set properties for a specific field',
+  name: t('grafana-ui.matchers-ui.fields-with-name', 'Fields with name'),
+  description: t('grafana-ui.matchers-ui.set-properties-for-a-specific-field', 'Set properties for a specific field'),
   optionsToLabel: (options) => (options.names ?? []).join(', '),
   excludeFromPicker: true,
-};
+});

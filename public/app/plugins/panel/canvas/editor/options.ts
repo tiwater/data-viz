@@ -1,4 +1,5 @@
 import { PanelOptionsSupplier } from '@grafana/data/src/panel/PanelPlugin';
+import { t } from 'app/core/internationalization';
 import { CanvasElementOptions } from 'app/features/canvas';
 import { ColorDimensionEditor, ResourceDimensionEditor } from 'app/features/dimensions/editors';
 import { BackgroundSizeEditor } from 'app/features/dimensions/editors/BackgroundSizeEditor';
@@ -17,13 +18,13 @@ const getCategoryName = (str: string, type: string | undefined) => {
 
 export const optionBuilder: OptionSuppliers = {
   addBackground: (builder, context) => {
-    const category = getCategoryName('Background', context.options?.type);
+    const category = getCategoryName(t('plugins.canvas.background', 'Background'), context.options?.type);
     builder
       .addCustomEditor({
         category,
         id: 'background.color',
         path: 'background.color',
-        name: 'Color',
+        name: t('plugins.canvas.color', 'Color'),
         editor: ColorDimensionEditor,
         settings: {},
         defaultValue: {
@@ -35,7 +36,7 @@ export const optionBuilder: OptionSuppliers = {
         category,
         id: 'background.image',
         path: 'background.image',
-        name: 'Image',
+        name: t('plugins.canvas.image', 'Image'),
         editor: ResourceDimensionEditor,
         settings: {
           resourceType: 'image',
@@ -45,7 +46,7 @@ export const optionBuilder: OptionSuppliers = {
         category,
         id: 'background.size',
         path: 'background.size',
-        name: 'Image size',
+        name: t('plugins.canvas.image-size', 'Image size'),
         editor: BackgroundSizeEditor,
         settings: {
           resourceType: 'image',
@@ -54,11 +55,11 @@ export const optionBuilder: OptionSuppliers = {
   },
 
   addBorder: (builder, context) => {
-    const category = getCategoryName('Border', context.options?.type);
+    const category = getCategoryName(t('plugins.canvas.border', 'Border'), context.options?.type);
     builder.addSliderInput({
       category,
       path: 'border.width',
-      name: 'Width',
+      name: t('plugins.canvas.width', 'width'),
       defaultValue: 2,
       settings: {
         min: 0,
@@ -71,7 +72,7 @@ export const optionBuilder: OptionSuppliers = {
         category,
         id: 'border.color',
         path: 'border.color',
-        name: 'Color',
+        name: t('plugins.canvas.color', 'Color'),
         editor: ColorDimensionEditor,
         settings: {},
         defaultValue: {

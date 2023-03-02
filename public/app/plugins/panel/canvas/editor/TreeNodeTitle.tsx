@@ -3,6 +3,7 @@ import React from 'react';
 
 import { GrafanaTheme2 } from '@grafana/data';
 import { IconButton, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { ElementState } from 'app/features/canvas/runtime/element';
 
 import { LayerName } from '../../../../core/components/Layers/LayerName';
@@ -54,9 +55,14 @@ export const TreeNodeTitle = ({ settings, nodeData, setAllowSelection }: Props) 
 
     return Boolean(scene?.canRename(nameToVerify));
   };
-
+  const typeText: { [key: string]: string } = {
+    text: t('plugins.canvas-editor.text', 'text'),
+    rectangle: t('plugins.canvas-editor.rectangle', 'rectangle'),
+    'metric-value': t('plugins.canvas-editor.metric-value', 'metric-value'),
+    icon: t('plugins.canvas-editor.icon', 'icon'),
+  };
   const getLayerInfo = (element: ElementState) => {
-    return element.options.type;
+    return typeText[element.options.type];
   };
 
   return (

@@ -1,6 +1,7 @@
 import { PanelPlugin, VizOrientation } from '@grafana/data';
 import { BarGaugeDisplayMode } from '@grafana/schema';
 import { commonOptionsBuilder, sharedSingleStatPanelChangedHandler } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { addOrientationOption, addStandardDataReduceOptions } from '../stat/common';
 
@@ -19,34 +20,37 @@ export const plugin = new PanelPlugin<PanelOptions>(BarGaugePanel)
     builder
       .addRadio({
         path: 'displayMode',
-        name: 'Display mode',
+        name: t('plugins.bar-gauge.display-mode', 'Display mode'),
         settings: {
           options: [
-            { value: BarGaugeDisplayMode.Gradient, label: 'Gradient' },
-            { value: BarGaugeDisplayMode.Lcd, label: 'Retro LCD' },
-            { value: BarGaugeDisplayMode.Basic, label: 'Basic' },
+            { value: BarGaugeDisplayMode.Gradient, label: t('plugins.bar-gauge.gradient', 'Gradient') },
+            { value: BarGaugeDisplayMode.Lcd, label: t('plugins.bar-gauge.retro-LCD', 'Retro LCD') },
+            { value: BarGaugeDisplayMode.Basic, label: t('plugins.bar-gauge.basic', 'Basic') },
           ],
         },
         defaultValue: defaultPanelOptions.displayMode,
       })
       .addBooleanSwitch({
         path: 'showUnfilled',
-        name: 'Show unfilled area',
-        description: 'When enabled renders the unfilled region as gray',
+        name: t('plugins.bar-gauge.show-unfilled-area', 'Show unfilled area'),
+        description: t(
+          'plugins.bar-gauge.when-enabled-renders-the-unfilled',
+          'When enabled renders the unfilled region as gray'
+        ),
         defaultValue: defaultPanelOptions.showUnfilled,
         showIf: (options) => options.displayMode !== 'lcd',
       })
       .addNumberInput({
         path: 'minVizWidth',
-        name: 'Min width',
-        description: 'Minimum column width',
+        name: t('plugins.bar-gauge.min-width', 'Min width'),
+        description: t('plugins.bar-gauge.minimum-column-width', 'Minimum column width'),
         defaultValue: defaultPanelOptions.minVizWidth,
         showIf: (options) => options.orientation === VizOrientation.Vertical,
       })
       .addNumberInput({
         path: 'minVizHeight',
-        name: 'Min height',
-        description: 'Minimum row height',
+        name: t('plugins.bar-gauge.min-height', 'Min height'),
+        description: t('plugins.bar-gauge.minimum-row-height', 'Minimum row height'),
         defaultValue: defaultPanelOptions.minVizHeight,
         showIf: (options) => options.orientation === VizOrientation.Horizontal,
       });

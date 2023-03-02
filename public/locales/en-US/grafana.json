@@ -394,6 +394,9 @@
         "there-are-no-alert-rules-linked-to-this-panel": "There are no alert rules linked to this panel."
       }
     },
+    "canvas": {
+      "double-click-to-set-field": "Double click to set field"
+    },
     "dashboard": {
       "add-a-new-panel": "Add a new panel",
       "add-a-new-row": "Add a new row",
@@ -427,6 +430,9 @@
       "do-you-want-to-delete": "Do you want to delete this dashboard?",
       "documentation": "documentation",
       "edit-panel": "Edit Panel",
+      "editor": {
+        "override": "Override"
+      },
       "enabled": "Enabled",
       "error-saving-dashboard": "Error saving dashboard",
       "failed-to-fetch-dashboard": "Failed to fetch dashboard",
@@ -633,12 +639,16 @@
       "connect-null-values": "Connect null values",
       "constant": "Constant",
       "constantDescription": "The first value will be shown as a constant line",
+      "editor": {
+        "set-icon": "Set icon"
+      },
       "editors": {
         "boolean-false-values": "Boolean false values",
         "boolean-true-values": "Boolean true values",
         "empty": "Empty",
         "empty-string": "Empty string",
         "exact-value-to-match": "Exact value to match",
+        "fixed-color": "Fixed color",
         "matches-against-number": "Matches against Number.NaN (not a number)",
         "matches-null-and-undefined-and-NaN": "Matches null, undefined and NaN",
         "matches-null-and-undefined-values": "Matches null and undefined values",
@@ -1137,6 +1147,17 @@
       "saturday": "Saturday",
       "sunday": "Sunday"
     },
+    "matchers-ui": {
+      "enter-regular-expression": "Enter regular expression",
+      "fields-returned-by-query": "Fields returned by query",
+      "fields-with-name": "Fields with name",
+      "fields-with-name-matching-regex": "Fields with name matching regex",
+      "fields-with-type": "Fields with type",
+      "set-properties-for-a-specific-field": "Set properties for a specific field",
+      "set-properties-for-a-specific-field-number": "Set properties for fields of a specific type (number, string, boolean)",
+      "set-properties-for-fields-from-a-specific-query": "Set properties for fields from a specific query",
+      "set-properties-for-fields-with-names-matching": "Set properties for fields with names matching a regex"
+    },
     "options": {
       "all": "All",
       "ascending": "Ascending",
@@ -1189,6 +1210,9 @@
       "add-button": "Add",
       "new-tag": "New tag (enter key to add)"
     },
+    "tool-bar-buttom": {
+      "show-more-items": "Show more items"
+    },
     "u-plot": {
       "config": {
         "after": "After",
@@ -1219,6 +1243,11 @@
         "step-after": "Step after",
         "step-before": "Step before"
       }
+    }
+  },
+  "granfana-ui": {
+    "matchers-ui": {
+      "select-field": "Select field"
     }
   },
   "library-panel": {
@@ -1536,10 +1565,161 @@
     }
   },
   "plugins": {
+    "bar-gauge": {
+      "basic": "Basic",
+      "display-mode": "Display mode",
+      "gradient": "Gradient",
+      "min-height": "Min height",
+      "min-width": "Min width",
+      "minimum-column-width": "Minimum column width",
+      "minimum-row-height": "Minimum row height",
+      "retro-LCD": "Retro LCD",
+      "show-unfilled-area": "Show unfilled area",
+      "when-enabled-renders-the-unfilled": "When enabled renders the unfilled region as gray"
+    },
+    "canvas": {
+      "add-item": "Add item",
+      "align-text": "Align text",
+      "auto": "Auto",
+      "background": "Background",
+      "border": "Border",
+      "bottom": "Bottom",
+      "bring-to-front": "Bring to front",
+      "canvas-item": "Canvas item",
+      "center": "Center",
+      "clear-selection": "Clear selection",
+      "close-editor": "Close Editor",
+      "color": "Color",
+      "constraints": "Constraints",
+      "contain": "Contain",
+      "cover": "Cover",
+      "delete": "Delete",
+      "display-a-field-value": "Display a field value",
+      "display-text": "Display text",
+      "duplicate": "Duplicate",
+      "edit": "Edit",
+      "element": "Element",
+      "element-management": "Element Management",
+      "elements": "Elements",
+      "field": "Field",
+      "fill": "Fill",
+      "fill-color": "Fill color",
+      "fixed": "Fixed",
+      "frame-selection": "Frame selection",
+      "height": "height",
+      "icon": "Icon",
+      "image": "Image",
+      "image-size": "Image size",
+      "layer": "Layer",
+      "layout": "Layout",
+      "left": "Left",
+      "left-right": "Left & right",
+      "mappings": "Mappings",
+      "mappings-editor": "TODO mappings editor!",
+      "metric-value": "Metric Value",
+      "middle": "Middle",
+      "missing-layer": "Missing layer?",
+      "no-settings": "No settings",
+      "node-icon": "Node Icon",
+      "open-editor": "Open Editor",
+      "original": "Original",
+      "please-select-an-element": "Please select an element",
+      "position": "Position",
+      "quick-placement": "Quick placement",
+      "rectangle": "Rectangle",
+      "right": "Right",
+      "scale": "Scale",
+      "select-a-value": "Select a value",
+      "selected-element": "Selected Element",
+      "selected-element-type-is-not-supported": "Selected element type is not supported by current settings. Please enable advanced element types.",
+      "send-to-back": "Send to back",
+      "set-background": "Set background",
+      "source": "Source",
+      "SVG-icon-display": "SVG Icon display",
+      "SVG-path": "SVG Path",
+      "template": "Template",
+      "text": "Text",
+      "text-color": "Text color",
+      "text-size": "Text size",
+      "tile": "Tile",
+      "top": "Top",
+      "top-bottom": "Top & bottom",
+      "value": "Value",
+      "vertical-align": "Vertical align",
+      "width": "width"
+    },
+    "canvas-editor": {
+      "icon": "icon",
+      "metric-value": "metric-value",
+      "rectangle": "rectangle",
+      "text": "text"
+    },
     "data-source": {
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": "This dashboard does not have any other panels. Add queries to other panels and try again."
       }
+    },
+    "gauge": {
+      "auto": "auto",
+      "gauge": "Gauge",
+      "leave-empty-to-use-Min-as-neutral-point": "Leave empty to use Min as neutral point",
+      "neutral": "Neutral",
+      "render-the-threshold-values": "Render the threshold values around the gauge bar",
+      "renders-the-thresholds-as-an-outer-bar": "Renders the thresholds as an outer bar",
+      "show-threshold-labels": "Show threshold labels",
+      "show-threshold-markers": "Show threshold markers"
+    },
+    "pie-chart": {
+      "donut": "Donut",
+      "how-the-piechart-should-be-rendered": "How the piechart should be rendered",
+      "labels": "Labels",
+      "legend": "Legend",
+      "legend-values": "Legend values",
+      "name": "Name",
+      "percent": "Percent",
+      "pie": "Pie",
+      "pie-chart-type": "Piechart type",
+      "select-the-labels-to-be-displayed": "Select the labels to be displayed in the pie chart",
+      "value": "Value"
+    },
+    "table": {
+      "all-numeric-fields": "All Numeric Fields",
+      "auto": "auto",
+      "background-display-mode": "Background display mode",
+      "basic": "Basic",
+      "calculation": "Calculation",
+      "cell-options": "Cell Options",
+      "cell-type": "Cell Type",
+      "cell-value-inspect": "Cell value inspect",
+      "center": "center",
+      "choose-a-reducer-function": "Choose a reducer function / calculation",
+      "colored-background": "Colored background",
+      "colored-text": "Colored text",
+      "column-alignment": "Column alignment",
+      "column-filter": "Column filter",
+      "column-width": "Column width",
+      "count-rows": "Count rows",
+      "disables-field-filters-in-table": "Enables/disables field filters in table",
+      "display-a-single-count-for": "Display a single count for all data rows",
+      "enable-cell-value-inspection": "Enable cell value inspection in a modal window",
+      "enable-pagination": "Enable pagination",
+      "fields": "Fields",
+      "gauge": "Gauge",
+      "gradient": "Gradient",
+      "hide-in-table": "Hide in table",
+      "image": "Image",
+      "JSON-View": "JSON View",
+      "left": "left",
+      "minimum-column-width": "Minimum column width",
+      "right": "right",
+      "select-the-fields-that-should": "Select the fields that should be calculated",
+      "show-table-footer": "Show table footer",
+      "show-table-header": "Show table header",
+      "table-footer": "Table footer",
+      "the-minimum-width-for-column": "The minimum width for column auto resizing"
+    },
+    "table-cell": {
+      "auto": "Auto"
     }
   },
   "refresh-picker": {

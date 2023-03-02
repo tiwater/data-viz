@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { SelectableValue, StandardEditorProps } from '@grafana/data';
 import { Field, HorizontalGroup, Icon, InlineField, InlineFieldRow, Select, VerticalGroup } from '@grafana/ui';
 import { NumberInput } from 'app/core/components/OptionsUI/NumberInput';
+import { t } from 'app/core/internationalization';
 import { HorizontalConstraint, Placement, VerticalConstraint } from 'app/features/canvas';
 
 import { PanelOptions } from '../models.gen';
@@ -15,25 +16,33 @@ import { CanvasEditorOptions } from './elementEditor';
 
 const places: Array<keyof Placement> = ['top', 'left', 'bottom', 'right', 'width', 'height'];
 
-const horizontalOptions: Array<SelectableValue<HorizontalConstraint>> = [
-  { label: 'Left', value: HorizontalConstraint.Left },
-  { label: 'Right', value: HorizontalConstraint.Right },
-  { label: 'Left & right', value: HorizontalConstraint.LeftRight },
-  { label: 'Center', value: HorizontalConstraint.Center },
-  { label: 'Scale', value: HorizontalConstraint.Scale },
-];
-
-const verticalOptions: Array<SelectableValue<VerticalConstraint>> = [
-  { label: 'Top', value: VerticalConstraint.Top },
-  { label: 'Bottom', value: VerticalConstraint.Bottom },
-  { label: 'Top & bottom', value: VerticalConstraint.TopBottom },
-  { label: 'Center', value: VerticalConstraint.Center },
-  { label: 'Scale', value: VerticalConstraint.Scale },
-];
-
 type Props = StandardEditorProps<any, CanvasEditorOptions, PanelOptions>;
 
 export function PlacementEditor({ item }: Props) {
+  const placesLabel = {
+    top: t('plugins.canvas.top', 'Top'),
+    left: t('plugins.canvas.left', 'Left'),
+    bottom: t('plugins.canvas.bottom', 'Bottom'),
+    right: t('plugins.canvas.right', 'Right'),
+    width: t('plugins.canvas.width', 'width'),
+    height: t('plugins.canvas.height', 'height'),
+  };
+  const horizontalOptions: Array<SelectableValue<HorizontalConstraint>> = [
+    { label: t('plugins.canvas.left', 'Left'), value: HorizontalConstraint.Left },
+    { label: t('plugins.canvas.right', 'Right'), value: HorizontalConstraint.Right },
+    { label: t('plugins.canvas.left-right', 'Left & right'), value: HorizontalConstraint.LeftRight },
+    { label: t('plugins.canvas.center', 'Center'), value: HorizontalConstraint.Center },
+    { label: t('plugins.canvas.scale', 'Scale'), value: HorizontalConstraint.Scale },
+  ];
+
+  const verticalOptions: Array<SelectableValue<VerticalConstraint>> = [
+    { label: t('plugins.canvas.top', 'Top'), value: VerticalConstraint.Top },
+    { label: t('plugins.canvas.bottom', 'Bottom'), value: VerticalConstraint.Bottom },
+    { label: t('plugins.canvas.top-bottom', 'Top & bottom'), value: VerticalConstraint.TopBottom },
+    { label: t('plugins.canvas.center', 'Center'), value: VerticalConstraint.Center },
+    { label: t('plugins.canvas.scale', 'Scale'), value: VerticalConstraint.Scale },
+  ];
+
   const settings = item.settings;
 
   // Will force a rerender whenever the subject changes
@@ -93,7 +102,7 @@ export function PlacementEditor({ item }: Props) {
     <div>
       <QuickPositioning onPositionChange={onPositionChange} settings={settings} element={element} />
       <br />
-      <Field label="Constraints">
+      <Field label={t('plugins.canvas.constraints', 'Constraints')}>
         <HorizontalGroup>
           <ConstraintSelectionBox
             onVerticalConstraintChange={onVerticalConstraintChange}
@@ -119,7 +128,7 @@ export function PlacementEditor({ item }: Props) {
 
       <br />
 
-      <Field label="Position">
+      <Field label={t('plugins.canvas.position', 'Position')}>
         <>
           {places.map((p) => {
             const v = placement![p];
@@ -128,7 +137,7 @@ export function PlacementEditor({ item }: Props) {
             }
             return (
               <InlineFieldRow key={p}>
-                <InlineField label={p} labelWidth={8} grow={true}>
+                <InlineField label={placesLabel[p]} labelWidth={8} grow={true}>
                   <NumberInput value={v} onChange={(v) => onPositionChange(v, p)} />
                 </InlineField>
               </InlineFieldRow>

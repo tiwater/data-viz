@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Tab, TabsBar } from '@grafana/ui/src';
+import { t } from 'app/core/internationalization';
 
 import { InlineEditTabs } from '../types';
 
@@ -12,8 +13,8 @@ export const TabsEditor = ({ onTabChange }: Props) => {
   const [activeTab, setActiveTab] = useState<string>(InlineEditTabs.SelectedElement);
 
   const tabs = [
-    { label: 'Selected Element', value: InlineEditTabs.SelectedElement },
-    { label: 'Element Management', value: InlineEditTabs.ElementManagement },
+    { label: t('plugins.canvas.selected-element', 'Selected Element'), value: InlineEditTabs.SelectedElement },
+    { label: t('plugins.canvas.element-management', 'Element Management'), value: InlineEditTabs.ElementManagement },
   ];
 
   const onCurrentTabChange = (value: string) => {
