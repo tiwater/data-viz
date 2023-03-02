@@ -316,8 +316,8 @@
     "channel-label": "渠道",
     "enter-channel-name": "输入渠道名称",
     "fields-label": "字段",
-    "grafana-live-measurements-options": "Grafana实时-测量",
-    "grafana-search": "搜索 Grafana",
+    "grafana-live-measurements-options": "实时-测量",
+    "grafana-search": "搜索",
     "list-public-files-options": "列出公共文件",
     "live-measurements-options": "实时测量",
     "path-label": "路径",
@@ -327,8 +327,8 @@
     "select-folder-placeholder": "选择目录",
     "select-measurements-channel-placeholder": "选择测量渠道",
     "show-directory-listings-for-public-resources": "显示公共资源的目录列表",
-    "stream-real-time-measurements-from-grafana": "从Grafana流式传输实时测量",
-    "this-supports-real-time-event-streams": "此功能支持Grafana核心中的实时事件流。这项功能正处于紧张的开发中。预计随着这项功能越来越适合生产，接口和结构将发生变化。",
+    "stream-real-time-measurements-from-grafana": "流式传输实时测量",
+    "this-supports-real-time-event-streams": "此功能支持实时事件流。这项功能正处于紧张的开发中。预计随着这项功能越来越适合生产，接口和结构将发生变化。",
     "unable-to-list-all-fields": "无法列出所有字段",
     "using-this-datasource-to-call": "使用此数据源调用新的搜索系统是实验性的，并可随时在不事先通知的情况下更改。"
   },
@@ -410,7 +410,7 @@
         "preview-in-dashboard-button": "在看板预览"
       },
       "annotation-queries-can-be-toggled": "批注查询可以在仪表板顶部切换或关闭。选中此选项将隐藏此项。",
-      "annotations-provide-a-way": "注释提供了将事件数据整合到您的图表中的方式。它们被视为垂直线和所有图形面板上的图标。 当你在注解图标上悬停时，你可以获得事件的文本 &amp; 标签。 您可以通过按住 CTRL 或 CMD + 点击图形(或拖动区域)直接从Grafana 添加批注事件。 这些将保存在Grafana注释数据库中。",
+      "annotations-provide-a-way": "注释提供了将事件数据整合到您的图表中的方式。它们被视为垂直线和所有图形面板上的图标。 当你在注解图标上悬停时，你可以获得事件的文本 &amp; 标签。 您可以通过按住 CTRL 或 CMD + 点击图形(或拖动区域)直接添加批注事件。 这些将保存在注释数据库中。",
       "are-you-sure-you-want-to-restore": "您确定要将看板还原到版本 ",
       "cancel-loading-dashboard": "取消加载看板",
       "cannot-delete-provisioned-dashboard": "无法删除预设的看板",
@@ -725,7 +725,7 @@
       "expand-all-button": "全部展开",
       "no-request-and-response-collected-yet": "尚未收集到请求和响应。点击刷新按钮。",
       "query-inspector": "查询检查器",
-      "query-inspector-description": "查询检查器允许您查看原始请求和响应。为了收集这些数据，Grafana需要发出新查询。点击下面的刷新按钮来触发新查询。",
+      "query-inspector-description": "查询检查器允许您查看原始请求和响应。为了收集这些数据，DataViz需要发出新查询。点击下面的刷新按钮来触发新查询。",
       "refresh-button": "重置"
     },
     "library-panels": {
@@ -1283,11 +1283,11 @@
       "title": "警报和事件"
     },
     "api-keys": {
-      "subtitle": "管理和创建用于与 Grafana HTTP API 交互的 API 密钥",
+      "subtitle": "管理和创建用于与 Ticos HTTP API 交互的 API 密钥",
       "title": "API 密钥"
     },
     "apps": {
-      "subtitle": "扩展 Grafana 体验的应用插件",
+      "subtitle": "扩展 DataViz 体验的应用插件",
       "title": "应用"
     },
     "config": {
@@ -1325,11 +1325,11 @@
       "title": "探索"
     },
     "global-orgs": {
-      "subtitle": "在同一服务器上运行的 Grafana 的孤立实例",
+      "subtitle": "在同一服务器上运行的 DataViz 的孤立实例",
       "title": "组织"
     },
     "global-users": {
-      "subtitle": "管理Grafana 的用户",
+      "subtitle": "管理 Ticos 的用户",
       "title": "用户",
       "titleBeforeTopnav": "用户"
     },
@@ -1386,7 +1386,7 @@
       "title": "播放列表"
     },
     "plugins": {
-      "subtitle": "使用插件扩展 Grafana 体验",
+      "subtitle": "使用插件扩展 DataViz 体验",
       "title": "插件"
     },
     "profile/notifications": {
@@ -1403,17 +1403,17 @@
       "title": "场景"
     },
     "search": {
-      "placeholder": "搜索 Grafana"
+      "placeholder": "搜索"
     },
     "search-dashboards": {
       "title": "搜索仪表盘"
     },
     "server-settings": {
-      "subtitle": "查看 Grafana 配置中定义的设置",
+      "subtitle": "查看 DataViz 配置中定义的设置",
       "title": "设置"
     },
     "service-accounts": {
-      "subtitle": "使用服务账户在 Grafana 中运行自动化工作负载",
+      "subtitle": "使用服务账户在 DataViz 中运行自动化工作负载",
       "title": "服务账户"
     },
     "sign-in": "登录",
@@ -1574,7 +1574,7 @@
     "embed": {
       "copy": "复制到剪贴板",
       "html": "嵌入 HTML",
-      "html-description": "可将以下 HTML 代码粘贴并纳入另一网页。除非启用了匿名访问，否则查看该页面的用户需要登录 Grafana 才能加载图表。",
+      "html-description": "可将以下 HTML 代码粘贴并纳入另一网页。除非启用了匿名访问，否则查看该页面的用户需要登录 Ticos 才能加载图表。",
       "info": "生成用于对此面板嵌入 iframe 的 HTML。",
       "time-range": "当前时间范围",
       "time-range-description": "将当前相对时间范围转换为绝对时间范围"
@@ -1595,7 +1595,7 @@
       "info-text": "创建指向此看板或面板的直接链接，通过以下选项自定义。",
       "link-url": "链接网址",
       "render-alert": "未安装图像渲染器插件",
-      "render-instructions": "要渲染面板图像，需要安装&nbsp;<1>Grafana 图像渲染器插件</1>。请联系您的 Grafana 管理员安装此插件。",
+      "render-instructions": "要渲染面板图像，需要安装&nbsp;<1> DataViz 图像渲染器插件</1>。请联系您的 Ticos 管理员安装此插件。",
       "rendered-image": "直接链接至渲染后的图像",
       "save-alert": "看板未保存",
       "save-dashboard": "要渲染面板图像，需要先保存看板。",
