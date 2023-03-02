@@ -184,7 +184,7 @@ export class DataSourcePicker extends PureComponent<DataSourcePickerProps, DataS
       imgUrl: `${config.appUrl}${o.imgUrl}`,
       label: o.label === '-- Grafana --' ? '-- DataViz --' : o.label,
     }));
-    console.log(options);
+
     const value = this.getCurrentValue();
     const isClearable = typeof onClear === 'function';
     value.label = value.label === '-- Grafana --' ? '-- DataViz --' : value.label;
