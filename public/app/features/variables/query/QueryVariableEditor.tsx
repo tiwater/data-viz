@@ -201,16 +201,16 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
               <br />
               {t(
                 'features.query.named-capture-groups-can-be',
-                'Named capture groups can be used to separate the display text and value ('
+                'Named capture groups can be used to separate the display text and value '
               )}
-              <a
+              {/* <a
                 className="external-link"
                 href="https://grafana.com/docs/grafana/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
                 target="__blank"
               >
                 {t('features.query.see-examples', 'see examples')}
-              </a>
-              ).
+              </a> */}
+              {/* ). */}
             </div>
           }
           placeholder="/.*-(?<text>.*)-(?<value>.*)-.*/"
@@ -224,7 +224,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
         <QueryVariableRefreshSelect onChange={this.onRefreshChange} refresh={this.props.variable.refresh} />
 
-        <VariableLegend>Selection options</VariableLegend>
+        <VariableLegend>{t('features.query.selection-options', 'Selection options')}</VariableLegend>
         <SelectionOptionsEditor
           variable={this.props.variable}
           onPropChange={this.onSelectionOptionsChange}

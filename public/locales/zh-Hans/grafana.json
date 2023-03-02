@@ -775,7 +775,7 @@
       },
       "how-to-sort-the-values": "如何排序此变量的值",
       "if-you-want-to-extract-part": " 可选。如果您想要提取一个系列名称或公式节点段的一部分。",
-      "named-capture-groups-can-be": "命名抓取组可以用来分隔显示文字和值 (",
+      "named-capture-groups-can-be": "命名抓取组可以用来分隔显示文字和值",
       "numerical-asc": "数值(升序)",
       "numerical-desc": "数值(降序)",
       "query": "查询",
@@ -788,7 +788,7 @@
       },
       "query-options": "查询选项",
       "regex": "正则表达式",
-      "see-examples": "查看示例",
+      "selection-options": "选择选项",
       "sort": "排序"
     },
     "transformers": {

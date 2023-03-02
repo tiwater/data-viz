@@ -35,10 +35,10 @@ export const RevertDashboardModal: React.FC<RevertDashboardModalProps> = ({ hide
           {version}? {t('features.dashboard.all-unsaved-changes-will-be-lost', 'All unsaved changes will be lost.')}
         </p>
       }
-      confirmText={`${t(
-        'features.dashboard.yes-restore-to-version',
-        'Yes, restore to version'
-      )}${version}? {t('features.dashboard.all-unsaved-changes-will-be-lost','All unsaved changes will be lost.')} ${version}`}
+      confirmText={`${t('features.dashboard.yes-restore-to-version', 'Yes, restore to version')}${version}? ${t(
+        'features.dashboard.all-unsaved-changes-will-be-lost',
+        'All unsaved changes will be lost.'
+      )} ${version}`}
     />
   );
 };
