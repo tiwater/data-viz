@@ -770,7 +770,9 @@
       "data-is-missing-a-number-field": "",
       "data-is-missing-a-string-field": "",
       "data-is-missing-a-time-field": "",
-      "no-data": ""
+      "no-data": "",
+      "open-visualization-suggestions": "",
+      "switch-to-table": ""
     },
     "query": {
       "alphabetical-asc": "",

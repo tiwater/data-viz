@@ -770,7 +770,9 @@
       "data-is-missing-a-number-field": "Data is missing a number field",
       "data-is-missing-a-string-field": "Data is missing a string field",
       "data-is-missing-a-time-field": "Data is missing a time field",
-      "no-data": "No data"
+      "no-data": "No data",
+      "open-visualization-suggestions": "Open visualization suggestions",
+      "switch-to-table": "Switch to table"
     },
     "query": {
       "alphabetical-asc": "Alphabetical (asc)",

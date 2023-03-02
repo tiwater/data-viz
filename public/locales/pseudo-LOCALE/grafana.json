@@ -770,7 +770,9 @@
       "data-is-missing-a-number-field": "Đäŧä įş mįşşįŉģ ä ŉūmþęř ƒįęľđ",
       "data-is-missing-a-string-field": "Đäŧä įş mįşşįŉģ ä şŧřįŉģ ƒįęľđ",
       "data-is-missing-a-time-field": "Đäŧä įş mįşşįŉģ ä ŧįmę ƒįęľđ",
-      "no-data": "Ńő đäŧä"
+      "no-data": "Ńő đäŧä",
+      "open-visualization-suggestions": "Øpęŉ vįşūäľįžäŧįőŉ şūģģęşŧįőŉş",
+      "switch-to-table": "Ŝŵįŧčĥ ŧő ŧäþľę"
     },
     "query": {
       "alphabetical-asc": "Åľpĥäþęŧįčäľ (äşč)",

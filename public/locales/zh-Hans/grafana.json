@@ -770,7 +770,9 @@
       "data-is-missing-a-number-field": "数据缺少数字字段",
       "data-is-missing-a-string-field": "数据缺少字符串字段",
       "data-is-missing-a-time-field": "数据缺少时间字段",
-      "no-data": "没有数据"
+      "no-data": "没有数据",
+      "open-visualization-suggestions": "开启可视化建议",
+      "switch-to-table": "切换到表格"
     },
     "query": {
       "alphabetical-asc": "字母顺序(升序)",
