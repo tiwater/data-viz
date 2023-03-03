@@ -3,6 +3,8 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 import { GrafanaTheme2, SelectableValue } from '@grafana/data';
 import { Field, FilterInput, Select, useStyles2 } from '@grafana/ui';
+import { config } from 'app/core/config';
+import { t } from 'app/core/internationalization';
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 import { FileElement, GrafanaDatasource } from 'app/plugins/datasource/grafana/datasource';
 
@@ -85,7 +87,7 @@ export const FolderPickerTab = (props: Props) => {
                     value: `${folder}/${item.name}`,
                     label: item.name,
                     search: (idx ? item.name.substring(0, idx) : item.name).toLowerCase(),
-                    imgUrl: `public/${folder}/${item.name}`,
+                    imgUrl: `${config.appUrl}public/${folder}/${item.name}`,
                   });
                 }
               });
@@ -105,7 +107,7 @@ export const FolderPickerTab = (props: Props) => {
       <Field>
         <FilterInput
           value={searchQuery ?? ''}
-          placeholder="Search"
+          placeholder={t('features.dimensions.editors.search', 'Search')}
           onChange={(v) => {
             onChangeSearch(v);
             setSearchQuery(v);

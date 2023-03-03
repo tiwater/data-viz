@@ -8,6 +8,7 @@ import { GrafanaTheme2 } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { Button, ButtonGroup, useStyles2 } from '@grafana/ui';
 import { config } from 'app/core/config';
+import { t } from 'app/core/internationalization';
 
 import { MediaType, PickerTabType, ResourceFolderName } from '../types';
 
@@ -90,17 +91,21 @@ export const ResourcePickerPopover = (props: Props) => {
               className={getTabClassName(PickerTabType.Folder)}
               onClick={() => setActivePicker(PickerTabType.Folder)}
             >
-              Folder
+              {t('plugins.canvas.folder', 'Folder')}
             </button>
             <button className={getTabClassName(PickerTabType.URL)} onClick={() => setActivePicker(PickerTabType.URL)}>
-              URL
+              {t('plugins.canvas.URL', 'URL')}
             </button>
+            {/* <button className={getTabClassName(PickerTabType.Upload)} onClick={() => setActivePicker(PickerTabType.Upload)}>
+              
+              {t('plugins.canvas.upload', 'Upload')}
+            </button> */}
           </div>
           <div className={styles.resourcePickerPopoverContent}>
             {renderPicker()}
             <ButtonGroup className={styles.buttonGroup}>
               <Button className={styles.button} variant={'secondary'} onClick={() => onClose()}>
-                Cancel
+                {t('plugins.canvas.cancel', 'Cancel')}
               </Button>
               <Button
                 className={styles.button}
@@ -131,7 +136,7 @@ export const ResourcePickerPopover = (props: Props) => {
                   }
                 }}
               >
-                Select
+                {t('plugins.canvas.select', 'Select')}
               </Button>
             </ButtonGroup>
           </div>
