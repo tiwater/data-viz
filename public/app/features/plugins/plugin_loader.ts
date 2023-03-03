@@ -172,7 +172,8 @@ export async function importPluginModule(path: string, version?: string): Promis
 }
 
 export function importDataSourcePlugin(meta: grafanaData.DataSourcePluginMeta): Promise<GenericDataSourcePlugin> {
-  return importPluginModule(meta.module, meta.info?.version).then((pluginExports) => {
+  const metaModule = meta.module.substr(0, 8) === 'plugins/' ? `${config.appUrl}public/${meta.module}.js` : meta.module;
+  return importPluginModule(metaModule, meta.info?.version).then((pluginExports) => {
     if (pluginExports.plugin) {
       const dsPlugin = pluginExports.plugin as GenericDataSourcePlugin;
       dsPlugin.meta = meta;
