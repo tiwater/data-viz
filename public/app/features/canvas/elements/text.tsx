@@ -28,7 +28,9 @@ const TextDisplay = (props: CanvasElementProps<TextConfig, TextData>) => {
   }
   return (
     <div className={styles.container}>
-      <span className={styles.span}>{data?.text ? data.text : 'Double click to set text'}</span>
+      <span className={styles.span}>
+        {data?.text ? data.text : t('plugins.canvas.double-click-to-set-text', 'Double click to set text')}
+      </span>
     </div>
   );
 };
