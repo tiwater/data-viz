@@ -386,6 +386,7 @@
         "no-queries-or-expressions": "Ńő qūęřįęş őř ęχpřęşşįőŉş ĥävę þęęŉ čőŉƒįģūřęđ",
         "preview": "Přęvįęŵ"
       },
+      "set-dashboard-and-panel": "Ŝęŧ đäşĥþőäřđ äŉđ päŉęľ",
       "unified": {
         "cannot-create-alerts-from-this-panel": "Cäŉŉőŧ čřęäŧę äľęřŧş ƒřőm ŧĥįş päŉęľ þęčäūşę ŉő qūęřy ŧő äŉ äľęřŧįŉģ čäpäþľę đäŧäşőūřčę įş ƒőūŉđ.",
         "dashboard-must-be-saved-before": "Đäşĥþőäřđ mūşŧ þę şävęđ þęƒőřę äľęřŧş čäŉ þę äđđęđ.",
@@ -431,7 +432,10 @@
       "documentation": "đőčūmęŉŧäŧįőŉ",
       "edit-panel": "Ēđįŧ Päŉęľ",
       "editor": {
-        "override": "Øvęřřįđę"
+        "click-to-change-visualization": "Cľįčĸ ŧő čĥäŉģę vįşūäľįžäŧįőŉ",
+        "close-options-pane": "Cľőşę őpŧįőŉş päŉę",
+        "override": "Øvęřřįđę",
+        "show-options-pane": "Ŝĥőŵ őpŧįőŉş päŉę"
       },
       "enabled": "Ēŉäþľęđ",
       "error-saving-dashboard": "Ēřřőř şävįŉģ đäşĥþőäřđ",
@@ -760,6 +764,15 @@
         "could-not-find-anything": "Cőūľđ ŉőŧ ƒįŉđ äŉyŧĥįŉģ mäŧčĥįŉģ yőūř qūęřy",
         "no-results-matched-your-query": "Ńő řęşūľŧş mäŧčĥęđ yőūř qūęřy"
       }
+    },
+    "panel-data": {
+      "cannot-visualize-data": "Cäŉŉőŧ vįşūäľįžę đäŧä",
+      "data-is-missing-a-number-field": "Đäŧä įş mįşşįŉģ ä ŉūmþęř ƒįęľđ",
+      "data-is-missing-a-string-field": "Đäŧä įş mįşşįŉģ ä şŧřįŉģ ƒįęľđ",
+      "data-is-missing-a-time-field": "Đäŧä įş mįşşįŉģ ä ŧįmę ƒįęľđ",
+      "no-data": "Ńő đäŧä",
+      "open-visualization-suggestions": "Øpęŉ vįşūäľįžäŧįőŉ şūģģęşŧįőŉş",
+      "switch-to-table": "Ŝŵįŧčĥ ŧő ŧäþľę"
     },
     "query": {
       "alphabetical-asc": "Åľpĥäþęŧįčäľ (äşč)",
@@ -1205,6 +1218,11 @@
       "values-sort-order": "Väľūęş şőřŧ őřđęř",
       "visibility": "Vįşįþįľįŧy",
       "width": "Ŵįđŧĥ"
+    },
+    "segment": {
+      "failed-to-load-options": "Fäįľęđ ŧő ľőäđ őpŧįőŉş",
+      "loading-options": "Ŀőäđįŉģ őpŧįőŉş...",
+      "no-options-found": "Ńő őpŧįőŉş ƒőūŉđ"
     },
     "tags-input": {
       "add-button": "Åđđ",
@@ -1668,6 +1686,28 @@
       "renders-the-thresholds-as-an-outer-bar": "Ŗęŉđęřş ŧĥę ŧĥřęşĥőľđş äş äŉ őūŧęř þäř",
       "show-threshold-labels": "Ŝĥőŵ ŧĥřęşĥőľđ ľäþęľş",
       "show-threshold-markers": "Ŝĥőŵ ŧĥřęşĥőľđ mäřĸęřş"
+    },
+    "panel": {
+      "graph": {
+        "axes": "Åχęş",
+        "can-be-caused-by-timezone-mismatch": "Cäŉ þę čäūşęđ þy ŧįmęžőŉę mįşmäŧčĥ őř mįşşįŉģ ŧįmę ƒįľŧęř įŉ qūęřy",
+        "data-exists-but-is-not-timeseries": "Đäŧä ęχįşŧş, þūŧ įş ŉőŧ ŧįmęşęřįęş",
+        "data-outside-time-range": "Đäŧä őūŧşįđę ŧįmę řäŉģę",
+        "display": "Đįşpľäy",
+        "legend": "Ŀęģęŉđ",
+        "no-data": "Ńő đäŧä",
+        "no-data-returned-from-query": "Ńő đäŧä řęŧūřŉęđ ƒřőm qūęřy",
+        "series-overrides": "Ŝęřįęş ővęřřįđęş",
+        "switch-to-table-view": "Ŝŵįŧčĥ ŧő ŧäþľę vįęŵ",
+        "thresholds": "Ŧĥřęşĥőľđş",
+        "time-regions": "Ŧįmę řęģįőŉş",
+        "toggle-legend": "Ŧőģģľę ľęģęŉđ",
+        "unable-to-graph-data": "Ůŉäþľę ŧő ģřäpĥ đäŧä",
+        "zoom-to-data": "Żőőm ŧő đäŧä"
+      },
+      "timeseries": {
+        "add-annotation": "Åđđ äŉŉőŧäŧįőŉ"
+      }
     },
     "pie-chart": {
       "donut": "Đőŉūŧ",

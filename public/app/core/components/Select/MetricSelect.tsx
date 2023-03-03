@@ -3,6 +3,7 @@ import React, { useMemo, useCallback, FC } from 'react';
 
 import { SelectableValue } from '@grafana/data';
 import { LegacyForms } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { Variable } from 'app/types/templates';
 const { Select } = LegacyForms;
 
@@ -33,7 +34,7 @@ export const MetricSelect: FC<Props> = (props) => {
       isSearchable={isSearchable}
       maxMenuHeight={500}
       placeholder={placeholder}
-      noOptionsMessage={() => 'No options found'}
+      noOptionsMessage={() => t('grafana-ui.segment.no-options-found', 'No options found')}
       value={selected}
     />
   );

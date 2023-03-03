@@ -386,6 +386,7 @@
         "no-queries-or-expressions": "未配置任何查询或表达式",
         "preview": "预览"
       },
+      "set-dashboard-and-panel": "设置看板和面板",
       "unified": {
         "cannot-create-alerts-from-this-panel": "由于未找到到具有警报功能的数据源的查询，因此无法从此面板创建警报。",
         "dashboard-must-be-saved-before": "在添加警报之前，必须先保存看板。",
@@ -431,7 +432,10 @@
       "documentation": "文档",
       "edit-panel": "编辑面板",
       "editor": {
-        "override": "覆盖"
+        "click-to-change-visualization": "点击更改可视化",
+        "close-options-pane": "关闭选项面板",
+        "override": "覆盖",
+        "show-options-pane": "显示选项面板"
       },
       "enabled": "启用",
       "error-saving-dashboard": "保存看板时出错",
@@ -760,6 +764,15 @@
         "could-not-find-anything": "找不到任何匹配您查询的内容",
         "no-results-matched-your-query": "没有结果与您的查询匹配"
       }
+    },
+    "panel-data": {
+      "cannot-visualize-data": "无法可视化数据",
+      "data-is-missing-a-number-field": "数据缺少数字字段",
+      "data-is-missing-a-string-field": "数据缺少字符串字段",
+      "data-is-missing-a-time-field": "数据缺少时间字段",
+      "no-data": "没有数据",
+      "open-visualization-suggestions": "开启可视化建议",
+      "switch-to-table": "切换到表格"
     },
     "query": {
       "alphabetical-asc": "字母顺序(升序)",
@@ -1206,6 +1219,11 @@
       "visibility": "显示",
       "width": "宽"
     },
+    "segment": {
+      "failed-to-load-options": "加载选项失败",
+      "loading-options": "正在加载选项...",
+      "no-options-found": "未找到选项"
+    },
     "tags-input": {
       "add-button": "添加",
       "new-tag": "新标签 (输入要添加的键)"
@@ -1481,7 +1499,7 @@
   },
   "navigation": {
     "kiosk": {
-      "tv-alert": "按 ESC 退出 kiosk 模式"
+      "tv-alert": "按 ESC 退出全屏模式"
     }
   },
   "news": {
@@ -1668,6 +1686,28 @@
       "renders-the-thresholds-as-an-outer-bar": "将阈值呈现为外部栏",
       "show-threshold-labels": "显示阈值标签",
       "show-threshold-markers": "显示阈值标记"
+    },
+    "panel": {
+      "graph": {
+        "axes": "轴",
+        "can-be-caused-by-timezone-mismatch": "查询时区不匹配或缺失时间过滤器可能会造成影响",
+        "data-exists-but-is-not-timeseries": "数据存在，但不是时间",
+        "data-outside-time-range": "数据超出时间范围",
+        "display": "显示",
+        "legend": "图例",
+        "no-data": "没有数据",
+        "no-data-returned-from-query": "未从查询中返回数据",
+        "series-overrides": "序列覆盖",
+        "switch-to-table-view": "切换到表格视图",
+        "thresholds": "阈值",
+        "time-regions": "时区",
+        "toggle-legend": "切换图例",
+        "unable-to-graph-data": "无法绘制数据",
+        "zoom-to-data": "缩放到数据"
+      },
+      "timeseries": {
+        "add-annotation": "添加注释"
+      }
     },
     "pie-chart": {
       "donut": "圆环",

@@ -386,6 +386,7 @@
         "no-queries-or-expressions": "",
         "preview": ""
       },
+      "set-dashboard-and-panel": "",
       "unified": {
         "cannot-create-alerts-from-this-panel": "",
         "dashboard-must-be-saved-before": "",
@@ -431,7 +432,10 @@
       "documentation": "",
       "edit-panel": "",
       "editor": {
-        "override": ""
+        "click-to-change-visualization": "",
+        "close-options-pane": "",
+        "override": "",
+        "show-options-pane": ""
       },
       "enabled": "",
       "error-saving-dashboard": "",
@@ -760,6 +764,15 @@
         "could-not-find-anything": "",
         "no-results-matched-your-query": ""
       }
+    },
+    "panel-data": {
+      "cannot-visualize-data": "",
+      "data-is-missing-a-number-field": "",
+      "data-is-missing-a-string-field": "",
+      "data-is-missing-a-time-field": "",
+      "no-data": "",
+      "open-visualization-suggestions": "",
+      "switch-to-table": ""
     },
     "query": {
       "alphabetical-asc": "",
@@ -1205,6 +1218,11 @@
       "values-sort-order": "",
       "visibility": "",
       "width": ""
+    },
+    "segment": {
+      "failed-to-load-options": "",
+      "loading-options": "",
+      "no-options-found": ""
     },
     "tags-input": {
       "add-button": "",
@@ -1668,6 +1686,28 @@
       "renders-the-thresholds-as-an-outer-bar": "",
       "show-threshold-labels": "",
       "show-threshold-markers": ""
+    },
+    "panel": {
+      "graph": {
+        "axes": "",
+        "can-be-caused-by-timezone-mismatch": "",
+        "data-exists-but-is-not-timeseries": "",
+        "data-outside-time-range": "",
+        "display": "",
+        "legend": "",
+        "no-data": "",
+        "no-data-returned-from-query": "",
+        "series-overrides": "",
+        "switch-to-table-view": "",
+        "thresholds": "",
+        "time-regions": "",
+        "toggle-legend": "",
+        "unable-to-graph-data": "",
+        "zoom-to-data": ""
+      },
+      "timeseries": {
+        "add-annotation": ""
+      }
     },
     "pie-chart": {
       "donut": "",
