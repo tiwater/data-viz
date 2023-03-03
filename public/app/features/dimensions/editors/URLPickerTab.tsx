@@ -4,6 +4,7 @@ import SVG from 'react-inlinesvg';
 
 import { GrafanaTheme2 } from '@grafana/data';
 import { Field, Input, Label, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { getPublicOrAbsoluteUrl } from '../resource';
 import { MediaType } from '../types';
@@ -31,11 +32,15 @@ export const URLPickerTab = (props: Props) => {
         <Input onChange={(e) => setNewValue(e.currentTarget.value)} value={newValue} />
       </Field>
       <div className={styles.iconContainer}>
-        <Field label="Preview">
+        <Field label={t('features.dimensions.editors.preview', 'Preview')}>
           <div className={styles.iconPreview}>
             {mediaType === MediaType.Icon && <SVG src={imgSrc} className={styles.img} />}
             {mediaType === MediaType.Image && newValue && (
-              <img src={imgSrc} alt="Preview of the selected URL" className={styles.img} />
+              <img
+                src={imgSrc}
+                alt={t('features.dimensions.editors.preview-of-the-selected-URL', 'Preview of the selected URL')}
+                className={styles.img}
+              />
             )}
           </div>
         </Field>
