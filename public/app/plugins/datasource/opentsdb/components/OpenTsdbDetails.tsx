@@ -2,6 +2,7 @@ import React, { SyntheticEvent } from 'react';
 
 import { DataSourceSettings, SelectableValue } from '@grafana/data';
 import { InlineFormLabel, LegacyForms } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { useUniqueId } from '../../influxdb/components/useUniqueId';
 import { OpenTsdbOptions } from '../types';
@@ -14,27 +15,26 @@ const tsdbVersions = [
   { label: '==2.3', value: 3 },
 ];
 
-const tsdbResolutions = [
-  { label: 'second', value: 1 },
-  { label: 'millisecond', value: 2 },
-];
-
 interface Props {
   value: DataSourceSettings<OpenTsdbOptions>;
   onChange: (value: DataSourceSettings<OpenTsdbOptions>) => void;
 }
 
 export const OpenTsdbDetails = (props: Props) => {
+  const tsdbResolutions = [
+    { label: t('app.plugins.data-source.second', 'second'), value: 1 },
+    { label: t('app.plugins.data-source.millisecond', 'millisecond'), value: 2 },
+  ];
   const { onChange, value } = props;
 
   const idSuffix = useUniqueId();
 
   return (
     <>
-      <h5>OpenTSDB settings</h5>
+      <h5>{t('app.plugins.data-source.open-TSDB-settings', 'OpenTSDB settings')}</h5>
       <div className="gf-form">
         <InlineFormLabel width={7} htmlFor={`select-version-${idSuffix}`}>
-          Version
+          {t('app.plugins.data-source.version', 'Version')}
         </InlineFormLabel>
         <Select
           inputId={`select-version-${idSuffix}`}
@@ -45,7 +45,7 @@ export const OpenTsdbDetails = (props: Props) => {
       </div>
       <div className="gf-form">
         <InlineFormLabel width={7} htmlFor={`select-resolution-${idSuffix}`}>
-          Resolution
+          {t('app.plugins.data-source.resolution', 'Resolution')}
         </InlineFormLabel>
         <Select
           inputId={`select-resolution-${idSuffix}`}
@@ -59,7 +59,7 @@ export const OpenTsdbDetails = (props: Props) => {
       </div>
       <div className="gf-form">
         <InlineFormLabel width={7} htmlFor={`lookup-input-${idSuffix}`}>
-          Lookup limit
+          {t('app.plugins.data-source.lookup-limit', 'Lookup limit')}
         </InlineFormLabel>
         <Input
           id={`lookup-input-${idSuffix}`}

@@ -3,6 +3,7 @@ import React from 'react';
 import { selectors } from '@grafana/e2e-selectors';
 import { Button, LinkButton } from '@grafana/ui';
 import { contextSrv } from 'app/core/core';
+import { t } from 'app/core/internationalization';
 import { AccessControlAction } from 'app/types';
 
 export interface Props {
@@ -20,10 +21,10 @@ export function ButtonRow({ canSave, canDelete, onDelete, onSubmit, onTest, expl
   return (
     <div className="gf-form-button-row">
       <Button variant="secondary" fill="solid" type="button" onClick={() => history.back()}>
-        Back
+        {t('features.data-source.back', 'Back')}
       </Button>
       <LinkButton variant="secondary" fill="solid" href={exploreUrl} disabled={!canExploreDataSources}>
-        Explore
+        {t('features.data-source.explore', 'Explore')}
       </LinkButton>
       <Button
         type="button"
@@ -32,7 +33,7 @@ export function ButtonRow({ canSave, canDelete, onDelete, onSubmit, onTest, expl
         onClick={onDelete}
         aria-label={selectors.pages.DataSource.delete}
       >
-        Delete
+        {t('features.data-source.delete', 'Delete')}
       </Button>
       {canSave && (
         <Button
@@ -42,12 +43,12 @@ export function ButtonRow({ canSave, canDelete, onDelete, onSubmit, onTest, expl
           onClick={(event) => onSubmit(event)}
           aria-label={selectors.pages.DataSource.saveAndTest}
         >
-          Save &amp; test
+          {t('features.data-source.save', 'Save')} &amp; {t('features.data-source.test', 'Test')}
         </Button>
       )}
       {!canSave && (
         <Button variant="primary" onClick={onTest}>
-          Test
+          {t('features.data-source.test', 'Test')}
         </Button>
       )}
     </div>

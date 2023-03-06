@@ -25,6 +25,7 @@ export interface DataSourceSettingsState {
 }
 
 export interface DataSourcePluginCategory {
+  info?: object;
   id: string;
   title: string;
   plugins: DataSourcePluginMeta[];

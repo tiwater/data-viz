@@ -1,5 +1,7 @@
 import { cloneDeep } from 'lodash';
 
+import { t } from 'app/core/internationalization';
+
 import { dispatch } from '../../../store/store';
 import { VariableAdapter } from '../adapters';
 import { setOptionAsCurrent } from '../state/actions';
@@ -14,8 +16,11 @@ import { initialTextBoxVariableModelState, textBoxVariableReducer } from './redu
 export const createTextBoxVariableAdapter = (): VariableAdapter<TextBoxVariableModel> => {
   return {
     id: 'textbox',
-    description: 'Define a textbox variable, where users can enter any arbitrary string',
-    name: 'Text box',
+    description: t(
+      'features.variables.define-a-textbox-variable',
+      'Define a textbox variable, where users can enter any arbitrary string'
+    ),
+    name: t('features.variables.text-box', 'Text box'),
     initialState: initialTextBoxVariableModelState,
     reducer: textBoxVariableReducer,
     picker: TextBoxVariablePicker,

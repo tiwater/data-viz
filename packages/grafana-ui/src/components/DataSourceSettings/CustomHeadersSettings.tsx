@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react';
 
 import { DataSourceSettings } from '@grafana/data';
 
+import { t } from '../../../src/utils/i18n';
 import { stylesFactory } from '../../themes';
 import { Button } from '../Button';
 import { FormField } from '../FormField/FormField';
@@ -60,7 +61,7 @@ const CustomHeaderRow: React.FC<CustomHeaderRowProps> = ({ header, onBlur, onCha
   return (
     <div className={styles.layout}>
       <FormField
-        label="Header"
+        label={t('grafana-ui.data-source.header', 'Header')}
         name="name"
         placeholder="X-Custom-Header"
         labelWidth={5}
@@ -69,14 +70,14 @@ const CustomHeaderRow: React.FC<CustomHeaderRowProps> = ({ header, onBlur, onCha
         onBlur={onBlur}
       />
       <SecretFormField
-        label="Value"
+        label={t('grafana-ui.data-source.value', 'Value')}
         aria-label="Value"
         name="value"
         isConfigured={header.configured}
         value={header.value}
         labelWidth={5}
         inputWidth={header.configured ? 11 : 12}
-        placeholder="Header Value"
+        placeholder={t('grafana-ui.data-source.header-value', 'Header Value')}
         onReset={() => onReset(header.id)}
         onChange={(e) => onChange({ ...header, value: e.target.value })}
         onBlur={onBlur}
@@ -201,7 +202,7 @@ export class CustomHeadersSettings extends PureComponent<Props, State> {
     return (
       <div className={'gf-form-group'}>
         <div className="gf-form">
-          <h6>Custom HTTP Headers</h6>
+          <h6>{t('grafana-ui.data-source.custom-http-headers', 'Custom HTTP Headers')}</h6>
         </div>
         <div>
           {headers.map((header, i) => (
@@ -227,7 +228,7 @@ export class CustomHeadersSettings extends PureComponent<Props, State> {
                 this.onHeaderAdd();
               }}
             >
-              Add header
+              {t('grafana-ui.data-source.add-header', 'Add header')}
             </Button>
           </div>
         )}

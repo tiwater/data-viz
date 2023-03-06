@@ -1,5 +1,7 @@
 import { cloneDeep } from 'lodash';
 
+import { t } from 'app/core/internationalization';
+
 import { dispatch } from '../../../store/store';
 import { VariableAdapter } from '../adapters';
 import { optionPickerFactory } from '../pickers';
@@ -14,8 +16,11 @@ import { constantVariableReducer, initialConstantVariableModelState } from './re
 export const createConstantVariableAdapter = (): VariableAdapter<ConstantVariableModel> => {
   return {
     id: 'constant',
-    description: 'Define a hidden constant variable, useful for metric prefixes in dashboards you want to share.',
-    name: 'Constant',
+    description: t(
+      'features.variables.define-a-hidden-constant-variable',
+      'Define a hidden constant variable, useful for metric prefixes in dashboards you want to share.'
+    ),
+    name: t('features.variables.constant', 'Constant'),
     initialState: initialConstantVariableModelState,
     reducer: constantVariableReducer,
     picker: optionPickerFactory<ConstantVariableModel>(),

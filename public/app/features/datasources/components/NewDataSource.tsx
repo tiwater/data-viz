@@ -4,8 +4,10 @@ import { AnyAction } from 'redux';
 import { DataSourcePluginMeta } from '@grafana/data';
 import { LinkButton, FilterInput } from '@grafana/ui';
 import PageLoader from 'app/core/components/PageLoader/PageLoader';
+import { t } from 'app/core/internationalization';
 import { PluginsErrorsInfo } from 'app/features/plugins/components/PluginsErrorsInfo';
 import { DataSourcePluginCategory, StoreState, useDispatch, useSelector } from 'app/types';
+import { setFilteredDataSource } from 'app/utils';
 
 import { DataSourceCategories } from '../components/DataSourceCategories';
 import { DataSourceTypeCardList } from '../components/DataSourceTypeCardList';
@@ -24,7 +26,8 @@ export function NewDataSource() {
   const filteredDataSources = useSelector((s: StoreState) => getFilteredDataSourcePlugins(s.dataSources));
   const searchQuery = useSelector((s: StoreState) => s.dataSources.dataSourceTypeSearchQuery);
   const isLoading = useSelector((s: StoreState) => s.dataSources.isLoadingDataSources);
-  const dataSourceCategories = useSelector((s: StoreState) => s.dataSources.categories);
+  const dataSourceCategories = setFilteredDataSource(useSelector((s: StoreState) => s.dataSources.categories));
+  console.log(dataSourceCategories, filteredDataSources);
   const onAddDataSource = useAddDatasource();
   const onSetSearchQuery = (q: string) => dispatch(setDataSourceTypeSearchQuery(q));
 
@@ -67,10 +70,14 @@ export function NewDataSourceView({
     <>
       {/* Search */}
       <div className="page-action-bar">
-        <FilterInput value={searchQuery} onChange={onSetSearchQuery} placeholder="Filter by name or type" />
+        <FilterInput
+          value={searchQuery}
+          onChange={onSetSearchQuery}
+          placeholder={t('features.data-source.filter-by-name-or-type', 'Filter by name or type')}
+        />
         <div className="page-action-bar__spacer" />
         <LinkButton href={dataSourcesRoutes.List} fill="outline" variant="secondary" icon="arrow-left">
-          Cancel
+          {t('features.data-source.cancel', 'Cancel')}
         </LinkButton>
       </div>
 

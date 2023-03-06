@@ -18,6 +18,7 @@ import {
   regexValidation,
   Select,
 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { useUpdateDatasource } from '../../../../features/datasources/state';
 import { PromApplication, PromBuildInfoResponse } from '../../../../types/unified-alerting-dto';
@@ -148,7 +149,7 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form-inline">
           <div className="gf-form">
             <FormField
-              label="Scrape interval"
+              label={t('app.plugins.data-source.scrape-interval', 'Scrape interval')}
               labelWidth={13}
               inputEl={
                 <Input
@@ -161,7 +162,10 @@ export const PromSettings = (props: Props) => {
                   disabled={options.readOnly}
                 />
               }
-              tooltip="Set this to the typical scrape and evaluation interval configured in Prometheus. Defaults to 15s."
+              tooltip={t(
+                'app.plugins.data-source.set-this-to-the-typical-scrape-and-evaluation-interval',
+                'Set this to the typical scrape and evaluation interval configured in Prometheus. Defaults to 15s.'
+              )}
             />
           </div>
         </div>
@@ -169,7 +173,7 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form-inline">
           <div className="gf-form">
             <FormField
-              label="Query timeout"
+              label={t('app.plugins.data-source.query-timeout', 'Query timeout')}
               labelWidth={13}
               inputEl={
                 <Input
@@ -182,7 +186,10 @@ export const PromSettings = (props: Props) => {
                   disabled={options.readOnly}
                 />
               }
-              tooltip="Set the Prometheus query timeout."
+              tooltip={t(
+                'app.plugins.data-source.set-the-prometheus-query-timeout',
+                'Set the Prometheus query timeout.'
+              )}
             />
           </div>
         </div>
@@ -190,12 +197,15 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form">
           <InlineFormLabel
             width={13}
-            tooltip="You can use either POST or GET HTTP method to query your Prometheus data source. POST is the recommended method as it allows bigger queries. Change this to GET if you have a Prometheus version older than 2.1 or if POST requests are restricted in your network."
+            tooltip={t(
+              'app.plugins.data-source.you-can-use-either-POST-or-GET-HTTP-method',
+              'You can use either POST or GET HTTP method to query your Prometheus data source. POST is the recommended method as it allows bigger queries. Change this to GET if you have a Prometheus version older than 2.1 or if POST requests are restricted in your network.'
+            )}
           >
-            HTTP method
+            {t('app.plugins.data-source.HTTP-method', 'HTTP Method')}
           </InlineFormLabel>
           <Select
-            aria-label="Select HTTP method"
+            aria-label={t('app.plugins.data-source.select-HTTP-method', 'Select HTTP method')}
             options={httpOptions}
             value={httpOptions.find((o) => o.value === options.jsonData.httpMethod)}
             onChange={onChangeHandler('httpMethod', options, onOptionsChange)}
@@ -208,13 +218,16 @@ export const PromSettings = (props: Props) => {
       <h3 className="page-heading">Type and version</h3>
       {!options.jsonData.prometheusType && !options.jsonData.prometheusVersion && options.readOnly && (
         <div style={{ marginBottom: '12px' }}>
-          For more information on configuring prometheus type and version in data sources, see the{' '}
-          <a
+          {t(
+            'app.plugins.data-source.for-more-information-on-configuring-prometheus',
+            'For more information on configuring prometheus type and version in data sources'
+          )}{' '}
+          {/* <a
             style={{ textDecoration: 'underline' }}
             href="https://grafana.com/docs/grafana/latest/administration/provisioning/"
           >
             provisioning documentation
-          </a>
+          </a> */}
           .
         </div>
       )}
@@ -222,7 +235,7 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form">
           <div className="gf-form">
             <FormField
-              label="Prometheus type"
+              label={t('app.plugins.data-source.prometheus-type', 'Prometheus type')}
               labelWidth={13}
               inputEl={
                 <Select
@@ -248,7 +261,10 @@ export const PromSettings = (props: Props) => {
                   disabled={options.readOnly}
                 />
               }
-              tooltip="Set this to the type of your prometheus database, e.g. Prometheus, Cortex, Mimir or Thanos. Changing this field will save your current settings, and attempt to detect the version."
+              tooltip={t(
+                'app.plugins.data-source.set-this-to-the-type-of-your-prometheus-database',
+                'Set this to the type of your prometheus database, e.g. Prometheus, Cortex, Mimir or Thanos. Changing this field will save your current settings, and attempt to detect the version.'
+              )}
             />
           </div>
         </div>
@@ -256,7 +272,7 @@ export const PromSettings = (props: Props) => {
           {options.jsonData.prometheusType && (
             <div className="gf-form">
               <FormField
-                label={`${options.jsonData.prometheusType} version`}
+                label={`${options.jsonData.prometheusType} ${t('app.plugins.data-source.version-label', 'version')}`}
                 labelWidth={13}
                 inputEl={
                   <Select
@@ -270,20 +286,27 @@ export const PromSettings = (props: Props) => {
                     disabled={options.readOnly}
                   />
                 }
-                tooltip={`Use this to set the version of your ${options.jsonData.prometheusType} instance if it is not automatically configured.`}
+                tooltip={t(
+                  'app.plugins.data-source.use-this-to-set-the-version-of-your',
+                  'Use this to set the version of your {{version}} instance if it is not automatically configured.',
+                  { version: options.jsonData.prometheusType }
+                )}
               />
             </div>
           )}
         </div>
       </div>
 
-      <h3 className="page-heading">Misc</h3>
+      <h3 className="page-heading">{t('app.plugins.data-source.misc', 'Misc')}</h3>
       <div className="gf-form-group">
         <div className="gf-form">
           <InlineField
             labelWidth={28}
-            label="Disable metrics lookup"
-            tooltip="Checking this option will disable the metrics chooser and metric/label support in the query field's autocomplete. This helps if you have performance issues with bigger Prometheus instances."
+            label={t('app.plugins.data-source.disable-metrics-lookup', 'Disable metrics lookup')}
+            tooltip={t(
+              'app.plugins.data-source.checking-this-option-will-disable-the-metrics',
+              "Checking this option will disable the metrics chooser and metric/label support in the query field's autocomplete. This helps if you have performance issues with bigger Prometheus instances."
+            )}
             disabled={options.readOnly}
           >
             <InlineSwitch
@@ -295,16 +318,22 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form-inline">
           <div className="gf-form max-width-30">
             <FormField
-              label="Custom query parameters"
+              label={t('app.plugins.data-source.custom-query-parameters', 'Custom query parameters')}
               labelWidth={14}
-              tooltip="Add custom parameters to all Prometheus or Thanos queries."
+              tooltip={t(
+                'app.plugins.data-source.add-custom-parameters-to-all-prometheus',
+                'Add custom parameters to all Prometheus or Thanos queries.'
+              )}
               inputEl={
                 <Input
                   className="width-25"
                   value={options.jsonData.customQueryParameters}
                   onChange={onChangeHandler('customQueryParameters', options, onOptionsChange)}
                   spellCheck={false}
-                  placeholder="Example: max_source_resolution=5m&timeout=10"
+                  placeholder={`${t(
+                    'app.plugins.data-source.example',
+                    'Example'
+                  )}: max_source_resolution=5m&timeout=10`}
                   disabled={options.readOnly}
                 />
               }
@@ -331,7 +360,10 @@ export const promSettingsValidationEvents = {
   [EventsWithValidation.onBlur]: [
     regexValidation(
       /^$|^\d+(ms|[Mwdhmsy])$/,
-      'Value is not valid, you can use number with time unit specifier: y, M, w, d, h, m, s'
+      `${t(
+        'app.plugins.data-source.value-is-not-valid-unit-specifier',
+        'Value is not valid, you can use number with time unit specifier'
+      )}: y, M, w, d, h, m, s`
     ),
   ],
 };

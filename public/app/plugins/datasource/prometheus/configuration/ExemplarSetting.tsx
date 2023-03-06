@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { selectors } from '@grafana/e2e-selectors';
 import { DataSourcePicker } from '@grafana/runtime';
 import { Button, InlineField, InlineSwitch, Input } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { ExemplarTraceIdDestination } from '../types';
 
@@ -19,7 +20,11 @@ export default function ExemplarSetting({ value, onChange, onDelete, disabled }:
 
   return (
     <div className="gf-form-group">
-      <InlineField label="Internal link" labelWidth={24} disabled={disabled}>
+      <InlineField
+        label={t('app.plugins.data-source.internal-link', 'Internal link')}
+        labelWidth={24}
+        disabled={disabled}
+      >
         <>
           <InlineSwitch
             value={isInternalLink}
@@ -29,7 +34,7 @@ export default function ExemplarSetting({ value, onChange, onDelete, disabled }:
           {!disabled && (
             <Button
               variant="destructive"
-              title="Remove link"
+              title={t('app.plugins.data-source.remove-link', 'Remove link')}
               icon="times"
               onClick={(event) => {
                 event.preventDefault();
@@ -45,9 +50,12 @@ export default function ExemplarSetting({ value, onChange, onDelete, disabled }:
 
       {isInternalLink ? (
         <InlineField
-          label="Data source"
+          label={t('app.plugins.data-source.data-source', 'Data source')}
           labelWidth={24}
-          tooltip="The data source the exemplar is going to navigate to."
+          tooltip={t(
+            'app.plugins.data-source.the-data-source-the-exemplar-is-going-to-navigate',
+            'The data source the exemplar is going to navigate to.'
+          )}
           disabled={disabled}
         >
           <DataSourcePicker
@@ -66,9 +74,12 @@ export default function ExemplarSetting({ value, onChange, onDelete, disabled }:
         </InlineField>
       ) : (
         <InlineField
-          label="URL"
+          label={t('app.plugins.data-source.URL', 'URL')}
           labelWidth={24}
-          tooltip="The URL of the trace backend the user would go to see its trace."
+          tooltip={t(
+            'app.plugins.data-source.the-URL-of-the-trace-backend-the-user-would',
+            'The URL of the trace backend the user would go to see its trace.'
+          )}
           disabled={disabled}
         >
           <Input
@@ -88,13 +99,16 @@ export default function ExemplarSetting({ value, onChange, onDelete, disabled }:
       )}
 
       <InlineField
-        label="URL Label"
+        label={t('app.plugins.data-source.URL-label', 'URL Label')}
         labelWidth={24}
-        tooltip="Use to override the button label on the exemplar traceID field."
+        tooltip={t(
+          'app.plugins.data-source.use-to-override-the-button-label-on-the',
+          'Use to override the button label on the exemplar traceID field.'
+        )}
         disabled={disabled}
       >
         <Input
-          placeholder="Go to example.com"
+          placeholder={t('app.plugins.data-source.go-to-example-com', 'Go to example.com')}
           spellCheck={false}
           width={40}
           value={value.urlDisplayLabel}
@@ -107,13 +121,16 @@ export default function ExemplarSetting({ value, onChange, onDelete, disabled }:
         />
       </InlineField>
       <InlineField
-        label="Label name"
+        label={t('app.plugins.data-source.label-name', 'Label name')}
         labelWidth={24}
-        tooltip="The name of the field in the labels object that should be used to get the traceID."
+        tooltip={t(
+          'app.plugins.data-source.the-name-of-the-field-in-the-labels',
+          'The name of the field in the labels object that should be used to get the traceID.'
+        )}
         disabled={disabled}
       >
         <Input
-          placeholder="traceID"
+          placeholder={t('app.plugins.data-source.traceID', 'traceID')}
           spellCheck={false}
           width={40}
           value={value.name}

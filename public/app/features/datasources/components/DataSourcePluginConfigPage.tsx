@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { t } from 'app/core/internationalization';
+
 import { GenericDataSourcePlugin } from '../types';
 
 export type Props = {
@@ -19,5 +21,9 @@ export function DataSourcePluginConfigPage({ plugin, pageId }: Props) {
     return <page.body plugin={plugin} query={{}} />;
   }
 
-  return <div>Page not found: {page}</div>;
+  return (
+    <div>
+      {t('features.data-source.page-not-found', 'Page not found')}: {page}
+    </div>
+  );
 }

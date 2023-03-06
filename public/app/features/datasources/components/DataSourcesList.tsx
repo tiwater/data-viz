@@ -7,6 +7,7 @@ import { LinkButton, Card, Tag, useStyles2 } from '@grafana/ui';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import PageLoader from 'app/core/components/PageLoader/PageLoader';
 import { contextSrv } from 'app/core/core';
+import { t } from 'app/core/internationalization';
 import { StoreState, AccessControlAction, useSelector } from 'app/types';
 
 import { getDataSources, getDataSourcesCount, useDataSourcesRoutes, useLoadDataSources } from '../state';
@@ -64,7 +65,7 @@ export function DataSourcesListView({
     return (
       <EmptyListCTA
         buttonDisabled={!hasCreateRights}
-        title="No data sources defined"
+        title={t('features.data-source.no-data-sources-defined', 'No data sources defined')}
         buttonIcon="database"
         buttonLink={dataSourcesRoutes.New}
         buttonTitle="Add data source"
