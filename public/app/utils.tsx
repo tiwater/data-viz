@@ -278,7 +278,20 @@ const getDataSourceIn18 = (): { [key: string]: string } => ({
 });
 export const setFilteredDataSource = (dataSource: DataSourcePluginCategory[]) => {
   const in18 = getDataSourceIn18();
-  const showDataSourceIds: string[] = ['sql', 'other', 'mysql', 'postgres', 'mssql', 'grafana-mqtt-datasource'];
+  const showDataSourceIds: string[] = [
+    'logging',
+    'sql',
+    'tsdb',
+    'influxdb',
+    'opentsdb',
+    'grafana-mongodb-datasource',
+    'elasticsearch',
+    'other',
+    'mysql',
+    'postgres',
+    'mssql',
+    'grafana-mqtt-datasource',
+  ];
   return dataSource
     .filter((d) => showDataSourceIds.indexOf(d.id) > -1)
     .map((d) => {

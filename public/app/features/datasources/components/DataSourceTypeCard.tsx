@@ -35,11 +35,11 @@ export function DataSourceTypeCard({ onClick, dataSourcePlugin }: Props) {
       <Card.Description className={styles.description}>{dataSourcePlugin.info.description}</Card.Description>
 
       {/* Signature */}
-      {!isPhantom && (
+      {/* {!isPhantom && (
         <Card.Meta className={styles.meta}>
           <PluginSignatureBadge status={dataSourcePlugin.signature} />
         </Card.Meta>
-      )}
+      )} */}
 
       {/* Learn more */}
       <Card.Actions className={styles.actions}>
