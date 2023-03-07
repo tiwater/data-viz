@@ -7,7 +7,7 @@ import {
   onUpdateDatasourceJsonDataOptionChecked,
 } from '@grafana/data';
 import { Alert, DataSourceHttpSettings, InlineFormLabel, LegacyForms, Select } from '@grafana/ui';
-import { t } from 'app/core/internationalization';
+import { t, Trans } from 'app/core/internationalization';
 import store from 'app/core/store';
 
 import { GraphiteOptions, GraphiteType } from '../types';
@@ -42,15 +42,16 @@ export class ConfigEditor extends PureComponent<Props, State> {
 
   renderTypeHelp = () => {
     return (
-      <p>
-        There are different types of Graphite compatible backends. Here you can specify the type you are using. If you
-        are using{' '}
-        <a href="https://github.com/grafana/metrictank" className="pointer" target="_blank" rel="noreferrer">
+      <Trans i18nKey="app.plugins.data-source.there-are-different-types-of-graphite">
+        <p>
+          There are different types of Graphite compatible backends. Here you can specify the type you are using. If you
+          are using {/* <a href="#" className="pointer" target="_blank" rel="noreferrer"> */}
           Metrictank
-        </a>{' '}
-        then select that here. This will enable Metrictank specific features like query processing meta data. Metrictank
-        is a multi-tenant timeseries engine for Graphite and friends.
-      </p>
+          {/* </a>{' '} */}
+          then select that here. This will enable Metrictank specific features like query processing meta data.
+          Metrictank is a multi-tenant timeseries engine for Graphite and friends.
+        </p>
+      </Trans>
     );
   };
 

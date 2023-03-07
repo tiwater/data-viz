@@ -10,6 +10,7 @@ import {
 } from '@grafana/data';
 import { DataSourcePicker } from '@grafana/runtime';
 import { Button, InlineField, InlineFieldRow, Input, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import KeyValueInput from '../TraceToLogs/KeyValueInput';
 
@@ -195,7 +196,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
 
       <Button
         variant="secondary"
-        title="Add query"
+        title={t('explore.add-query-button', 'Add query')}
         icon="plus"
         type="button"
         onClick={() => {
@@ -205,7 +206,7 @@ export function TraceToMetricsSettings({ options, onOptionsChange }: Props) {
           });
         }}
       >
-        Add query
+        {t('explore.add-query-button', 'Add query')}
       </Button>
     </div>
   );

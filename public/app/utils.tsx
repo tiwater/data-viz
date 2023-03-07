@@ -278,29 +278,34 @@ const getDataSourceIn18 = (): { [key: string]: string } => ({
 });
 export const setFilteredDataSource = (dataSource: DataSourcePluginCategory[]) => {
   const in18 = getDataSourceIn18();
-  return dataSource.map((d) => {
-    return {
-      ...d,
-      title: in18[d.id] ? in18[d.id] : d.title,
-      plugins: d.plugins.map((p) => {
-        return {
-          ...p,
-          info: {
-            ...d.info,
-            description: in18[p.id] ? in18[p.id] : p.id,
-            logos: {
-              small:
-                p.info.logos.small.indexOf(config.appUrl) > -1
-                  ? p.info.logos.small
-                  : `${config.appUrl}${p.info.logos.small}`,
-              large:
-                p.info.logos.large.indexOf(config.appUrl) > -1
-                  ? p.info.logos.large
-                  : `${config.appUrl}${p.info.logos.large}`,
-            },
-          },
-        };
-      }),
-    };
-  });
+  const showDataSourceIds: string[] = ['sql', 'other', 'mysql', 'postgres', 'mssql', 'grafana-mqtt-datasource'];
+  return dataSource
+    .filter((d) => showDataSourceIds.indexOf(d.id) > -1)
+    .map((d) => {
+      return {
+        ...d,
+        title: in18[d.id] ? in18[d.id] : d.title,
+        plugins: d.plugins
+          .filter((d) => showDataSourceIds.indexOf(d.id) > -1)
+          .map((p) => {
+            return {
+              ...p,
+              info: {
+                ...d.info,
+                description: in18[p.id] ? in18[p.id] : p.id,
+                logos: {
+                  small:
+                    p.info.logos.small.indexOf(config.appUrl) > -1
+                      ? p.info.logos.small
+                      : `${config.appUrl}${p.info.logos.small}`,
+                  large:
+                    p.info.logos.large.indexOf(config.appUrl) > -1
+                      ? p.info.logos.large
+                      : `${config.appUrl}${p.info.logos.large}`,
+                },
+              },
+            };
+          }),
+      };
+    });
 };

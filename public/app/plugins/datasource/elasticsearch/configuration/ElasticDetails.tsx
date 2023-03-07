@@ -3,17 +3,9 @@ import { valid } from 'semver';
 
 import { DataSourceSettings, SelectableValue, isTruthy } from '@grafana/data';
 import { FieldSet, InlineField, Input, Select, InlineSwitch } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
 import { ElasticsearchOptions, Interval } from '../types';
-
-const indexPatternTypes: Array<SelectableValue<'none' | Interval>> = [
-  { label: 'No pattern', value: 'none' },
-  { label: 'Hourly', value: 'Hourly', example: '[logstash-]YYYY.MM.DD.HH' },
-  { label: 'Daily', value: 'Daily', example: '[logstash-]YYYY.MM.DD' },
-  { label: 'Weekly', value: 'Weekly', example: '[logstash-]GGGG.WW' },
-  { label: 'Monthly', value: 'Monthly', example: '[logstash-]YYYY.MM' },
-  { label: 'Yearly', value: 'Yearly', example: '[logstash-]YYYY' },
-];
 
 const esVersions: SelectableValue[] = [
   { label: '7.10+', value: '7.10.0' },
@@ -25,6 +17,14 @@ type Props = {
   onChange: (value: DataSourceSettings<ElasticsearchOptions>) => void;
 };
 export const ElasticDetails = ({ value, onChange }: Props) => {
+  const indexPatternTypes: Array<SelectableValue<'none' | Interval>> = [
+    { label: t('app.plugins.data-source.no-pattern', 'No pattern'), value: 'none' },
+    { label: t('app.plugins.data-source.hourly', 'Hourly'), value: 'Hourly', example: '[logstash-]YYYY.MM.DD.HH' },
+    { label: t('app.plugins.data-source.daily', 'Daily'), value: 'Daily', example: '[logstash-]YYYY.MM.DD' },
+    { label: t('app.plugins.data-source.weekly', 'Weekly'), value: 'Weekly', example: '[logstash-]GGGG.WW' },
+    { label: t('app.plugins.data-source.monthly', 'Monthly'), value: 'Monthly', example: '[logstash-]YYYY.MM' },
+    { label: t('app.plugins.data-source.yearly', 'Yearly'), value: 'Yearly', example: '[logstash-]YYYY' },
+  ];
   const currentVersion = esVersions.find((version) => version.value === value.jsonData.esVersion);
   const customOption =
     !currentVersion && valid(value.jsonData.esVersion)
@@ -35,8 +35,8 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
       : undefined;
   return (
     <>
-      <FieldSet label="Elasticsearch details">
-        <InlineField label="Index name" labelWidth={26}>
+      <FieldSet label={t('app.plugins.data-source.elasticsearch-details', 'Elasticsearch details')}>
+        <InlineField label={t('app.plugins.data-source.index-name', 'Index name')} labelWidth={26}>
           <Input
             id="es_config_indexName"
             value={value.database || ''}
@@ -47,7 +47,7 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
           />
         </InlineField>
 
-        <InlineField label="Pattern" labelWidth={26}>
+        <InlineField label={t('app.plugins.data-source.pattern', 'Pattern')} labelWidth={26}>
           <Select
             inputId="es_config_indexPattern"
             value={indexPatternTypes.find(
@@ -59,7 +59,7 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
           />
         </InlineField>
 
-        <InlineField label="Time field name" labelWidth={26}>
+        <InlineField label={t('app.plugins.data-source.time-field-name', 'Time field name')} labelWidth={26}>
           <Input
             id="es_config_timeField"
             value={value.jsonData.timeField || ''}
@@ -70,7 +70,10 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
           />
         </InlineField>
 
-        <InlineField label="ElasticSearch version" labelWidth={26}>
+        <InlineField
+          label={t('app.plugins.data-source.elasticSearch-version', 'ElasticSearch version')}
+          labelWidth={26}
+        >
           <Select
             inputId="es_config_version"
             options={[customOption, ...esVersions].filter(isTruthy)}
@@ -92,7 +95,10 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
           />
         </InlineField>
 
-        <InlineField label="Max concurrent Shard Requests" labelWidth={26}>
+        <InlineField
+          label={t('app.plugins.data-source.max-concurrent-shard-requests', 'Max concurrent Shard Requests')}
+          labelWidth={26}
+        >
           <Input
             id="es_config_shardRequests"
             value={value.jsonData.maxConcurrentShardRequests || ''}
@@ -102,15 +108,18 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
         </InlineField>
 
         <InlineField
-          label="Min time interval"
+          label={t('app.plugins.data-source.min-time-interval', 'Min time interval')}
           labelWidth={26}
           tooltip={
-            <>
+            <Trans i18nKey="app.plugins.data-source.elasticSearch-lower-limit-for-the-auto">
               A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example{' '}
               <code>1m</code> if your data is written every minute.
-            </>
+            </Trans>
           }
-          error="Value is not valid, you can use number with time unit specifier: y, M, w, d, h, m, s"
+          error={t(
+            'app.plugins.data-source.elasticSearch-value-is-not-valid',
+            'Value is not valid, you can use number with time unit specifier: y, M, w, d, h, m, s'
+          )}
           invalid={!!value.jsonData.timeInterval && !/^\d+(ms|[Mwdhmsy])$/.test(value.jsonData.timeInterval)}
         >
           <Input
@@ -122,7 +131,7 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
           />
         </InlineField>
 
-        <InlineField label="X-Pack enabled" labelWidth={26}>
+        <InlineField label={t('app.plugins.data-source.x-pack-enabled', 'X-Pack enabled')} labelWidth={26}>
           <InlineSwitch
             id="es_config_xpackEnabled"
             checked={value.jsonData.xpack || false}
@@ -131,7 +140,10 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
         </InlineField>
 
         {value.jsonData.xpack && (
-          <InlineField label="Include Frozen Indices" labelWidth={26}>
+          <InlineField
+            label={t('app.plugins.data-source.include-frozen-indices', 'Include Frozen Indices')}
+            labelWidth={26}
+          >
             <InlineSwitch
               id="es_config_frozenIndices"
               checked={value.jsonData.includeFrozen ?? false}

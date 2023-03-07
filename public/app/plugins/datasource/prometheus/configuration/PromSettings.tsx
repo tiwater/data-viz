@@ -215,7 +215,7 @@ export const PromSettings = (props: Props) => {
         </div>
       </div>
 
-      <h3 className="page-heading">Type and version</h3>
+      <h3 className="page-heading">{t('app.plugins.data-source.type-and-version', 'Type and version')}</h3>
       {!options.jsonData.prometheusType && !options.jsonData.prometheusVersion && options.readOnly && (
         <div style={{ marginBottom: '12px' }}>
           {t(

@@ -241,7 +241,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
       </>
 
       <>
-        <h3 className="page-heading">Auth</h3>
+        <h3 className="page-heading">{t('grafana-ui.data-source.auth', 'Auth')}</h3>
         <div className="gf-form-group">
           <div className="gf-form-inline">
             <InlineField

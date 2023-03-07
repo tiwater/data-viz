@@ -23,6 +23,7 @@ import {
   useStyles2,
 } from '@grafana/ui';
 import { NumberInput } from 'app/core/components/OptionsUI/NumberInput';
+import { t, Trans } from 'app/core/internationalization';
 import { ConnectionLimits } from 'app/features/plugins/sql/components/configuration/ConnectionLimits';
 import { useMigrateDatabaseField } from 'app/features/plugins/sql/components/configuration/useMigrateDatabaseField';
 
@@ -70,8 +71,14 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
   };
 
   const authenticationOptions: Array<SelectableValue<MSSQLAuthenticationType>> = [
-    { value: MSSQLAuthenticationType.sqlAuth, label: 'SQL Server Authentication' },
-    { value: MSSQLAuthenticationType.windowsAuth, label: 'Windows Authentication' },
+    {
+      value: MSSQLAuthenticationType.sqlAuth,
+      label: t('app.data-source.mssql.SQL-server-authentication', 'SQL Server Authentication'),
+    },
+    {
+      value: MSSQLAuthenticationType.windowsAuth,
+      label: t('app.data-source.mssql.windows-authentication', 'Windows Authentication'),
+    },
   ];
 
   const encryptOptions: Array<SelectableValue<string>> = [
@@ -87,40 +94,42 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
 
   return (
     <>
-      <FieldSet label="MS SQL Connection" width={400}>
+      <FieldSet label={t('app.data-source.mssql.mssql-connection', 'MS SQL Connection')} width={400}>
         <InlineField labelWidth={shortWidth} label="Host">
           <Input
             width={longWidth}
-            name="host"
+            name={t('app.data-source.mssql.host', 'host')}
             type="text"
             value={options.url || ''}
             placeholder="localhost:1433"
             onChange={onDSOptionChanged('url')}
           ></Input>
         </InlineField>
-        <InlineField labelWidth={shortWidth} label="Database">
+        <InlineField labelWidth={shortWidth} label={t('app.data-source.mssql.database', 'Database')}>
           <Input
             width={longWidth}
             name="database"
             value={jsonData.database || ''}
-            placeholder="database name"
+            placeholder={t('app.data-source.mssql.database-name', 'database name')}
             onChange={onUpdateDatasourceJsonDataOption(props, 'database')}
           ></Input>
         </InlineField>
         <InlineField
-          label="Authentication"
+          label={t('app.data-source.mssql.authentication', 'Authentication')}
           labelWidth={shortWidth}
           htmlFor="authenticationType"
           tooltip={
             <ul className={styles.ulPadding}>
-              <li>
-                <i>SQL Server Authentication</i> This is the default mechanism to connect to MS SQL Server. Enter the
-                SQL Server Authentication login or the Windows Authentication login in the DOMAIN\User format.
-              </li>
-              <li>
-                <i>Windows Authentication</i> Windows Integrated Security - single sign on for users who are already
-                logged onto Windows and have enabled this option for MS SQL Server.
-              </li>
+              <Trans i18nKey="app.data-source.mssql.SQL-Server-authentication-type">
+                <li>
+                  <i>SQL Server Authentication</i> This is the default mechanism to connect to MS SQL Server. Enter the
+                  SQL Server Authentication login or the Windows Authentication login in the DOMAIN\User format.
+                </li>
+                <li>
+                  <i>Windows Authentication</i> Windows Integrated Security - single sign on for users who are already
+                  logged onto Windows and have enabled this option for MS SQL Server.
+                </li>
+              </Trans>
             </ul>
           }
         >
@@ -133,18 +142,18 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
         </InlineField>
         {jsonData.authenticationType === MSSQLAuthenticationType.windowsAuth ? null : (
           <InlineFieldRow>
-            <InlineField labelWidth={shortWidth} label="User">
+            <InlineField labelWidth={shortWidth} label={t('app.data-source.mssql.user', 'User')}>
               <Input
                 width={shortWidth}
                 value={options.user || ''}
-                placeholder="user"
+                placeholder={t('app.data-source.mssql.user', 'User')}
                 onChange={onDSOptionChanged('user')}
               ></Input>
             </InlineField>
-            <InlineField label="Password" labelWidth={shortWidth}>
+            <InlineField label={t('app.data-source.mssql.password', 'Password')} labelWidth={shortWidth}>
               <SecretInput
                 width={shortWidth}
-                placeholder="Password"
+                placeholder={t('app.data-source.mssql.password', 'Password')}
                 isConfigured={options.secureJsonFields && options.secureJsonFields.password}
                 onReset={onResetPassword}
                 onBlur={onUpdateDatasourceSecureJsonDataOption(props, 'password')}
@@ -154,12 +163,12 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
         )}
       </FieldSet>
 
-      <FieldSet label="TLS/SSL Auth">
+      <FieldSet label={t('app.data-source.mssql.TLS-SSL-Auth', 'TLS/SSL Auth')}>
         <InlineField
           labelWidth={labelWidthSSL}
           htmlFor="encrypt"
           tooltip={
-            <>
+            <Trans i18nKey="app.data-source.mssql.determines-whether-or-to-which">
               Determines whether or to which extent a secure SSL TCP/IP connection will be negotiated with the server.
               <ul className={styles.ulPadding}>
                 <li>
@@ -174,9 +183,9 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
               </ul>
               If you&apos;re using an older version of Microsoft SQL Server like 2008 and 2008R2 you may need to disable
               encryption to be able to connect.
-            </>
+            </Trans>
           }
-          label="Encrypt"
+          label={t('app.data-source.mssql.encrypt', 'Encrypt')}
         >
           <Select
             options={encryptOptions}
@@ -188,7 +197,11 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
 
         {jsonData.encrypt === MSSQLEncryptOptions.true ? (
           <>
-            <InlineField labelWidth={labelWidthSSL} htmlFor="skipTlsVerify" label="Skip TLS Verify">
+            <InlineField
+              labelWidth={labelWidthSSL}
+              htmlFor="skipTlsVerify"
+              label={t('app.data-source.mssql.skip-TLS-verify', 'Skip TLS Verify')}
+            >
               <InlineSwitch
                 id="skipTlsVerify"
                 onChange={onSkipTLSVerifyChanged}
@@ -201,21 +214,32 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
                   labelWidth={labelWidthSSL}
                   tooltip={
                     <span>
-                      Path to file containing the public key certificate of the CA that signed the SQL Server
-                      certificate. Needed when the server certificate is self signed.
+                      <Trans i18nKey="app.data-source.mssql.path-to-file-containing-the">
+                        Path to file containing the public key certificate of the CA that signed the SQL Server
+                        certificate. Needed when the server certificate is self signed.
+                      </Trans>
                     </span>
                   }
-                  label="TLS/SSL Root Certificate"
+                  label={t('app.data-source.mssql.TLS-SSL-root-certificate', 'TLS/SSL Root Certificate')}
                 >
                   <Input
                     value={jsonData.sslRootCertFile || ''}
                     onChange={onUpdateDatasourceJsonDataOption(props, 'sslRootCertFile')}
-                    placeholder="TLS/SSL root certificate file path"
+                    placeholder={t(
+                      'app.data-source.mssql.TLS-SSL-root-certificate-file-path',
+                      'TLS/SSL root certificate file path'
+                    )}
                   ></Input>
                 </InlineField>
-                <InlineField labelWidth={labelWidthSSL} label="Hostname in server certificate">
+                <InlineField
+                  labelWidth={labelWidthSSL}
+                  label={t('app.data-source.mssql.hostname-in-server-certificate', 'Hostname in server certificate')}
+                >
                   <Input
-                    placeholder="Common Name (CN) in server certificate"
+                    placeholder={t(
+                      'app.data-source.mssql.common-name-in-server-certificate',
+                      'Common Name (CN) in server certificate'
+                    )}
                     value={jsonData.serverName || ''}
                     onChange={onUpdateDatasourceJsonDataOption(props, 'serverName')}
                   ></Input>
@@ -234,15 +258,17 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
         }}
       ></ConnectionLimits>
 
-      <FieldSet label="MS SQL details">
+      <FieldSet label={t('app.data-source.mssql.MS-SQL-details', 'MS SQL details')}>
         <InlineField
           tooltip={
             <span>
-              A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example
-              <code>1m</code> if your data is written every minute.
+              <Trans i18nKey="app.data-source.mssql.lower-limit-for-the-auto">
+                A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example
+                <code>1m</code> if your data is written every minute.
+              </Trans>
             </span>
           }
-          label="Min time interval"
+          label={t('app.data-source.mssql.min-time-interval', 'Min time interval')}
           labelWidth={labelWidthDetails}
         >
           <Input
@@ -253,12 +279,14 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
         </InlineField>
         <InlineField
           tooltip={
-            <span>
-              The number of seconds to wait before canceling the request when connecting to the database. The default is{' '}
-              <code>0</code>, meaning no timeout.
-            </span>
+            <Trans i18nKey="app.data-source.mssql.the-number-of-seconds-to">
+              <span>
+                The number of seconds to wait before canceling the request when connecting to the database. The default
+                is <code>0</code>, meaning no timeout.
+              </span>
+            </Trans>
           }
-          label="Connection timeout"
+          label={t('app.data-source.mssql.connection-timeout', 'Connection timeout')}
           labelWidth={labelWidthDetails}
         >
           <NumberInput
@@ -270,16 +298,19 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<Ms
         </InlineField>
       </FieldSet>
 
-      <Alert title="User Permission" severity="info">
-        The database user should only be granted SELECT permissions on the specified database and tables you want to
-        query. Grafana does not validate that queries are safe so queries can contain any SQL statement. For example,
-        statements like <code>USE otherdb;</code> and <code>DROP TABLE user;</code> would be executed. To protect
-        against this we <em>highly</em> recommend you create a specific MS SQL user with restricted permissions. Check
+      <Alert title={t('app.data-source.mssql.user-permission', 'User Permission')} severity="info">
+        <Trans i18nKey="app.data-source.mssql.the-database-user-should-only">
+          The database user should only be granted SELECT permissions on the specified database and tables you want to
+          query. Grafana does not validate that queries are safe so queries can contain any SQL statement. For example,
+          statements like <code>USE otherdb;</code> and <code>DROP TABLE user;</code> would be executed. To protect
+          against this we <em>highly</em> recommend you create a specific MS SQL user with restricted permissions.
+        </Trans>
+        {/* Check
         out the{' '}
         <Link rel="noreferrer" target="_blank" href="http://docs.grafana.org/features/datasources/mssql/">
           Microsoft SQL Server Data Source Docs
         </Link>{' '}
-        for more information.
+        for more information. */}
       </Alert>
     </>
   );

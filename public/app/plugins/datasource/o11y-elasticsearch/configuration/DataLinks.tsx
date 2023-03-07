@@ -3,6 +3,7 @@ import React from 'react';
 
 import { GrafanaTheme2, VariableOrigin, DataLinkBuiltInVars } from '@grafana/data';
 import { Button, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DataLinkConfig } from '../types';
 
@@ -30,10 +31,13 @@ export const DataLinks = (props: Props) => {
 
   return (
     <>
-      <h3 className="page-heading">Data links</h3>
+      <h3 className="page-heading">{t('app.plugins.data-source.data-links', 'Data links')}</h3>
 
       <div className={styles.infoText}>
-        Add links to existing fields. Links will be shown in log row details next to the field value.
+        {t(
+          'app.plugins.data-source.add-links-to-existing-fields',
+          'Add links to existing fields. Links will be shown in log row details next to the field value.'
+        )}
       </div>
 
       {value && value.length > 0 && (
@@ -57,8 +61,8 @@ export const DataLinks = (props: Props) => {
                 suggestions={[
                   {
                     value: DataLinkBuiltInVars.valueRaw,
-                    label: 'Raw value',
-                    documentation: 'Raw value of the field',
+                    label: t('plugins.data-source.loki.raw-value', 'Raw value'),
+                    documentation: t('plugins.data-source.loki.raw-value-of-the-field', 'Raw value of the field'),
                     origin: VariableOrigin.Value,
                   },
                 ]}
@@ -81,7 +85,7 @@ export const DataLinks = (props: Props) => {
           onChange(newDataLinks);
         }}
       >
-        Add
+        {t('plugins.data-source.loki.add', 'Add')}
       </Button>
     </>
   );

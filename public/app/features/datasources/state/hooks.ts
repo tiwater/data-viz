@@ -4,6 +4,7 @@ import { DataSourcePluginMeta, DataSourceSettings, NavModelItem } from '@grafana
 import { cleanUpAction } from 'app/core/actions/cleanUp';
 import appEvents from 'app/core/app_events';
 import { contextSrv } from 'app/core/core';
+import { t } from 'app/core/internationalization';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { AccessControlAction, useDispatch, useSelector } from 'app/types';
 import { ShowConfirmModalEvent } from 'app/types/events';
@@ -93,9 +94,13 @@ export const useDeleteLoadedDataSource = () => {
   return () => {
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Delete',
-        text: `Are you sure you want to delete the "${name}" data source?`,
-        yesText: 'Delete',
+        title: t('features.dashboard.delete', 'Delete'),
+        text: t(
+          'features.dashboard.are-you-sure-you-want-to-delete.datasource',
+          'Are you sure you want to delete the "{{name}}" data source?',
+          name
+        ),
+        yesText: t('features.dashboard.delete', 'Delete'),
         icon: 'trash-alt',
         onConfirm: () => dispatch(deleteLoadedDataSource()),
       })

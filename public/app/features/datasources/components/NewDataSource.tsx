@@ -27,7 +27,6 @@ export function NewDataSource() {
   const searchQuery = useSelector((s: StoreState) => s.dataSources.dataSourceTypeSearchQuery);
   const isLoading = useSelector((s: StoreState) => s.dataSources.isLoadingDataSources);
   const dataSourceCategories = setFilteredDataSource(useSelector((s: StoreState) => s.dataSources.categories));
-  console.log(dataSourceCategories, filteredDataSources);
   const onAddDataSource = useAddDatasource();
   const onSetSearchQuery = (q: string) => dispatch(setDataSourceTypeSearchQuery(q));
 

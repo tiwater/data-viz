@@ -27,12 +27,15 @@ const versions: Array<SelectableValue<InfluxVersion>> = [
   {
     label: 'InfluxQL',
     value: InfluxVersion.InfluxQL,
-    description: 'The InfluxDB SQL-like query language.',
+    description: t('app.plugins.data-source.influxDB-query-language', 'The InfluxDB SQL-like query language.'),
   },
   {
     label: 'Flux',
     value: InfluxVersion.Flux,
-    description: 'Advanced data scripting and query language.  Supported in InfluxDB 2.x and 1.8+',
+    description: t(
+      'app.plugins.data-source.flux-query-language',
+      'Advanced data scripting and query language.  Supported in InfluxDB 2.x and 1.8+'
+    ),
   },
 ];
 
@@ -98,7 +101,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
         <div className="gf-form-inline">
           <div className="gf-form">
             <InlineFormLabel htmlFor={`${htmlPrefix}-org`} className="width-10">
-              Organization
+              {t('app.plugins.data-source.organization', 'Organization')}
             </InlineFormLabel>
             <div className="width-10">
               <Input
@@ -126,11 +129,13 @@ export class ConfigEditor extends PureComponent<Props, State> {
         </div>
         <div className="gf-form-inline">
           <div className="gf-form">
-            <InlineFormLabel className="width-10">Default Bucket</InlineFormLabel>
+            <InlineFormLabel className="width-10">
+              {t('app.plugins.data-source.default-bucket', 'Default Bucket')}
+            </InlineFormLabel>
             <div className="width-10">
               <Input
                 className="width-20"
-                placeholder="default bucket"
+                placeholder={t('app.plugins.data-source.default-bucket', 'Default Bucket')}
                 value={options.jsonData.defaultBucket || ''}
                 onChange={onUpdateDatasourceJsonDataOption(this.props, 'defaultBucket')}
               />
@@ -142,10 +147,12 @@ export class ConfigEditor extends PureComponent<Props, State> {
           <div className="gf-form">
             <InlineFormLabel
               className="width-10"
-              tooltip="A lower limit for the auto group by time interval. Recommended to be set to write frequency,
-				for example 1m if your data is written every minute."
+              tooltip={t(
+                'app.plugins.data-source.lower-limit-for-the-auto-group-by-time-interval-minute',
+                'A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example 1m if your data is written every minute.'
+              )}
             >
-              Min time interval
+              {t('app.plugins.data-source.min-time-interval', 'Min time interval')}
             </InlineFormLabel>
             <div className="width-10">
               <Input
