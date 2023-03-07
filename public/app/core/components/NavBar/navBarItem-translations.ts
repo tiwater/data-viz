@@ -142,7 +142,6 @@ export function getNavTitle(navId: string | undefined) {
       if (navId?.indexOf('datasource-settings-') === 0) {
         return t('features.dashboard.setting.settings', 'Settings');
       }
-      console.log('navId', navId);
       return undefined;
   }
 }
