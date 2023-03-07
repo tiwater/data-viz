@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 
 import { Button, Icon, InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import MappingsHelp from './MappingsHelp';
 
@@ -17,11 +18,11 @@ export const MappingsConfiguration = (props: Props): JSX.Element => {
 
   return (
     <div>
-      <h3 className="page-heading">Label mappings</h3>
+      <h3 className="page-heading">{t('app.plugins.data-source.label-mappings', 'Label mappings')}</h3>
       {!props.showHelp && (
         <p>
           <Button fill="text" onClick={props.onRestoreHelp}>
-            Learn how label mappings work
+            {t('app.plugins.data-source.learn-how-label-mappings-work', 'Learn how label mappings work')}
           </Button>
         </p>
       )}
@@ -30,7 +31,7 @@ export const MappingsConfiguration = (props: Props): JSX.Element => {
       <div className="gf-form-group">
         {mappings.map((mapping, i) => (
           <InlineFieldRow key={i}>
-            <InlineField label={`Mapping (${i + 1})`}>
+            <InlineField label={`${t('app.plugins.data-source.mapping', 'Mapping')} (${i + 1})`}>
               <Input
                 width={50}
                 onChange={(changeEvent: ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +70,7 @@ export const MappingsConfiguration = (props: Props): JSX.Element => {
             setMappings([...mappings, '']);
           }}
         >
-          Add label mapping
+          {t('app.plugins.data-source.add-label-mapping', 'Add label mapping')}
         </Button>
       </div>
     </div>

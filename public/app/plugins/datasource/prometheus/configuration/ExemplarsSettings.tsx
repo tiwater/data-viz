@@ -3,6 +3,7 @@ import React from 'react';
 
 import { selectors } from '@grafana/e2e-selectors';
 import { Button } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { ExemplarTraceIdDestination } from '../types';
 
@@ -17,7 +18,7 @@ type Props = {
 export function ExemplarsSettings({ options, onChange, disabled }: Props) {
   return (
     <>
-      <h3 className="page-heading">Exemplars</h3>
+      <h3 className="page-heading">{t('app.plugins.data-source.exemplars', 'Exemplars')}</h3>
 
       {options &&
         options.map((option, index) => {
@@ -54,7 +55,7 @@ export function ExemplarsSettings({ options, onChange, disabled }: Props) {
             onChange(newOptions);
           }}
         >
-          Add
+          {t('app.plugins.data-source.add', 'Add')}
         </Button>
       )}
     </>

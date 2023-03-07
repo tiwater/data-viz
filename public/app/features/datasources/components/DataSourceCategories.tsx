@@ -28,7 +28,7 @@ export function DataSourceCategories({ categories, onClickDataSourceType }: Prop
       ))}
 
       {/* Find more */}
-      <div className="add-data-source-more">
+      {/* <div className="add-data-source-more">
         <LinkButton
           variant="secondary"
           href="https://grafana.com/plugins?type=datasource&utm_source=grafana_add_ds"
@@ -36,8 +36,9 @@ export function DataSourceCategories({ categories, onClickDataSourceType }: Prop
           rel="noopener"
         >
           Find more data source plugins on grafana.com
+          
         </LinkButton>
-      </div>
+      </div> */}
     </>
   );
 }

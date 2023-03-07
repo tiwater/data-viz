@@ -12,11 +12,12 @@ import {
   updateDatasourcePluginJsonDataOption,
 } from '@grafana/data';
 import { Alert, DataSourceHttpSettings, InfoBox, InlineField, InlineFormLabel, LegacyForms, Select } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 
-const { Input, SecretFormField } = LegacyForms;
 import { BROWSER_MODE_DISABLED_MESSAGE } from '../constants';
 import { InfluxOptions, InfluxSecureJsonData, InfluxVersion } from '../types';
 
+const { Input, SecretFormField } = LegacyForms;
 const httpModes: SelectableValue[] = [
   { label: 'GET', value: 'GET' },
   { label: 'POST', value: 'POST' },
@@ -26,12 +27,15 @@ const versions: Array<SelectableValue<InfluxVersion>> = [
   {
     label: 'InfluxQL',
     value: InfluxVersion.InfluxQL,
-    description: 'The InfluxDB SQL-like query language.',
+    description: t('app.plugins.data-source.influxDB-query-language', 'The InfluxDB SQL-like query language.'),
   },
   {
     label: 'Flux',
     value: InfluxVersion.Flux,
-    description: 'Advanced data scripting and query language.  Supported in InfluxDB 2.x and 1.8+',
+    description: t(
+      'app.plugins.data-source.flux-query-language',
+      'Advanced data scripting and query language.  Supported in InfluxDB 2.x and 1.8+'
+    ),
   },
 ];
 
@@ -97,7 +101,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
         <div className="gf-form-inline">
           <div className="gf-form">
             <InlineFormLabel htmlFor={`${htmlPrefix}-org`} className="width-10">
-              Organization
+              {t('app.plugins.data-source.organization', 'Organization')}
             </InlineFormLabel>
             <div className="width-10">
               <Input
@@ -125,11 +129,13 @@ export class ConfigEditor extends PureComponent<Props, State> {
         </div>
         <div className="gf-form-inline">
           <div className="gf-form">
-            <InlineFormLabel className="width-10">Default Bucket</InlineFormLabel>
+            <InlineFormLabel className="width-10">
+              {t('app.plugins.data-source.default-bucket', 'Default Bucket')}
+            </InlineFormLabel>
             <div className="width-10">
               <Input
                 className="width-20"
-                placeholder="default bucket"
+                placeholder={t('app.plugins.data-source.default-bucket', 'Default Bucket')}
                 value={options.jsonData.defaultBucket || ''}
                 onChange={onUpdateDatasourceJsonDataOption(this.props, 'defaultBucket')}
               />
@@ -141,10 +147,12 @@ export class ConfigEditor extends PureComponent<Props, State> {
           <div className="gf-form">
             <InlineFormLabel
               className="width-10"
-              tooltip="A lower limit for the auto group by time interval. Recommended to be set to write frequency,
-				for example 1m if your data is written every minute."
+              tooltip={t(
+                'app.plugins.data-source.lower-limit-for-the-auto-group-by-time-interval-minute',
+                'A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example 1m if your data is written every minute.'
+              )}
             >
-              Min time interval
+              {t('app.plugins.data-source.min-time-interval', 'Min time interval')}
             </InlineFormLabel>
             <div className="width-10">
               <Input
@@ -169,21 +177,23 @@ export class ConfigEditor extends PureComponent<Props, State> {
     return (
       <>
         <InfoBox>
-          <h5>Database Access</h5>
+          <h5>{t('app.plugins.data-source.database-access', 'Database Access')}</h5>
           <p>
-            Setting the database for this datasource does not deny access to other databases. The InfluxDB query syntax
-            allows switching the database in the query. For example:
-            <code>SHOW MEASUREMENTS ON _internal</code> or
-            <code>SELECT * FROM &quot;_internal&quot;..&quot;database&quot; LIMIT 10</code>
-            <br />
-            <br />
-            To support data isolation and security, make sure appropriate permissions are configured in InfluxDB.
+            <Trans i18nKey="app.plugins.data-source.setting-the-database-for-this-datasource-does-not-deny">
+              Setting the database for this datasource does not deny access to other databases. The InfluxDB query
+              syntax allows switching the database in the query. For example:
+              <code>SHOW MEASUREMENTS ON _internal</code> or
+              <code>SELECT * FROM &quot;_internal&quot;..&quot;database&quot; LIMIT 10</code>
+              <br />
+              <br />
+              To support data isolation and security, make sure appropriate permissions are configured in InfluxDB.
+            </Trans>
           </p>
         </InfoBox>
         <div className="gf-form-inline">
           <div className="gf-form">
             <InlineFormLabel htmlFor={`${htmlPrefix}-db`} className="width-10">
-              Database
+              {t('app.plugins.data-source.database', 'Database')}
             </InlineFormLabel>
             <div className="width-20">
               <Input
@@ -198,7 +208,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
         <div className="gf-form-inline">
           <div className="gf-form">
             <InlineFormLabel htmlFor={`${htmlPrefix}-user`} className="width-10">
-              User
+              {t('app.plugins.data-source.user', 'User')}
             </InlineFormLabel>
             <div className="width-10">
               <Input
@@ -215,8 +225,9 @@ export class ConfigEditor extends PureComponent<Props, State> {
             <SecretFormField
               isConfigured={Boolean(secureJsonFields && secureJsonFields.password)}
               value={secureJsonData.password || ''}
-              label="Password"
+              label={t('app.plugins.data-source.password', 'Password')}
               aria-label="Password"
+              placeholder={t('app.plugins.data-source.password', 'Password')}
               labelWidth={10}
               inputWidth={20}
               onReset={this.onResetPassword}
@@ -229,11 +240,12 @@ export class ConfigEditor extends PureComponent<Props, State> {
             <InlineFormLabel
               htmlFor={`${htmlPrefix}-http-method`}
               className="width-10"
-              tooltip="You can use either GET or POST HTTP method to query your InfluxDB database. The POST
-          method allows you to perform heavy requests (with a lots of WHERE clause) while the GET method
-          will restrict you and return an error if the query is too large."
+              tooltip={t(
+                'app.plugins.data-source.you-can-use-either-GET',
+                'You can use either GET or POST HTTP method to query your InfluxDB database. The POST method allows you to perform heavy requests (with a lots of WHERE clause) while the GET method will restrict you and return an error if the query is too large.'
+              )}
             >
-              HTTP Method
+              {t('app.plugins.data-source.HTTP-method', 'HTTP Method')}
             </InlineFormLabel>
             <Select
               inputId={`${htmlPrefix}-http-method`}
@@ -250,10 +262,12 @@ export class ConfigEditor extends PureComponent<Props, State> {
           <div className="gf-form">
             <InlineFormLabel
               className="width-10"
-              tooltip="A lower limit for the auto group by time interval. Recommended to be set to write frequency,
-				for example 1m if your data is written every minute."
+              tooltip={t(
+                'app.plugins.data-source.lower-limit-for-the-auto-group-by',
+                'A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example 1m if your data is written every minute.'
+              )}
             >
-              Min time interval
+              {t('app.plugins.data-source.min-time-interval', 'Min time interval')}
             </InlineFormLabel>
             <div className="width-10">
               <Input
@@ -275,7 +289,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
 
     return (
       <>
-        <h3 className="page-heading">Query Language</h3>
+        <h3 className="page-heading"> {t('app.plugins.data-source.query-language', 'Query Language')}</h3>
         <div className="gf-form-group">
           <div className="gf-form-inline">
             <div className="gf-form">
@@ -291,7 +305,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
           </div>
         </div>
 
-        {options.jsonData.version === InfluxVersion.Flux && (
+        {/* {options.jsonData.version === InfluxVersion.Flux && (
           <InfoBox>
             <h5>Support for Flux in Grafana is currently in beta</h5>
             <p>
@@ -301,10 +315,10 @@ export class ConfigEditor extends PureComponent<Props, State> {
               </a>
             </p>
           </InfoBox>
-        )}
+        )} */}
 
         {isDirectAccess && (
-          <Alert title="Error" severity="error">
+          <Alert title={t('app.plugins.data-source.error', 'Error')} severity="error">
             {BROWSER_MODE_DISABLED_MESSAGE}
           </Alert>
         )}
@@ -318,14 +332,17 @@ export class ConfigEditor extends PureComponent<Props, State> {
 
         <div className="gf-form-group">
           <div>
-            <h3 className="page-heading">InfluxDB Details</h3>
+            <h3 className="page-heading">{t('app.plugins.data-source.influxDB-details', 'InfluxDB Details')}</h3>
           </div>
           {options.jsonData.version === InfluxVersion.Flux ? this.renderInflux2x() : this.renderInflux1x()}
           <div className="gf-form-inline">
             <InlineField
               labelWidth={20}
-              label="Max series"
-              tooltip="Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
+              label={t('app.plugins.data-source.max-series', 'Max series')}
+              tooltip={t(
+                'app.plugins.data-source.limit-the-number-of-series-tables-that',
+                'Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000.'
+              )}
             >
               <Input
                 placeholder="1000"

@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import { NavModelItem, NavModelBreadcrumb, GrafanaTheme2 } from '@grafana/data';
 import { Tab, TabsBar, Icon, useStyles2, toIconName } from '@grafana/ui';
 import { getNavTitle, getNavSubTitle } from 'app/core/components/NavBar/navBarItem-translations';
+import config from 'app/core/config';
 import { PanelHeaderMenuItem } from 'app/features/dashboard/dashgrid/PanelHeader/PanelHeaderMenuItem';
 
 import { PageInfoItem } from '../Page/types';
@@ -63,7 +64,6 @@ const Navigation = ({ children }: { children: NavModelItem[] }) => {
   if (!children || children.length === 0) {
     return null;
   }
-
   return (
     <nav>
       <SelectNav customCss="page-header__select-nav">{children}</SelectNav>
@@ -104,7 +104,7 @@ export const PageHeader: FC<Props> = ({ navItem: model, renderTitle, actions, in
       <div className="page-header__inner">
         <span className="page-header__logo">
           {icon && <Icon name={icon} size="xxxl" style={{ marginTop }} />}
-          {main.img && <img className="page-header__img" src={main.img} alt={`logo of ${text}`} />}
+          {main.img && <img className="page-header__img" src={config.appUrl + main.img} alt={`logo of ${text}`} />}
         </span>
 
         <div className={cx('page-header__info-block', styles.headerText)}>

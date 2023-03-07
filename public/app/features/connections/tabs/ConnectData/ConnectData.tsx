@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 
 import { PluginType } from '@grafana/data';
 import { useStyles2, LoadingPlaceholder } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { useGetAllWithFilters } from 'app/features/plugins/admin/state/hooks';
 
 import { ROUTES } from '../../constants';
@@ -49,7 +50,7 @@ export function ConnectData() {
       <Search onChange={handleSearchChange} />
       {/* We need this extra spacing when there are no filters */}
       <div className={styles.spacer} />
-      <CategoryHeader iconName="database" label="Data sources" />
+      <CategoryHeader iconName="database" label={t('nav.datasources.title', 'Data sources')} />
       {isLoading ? (
         <LoadingPlaceholder text="Loading..." />
       ) : !!error ? (

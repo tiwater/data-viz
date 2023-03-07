@@ -2,6 +2,7 @@ import { PanelPluginMeta } from '@grafana/data';
 
 import config from './core/config';
 import { t } from './core/internationalization';
+import { DataSourcePluginCategory } from './types';
 
 const getPluginIn18 = (): { [key: string]: { [key: string]: string } } => ({
   timeseries: {
@@ -179,4 +180,145 @@ export const setFilteredPluginTypes = (pluginTypes: PanelPluginMeta[]) => {
     'yesoreyeram-boomtheme-panel',
   ];
   return pluginTypes.filter((plugin) => list.indexOf(plugin.id) > -1).map((plugin) => setPluginMeta(plugin));
+};
+
+const getDataSourceIn18 = (): { [key: string]: string } => ({
+  tsdb: t('utils.data-source.tsdb', 'Time series databases'),
+  prometheus: t('utils.data-source.prometheus', 'Open source time series database & alerting'),
+  graphite: t('utils.data-source.graphite', 'Open source time series database'),
+  influxdb: t('utils.data-source.influxdb', 'Open source time series database'),
+  opentsdb: t('utils.data-source.opentsdb', 'Open source time series database'),
+  logging: t('utils.data-source.logging', 'Logging & document databases'),
+  loki: t('utils.data-source.loki', 'Like Prometheus but for logs. OSS logging solution from Grafana Labs'),
+  elasticsearch: t('utils.data-source.elasticsearch', 'Open source logging & analytics database'),
+  'o11y-elasticsearch': t(
+    'utils.data-source.o11y-elasticsearch',
+    'Open source logging & analytics database for Observability'
+  ),
+  tracing: t('utils.data-source.tracing', 'Distributed tracing'),
+  jaeger: t('utils.data-source.jaeger', 'Open source, end-to-end distributed tracing'),
+  tempo: t(
+    'utils.data-source.tempo',
+    'High volume, minimal dependency trace storage.  OSS tracing solution from Grafana Labs.'
+  ),
+  zipkin: t('utils.data-source.zipkin', 'Placeholder for the distributed tracing system.'),
+  sql: t('utils.data-source.sql', 'SQL'),
+  mysql: t('utils.data-source.mysql', 'Data source for MySQL databases'),
+  tsdpostgresb: t('utils.data-source.postgres', 'Data source for PostgreSQL and compatible databases'),
+  mssql: t('utils.data-source.mssql', 'Data source for Microsoft SQL Server compatible databases'),
+  cloud: t('utils.data-source.cloud', 'Cloud'),
+  'grafana-azure-monitor-datasource': t(
+    'utils.data-source.grafana-azure-monitor-datasource',
+    'Data source for Microsoft Azure Monitor & Application Insights'
+  ),
+  cloudwatch: t('utils.data-source.cloudwatch', 'Data source for Amazon AWS monitoring service'),
+  stackdriver: t(
+    'utils.data-source.stackdriver',
+    "Data source for Google's monitoring service (formerly named Stackdriver)"
+  ),
+  gcloud: t('utils.data-source.gcloud', 'Hosted Graphite, Prometheus, and Loki'),
+  enterprise: t('utils.data-source.enterprise', 'Enterprise plugins'),
+  'dlopes7-appdynamics-datasource': t(
+    'utils.data-source.dlopes7-appdynamics-datasource',
+    'AppDynamics integration and data source'
+  ),
+  'grafana-azuredevops-datasource': t('utils.data-source.grafana-azuredevops-datasource', 'Azure Devops datasource'),
+  'grafana-datadog-datasource': t(
+    'utils.data-source.grafana-datadog-datasource',
+    'DataDog integration and data source'
+  ),
+  'grafana-dynatrace-datasource': t(
+    'utils.data-source.grafana-dynatrace-datasource',
+    'Visualize and explore Dynatrace data'
+  ),
+  'grafana-gitlab-datasource': t('utils.data-source.grafana-gitlab-datasource', 'GitLab integration and datasource'),
+  'grafana-honeycomb-datasource': t(
+    'utils.data-source.grafana-honeycomb-datasource',
+    'Honeycomb integration and datasource'
+  ),
+  'grafana-jira-datasource': t('utils.data-source.grafana-jira-datasource', 'Jira integration and datasource'),
+  'grafana-mongodb-datasource': t(
+    'utils.data-source.grafana-mongodb-datasource',
+    'MongoDB integration and data source'
+  ),
+  'grafana-newrelic-datasource': t(
+    'utils.data-source.grafana-newrelic-datasource',
+    'New Relic integration and data source'
+  ),
+  'grafana-oracle-datasource': t('utils.data-source.grafana-oracle-datasource', 'Visualize and explore Oracle SQL'),
+  'grafana-saphana-datasource': t(
+    'utils.data-source.grafana-saphana-datasource',
+    'SAP HANA® integration and data source'
+  ),
+  'grafana-salesforce-datasource': t(
+    'utils.data-source.grafana-salesforce-datasource',
+    'Salesforce integration and datasource'
+  ),
+  'grafana-servicenow-datasource': t(
+    'utils.data-source.grafana-servicenow-datasource',
+    'ServiceNow integration and data source'
+  ),
+  'grafana-snowflake-datasource': t(
+    'utils.data-source.grafana-snowflake-datasource',
+    'Snowflake integration and data source'
+  ),
+  'grafana-splunk-datasource': t('utils.data-source.grafana-splunk-datasource', 'Visualize and explore Splunk logs'),
+  'grafana-splunk-monitoring-datasource': t(
+    'utils.data-source.grafana-splunk-monitoring-datasource',
+    'SignalFx integration and datasource'
+  ),
+  'grafana-wavefront-datasource': t(
+    'utils.data-source.grafana-wavefront-datasource',
+    'Wavefront integration and data source'
+  ),
+  other: t('utils.data-source.other', 'Others'),
+  alertmanager: '',
+  'grafana-mqtt-datasource': t('utils.data-source.grafana-mqtt-datasource', 'MQTT Client Datasource Plugin'),
+  testdata: t('utils.data-source.testdata', 'Generates test data in different forms'),
+});
+export const setFilteredDataSource = (dataSource: DataSourcePluginCategory[]) => {
+  const in18 = getDataSourceIn18();
+  const showDataSourceIds: string[] = [
+    'logging',
+    'sql',
+    'tsdb',
+    'influxdb',
+    'opentsdb',
+    'grafana-mongodb-datasource',
+    'elasticsearch',
+    'other',
+    'mysql',
+    'postgres',
+    'mssql',
+    'grafana-mqtt-datasource',
+  ];
+  return dataSource
+    .filter((d) => showDataSourceIds.indexOf(d.id) > -1)
+    .map((d) => {
+      return {
+        ...d,
+        title: in18[d.id] ? in18[d.id] : d.title,
+        plugins: d.plugins
+          .filter((d) => showDataSourceIds.indexOf(d.id) > -1)
+          .map((p) => {
+            return {
+              ...p,
+              info: {
+                ...d.info,
+                description: in18[p.id] ? in18[p.id] : p.id,
+                logos: {
+                  small:
+                    p.info.logos.small.indexOf(config.appUrl) > -1
+                      ? p.info.logos.small
+                      : `${config.appUrl}${p.info.logos.small}`,
+                  large:
+                    p.info.logos.large.indexOf(config.appUrl) > -1
+                      ? p.info.logos.large
+                      : `${config.appUrl}${p.info.logos.large}`,
+                },
+              },
+            };
+          }),
+      };
+    });
 };

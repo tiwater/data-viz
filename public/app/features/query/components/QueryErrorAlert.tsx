@@ -3,6 +3,7 @@ import React from 'react';
 
 import { DataQueryError, GrafanaTheme2 } from '@grafana/data';
 import { Icon, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 export interface Props {
   error: DataQueryError;
@@ -11,7 +12,7 @@ export interface Props {
 export function QueryErrorAlert({ error }: Props) {
   const styles = useStyles2(getStyles);
 
-  const message = error?.message ?? error?.data?.message ?? 'Query error';
+  const message = error?.message ?? error?.data?.message ?? t('features.explore.query-error', 'Query error');
 
   return (
     <div className={styles.wrapper}>

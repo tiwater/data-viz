@@ -7,6 +7,7 @@ import {
   onUpdateDatasourceJsonDataOptionChecked,
 } from '@grafana/data';
 import { Alert, DataSourceHttpSettings, InlineFormLabel, LegacyForms, Select } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 import store from 'app/core/store';
 
 import { GraphiteOptions, GraphiteType } from '../types';
@@ -41,15 +42,16 @@ export class ConfigEditor extends PureComponent<Props, State> {
 
   renderTypeHelp = () => {
     return (
-      <p>
-        There are different types of Graphite compatible backends. Here you can specify the type you are using. If you
-        are using{' '}
-        <a href="https://github.com/grafana/metrictank" className="pointer" target="_blank" rel="noreferrer">
+      <Trans i18nKey="app.plugins.data-source.there-are-different-types-of-graphite">
+        <p>
+          There are different types of Graphite compatible backends. Here you can specify the type you are using. If you
+          are using {/* <a href="#" className="pointer" target="_blank" rel="noreferrer"> */}
           Metrictank
-        </a>{' '}
-        then select that here. This will enable Metrictank specific features like query processing meta data. Metrictank
-        is a multi-tenant timeseries engine for Graphite and friends.
-      </p>
+          {/* </a>{' '} */}
+          then select that here. This will enable Metrictank specific features like query processing meta data.
+          Metrictank is a multi-tenant timeseries engine for Graphite and friends.
+        </p>
+      </Trans>
     );
   };
 
@@ -75,12 +77,17 @@ export class ConfigEditor extends PureComponent<Props, State> {
           dataSourceConfig={options}
           onChange={onOptionsChange}
         />
-        <h3 className="page-heading">Graphite details</h3>
+        <h3 className="page-heading">{t('app.plugins.data-source.graphite-details', 'Graphite details')}</h3>
         <div className="gf-form-group">
           <div className="gf-form-inline">
             <div className="gf-form">
-              <InlineFormLabel tooltip="This option controls what functions are available in the Graphite query editor.">
-                Version
+              <InlineFormLabel
+                tooltip={t(
+                  'app.plugins.data-source.this-option-controls-what-functions',
+                  'This option controls what functions are available in the Graphite query editor.'
+                )}
+              >
+                {t('app.plugins.data-source.version', 'Version')}
               </InlineFormLabel>
               <Select
                 aria-label="Graphite version"
@@ -93,7 +100,9 @@ export class ConfigEditor extends PureComponent<Props, State> {
           </div>
           <div className="gf-form-inline">
             <div className="gf-form">
-              <InlineFormLabel tooltip={this.renderTypeHelp}>Type</InlineFormLabel>
+              <InlineFormLabel tooltip={this.renderTypeHelp}>
+                {t('app.plugins.data-source.type', 'Type')}
+              </InlineFormLabel>
               <Select
                 aria-label="Graphite backend type"
                 options={graphiteTypes}
@@ -107,9 +116,12 @@ export class ConfigEditor extends PureComponent<Props, State> {
             <div className="gf-form-inline">
               <div className="gf-form">
                 <Switch
-                  label="Rollup indicator"
+                  label={t('app.plugins.data-source.rollup-indicator', 'Rollup indicator')}
                   labelClass={'width-10'}
-                  tooltip="Shows up as an info icon in panel headers when data is aggregated"
+                  tooltip={t(
+                    'app.plugins.data-source.shows-up-as-an-info-icon-in-panel',
+                    'Shows up as an info icon in panel headers when data is aggregated'
+                  )}
                   checked={!!options.jsonData.rollupIndicatorEnabled}
                   onChange={onUpdateDatasourceJsonDataOptionChecked(this.props, 'rollupIndicatorEnabled')}
                 />

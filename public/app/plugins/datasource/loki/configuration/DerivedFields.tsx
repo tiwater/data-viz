@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { GrafanaTheme2, VariableOrigin, DataLinkBuiltInVars } from '@grafana/data';
 import { Button, useTheme2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DerivedFieldConfig } from '../types';
 
@@ -32,10 +33,13 @@ export const DerivedFields = ({ value = [], onChange }: Props) => {
 
   return (
     <>
-      <h3 className="page-heading">Derived fields</h3>
+      <h3 className="page-heading">{t('plugins.data-source.loki.derived-fields', 'Derived fields')}</h3>
 
       <div className={styles.infoText}>
-        Derived fields can be used to extract new fields from a log message and create a link from its value.
+        {t(
+          'plugins.data-source.loki.derived-fields-can-be-used-to-extract',
+          'Derived fields can be used to extract new fields from a log message and create a link from its value.'
+        )}
       </div>
 
       <div className="gf-form-group">
@@ -58,8 +62,11 @@ export const DerivedFields = ({ value = [], onChange }: Props) => {
               suggestions={[
                 {
                   value: DataLinkBuiltInVars.valueRaw,
-                  label: 'Raw value',
-                  documentation: 'Exact string captured by the regular expression',
+                  label: t('plugins.data-source.loki.raw-value', 'Raw value'),
+                  documentation: t(
+                    'plugins.data-source.loki.exact-string-captured-by-the',
+                    'Exact string captured by the regular expression'
+                  ),
                   origin: VariableOrigin.Value,
                 },
               ]}
@@ -79,12 +86,14 @@ export const DerivedFields = ({ value = [], onChange }: Props) => {
               onChange(newDerivedFields);
             }}
           >
-            Add
+            {t('plugins.data-source.loki.add', 'Add')}
           </Button>
 
           {value.length > 0 && (
             <Button variant="secondary" type="button" onClick={() => setShowDebug(!showDebug)}>
-              {showDebug ? 'Hide example log message' : 'Show example log message'}
+              {showDebug
+                ? t('plugins.data-source.loki.hide-example-log-message', 'Hide example log message')
+                : t('plugins.data-source.loki.show-example-log-message', 'Show example log message')}
             </Button>
           )}
         </div>

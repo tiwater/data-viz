@@ -8,6 +8,7 @@ import {
   updateDatasourcePluginResetOption,
 } from '@grafana/data';
 import { Alert, FieldSet, InlineField, InlineFieldRow, InlineSwitch, Input, Link, SecretInput } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 import { ConnectionLimits } from 'app/features/plugins/sql/components/configuration/ConnectionLimits';
 import { TLSSecretsConfig } from 'app/features/plugins/sql/components/configuration/TLSSecretsConfig';
 import { useMigrateDatabaseField } from 'app/features/plugins/sql/components/configuration/useMigrateDatabaseField';
@@ -42,8 +43,8 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
 
   return (
     <>
-      <FieldSet label="MySQL Connection" width={400}>
-        <InlineField labelWidth={shortWidth} label="Host">
+      <FieldSet label={t('app.plugins.data-source.MySQL-connection', 'MySQL Connection')} width={400}>
+        <InlineField labelWidth={shortWidth} label={t('app.plugins.data-source.host', 'Host')}>
           <Input
             width={longWidth}
             name="host"
@@ -58,23 +59,23 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
             width={longWidth}
             name="database"
             value={jsonData.database || ''}
-            placeholder="database name"
+            placeholder={t('app.plugins.data-source.database-name', 'database name')}
             onChange={onUpdateDatasourceJsonDataOption(props, 'database')}
           ></Input>
         </InlineField>
         <InlineFieldRow>
-          <InlineField labelWidth={shortWidth} label="User">
+          <InlineField labelWidth={shortWidth} label={t('app.plugins.data-source.user', 'User')}>
             <Input
               width={shortWidth}
               value={options.user || ''}
-              placeholder="user"
+              placeholder={t('app.plugins.data-source.user', 'User')}
               onChange={onDSOptionChanged('user')}
             ></Input>
           </InlineField>
-          <InlineField labelWidth={shortWidth - 5} label="Password">
+          <InlineField labelWidth={shortWidth - 5} label={t('app.plugins.data-source.password', 'Password')}>
             <SecretInput
               width={shortWidth}
-              placeholder="Password"
+              placeholder={t('app.plugins.data-source.password', 'Password')}
               isConfigured={options.secureJsonFields && options.secureJsonFields.password}
               onReset={onResetPassword}
               onBlur={onUpdateDatasourceSecureJsonDataOption(props, 'password')}
@@ -83,15 +84,17 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
         </InlineFieldRow>
         <InlineField
           tooltip={
-            <span>
-              Specify the time zone used in the database session, e.g. <code>Europe/Berlin</code> or
-              <code>+02:00</code>. This is necessary, if the timezone of the database (or the host of the database) is
-              set to something other than UTC. The value is set in the session with
-              <code>SET time_zone=&apos;...&apos;</code>. If you leave this field empty, the timezone is not updated.
-              You can find more information in the MySQL documentation.
-            </span>
+            <Trans i18nKey="app.plugins.data-source-mysql.specify-the-time-zone-used-in-the-database">
+              <span>
+                Specify the time zone used in the database session, e.g. <code>Europe/Berlin</code> or
+                <code>+02:00</code>. This is necessary, if the timezone of the database (or the host of the database) is
+                set to something other than UTC. The value is set in the session with
+                <code>SET time_zone=&apos;...&apos;</code>. If you leave this field empty, the timezone is not updated.
+                You can find more information in the MySQL documentation.
+              </span>
+            </Trans>
           }
-          label="Session timezone"
+          label={t('app.plugins.data-source.session-timezone', 'Session timezone')}
           labelWidth={mediumWidth}
         >
           <Input
@@ -102,7 +105,11 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
           ></Input>
         </InlineField>
         <InlineFieldRow>
-          <InlineField labelWidth={mediumWidth} htmlFor="tlsAuth" label="TLS Client Auth">
+          <InlineField
+            labelWidth={mediumWidth}
+            htmlFor="tlsAuth"
+            label={t('app.plugins.data-source.TLS-client-auth', 'TLS Client Auth')}
+          >
             <InlineSwitch
               id="tlsAuth"
               onChange={onSwitchChanged('tlsAuth')}
@@ -111,9 +118,12 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
           </InlineField>
           <InlineField
             labelWidth={mediumWidth}
-            tooltip="Needed for verifing self-signed TLS Certs"
+            tooltip={t(
+              'app.plugins.data-source.needed-for-verifing-self-signed',
+              'Needed for verifing self-signed TLS Certs'
+            )}
             htmlFor="tlsCaCert"
-            label="With CA Cert"
+            label={t('app.plugins.data-source.with-ca-cert', 'With CA Cert')}
           >
             <InlineSwitch
               id="tlsCaCert"
@@ -122,7 +132,11 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
             ></InlineSwitch>
           </InlineField>
         </InlineFieldRow>
-        <InlineField labelWidth={mediumWidth} htmlFor="skipTLSVerify" label="Skip TLS Verify">
+        <InlineField
+          labelWidth={mediumWidth}
+          htmlFor="skipTLSVerify"
+          label={t('app.plugins.data-source.skip-TLS-verify', 'Skip TLS Verify')}
+        >
           <InlineSwitch
             id="skipTLSVerify"
             onChange={onSwitchChanged('tlsSkipVerify')}
@@ -132,7 +146,7 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
       </FieldSet>
 
       {jsonData.tlsAuth || jsonData.tlsAuthWithCACert ? (
-        <FieldSet label="TLS/SSL Auth Details">
+        <FieldSet label={t('app.plugins.data-source.TLS-SSL-auth-details', 'TLS/SSL Auth Details')}>
           <TLSSecretsConfig
             showCACert={jsonData.tlsAuthWithCACert}
             showKeyPair={jsonData.tlsAuth}
@@ -150,16 +164,18 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
         }}
       ></ConnectionLimits>
 
-      <FieldSet label="MySQL details">
+      <FieldSet label={t('app.plugins.data-source.MySQL-details', 'MySQL details')}>
         <InlineField
           tooltip={
-            <span>
-              A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example
-              <code>1m</code> if your data is written every minute.
-            </span>
+            <Trans i18nKey="app.plugins.data-source-mysql.lower-limit-for-the-auto-group-by-time-interval">
+              <span>
+                A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example
+                <code>1m</code> if your data is written every minute.
+              </span>
+            </Trans>
           }
           labelWidth={mediumWidth}
-          label="Min time interval"
+          label={t('app.plugins.data-source.min-time-interval', 'Min time interval')}
         >
           <Input
             placeholder="1m"
@@ -170,15 +186,19 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
       </FieldSet>
 
       <Alert title="User Permission" severity="info">
-        The database user should only be granted SELECT permissions on the specified database &amp; tables you want to
-        query. Grafana does not validate that queries are safe so queries can contain any SQL statement. For example,
-        statements like <code>USE otherdb;</code> and <code>DROP TABLE user;</code> would be executed. To protect
-        against this we <strong>Highly</strong> recommend you create a specific MySQL user with restricted permissions.
-        Check out the{' '}
+        <Trans i18nKey="app.plugins.data-source-mysql.the-database-user-should-only-be-granted">
+          The database user should only be granted SELECT permissions on the specified database &amp; tables you want to
+          query. Grafana does not validate that queries are safe so queries can contain any SQL statement. For example,
+          statements like <code>USE otherdb;</code> and <code>DROP TABLE user;</code> would be executed. To protect
+          against this we <strong>Highly</strong> recommend you create a specific MySQL user with restricted
+          permissions.
+        </Trans>
+
+        {/* Check out the{' '}
         <Link rel="noreferrer" target="_blank" href="http://docs.grafana.org/features/datasources/mysql/">
           MySQL Data Source Docs
         </Link>{' '}
-        for more information.
+        for more information. */}
       </Alert>
     </>
   );

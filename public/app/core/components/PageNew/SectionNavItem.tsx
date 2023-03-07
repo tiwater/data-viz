@@ -4,6 +4,7 @@ import React from 'react';
 import { GrafanaTheme2, NavModelItem } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 import { useStyles2, Icon } from '@grafana/ui';
+import config from 'app/core/config';
 
 import { getNavTitle } from '../NavBar/navBarItem-translations';
 
@@ -40,7 +41,9 @@ export function SectionNavItem({ item, isSectionRoot = false }: Props) {
         aria-selected={item.active}
       >
         {isSectionRoot && item.icon && <Icon name={item.icon} />}
-        {isSectionRoot && item.img && <img className={styles.sectionImg} src={item.img} alt={`logo of ${item.text}`} />}
+        {isSectionRoot && item.img && (
+          <img className={styles.sectionImg} src={config.appUrl + item.img} alt={`logo of ${item.text}`} />
+        )}
         {getNavTitle(item.id) ?? item.text}
         {item.tabSuffix && <item.tabSuffix className={styles.suffix} />}
       </a>

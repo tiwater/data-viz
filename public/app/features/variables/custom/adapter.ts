@@ -1,5 +1,7 @@
 import { cloneDeep } from 'lodash';
 
+import { t } from 'app/core/internationalization';
+
 import { dispatch } from '../../../store/store';
 import { VariableAdapter } from '../adapters';
 import { ALL_VARIABLE_TEXT } from '../constants';
@@ -15,8 +17,8 @@ import { customVariableReducer, initialCustomVariableModelState } from './reduce
 export const createCustomVariableAdapter = (): VariableAdapter<CustomVariableModel> => {
   return {
     id: 'custom',
-    description: 'Define variable values manually',
-    name: 'Custom',
+    description: t('features.variables.define-variable-values-manually', 'Define variable values manually'),
+    name: t('features.variables.custom', 'Custom'),
     initialState: initialCustomVariableModelState,
     reducer: customVariableReducer,
     picker: optionPickerFactory<CustomVariableModel>(),

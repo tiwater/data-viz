@@ -4,6 +4,7 @@ import React, { useState, useCallback } from 'react';
 import { DataSourceSettings, SelectableValue } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 
+import { t } from '../../../src/utils/i18n';
 import { useTheme2 } from '../../themes';
 import { FormField } from '../FormField/FormField';
 import { InlineFormLabel } from '../FormLabel/FormLabel';
@@ -20,41 +21,36 @@ import { HttpProxySettings } from './HttpProxySettings';
 import { TLSAuthSettings } from './TLSAuthSettings';
 import { HttpSettingsProps } from './types';
 
-const ACCESS_OPTIONS: Array<SelectableValue<string>> = [
-  {
-    label: 'Server (default)',
-    value: 'proxy',
-  },
-  {
-    label: 'Browser',
-    value: 'direct',
-  },
-];
-
-const DEFAULT_ACCESS_OPTION = {
-  label: 'Server (default)',
-  value: 'proxy',
-};
-
 const HttpAccessHelp = () => (
   <div className="grafana-info-box m-t-2">
     <p>
-      Access mode controls how requests to the data source will be handled.
+      {t(
+        'grafana-ui.data-source.access-mode-controls-how-requests',
+        'Access mode controls how requests to the data source will be handled.'
+      )}
       <strong>
-        &nbsp;<i>Server</i>
+        &nbsp;<i>{t('grafana-ui.data-source.server', 'Server')}</i>
       </strong>{' '}
-      should be the preferred way if nothing else is stated.
+      {t(
+        'grafana-ui.data-source.should-be-the-preferred-way',
+        'should be the preferred way if nothing else is stated.'
+      )}
     </p>
-    <div className="alert-title">Server access mode (Default):</div>
+    <div className="alert-title">
+      {t('grafana-ui.data-source.server-access-mode-default', 'Server access mode (Default):')}
+    </div>
     <p>
-      All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to
-      the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs
-      to be accessible from the grafana backend/server if you select this access mode.
+      {t(
+        'grafana-ui.data-source.all-requests-will-be-made-from-the-browser',
+        'All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.'
+      )}
     </p>
-    <div className="alert-title">Browser access mode:</div>
+    <div className="alert-title">{t('grafana-ui.data-source.browser-access-mode', 'Browser access mode:')}</div>
     <p>
-      All requests will be made from the browser directly to the data source and may be subject to Cross-Origin Resource
-      Sharing (CORS) requirements. The URL needs to be accessible from the browser if you select this access mode.
+      {t(
+        'grafana-ui.data-source.all-requests-will-be-made-from-the-browser-directly',
+        'All requests will be made from the browser directly to the data source and may be subject to Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the browser if you select this access mode.'
+      )}
     </p>
   </div>
 );
@@ -72,6 +68,21 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
     azureAuthSettings,
     renderSigV4Editor,
   } = props;
+  const ACCESS_OPTIONS: Array<SelectableValue<string>> = [
+    {
+      label: t('grafana-ui.data-source.server-default', 'Server (default)'),
+      value: 'proxy',
+    },
+    {
+      label: t('grafana-ui.data-source.browser', 'Browser'),
+      value: 'direct',
+    },
+  ];
+
+  const DEFAULT_ACCESS_OPTION = {
+    label: t('grafana-ui.data-source.server-default', 'Server (default)'),
+    value: 'proxy',
+  };
   let urlTooltip;
   const [isAccessHelpVisible, setIsAccessHelpVisible] = useState(false);
   const theme = useTheme2();
@@ -90,20 +101,32 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
     case 'direct':
       urlTooltip = (
         <>
-          Your access method is <em>Browser</em>, this means the URL needs to be accessible from the browser.
+          {t('grafana-ui.data-source.your-access-method-is', 'Your access method is')}{' '}
+          <em>{t('grafana-ui.data-source.browser', 'Browser')}</em>,{' '}
+          {t(
+            'grafana-ui.data-source.this-means-the-URL-needs-to -be-accessible',
+            'this means the URL needs to be accessible from the browser.'
+          )}
         </>
       );
       break;
     case 'proxy':
       urlTooltip = (
         <>
-          Your access method is <em>Server</em>, this means the URL needs to be accessible from the grafana
-          backend/server.
+          {t('grafana-ui.data-source.your-access-method-is', 'Your access method is')}{' '}
+          <em>{t('grafana-ui.data-source.server', 'Server')}</em>,{' '}
+          {t(
+            'grafana-ui.data-source.this-means-the-URL-needs-to -be-accessible-grafana',
+            'this means the URL needs to be accessible from the grafana backend/server.'
+          )}
         </>
       );
       break;
     default:
-      urlTooltip = 'Specify a complete HTTP URL (for example http://your_server:8080)';
+      urlTooltip = t(
+        'grafana-ui.data-source.specify-a-complete-HTTP-URL',
+        " 'Specify a complete HTTP URL (for example http://your_server:8080)'"
+      );
   }
 
   const accessSelect = (
@@ -162,7 +185,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
                     className="gf-form-label query-keyword pointer"
                     onClick={() => setIsAccessHelpVisible((isVisible) => !isVisible)}
                   >
-                    Help&nbsp;
+                    {t('grafana-ui.data-source.help', 'Help')}&nbsp;
                     <Icon name={isAccessHelpVisible ? 'angle-down' : 'angle-right'} style={{ marginBottom: 0 }} />
                   </button>
                 </div>
@@ -175,9 +198,12 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
               <div className="gf-form">
                 <InlineFormLabel
                   width={13}
-                  tooltip="Grafana proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source."
+                  tooltip={t(
+                    'grafana-ui.data-source.grafana-proxy-deletes-forwarded-cookies-by-default',
+                    'Grafana proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source.'
+                  )}
                 >
-                  Allowed cookies
+                  {t('grafana-ui.data-source.allowed-cookies', 'Allowed cookies')}
                 </InlineFormLabel>
                 <TagsInput
                   tags={dataSourceConfig.jsonData.keepCookies}
@@ -190,12 +216,15 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
               </div>
               <div className="gf-form">
                 <FormField
-                  label="Timeout"
+                  label={t('grafana-ui.data-source.timeout', 'Timeout')}
                   type="number"
                   labelWidth={13}
                   inputWidth={20}
-                  tooltip="HTTP request timeout in seconds"
-                  placeholder="Timeout in seconds"
+                  tooltip={t(
+                    'grafana-ui.data-source.HTTP-request-timeout-in-seconds',
+                    'HTTP request timeout in seconds'
+                  )}
+                  placeholder={t('grafana-ui.data-source.timeout-in-seconds', 'Timeout in seconds')}
                   aria-label="Timeout in seconds"
                   value={dataSourceConfig.jsonData.timeout}
                   onChange={(event) => {
@@ -212,10 +241,14 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
       </>
 
       <>
-        <h3 className="page-heading">Auth</h3>
+        <h3 className="page-heading">{t('grafana-ui.data-source.auth', 'Auth')}</h3>
         <div className="gf-form-group">
           <div className="gf-form-inline">
-            <InlineField label="Basic auth" labelWidth={LABEL_WIDTH} disabled={dataSourceConfig.readOnly}>
+            <InlineField
+              label={t('grafana-ui.data-source.basic-auth', 'Basic auth')}
+              labelWidth={LABEL_WIDTH}
+              disabled={dataSourceConfig.readOnly}
+            >
               <InlineSwitch
                 id="http-settings-basic-auth"
                 value={dataSourceConfig.basicAuth}
@@ -226,8 +259,11 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
             </InlineField>
 
             <InlineField
-              label="With Credentials"
-              tooltip="Whether credentials such as cookies or auth headers should be sent with cross-site requests."
+              label={t('grafana-ui.data-source.with-credentials', 'With Credentials')}
+              tooltip={t(
+                'grafana-ui.data-source.whether-credentials-such-as-cookies',
+                'Whether credentials such as cookies or auth headers should be sent with cross-site requests.'
+              )}
               labelWidth={LABEL_WIDTH}
               disabled={dataSourceConfig.readOnly}
             >
@@ -244,8 +280,11 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
           {azureAuthSettings?.azureAuthSupported && (
             <div className="gf-form-inline">
               <InlineField
-                label="Azure Authentication"
-                tooltip="Use Azure authentication for Azure endpoint."
+                label={t('grafana-ui.data-source.azure-authentication', 'Azure Authentication')}
+                tooltip={t(
+                  'grafana-ui.data-source.use-azure-authentication-for-azure',
+                  'Use Azure authentication for Azure endpoint.'
+                )}
                 labelWidth={LABEL_WIDTH}
                 disabled={dataSourceConfig.readOnly}
               >
@@ -264,7 +303,11 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
 
           {sigV4AuthToggleEnabled && (
             <div className="gf-form-inline">
-              <InlineField label="SigV4 auth" labelWidth={LABEL_WIDTH} disabled={dataSourceConfig.readOnly}>
+              <InlineField
+                label={t('grafana-ui.data-source.sigV4-auth', 'SigV4 auth')}
+                labelWidth={LABEL_WIDTH}
+                disabled={dataSourceConfig.readOnly}
+              >
                 <InlineSwitch
                   id="http-settings-sigv4-auth"
                   value={dataSourceConfig.jsonData.sigV4Auth || false}
@@ -288,7 +331,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
         </div>
         {dataSourceConfig.basicAuth && (
           <>
-            <h6>Basic Auth Details</h6>
+            <h6>{t('grafana-ui.data-source.basic-auth-details', 'Basic Auth Details')}</h6>
             <div className="gf-form-group">
               <BasicAuthSettings {...props} />
             </div>

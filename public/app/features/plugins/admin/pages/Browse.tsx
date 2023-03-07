@@ -6,6 +6,7 @@ import { SelectableValue, GrafanaTheme2 } from '@grafana/data';
 import { config, locationSearchToObject } from '@grafana/runtime';
 import { LoadingPlaceholder, Select, RadioButtonGroup, useStyles2, Tooltip, Field } from '@grafana/ui';
 import { Page } from 'app/core/components/Page/Page';
+import { t } from 'app/core/internationalization';
 import { GrafanaRouteComponentProps } from 'app/core/navigation/types';
 import { getNavModel } from 'app/core/selectors/navModel';
 import {
@@ -88,7 +89,7 @@ export default function Browse({ route }: GrafanaRouteComponentProps): ReactElem
                 width={18}
                 options={[
                   { value: 'all', label: 'All' },
-                  { value: 'datasource', label: 'Data sources' },
+                  { value: 'datasource', label: t('nav.datasources.title', 'Data sources') },
                   { value: 'panel', label: 'Panels' },
                   { value: 'app', label: 'Applications' },
                 ]}

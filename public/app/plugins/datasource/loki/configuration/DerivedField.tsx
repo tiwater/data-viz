@@ -69,7 +69,7 @@ export const DerivedField = (props: Props) => {
           className={styles.nameField}
           // A bit of a hack to prevent using default value for the width from FormField
           inputWidth={null}
-          label="Name"
+          label={t('features.explore.name', 'Name')}
           type="text"
           value={value.name}
           onChange={handleChange('name')}
@@ -78,17 +78,18 @@ export const DerivedField = (props: Props) => {
           labelWidth={10}
           className={styles.regexField}
           inputWidth={null}
-          label="Regex"
+          label={t('features.explore.regex', 'Regex')}
           type="text"
           value={value.matcherRegex}
           onChange={handleChange('matcherRegex')}
-          tooltip={
-            'Use to parse and capture some part of the log message. You can use the captured groups in the template.'
-          }
+          tooltip={t(
+            'features.explore.regex-use-to-parse-and-capture-some-part',
+            "'Use to parse and capture some part of the log message. You can use the captured groups in the template.'"
+          )}
         />
         <Button
           variant="destructive"
-          title="Remove field"
+          title={t('features.explore.remove-field', 'Remove field')}
           icon="times"
           onClick={(event) => {
             event.preventDefault();
@@ -120,7 +121,7 @@ export const DerivedField = (props: Props) => {
           className={styles.urlDisplayLabelField}
           labelWidth={10}
           inputWidth={null}
-          label="URL Label"
+          label={t('app.plugins.data-source.URL-label', 'URL Label')}
           type="text"
           value={value.urlDisplayLabel}
           onChange={handleChange('urlDisplayLabel')}
@@ -130,7 +131,7 @@ export const DerivedField = (props: Props) => {
 
       <div className={styles.row}>
         <Switch
-          label="Internal link"
+          label={t('app.plugins.data-source.internal-link', 'Internal link')}
           checked={showInternalLink}
           onChange={() => {
             if (showInternalLink) {

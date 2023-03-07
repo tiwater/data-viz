@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 
 import { GrafanaTheme2 } from '@grafana/data';
 import { Card, useStyles2 } from '@grafana/ui';
+import config from 'app/core/config';
 
 const getStyles = (theme: GrafanaTheme2) => ({
   sourcesList: css`
@@ -54,7 +55,7 @@ export const CardGrid: FC<CardGridProps> = ({ items }) => {
             <div className={styles.cardContent}>
               {item.logo && (
                 <div className={styles.logoWrapper}>
-                  <img src={item.logo} alt={`logo of ${item.name}`} />
+                  <img src={config.appUrl + item.logo} alt={`logo of ${item.name}`} />
                 </div>
               )}
               <h4 className={styles.label}>{item.name}</h4>

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { GrafanaTheme2 } from '@grafana/data';
 import { config } from '@grafana/runtime';
 import { CardContainer, LinkButton, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { AccessControlAction } from 'app/types';
 
 import { contextSrv } from '../../core/services/context_srv';
@@ -59,7 +60,7 @@ export const ServerStats = () => {
 
           <div className={styles.doubleRow}>
             <StatCard
-              content={[{ name: 'Data sources', value: stats.datasources }]}
+              content={[{ name: t('nav.datasources.title', 'Data sources'), value: stats.datasources }]}
               footer={
                 hasAccessToDataSources && (
                   <LinkButton href={'/datasources'} variant={'secondary'}>

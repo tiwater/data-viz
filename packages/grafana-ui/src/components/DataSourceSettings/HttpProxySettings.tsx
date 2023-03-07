@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { t } from '../../../src/utils/i18n';
 import { InlineField } from '../Forms/InlineField';
 import { InlineSwitch } from '../Switch/Switch';
 
@@ -15,7 +16,11 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({
   return (
     <>
       <div className="gf-form-inline">
-        <InlineField label="TLS Client Auth" labelWidth={LABEL_WIDTH} disabled={dataSourceConfig.readOnly}>
+        <InlineField
+          label={t('app.plugins.data-source.TLS-client-auth', 'TLS Client Auth')}
+          labelWidth={LABEL_WIDTH}
+          disabled={dataSourceConfig.readOnly}
+        >
           <InlineSwitch
             id="http-settings-tls-client-auth"
             value={dataSourceConfig.jsonData.tlsAuth || false}
@@ -23,8 +28,11 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({
           />
         </InlineField>
         <InlineField
-          label="With CA Cert"
-          tooltip="Needed for verifying self-signed TLS Certs"
+          label={t('app.plugins.data-source.with-ca-cert', 'With CA Cert')}
+          tooltip={t(
+            'app.plugins.data-source.needed-for-verifing-self-signed',
+            'Needed for verifing self-signed TLS Certs'
+          )}
           labelWidth={LABEL_WIDTH}
           disabled={dataSourceConfig.readOnly}
         >
@@ -38,7 +46,11 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({
         </InlineField>
       </div>
       <div className="gf-form-inline">
-        <InlineField label="Skip TLS Verify" labelWidth={LABEL_WIDTH} disabled={dataSourceConfig.readOnly}>
+        <InlineField
+          label={t('app.plugins.data-source.skip-TLS-verify', 'Skip TLS Verify')}
+          labelWidth={LABEL_WIDTH}
+          disabled={dataSourceConfig.readOnly}
+        >
           <InlineSwitch
             id="http-settings-skip-tls-verify"
             value={dataSourceConfig.jsonData.tlsSkipVerify || false}
@@ -51,8 +63,11 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({
       {showForwardOAuthIdentityOption && (
         <div className="gf-form-inline">
           <InlineField
-            label="Forward OAuth Identity"
-            tooltip="Forward the user's upstream OAuth identity to the data source (Their access token gets passed along)."
+            label={t('app.plugins.data-source.forward-oauth-identity', 'Forward OAuth Identity')}
+            tooltip={t(
+              "app.plugins.data-source.forward-the-user-upstream'",
+              "Forward the user's upstream OAuth identity to the data source (Their access token gets passed along)."
+            )}
             labelWidth={LABEL_WIDTH}
             disabled={dataSourceConfig.readOnly}
           >

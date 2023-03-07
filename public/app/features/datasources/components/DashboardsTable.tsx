@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Icon } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { PluginDashboard } from 'app/types';
 
 export interface Props {
@@ -36,7 +37,7 @@ export function DashboardsTable({ dashboards, onImport, onRemove }: Props) {
               <td style={{ textAlign: 'right' }}>
                 {!dashboard.imported ? (
                   <Button variant="secondary" size="sm" onClick={() => onImport(dashboard, false)}>
-                    Import
+                    {t('features.data-source.import', 'Import')}
                   </Button>
                 ) : (
                   <Button variant="secondary" size="sm" onClick={() => onImport(dashboard, true)}>

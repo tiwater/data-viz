@@ -136,6 +136,12 @@ export function getNavTitle(navId: string | undefined) {
     case 'search':
       return t('nav.search-dashboards.title', 'Search dashboards');
     default:
+      if (navId?.indexOf('datasource-dashboards-') === 0) {
+        return t('app.core.optionsUi.registry.dashboard', 'Dashboard');
+      }
+      if (navId?.indexOf('datasource-settings-') === 0) {
+        return t('features.dashboard.setting.settings', 'Settings');
+      }
       return undefined;
   }
 }

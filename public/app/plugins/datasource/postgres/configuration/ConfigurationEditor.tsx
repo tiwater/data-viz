@@ -19,6 +19,7 @@ import {
   SecretInput,
   Link,
 } from '@grafana/ui';
+import { t, Trans } from 'app/core/internationalization';
 import { ConnectionLimits } from 'app/features/plugins/sql/components/configuration/ConnectionLimits';
 import { TLSSecretsConfig } from 'app/features/plugins/sql/components/configuration/TLSSecretsConfig';
 import { useMigrateDatabaseField } from 'app/features/plugins/sql/components/configuration/useMigrateDatabaseField';
@@ -58,15 +59,18 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
   };
 
   const tlsModes: Array<SelectableValue<PostgresTLSModes>> = [
-    { value: PostgresTLSModes.disable, label: 'disable' },
-    { value: PostgresTLSModes.require, label: 'require' },
-    { value: PostgresTLSModes.verifyCA, label: 'verify-ca' },
-    { value: PostgresTLSModes.verifyFull, label: 'verify-full' },
+    { value: PostgresTLSModes.disable, label: t('app.plugins.data-source.disable', 'disable') },
+    { value: PostgresTLSModes.require, label: t('app.plugins.data-source.require', 'require') },
+    { value: PostgresTLSModes.verifyCA, label: t('app.plugins.data-source.verify-ca', 'verify-ca') },
+    { value: PostgresTLSModes.verifyFull, label: t('app.plugins.data-source.verify-full', 'verify-full') },
   ];
 
   const tlsMethods: Array<SelectableValue<PostgresTLSMethods>> = [
-    { value: PostgresTLSMethods.filePath, label: 'File system path' },
-    { value: PostgresTLSMethods.fileContent, label: 'Certificate content' },
+    { value: PostgresTLSMethods.filePath, label: t('app.plugins.data-source.file-system-path', 'File system path') },
+    {
+      value: PostgresTLSMethods.fileContent,
+      label: t('app.plugins.data-source.certificate-content', 'Certificate content'),
+    },
   ];
 
   const onJSONDataOptionSelected = (property: keyof PostgresOptions) => {
@@ -91,8 +95,8 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
 
   return (
     <>
-      <FieldSet label="PostgreSQL Connection" width={400}>
-        <InlineField labelWidth={labelWidthConnection} label="Host">
+      <FieldSet label={t('app.plugins.data-source.postgreSQL-Connection', 'PostgreSQL Connection')} width={400}>
+        <InlineField labelWidth={labelWidthConnection} label={t('app.plugins.data-source.host', 'Host')}>
           <Input
             width={40}
             name="host"
@@ -102,22 +106,26 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
             onChange={onDSOptionChanged('url')}
           ></Input>
         </InlineField>
-        <InlineField labelWidth={labelWidthConnection} label="Database">
+        <InlineField labelWidth={labelWidthConnection} label={t('app.plugins.data-source.database', 'Database')}>
           <Input
             width={40}
             name="database"
             value={jsonData.database || ''}
-            placeholder="database name"
+            placeholder={t('app.plugins.data-source.database-name', 'database name')}
             onChange={onUpdateDatasourceJsonDataOption(props, 'database')}
           ></Input>
         </InlineField>
         <InlineFieldRow>
-          <InlineField labelWidth={labelWidthConnection} label="User">
-            <Input value={options.user || ''} placeholder="user" onChange={onDSOptionChanged('user')}></Input>
+          <InlineField labelWidth={labelWidthConnection} label={t('app.plugins.data-source.user', 'User')}>
+            <Input
+              value={options.user || ''}
+              placeholder={t('app.plugins.data-source.user', 'User')}
+              onChange={onDSOptionChanged('user')}
+            ></Input>
           </InlineField>
-          <InlineField label="Password">
+          <InlineField label={t('app.plugins.data-source.password', 'Password')}>
             <SecretInput
-              placeholder="Password"
+              placeholder={t('app.plugins.data-source.password', 'Password')}
               isConfigured={options.secureJsonFields?.password}
               onReset={onResetPassword}
               onBlur={onUpdateDatasourceSecureJsonDataOption(props, 'password')}
@@ -126,9 +134,12 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
         </InlineFieldRow>
         <InlineField
           labelWidth={labelWidthConnection}
-          label="TLS/SSL Mode"
+          label={t('app.plugins.data-source.TLS-SSL-mode', 'TLS/SSL Mode')}
           htmlFor="tlsMode"
-          tooltip="This option determines whether or with what priority a secure TLS/SSL TCP/IP connection will be negotiated with the server."
+          tooltip={t(
+            'app.plugins.data-source.this-option-determines-whether-the-server',
+            'This option determines whether or with what priority a secure TLS/SSL TCP/IP connection will be negotiated with the server.'
+          )}
         >
           <Select
             options={tlsModes}
@@ -140,20 +151,23 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
         {options.jsonData.sslmode !== PostgresTLSModes.disable ? (
           <InlineField
             labelWidth={labelWidthConnection}
-            label="TLS/SSL Method"
+            label={t('app.plugins.data-source.TLS-SSL-method', 'TLS/SSL Method')}
             htmlFor="tlsMethod"
             tooltip={
-              <span>
-                This option determines how TLS/SSL certifications are configured. Selecting <i>File system path</i> will
-                allow you to configure certificates by specifying paths to existing certificates on the local file
-                system where Grafana is running. Be sure that the file is readable by the user executing the Grafana
-                process.
-                <br />
-                <br />
-                Selecting <i>Certificate content</i> will allow you to configure certificates by specifying its content.
-                The content will be stored encrypted in Grafana&apos;s database. When connecting to the database the
-                certificates will be written as files to Grafana&apos;s configured data path on the local file system.
-              </span>
+              <Trans i18nKey="app.plugins.data-source.this-option-determines-how-TLS-SSL">
+                <span>
+                  This option determines how TLS/SSL certifications are configured. Selecting <i>File system path</i>{' '}
+                  will allow you to configure certificates by specifying paths to existing certificates on the local
+                  file system where Grafana is running. Be sure that the file is readable by the user executing the
+                  Grafana process.
+                  <br />
+                  <br />
+                  Selecting <i>Certificate content</i> will allow you to configure certificates by specifying its
+                  content. The content will be stored encrypted in Grafana&apos;s database. When connecting to the
+                  database the certificates will be written as files to Grafana&apos;s configured data path on the local
+                  file system.
+                </span>
+              </Trans>
             }
           >
             <Select
@@ -167,7 +181,7 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
       </FieldSet>
 
       {jsonData.sslmode !== PostgresTLSModes.disable ? (
-        <FieldSet label="TLS/SSL Auth Details">
+        <FieldSet label={t('app.plugins.data-source.TLS-SSL-auth-details', 'TLS/SSL Auth Details')}>
           {jsonData.tlsConfigurationMethod === PostgresTLSMethods.fileContent ? (
             <TLSSecretsConfig
               showCACert={
@@ -180,49 +194,56 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
             <>
               <InlineField
                 tooltip={
-                  <span>
-                    If the selected TLS/SSL mode requires a server root certificate, provide the path to the file here.
-                  </span>
+                  <Trans i18nKey="app.plugins.data-source.if-the-selected-TLS-SSL-mode">
+                    <span>
+                      If the selected TLS/SSL mode requires a server root certificate, provide the path to the file
+                      here.
+                    </span>
+                  </Trans>
                 }
                 labelWidth={labelWidthSSLDetails}
-                label="TLS/SSL Root Certificate"
+                label={t('app.plugins.data-source.TLS-SSL-root-certificate', 'TLS/SSL Root Certificate')}
               >
                 <Input
                   value={jsonData.sslRootCertFile || ''}
                   onChange={onUpdateDatasourceJsonDataOption(props, 'sslRootCertFile')}
-                  placeholder="TLS/SSL root cert file"
+                  placeholder={t('app.plugins.data-source.TLS-SSL-root-cert-file', 'TLS/SSL root cert file')}
                 ></Input>
               </InlineField>
               <InlineField
                 tooltip={
-                  <span>
-                    To authenticate with an TLS/SSL client certificate, provide the path to the file here. Be sure that
-                    the file is readable by the user executing the grafana process.
-                  </span>
+                  <Trans i18nKey="app.plugins.data-source.to-authenticate-with-an-TLS-SSL-mode">
+                    <span>
+                      To authenticate with an TLS/SSL client certificate, provide the path to the file here. Be sure
+                      that the file is readable by the user executing the grafana process.
+                    </span>
+                  </Trans>
                 }
                 labelWidth={labelWidthSSLDetails}
-                label="TLS/SSL Client Certificate"
+                label={t('app.plugins.data-source.TLS-SSL-client-certificate', 'TLS/SSL Client Certificate')}
               >
                 <Input
                   value={jsonData.sslCertFile || ''}
                   onChange={onUpdateDatasourceJsonDataOption(props, 'sslCertFile')}
-                  placeholder="TLS/SSL client cert file"
+                  placeholder={t('app.plugins.data-source.TLS-SSL-client-cert-file', 'TLS/SSL client cert file')}
                 ></Input>
               </InlineField>
               <InlineField
                 tooltip={
-                  <span>
-                    To authenticate with a client TLS/SSL certificate, provide the path to the corresponding key file
-                    here. Be sure that the file is <i>only</i> readable by the user executing the grafana process.
-                  </span>
+                  <Trans i18nKey="app.plugins.data-source.to-authenticate-a-client-TLS-SSL">
+                    <span>
+                      To authenticate with a client TLS/SSL certificate, provide the path to the corresponding key file
+                      here. Be sure that the file is <i>only</i> readable by the user executing the grafana process.
+                    </span>
+                  </Trans>
                 }
                 labelWidth={labelWidthSSLDetails}
-                label="TLS/SSL Client Key"
+                label={t('app.plugins.data-source.TLS-SSL-client-key', 'TLS/SSL Client Key')}
               >
                 <Input
                   value={jsonData.sslKeyFile || ''}
                   onChange={onUpdateDatasourceJsonDataOption(props, 'sslKeyFile')}
-                  placeholder="TLS/SSL client key file"
+                  placeholder={t('app.plugins.data-source.TLS-SSL-client-key-file', 'TLS/SSL client key file')}
                 ></Input>
               </InlineField>
             </>
@@ -238,12 +259,15 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
         }}
       ></ConnectionLimits>
 
-      <FieldSet label="PostgreSQL details">
+      <FieldSet label={t('app.plugins.data-source.postgreSQL-details', 'PostgreSQL details')}>
         <InlineField
-          tooltip="This option controls what functions are available in the PostgreSQL query builder"
+          tooltip={t(
+            'app.plugins.data-source.this-option-controls-what-functions-builder',
+            'This option controls what functions are available in the PostgreSQL query builder'
+          )}
           labelWidth={labelWidthShort}
           htmlFor="postgresVersion"
-          label="Version"
+          label={t('app.plugins.data-source.version', 'Version')}
         >
           <Select
             value={jsonData.postgresVersion || 903}
@@ -254,14 +278,16 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
         </InlineField>
         <InlineField
           tooltip={
-            <span>
-              TimescaleDB is a time-series database built as a PostgreSQL extension. If enabled, Grafana will use
-              <code>time_bucket</code> in the <code>$__timeGroup</code> macro and display TimescaleDB specific aggregate
-              functions in the query builder.
-            </span>
+            <Trans i18nKey="app.plugins.data-source.timescaleDB-is-a-time-series-database">
+              <span>
+                TimescaleDB is a time-series database built as a PostgreSQL extension. If enabled, Grafana will use
+                <code>time_bucket</code> in the <code>$__timeGroup</code> macro and display TimescaleDB specific
+                aggregate functions in the query builder.
+              </span>
+            </Trans>
           }
           labelWidth={labelWidthShort}
-          label="TimescaleDB"
+          label={t('app.plugins.data-source.timescaleDB', 'TimescaleDB')}
           htmlFor="timescaledb"
         >
           <InlineSwitch
@@ -272,13 +298,15 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
         </InlineField>
         <InlineField
           tooltip={
-            <span>
-              A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example
-              <code>1m</code> if your data is written every minute.
-            </span>
+            <Trans i18nKey="app.plugins.data-source.lower-limit-for-the-auto-group-by-time-interval">
+              <span>
+                A lower limit for the auto group by time interval. Recommended to be set to write frequency, for example
+                <code>1m</code> if your data is written every minute.
+              </span>
+            </Trans>
           }
           labelWidth={labelWidthShort}
-          label="Min time interval"
+          label={t('app.plugins.data-source.min-time-interval', 'Min time interval')}
         >
           <Input
             placeholder="1m"
@@ -288,16 +316,19 @@ export const PostgresConfigEditor = (props: DataSourcePluginOptionsEditorProps<P
         </InlineField>
       </FieldSet>
 
-      <Alert title="User Permission" severity="info">
-        The database user should only be granted SELECT permissions on the specified database &amp; tables you want to
-        query. Grafana does not validate that queries are safe so queries can contain any SQL statement. For example,
-        statements like <code>DELETE FROM user;</code> and <code>DROP TABLE user;</code> would be executed. To protect
-        against this we <strong>Highly</strong> recommend you create a specific PostgreSQL user with restricted
-        permissions. Check out the{' '}
+      <Alert title={t('app.plugins.data-source.user-permission', 'User Permission')} severity="info">
+        <Trans i18nKey="app.plugins.data-source.the-database-user-should-only-be-granted">
+          The database user should only be granted SELECT permissions on the specified database &amp; tables you want to
+          query. Grafana does not validate that queries are safe so queries can contain any SQL statement. For example,
+          statements like <code>DELETE FROM user;</code> and <code>DROP TABLE user;</code> would be executed. To protect
+          against this we <strong>Highly</strong> recommend you create a specific PostgreSQL user with restricted
+          permissions.
+        </Trans>
+        {/* Check out the{' '}
         <Link rel="noreferrer" target="_blank" href="http://docs.grafana.org/features/datasources/postgres/">
           PostgreSQL Data Source Docs
         </Link>{' '}
-        for more information.
+        for more information. */}
       </Alert>
     </>
   );

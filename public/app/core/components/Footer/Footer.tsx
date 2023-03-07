@@ -100,11 +100,12 @@ export interface Props {
 }
 
 export const Footer = React.memo(({ customLinks }: Props) => {
-  const links = (customLinks || getFooterLinks()).concat(getVersionLinks());
+  // const links = (customLinks || getFooterLinks()).concat(getVersionLinks());
 
   return (
     <footer className="footer">
-      <div className="text-center">
+      {/* TODO 注释页脚 */}
+      {/* <div className="text-center">
         <ul>
           {links.map((link) => (
             <li key={link.text}>
@@ -112,7 +113,7 @@ export const Footer = React.memo(({ customLinks }: Props) => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </footer>
   );
 });

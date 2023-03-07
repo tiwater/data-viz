@@ -2,6 +2,7 @@ import React from 'react';
 
 import { FieldSet, InlineField } from '@grafana/ui';
 import { NumberInput } from 'app/core/components/OptionsUI/NumberInput';
+import { t, Trans } from 'app/core/internationalization';
 
 import { SQLConnectionLimits } from '../../types';
 
@@ -23,21 +24,23 @@ export const ConnectionLimits = <T extends SQLConnectionLimits>(props: Props<T>)
   };
 
   return (
-    <FieldSet label="Connection limits">
+    <FieldSet label={t('app.data-source.mssql.connection-limits', 'Connection limits')}>
       <InlineField
         tooltip={
           <span>
-            The maximum number of open connections to the database.If <i>Max idle connections</i> is greater than 0 and
-            the <i>Max open connections</i> is less than <i>Max idle connections</i>, then
-            <i>Max idle connections</i> will be reduced to match the <i>Max open connections</i> limit. If set to 0,
-            there is no limit on the number of open connections.
+            <Trans i18nKey="app.data-source.mssql.max-open-tooltip">
+              The maximum number of open connections to the database.If <i>Max idle connections</i> is greater than 0
+              and the <i>Max open connections</i> is less than <i>Max idle connections</i>, then
+              <i>Max idle connections</i> will be reduced to match the <i>Max open connections</i> limit. If set to 0,
+              there is no limit on the number of open connections.
+            </Trans>
           </span>
         }
         labelWidth={labelWidth}
-        label="Max open"
+        label={t('app.data-source.mssql.max-open', 'Max open')}
       >
         <NumberInput
-          placeholder="unlimited"
+          placeholder={t('app.data-source.mssql.unlimited', 'unlimited')}
           value={jsonData.maxOpenConns}
           onChange={onJSONDataNumberChanged('maxOpenConns')}
         ></NumberInput>
@@ -45,13 +48,15 @@ export const ConnectionLimits = <T extends SQLConnectionLimits>(props: Props<T>)
       <InlineField
         tooltip={
           <span>
-            The maximum number of connections in the idle connection pool.If <i>Max open connections</i> is greater than
-            0 but less than the <i>Max idle connections</i>, then the <i>Max idle connections</i> will be reduced to
-            match the <i>Max open connections</i> limit. If set to 0, no idle connections are retained.
+            <Trans i18nKey="app.data-source.mssql.max-idle-tooltip">
+              The maximum number of connections in the idle connection pool.If <i>Max open connections</i> is greater
+              than 0 but less than the <i>Max idle connections</i>, then the <i>Max idle connections</i> will be reduced
+              to match the <i>Max open connections</i> limit. If set to 0, no idle connections are retained.
+            </Trans>
           </span>
         }
         labelWidth={labelWidth}
-        label="Max idle"
+        label={t('app.data-source.mssql.max-idle', 'Max idle')}
       >
         <NumberInput
           placeholder="2"
@@ -60,9 +65,12 @@ export const ConnectionLimits = <T extends SQLConnectionLimits>(props: Props<T>)
         ></NumberInput>
       </InlineField>
       <InlineField
-        tooltip="The maximum amount of time in seconds a connection may be reused. If set to 0, connections are reused forever."
+        tooltip={t(
+          'app.data-source.mssql.max-lifetime-tooltip',
+          'The maximum amount of time in seconds a connection may be reused. If set to 0, connections are reused forever.'
+        )}
         labelWidth={labelWidth}
-        label="Max lifetime"
+        label={t('app.data-source.mssql.max-lifetime', 'Max lifetime')}
       >
         <NumberInput
           placeholder="14400"

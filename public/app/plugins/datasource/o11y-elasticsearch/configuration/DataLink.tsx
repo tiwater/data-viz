@@ -5,6 +5,7 @@ import { usePrevious } from 'react-use';
 import { VariableSuggestion } from '@grafana/data';
 import { DataSourcePicker } from '@grafana/runtime';
 import { Button, LegacyForms, DataLinkInput, stylesFactory } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { DataLinkConfig } from '../types';
 
@@ -59,15 +60,18 @@ export const DataLink = (props: Props) => {
           labelWidth={6}
           // A bit of a hack to prevent using default value for the width from FormField
           inputWidth={null}
-          label="Field"
+          label={t('features.explore.field', 'Field')}
           type="text"
           value={value.field}
-          tooltip={'Can be exact field name or a regex pattern that will match on the field name.'}
+          tooltip={t(
+            'features.explore.can-be-exact-field-name-or-a-regex ',
+            'Can be exact field name or a regex pattern that will match on the field name.'
+          )}
           onChange={handleChange('field')}
         />
         <Button
           variant={'destructive'}
-          title="Remove field"
+          title={t('features.explore.remove-field', 'Remove field')}
           icon="times"
           onClick={(event) => {
             event.preventDefault();
@@ -77,7 +81,7 @@ export const DataLink = (props: Props) => {
       </div>
       <div className="gf-form">
         <FormField
-          label={showInternalLink ? 'Query' : 'URL'}
+          label={showInternalLink ? t('features.explore.query', 'Query') : 'URL'}
           labelWidth={6}
           inputEl={
             <DataLinkInput
@@ -97,7 +101,7 @@ export const DataLink = (props: Props) => {
         <FormField
           className={styles.urlDisplayLabelField}
           inputWidth={null}
-          label="URL Label"
+          label={t('app.plugins.data-source.URL-label', 'URL Label')}
           type="text"
           value={value.urlDisplayLabel}
           onChange={handleChange('urlDisplayLabel')}
@@ -108,7 +112,7 @@ export const DataLink = (props: Props) => {
       <div className={styles.row}>
         <Switch
           labelClass={'width-6'}
-          label="Internal link"
+          label={t('app.plugins.data-source.internal-link', 'Internal link')}
           checked={showInternalLink}
           onChange={() => {
             if (showInternalLink) {
