@@ -68,7 +68,8 @@
       "save": "保存",
       "select-a-team": "选择团队",
       "service": {
-        "unexpected-error": "未知错误"
+        "unexpected-error": "未知错误",
+        "Unexpected-error": "未知错误"
       },
       "team": "团队",
       "team-picker": "团队选择器",
@@ -548,6 +549,71 @@
       "narrow-pane": "更窄",
       "widen-pane": "更宽"
     },
+    "rich-history": {
+      "a-week-ago": "一周前",
+      "Add-comment": "添加注释",
+      "An-optional-description-of-what": "可选的查询操作描述。",
+      "Are-you-sure-you-want-to-permanentl": "您确定要永久删除查询历史吗？",
+      "Are-you-sure-you-want-to-permanently": "您确定要永久删除您已收藏的查询吗？",
+      "Cancel": "取消",
+      "Change-the-default-active-tab": "将默认活动标签从“查询历史”改为“收藏”",
+      "Clear-query-history": "清除查询记录",
+      "Copy-query-to-clipboard": "复制查询到剪贴板",
+      "Copy-shortened-link-to-clipboard": "复制短链接到剪贴板",
+      "Data-source-A-Z": "数据源 A-Z",
+      "Data-source-does-not-exist-anymore": "数据源不存在",
+      "Data-source-Z-A": "数据源 Z-A",
+      "Dedup": "Dedup",
+      "Delete": "删除",
+      "Delete-query": "删除查询",
+      "Display-results": "显示结果",
+      "displaying": "显示中 ",
+      "Edit-comment": "编辑注释",
+      "Error-generating-shortened-link": "生成短链接时出错",
+      "filter-history": "筛选历史记录",
+      "filter-queries-for-data-sources": "数据源过滤器查询 ",
+      "Filter-queries-for-data-sources": "数据源过滤器查询",
+      "Grafana-will-keep-entries-up-to": "Ticos 将保留条目至",
+      "History-time-span": "历史时间范围",
+      "Load-more": "加载更多",
+      "loading": "加载中",
+      "Loading-results": "正在载入结果",
+      "Logs": "日志",
+      "Logs-volume": "日志量",
+      "Newest-first": "最新在前",
+      "num-days-ago": "{{num}} 天前",
+      "Oldest-first": "最旧的在前",
+      "Only-show-queries-for-data-source-currently": "只显示当前在探索中活动的数据源的查询",
+      "Prettify-JSON": "美化JSON",
+      "Query-copied-to-clipboard": "查询已复制到剪贴板",
+      "Query-deleted": "查询删除成功",
+      "Query-history": "查询记录",
+      "Query-history-deleted": "查询历史记录已删除",
+      "Run-query": "运行查询",
+      "Save-comment": "保存注释",
+      "search-queries": "搜索查询",
+      "Search-queries": "搜索查询",
+      "Select-the-period-of-time-for-which": "选择Ticos保存查询历史的时间段。 {{MAX_HISTORY_ITEMS}} 条目将被保存。",
+      "Settings": "设置",
+      "Shortened-link-copied-to-clipboard": "短链接已复制到剪贴板",
+      "Show-results-newest-to-oldest": "显示最新到最旧的结果",
+      "Show-results-oldest-to-newest": "显示最旧到最新的结果",
+      "showing-length-of-total": "显示 {{queries.length}} 中的 {{totalQueries}}",
+      "sort-queries-by": "查询排序方式",
+      "Sort-queries-by": "查询排序方式",
+      "Star-query": "收藏查询",
+      "Starred": "收藏",
+      "Switch-data-source-and-run-query": "切换数据源并运行查询",
+      "the-history-is-local-to-your-browser": "历史记录为您的浏览器本地，不与其他浏览器共享。",
+      "The-history-is-local-to-your-browser": "历史记录为您的浏览器本地，不与其他浏览器共享。",
+      "Time": "时间",
+      "today": "今天",
+      "two-week-ago": "两周前",
+      "Unique-labels": "唯一标签",
+      "Unstar-query": "取消收藏",
+      "Wrap-lines": "换行",
+      "yesterday": "昨天"
+    },
     "run-query-button": "运行查询",
     "select-in-which-dashboard": "选择将要创建面板的看板",
     "something-went-wrong": "出错了，请重试。",
@@ -598,7 +664,7 @@
         "delete-button": "删除",
         "preview-in-dashboard-button": "在看板预览"
       },
-      "annotation-queries-can-be-toggled": "批注查询可以在仪表板顶部切换或关闭。选中此选项将隐藏此项。",
+      "annotation-queries-can-be-toggled": "批注查询可以在看板顶部切换或关闭。选中此选项将隐藏此项。",
       "annotations-provide-a-way": "注释提供了将事件数据整合到您的图表中的方式。它们被视为垂直线和所有图形面板上的图标。 当你在注解图标上悬停时，你可以获得事件的文本 &amp; 标签。 您可以通过按住 CTRL 或 CMD + 点击图形(或拖动区域)直接添加批注事件。 这些将保存在注释数据库中。",
       "are-you-sure-you-want-to-delete": {
         "datasource": "您确定要删除 \"{{name}}\" 数据源吗？"
@@ -681,7 +747,7 @@
       "setting": {
         "add-dashboard-link": "添加看板链接",
         "add-ng-alert": "添加 NG 警报",
-        "alerts-are-added-and-configured": "在任何仪表板图形面板的警报标签页中添加和配置警报，使您能够使用现有的查询建立和可视化警报。",
+        "alerts-are-added-and-configured": "在任何看板图形面板的警报标签页中添加和配置警报，使您能够使用现有的查询建立和可视化警报。",
         "all": "所有",
         "annotations-sub-title": "批注查询返回可视化为整个看板图形中事件标记的事件。",
         "annotations-title": "说明",
@@ -697,7 +763,7 @@
         "create-alert": "创建警报",
         "DARK": "深色",
         "dashboard": "看板",
-        "dashboard-Links-allow": "看板链接允许您将链接放置在仪表板头下方的其他仪表板和网站。",
+        "dashboard-Links-allow": "看板链接允许您将链接放置在看板头下方的其他看板和网站。",
         "dashboards": "看板",
         "default": "默认",
         "delete-alert": "删除警报",
@@ -752,7 +818,7 @@
         "permissions-title": "权限",
         "proceed": "继续",
         "proceed-to-external-site": "继续到外部站点？",
-        "query-for-events-created-on": "查询在此仪表板上创建的活动并在创建的面板中显示这些活动",
+        "query-for-events-created-on": "查询在此看板上创建的活动并在创建的面板中显示这些活动",
         "read-only": "只读",
         "recent-options": "最新选项",
         "refresh-live-dashboards": "刷新活动看板",
@@ -791,14 +857,14 @@
         "week-start": "每周开始日",
         "what-are-dashboard-links": "什么是看板链接？",
         "with-tags": "使用标签",
-        "you-need-to-save-dashboard": "您需要保存仪表盘才能使删除生效。"
+        "you-need-to-save-dashboard": "您需要保存看板才能使删除生效。"
       },
       "snapshot": "快照",
       "tabs-alert": "警报",
       "tabs-query": "查询",
       "tabs-transform": "转换",
       "there-are-no-custom-annotation": "尚未添加自定义注释查询",
-      "this-dashboard-is-managed-by-Grafana": "此仪表盘由 Ticos 配置管理，不能删除。从配置文件中删除仪表盘以删除。",
+      "this-dashboard-is-managed-by-Grafana": "此看板由 Ticos 配置管理，不能删除。从配置文件中删除看板以删除。",
       "to-request-troubleshooting-help": "若要请求故障排除帮助，请将此面板的快照发送至 Tiocs 技术支持。快照包含查询响应数据和面板设置。",
       "troubleshooting-docs": "故障排除文档",
       "utils": {
@@ -943,6 +1009,7 @@
       "name": "名称",
       "points": "点",
       "query": "查询",
+      "query-error": "查询错误",
       "regex": "正则表达式",
       "regex-use-to-parse-and-capture-some-part": "'用来解析和捕获日志消息的部分内容。你可以使用模板中捕获的组。'",
       "remove-field": "删除字段",
@@ -954,6 +1021,15 @@
       "the-URL-that-brought-you ": "带你到这里的URL是一个紧凑的 URL - 这个格式很快将被废弃。 请替换先前保存的URL，现在可以使用 URL。",
       "variable-values-are-fetched": "从数据源查询获取变量值"
     },
+    "folders": {
+      "Cancel": "取消",
+      "Create": "创建",
+      "Create-a-new-folder": "创建新文件夹",
+      "Dashboards": "看板",
+      "Folder-name": "文件夹名称",
+      "Folder-name-is-required": "文件夹名称是必需的",
+      "Folders-provide-a-way-to-group": "文件夹为分组看板和警报规则提供了一条方式。"
+    },
     "inspector": {
       "collapse-all-button": "全部折叠",
       "copy-to-clipboard-button": "复制到剪贴板",
@@ -964,8 +1040,22 @@
       "refresh-button": "重置"
     },
     "library-panels": {
+      "Apply-changes-and-go-back-to-dashboard": "应用更改并返回到看板",
+      "Apply-changes-and-save-dashboard": "应用更改并保存看板",
+      "Apply-changes-and-save-library-panel": "应用更改并保存面板库",
+      "Cancel": "取消",
       "create-new-library-panel": "创建新的面板库",
-      "no-library-panels-found": "没有找到面板库。"
+      "Dashboard-name": "看板名称",
+      "Discard": "放弃",
+      "Last-edited-on": "最后编辑于 {{date}} ",
+      "Loading-connected-dashboards": "加载已连接的看板",
+      "no-library-panels-found": "没有找到面板库。",
+      "Save-library-panel": "保存库面板",
+      "Search-affected-dashboards": "搜索受影响的看板",
+      "The-following-dashboards-using": "以下使用面板的看板将受到影响:",
+      "Unsaved-library-panel-changes": "未保存库面板更改",
+      "Update-all": "全部更新",
+      "Used-on-dashboards": "在 {{connectedDashboards}} 看板上使用"
     },
     "live": {
       "dashboard": {
@@ -978,6 +1068,34 @@
         "this-dashboard-has-been-modifed": "此看已被另一个会话修改",
         "view-grafana-homepage": "查看 Ticos 主页"
       }
+    },
+    "manage-dashboards": {
+      "A-data-source-is-required": "数据源是必需的",
+      "Cancel": "取消",
+      "Change-uid": "更改uid",
+      "Drag-and-drop-here-or-click": "拖放到此处或点击浏览",
+      "existing-dashboard-error": "文件夹 {{title}} 中的看板 {{folder}} 中具有相同的 UID",
+      "Existing-library-panels": "现有的库面板",
+      "Folder": "文件夹",
+      "Import": "导入",
+      "Import-dashboard": "导入看板",
+      "Import-dashboard-from": "从文件导入看板",
+      "Import-Overwrite": "导入(覆盖)",
+      "Import-via-panel-json": "通过面板json 导入",
+      "List-of-existing-library-panels": "现有库面板列表。这些面板不受导入的影响。",
+      "List-of-new-library": "将被导入的新库面板列表。",
+      "Load": "加载",
+      "Name": "名称",
+      "Name-is-required": "名称是必填项",
+      "Need-a-dashboard-JSON-model": "需要一个 JSON 模型",
+      "New-library-panels": "新建库面板",
+      "Not-valid-JSON": "无效的JSON",
+      "Options": "选项",
+      "tags-expected-array": "标签预期数组",
+      "tags-expected-array-of-strings": "标签预期字符串数组",
+      "The-unique-identifier-UID": "仪表盘的唯一标识符(UID)，可以用于在多个Ticos安装之间独特识别仪表板。 UID 允许访问仪表板时使用一致的 URL，所以更改仪表板的标题将不会破坏到该仪表板的任何书签链接。",
+      "Unique-identifier-UID": "唯一标识符 (UID)",
+      "Upload-dashboard-JSON-file": "上传看板JSON文件"
     },
     "panel": {
       "viz-type-picker": {
@@ -1290,7 +1408,7 @@
     "variables": {
       "constant": "常量",
       "custom": "自定义",
-      "define-a-hidden-constant-variable": "定义一个隐藏的常变量，用于您想要共享的仪表板中的公式前缀。",
+      "define-a-hidden-constant-variable": "定义一个隐藏的常变量，用于您想要共享的看板中的公式前缀。",
       "define-a-textbox-variable": "定义文本框变量，用户可以在这里输入任意字符串",
       "define-variable-values-manually": "手动定义变量值",
       "editor": {
@@ -1329,7 +1447,7 @@
         "value": "值",
         "variable": "变量",
         "variable-name": "变量名称",
-        "variables-enable-more-interactive": "变量启用了更多交互式动态仪表板。 在您的度量查询中，您可以使用变量，而不是硬编码事项，如服务器或传感器名称，而是可以代替变量。 变量显示在仪表盘顶部的列表框。 这些下拉列表使得更改您的控制面板中显示的数据变得容易。",
+        "variables-enable-more-interactive": "变量启用了更多交互式动态看板。 在您的度量查询中，您可以使用变量，而不是硬编码事项，如服务器或传感器名称，而是可以代替变量。 变量显示在看板顶部的列表框。 这些下拉列表使得更改您的控制面板中显示的数据变得容易。",
         "version": "版本",
         "want-to-delete-variable": "您确定要删除变量",
         "what-do-variables-do": "变量是什么？"
@@ -1714,7 +1832,7 @@
       "placeholder": "搜索"
     },
     "search-dashboards": {
-      "title": "搜索仪表盘"
+      "title": "搜索看板"
     },
     "server-settings": {
       "subtitle": "查看 DataViz 配置中定义的设置",
@@ -1957,7 +2075,7 @@
     },
     "gauge": {
       "auto": "自动",
-      "gauge": "仪表盘",
+      "gauge": "看板",
       "leave-empty-to-use-Min-as-neutral-point": "留空则使用最小值作为中点",
       "neutral": "中性的",
       "render-the-threshold-values": "在仪表条周围渲染阈值",
@@ -2022,7 +2140,7 @@
       "enable-cell-value-inspection": "在模式窗口中启用单元格值检查",
       "enable-pagination": "开启分页",
       "fields": "字段",
-      "gauge": "仪表盘",
+      "gauge": "看板",
       "gradient": "渐变",
       "hide-in-table": "在表格中隐藏",
       "image": "图片",
@@ -2061,7 +2179,7 @@
     "dashboard-actions": {
       "import": "导入",
       "new": "新建",
-      "new-dashboard": "新建仪表板",
+      "new-dashboard": "新建看板",
       "new-folder": "新建文件夹"
     }
   },
@@ -2114,7 +2232,7 @@
       "expire-hour": "1 小时",
       "expire-never": "从不",
       "expire-week": "7 天",
-      "info-text-1": "可通过快照即时、公开地分享交互式仪表板。创建后，我们会剥离敏感数据，如查询（指标、模板和注释）和面板链接，仅将可见指标数据和系列名称嵌入到仪表板中。",
+      "info-text-1": "可通过快照即时、公开地分享交互式看板。创建后，我们会剥离敏感数据，如查询（指标、模板和注释）和面板链接，仅将可见指标数据和系列名称嵌入到看板中。",
       "info-text-2": "请注意，知晓该链接并能够访问该网址的<1>任何人都可以</1>查看您的快照。分享需谨慎。",
       "local-button": "本地快照",
       "mistake-message": "是不是弄错了什么？ ",
@@ -2302,7 +2420,7 @@
       "canvas-description": "明确元素位置",
       "dashlist": "看板列表",
       "dashlist-description": "与其他看板的动态链接列表",
-      "gauge": "仪表盘",
+      "gauge": "看板",
       "gauge-description": "标准计数可视化",
       "grafana-echarts-panel": "图表",
       "grafana-echarts-panel-description": "Ticos 的图表",
