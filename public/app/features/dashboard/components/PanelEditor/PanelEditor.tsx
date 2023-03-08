@@ -342,15 +342,20 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
           onClick={this.onSaveLibraryPanel}
           variant="primary"
           size={size}
-          title="Apply changes and save library panel"
+          title={t(
+            'features.library-panels.Apply-changes-and-save-library-panel',
+            'Apply changes and save library panel'
+          )}
           key="save-panel"
         >
-          <Trans i18nKey="features.dashboard.panel-editor.save-library-panel">Save library panel</Trans>
+          <Trans i18nKey="features.dashboard.panel-editor.save-library-panel">
+            {t('features.library-panels.Save-library-panel', 'Save library panel')}
+          </Trans>
         </Button>
       ) : (
         <Button
           onClick={this.onSaveDashboard}
-          title="Apply changes and save dashboard"
+          title={t('features.library-panels.Apply-changes-and-save-dashboard', 'Apply changes and save dashboard')}
           key="save"
           size={size}
           variant="secondary"
@@ -361,7 +366,10 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
       <Button
         onClick={this.onBack}
         variant="primary"
-        title="Apply changes and go back to dashboard"
+        title={t(
+          'features.library-panels.Apply-changes-and-go-back-to-dashboard',
+          'Apply changes and go back to dashboard'
+        )}
         data-testid={selectors.components.PanelEditor.applyButton}
         key="apply"
         size={size}

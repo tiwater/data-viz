@@ -24,6 +24,7 @@ import {
 } from '@grafana/ui';
 import appEvents from 'app/core/app_events';
 import { Page } from 'app/core/components/Page/Page';
+import { t } from 'app/core/internationalization';
 import { GrafanaRouteComponentProps } from 'app/core/navigation/types';
 import { StoreState } from 'app/types';
 
@@ -127,12 +128,15 @@ class UnthemedDashboardImport extends PureComponent<Props> {
             onLoad={this.onFileUpload}
           >
             <FileDropzoneDefaultChildren
-              primaryText="Upload dashboard JSON file"
-              secondaryText="Drag and drop here or click to browse"
+              primaryText={t('features.manage-dashboards.Upload-dashboard-JSON-file', 'Upload dashboard JSON file')}
+              secondaryText={t(
+                'features.manage-dashboards.Drag-and-drop-here-or-click',
+                'Drag and drop here or click to browse'
+              )}
             />
           </FileDropzone>
         </div>
-        <div className={styles.option}>
+        {/* <div className={styles.option}>
           <Form onSubmit={this.getGcomDashboard} defaultValues={{ gcomDashboard: '' }}>
             {({ register, errors }) => (
               <Field
@@ -142,30 +146,33 @@ class UnthemedDashboardImport extends PureComponent<Props> {
               >
                 <Input
                   id="url-input"
-                  placeholder="Grafana.com dashboard URL or ID"
+                  placeholder={t('features.manage-dashboards.dashboard-URL-or-ID',"Grafana.com dashboard URL or ID")}
                   type="text"
                   {...register('gcomDashboard', {
-                    required: 'A Grafana dashboard URL or ID is required',
+                    required: t('features.manage-dashboards.A-Grafana-dashboard-URL-or-ID','A Grafana dashboard URL or ID is required'),
                     validate: validateGcomDashboard,
                   })}
-                  addonAfter={<Button type="submit">Load</Button>}
+                  addonAfter={<Button type="submit">{t('features.manage-dashboards.Load',"Load")}</Button>}
                 />
               </Field>
             )}
           </Form>
-        </div>
+        </div> */}
         <div className={styles.option}>
           <Form onSubmit={this.getDashboardFromJson} defaultValues={{ dashboardJson: '' }}>
             {({ register, errors }) => (
               <>
                 <Field
-                  label="Import via panel json"
+                  label={t('features.manage-dashboards.Import-via-panel-json', 'Import via panel json')}
                   invalid={!!errors.dashboardJson}
                   error={errors.dashboardJson && errors.dashboardJson.message}
                 >
                   <TextArea
                     {...register('dashboardJson', {
-                      required: 'Need a dashboard JSON model',
+                      required: t(
+                        'features.manage-dashboards.Need-a-dashboard-JSON-model',
+                        'Need a dashboard JSON model'
+                      ),
                       validate: validateDashboardJson,
                     })}
                     data-testid={selectors.components.DashboardImportPage.textarea}
@@ -175,10 +182,10 @@ class UnthemedDashboardImport extends PureComponent<Props> {
                 </Field>
                 <HorizontalGroup>
                   <Button type="submit" data-testid={selectors.components.DashboardImportPage.submit}>
-                    Load
+                    {t('features.manage-dashboards.Load', 'Load')}
                   </Button>
                   <LinkButton variant="secondary" href={`${config.appSubUrl}/dashboards`}>
-                    Cancel
+                    {t('features.manage-dashboards.Cancel', 'Cancel')}
                   </LinkButton>
                 </HorizontalGroup>
               </>
@@ -190,9 +197,9 @@ class UnthemedDashboardImport extends PureComponent<Props> {
   }
 
   pageNav: NavModelItem = {
-    text: 'Import dashboard',
-    subTitle: 'Import dashboard from file or Grafana.com',
-    breadcrumbs: [{ title: 'Dashboards', url: 'dashboards' }],
+    text: t('features.manage-dashboards.Import-dashboard', 'Import dashboard'),
+    subTitle: t('features.manage-dashboards.Import-dashboard-from', 'Import dashboard from file or Grafana.com'),
+    breadcrumbs: [{ title: t('features.folders.Dashboards', 'Dashboards'), url: 'dashboards' }],
   };
 
   render() {

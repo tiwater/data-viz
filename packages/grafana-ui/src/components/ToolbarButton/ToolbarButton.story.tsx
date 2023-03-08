@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
+import { t } from '../../../src/utils/i18n';
 import { DashboardStoryCanvas } from '../../utils/storybook/DashboardStoryCanvas';
 import { withCenteredStory } from '../../utils/storybook/withCenteredStory';
 import { ButtonGroup } from '../Button';
@@ -143,13 +144,13 @@ export const Examples: ComponentStory<typeof ToolbarButton> = (args) => {
         <HorizontalGroup>
           <ButtonGroup>
             <ToolbarButton variant="primary" icon="sync">
-              Run query
+              {t('features.variables.editor.run-query', 'Run query')}
             </ToolbarButton>
             <ToolbarButton isOpen={false} narrow variant="primary" />
           </ButtonGroup>
           <ButtonGroup>
             <ToolbarButton variant="destructive" icon="sync">
-              Run query
+              {t('features.variables.editor.run-query', 'Run query')}
             </ToolbarButton>
             <ToolbarButton isOpen={false} narrow variant="destructive" />
           </ButtonGroup>

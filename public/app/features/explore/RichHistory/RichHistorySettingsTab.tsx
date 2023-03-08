@@ -7,6 +7,7 @@ import { notifyApp } from 'app/core/actions';
 import appEvents from 'app/core/app_events';
 import { createSuccessNotification } from 'app/core/copy/appNotification';
 import { MAX_HISTORY_ITEMS } from 'app/core/history/RichHistoryLocalStorage';
+import { t } from 'app/core/internationalization';
 import { dispatch } from 'app/store/store';
 
 import { supportedFeatures } from '../../../core/history/richHistoryStorageProvider';
@@ -65,13 +66,20 @@ export function RichHistorySettingsTab(props: RichHistorySettingsProps) {
   const onDelete = () => {
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Delete',
-        text: 'Are you sure you want to permanently delete your query history?',
-        yesText: 'Delete',
+        title: t('explore.rich-history.Delete', 'Delete'),
+        text: t(
+          'explore.rich-history.Are-you-sure-you-want-to-permanentl',
+          'Are you sure you want to permanently delete your query history?'
+        ),
+        yesText: t('explore.rich-history.Delete', 'Delete'),
         icon: 'trash-alt',
         onConfirm: () => {
           deleteRichHistory();
-          dispatch(notifyApp(createSuccessNotification('Query history deleted')));
+          dispatch(
+            notifyApp(
+              createSuccessNotification(t('explore.rich-history.Query-history-deleted', 'Query history deleted'))
+            )
+          );
         },
       })
     );
@@ -81,20 +89,28 @@ export function RichHistorySettingsTab(props: RichHistorySettingsProps) {
     <div className={styles.container}>
       {supportedFeatures().changeRetention ? (
         <Field
-          label="History time span"
-          description={`Select the period of time for which Grafana will save your query history. Up to ${MAX_HISTORY_ITEMS} entries will be stored.`}
+          label={t('explore.rich-history.History-time-span', 'History time span')}
+          description={t(
+            'explore.rich-history.Select-the-period-of-time-for-which',
+            'Select the period of time for which Grafana will save your query history. Up to {{MAX_HISTORY_ITEMS}} entries will be stored.',
+            { MAX_HISTORY_ITEMS }
+          )}
         >
           <div className={styles.input}>
             <Select value={selectedOption} options={retentionPeriodOptions} onChange={onChangeRetentionPeriod}></Select>
           </div>
         </Field>
       ) : (
-        <Alert severity="info" title="History time span">
-          Grafana will keep entries up to {selectedOption?.label}.
+        <Alert severity="info" title={t('explore.rich-history.History-time-span', 'History time span')}>
+          {t('explore.rich-history.Grafana-will-keep-entries-up-to', 'Grafana will keep entries up to')}{' '}
+          {selectedOption?.label}.
         </Alert>
       )}
       <InlineField
-        label="Change the default active tab from “Query history” to “Starred”"
+        label={t(
+          'explore.rich-history.Change-the-default-active-tab',
+          'Change the default active tab from “Query history” to “Starred”'
+        )}
         className={styles.spaceBetween}
       >
         <InlineSwitch
@@ -105,7 +121,10 @@ export function RichHistorySettingsTab(props: RichHistorySettingsProps) {
       </InlineField>
       {supportedFeatures().onlyActiveDataSource && (
         <InlineField
-          label="Only show queries for data source currently active in Explore"
+          label={t(
+            'explore.rich-history.Only-show-queries-for-data-source-currently',
+            'Only show queries for data source currently active in Explore'
+          )}
           className={styles.spaceBetween}
         >
           <InlineSwitch
@@ -120,7 +139,7 @@ export function RichHistorySettingsTab(props: RichHistorySettingsProps) {
           <div className={styles.bold}>Clear query history</div>
           <div className={styles.bottomMargin}>Delete all of your query history, permanently.</div>
           <Button variant="destructive" onClick={onDelete}>
-            Clear query history
+            {t('explore.rich-history.Clear-query-history', 'Clear query history')}
           </Button>
         </div>
       )}
