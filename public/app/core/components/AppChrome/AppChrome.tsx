@@ -1,4 +1,5 @@
 import { css, cx } from '@emotion/css';
+import { isInIcestark } from '@ice/stark-app';
 import React, { PropsWithChildren } from 'react';
 
 import { GrafanaTheme2 } from '@grafana/data';
@@ -28,7 +29,7 @@ export function AppChrome({ children }: Props) {
       <>
         {!state.chromeless && (
           <>
-            <NavBar />
+            {!isInIcestark() && <NavBar />}
             <SearchWrapper />
             <CommandPalette />
           </>

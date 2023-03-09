@@ -1,4 +1,3 @@
-import { isInIcestark } from '@ice/stark-app';
 import { Action, KBarProvider } from 'kbar';
 import React, { ComponentType } from 'react';
 import { Provider } from 'react-redux';
@@ -14,7 +13,6 @@ import { loadAndInitAngularIfEnabled } from './angular/loadAndInitAngularIfEnabl
 import { GrafanaApp } from './app';
 import { AppChrome } from './core/components/AppChrome/AppChrome';
 import { AppNotificationList } from './core/components/AppNotifications/AppNotificationList';
-import { NavBar } from './core/components/NavBar/NavBar';
 import { GrafanaContext } from './core/context/GrafanaContext';
 import { GrafanaRoute } from './core/navigation/GrafanaRoute';
 import { RouteDescriptor } from './core/navigation/types';
@@ -81,22 +79,7 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
   renderRoutes() {
     return <Switch>{getAppRoutes().map((r) => this.renderRoute(r))}</Switch>;
   }
-  renderNavBar() {
-    if (config.isPublicDashboardView || !this.state.ready || config.featureToggles.topnav) {
-      return null;
-    }
-    return null;
-    // return <NavBar />;
-  }
 
-  commandPaletteEnabled() {
-    const isLoginPage = locationService.getLocation().pathname === '/login';
-    return config.featureToggles.commandPalette && !config.isPublicDashboardView && !isLoginPage;
-  }
-
-  searchBarEnabled() {
-    return !config.isPublicDashboardView;
-  }
   render() {
     const { app } = this.props;
     const { ready } = this.state;
@@ -124,8 +107,6 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
                     <GlobalStyles />
                     <div className="grafana-app">
                       <Router history={locationService.getHistory()}>
-                        {/* 如果在微应用里，隐藏导航栏 */}
-                        {!isInIcestark() && this.renderNavBar()}
                         <AppChrome>
                           {pageBanners.map((Banner, index) => (
                             <Banner key={index.toString()} />
