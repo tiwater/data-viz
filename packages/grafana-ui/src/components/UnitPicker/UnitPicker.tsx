@@ -28,7 +28,6 @@ export class UnitPicker extends PureComponent<UnitPickerProps> {
 
     // All units
     const unitGroups = getUnit();
-    console.log('unitGroups', unitGroups);
 
     // Need to transform the data structure to work well with Select
     const groupOptions: CascaderOption[] = unitGroups.map((group) => {
