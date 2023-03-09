@@ -4,6 +4,7 @@ import { useCopyToClipboard } from 'react-use';
 import { SelectableValue } from '@grafana/data';
 import { EditorField, EditorHeader, EditorMode, EditorRow, FlexItem, InlineSelect, Space } from '@grafana/experimental';
 import { Button, InlineField, InlineSwitch, RadioButtonGroup, Select, Tooltip } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { QueryWithDefaults } from '../defaults';
 import { SQLQuery, QueryFormat, QueryRowFilter, QUERY_FORMAT_OPTIONS, DB } from '../types';
@@ -173,7 +174,7 @@ export function QueryHeader({
 
         {isQueryRunnable ? (
           <Button icon="play" variant="primary" size="sm" onClick={() => onRunQuery()}>
-            Run query
+            {t('features.variables.editor.run-query', 'Run query')}
           </Button>
         ) : (
           <Tooltip
@@ -187,7 +188,7 @@ export function QueryHeader({
             placement="top"
           >
             <Button icon="exclamation-triangle" variant="secondary" size="sm" onClick={() => onRunQuery()}>
-              Run query
+              {t('features.variables.editor.run-query', 'Run query')}
             </Button>
           </Tooltip>
         )}

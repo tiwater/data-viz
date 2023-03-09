@@ -1,6 +1,7 @@
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
 
+import { t } from '../../../src/utils/i18n';
 import { ComponentSize } from '../../types/size';
 import { Card } from '../Card/Card';
 import { HorizontalGroup, VerticalGroup } from '../Layout/Layout';
@@ -88,7 +89,7 @@ export const Examples: ComponentStory<typeof Button> = () => {
       <HorizontalGroup spacing="lg">
         <div>Inside ButtonGroup</div>
         <ButtonGroup>
-          <Button icon="sync">Run query</Button>
+          <Button icon="sync">{t('features.variables.editor.run-query', 'Run query')}</Button>
           <Button icon="angle-down" />
         </ButtonGroup>
       </HorizontalGroup>

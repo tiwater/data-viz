@@ -1,4 +1,5 @@
 import { PanelPlugin, LogsSortOrder, LogsDedupStrategy, LogsDedupDescription } from '@grafana/data';
+import { t } from 'app/core/internationalization';
 
 import { LogsPanel } from './LogsPanel';
 import { LogsPanelSuggestionsSupplier } from './suggestions';
@@ -75,8 +76,8 @@ export const plugin = new PanelPlugin<Options>(LogsPanel)
         description: '',
         settings: {
           options: [
-            { value: LogsSortOrder.Descending, label: 'Newest first' },
-            { value: LogsSortOrder.Ascending, label: 'Oldest first' },
+            { value: LogsSortOrder.Descending, label: t('explore.rich-history.Newest-first', 'Newest first') },
+            { value: LogsSortOrder.Ascending, label: t('explore.rich-history.Oldest-first', 'Oldest first') },
           ],
         },
         defaultValue: LogsSortOrder.Descending,

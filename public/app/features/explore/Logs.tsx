@@ -38,6 +38,7 @@ import {
   Themeable2,
   Collapse,
 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { dedupLogRows, filterLogLevels } from 'app/core/logsModel';
 import store from 'app/core/store';
 import { ExploreId } from 'app/types/explore';
@@ -371,7 +372,12 @@ class UnthemedLogs extends PureComponent<Props, State> {
 
     return (
       <>
-        <Collapse label="Logs volume" collapsible isOpen={logsVolumeEnabled} onToggle={this.onToggleLogsVolumeCollapse}>
+        <Collapse
+          label={t('explore.rich-history.Logs-volume', 'Logs volume')}
+          collapsible
+          isOpen={logsVolumeEnabled}
+          onToggle={this.onToggleLogsVolumeCollapse}
+        >
           {logsVolumeEnabled && (
             <LogsVolumePanel
               absoluteRange={absoluteRange}
@@ -395,10 +401,19 @@ class UnthemedLogs extends PureComponent<Props, State> {
             />
           )}
         </Collapse>
-        <Collapse label="Logs" loading={loading} isOpen className={styleOverridesForStickyNavigation}>
+        <Collapse
+          label={t('explore.rich-history.Logs', 'Logs')}
+          loading={loading}
+          isOpen
+          className={styleOverridesForStickyNavigation}
+        >
           <div className={styles.logOptions} ref={this.topLogsRef}>
             <InlineFieldRow>
-              <InlineField label="Time" className={styles.horizontalInlineLabel} transparent>
+              <InlineField
+                label={t('explore.rich-history.Time', 'Time')}
+                className={styles.horizontalInlineLabel}
+                transparent
+              >
                 <InlineSwitch
                   value={showTime}
                   onChange={this.onChangeTime}
@@ -407,7 +422,11 @@ class UnthemedLogs extends PureComponent<Props, State> {
                   id={`show-time_${exploreId}`}
                 />
               </InlineField>
-              <InlineField label="Unique labels" className={styles.horizontalInlineLabel} transparent>
+              <InlineField
+                label={t('explore.rich-history.Unique-labels', 'Unique labels')}
+                className={styles.horizontalInlineLabel}
+                transparent
+              >
                 <InlineSwitch
                   value={showLabels}
                   onChange={this.onChangeLabels}
@@ -416,7 +435,11 @@ class UnthemedLogs extends PureComponent<Props, State> {
                   id={`unique-labels_${exploreId}`}
                 />
               </InlineField>
-              <InlineField label="Wrap lines" className={styles.horizontalInlineLabel} transparent>
+              <InlineField
+                label={t('explore.rich-history.Wrap-lines', 'Wrap lines')}
+                className={styles.horizontalInlineLabel}
+                transparent
+              >
                 <InlineSwitch
                   value={wrapLogMessage}
                   onChange={this.onChangeWrapLogMessage}
@@ -425,7 +448,11 @@ class UnthemedLogs extends PureComponent<Props, State> {
                   id={`wrap-lines_${exploreId}`}
                 />
               </InlineField>
-              <InlineField label="Prettify JSON" className={styles.horizontalInlineLabel} transparent>
+              <InlineField
+                label={t('explore.rich-history.Prettify-JSON', 'Prettify JSON')}
+                className={styles.horizontalInlineLabel}
+                transparent
+              >
                 <InlineSwitch
                   value={prettifyLogMessage}
                   onChange={this.onChangePrettifyLogMessage}
@@ -434,7 +461,11 @@ class UnthemedLogs extends PureComponent<Props, State> {
                   id={`prettify_${exploreId}`}
                 />
               </InlineField>
-              <InlineField label="Dedup" className={styles.horizontalInlineLabel} transparent>
+              <InlineField
+                label={t('explore.rich-history.Dedup', 'Dedup')}
+                className={styles.horizontalInlineLabel}
+                transparent
+              >
                 <RadioButtonGroup
                   options={Object.values(LogsDedupStrategy).map((dedupType) => ({
                     label: capitalize(dedupType),
@@ -448,19 +479,29 @@ class UnthemedLogs extends PureComponent<Props, State> {
               </InlineField>
             </InlineFieldRow>
             <div>
-              <InlineField label="Display results" className={styles.horizontalInlineLabel} transparent>
+              <InlineField
+                label={t('explore.rich-history.Display-results', 'Display results')}
+                className={styles.horizontalInlineLabel}
+                transparent
+              >
                 <RadioButtonGroup
                   disabled={isFlipping}
                   options={[
                     {
-                      label: 'Newest first',
+                      label: t('explore.rich-history.Newest-first', 'Newest first'),
                       value: LogsSortOrder.Descending,
-                      description: 'Show results newest to oldest',
+                      description: t(
+                        'explore.rich-history.Show-results-newest-to-oldest',
+                        'Show results newest to oldest'
+                      ),
                     },
                     {
-                      label: 'Oldest first',
+                      label: t('explore.rich-history.Oldest-first', 'Oldest first'),
                       value: LogsSortOrder.Ascending,
-                      description: 'Show results oldest to newest',
+                      description: t(
+                        'explore.rich-history.Show-results-oldest-to-newest',
+                        'Show results oldest to newest'
+                      ),
                     },
                   ]}
                   value={logsSortOrder}

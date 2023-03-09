@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { GrafanaTheme2, SelectableValue } from '@grafana/data';
 import { config } from '@grafana/runtime';
 import { useStyles2, Select, MultiSelect, FilterInput, Button } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import {
   createDatasourcesList,
   SortOrder,
@@ -127,7 +128,10 @@ export function RichHistoryStarredTab(props: Props) {
                 return { value: ds.name, label: ds.name };
               })}
               value={richHistorySearchFilters.datasourceFilters}
-              placeholder="Filter queries for data sources(s)"
+              placeholder={t(
+                'explore.rich-history.Filter-queries-for-data-sources',
+                'Filter queries for data sources(s)'
+              )}
               aria-label="Filter queries for data sources(s)"
               onChange={(options: SelectableValue[]) => {
                 updateFilters({ datasourceFilters: options.map((option) => option.value) });
@@ -136,7 +140,7 @@ export function RichHistoryStarredTab(props: Props) {
           )}
           <div className={styles.filterInput}>
             <FilterInput
-              placeholder="Search queries"
+              placeholder={t('explore.rich-history.Search-queries', 'Search queries')}
               value={richHistorySearchFilters.search}
               onChange={(search: string) => updateFilters({ search })}
             />
@@ -145,12 +149,12 @@ export function RichHistoryStarredTab(props: Props) {
             <Select
               value={sortOrderOptions.filter((order) => order.value === richHistorySearchFilters.sortOrder)}
               options={sortOrderOptions}
-              placeholder="Sort queries by"
+              placeholder={t('explore.rich-history.Sort-queries-by', 'Sort queries by')}
               onChange={(e: SelectableValue<SortOrder>) => updateFilters({ sortOrder: e.value })}
             />
           </div>
         </div>
-        {loading && <span>Loading results...</span>}
+        {loading && <span>{t('explore.rich-history.Loading-results', 'Loading results')}...</span>}
         {!loading &&
           queries.map((q) => {
             const idx = listOfDatasources.findIndex((d) => d.uid === q.datasourceUid);
@@ -159,18 +163,28 @@ export function RichHistoryStarredTab(props: Props) {
                 query={q}
                 key={q.id}
                 exploreId={exploreId}
-                dsImg={idx === -1 ? 'public/img/icn-datasource.svg' : listOfDatasources[idx].imgUrl}
+                dsImg={
+                  idx === -1
+                    ? `${config.appUrl}public/img/icn-datasource.svg`
+                    : config.appUrl + listOfDatasources[idx].imgUrl
+                }
                 isRemoved={idx === -1}
               />
             );
           })}
         {queries.length && queries.length !== totalQueries ? (
           <div>
-            Showing {queries.length} of {totalQueries} <Button onClick={loadMoreRichHistory}>Load more</Button>
+            Showing {queries.length} of {totalQueries}{' '}
+            <Button onClick={loadMoreRichHistory}>{t('explore.rich-history.Load-more', 'Load more')}</Button>
           </div>
         ) : null}
         <div className={styles.footer}>
-          {!config.queryHistoryEnabled ? 'The history is local to your browser and is not shared with others.' : ''}
+          {!config.queryHistoryEnabled
+            ? t(
+                'explore.rich-history.The-history-is-local-to-your-browser',
+                'The history is local to your browser and is not shared with others.'
+              )
+            : ''}
         </div>
       </div>
     </div>
