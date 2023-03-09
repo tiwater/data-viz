@@ -19,7 +19,7 @@ import { getTimezones, prepareGraphableFields, regenerateLinksSupplier } from '.
 
 interface TimeSeriesPanelProps extends PanelProps<TimeSeriesOptions> {}
 
-export const TimeSeriesPanel: React.FC<TimeSeriesPanelProps> = ({
+export const TimeSeriesPanel = ({
   data,
   timeRange,
   timeZone,
@@ -30,7 +30,7 @@ export const TimeSeriesPanel: React.FC<TimeSeriesPanelProps> = ({
   onChangeTimeRange,
   replaceVariables,
   id,
-}) => {
+}: TimeSeriesPanelProps) => {
   const { sync, canAddAnnotations, onThresholdsChange, canEditThresholds, showThresholds, onSplitOpen } =
     usePanelContext();
 

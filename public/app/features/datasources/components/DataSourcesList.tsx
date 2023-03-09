@@ -1,5 +1,6 @@
 import { css } from '@emotion/css';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { DataSourceSettings, GrafanaTheme2 } from '@grafana/data';
 import { config } from '@grafana/runtime';
@@ -11,16 +12,16 @@ import { t } from 'app/core/internationalization';
 import { StoreState, AccessControlAction, useSelector } from 'app/types';
 
 import { getDataSources, getDataSourcesCount, useDataSourcesRoutes, useLoadDataSources } from '../state';
+import { trackCreateDashboardClicked, trackExploreClicked, trackDataSourcesListViewed } from '../tracking';
 import { constructDataSourceExploreUrl } from '../utils';
 
 import { DataSourcesListHeader } from './DataSourcesListHeader';
 
 export function DataSourcesList() {
-  useLoadDataSources();
+  const { isLoading } = useLoadDataSources();
 
   const dataSources = useSelector((state) => getDataSources(state.dataSources));
   const dataSourcesCount = useSelector(({ dataSources }: StoreState) => getDataSourcesCount(dataSources));
-  const hasFetched = useSelector(({ dataSources }: StoreState) => dataSources.hasFetched);
   const hasCreateRights = contextSrv.hasPermission(AccessControlAction.DataSourcesCreate);
   const hasWriteRights = contextSrv.hasPermission(AccessControlAction.DataSourcesWrite);
   const hasExploreRights = contextSrv.hasPermission(AccessControlAction.DataSourcesExplore);
@@ -29,7 +30,7 @@ export function DataSourcesList() {
     <DataSourcesListView
       dataSources={dataSources}
       dataSourcesCount={dataSourcesCount}
-      isLoading={!hasFetched}
+      isLoading={isLoading}
       hasCreateRights={hasCreateRights}
       hasWriteRights={hasWriteRights}
       hasExploreRights={hasExploreRights}
@@ -56,6 +57,14 @@ export function DataSourcesListView({
 }: ViewProps) {
   const styles = useStyles2(getStyles);
   const dataSourcesRoutes = useDataSourcesRoutes();
+  const location = useLocation();
+
+  useEffect(() => {
+    trackDataSourcesListViewed({
+      grafana_version: config.buildInfo.version,
+      path: location.pathname,
+    });
+  }, [location]);
 
   if (isLoading) {
     return <PageLoader />;
@@ -101,14 +110,25 @@ export function DataSourcesListView({
                   ]}
                 </Card.Meta>
                 <Card.Tags>
+                  {/* Build Dashboard */}
                   <LinkButton
                     icon="apps"
                     fill="outline"
                     variant="secondary"
                     href={`dashboard/new-with-ds/${dataSource.uid}`}
+                    onClick={() => {
+                      trackCreateDashboardClicked({
+                        grafana_version: config.buildInfo.version,
+                        datasource_uid: dataSource.uid,
+                        plugin_name: dataSource.typeName,
+                        path: location.pathname,
+                      });
+                    }}
                   >
                     Build a dashboard
                   </LinkButton>
+
+                  {/* Explore */}
                   {hasExploreRights && (
                     <LinkButton
                       icon="compass"
@@ -116,6 +136,14 @@ export function DataSourcesListView({
                       variant="secondary"
                       className={styles.button}
                       href={constructDataSourceExploreUrl(dataSource)}
+                      onClick={() => {
+                        trackExploreClicked({
+                          grafana_version: config.buildInfo.version,
+                          datasource_uid: dataSource.uid,
+                          plugin_name: dataSource.typeName,
+                          path: location.pathname,
+                        });
+                      }}
                     >
                       Explore
                     </LinkButton>

@@ -6,7 +6,6 @@ import { Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import { config, locationService, navigationLogger, reportInteraction } from '@grafana/runtime';
 import { ErrorBoundaryAlert, GlobalStyles, ModalRoot, ModalsProvider, PortalContainer } from '@grafana/ui';
-import { SearchWrapper } from 'app/features/search';
 import { getAppRoutes } from 'app/routes/routes';
 import { store } from 'app/store/store';
 
@@ -21,7 +20,6 @@ import { GrafanaRoute } from './core/navigation/GrafanaRoute';
 import { RouteDescriptor } from './core/navigation/types';
 import { contextSrv } from './core/services/context_srv';
 import { ThemeProvider } from './core/utils/ConfigProvider';
-import { CommandPalette } from './features/commandPalette/CommandPalette';
 import { LiveConnectionWarning } from './features/live/LiveConnectionWarning';
 
 interface AppWrapperProps {
@@ -62,6 +60,7 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
     return (
       <Route
         exact={route.exact === undefined ? true : route.exact}
+        sensitive={route.sensitive === undefined ? false : route.sensitive}
         path={route.path}
         key={route.path}
         render={(props) => {
@@ -82,13 +81,12 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
   renderRoutes() {
     return <Switch>{getAppRoutes().map((r) => this.renderRoute(r))}</Switch>;
   }
-
   renderNavBar() {
     if (config.isPublicDashboardView || !this.state.ready || config.featureToggles.topnav) {
       return null;
     }
-
-    return <NavBar />;
+    return null;
+    // return <NavBar />;
   }
 
   commandPaletteEnabled() {
@@ -99,7 +97,6 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
   searchBarEnabled() {
     return !config.isPublicDashboardView;
   }
-
   render() {
     const { app } = this.props;
     const { ready } = this.state;
@@ -125,7 +122,6 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
                 >
                   <ModalsProvider>
                     <GlobalStyles />
-                    {this.commandPaletteEnabled() && <CommandPalette />}
                     <div className="grafana-app">
                       <Router history={locationService.getHistory()}>
                         {/* 如果在微应用里，隐藏导航栏 */}
@@ -134,10 +130,8 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
                           {pageBanners.map((Banner, index) => (
                             <Banner key={index.toString()} />
                           ))}
-
                           <AngularRoot />
                           <AppNotificationList />
-                          {this.searchBarEnabled() && <SearchWrapper />}
                           {ready && this.renderRoutes()}
                           {bodyRenderHooks.map((Hook, index) => (
                             <Hook key={index.toString()} />

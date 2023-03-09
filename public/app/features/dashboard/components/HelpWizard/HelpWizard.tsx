@@ -25,6 +25,7 @@ import {
 import { t } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 import { PanelModel } from 'app/features/dashboard/state';
+import { AccessControlAction } from 'app/types';
 
 import { ShowMessage, SnapshotTab, SupportSnapshotService } from './SupportSnapshotService';
 
@@ -71,6 +72,10 @@ export function HelpWizard({ panel, plugin, onClose }: Props) {
     { label: t('features.dashboard.data', 'Data'), value: SnapshotTab.Data },
   ];
 
+  const hasSupportBundleAccess =
+    config.supportBundlesEnabled &&
+    contextSrv.hasAccess(AccessControlAction.ActionSupportBundlesCreate, contextSrv.isGrafanaAdmin);
+
   return (
     <Drawer
       title={t('features.dashboard.get-help-with-this-panel', 'Get help with this panel')}
@@ -97,6 +102,12 @@ export function HelpWizard({ panel, plugin, onClose }: Props) {
               'To request troubleshooting help, send a snapshot of this panel to Grafana Labs Technical Support. The snapshot contains query response data and panel settings.'
             )}
           </span>
+          {hasSupportBundleAccess && (
+            <span className="muted">
+              You can also retrieve a support bundle containing information concerning your Grafana instance and
+              configured datasources in the <a href="/support-bundles">support bundles section</a>.
+            </span>
+          )}
         </Stack>
       }
       tabs={

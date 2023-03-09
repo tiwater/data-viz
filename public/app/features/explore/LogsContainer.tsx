@@ -5,17 +5,19 @@ import {
   AbsoluteTimeRange,
   Field,
   hasLogsContextSupport,
+  hasLogsContextUiSupport,
   LoadingState,
   LogRowModel,
   RawTimeRange,
   EventBus,
   SplitOpen,
   DataFrame,
+  SupplementaryQueryType,
 } from '@grafana/data';
 import { Collapse } from '@grafana/ui';
 import { t } from 'app/core/internationalization';
 import { StoreState } from 'app/types';
-import { ExploreId, ExploreItemState, SupplementaryQueryType } from 'app/types/explore';
+import { ExploreId, ExploreItemState } from 'app/types/explore';
 
 import { getTimeZone } from '../profile/state/selectors';
 
@@ -61,6 +63,16 @@ class LogsContainer extends PureComponent<LogsContainerProps> {
     }
 
     return [];
+  };
+
+  getLogRowContextUi = (row: LogRowModel, runContextQuery?: () => void): React.ReactNode => {
+    const { datasourceInstance } = this.props;
+
+    if (hasLogsContextUiSupport(datasourceInstance) && datasourceInstance.getLogRowContextUi) {
+      return datasourceInstance.getLogRowContextUi(row, runContextQuery);
+    }
+
+    return <></>;
   };
 
   showContextToggle = (row?: LogRowModel): boolean => {
@@ -159,6 +171,7 @@ class LogsContainer extends PureComponent<LogsContainerProps> {
             scanRange={range.raw}
             showContextToggle={this.showContextToggle}
             getRowContext={this.getLogRowContext}
+            getLogRowContextUi={this.getLogRowContextUi}
             getFieldLinks={this.getFieldLinks}
             addResultsToCache={() => addResultsToCache(exploreId)}
             clearCache={() => clearCache(exploreId)}

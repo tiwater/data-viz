@@ -11,8 +11,7 @@ import {
 } from '@grafana/data';
 import { MenuItem, SeriesTableRow, useTheme2 } from '@grafana/ui';
 import { t } from 'app/core/internationalization';
-
-import { findNextStateIndex, fmtDuration } from './utils';
+import { findNextStateIndex, fmtDuration } from 'app/core/components/TimelineChart/utils';
 
 interface StateTimelineTooltipProps {
   data: DataFrame[];

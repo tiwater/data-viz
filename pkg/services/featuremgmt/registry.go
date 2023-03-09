@@ -10,11 +10,6 @@ var (
 	// Register each toggle here
 	standardFeatureFlags = []FeatureFlag{
 		{
-			Name:        "returnUnameHeader",
-			Description: "Return user login as header for authenticated requests",
-			State:       FeatureStateAlpha,
-		},
-		{
 			Name:        "alertingBigTransactions",
 			Description: "Use big transactions for alerting database writes",
 			State:       FeatureStateAlpha,
@@ -38,45 +33,33 @@ var (
 			Name:        "dashboardPreviews",
 			Description: "Create and show thumbnails for dashboard search results",
 			State:       FeatureStateAlpha,
-		},
-		{
-			Name:            "dashboardPreviewsAdmin",
-			Description:     "Manage the dashboard previews crawler process from the UI",
-			State:           FeatureStateAlpha,
-			RequiresDevMode: true,
-		},
-		{
-			Name:        "live-config",
-			Description: "Save Grafana Live configuration in SQL tables",
-			State:       FeatureStateAlpha,
+			Owner:       grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "live-pipeline",
 			Description: "Enable a generic live processing pipeline",
 			State:       FeatureStateAlpha,
+			Owner:       grafanaAppPlatformSquad,
 		},
 		{
 			Name:         "live-service-web-worker",
 			Description:  "This will use a webworker thread to processes events rather than the main thread",
 			State:        FeatureStateAlpha,
 			FrontendOnly: true,
+			Owner:        grafanaAppPlatformSquad,
 		},
 		{
 			Name:         "queryOverLive",
 			Description:  "Use Grafana Live WebSocket to execute backend queries",
 			State:        FeatureStateAlpha,
 			FrontendOnly: true,
+			Owner:        grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "panelTitleSearch",
 			Description: "Search for dashboards using panel title",
 			State:       FeatureStateBeta,
-		},
-		{
-			Name:         "tempoApmTable",
-			Description:  "Show APM table",
-			State:        FeatureStateAlpha,
-			FrontendOnly: true,
+			Owner:       grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "prometheusAzureOverrideAudience",
@@ -84,50 +67,28 @@ var (
 			State:       FeatureStateBeta,
 		},
 		{
-			Name:         "influxdbBackendMigration",
-			Description:  "Query InfluxDB InfluxQL without the proxy",
-			State:        FeatureStateAlpha,
-			FrontendOnly: true,
-		},
-		{
-			Name:            "showFeatureFlagsInUI",
-			Description:     "Show feature flags in the settings UI",
-			State:           FeatureStateAlpha,
-			RequiresDevMode: true,
-		},
-		{
 			Name:        "publicDashboards",
 			Description: "Enables public access to dashboards",
 			State:       FeatureStateAlpha,
+			Owner:       grafanaDashboardsSquad,
 		},
 		{
 			Name:            "publicDashboardsEmailSharing",
-			Description:     "Allows public dashboard sharing to be restricted to only allowed emails",
+			Description:     "Enables public dashboard sharing to be restricted to only allowed emails",
 			State:           FeatureStateAlpha,
 			RequiresLicense: true,
-			RequiresDevMode: true,
+			Owner:           grafanaDashboardsSquad,
 		},
 		{
 			Name:        "lokiLive",
 			Description: "Support WebSocket streaming for loki (early prototype)",
 			State:       FeatureStateAlpha,
+			Owner:       grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "lokiDataframeApi",
 			Description: "Use experimental loki api for WebSocket streaming (early prototype)",
 			State:       FeatureStateAlpha,
-		},
-		{
-			Name:         "lokiMonacoEditor",
-			Description:  "Access to Monaco query editor for Loki",
-			State:        FeatureStateStable,
-			Expression:   "true",
-			FrontendOnly: true,
-		},
-		{
-			Name:        "swaggerUi",
-			Description: "Serves swagger UI",
-			State:       FeatureStateBeta,
 		},
 		{
 			Name:        "featureHighlights",
@@ -138,51 +99,39 @@ var (
 			Name:        "dashboardComments",
 			Description: "Enable dashboard-wide comments",
 			State:       FeatureStateAlpha,
+			Owner:       grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "annotationComments",
 			Description: "Enable annotation comments",
 			State:       FeatureStateAlpha,
+			Owner:       grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "migrationLocking",
 			Description: "Lock database during migrations",
 			State:       FeatureStateBeta,
+			Owner:       grafanaBackendPlatformSquad,
 		},
 		{
 			Name:        "storage",
 			Description: "Configurable storage for dashboards, datasources, and resources",
 			State:       FeatureStateAlpha,
+			Owner:       grafanaAppPlatformSquad,
 		},
 		{
 			Name:            "k8s",
 			Description:     "Explore native k8s integrations",
 			State:           FeatureStateAlpha,
 			RequiresDevMode: true,
-		},
-		{
-			Name:        "supportBundles",
-			Description: "Support bundles for troubleshooting",
-			State:       FeatureStateAlpha,
+			Owner:           grafanaAppPlatformSquad,
 		},
 		{
 			Name:            "dashboardsFromStorage",
 			Description:     "Load dashboards from the generic storage interface",
 			State:           FeatureStateAlpha,
 			RequiresDevMode: true, // Also a gate on automatic git storage (for now)
-		},
-		{
-			Name:            "export",
-			Description:     "Export grafana instance (to git, etc)",
-			State:           FeatureStateAlpha,
-			RequiresDevMode: true,
-		},
-		{
-			Name:            "azureMonitorResourcePickerForMetrics",
-			Description:     "New UI for Azure Monitor Metrics Query",
-			State:           FeatureStateAlpha,
-			RequiresDevMode: true,
-			FrontendOnly:    true,
+			Owner:           grafanaAppPlatformSquad,
 		},
 		{
 			Name:         "exploreMixedDatasource",
@@ -197,10 +146,9 @@ var (
 			FrontendOnly: true,
 		},
 		{
-			Name:         "commandPalette",
-			Description:  "Enable command palette",
-			State:        FeatureStateStable,
-			Expression:   "true", // enabled by default
+			Name:         "newTraceView",
+			Description:  "Shows the new trace view design",
+			State:        FeatureStateAlpha,
 			FrontendOnly: true,
 		},
 		{
@@ -218,6 +166,7 @@ var (
 			Name:        "datasourceQueryMultiStatus",
 			Description: "Introduce HTTP 207 Multi Status for api/ds/query",
 			State:       FeatureStateAlpha,
+			Owner:       grafanaPluginsPlatformSquad,
 		},
 		{
 			Name:         "traceToMetrics",
@@ -229,6 +178,7 @@ var (
 			Name:        "newDBLibrary",
 			Description: "Use jmoiron/sqlx rather than xorm for a few backend services",
 			State:       FeatureStateBeta,
+			Owner:       grafanaBackendPlatformSquad,
 		},
 		{
 			Name:            "validateDashboardsOnSave",
@@ -241,6 +191,7 @@ var (
 			Description:  "Replace the angular graph panel with timeseries",
 			State:        FeatureStateBeta,
 			FrontendOnly: true,
+			Owner:        grafanaDatavizSquad,
 		},
 		{
 			Name:        "prometheusWideSeries",
@@ -252,12 +203,14 @@ var (
 			Description:  "Allow elements nesting",
 			State:        FeatureStateAlpha,
 			FrontendOnly: true,
+			Owner:        grafanaDatavizSquad,
 		},
 		{
 			Name:         "scenes",
 			Description:  "Experimental framework to build interactive dashboards",
 			State:        FeatureStateAlpha,
 			FrontendOnly: true,
+			Owner:        grafanaDashboardsSquad,
 		},
 		{
 			Name:            "disableSecretsCompatibility",
@@ -280,33 +233,33 @@ var (
 			Description: "Enables internationalization",
 			State:       FeatureStateStable,
 			Expression:  "true", // enabled by default
+			Owner:       grafanaUserEssentialsSquad,
 		},
 		{
 			Name:        "topnav",
-			Description: "New top nav and page layouts",
-			State:       FeatureStateAlpha,
+			Description: "Displays new top nav and page layouts",
+			State:       FeatureStateBeta,
+			Owner:       grafanaUserEssentialsSquad,
 		},
 		{
 			Name:            "grpcServer",
 			Description:     "Run GRPC server",
 			State:           FeatureStateAlpha,
 			RequiresDevMode: true,
+			Owner:           grafanaAppPlatformSquad,
 		},
 		{
 			Name:            "entityStore",
 			Description:     "SQL-based entity store (requires storage flag also)",
 			State:           FeatureStateAlpha,
 			RequiresDevMode: true,
-		},
-		{
-			Name:        "flameGraph",
-			Description: "Show the flame graph",
-			State:       FeatureStateAlpha,
+			Owner:           grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "cloudWatchCrossAccountQuerying",
-			Description: "Use cross-account querying in CloudWatch datasource",
-			State:       FeatureStateAlpha,
+			Description: "Enables cross-account querying in CloudWatch datasources",
+			State:       FeatureStateStable,
+			Expression:  "true", //enabled by default
 		},
 		{
 			Name:         "redshiftAsyncQueryDataSupport",
@@ -321,11 +274,6 @@ var (
 			FrontendOnly: true,
 		},
 		{
-			Name:        "increaseInMemDatabaseQueryCache",
-			Description: "Enable more in memory caching for database queries",
-			State:       FeatureStateAlpha,
-		},
-		{
 			Name:         "newPanelChromeUI",
 			Description:  "Show updated look and feel of grafana-ui PanelChrome: panel header, icons, and menu",
 			State:        FeatureStateAlpha,
@@ -336,6 +284,7 @@ var (
 			Description:     "Reusable query library",
 			State:           FeatureStateAlpha,
 			RequiresDevMode: true,
+			Owner:           grafanaAppPlatformSquad,
 		},
 		{
 			Name:        "showDashboardValidationWarnings",
@@ -346,11 +295,7 @@ var (
 			Name:        "mysqlAnsiQuotes",
 			Description: "Use double quotes to escape keyword in a MySQL query",
 			State:       FeatureStateAlpha,
-		},
-		{
-			Name:        "datasourceLogger",
-			Description: "Logs all datasource requests",
-			State:       FeatureStateBeta,
+			Owner:       grafanaBackendPlatformSquad,
 		},
 		{
 			Name:        "accessControlOnCall",
@@ -362,6 +307,7 @@ var (
 			Description:     "Enable folder nesting",
 			State:           FeatureStateAlpha,
 			RequiresDevMode: true,
+			Owner:           grafanaBackendPlatformSquad,
 		},
 		{
 			Name:        "accessTokenExpirationCheck",
@@ -389,11 +335,6 @@ var (
 			State:       FeatureStateAlpha,
 		},
 		{
-			Name:        "sessionRemoteCache",
-			Description: "Enable using remote cache for user sessions",
-			State:       FeatureStateAlpha,
-		},
-		{
 			Name:        "disablePrometheusExemplarSampling",
 			Description: "Disable Prometheus examplar sampling",
 			State:       FeatureStateStable,
@@ -404,10 +345,62 @@ var (
 			State:       FeatureStateAlpha,
 		},
 		{
+			Name:         "editPanelCSVDragAndDrop",
+			Description:  "Enables drag and drop for CSV and Excel files",
+			FrontendOnly: true,
+			State:        FeatureStateAlpha,
+			Owner:        grafanaBiSquad,
+		},
+		{
 			Name:            "alertingNoNormalState",
 			Description:     "Stop maintaining state of alerts that are not firing",
 			State:           FeatureStateBeta,
 			RequiresRestart: false,
+		},
+		{
+
+			Name:         "logsSampleInExplore",
+			Description:  "Enables access to the logs sample feature in Explore",
+			State:        FeatureStateStable,
+			Expression:   "true", //turned on by default
+			FrontendOnly: true,
+		},
+		{
+			Name:         "logsContextDatasourceUi",
+			Description:  "Allow datasource to provide custom UI for context view",
+			State:        FeatureStateAlpha,
+			FrontendOnly: true,
+		},
+		{
+			Name:         "lokiQuerySplitting",
+			Description:  "Split large interval queries into subqueries with smaller time intervals",
+			State:        FeatureStateAlpha,
+			FrontendOnly: true,
+		},
+		{
+			Name:        "individualCookiePreferences",
+			Description: "Support overriding cookie preferences per user",
+			State:       FeatureStateAlpha,
+		},
+		{
+			Name:         "drawerDataSourcePicker",
+			Description:  "Changes the user experience for data source selection to a drawer.",
+			State:        FeatureStateAlpha,
+			FrontendOnly: true,
+			Owner:        grafanaBiSquad,
+		},
+		{
+			Name:         "traceqlSearch",
+			Description:  "Enables the 'TraceQL Search' tab for the Tempo datasource which provides a UI to generate TraceQL queries",
+			State:        FeatureStateAlpha,
+			FrontendOnly: true,
+		},
+		{
+			Name:         "prometheusMetricEncyclopedia",
+			Description:  "Replaces the Prometheus query builder metric select option with a paginated and filterable component",
+			State:        FeatureStateAlpha,
+			FrontendOnly: true,
+			Owner:        "O11y-metrics",
 		},
 	}
 )

@@ -68,7 +68,8 @@
       "save": "保存",
       "select-a-team": "选择团队",
       "service": {
-        "unexpected-error": "未知错误"
+        "unexpected-error": "未知错误",
+        "Unknown-error": "未知错误"
       },
       "team": "团队",
       "team-picker": "团队选择器",
@@ -351,8 +352,7 @@
     "action": {
       "change-theme": "更改主题",
       "dark-theme": "深色主题",
-      "light-theme": "浅色主题",
-      "search": "搜索"
+      "light-theme": "浅色主题"
     },
     "search-box": {
       "placeholder": "占位"
@@ -360,6 +360,7 @@
     "section": {
       "actions": "行动",
       "dashboard-search-results": "看板搜索结果",
+      "folder-search-results": "文件夹",
       "pages": "页面",
       "preferences": "偏好设置",
       "recent-dashboards": "最近的看板"
@@ -598,7 +599,7 @@
         "delete-button": "删除",
         "preview-in-dashboard-button": "在看板预览"
       },
-      "annotation-queries-can-be-toggled": "批注查询可以在仪表板顶部切换或关闭。选中此选项将隐藏此项。",
+      "annotation-queries-can-be-toggled": "批注查询可以在看板顶部切换或关闭。选中此选项将隐藏此项。",
       "annotations-provide-a-way": "注释提供了将事件数据整合到您的图表中的方式。它们被视为垂直线和所有图形面板上的图标。 当你在注解图标上悬停时，你可以获得事件的文本 &amp; 标签。 您可以通过按住 CTRL 或 CMD + 点击图形(或拖动区域)直接添加批注事件。 这些将保存在注释数据库中。",
       "are-you-sure-you-want-to-delete": {
         "datasource": "您确定要删除 \"{{name}}\" 数据源吗？"
@@ -681,7 +682,7 @@
       "setting": {
         "add-dashboard-link": "添加看板链接",
         "add-ng-alert": "添加 NG 警报",
-        "alerts-are-added-and-configured": "在任何仪表板图形面板的警报标签页中添加和配置警报，使您能够使用现有的查询建立和可视化警报。",
+        "alerts-are-added-and-configured": "在任何看板图形面板的警报标签页中添加和配置警报，使您能够使用现有的查询建立和可视化警报。",
         "all": "所有",
         "annotations-sub-title": "批注查询返回可视化为整个看板图形中事件标记的事件。",
         "annotations-title": "说明",
@@ -697,7 +698,7 @@
         "create-alert": "创建警报",
         "DARK": "深色",
         "dashboard": "看板",
-        "dashboard-Links-allow": "看板链接允许您将链接放置在仪表板头下方的其他仪表板和网站。",
+        "dashboard-Links-allow": "看板链接允许您将链接放置在看板头下方的其他看板和网站。",
         "dashboards": "看板",
         "default": "默认",
         "delete-alert": "删除警报",
@@ -752,7 +753,7 @@
         "permissions-title": "权限",
         "proceed": "继续",
         "proceed-to-external-site": "继续到外部站点？",
-        "query-for-events-created-on": "查询在此仪表板上创建的活动并在创建的面板中显示这些活动",
+        "query-for-events-created-on": "查询在此看板上创建的活动并在创建的面板中显示这些活动",
         "read-only": "只读",
         "recent-options": "最新选项",
         "refresh-live-dashboards": "刷新活动看板",
@@ -791,14 +792,14 @@
         "week-start": "每周开始日",
         "what-are-dashboard-links": "什么是看板链接？",
         "with-tags": "使用标签",
-        "you-need-to-save-dashboard": "您需要保存仪表盘才能使删除生效。"
+        "you-need-to-save-dashboard": "您需要保存看板才能使删除生效。"
       },
       "snapshot": "快照",
       "tabs-alert": "警报",
       "tabs-query": "查询",
       "tabs-transform": "转换",
       "there-are-no-custom-annotation": "尚未添加自定义注释查询",
-      "this-dashboard-is-managed-by-Grafana": "此仪表盘由 Ticos 配置管理，不能删除。从配置文件中删除仪表盘以删除。",
+      "this-dashboard-is-managed-by-Grafana": "此看板由 Ticos 配置管理，不能删除。从配置文件中删除看板以删除。",
       "to-request-troubleshooting-help": "若要请求故障排除帮助，请将此面板的快照发送至 Tiocs 技术支持。快照包含查询响应数据和面板设置。",
       "troubleshooting-docs": "故障排除文档",
       "utils": {
@@ -943,6 +944,7 @@
       "name": "名称",
       "points": "点",
       "query": "查询",
+      "query-error": "查询错误",
       "regex": "正则表达式",
       "regex-use-to-parse-and-capture-some-part": "'用来解析和捕获日志消息的部分内容。你可以使用模板中捕获的组。'",
       "remove-field": "删除字段",
@@ -1290,7 +1292,7 @@
     "variables": {
       "constant": "常量",
       "custom": "自定义",
-      "define-a-hidden-constant-variable": "定义一个隐藏的常变量，用于您想要共享的仪表板中的公式前缀。",
+      "define-a-hidden-constant-variable": "定义一个隐藏的常变量，用于您想要共享的看板中的公式前缀。",
       "define-a-textbox-variable": "定义文本框变量，用户可以在这里输入任意字符串",
       "define-variable-values-manually": "手动定义变量值",
       "editor": {
@@ -1329,7 +1331,7 @@
         "value": "值",
         "variable": "变量",
         "variable-name": "变量名称",
-        "variables-enable-more-interactive": "变量启用了更多交互式动态仪表板。 在您的度量查询中，您可以使用变量，而不是硬编码事项，如服务器或传感器名称，而是可以代替变量。 变量显示在仪表盘顶部的列表框。 这些下拉列表使得更改您的控制面板中显示的数据变得容易。",
+        "variables-enable-more-interactive": "变量启用了更多交互式动态看板。 在您的度量查询中，您可以使用变量，而不是硬编码事项，如服务器或传感器名称，而是可以代替变量。 变量显示在看板顶部的列表框。 这些下拉列表使得更改您的控制面板中显示的数据变得容易。",
         "version": "版本",
         "want-to-delete-variable": "您确定要删除变量",
         "what-do-variables-do": "变量是什么？"
@@ -1648,7 +1650,6 @@
     "help/documentation": "文档",
     "help/keyboard-shortcuts": "快捷键",
     "help/support": "支持",
-    "help/support-bundle": "支持包",
     "home": {
       "title": "首页"
     },
@@ -1670,6 +1671,9 @@
     },
     "manage-dashboards": {
       "title": "浏览"
+    },
+    "manage-folder": {
+      "subtitle": "管理文件夹看板权限"
     },
     "monitoring": {
       "subtitle": "监控和基础设施应用",
@@ -1707,14 +1711,17 @@
       "title": "首选项"
     },
     "profile/switch-org": "切换组织",
+    "public": {
+      "title": "公开看板"
+    },
     "scenes": {
       "title": "场景"
     },
     "search": {
-      "placeholder": "搜索"
+      "placeholderCommandPalette": "搜索或跳转到..."
     },
     "search-dashboards": {
-      "title": "搜索仪表盘"
+      "title": "搜索看板"
     },
     "server-settings": {
       "subtitle": "查看 DataViz 配置中定义的设置",
@@ -1761,6 +1768,11 @@
   "navigation": {
     "kiosk": {
       "tv-alert": "按 ESC 退出全屏模式"
+    },
+    "toolbar": {
+      "enable-kiosk": "启用全屏模式",
+      "toggle-menu": "切换菜单",
+      "toggle-search-bar": "切换顶部搜索栏"
     }
   },
   "news": {
@@ -1957,7 +1969,7 @@
     },
     "gauge": {
       "auto": "自动",
-      "gauge": "仪表盘",
+      "gauge": "看板",
       "leave-empty-to-use-Min-as-neutral-point": "留空则使用最小值作为中点",
       "neutral": "中性的",
       "render-the-threshold-values": "在仪表条周围渲染阈值",
@@ -2022,7 +2034,7 @@
       "enable-cell-value-inspection": "在模式窗口中启用单元格值检查",
       "enable-pagination": "开启分页",
       "fields": "字段",
-      "gauge": "仪表盘",
+      "gauge": "看板",
       "gradient": "渐变",
       "hide-in-table": "在表格中隐藏",
       "image": "图片",
@@ -2058,11 +2070,37 @@
     }
   },
   "search": {
+    "actions": {
+      "include-panels": "包含面板",
+      "remove-datasource-filter": "数据源: {{datasource}}",
+      "sort-placeholder": "排序",
+      "starred": "收藏",
+      "view-as-folders": "按文件夹查看",
+      "view-as-grid": "网格视图",
+      "view-as-list": "以列表形式查看"
+    },
     "dashboard-actions": {
       "import": "导入",
       "new": "新建",
-      "new-dashboard": "新建仪表板",
+      "new-dashboard": "新建看板",
       "new-folder": "新建文件夹"
+    },
+    "folder-view": {
+      "go-to-folder": "转到文件夹",
+      "select-folder": "选择目录"
+    },
+    "results-table": {
+      "datasource-header": "数据源",
+      "location-header": "位置",
+      "name-header": "名称",
+      "tags-header": "标签",
+      "type-dashboard": "看板",
+      "type-folder": "文件夹",
+      "type-header": "类型"
+    },
+    "search-input": {
+      "include-panels-placeholder": "搜索看板和面板",
+      "placeholder": "搜索看板"
     }
   },
   "share-modal": {
@@ -2114,7 +2152,7 @@
       "expire-hour": "1 小时",
       "expire-never": "从不",
       "expire-week": "7 天",
-      "info-text-1": "可通过快照即时、公开地分享交互式仪表板。创建后，我们会剥离敏感数据，如查询（指标、模板和注释）和面板链接，仅将可见指标数据和系列名称嵌入到仪表板中。",
+      "info-text-1": "可通过快照即时、公开地分享交互式看板。创建后，我们会剥离敏感数据，如查询（指标、模板和注释）和面板链接，仅将可见指标数据和系列名称嵌入到看板中。",
       "info-text-2": "请注意，知晓该链接并能够访问该网址的<1>任何人都可以</1>查看您的快照。分享需谨慎。",
       "local-button": "本地快照",
       "mistake-message": "是不是弄错了什么？ ",
@@ -2157,9 +2195,15 @@
     "theme": {
       "dark-label": "深色",
       "default-label": "默认",
-      "light-label": "浅色"
+      "light-label": "浅色",
+      "system-label": "系统"
     },
     "title": "首选项"
+  },
+  "tag-filter": {
+    "loading": "加载中...",
+    "no-tags": "未找到标签",
+    "placeholder": "按标签筛选"
   },
   "time-picker": {
     "absolute": {
@@ -2223,8 +2267,7 @@
       "name-error": "姓名是必填项",
       "name-label": "姓名",
       "username-label": "用户名"
-    },
-    "title": "个人资料"
+    }
   },
   "user-session": {
     "browser-column": "浏览器和操作系统",
@@ -2302,7 +2345,7 @@
       "canvas-description": "明确元素位置",
       "dashlist": "看板列表",
       "dashlist-description": "与其他看板的动态链接列表",
-      "gauge": "仪表盘",
+      "gauge": "看板",
       "gauge-description": "标准计数可视化",
       "grafana-echarts-panel": "图表",
       "grafana-echarts-panel-description": "Ticos 的图表",
@@ -2351,12 +2394,20 @@
     }
   },
   "variable": {
+    "adhoc": {
+      "placeholder": "选择值"
+    },
+    "dropdown": {
+      "placeholder": "输入变量值"
+    },
     "picker": {
-      "input": "输入变量值",
       "link-all": "所有",
       "option-all": "所有",
       "option-selected-values": "已选择",
       "option-tooltip": "清空选择"
+    },
+    "textbox": {
+      "placeholder": "输入变量值"
     }
   }
 }

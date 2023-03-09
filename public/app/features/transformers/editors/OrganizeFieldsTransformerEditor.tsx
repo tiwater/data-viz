@@ -18,8 +18,7 @@ import { useAllFieldNamesFromDataFrames } from '../utils';
 
 interface OrganizeFieldsTransformerEditorProps extends TransformerUIProps<OrganizeFieldsTransformerOptions> {}
 
-const OrganizeFieldsTransformerEditor: React.FC<OrganizeFieldsTransformerEditorProps> = (props) => {
-  const { options, input, onChange } = props;
+const OrganizeFieldsTransformerEditor = ({ options, input, onChange }: OrganizeFieldsTransformerEditorProps) => {
   const { indexByName, excludeByName, renameByName } = options;
 
   const fieldNames = useAllFieldNamesFromDataFrames(input);

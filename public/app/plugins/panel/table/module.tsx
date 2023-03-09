@@ -7,14 +7,14 @@ import {
   standardEditorsRegistry,
   identityOverrideProcessor,
 } from '@grafana/data';
-import { TableFieldOptions, TableCellOptions, TableCellDisplayMode } from '@grafana/schema';
+import { TableFieldOptions, TableCellOptions, TableCellDisplayMode, defaultTableFieldOptions } from '@grafana/schema';
 import { t } from 'app/core/internationalization';
 
 import { PaginationEditor } from './PaginationEditor';
 import { TableCellOptionEditor } from './TableCellOptionEditor';
 import { TablePanel } from './TablePanel';
 import { tableMigrationHandler, tablePanelChangedHandler } from './migrations';
-import { PanelOptions, defaultPanelOptions, defaultPanelFieldConfig } from './models.gen';
+import { PanelOptions, defaultPanelOptions } from './panelcfg.gen';
 import { TableSuggestionsSupplier } from './suggestions';
 
 // const footerCategory = 'Table footer';
@@ -36,7 +36,7 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
             max: 500,
           },
           shouldApply: () => true,
-          defaultValue: defaultPanelFieldConfig.minWidth,
+          defaultValue: defaultTableFieldOptions.minWidth,
         })
         .addNumberInput({
           path: 'width',
@@ -47,7 +47,7 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
             max: 300,
           },
           shouldApply: () => true,
-          defaultValue: defaultPanelFieldConfig.width,
+          defaultValue: defaultTableFieldOptions.width,
         })
         .addRadio({
           path: 'align',
@@ -60,7 +60,7 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
               { value: 'right', label: t('plugins.table.right', 'right') },
             ],
           },
-          defaultValue: defaultPanelFieldConfig.align,
+          defaultValue: defaultTableFieldOptions.align,
         })
         .addCustomEditor<void, TableCellOptions>({
           id: 'cellOptions',
@@ -68,7 +68,7 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
           name: t('plugins.table.cell-type', 'Cell Type'),
           editor: TableCellOptionEditor,
           override: TableCellOptionEditor,
-          defaultValue: defaultPanelFieldConfig.cellOptions,
+          defaultValue: defaultTableFieldOptions.cellOptions,
           process: identityOverrideProcessor,
           category: [t('plugins.table.cell-options', 'Cell Options')],
           shouldApply: () => true,
@@ -95,7 +95,7 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
           path: 'filterable',
           name: t('plugins.table.column-filter', 'Column filter'),
           description: t('plugins.table.disables-field-filters-in-table', 'Enables/disables field filters in table'),
-          defaultValue: defaultPanelFieldConfig.filterable,
+          defaultValue: defaultTableFieldOptions.filterable,
         })
         .addBooleanSwitch({
           path: 'hidden',
@@ -111,6 +111,11 @@ export const plugin = new PanelPlugin<PanelOptions, TableFieldOptions>(TablePane
         path: 'showHeader',
         name: t('plugins.table.show-table-header', 'Show table header'),
         defaultValue: defaultPanelOptions.showHeader,
+      })
+      .addBooleanSwitch({
+        path: 'showRowNums',
+        name: 'Show row numbers',
+        defaultValue: defaultPanelOptions.showRowNums,
       })
       .addBooleanSwitch({
         path: 'footer.show',

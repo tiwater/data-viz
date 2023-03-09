@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { selectors } from '@grafana/e2e-selectors';
+import { reportInteraction } from '@grafana/runtime';
 import { Button, ButtonVariant, ComponentSize, ModalsController } from '@grafana/ui';
 import { Trans } from 'app/core/internationalization';
 import { DashboardModel } from 'app/features/dashboard/state';
@@ -50,6 +51,7 @@ export const SaveDashboardAsButton: React.FC<SaveDashboardButtonProps & { varian
           <Button
             size={size}
             onClick={() => {
+              reportInteraction('grafana_dashboard_save_as_clicked');
               showModal(SaveDashboardDrawer, {
                 dashboard,
                 onSaveSuccess,

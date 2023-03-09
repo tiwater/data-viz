@@ -10,6 +10,7 @@ import { DimensionContext } from 'app/features/dimensions/context';
 import { ColorDimensionEditor } from 'app/features/dimensions/editors/ColorDimensionEditor';
 import { TextDimensionEditor } from 'app/features/dimensions/editors/TextDimensionEditor';
 
+import { getDataLinks } from '../../../plugins/panel/canvas/utils';
 import { CanvasElementItem, CanvasElementProps, defaultThemeTextColor } from '../element';
 import { ElementState } from '../runtime/element';
 import { Align, TextConfig, TextData, VAlign } from '../types';
@@ -160,6 +161,8 @@ export const textItem = (): CanvasElementItem<TextConfig, TextData> => ({
     if (cfg.color) {
       data.color = ctx.getColor(cfg.color).value();
     }
+
+    data.links = getDataLinks(ctx, cfg, data.text);
 
     return data;
   },

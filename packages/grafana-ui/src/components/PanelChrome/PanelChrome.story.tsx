@@ -9,7 +9,7 @@ import { PanelChrome, PanelChromeProps } from '@grafana/ui';
 
 import { DashboardStoryCanvas } from '../../utils/storybook/DashboardStoryCanvas';
 import { withCenteredStory } from '../../utils/storybook/withCenteredStory';
-import { HorizontalGroup, VerticalGroup } from '../Layout/Layout';
+import { HorizontalGroup } from '../Layout/Layout';
 import { Menu } from '../Menu/Menu';
 
 const meta: ComponentMeta<typeof PanelChrome> = {
@@ -91,36 +91,34 @@ export const Examples = () => {
 
   return (
     <DashboardStoryCanvas>
-      <HorizontalGroup spacing="md" align="flex-start">
-        <VerticalGroup spacing="md">
-          {renderPanel('Error status', {
+      <div>
+        <HorizontalGroup spacing="md" align="flex-start" wrap>
+          {renderPanel('Has statusMessage', {
             title: 'Default title',
-            status: {
-              message: 'Error text',
-              onClick: action('ErrorIndicator: onClick fired'),
-            },
+            statusMessage: 'Error text',
+            statusMessageOnClick: action('ErrorIndicator: onClick fired'),
           })}
-          {renderPanel('No padding, error loadingState', {
+          {renderPanel('No padding, has statusMessage', {
             padding: 'none',
             title: 'Default title',
+            statusMessage: 'Error text',
+            statusMessageOnClick: action('ErrorIndicator: onClick fired'),
+          })}
+          {renderPanel('No title, loadingState is Error, no statusMessage', {
             loadingState: LoadingState.Error,
           })}
-          {renderPanel('No title, error loadingState', {
-            loadingState: LoadingState.Error,
-          })}
-          {renderPanel('Streaming loadingState', {
+          {renderPanel('loadingState is Streaming', {
             title: 'Default title',
             loadingState: LoadingState.Streaming,
           })}
 
-          {renderPanel('Loading loadingState', {
+          {renderPanel('loadingState is Loading', {
             title: 'Default title',
             loadingState: LoadingState.Loading,
           })}
-        </VerticalGroup>
-        <VerticalGroup spacing="md">
+
           {renderPanel('Default panel: no non-required props')}
-          {renderPanel('No padding, no title', {
+          {renderPanel('No padding', {
             padding: 'none',
           })}
           {renderPanel('Very long title', {
@@ -132,41 +130,34 @@ export const Examples = () => {
           {renderPanel('No title, loading loadingState', {
             loadingState: LoadingState.Loading,
           })}
-        </VerticalGroup>
-        <VerticalGroup spacing="md">
+
           {renderPanel('Error status, menu', {
             title: 'Default title',
             menu,
-            status: {
-              message: 'Error text',
-              onClick: action('ErrorIndicator: onClick fired'),
-            },
+            statusMessage: 'Error text',
+            statusMessageOnClick: action('ErrorIndicator: onClick fired'),
           })}
-          {renderPanel('No padding, error loadingState, menu', {
+          {renderPanel('No padding; has statusMessage, menu', {
             padding: 'none',
             title: 'Default title',
             menu,
-            loadingState: LoadingState.Error,
+            statusMessage: 'Error text',
+            statusMessageOnClick: action('ErrorIndicator: onClick fired'),
           })}
-          {renderPanel('No title, error loadingState, menu', {
+          {renderPanel('No title, loadingState is Error, no statusMessage, menu', {
             menu,
             loadingState: LoadingState.Error,
           })}
-          {renderPanel('Streaming loadingState, menu', {
+          {renderPanel('loadingState is Streaming, menu', {
             title: 'Default title',
             menu,
             loadingState: LoadingState.Streaming,
           })}
-
-          {renderPanel('Loading loadingState, menu', {
+          {renderPanel('loadingState is Loading, menu', {
             title: 'Default title',
             menu,
             loadingState: LoadingState.Loading,
           })}
-        </VerticalGroup>
-      </HorizontalGroup>
-      <HorizontalGroup spacing="md" align="flex-start">
-        <VerticalGroup spacing="md">
           {renderPanel('Deprecated error indicator', {
             title: 'Default title',
             leftItems: [
@@ -188,8 +179,6 @@ export const Examples = () => {
               />,
             ],
           })}
-        </VerticalGroup>
-        <VerticalGroup spacing="md">
           {renderPanel('Deprecated error indicator, menu', {
             title: 'Default title',
             menu,
@@ -201,8 +190,14 @@ export const Examples = () => {
               />,
             ],
           })}
-        </VerticalGroup>
-      </HorizontalGroup>
+          {renderPanel('Display mode = transparent', {
+            title: 'Default title',
+            displayMode: 'transparent',
+            menu,
+            leftItems: [],
+          })}
+        </HorizontalGroup>
+      </div>
     </DashboardStoryCanvas>
   );
 };

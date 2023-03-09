@@ -25,8 +25,8 @@ export function NewDataSource() {
   const dispatch = useDispatch();
   const filteredDataSources = useSelector((s: StoreState) => getFilteredDataSourcePlugins(s.dataSources));
   const searchQuery = useSelector((s: StoreState) => s.dataSources.dataSourceTypeSearchQuery);
-  const isLoading = useSelector((s: StoreState) => s.dataSources.isLoadingDataSources);
-  const dataSourceCategories = setFilteredDataSource(useSelector((s: StoreState) => s.dataSources.categories));
+  const isLoadingDatasourcePlugins = useSelector((s: StoreState) => s.dataSources.isLoadingDataSourcePlugins);
+  const dataSourceCategories = useSelector((s: StoreState) => s.dataSources.categories);
   const onAddDataSource = useAddDatasource();
   const onSetSearchQuery = (q: string) => dispatch(setDataSourceTypeSearchQuery(q));
 
@@ -35,7 +35,7 @@ export function NewDataSource() {
       dataSources={filteredDataSources}
       dataSourceCategories={dataSourceCategories}
       searchQuery={searchQuery}
-      isLoading={isLoading}
+      isLoading={isLoadingDatasourcePlugins}
       onAddDataSource={onAddDataSource}
       onSetSearchQuery={onSetSearchQuery}
     />
