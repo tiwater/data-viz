@@ -115,8 +115,8 @@ export class FilterByRefIdTransformerEditor extends React.PureComponent<
         <div className="gf-form-inline">
           <div className="gf-form gf-form--grow">
             <div className="gf-form-label width-8">
-            <Trans i18nKey="features.transformers.filter-by-name.series-ref-id">Series refId</Trans>
-          </div>
+              <Trans i18nKey="features.transformers.filter-by-name.series-ref-id">Series refId</Trans>
+            </div>
             <HorizontalGroup spacing="xs" align="flex-start" wrap>
               {options.map((o, i) => {
                 const label = `${o.refId}${o.count > 1 ? ' (' + o.count + ')' : ''}`;

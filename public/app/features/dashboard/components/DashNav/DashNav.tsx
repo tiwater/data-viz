@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import { isInIcestark } from '@ice/stark-app';
 import React, { FC, ReactNode, useContext, useEffect } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -39,8 +40,6 @@ import { DashboardModel } from '../../state';
 
 import { DashNavButton } from './DashNavButton';
 import { DashNavTimeControls } from './DashNavTimeControls';
-
-import { isInIcestark } from '@ice/stark-app';
 
 const mapDispatchToProps = {
   setStarred,

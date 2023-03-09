@@ -2,8 +2,8 @@ import { css } from '@emotion/css';
 import { isString } from 'lodash';
 import React, { CSSProperties } from 'react';
 
-import { t } from 'app/core/internationalization';
 import { SanitizedSVG } from 'app/core/components/SVG/SanitizedSVG';
+import { t } from 'app/core/internationalization';
 import {
   ColorDimensionConfig,
   ResourceDimensionConfig,

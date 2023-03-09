@@ -21,8 +21,8 @@ import {
   SecureSocksProxySettings,
   Select,
 } from '@grafana/ui';
-import { t, Trans } from 'app/core/internationalization';
 import { config } from 'app/core/config';
+import { t, Trans } from 'app/core/internationalization';
 
 import { BROWSER_MODE_DISABLED_MESSAGE } from '../constants';
 import { InfluxOptions, InfluxSecureJsonData, InfluxVersion } from '../types';

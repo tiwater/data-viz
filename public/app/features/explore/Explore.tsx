@@ -530,7 +530,9 @@ export class Explore extends React.PureComponent<Props, ExploreState> {
                           {showRawPrometheus && (
                             <ErrorBoundaryAlert>{this.renderRawPrometheus(width)}</ErrorBoundaryAlert>
                           )}
-                          {showTable && !this.state.chatMode ? <ErrorBoundaryAlert>{this.renderTablePanel(width)}</ErrorBoundaryAlert> : null}
+                          {showTable && !this.state.chatMode ? (
+                            <ErrorBoundaryAlert>{this.renderTablePanel(width)}</ErrorBoundaryAlert>
+                          ) : null}
                           {showLogs && <ErrorBoundaryAlert>{this.renderLogsPanel(width)}</ErrorBoundaryAlert>}
                           {showNodeGraph && <ErrorBoundaryAlert>{this.renderNodeGraphPanel()}</ErrorBoundaryAlert>}
                           {showFlameGraph && <ErrorBoundaryAlert>{this.renderFlameGraphPanel()}</ErrorBoundaryAlert>}

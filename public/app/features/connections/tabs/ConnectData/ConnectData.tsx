@@ -3,8 +3,8 @@ import React, { useMemo, useState } from 'react';
 
 import { PluginType } from '@grafana/data';
 import { useStyles2, LoadingPlaceholder } from '@grafana/ui';
-import { t } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/core';
+import { t } from 'app/core/internationalization';
 import { useGetAllWithFilters } from 'app/features/plugins/admin/state/hooks';
 import { AccessControlAction } from 'app/types';
 

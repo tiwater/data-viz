@@ -16,9 +16,9 @@ import {
 } from '@grafana/data/src/transformations/transformers/convertFieldType';
 import { Button, InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
 import { FieldNamePicker } from '@grafana/ui/src/components/MatchersUI/FieldNamePicker';
-import { t, Trans } from 'app/core/internationalization';
 import { allFieldTypeIconOptions } from '@grafana/ui/src/components/MatchersUI/FieldTypeMatcherEditor';
 import { hasAlphaPanels } from 'app/core/config';
+import { t, Trans } from 'app/core/internationalization';
 import { findField } from 'app/features/dimensions';
 
 const fieldNamePickerSettings: StandardEditorsRegistryItem<string, FieldNamePickerConfigSettings> = {
