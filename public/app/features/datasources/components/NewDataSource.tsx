@@ -21,12 +21,12 @@ import {
 
 export function NewDataSource() {
   useLoadDataSourcePlugins();
-
   const dispatch = useDispatch();
+
   const filteredDataSources = useSelector((s: StoreState) => getFilteredDataSourcePlugins(s.dataSources));
   const searchQuery = useSelector((s: StoreState) => s.dataSources.dataSourceTypeSearchQuery);
   const isLoadingDatasourcePlugins = useSelector((s: StoreState) => s.dataSources.isLoadingDataSourcePlugins);
-  const dataSourceCategories = useSelector((s: StoreState) => s.dataSources.categories);
+  const dataSourceCategories = setFilteredDataSource(useSelector((s: StoreState) => s.dataSources.categories));
   const onAddDataSource = useAddDatasource();
   const onSetSearchQuery = (q: string) => dispatch(setDataSourceTypeSearchQuery(q));
 
