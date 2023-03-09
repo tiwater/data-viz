@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 
 import { getValueFormats, SelectableValue } from '@grafana/data';
 
+import { getUnit } from '../../../src/utils/unit';
 import { Cascader, CascaderOption } from '../Cascader/Cascader';
 
 export interface UnitPickerProps {
@@ -26,7 +27,8 @@ export class UnitPicker extends PureComponent<UnitPickerProps> {
     let current: SelectableValue<string> | undefined = undefined;
 
     // All units
-    const unitGroups = getValueFormats();
+    const unitGroups = getUnit();
+    console.log('unitGroups', unitGroups);
 
     // Need to transform the data structure to work well with Select
     const groupOptions: CascaderOption[] = unitGroups.map((group) => {
