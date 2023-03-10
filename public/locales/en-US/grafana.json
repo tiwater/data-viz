@@ -721,7 +721,7 @@
           "title": "Panel options",
           "transparent-background": "Transparent background"
         },
-        "save-library-panel": "{t('features.library-panels.Save-library-panel','Save library panel')}",
+        "save-library-panel": "{t('features.library-panels.Save-library-panel', 'Save library panel')}",
         "search-for": "Search for...",
         "search-options": "Search options",
         "suggestions": "Suggestions",
@@ -1047,6 +1047,8 @@
       "create-new-library-panel": "Create new library panel",
       "Dashboard-name": "Dashboard name",
       "Discard": "Discard",
+      "do-you-really-want-to-unlink-this-panel": "Do you really want to unlink this panel?",
+      "if-you-unlink-this-panel": "If you unlink this panel, you will be able to edit it without affecting any other dashboards. However, once you make a change you will not be able to revert to its original reusable panel.",
       "Last-edited-on": "Last edited on {{date}} ",
       "Loading-connected-dashboards": "Loading connected dashboards",
       "no-library-panels-found": "No library panels found.",
@@ -1055,7 +1057,8 @@
       "The-following-dashboards-using": "The following dashboards using the panel will be affected:",
       "Unsaved-library-panel-changes": "Unsaved library panel changes",
       "Update-all": "Update all",
-      "Used-on-dashboards": "Used on {{connectedDashboards}} dashboards"
+      "Used-on-dashboards": "Used on {{connectedDashboards}} dashboards",
+      "yes-unlink": "Yes, unlink"
     },
     "live": {
       "dashboard": {

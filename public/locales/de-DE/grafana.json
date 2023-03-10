@@ -1047,6 +1047,8 @@
       "create-new-library-panel": "",
       "Dashboard-name": "",
       "Discard": "",
+      "do-you-really-want-to-unlink-this-panel": "",
+      "if-you-unlink-this-panel": "",
       "Last-edited-on": "",
       "Loading-connected-dashboards": "",
       "no-library-panels-found": "",
@@ -1055,7 +1057,8 @@
       "The-following-dashboards-using": "",
       "Unsaved-library-panel-changes": "",
       "Update-all": "",
-      "Used-on-dashboards": ""
+      "Used-on-dashboards": "",
+      "yes-unlink": ""
     },
     "live": {
       "dashboard": {

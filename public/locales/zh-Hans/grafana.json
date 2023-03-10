@@ -1047,6 +1047,8 @@
       "create-new-library-panel": "创建新的面板库",
       "Dashboard-name": "看板名称",
       "Discard": "放弃",
+      "do-you-really-want-to-unlink-this-panel": "您真的想要取消链接这个面板吗？",
+      "if-you-unlink-this-panel": "如果您取消链接此面板，您将能够在不影响任何其他仪表板的情况下编辑它。 然而，一旦您做了更改，您将无法恢复到其原有的可复用面板。",
       "Last-edited-on": "最后编辑于 {{date}} ",
       "Loading-connected-dashboards": "加载已连接的看板",
       "no-library-panels-found": "没有找到面板库。",
@@ -1055,7 +1057,8 @@
       "The-following-dashboards-using": "以下使用面板的看板将受到影响:",
       "Unsaved-library-panel-changes": "未保存库面板更改",
       "Update-all": "全部更新",
-      "Used-on-dashboards": "在 {{connectedDashboards}} 看板上使用"
+      "Used-on-dashboards": "在 {{connectedDashboards}} 看板上使用",
+      "yes-unlink": "是，取消链接"
     },
     "live": {
       "dashboard": {
