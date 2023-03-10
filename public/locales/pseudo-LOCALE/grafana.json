@@ -721,7 +721,7 @@
           "title": "Päŉęľ őpŧįőŉş",
           "transparent-background": "Ŧřäŉşpäřęŉŧ þäčĸģřőūŉđ"
         },
-        "save-library-panel": "{ŧ('ƒęäŧūřęş.ľįþřäřy-päŉęľş.Ŝävę-ľįþřäřy-päŉęľ','Ŝävę ľįþřäřy päŉęľ')}",
+        "save-library-panel": "{ŧ('ƒęäŧūřęş.ľįþřäřy-päŉęľş.Ŝävę-ľįþřäřy-päŉęľ', 'Ŝävę ľįþřäřy päŉęľ')}",
         "search-for": "Ŝęäřčĥ ƒőř...",
         "search-options": "Ŝęäřčĥ őpŧįőŉş",
         "suggestions": "Ŝūģģęşŧįőŉş",
@@ -1047,6 +1047,8 @@
       "create-new-library-panel": "Cřęäŧę ŉęŵ ľįþřäřy päŉęľ",
       "Dashboard-name": "Đäşĥþőäřđ ŉämę",
       "Discard": "Đįşčäřđ",
+      "do-you-really-want-to-unlink-this-panel": "Đő yőū řęäľľy ŵäŉŧ ŧő ūŉľįŉĸ ŧĥįş päŉęľ?",
+      "if-you-unlink-this-panel": "Ĩƒ yőū ūŉľįŉĸ ŧĥįş päŉęľ, yőū ŵįľľ þę äþľę ŧő ęđįŧ įŧ ŵįŧĥőūŧ äƒƒęčŧįŉģ äŉy őŧĥęř đäşĥþőäřđş. Ħőŵęvęř, őŉčę yőū mäĸę ä čĥäŉģę yőū ŵįľľ ŉőŧ þę äþľę ŧő řęvęřŧ ŧő įŧş őřįģįŉäľ řęūşäþľę päŉęľ.",
       "Last-edited-on": "Ŀäşŧ ęđįŧęđ őŉ {{date}} ",
       "Loading-connected-dashboards": "Ŀőäđįŉģ čőŉŉęčŧęđ đäşĥþőäřđş",
       "no-library-panels-found": "Ńő ľįþřäřy päŉęľş ƒőūŉđ.",
@@ -1055,7 +1057,8 @@
       "The-following-dashboards-using": "Ŧĥę ƒőľľőŵįŉģ đäşĥþőäřđş ūşįŉģ ŧĥę päŉęľ ŵįľľ þę äƒƒęčŧęđ:",
       "Unsaved-library-panel-changes": "Ůŉşävęđ ľįþřäřy päŉęľ čĥäŉģęş",
       "Update-all": "Ůpđäŧę äľľ",
-      "Used-on-dashboards": "Ůşęđ őŉ {{connectedDashboards}} đäşĥþőäřđş"
+      "Used-on-dashboards": "Ůşęđ őŉ {{connectedDashboards}} đäşĥþőäřđş",
+      "yes-unlink": "Ÿęş, ūŉľįŉĸ"
     },
     "live": {
       "dashboard": {
