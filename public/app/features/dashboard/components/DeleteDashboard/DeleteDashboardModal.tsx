@@ -48,7 +48,7 @@ const DeleteDashboardModalUnconnected = ({ hideModal, cleanUpDashboardAndVariabl
       onDismiss={hideModal}
       title={t('features.dashboard.delete', 'Delete')}
       icon="trash-alt"
-      confirmText="Delete"
+      confirmText={t('features.dashboard.delete', 'Delete')}
     />
   );
 };
