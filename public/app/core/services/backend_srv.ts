@@ -171,7 +171,7 @@ export class BackendSrv implements BackendService {
   }
 
   private parseRequestOptions(options: BackendSrvRequest): BackendSrvRequest {
-    const orgId = localStorage.getItem('orgId') || this.dependencies.contextSrv.user?.orgId;
+    const orgId = localStorage.getItem('orgId');
     options.retry = options.retry ?? 0;
 
     if (isLocalUrl(options.url)) {
