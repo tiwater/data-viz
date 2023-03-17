@@ -178,6 +178,8 @@ export const setFilteredPluginTypes = (pluginTypes: PanelPluginMeta[]) => {
     'canvas',
     'snuids-svg-panel',
     'yesoreyeram-boomtheme-panel',
+    'ticos-gauge-panel',
+    'ticos-theme-panel',
   ];
   return pluginTypes.filter((plugin) => list.indexOf(plugin.id) > -1).map((plugin) => setPluginMeta(plugin));
 };
@@ -321,4 +323,14 @@ export const setFilteredDataSource = (dataSource: DataSourcePluginCategory[]) =>
           }),
       };
     });
+};
+export const getTextI18n = (text: string) => {
+  switch (text) {
+    case 'Settings':
+      return t('explore.rich-history.Settings', 'Settings');
+    case 'Dashboards':
+      return t('command-palette.section.dashboard-search-results', 'Dashboards');
+    default:
+      return text;
+  }
 };
