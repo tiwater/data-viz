@@ -30,6 +30,10 @@ RUN yarn build
 
 FROM ${GO_IMAGE} as go-builder
 
+ARG GO_BUILD_TAGS="oss"
+ARG WIRE_TAGS="oss"
+ARG BINGO="true"
+
 # go 使用国内的代理
 ENV GOPROXY https://goproxy.cn,direct
 # alpine 改用阿里的镜像
