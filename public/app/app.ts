@@ -171,6 +171,7 @@ export class GrafanaApp {
 
       // Init DataSourceSrv
       const dataSourceSrv = new DatasourceSrv();
+      console.log(config.datasources, '544444444');
       dataSourceSrv.init(config.datasources, config.defaultDatasource);
       setDataSourceSrv(dataSourceSrv);
       initWindowRuntime();
