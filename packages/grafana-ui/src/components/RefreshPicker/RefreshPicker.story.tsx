@@ -5,6 +5,7 @@ import React from 'react';
 
 import { RefreshPicker } from '@grafana/ui';
 
+import { t } from '../../../src/utils/i18n';
 import { withCenteredStory } from '../../utils/storybook/withCenteredStory';
 
 import mdx from './RefreshPicker.mdx';
@@ -25,7 +26,7 @@ const meta: ComponentMeta<typeof RefreshPicker> = {
     isLoading: false,
     isLive: false,
     width: 'auto',
-    text: 'Run query',
+    text: t('features.variables.editor.run-query', 'Run query'),
     tooltip: 'My tooltip text goes here',
     value: '1h',
     primary: false,

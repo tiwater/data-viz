@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from 'react';
 import { GrafanaTheme2 } from '@grafana/data';
 import { reportInteraction } from '@grafana/runtime';
 import { CodeEditor, Monaco, monacoTypes, useTheme2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { createErrorNotification } from '../../../../core/copy/appNotification';
 import { notifyApp } from '../../../../core/reducers/appNotification';
@@ -96,7 +97,7 @@ function setupPlaceholder(editor: monacoTypes.editor.IStandaloneCodeEditor, mona
 function setupActions(editor: monacoTypes.editor.IStandaloneCodeEditor, monaco: Monaco, onRunQuery: () => void) {
   editor.addAction({
     id: 'run-query',
-    label: 'Run Query',
+    label: t('features.variables.editor.run-query', 'Run query'),
     keybindings: [monaco.KeyMod.Shift | monaco.KeyCode.Enter],
     contextMenuGroupId: 'navigation',
     contextMenuOrder: 1.5,

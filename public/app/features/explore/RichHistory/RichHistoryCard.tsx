@@ -10,6 +10,7 @@ import { TextArea, Button, IconButton, useStyles2, LoadingPlaceholder } from '@g
 import { notifyApp } from 'app/core/actions';
 import appEvents from 'app/core/app_events';
 import { createSuccessNotification } from 'app/core/copy/appNotification';
+import { t } from 'app/core/internationalization';
 import { copyStringToClipboard } from 'app/core/utils/explore';
 import { createUrlFromRichHistory, createQueryText } from 'app/core/utils/richHistory';
 import { createAndCopyShortLink } from 'app/core/utils/shortLinks';
@@ -214,7 +215,11 @@ export function RichHistoryCard(props: Props) {
       .join('\n');
 
     copyStringToClipboard(queriesText);
-    dispatch(notifyApp(createSuccessNotification('Query copied to clipboard')));
+    dispatch(
+      notifyApp(
+        createSuccessNotification(t('explore.rich-history.Query-copied-to-clipboard', 'Query copied to clipboard'))
+      )
+    );
   };
 
   const onCreateShortLink = async () => {
@@ -225,7 +230,7 @@ export function RichHistoryCard(props: Props) {
   const onDeleteQuery = () => {
     const performDelete = (queryId: string) => {
       deleteHistoryItem(queryId);
-      dispatch(notifyApp(createSuccessNotification('Query deleted')));
+      dispatch(notifyApp(createSuccessNotification(t('explore.rich-history.Query-deleted', 'Query deleted'))));
       reportInteraction('grafana_explore_query_history_deleted', {
         queryHistoryEnabled: config.queryHistoryEnabled,
       });
@@ -235,9 +240,12 @@ export function RichHistoryCard(props: Props) {
     if (query.starred) {
       appEvents.publish(
         new ShowConfirmModalEvent({
-          title: 'Delete',
-          text: 'Are you sure you want to permanently delete your starred query?',
-          yesText: 'Delete',
+          title: t('explore.rich-history.Delete', 'Delete'),
+          text: t(
+            'explore.rich-history.Are-you-sure-you-want-to-permanently',
+            'Are you sure you want to permanently delete your starred query?'
+          ),
+          yesText: t('explore.rich-history.Delete', 'Delete'),
           icon: 'trash-alt',
           onConfirm: () => performDelete(query.id),
         })
@@ -285,14 +293,23 @@ export function RichHistoryCard(props: Props) {
       <TextArea
         onKeyDown={onKeyDown}
         value={comment}
-        placeholder={comment ? undefined : 'An optional description of what the query does.'}
+        placeholder={
+          comment
+            ? undefined
+            : t(
+                'explore.rich-history.An-optional-description-of-what',
+                'An optional description of what the query does.'
+              )
+        }
         onChange={(e) => setComment(e.currentTarget.value)}
         className={styles.textArea}
       />
       <div className={styles.commentButtonRow}>
-        <Button onClick={onUpdateComment}>Save comment</Button>
+        <Button onClick={onUpdateComment} aria-label="Submit button">
+          {t('explore.rich-history.Save-comment', 'Save comment')}
+        </Button>
         <Button variant="secondary" onClick={onCancelUpdateComment}>
-          Cancel
+          {t('explore.rich-history.Cancel', 'Cancel')}
         </Button>
       </div>
     </div>
@@ -303,18 +320,38 @@ export function RichHistoryCard(props: Props) {
       <IconButton
         name="comment-alt"
         onClick={toggleActiveUpdateComment}
-        title={query.comment?.length > 0 ? 'Edit comment' : 'Add comment'}
+        title={
+          query.comment?.length > 0
+            ? t('explore.rich-history.Edit-comment', 'Edit comment')
+            : t('explore.rich-history.Add-comment', 'Add comment')
+        }
       />
-      <IconButton name="copy" onClick={onCopyQuery} title="Copy query to clipboard" />
+      <IconButton
+        name="copy"
+        onClick={onCopyQuery}
+        title={t('explore.rich-history.Copy-query-to-clipboard', 'Copy query to clipboard')}
+      />
       {value?.dsInstance && (
-        <IconButton name="share-alt" onClick={onCreateShortLink} title="Copy shortened link to clipboard" />
+        <IconButton
+          name="share-alt"
+          onClick={onCreateShortLink}
+          title={t('explore.rich-history.Copy-shortened-link-to-clipboard', 'Copy shortened link to clipboard')}
+        />
       )}
-      <IconButton name="trash-alt" title={'Delete query'} onClick={onDeleteQuery} />
+      <IconButton
+        name="trash-alt"
+        title={t('explore.rich-history.Delete-query', 'Delete query')}
+        onClick={onDeleteQuery}
+      />
       <IconButton
         name={query.starred ? 'favorite' : 'star'}
         iconType={query.starred ? 'mono' : 'default'}
         onClick={onStarrQuery}
-        title={query.starred ? 'Unstar query' : 'Star query'}
+        title={
+          query.starred
+            ? t('explore.rich-history.Unstar-query', 'Unstar query')
+            : t('explore.rich-history.Star-query', 'Star query')
+        }
       />
     </div>
   );
@@ -345,7 +382,9 @@ export function RichHistoryCard(props: Props) {
               onClick={onRunQuery}
               disabled={!value?.dsInstance || value.queries.some((query) => !query.datasource)}
             >
-              {datasourceInstance?.uid === query.datasourceUid ? 'Run query' : 'Switch data source and run query'}
+              {datasourceInstance?.uid === query.datasourceUid
+                ? t('explore.rich-history.Run-query', 'Run query')
+                : t('explore.rich-history.Switch-data-source-and-run-query', 'Switch data source and run query')}
             </Button>
           </div>
         )}
@@ -422,7 +461,10 @@ function DatasourceInfo({ dsApi, size }: { dsApi?: DataSourceApi; size: 'sm' | '
         alt={dsApi?.type || 'Data source does not exist anymore'}
         aria-label="Data source icon"
       />
-      <div aria-label="Data source name">{dsApi?.name || 'Data source does not exist anymore'}</div>
+      <div aria-label="Data source name">
+        {dsApi?.name ||
+          t('explore.rich-history.Data-source-does-not-exist-anymore', 'Data source does not exist anymore')}
+      </div>
     </div>
   );
 }

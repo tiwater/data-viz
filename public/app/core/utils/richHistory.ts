@@ -9,6 +9,7 @@ import {
   createSuccessNotification,
   createWarningNotification,
 } from 'app/core/copy/appNotification';
+import { t } from 'app/core/internationalization';
 import { dispatch } from 'app/store/store';
 import { RichHistoryQuery } from 'app/types/explore';
 
@@ -191,19 +192,19 @@ export const mapNumbertoTimeInSlider = (num: number) => {
   let str;
   switch (num) {
     case 0:
-      str = 'today';
+      str = t('explore.rich-history.today', 'today');
       break;
     case 1:
-      str = 'yesterday';
+      str = t('explore.rich-history.yesterday', 'yesterday');
       break;
     case 7:
-      str = 'a week ago';
+      str = t('explore.rich-history.a-week-ago', 'a week ago');
       break;
     case 14:
-      str = 'two weeks ago';
+      str = t('explore.rich-history.two-week-ago', 'two weeks ago');
       break;
     default:
-      str = `${num} days ago`;
+      str = t('explore.rich-history.num-days-ago', '{{num}} days ago', { num });
   }
 
   return str;

@@ -15,6 +15,7 @@ import {
   Legend,
 } from '@grafana/ui';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
+import { t } from 'app/core/internationalization';
 
 import {
   DashboardInput,
@@ -68,18 +69,22 @@ export const ImportDashboardForm: FC<Props> = ({
 
   return (
     <>
-      <Legend>Options</Legend>
-      <Field label="Name" invalid={!!errors.title} error={errors.title && errors.title.message}>
+      <Legend>{t('features.manage-dashboards.Options', 'Options')}</Legend>
+      <Field
+        label={t('features.manage-dashboards.Name', 'Name')}
+        invalid={!!errors.title}
+        error={errors.title && errors.title.message}
+      >
         <Input
           {...register('title', {
-            required: 'Name is required',
+            required: t('features.manage-dashboards.Name-is-required', 'Name is required'),
             validate: async (v: string) => await validateTitle(v, getValues().folder.uid),
           })}
           type="text"
           data-testid={selectors.components.ImportDashboardForm.name}
         />
       </Field>
-      <Field label="Folder">
+      <Field label={t('features.manage-dashboards.Folder', 'Folder')}>
         <InputControl
           render={({ field: { ref, ...field } }) => (
             <FolderPicker {...field} enableCreateNew initialFolderUid={initialFolderUid} />
@@ -89,10 +94,11 @@ export const ImportDashboardForm: FC<Props> = ({
         />
       </Field>
       <Field
-        label="Unique identifier (UID)"
-        description="The unique identifier (UID) of a dashboard can be used for uniquely identify a dashboard between multiple Grafana installs.
-                The UID allows having consistent URLs for accessing dashboards so changing the title of a dashboard will not break any
-                bookmarked links to that dashboard."
+        label={t('features.manage-dashboards.Unique-identifier-UID', 'Unique identifier (UID)')}
+        description={t(
+          'features.manage-dashboards.The-unique-identifier-UID',
+          'The unique identifier (UID) of a dashboard can be used for uniquely identify a dashboard between multiple Grafana installs. The UID allows having consistent URLs for accessing dashboards so changing the title of a dashboard will not break any bookmarked links to that dashboard.'
+        )}
         invalid={!!errors.uid}
         error={errors.uid && errors.uid.message}
       >
@@ -101,7 +107,11 @@ export const ImportDashboardForm: FC<Props> = ({
             <Input
               disabled
               {...register('uid', { validate: async (v: string) => await validateUid(v) })}
-              addonAfter={!uidReset && <Button onClick={onUidReset}>Change uid</Button>}
+              addonAfter={
+                !uidReset && (
+                  <Button onClick={onUidReset}>{t('features.manage-dashboards.Change-uid', 'Change uid')}</Button>
+                )
+              }
             />
           ) : (
             <Input {...register('uid', { required: true, validate: async (v: string) => await validateUid(v) })} />
@@ -120,7 +130,11 @@ export const ImportDashboardForm: FC<Props> = ({
               label={input.label}
               key={dataSourceOption}
               invalid={errors.dataSources && !!errors.dataSources[index]}
-              error={errors.dataSources && errors.dataSources[index] && 'A data source is required'}
+              error={
+                errors.dataSources &&
+                errors.dataSources[index] &&
+                t('features.manage-dashboards.A-data-source-is-required', 'A data source is required')
+              }
             >
               <InputControl
                 name={dataSourceOption as any}
@@ -155,14 +169,20 @@ export const ImportDashboardForm: FC<Props> = ({
         })}
       <ImportDashboardLibraryPanelsList
         inputs={newLibraryPanels}
-        label="New library panels"
-        description="List of new library panels that will get imported."
+        label={t('features.manage-dashboards.New-library-panels', 'New library panels')}
+        description={t(
+          'features.manage-dashboards.List-of-new-library',
+          'List of new library panels that will get imported.'
+        )}
         folderName={watchFolder.title}
       />
       <ImportDashboardLibraryPanelsList
         inputs={existingLibraryPanels}
-        label="Existing library panels"
-        description="List of existing library panels. These panels are not affected by the import."
+        label={t('features.manage-dashboards.Existing-library-panels', 'Existing library panels')}
+        description={t(
+          'features.manage-dashboards.List-of-existing-library-panels',
+          'List of existing library panels. These panels are not affected by the import.'
+        )}
         folderName={watchFolder.title}
       />
       <HorizontalGroup>
@@ -177,7 +197,7 @@ export const ImportDashboardForm: FC<Props> = ({
           {getButtonText(errors)}
         </Button>
         <Button type="reset" variant="secondary" onClick={onCancel}>
-          Cancel
+          {t('features.manage-dashboards.Cancel', 'Cancel')}
         </Button>
       </HorizontalGroup>
     </>
@@ -189,5 +209,7 @@ function getButtonVariant(errors: FormFieldErrors<ImportDashboardDTO>) {
 }
 
 function getButtonText(errors: FormFieldErrors<ImportDashboardDTO>) {
-  return errors && (errors.title || errors.uid) ? 'Import (Overwrite)' : 'Import';
+  return errors && (errors.title || errors.uid)
+    ? t('features.manage-dashboards.Import-Overwrite', 'Import (Overwrite)')
+    : t('features.manage-dashboards.Import', 'Import');
 }

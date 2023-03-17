@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 
 import { SelectableValue } from '@grafana/data';
 import { Themeable2, TabbedContainer, TabConfig, withTheme2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { SortOrder, RichHistorySearchFilters, RichHistorySettings } from 'app/core/utils/richHistory';
 import { RichHistoryQuery, ExploreId } from 'app/types/explore';
 
@@ -20,10 +21,10 @@ export enum Tabs {
 
 export const getSortOrderOptions = () =>
   [
-    { label: 'Newest first', value: SortOrder.Descending },
-    { label: 'Oldest first', value: SortOrder.Ascending },
-    { label: 'Data source A-Z', value: SortOrder.DatasourceAZ },
-    { label: 'Data source Z-A', value: SortOrder.DatasourceZA },
+    { label: t('explore.rich-history.Newest-first', 'Newest first'), value: SortOrder.Descending },
+    { label: t('explore.rich-history.Oldest-first', 'Oldest first'), value: SortOrder.Ascending },
+    { label: t('explore.rich-history.Data-source-A-Z', 'Data source A-Z'), value: SortOrder.DatasourceAZ },
+    { label: t('explore.rich-history.Data-source-Z-A', 'Data source Z-A'), value: SortOrder.DatasourceZA },
   ].filter((option) => supportedFeatures().availableFilters.includes(option.value));
 
 export interface RichHistoryProps extends Themeable2 {
@@ -112,7 +113,7 @@ class UnThemedRichHistory extends PureComponent<RichHistoryProps> {
     const { loading } = this.state;
 
     const QueriesTab: TabConfig = {
-      label: 'Query history',
+      label: t('explore.rich-history.Query-history', 'Query history'),
       value: Tabs.RichHistory,
       content: (
         <RichHistoryQueriesTab
@@ -133,7 +134,7 @@ class UnThemedRichHistory extends PureComponent<RichHistoryProps> {
     };
 
     const StarredTab: TabConfig = {
-      label: 'Starred',
+      label: t('explore.rich-history.Starred', 'Starred'),
       value: Tabs.Starred,
       content: (
         <RichHistoryStarredTab
@@ -153,7 +154,7 @@ class UnThemedRichHistory extends PureComponent<RichHistoryProps> {
     };
 
     const SettingsTab: TabConfig = {
-      label: 'Settings',
+      label: t('explore.rich-history.Settings', 'Settings'),
       value: Tabs.Settings,
       content: (
         <RichHistorySettingsTab

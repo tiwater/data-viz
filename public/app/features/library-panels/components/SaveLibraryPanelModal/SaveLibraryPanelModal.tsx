@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useAsync, useDebounce } from 'react-use';
 
 import { Button, Icon, Input, Modal, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { getConnectedDashboards } from '../../state/api';
 import { getModalStyles } from '../../styles';
@@ -56,7 +57,9 @@ export const SaveLibraryPanelModal = ({
     onDiscard();
   }, [onDiscard]);
 
-  const title = isUnsavedPrompt ? 'Unsaved library panel changes' : 'Save library panel';
+  const title = isUnsavedPrompt
+    ? t('features.library-panels.Unsaved-library-panel-changes', 'Unsaved library panel changes')
+    : t('features.library-panels.Save-library-panel', 'Save library panel');
 
   return (
     <Modal title={title} icon="save" onDismiss={onDismiss} isOpen={true}>
@@ -67,22 +70,26 @@ export const SaveLibraryPanelModal = ({
             {panel.libraryPanel.meta?.connectedDashboards}{' '}
             {panel.libraryPanel.meta?.connectedDashboards === 1 ? 'dashboard' : 'dashboards'}.
           </strong>
-          The following dashboards using the panel will be affected:
+
+          {t(
+            'features.library-panels.The-following-dashboards-using',
+            'The following dashboards using the panel will be affected:'
+          )}
         </p>
         <Input
           className={styles.dashboardSearch}
           prefix={<Icon name="search" />}
-          placeholder="Search affected dashboards"
+          placeholder={t('features.library-panels.Search-affected-dashboards', 'Search affected dashboards')}
           value={searchString}
           onChange={(e) => setSearchString(e.currentTarget.value)}
         />
         {dashState.loading ? (
-          <p>Loading connected dashboards...</p>
+          <p>{t('features.library-panels.Loading-connected-dashboards', 'Loading connected dashboards')}...</p>
         ) : (
           <table className={styles.myTable}>
             <thead>
               <tr>
-                <th>Dashboard name</th>
+                <th>{t('features.library-panels.Dashboard-name', 'Dashboard name')}</th>
               </tr>
             </thead>
             <tbody>
@@ -96,11 +103,11 @@ export const SaveLibraryPanelModal = ({
         )}
         <Modal.ButtonRow>
           <Button variant="secondary" onClick={onDismiss} fill="outline">
-            Cancel
+            {t('features.library-panels.Cancel', 'Cancel')}
           </Button>
           {isUnsavedPrompt && (
             <Button variant="destructive" onClick={discardAndClose}>
-              Discard
+              {t('features.library-panels.Discard', 'Discard')}
             </Button>
           )}
           <Button
@@ -110,7 +117,7 @@ export const SaveLibraryPanelModal = ({
               });
             }}
           >
-            Update all
+            {t('features.library-panels.Update-all', 'Update all')}
           </Button>
         </Modal.ButtonRow>
       </div>

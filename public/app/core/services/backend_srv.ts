@@ -347,7 +347,7 @@ export class BackendSrv implements BackendService {
    * @see DataQueryError.data
    */
   processRequestError(options: BackendSrvRequest, err: FetchError): FetchError<{ message: string; error?: string }> {
-    err.data = err.data ?? { message: t('app.core.service.unexpected-error', 'Unexpected error') };
+    err.data = err.data ?? { message: t('app.core.service.Unexpected-error', 'Unexpected error') };
 
     if (typeof err.data === 'string') {
       err.data = {
