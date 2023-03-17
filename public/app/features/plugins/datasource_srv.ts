@@ -55,6 +55,7 @@ export class DatasourceSrv implements DataSourceService {
     this.datasources[ExpressionDatasourceUID] = expressionDatasource as any;
     this.settingsMapByUid[ExpressionDatasourceRef.uid] = expressionInstanceSettings;
     this.settingsMapByUid[ExpressionDatasourceUID] = expressionInstanceSettings;
+    console.log('_______________datasources', this.datasources);
   }
 
   getDataSourceSettingsByUid(uid: string): DataSourceInstanceSettings | undefined {
@@ -142,18 +143,22 @@ export class DatasourceSrv implements DataSourceService {
   }
 
   async loadDatasource(key: string): Promise<DataSourceApi<any, any>> {
+    console.log('_______________key', this.datasources, key);
     if (this.datasources[key]) {
       return Promise.resolve(this.datasources[key]);
     }
 
     // find the metadata
     const instanceSettings = this.settingsMapByUid[key] ?? this.settingsMapByName[key] ?? this.settingsMapById[key];
+    console.log('_______________instanceSettings', instanceSettings);
     if (!instanceSettings) {
       return Promise.reject({ message: `Datasource ${key} was not found` });
     }
 
     try {
+      console.log('_______________开始导入');
       const dsPlugin = await importDataSourcePlugin(instanceSettings.meta);
+      console.log('_______________dsPlugin', dsPlugin);
       // check if its in cache now
       if (this.datasources[key]) {
         return this.datasources[key];
@@ -162,7 +167,7 @@ export class DatasourceSrv implements DataSourceService {
       // If there is only one constructor argument it is instanceSettings
       const useAngular = dsPlugin.DataSourceClass.length !== 1;
       let instance: DataSourceApi<any, any>;
-
+      console.log('_______________useAngular');
       if (useAngular) {
         instance = getLegacyAngularInjector().instantiate(dsPlugin.DataSourceClass, {
           instanceSettings,
@@ -189,6 +194,7 @@ export class DatasourceSrv implements DataSourceService {
       this.datasources[instance.uid] = instance;
       return instance;
     } catch (err) {
+      console.log('_______________loadDatasourceErr', err);
       if (err instanceof Error) {
         appEvents.emit(AppEvents.alertError, [instanceSettings.name + ' plugin failed', err.toString()]);
       }
