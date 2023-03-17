@@ -1,6 +1,5 @@
 import { css } from '@emotion/css';
 import React, { createRef } from 'react';
-import SVG from 'react-inlinesvg';
 
 import { GrafanaTheme2 } from '@grafana/data';
 import {
@@ -15,6 +14,7 @@ import {
   useTheme2,
 } from '@grafana/ui';
 import { closePopover } from '@grafana/ui/src/utils/closePopover';
+import { SanitizedSVG } from 'app/core/components/SVG/SanitizedSVG';
 import { t } from 'app/core/internationalization';
 
 import { getPublicOrAbsoluteUrl } from '../resource';
@@ -57,7 +57,7 @@ export const ResourcePicker = (props: Props) => {
 
   const renderSmallResourcePicker = () => {
     if (value && sanitizedSrc) {
-      return <SVG src={sanitizedSrc} className={styles.icon} style={{ ...colorStyle }} />;
+      return <SanitizedSVG src={sanitizedSrc} className={styles.icon} style={{ ...colorStyle }} />;
     } else {
       return (
         <LinkButton variant="primary" fill="text" size="sm">
@@ -74,7 +74,7 @@ export const ResourcePicker = (props: Props) => {
           value={name}
           placeholder={placeholder}
           readOnly={true}
-          prefix={sanitizedSrc && <SVG src={sanitizedSrc} className={styles.icon} style={{ ...colorStyle }} />}
+          prefix={sanitizedSrc && <SanitizedSVG src={sanitizedSrc} className={styles.icon} style={{ ...colorStyle }} />}
           suffix={<Button icon="times" variant="secondary" fill="text" size="sm" onClick={onClear} />}
         />
       </InlineField>

@@ -131,7 +131,7 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
           />
         </InlineField>
 
-        <InlineField label={t('app.plugins.data-source.x-pack-enabled', 'X-Pack enabled')} labelWidth={26}>
+        <InlineField label={t('app.plugins.data-source.x-pack-enabled', 'Include Frozen Indices')} labelWidth={26}>
           <InlineSwitch
             id="es_config_xpackEnabled"
             checked={value.jsonData.xpack || false}

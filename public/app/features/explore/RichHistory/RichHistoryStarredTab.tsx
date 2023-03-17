@@ -157,20 +157,7 @@ export function RichHistoryStarredTab(props: Props) {
         {loading && <span>{t('explore.rich-history.Loading-results', 'Loading results')}...</span>}
         {!loading &&
           queries.map((q) => {
-            const idx = listOfDatasources.findIndex((d) => d.uid === q.datasourceUid);
-            return (
-              <RichHistoryCard
-                query={q}
-                key={q.id}
-                exploreId={exploreId}
-                dsImg={
-                  idx === -1
-                    ? `${config.appUrl}public/img/icn-datasource.svg`
-                    : config.appUrl + listOfDatasources[idx].imgUrl
-                }
-                isRemoved={idx === -1}
-              />
-            );
+            return <RichHistoryCard query={q} key={q.id} exploreId={exploreId} />;
           })}
         {queries.length && queries.length !== totalQueries ? (
           <div>

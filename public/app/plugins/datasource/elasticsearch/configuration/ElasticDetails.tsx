@@ -131,26 +131,13 @@ export const ElasticDetails = ({ value, onChange }: Props) => {
           />
         </InlineField>
 
-        <InlineField label={t('app.plugins.data-source.x-pack-enabled', 'X-Pack enabled')} labelWidth={26}>
+        <InlineField label={t('app.plugins.data-source.x-pack-enabled', 'Include Frozen Indices')} labelWidth={26}>
           <InlineSwitch
-            id="es_config_xpackEnabled"
-            checked={value.jsonData.xpack || false}
-            onChange={jsonDataSwitchChangeHandler('xpack', value, onChange)}
+            id="es_config_frozenIndices"
+            value={(value.jsonData.xpack ?? false) && (value.jsonData.includeFrozen ?? false)}
+            onChange={(event) => includeFrozenIndicesOnChange(event.currentTarget.checked, value, onChange)}
           />
         </InlineField>
-
-        {value.jsonData.xpack && (
-          <InlineField
-            label={t('app.plugins.data-source.include-frozen-indices', 'Include Frozen Indices')}
-            labelWidth={26}
-          >
-            <InlineSwitch
-              id="es_config_frozenIndices"
-              checked={value.jsonData.includeFrozen ?? false}
-              onChange={jsonDataSwitchChangeHandler('includeFrozen', value, onChange)}
-            />
-          </InlineField>
-        )}
       </FieldSet>
     </>
   );
@@ -179,17 +166,20 @@ const jsonDataChangeHandler =
     });
   };
 
-const jsonDataSwitchChangeHandler =
-  (key: keyof ElasticsearchOptions, value: Props['value'], onChange: Props['onChange']) =>
-  (event: React.SyntheticEvent<HTMLInputElement>) => {
-    onChange({
-      ...value,
-      jsonData: {
-        ...value.jsonData,
-        [key]: event.currentTarget.checked,
-      },
-    });
-  };
+const includeFrozenIndicesOnChange = (newValue: boolean, formValue: Props['value'], onChange: Props['onChange']) => {
+  const newJsonData = { ...formValue.jsonData };
+  if (newValue) {
+    newJsonData.xpack = true;
+    newJsonData.includeFrozen = true;
+  } else {
+    delete newJsonData.xpack;
+    delete newJsonData.includeFrozen;
+  }
+  onChange({
+    ...formValue,
+    jsonData: newJsonData,
+  });
+};
 
 const intervalHandler =
   (value: Props['value'], onChange: Props['onChange']) => (option: SelectableValue<Interval | 'none'>) => {

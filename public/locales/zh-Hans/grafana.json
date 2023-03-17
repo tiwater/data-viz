@@ -69,6 +69,7 @@
       "select-a-team": "选择团队",
       "service": {
         "unexpected-error": "未知错误",
+        "Unknown-error": "未知错误",
         "Unexpected-error": "未知错误"
       },
       "team": "团队",
@@ -352,8 +353,7 @@
     "action": {
       "change-theme": "更改主题",
       "dark-theme": "深色主题",
-      "light-theme": "浅色主题",
-      "search": "搜索"
+      "light-theme": "浅色主题"
     },
     "search-box": {
       "placeholder": "占位"
@@ -361,6 +361,7 @@
     "section": {
       "actions": "行动",
       "dashboard-search-results": "看板搜索结果",
+      "folder-search-results": "文件夹",
       "pages": "页面",
       "preferences": "偏好设置",
       "recent-dashboards": "最近的看板"
@@ -2045,7 +2046,6 @@
     "help/documentation": "文档",
     "help/keyboard-shortcuts": "快捷键",
     "help/support": "支持",
-    "help/support-bundle": "支持包",
     "home": {
       "title": "首页"
     },
@@ -2067,6 +2067,9 @@
     },
     "manage-dashboards": {
       "title": "浏览"
+    },
+    "manage-folder": {
+      "subtitle": "管理文件夹看板权限"
     },
     "monitoring": {
       "subtitle": "监控和基础设施应用",
@@ -2104,11 +2107,14 @@
       "title": "首选项"
     },
     "profile/switch-org": "切换组织",
+    "public": {
+      "title": "公开看板"
+    },
     "scenes": {
       "title": "场景"
     },
     "search": {
-      "placeholder": "搜索"
+      "placeholderCommandPalette": "搜索或跳转到..."
     },
     "search-dashboards": {
       "title": "搜索看板"
@@ -2158,6 +2164,11 @@
   "navigation": {
     "kiosk": {
       "tv-alert": "按 ESC 退出全屏模式"
+    },
+    "toolbar": {
+      "enable-kiosk": "启用全屏模式",
+      "toggle-menu": "切换菜单",
+      "toggle-search-bar": "切换顶部搜索栏"
     }
   },
   "news": {
@@ -2455,11 +2466,37 @@
     }
   },
   "search": {
+    "actions": {
+      "include-panels": "包含面板",
+      "remove-datasource-filter": "数据源: {{datasource}}",
+      "sort-placeholder": "排序",
+      "starred": "收藏",
+      "view-as-folders": "按文件夹查看",
+      "view-as-grid": "网格视图",
+      "view-as-list": "以列表形式查看"
+    },
     "dashboard-actions": {
       "import": "导入",
       "new": "新建",
       "new-dashboard": "新建看板",
       "new-folder": "新建文件夹"
+    },
+    "folder-view": {
+      "go-to-folder": "转到文件夹",
+      "select-folder": "选择目录"
+    },
+    "results-table": {
+      "datasource-header": "数据源",
+      "location-header": "位置",
+      "name-header": "名称",
+      "tags-header": "标签",
+      "type-dashboard": "看板",
+      "type-folder": "文件夹",
+      "type-header": "类型"
+    },
+    "search-input": {
+      "include-panels-placeholder": "搜索看板和面板",
+      "placeholder": "搜索看板"
     }
   },
   "share-modal": {
@@ -2554,9 +2591,15 @@
     "theme": {
       "dark-label": "深色",
       "default-label": "默认",
-      "light-label": "浅色"
+      "light-label": "浅色",
+      "system-label": "系统"
     },
     "title": "首选项"
+  },
+  "tag-filter": {
+    "loading": "加载中...",
+    "no-tags": "未找到标签",
+    "placeholder": "按标签筛选"
   },
   "time-picker": {
     "absolute": {
@@ -2620,8 +2663,7 @@
       "name-error": "姓名是必填项",
       "name-label": "姓名",
       "username-label": "用户名"
-    },
-    "title": "个人资料"
+    }
   },
   "user-session": {
     "browser-column": "浏览器和操作系统",
@@ -2748,12 +2790,20 @@
     }
   },
   "variable": {
+    "adhoc": {
+      "placeholder": "选择值"
+    },
+    "dropdown": {
+      "placeholder": "输入变量值"
+    },
     "picker": {
-      "input": "输入变量值",
       "link-all": "所有",
       "option-all": "所有",
       "option-selected-values": "已选择",
       "option-tooltip": "清空选择"
+    },
+    "textbox": {
+      "placeholder": "输入变量值"
     }
   }
 }

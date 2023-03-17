@@ -68,7 +68,8 @@
       "save": "Save",
       "select-a-team": "Select a team",
       "service": {
-        "unexpected-error": "Unexpected error",
+        "unexpected-error": "Unknown error",
+        "Unknown-error": "Unknown error",
         "Unknown-error": "Unknown error"
       },
       "team": "Team",
@@ -325,7 +326,7 @@
         "version-label": "version",
         "weekly": "Weekly",
         "with-ca-cert": "With CA Cert",
-        "x-pack-enabled": "X-Pack enabled",
+        "x-pack-enabled": "Include Frozen Indices",
         "yearly": "Yearly",
         "you-can-use-either-GET": "You can use either GET or POST HTTP method to query your InfluxDB database. The POST method allows you to perform heavy requests (with a lots of WHERE clause) while the GET method will restrict you and return an error if the query is too large.",
         "you-can-use-either-POST-or-GET-HTTP-method": "You can use either POST or GET HTTP method to query your Prometheus data source. POST is the recommended method as it allows bigger queries. Change this to GET if you have a Prometheus version older than 2.1 or if POST requests are restricted in your network."
@@ -352,15 +353,15 @@
     "action": {
       "change-theme": "Change theme...",
       "dark-theme": "Dark",
-      "light-theme": "Light",
-      "search": "Search"
+      "light-theme": "Light"
     },
     "search-box": {
-      "placeholder": "Search Grafana"
+      "placeholder": "Search or jump to..."
     },
     "section": {
       "actions": "Actions",
       "dashboard-search-results": "Dashboards",
+      "folder-search-results": "Folders",
       "pages": "Pages",
       "preferences": "Preferences",
       "recent-dashboards": "Recent dashboards"
@@ -904,11 +905,11 @@
     },
     "dimensions": {
       "addBooleanSwitchName": "Highlight full area on hover",
-      "addCustomEditorName": "Bar labels minimum spacing",
+      "addCustomEditorName": "X-axis labels minimum spacing",
       "addFieldNamePickerDescription": "Use the color value for a sibling field to color each bar value.",
       "addFieldNamePickerName": "Color by field",
-      "addNumberInputDescription": "X labels will be truncated to the length provided",
-      "addNumberInputValue": "X tick label max length",
+      "addNumberInputDescription": "X-axis labels will be truncated to the length provided",
+      "addNumberInputValue": "X-axis tick label max length",
       "addRadioName": "Show values",
       "always": "Always",
       "auto": "Auto",
@@ -959,7 +960,7 @@
       "none": "None",
       "orientation": "Orientation",
       "point-size": "Point size",
-      "rotate-x-tick-labels": "Rotate X tick labels",
+      "rotate-x-tick-labels": "Rotate x-axis tick labels",
       "show-points": "Show points",
       "show-thresholds": "Show thresholds",
       "stacking": "Stacking",
@@ -1976,7 +1977,7 @@
       "title": "Alert rules"
     },
     "alerting-receivers": {
-      "subtitle": "Decide how your contacts are notified when an alert fires",
+      "subtitle": "Choose how to notify your contact points when an alert instance fires",
       "title": "Contact points"
     },
     "alerting-silences": {
@@ -2007,7 +2008,7 @@
       "title": "Create"
     },
     "create-alert": {
-      "title": "New alert rule"
+      "title": "Create alert rule"
     },
     "create-dashboard": {
       "title": "Dashboard"
@@ -2045,7 +2046,6 @@
     "help/documentation": "Documentation",
     "help/keyboard-shortcuts": "Keyboard shortcuts",
     "help/support": "Support",
-    "help/support-bundle": "Support Bundles",
     "home": {
       "title": "Home"
     },
@@ -2067,6 +2067,9 @@
     },
     "manage-dashboards": {
       "title": "Browse"
+    },
+    "manage-folder": {
+      "subtitle": "Manage folder dashboards and permissions"
     },
     "monitoring": {
       "subtitle": "Monitoring and infrastructure apps",
@@ -2101,14 +2104,17 @@
       "title": "Change password"
     },
     "profile/settings": {
-      "title": "Preferences"
+      "title": "Profile"
     },
     "profile/switch-org": "Switch organization",
+    "public": {
+      "title": "Public dashboards"
+    },
     "scenes": {
       "title": "Scenes"
     },
     "search": {
-      "placeholder": "Search Grafana"
+      "placeholderCommandPalette": "Search or jump to..."
     },
     "search-dashboards": {
       "title": "Search dashboards"
@@ -2158,6 +2164,11 @@
   "navigation": {
     "kiosk": {
       "tv-alert": "Press ESC to exit kiosk mode"
+    },
+    "toolbar": {
+      "enable-kiosk": "Enable kiosk mode",
+      "toggle-menu": "Toggle menu",
+      "toggle-search-bar": "Toggle top search bar"
     }
   },
   "news": {
@@ -2455,11 +2466,37 @@
     }
   },
   "search": {
+    "actions": {
+      "include-panels": "Include panels",
+      "remove-datasource-filter": "Datasource: {{datasource}}",
+      "sort-placeholder": "Sort",
+      "starred": "Starred",
+      "view-as-folders": "View by folders",
+      "view-as-grid": "Grid view",
+      "view-as-list": "View as list"
+    },
     "dashboard-actions": {
       "import": "Import",
       "new": "New",
       "new-dashboard": "New Dashboard",
       "new-folder": "New Folder"
+    },
+    "folder-view": {
+      "go-to-folder": "Go to folder",
+      "select-folder": "Select folder"
+    },
+    "results-table": {
+      "datasource-header": "Data source",
+      "location-header": "Location",
+      "name-header": "Name",
+      "tags-header": "Tags",
+      "type-dashboard": "Dashboard",
+      "type-folder": "Folder",
+      "type-header": "Type"
+    },
+    "search-input": {
+      "include-panels-placeholder": "Search for dashboards and panels",
+      "placeholder": "Search for dashboards"
     }
   },
   "share-modal": {
@@ -2554,9 +2591,15 @@
     "theme": {
       "dark-label": "Dark",
       "default-label": "Default",
-      "light-label": "Light"
+      "light-label": "Light",
+      "system-label": "System"
     },
     "title": "Preferences"
+  },
+  "tag-filter": {
+    "loading": "Loading...",
+    "no-tags": "No tags found",
+    "placeholder": "Filter by tag"
   },
   "time-picker": {
     "absolute": {
@@ -2620,8 +2663,7 @@
       "name-error": "Name is required",
       "name-label": "Name",
       "username-label": "Username"
-    },
-    "title": "Profile"
+    }
   },
   "user-session": {
     "browser-column": "Browser & OS",
@@ -2748,12 +2790,20 @@
     }
   },
   "variable": {
+    "adhoc": {
+      "placeholder": "Select value"
+    },
+    "dropdown": {
+      "placeholder": "Enter variable value"
+    },
     "picker": {
-      "input": "Enter variable value",
       "link-all": "All",
       "option-all": "All",
       "option-selected-values": "Selected",
       "option-tooltip": "Clear selections"
+    },
+    "textbox": {
+      "placeholder": "Enter variable value"
     }
   }
 }

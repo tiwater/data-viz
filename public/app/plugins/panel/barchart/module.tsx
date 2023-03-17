@@ -17,7 +17,7 @@ import { ThresholdsStyleEditor } from '../timeseries/ThresholdsStyleEditor';
 
 import { BarChartPanel } from './BarChartPanel';
 import { TickSpacingEditor } from './TickSpacingEditor';
-import { PanelFieldConfig, PanelOptions, defaultPanelFieldConfig, defaultPanelOptions } from './models.gen';
+import { PanelFieldConfig, PanelOptions, defaultPanelFieldConfig, defaultPanelOptions } from './panelcfg.gen';
 import { BarChartSuggestionsSupplier } from './suggestions';
 import { prepareBarChartDisplayValues } from './utils';
 
@@ -109,7 +109,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
     },
   })
   .setPanelOptions((builder, context) => {
-    const disp = prepareBarChartDisplayValues(context.data, config.theme2, context.options ?? ({} as any));
+    const disp = prepareBarChartDisplayValues(context.data, config.theme2, context.options ?? ({} as PanelOptions));
     let xaxisPlaceholder = t('app.plugins.first-string-or-time-field', 'First string or time field');
     const viz = 'viz' in disp ? disp.viz[0] : undefined;
     if (viz?.fields?.length) {
@@ -139,7 +139,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
       })
       .addSliderInput({
         path: 'xTickLabelRotation',
-        name: t('features.dimensions.rotate-x-tick-labels', 'Rotate X tick labels'),
+        name: t('features.dimensions.rotate-x-tick-labels', 'Rotate x-axis tick labels'),
         defaultValue: defaultPanelOptions.xTickLabelRotation,
         settings: {
           min: -90,
@@ -151,10 +151,10 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
       })
       .addNumberInput({
         path: 'xTickLabelMaxLength',
-        name: t('features.dimensions.addNumberInputValue', 'X tick label max length'),
+        name: t('features.dimensions.addNumberInputValue', 'X-axis tick label max length'),
         description: t(
           'features.dimensions.addNumberInputDescription',
-          'X labels will be truncated to the length provided'
+          'X-axis labels will be truncated to the length provided'
         ),
         settings: {
           placeholder: t('features.dimensions.none', 'None'),
@@ -165,7 +165,7 @@ export const plugin = new PanelPlugin<PanelOptions, PanelFieldConfig>(BarChartPa
       .addCustomEditor({
         id: 'xTickLabelSpacing',
         path: 'xTickLabelSpacing',
-        name: t('features.dimensions.addCustomEditorName', 'Bar labels minimum spacing'),
+        name: t('features.dimensions.addCustomEditorName', 'X-axis labels minimum spacing'),
         defaultValue: defaultPanelOptions.xTickLabelSpacing,
         editor: TickSpacingEditor,
       })

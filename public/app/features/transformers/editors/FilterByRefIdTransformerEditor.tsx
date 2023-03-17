@@ -8,7 +8,7 @@ import {
   TransformerUIProps,
 } from '@grafana/data';
 import { FilterFramesByRefIdTransformerOptions } from '@grafana/data/src/transformations/transformers/filterByRefId';
-import { HorizontalGroup, FilterPill } from '@grafana/ui';
+import { HorizontalGroup, FilterPill, FieldValidationMessage } from '@grafana/ui';
 import { t, Trans } from 'app/core/internationalization';
 
 interface FilterByRefIdTransformerEditorProps extends TransformerUIProps<FilterFramesByRefIdTransformerOptions> {}
@@ -104,30 +104,38 @@ export class FilterByRefIdTransformerEditor extends React.PureComponent<
 
   render() {
     const { options, selected } = this.state;
+    const { input } = this.props;
     return (
-      <div className="gf-form-inline">
-        <div className="gf-form gf-form--grow">
-          <div className="gf-form-label width-8">
-            <Trans i18nKey="features.transformers.filter-by-name.series-ref-id">Series refId</Trans>
+      <>
+        {input.length <= 1 && (
+          <div>
+            <FieldValidationMessage>Filter data by query expects multiple queries in the input.</FieldValidationMessage>
           </div>
-          <HorizontalGroup spacing="xs" align="flex-start" wrap>
-            {options.map((o, i) => {
-              const label = `${o.refId}${o.count > 1 ? ' (' + o.count + ')' : ''}`;
-              const isSelected = selected.indexOf(o.refId) > -1;
-              return (
-                <FilterPill
-                  key={`${o.refId}/${i}`}
-                  onClick={() => {
-                    this.onFieldToggle(o.refId);
-                  }}
-                  label={label}
-                  selected={isSelected}
-                />
-              );
-            })}
-          </HorizontalGroup>
+        )}
+        <div className="gf-form-inline">
+          <div className="gf-form gf-form--grow">
+            <div className="gf-form-label width-8">
+              <Trans i18nKey="features.transformers.filter-by-name.series-ref-id">Series refId</Trans>
+            </div>
+            <HorizontalGroup spacing="xs" align="flex-start" wrap>
+              {options.map((o, i) => {
+                const label = `${o.refId}${o.count > 1 ? ' (' + o.count + ')' : ''}`;
+                const isSelected = selected.indexOf(o.refId) > -1;
+                return (
+                  <FilterPill
+                    key={`${o.refId}/${i}`}
+                    onClick={() => {
+                      this.onFieldToggle(o.refId);
+                    }}
+                    label={label}
+                    selected={isSelected}
+                  />
+                );
+              })}
+            </HorizontalGroup>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

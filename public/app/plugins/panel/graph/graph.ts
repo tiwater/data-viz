@@ -960,7 +960,8 @@ class GraphElement {
   }
 }
 
-/** @ngInject */
+coreModule.directive('grafanaGraph', ['timeSrv', 'popoverSrv', 'contextSrv', graphDirective]);
+
 function graphDirective(timeSrv: TimeSrv, popoverSrv: any, contextSrv: ContextSrv) {
   return {
     restrict: 'A',
@@ -971,5 +972,4 @@ function graphDirective(timeSrv: TimeSrv, popoverSrv: any, contextSrv: ContextSr
   };
 }
 
-coreModule.directive('grafanaGraph', graphDirective);
 export { GraphElement, graphDirective };

@@ -244,20 +244,7 @@ export function RichHistoryQueriesTab(props: Props) {
                   </span>
                 </div>
                 {mappedQueriesToHeadings[heading].map((q: RichHistoryQuery) => {
-                  const idx = listOfDatasources.findIndex((d) => d.uid === q.datasourceUid);
-                  return (
-                    <RichHistoryCard
-                      query={q}
-                      key={q.id}
-                      exploreId={exploreId}
-                      dsImg={
-                        idx === -1
-                          ? `${config.appUrl}public/img/icn-datasource.svg`
-                          : config.appUrl + listOfDatasources[idx].imgUrl
-                      }
-                      isRemoved={idx === -1}
-                    />
-                  );
+                  return <RichHistoryCard query={q} key={q.id} exploreId={exploreId} />;
                 })}
               </div>
             );
