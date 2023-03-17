@@ -171,15 +171,13 @@ export class BackendSrv implements BackendService {
   }
 
   private parseRequestOptions(options: BackendSrvRequest): BackendSrvRequest {
-    const orgId = this.dependencies.contextSrv.user?.orgId;
-
-    // init retry counter
+    const orgId = localStorage.getItem('orgId');
     options.retry = options.retry ?? 0;
 
     if (isLocalUrl(options.url)) {
       if (orgId) {
         options.headers = options.headers ?? {};
-        options.headers['X-Grafana-Org-Id'] = orgId;
+        options.headers['X-Tiwater-Org-Id'] = orgId;
       }
 
       if (options.url.startsWith('/')) {
