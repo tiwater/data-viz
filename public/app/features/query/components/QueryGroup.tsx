@@ -94,12 +94,13 @@ export class QueryGroup extends PureComponent<Props, State> {
 
   async componentDidMount() {
     const { options, queryRunner } = this.props;
-
+    console.log('_____________options', options);
     this.querySubscription = queryRunner.getData({ withTransforms: false, withFieldConfig: false }).subscribe({
       next: (data: PanelData) => this.onPanelDataUpdate(data),
     });
 
     try {
+      console.log('_____________options.dataSource', options.dataSource);
       const ds = await this.dataSourceSrv.get(options.dataSource);
       const dsSettings = this.dataSourceSrv.getInstanceSettings(options.dataSource);
 

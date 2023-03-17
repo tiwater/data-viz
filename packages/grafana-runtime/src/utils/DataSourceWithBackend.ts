@@ -202,6 +202,7 @@ class DataSourceWithBackend<
     }
 
     const headers: Record<string, string> = {};
+    headers['x-tiwater-org-id'] = localStorage.getItem('orgId');
     headers[PluginRequestHeaders.PluginID] = Array.from(pluginIDs).join(', ');
     headers[PluginRequestHeaders.DatasourceUID] = Array.from(dsUIDs).join(', ');
     if (request.dashboardUID) {
@@ -237,6 +238,7 @@ class DataSourceWithBackend<
   /** Get request headers with plugin ID+UID set */
   protected getRequestHeaders(): Record<string, string> {
     const headers: Record<string, string> = {};
+    headers['x-tiwater-org-id'] = localStorage.getItem('orgId');
     headers[PluginRequestHeaders.PluginID] = this.type;
     headers[PluginRequestHeaders.DatasourceUID] = this.uid;
     return headers;

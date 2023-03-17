@@ -83,7 +83,8 @@ export class AppWrapper extends React.Component<AppWrapperProps, AppWrapperState
   render() {
     const { app } = this.props;
     const { ready } = this.state;
-
+    // console.log(localStorage.getItem('orgId'));
+    document.cookie = `ticosOrgId=${localStorage.getItem('orgId')}`;
     navigationLogger('AppWrapper', false, 'rendering');
 
     const commandPaletteActionSelected = (action: Action) => {

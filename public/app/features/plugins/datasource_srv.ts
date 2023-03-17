@@ -40,7 +40,7 @@ export class DatasourceSrv implements DataSourceService {
     this.settingsMapByUid = {};
     this.settingsMapByName = settingsMapByName;
     this.defaultName = defaultName;
-
+    console.log('_______________settingsMapByName', settingsMapByName);
     for (const dsSettings of Object.values(settingsMapByName)) {
       if (!dsSettings.uid) {
         dsSettings.uid = dsSettings.name; // -- Grafana --, -- Mixed etc
