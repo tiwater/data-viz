@@ -3,7 +3,7 @@
 pkgs.mkShell {
   packages = with pkgs; [
     go
-    nodejs-16_x
+    nodejs-18_x
     yarn
   ];
 }
