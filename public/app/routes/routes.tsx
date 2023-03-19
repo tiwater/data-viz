@@ -76,7 +76,8 @@ export function getAppRoutes(): RouteDescriptor[] {
     },
     {
       path: '/dashboard/new',
-      roles: () => contextSrv.evaluatePermission(() => ['Editor', 'Admin'], [AccessControlAction.DashboardsCreate]),
+      // TODO: 暂时去除新建看板页面的权限
+      // roles: () => contextSrv.evaluatePermission(() => ['Editor', 'Admin'], [AccessControlAction.DashboardsCreate]),
       pageClass: 'page-dashboard',
       routeName: DashboardRoutes.New,
       component: SafeDynamicImport(
