@@ -68,9 +68,9 @@
       "save": "保存",
       "select-a-team": "选择团队",
       "service": {
-        "unexpected-error": "未知错误",
-        "Unknown-error": "未知错误",
-        "Unexpected-error": "未知错误"
+        "failed-to-update-datasource": "更新数据源失败",
+        "Unexpected-error": "未知错误",
+        "Unknown-error": "未知错误"
       },
       "team": "团队",
       "team-picker": "团队选择器",
@@ -888,7 +888,6 @@
       "choose-a-data-source-type": "选择数据源类型",
       "configure-your-mainDS": "在下方配置您的 {{mainDS}} 数据源",
       "delete": "删除",
-      "explore": "探索",
       "filter-by-name-or-type": "按名称或类型筛选",
       "how-to-map-graphite-metrics-to-labels": "如何映射图形表到标签？",
       "import": "导入",
@@ -902,6 +901,10 @@
       "sort-by–z-a": "按 Z-A 排序",
       "test": "测试",
       "type": "类型"
+    },
+    "datasources": {
+      "missing-rights": "缺少权限",
+      "you-are-not-allowed-modify": "您无权修改此数据源,请联系您的服务器管理员更新此数据源。"
     },
     "dimensions": {
       "addBooleanSwitchName": "悬停时突出显示整个区域",
@@ -1942,6 +1945,13 @@
       "error": "保存库面板时出错：\"{{errorMsg}}\"",
       "success": "库面板已保存"
     }
+  },
+  "message": {
+    "access-denied": "拒绝访问",
+    "datasource-added": "数据源添加成功",
+    "error": "错误",
+    "need-additional-permissions-to-perform-this-action": "您需要额外的权限来执行此操作。需要权限：数据源:创建",
+    "validation-failed": "验证失败"
   },
   "nav": {
     "admin": {

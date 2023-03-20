@@ -185,7 +185,7 @@ export const ConfigurationEditor = (props: DataSourcePluginOptionsEditorProps<My
         </InlineField>
       </FieldSet>
 
-      <Alert title="User Permission" severity="info">
+      <Alert title={t('app.data-source.mssql.user-permission', 'User Permission')} severity="info">
         <Trans i18nKey="app.plugins.data-source-mysql.the-database-user-should-only-be-granted">
           The database user should only be granted SELECT permissions on the specified database &amp; tables you want to
           query. Grafana does not validate that queries are safe so queries can contain any SQL statement. For example,

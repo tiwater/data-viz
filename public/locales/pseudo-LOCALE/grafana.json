@@ -68,8 +68,8 @@
       "save": "Ŝävę",
       "select-a-team": "Ŝęľęčŧ ä ŧęäm",
       "service": {
-        "unexpected-error": "Ůŉĸŉőŵŉ ęřřőř",
-        "Unknown-error": "Ůŉĸŉőŵŉ ęřřőř",
+        "failed-to-update-datasource": "Fäįľęđ ŧő ūpđäŧę đäŧäşőūřčę",
+        "Unexpected-error": "Ůŉęχpęčŧęđ ęřřőř",
         "Unknown-error": "Ůŉĸŉőŵŉ ęřřőř"
       },
       "team": "Ŧęäm",
@@ -888,7 +888,6 @@
       "choose-a-data-source-type": "Cĥőőşę ä đäŧä şőūřčę ŧypę",
       "configure-your-mainDS": "Cőŉƒįģūřę yőūř {{mainDS}} đäŧä şőūřčę þęľőŵ",
       "delete": "Đęľęŧę",
-      "explore": "Ēχpľőřę",
       "filter-by-name-or-type": "Fįľŧęř þy ŉämę őř ŧypę",
       "how-to-map-graphite-metrics-to-labels": "Ħőŵ ŧő mäp Ğřäpĥįŧę męŧřįčş ŧő ľäþęľş?",
       "import": "Ĩmpőřŧ",
@@ -902,6 +901,10 @@
       "sort-by–z-a": "Ŝőřŧ þy Ż–Å",
       "test": "Ŧęşŧ",
       "type": "Ŧypę"
+    },
+    "datasources": {
+      "missing-rights": "Mįşşįŉģ řįģĥŧş",
+      "you-are-not-allowed-modify": "Ÿőū äřę ŉőŧ äľľőŵęđ ŧő mőđįƒy ŧĥįş đäŧä şőūřčę. Pľęäşę čőŉŧäčŧ yőūř şęřvęř äđmįŉ ŧő ūpđäŧę ŧĥįş đäŧä şőūřčę."
     },
     "dimensions": {
       "addBooleanSwitchName": "Ħįģĥľįģĥŧ ƒūľľ äřęä őŉ ĥővęř",
@@ -1942,6 +1945,13 @@
       "error": "Ēřřőř şävįŉģ ľįþřäřy päŉęľ: \"{{errorMsg}}\"",
       "success": "Ŀįþřäřy päŉęľ şävęđ"
     }
+  },
+  "message": {
+    "access-denied": "Åččęşş đęŉįęđ",
+    "datasource-added": "Đäŧäşőūřčę äđđęđ",
+    "error": "Ēřřőř",
+    "need-additional-permissions-to-perform-this-action": "Ÿőū'ľľ ŉęęđ äđđįŧįőŉäľ pęřmįşşįőŉş ŧő pęřƒőřm ŧĥįş äčŧįőŉ. Pęřmįşşįőŉş ŉęęđęđ: đäŧäşőūřčęş:čřęäŧę",
+    "validation-failed": "Väľįđäŧįőŉ ƒäįľęđ"
   },
   "nav": {
     "admin": {

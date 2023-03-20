@@ -68,9 +68,9 @@
       "save": "",
       "select-a-team": "",
       "service": {
-        "unexpected-error": "",
-        "Unknown-error": "",
-        "Unexpected-error": ""
+        "failed-to-update-datasource": "",
+        "Unexpected-error": "",
+        "Unknown-error": ""
       },
       "team": "",
       "team-picker": "",
@@ -888,7 +888,6 @@
       "choose-a-data-source-type": "",
       "configure-your-mainDS": "",
       "delete": "",
-      "explore": "",
       "filter-by-name-or-type": "",
       "how-to-map-graphite-metrics-to-labels": "",
       "import": "",
@@ -902,6 +901,10 @@
       "sort-by–z-a": "",
       "test": "",
       "type": ""
+    },
+    "datasources": {
+      "missing-rights": "",
+      "you-are-not-allowed-modify": ""
     },
     "dimensions": {
       "addBooleanSwitchName": "",
@@ -1942,6 +1945,13 @@
       "error": "",
       "success": ""
     }
+  },
+  "message": {
+    "access-denied": "",
+    "datasource-added": "",
+    "error": "",
+    "need-additional-permissions-to-perform-this-action": "",
+    "validation-failed": ""
   },
   "nav": {
     "admin": {

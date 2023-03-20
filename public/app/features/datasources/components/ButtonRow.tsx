@@ -21,11 +21,11 @@ export function ButtonRow({ canSave, canDelete, onDelete, onSubmit, onTest, expl
   return (
     <div className="gf-form-button-row">
       <Button variant="secondary" fill="solid" type="button" onClick={() => history.back()}>
-        {t('features.data-source.back', 'Back')}
+        {t('features.data-source.cancel', 'Cancel')}
       </Button>
-      <LinkButton variant="secondary" fill="solid" href={exploreUrl} disabled={!canExploreDataSources}>
+      {/* <LinkButton variant="secondary" fill="solid" href={exploreUrl} disabled={!canExploreDataSources}>
         {t('features.data-source.explore', 'Explore')}
-      </LinkButton>
+      </LinkButton> */}
       <Button
         type="button"
         variant="destructive"

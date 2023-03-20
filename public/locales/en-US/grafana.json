@@ -68,8 +68,8 @@
       "save": "Save",
       "select-a-team": "Select a team",
       "service": {
-        "unexpected-error": "Unknown error",
-        "Unknown-error": "Unknown error",
+        "failed-to-update-datasource": "Failed to update datasource",
+        "Unexpected-error": "Unexpected error",
         "Unknown-error": "Unknown error"
       },
       "team": "Team",
@@ -888,7 +888,6 @@
       "choose-a-data-source-type": "Choose a data source type",
       "configure-your-mainDS": "Configure your {{mainDS}} data source below",
       "delete": "Delete",
-      "explore": "Explore",
       "filter-by-name-or-type": "Filter by name or type",
       "how-to-map-graphite-metrics-to-labels": "How to map Graphite metrics to labels?",
       "import": "Import",
@@ -902,6 +901,10 @@
       "sort-by–z-a": "Sort by Z–A",
       "test": "Test",
       "type": "Type"
+    },
+    "datasources": {
+      "missing-rights": "Missing rights",
+      "you-are-not-allowed-modify": "You are not allowed to modify this data source. Please contact your server admin to update this data source."
     },
     "dimensions": {
       "addBooleanSwitchName": "Highlight full area on hover",
@@ -1942,6 +1945,13 @@
       "error": "Error saving library panel: \"{{errorMsg}}\"",
       "success": "Library panel saved"
     }
+  },
+  "message": {
+    "access-denied": "Access denied",
+    "datasource-added": "Datasource added",
+    "error": "Error",
+    "need-additional-permissions-to-perform-this-action": "You'll need additional permissions to perform this action. Permissions needed: datasources:create",
+    "validation-failed": "Validation failed"
   },
   "nav": {
     "admin": {
