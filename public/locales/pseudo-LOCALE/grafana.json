@@ -69,6 +69,7 @@
       "select-a-team": "Ŝęľęčŧ ä ŧęäm",
       "service": {
         "failed-to-update-datasource": "Fäįľęđ ŧő ūpđäŧę đäŧäşőūřčę",
+        "testing": "Ŧęşŧįŉģ...",
         "Unexpected-error": "Ůŉęχpęčŧęđ ęřřőř",
         "Unknown-error": "Ůŉĸŉőŵŉ ęřřőř"
       },
@@ -1948,7 +1949,9 @@
   },
   "message": {
     "access-denied": "Åččęşş đęŉįęđ",
+    "data-source-deleted": "Đäŧä şőūřčę đęľęŧęđ",
     "datasource-added": "Đäŧäşőūřčę äđđęđ",
+    "datasource-updated": "Đäŧäşőūřčę ūpđäŧęđ",
     "error": "Ēřřőř",
     "need-additional-permissions-to-perform-this-action": "Ÿőū'ľľ ŉęęđ äđđįŧįőŉäľ pęřmįşşįőŉş ŧő pęřƒőřm ŧĥįş äčŧįőŉ. Pęřmįşşįőŉş ŉęęđęđ: đäŧäşőūřčęş:čřęäŧę",
     "validation-failed": "Väľįđäŧįőŉ ƒäįľęđ"

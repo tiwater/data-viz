@@ -69,6 +69,7 @@
       "select-a-team": "",
       "service": {
         "failed-to-update-datasource": "",
+        "testing": "",
         "Unexpected-error": "",
         "Unknown-error": ""
       },
@@ -1948,7 +1949,9 @@
   },
   "message": {
     "access-denied": "",
+    "data-source-deleted": "",
     "datasource-added": "",
+    "datasource-updated": "",
     "error": "",
     "need-additional-permissions-to-perform-this-action": "",
     "validation-failed": ""

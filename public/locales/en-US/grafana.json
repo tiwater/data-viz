@@ -69,6 +69,7 @@
       "select-a-team": "Select a team",
       "service": {
         "failed-to-update-datasource": "Failed to update datasource",
+        "testing": "Testing...",
         "Unexpected-error": "Unexpected error",
         "Unknown-error": "Unknown error"
       },
@@ -1948,7 +1949,9 @@
   },
   "message": {
     "access-denied": "Access denied",
+    "data-source-deleted": "Data source deleted",
     "datasource-added": "Datasource added",
+    "datasource-updated": "Datasource updated",
     "error": "Error",
     "need-additional-permissions-to-perform-this-action": "You'll need additional permissions to perform this action. Permissions needed: datasources:create",
     "validation-failed": "Validation failed"

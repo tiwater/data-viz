@@ -2,6 +2,7 @@ import { AnyAction, createAction } from '@reduxjs/toolkit';
 
 import { DataSourcePluginMeta, DataSourceSettings, LayoutMode, LayoutModes } from '@grafana/data';
 import { TestingStatus } from '@grafana/runtime';
+import { t } from 'app/core/internationalization';
 import { DataSourcesState, DataSourceSettingsState } from 'app/types';
 
 import { GenericDataSourcePlugin } from '../types';
@@ -146,7 +147,7 @@ export const dataSourceSettingsReducer = (
     return {
       ...state,
       testingStatus: {
-        message: 'Testing...',
+        message: t('app.core.service.testing', 'Testing...'),
         status: 'info',
       },
     };

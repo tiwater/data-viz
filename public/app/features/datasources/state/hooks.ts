@@ -104,7 +104,7 @@ export const useDeleteLoadedDataSource = () => {
         text: t(
           'features.dashboard.are-you-sure-you-want-to-delete.datasource',
           'Are you sure you want to delete the "{{name}}" data source?',
-          name
+          { name }
         ),
         yesText: t('features.dashboard.delete', 'Delete'),
         icon: 'trash-alt',

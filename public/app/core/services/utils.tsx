@@ -48,8 +48,16 @@ export const getServiceMessage = (msg: string) => {
       newMsg: t('app.core.service.Unexpected-error', 'Unexpected error'),
     },
     {
+      msg: 'Data source deleted',
+      newMsg: t('message.data-source-deleted', 'Data source deleted'),
+    },
+    {
       msg: 'Failed to update datasource',
       newMsg: t('app.core.service.failed-to-update-datasource', 'Failed to update datasource'),
+    },
+    {
+      msg: 'Datasource updated',
+      newMsg: t('message.datasource-updated', 'Datasource updated'),
     },
   ];
   const findMsg = list.filter((l) => l.msg === msg)[0];
