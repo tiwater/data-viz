@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 import { Button, Icon, Modal } from '@grafana/ui';
+import { Trans } from 'app/core/internationalization';
 
 type ConfirmModalProps = {
   isOpen: boolean;
@@ -24,26 +25,34 @@ export function ConfirmModal({ isOpen, onCancel, onDiscard, onCopy }: ConfirmMod
       title={
         <div className="modal-header-title">
           <Icon name="exclamation-triangle" size="lg" />
-          <span className="p-l-1">Warning</span>
+          <span className="p-l-1">
+            <Trans i18nKey="features.plugins.sql.warning">Warning</Trans>
+          </span>
         </div>
       }
       onDismiss={onCancel}
       isOpen={isOpen}
     >
       <p>
-        Builder mode does not display changes made in code. The query builder will display the last changes you made in
-        builder mode.
+        <Trans i18nKey="features.plugins.sql.builder-mode-does-not-display">
+          Builder mode does not display changes made in code. The query builder will display the last changes you made
+          in builder mode.
+        </Trans>
       </p>
-      <p>Do you want to copy your code to the clipboard?</p>
+      <p>
+        <Trans i18nKey="features.plugins.sql.do-you-want-to-copy-your">
+          Do you want to copy your code to the clipboard?
+        </Trans>
+      </p>
       <Modal.ButtonRow>
         <Button type="button" variant="secondary" onClick={onCancel} fill="outline">
-          Cancel
+          <Trans i18nKey="features.plugins.sql.cancel">Cancel</Trans>
         </Button>
         <Button variant="destructive" type="button" onClick={onDiscard} ref={buttonRef}>
-          Discard code and switch
+          <Trans i18nKey="features.plugins.sql.discard-code-and-switch">Discard code and switch</Trans>
         </Button>
         <Button variant="primary" onClick={onCopy}>
-          Copy code and switch
+          <Trans i18nKey="features.plugins.sql.copy-code-and-switch">Copy code and switch</Trans>
         </Button>
       </Modal.ButtonRow>
     </Modal>

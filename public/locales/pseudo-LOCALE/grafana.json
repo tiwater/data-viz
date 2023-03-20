@@ -1121,6 +1121,16 @@
       "open-visualization-suggestions": "Øpęŉ vįşūäľįžäŧįőŉ şūģģęşŧįőŉş",
       "switch-to-table": "Ŝŵįŧčĥ ŧő ŧäþľę"
     },
+    "plugins": {
+      "sql": {
+        "builder-mode-does-not-display": "ßūįľđęř mőđę đőęş ŉőŧ đįşpľäy čĥäŉģęş mäđę įŉ čőđę. Ŧĥę qūęřy þūįľđęř ŵįľľ đįşpľäy ŧĥę ľäşŧ čĥäŉģęş yőū mäđę įŉ þūįľđęř mőđę.",
+        "cancel": "Cäŉčęľ",
+        "copy-code-and-switch": "Cőpy čőđę äŉđ şŵįŧčĥ",
+        "discard-code-and-switch": "Đįşčäřđ čőđę äŉđ şŵįŧčĥ",
+        "do-you-want-to-copy-your": "Đő yőū ŵäŉŧ ŧő čőpy yőūř čőđę ŧő ŧĥę čľįpþőäřđ?",
+        "warning": "Ŵäřŉįŉģ"
+      }
+    },
     "query": {
       "alphabetical-asc": "Åľpĥäþęŧįčäľ (äşč)",
       "alphabetical-case-insensitive-asc": "Åľpĥäþęŧįčäľ (čäşę-įŉşęŉşįŧįvę, äşč)",

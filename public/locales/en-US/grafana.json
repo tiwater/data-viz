@@ -1121,6 +1121,16 @@
       "open-visualization-suggestions": "Open visualization suggestions",
       "switch-to-table": "Switch to table"
     },
+    "plugins": {
+      "sql": {
+        "builder-mode-does-not-display": "Builder mode does not display changes made in code. The query builder will display the last changes you made in builder mode.",
+        "cancel": "Cancel",
+        "copy-code-and-switch": "Copy code and switch",
+        "discard-code-and-switch": "Discard code and switch",
+        "do-you-want-to-copy-your": "Do you want to copy your code to the clipboard?",
+        "warning": "Warning"
+      }
+    },
     "query": {
       "alphabetical-asc": "Alphabetical (asc)",
       "alphabetical-case-insensitive-asc": "Alphabetical (case-insensitive, asc)",

@@ -1121,6 +1121,16 @@
       "open-visualization-suggestions": "开启可视化建议",
       "switch-to-table": "切换到表格"
     },
+    "plugins": {
+      "sql": {
+        "builder-mode-does-not-display": "生成器模式不显示代码中的更改。查询生成器将显示您在生成器模式中所作的最后更改。",
+        "cancel": "取消",
+        "copy-code-and-switch": "复制代码并切换",
+        "discard-code-and-switch": "丢弃代码并切换",
+        "do-you-want-to-copy-your": "您想要将代码复制到剪贴板吗？",
+        "warning": "警告"
+      }
+    },
     "query": {
       "alphabetical-asc": "字母顺序(升序)",
       "alphabetical-case-insensitive-asc": "按字母顺序排列(不分大小写，升序)",

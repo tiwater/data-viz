@@ -1121,6 +1121,16 @@
       "open-visualization-suggestions": "",
       "switch-to-table": ""
     },
+    "plugins": {
+      "sql": {
+        "builder-mode-does-not-display": "",
+        "cancel": "",
+        "copy-code-and-switch": "",
+        "discard-code-and-switch": "",
+        "do-you-want-to-copy-your": "",
+        "warning": ""
+      }
+    },
     "query": {
       "alphabetical-asc": "",
       "alphabetical-case-insensitive-asc": "",
