@@ -410,7 +410,6 @@ export const DashNav = React.memo<Props>((props) => {
   const titleHref = locationUtil.getUrlForPartial(location, { search: 'open' });
   const parentHref = locationUtil.getUrlForPartial(location, { search: 'open', query: 'folder:current' });
   const onGoBack = isFullscreen ? onClose : undefined;
-
   if (config.featureToggles.topnav) {
     return (
       <AppChromeUpdate
@@ -429,9 +428,9 @@ export const DashNav = React.memo<Props>((props) => {
     <PageToolbar
       pageIcon={isFullscreen ? undefined : 'apps'}
       title={title}
-      parent={folderTitle}
+      parent={!isInIcestark() ? folderTitle : t('app.core.optionsUi.registry.dashboard', 'Dashboard')}
       titleHref={titleHref}
-      parentHref={parentHref}
+      parentHref={!isInIcestark() ? parentHref : '/basis/dashboard'}
       onGoBack={onGoBack}
       leftItems={renderLeftActions()}
     >

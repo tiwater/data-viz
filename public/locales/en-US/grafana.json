@@ -6,6 +6,10 @@
       "can": "Can",
       "choose": "Choose",
       "inherited-permission": "Inherited Permission",
+      "navigation": {
+        "an-unexpected-error-happened": "An unexpected error happened",
+        "error-details": "Error details"
+      },
       "no-teams-found": "No teams found",
       "optionsUi": {
         "registry": {
@@ -524,6 +528,7 @@
     "contact-admin": "Please contact your administrator to configure data sources.",
     "explanation": "To visualize your data, you'll need to connect it first.",
     "new-dashboard": "New dashboard",
+    "panel-title": "Panel Title",
     "preferred": "Connect your preferred data source:",
     "sampleData": "Or set up a new dashboard with sample data",
     "viewAll": "View all",
@@ -1170,6 +1175,21 @@
       "regex": "Regex",
       "selection-options": "Selection options",
       "sort": "Sort"
+    },
+    "save-dashboard": {
+      "checking-dashboard-validity": "Checking dashboard validity",
+      "dashboard-failed-schema-validation": "Dashboard failed schema validation",
+      "error-checking-dashboard-validity": "Error checking dashboard validity",
+      "unknown-error": "Unknown error",
+      "validation-is-provided-for-development": "Validation is provided for development purposes and should be safe to ignore. If you are a Grafana developer, consider checking and updating the dashboard schema"
+    },
+    "services": {
+      "validation": {
+        "a-dashboard-or-a-folder": "A dashboard or a folder with the same name already exists",
+        "a-folder-or-dashboard": "A folder or dashboard in the general folder with the same name already exists",
+        "name-is-required": "Name is required",
+        "this-is-a-reserved-name": "This is a reserved name and cannot be used for a folder."
+      }
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -2370,9 +2390,16 @@
       "text": "text"
     },
     "data-source": {
+      "bottom": "Bottom",
+      "browser-access-mode-in-the": "Browser access mode in the Elasticsearch datasource is no longer available. Switch to server access mode.",
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": "This dashboard does not have any other panels. Add queries to other panels and try again."
       },
+      "date-histogram": "Date Histogram",
+      "doc-count": "Doc Count",
+      "filters": "Filters",
+      "geo-hash-grid": "Geo Hash Grid",
+      "histogram": "Histogram",
       "loki": {
         "add": "Add",
         "derived-fields": "Derived fields",
@@ -2384,7 +2411,12 @@
         "raw-value": "Raw value",
         "raw-value-of-the-field": "Raw value of the field",
         "show-example-log-message": "Show example log message"
-      }
+      },
+      "no-limit": "No limit",
+      "support-for-elasticsearch-versions": "Support for Elasticsearch versions after their end-of-life (currently versions < 7.10) was removed.",
+      "term-value": "Term value",
+      "terms": "Terms",
+      "top": "Top"
     },
     "gauge": {
       "auto": "auto",
@@ -2430,6 +2462,25 @@
       "pie-chart-type": "Piechart type",
       "select-the-labels-to-be-displayed": "Select the labels to be displayed in the pie chart",
       "value": "Value"
+    },
+    "sql": {
+      "aggregation": "Aggregation",
+      "alias": "Alias",
+      "builder": "Builder",
+      "code": "Code",
+      "column": "Column",
+      "dataset": "Dataset",
+      "filter": "Filter",
+      "filter-by-column-value": "Filter by column value",
+      "format": "Format",
+      "group": "Group",
+      "group-by-column": "Group by column",
+      "metric-name": "Metric name",
+      "order": "Order",
+      "preview": "Preview",
+      "select-format": "Select format",
+      "table": "Table",
+      "time-series": "Time series"
     },
     "table": {
       "all-numeric-fields": "All Numeric Fields",

@@ -492,7 +492,7 @@ export class ElasticDatasource
     }, '');
 
     text += bucketAggs?.reduce((acc, bucketAgg, index) => {
-      const bucketConfig = bucketAggregationConfig[bucketAgg.type];
+      const bucketConfig = bucketAggregationConfig()[bucketAgg.type];
 
       let text = '';
       if (index === 0) {

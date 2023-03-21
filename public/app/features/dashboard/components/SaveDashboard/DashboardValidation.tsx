@@ -5,6 +5,7 @@ import { useAsync } from 'react-use';
 import { GrafanaTheme2 } from '@grafana/data';
 import { FetchError } from '@grafana/runtime';
 import { Alert, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 import { backendSrv } from 'app/core/services/backend_srv';
 
 import { DashboardModel } from '../../state';
@@ -36,23 +37,36 @@ function DashboardValidation({ dashboard }: DashboardValidationProps) {
   let alert: React.ReactNode;
 
   if (loading) {
-    alert = <Alert severity="info" title="Checking dashboard validity" />;
+    alert = (
+      <Alert
+        severity="info"
+        title={t('features.save-dashboard.checking-dashboard-validity', 'Checking dashboard validity')}
+      />
+    );
   } else if (value) {
     if (!value.isValid) {
       alert = (
-        <Alert severity="warning" title="Dashboard failed schema validation">
+        <Alert
+          severity="warning"
+          title={t('features.save-dashboard.dashboard-failed-schema-validation', 'Dashboard failed schema validation')}
+        >
           <p>
-            Validation is provided for development purposes and should be safe to ignore. If you are a Grafana
-            developer, consider checking and updating the dashboard schema
+            {t(
+              'features.save-dashboard.validation-is-provided-for-development',
+              'Validation is provided for development purposes and should be safe to ignore. If you are a Grafana developer, consider checking and updating the dashboard schema'
+            )}
           </p>
           <div className={styles.error}>{value.message}</div>
         </Alert>
       );
     }
   } else {
-    const errorMessage = error?.message ?? 'Unknown error';
+    const errorMessage = error?.message ?? t('features.save-dashboard.unknown-error', 'Unknown error');
     alert = (
-      <Alert severity="info" title="Error checking dashboard validity">
+      <Alert
+        severity="info"
+        title={t('features.save-dashboard.error-checking-dashboard-validity', 'Error checking dashboard validity')}
+      >
         <p className={styles.error}>{errorMessage}</p>
       </Alert>
     );

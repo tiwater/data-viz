@@ -23,7 +23,7 @@ export const createReducer =
       const newAgg: Terms = {
         id: action.payload,
         type: 'terms',
-        settings: bucketAggregationConfig['terms'].defaultSettings,
+        settings: bucketAggregationConfig()['terms'].defaultSettings,
       };
 
       // If the last bucket aggregation is a `date_histogram` we add the new one before it.
@@ -54,7 +54,7 @@ export const createReducer =
         return {
           id: bucketAgg.id,
           type: action.payload.newType,
-          settings: bucketAggregationConfig[action.payload.newType].defaultSettings,
+          settings: bucketAggregationConfig()[action.payload.newType].defaultSettings,
         } as BucketAggregation;
       });
     }

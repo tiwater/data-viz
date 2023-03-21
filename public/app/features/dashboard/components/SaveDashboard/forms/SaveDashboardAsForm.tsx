@@ -114,7 +114,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
               autoFocus
             />
           </Field>
-          <Field label={t('dashboard.save-dashboard.folder', 'Folder')}>
+          <Field style={{ display: 'none' }} label={t('dashboard.save-dashboard.folder', 'Folder')}>
             <InputControl
               render={({ field: { ref, ...field } }) => (
                 <FolderPicker
@@ -129,6 +129,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardAsFormProps> = ({
               name="$folder"
             />
           </Field>
+
           {!isNew && (
             <Field label={t('dashboard.save-dashboard.copy-tags', 'Copy tags')}>
               <Switch {...register('copyTags')} />

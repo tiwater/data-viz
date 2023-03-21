@@ -10,6 +10,7 @@ import {
   toOption as toOptionFromData,
 } from '@grafana/data';
 import { CompletionItemKind, EditorMode, LanguageDefinition } from '@grafana/experimental';
+import { t } from 'app/core/internationalization';
 
 import { QueryWithDefaults } from './defaults';
 import {
@@ -99,9 +100,9 @@ export interface QueryRowFilter {
   preview: boolean;
 }
 
-export const QUERY_FORMAT_OPTIONS = [
-  { label: 'Time series', value: QueryFormat.Timeseries },
-  { label: 'Table', value: QueryFormat.Table },
+export const QUERY_FORMAT_OPTIONS = () => [
+  { label: t('plugins.sql.time-series', 'Time series'), value: QueryFormat.Timeseries },
+  { label: t('plugins.sql.table', 'Table'), value: QueryFormat.Table },
 ];
 
 const backWardToOption = (value: string) => ({ label: value, value });

@@ -27,6 +27,7 @@ import {
   SupplementaryQueryType,
 } from '@grafana/data';
 import { BackendSrvRequest, DataSourceWithBackend, getBackendSrv, getDataSourceSrv, config } from '@grafana/runtime';
+import { t } from 'app/core/internationalization';
 import { queryLogsVolume } from 'app/core/logsModel';
 import { getTimeSrv, TimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';
@@ -142,14 +143,20 @@ export class ElasticDatasource
   ): Observable<any> {
     if (!this.isProxyAccess) {
       const error = new Error(
-        'Browser access mode in the Elasticsearch datasource is no longer available. Switch to server access mode.'
+        t(
+          'plugins.data-source.browser-access-mode-in-the',
+          'Browser access mode in the Elasticsearch datasource is no longer available. Switch to server access mode.'
+        )
       );
       return throwError(() => error);
     }
 
     if (!isSupportedVersion(this.esVersion)) {
       const error = new Error(
-        'Support for Elasticsearch versions after their end-of-life (currently versions < 7.10) was removed.'
+        t(
+          'plugins.data-source.support-for-elasticsearch-versions',
+          'Support for Elasticsearch versions after their end-of-life (currently versions < 7.10) was removed.'
+        )
       );
       return throwError(() => error);
     }
@@ -489,7 +496,7 @@ export class ElasticDatasource
     }, '');
 
     text += bucketAggs?.reduce((acc, bucketAgg, index) => {
-      const bucketConfig = bucketAggregationConfig[bucketAgg.type];
+      const bucketConfig = bucketAggregationConfig()[bucketAgg.type];
 
       let text = '';
       if (index === 0) {

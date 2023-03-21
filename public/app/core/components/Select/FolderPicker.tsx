@@ -142,7 +142,14 @@ export function FolderPicker(props: Props) {
     let folder: SelectableValue<string> | null = null;
 
     if (initialFolderUid !== undefined && initialFolderUid !== null) {
-      folder = options.find((option) => option.value === initialFolderUid) || null;
+      if (initialFolderUid === '') {
+        folder =
+          options.filter((option: { value: string }) => option.value !== '').length > 0
+            ? options.filter((option: { value: string }) => option.value !== '')[0]
+            : resetFolder;
+      } else {
+        folder = options.find((option) => option.value === initialFolderUid) || null;
+      }
     } else if (enableReset && initialTitle) {
       folder = resetFolder;
     } else if (initialFolderUid) {
@@ -158,7 +165,8 @@ export function FolderPicker(props: Props) {
         if (isPersistedDashBoard) {
           folder = resetFolder;
         } else {
-          folder = options.length > 0 ? options[0] : resetFolder;
+          folder =
+            options.filter((option: { value: string }) => option.value !== '').length > 0 ? options[0] : resetFolder;
         }
       }
     }

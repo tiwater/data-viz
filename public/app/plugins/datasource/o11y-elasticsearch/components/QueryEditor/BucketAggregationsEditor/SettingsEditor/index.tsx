@@ -45,7 +45,7 @@ export const SettingsEditor = ({ bucketAgg }: Props) => {
               )
             }
             defaultValue={
-              bucketAgg.settings?.precision || bucketAggregationConfig[bucketAgg.type].defaultSettings?.precision
+              bucketAgg.settings?.precision || bucketAggregationConfig()[bucketAgg.type].defaultSettings?.precision
             }
           />
         </InlineField>
@@ -62,7 +62,7 @@ export const SettingsEditor = ({ bucketAgg }: Props) => {
                 )
               }
               defaultValue={
-                bucketAgg.settings?.interval || bucketAggregationConfig[bucketAgg.type].defaultSettings?.interval
+                bucketAgg.settings?.interval || bucketAggregationConfig()[bucketAgg.type].defaultSettings?.interval
               }
             />
           </InlineField>
@@ -77,7 +77,7 @@ export const SettingsEditor = ({ bucketAgg }: Props) => {
               }
               defaultValue={
                 bucketAgg.settings?.min_doc_count ||
-                bucketAggregationConfig[bucketAgg.type].defaultSettings?.min_doc_count
+                bucketAggregationConfig()[bucketAgg.type].defaultSettings?.min_doc_count
               }
             />
           </InlineField>

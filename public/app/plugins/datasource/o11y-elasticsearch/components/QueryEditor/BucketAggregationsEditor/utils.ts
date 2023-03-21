@@ -1,12 +1,13 @@
 import { InternalTimeZones, SelectableValue } from '@grafana/data';
+import { t } from 'app/core/internationalization';
 
 import { BucketsConfiguration } from '../../../types';
 
 import { defaultFilter } from './SettingsEditor/FiltersSettingsEditor/utils';
 
-export const bucketAggregationConfig: BucketsConfiguration = {
+export const bucketAggregationConfig = (): BucketsConfiguration => ({
   terms: {
-    label: 'Terms',
+    label: t('plugins.data-source.terms', 'Terms'),
     requiresField: true,
     defaultSettings: {
       min_doc_count: '1',
@@ -16,21 +17,21 @@ export const bucketAggregationConfig: BucketsConfiguration = {
     },
   },
   filters: {
-    label: 'Filters',
+    label: t('plugins.data-source.filters', 'Filters'),
     requiresField: false,
     defaultSettings: {
       filters: [defaultFilter()],
     },
   },
   geohash_grid: {
-    label: 'Geo Hash Grid',
+    label: t('plugins.data-source.geo-hash-grid', 'Geo Hash Grid'),
     requiresField: true,
     defaultSettings: {
       precision: '3',
     },
   },
   date_histogram: {
-    label: 'Date Histogram',
+    label: t('plugins.data-source.date-histogram', 'Date Histogram'),
     requiresField: true,
     defaultSettings: {
       interval: 'auto',
@@ -40,27 +41,27 @@ export const bucketAggregationConfig: BucketsConfiguration = {
     },
   },
   histogram: {
-    label: 'Histogram',
+    label: t('plugins.data-source.histogram', 'Histogram'),
     requiresField: true,
     defaultSettings: {
       interval: '1000',
       min_doc_count: '0',
     },
   },
-};
+});
 
-export const orderByOptions: Array<SelectableValue<string>> = [
-  { label: 'Term value', value: '_term' },
-  { label: 'Doc Count', value: '_count' },
+export const orderByOptions = (): Array<SelectableValue<string>> => [
+  { label: t('plugins.data-source.term-value', 'Term value'), value: '_term' },
+  { label: t('plugins.data-source.doc-count', 'Doc Count'), value: '_count' },
 ];
 
-export const orderOptions: Array<SelectableValue<string>> = [
-  { label: 'Top', value: 'desc' },
-  { label: 'Bottom', value: 'asc' },
+export const orderOptions = (): Array<SelectableValue<string>> => [
+  { label: t('plugins.data-source.top', 'Top'), value: 'desc' },
+  { label: t('plugins.data-source.bottom', 'Bottom'), value: 'asc' },
 ];
 
-export const sizeOptions = [
-  { label: 'No limit', value: '0' },
+export const sizeOptions = () => [
+  { label: t('plugins.data-source.no-limit', 'No limit'), value: '0' },
   { label: '1', value: '1' },
   { label: '2', value: '2' },
   { label: '3', value: '3' },
