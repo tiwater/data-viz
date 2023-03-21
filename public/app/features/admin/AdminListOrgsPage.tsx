@@ -4,6 +4,7 @@ import useAsyncFn from 'react-use/lib/useAsyncFn';
 import { getBackendSrv, isFetchError } from '@grafana/runtime';
 import { LinkButton } from '@grafana/ui';
 import { Page } from 'app/core/components/Page/Page';
+import { t } from 'app/core/internationalization';
 import { contextSrv } from 'app/core/services/context_srv';
 import { AccessControlAction } from 'app/types';
 
@@ -18,7 +19,9 @@ const getOrgs = async () => {
 };
 
 const getErrorMessage = (error: Error) => {
-  return isFetchError(error) ? error?.data?.message : 'An unexpected error happened.';
+  return isFetchError(error)
+    ? error?.data?.message
+    : t('app.core.navigation.an-unexpected-error-happened', 'An unexpected error happened');
 };
 
 export default function AdminListOrgsPages() {

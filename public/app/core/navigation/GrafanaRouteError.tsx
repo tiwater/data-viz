@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { locationUtil, PageLayoutType } from '@grafana/data';
 import { Button, ErrorWithStack, stylesFactory } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { Page } from '../components/Page/Page';
 
@@ -39,11 +40,19 @@ export function GrafanaRouteError({ error, errorInfo }: Props) {
                 Reload
               </Button>
             </div>
-            <ErrorWithStack title={'Error details'} error={error} errorInfo={errorInfo} />
+            <ErrorWithStack
+              title={t('app.core.navigation.error-details', 'Error details')}
+              error={error}
+              errorInfo={errorInfo}
+            />
           </div>
         )}
         {!isChunkLoadingError && (
-          <ErrorWithStack title={'An unexpected error happened'} error={error} errorInfo={errorInfo} />
+          <ErrorWithStack
+            title={t('app.core.navigation.an-unexpected-error-happened', 'An unexpected error happened')}
+            error={error}
+            errorInfo={errorInfo}
+          />
         )}
       </div>
     </Page>

@@ -6,6 +6,10 @@
       "can": "",
       "choose": "",
       "inherited-permission": "",
+      "navigation": {
+        "an-unexpected-error-happened": "",
+        "error-details": ""
+      },
       "no-teams-found": "",
       "optionsUi": {
         "registry": {
@@ -524,6 +528,7 @@
     "contact-admin": "",
     "explanation": "",
     "new-dashboard": "",
+    "panel-title": "",
     "preferred": "",
     "sampleData": "",
     "viewAll": "",
@@ -1170,6 +1175,21 @@
       "regex": "",
       "selection-options": "",
       "sort": ""
+    },
+    "save-dashboard": {
+      "checking-dashboard-validity": "",
+      "dashboard-failed-schema-validation": "",
+      "error-checking-dashboard-validity": "",
+      "unknown-error": "",
+      "validation-is-provided-for-development": ""
+    },
+    "services": {
+      "validation": {
+        "a-dashboard-or-a-folder": "",
+        "a-folder-or-dashboard": "",
+        "name-is-required": "",
+        "this-is-a-reserved-name": ""
+      }
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -2370,9 +2390,16 @@
       "text": ""
     },
     "data-source": {
+      "bottom": "",
+      "browser-access-mode-in-the": "",
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": ""
       },
+      "date-histogram": "",
+      "doc-count": "",
+      "filters": "",
+      "geo-hash-grid": "",
+      "histogram": "",
       "loki": {
         "add": "",
         "derived-fields": "",
@@ -2384,7 +2411,12 @@
         "raw-value": "",
         "raw-value-of-the-field": "",
         "show-example-log-message": ""
-      }
+      },
+      "no-limit": "",
+      "support-for-elasticsearch-versions": "",
+      "term-value": "",
+      "terms": "",
+      "top": ""
     },
     "gauge": {
       "auto": "",
@@ -2430,6 +2462,25 @@
       "pie-chart-type": "",
       "select-the-labels-to-be-displayed": "",
       "value": ""
+    },
+    "sql": {
+      "aggregation": "",
+      "alias": "",
+      "builder": "",
+      "code": "",
+      "column": "",
+      "dataset": "",
+      "filter": "",
+      "filter-by-column-value": "",
+      "format": "",
+      "group": "",
+      "group-by-column": "",
+      "metric-name": "",
+      "order": "",
+      "preview": "",
+      "select-format": "",
+      "table": "",
+      "time-series": ""
     },
     "table": {
       "all-numeric-fields": "",

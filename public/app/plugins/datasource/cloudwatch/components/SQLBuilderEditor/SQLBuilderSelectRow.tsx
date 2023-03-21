@@ -3,6 +3,7 @@ import React, { useEffect, useMemo } from 'react';
 import { SelectableValue, toOption } from '@grafana/data';
 import { EditorField, EditorFieldGroup, EditorSwitch } from '@grafana/experimental';
 import { Select } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { CloudWatchDatasource } from '../../datasource';
 import { useDimensionKeys, useMetrics, useNamespaces } from '../../hooks';
@@ -116,9 +117,9 @@ const SQLBuilderSelectRow: React.FC<SQLBuilderSelectRowProps> = ({ datasource, q
       </EditorFieldGroup>
 
       <EditorFieldGroup>
-        <EditorField label="Metric name" width={16}>
+        <EditorField label={t('plugins.sql.metric-name', 'Metric name')} width={16}>
           <Select
-            aria-label="Metric name"
+            aria-label={t('plugins.sql.metric-name', 'Metric name')}
             value={metricName ? toOption(metricName) : null}
             options={metricOptions}
             allowCustomValue
@@ -126,7 +127,7 @@ const SQLBuilderSelectRow: React.FC<SQLBuilderSelectRowProps> = ({ datasource, q
           />
         </EditorField>
 
-        <EditorField label="Aggregation" width={16}>
+        <EditorField label={t('plugins.sql.aggregation', 'Aggregation')} width={16}>
           <Select
             aria-label="Aggregation"
             value={aggregation ? toOption(aggregation) : null}

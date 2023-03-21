@@ -282,12 +282,12 @@ export function getNewDashboardModelData(
       folderUid: '',
     },
     dashboard: {
-      title: 'New dashboard',
+      title: t('datasource-onboarding.new-dashboard', 'New dashboard'),
       panels: [
         {
           type: panelType ?? 'add-panel',
           gridPos: { x: 0, y: 0, w: 12, h: 9 },
-          title: 'Panel Title',
+          title: t('datasource-onboarding.panel-title', 'Panel Title'),
         },
       ],
     },

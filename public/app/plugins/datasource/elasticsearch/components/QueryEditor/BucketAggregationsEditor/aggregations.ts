@@ -4,7 +4,7 @@ import { bucketAggregationConfig } from './utils';
 
 export const isBucketAggregationWithField = (
   bucketAgg: BucketAggregation | BucketAggregationWithField
-): bucketAgg is BucketAggregationWithField => bucketAggregationConfig[bucketAgg.type].requiresField;
+): bucketAgg is BucketAggregationWithField => bucketAggregationConfig()[bucketAgg.type].requiresField;
 
 export const BUCKET_AGGREGATION_TYPES: BucketAggregationType[] = [
   'date_histogram',

@@ -100,7 +100,7 @@ export const PageToolbar: FC<Props> = React.memo(
                 >
                   {parent} <span className={styles.parentIcon}></span>
                 </Link>
-                {titleHref && (
+                {title && (
                   <span className={cx(styles.titleText, styles.titleDivider)} aria-hidden>
                     /
                   </span>
@@ -112,7 +112,7 @@ export const PageToolbar: FC<Props> = React.memo(
               <div className={styles.titleWrapper}>
                 {title && (
                   <h1 className={styles.h1Styles}>
-                    {titleHref ? (
+                    {/* {titleHref ? (
                       <Link
                         aria-label="Search dashboard by name"
                         className={cx(styles.titleText, styles.titleLink)}
@@ -122,7 +122,8 @@ export const PageToolbar: FC<Props> = React.memo(
                       </Link>
                     ) : (
                       <div className={styles.titleText}>{titleEl}</div>
-                    )}
+                    )} */}
+                    <div className={styles.titleText}> {titleEl}</div>
                   </h1>
                 )}
 
@@ -222,7 +223,6 @@ const getStyles = (theme: GrafanaTheme2) => {
     `,
     titleDivider: css`
       padding: ${spacing(0, 0.5, 0, 0.5)};
-      display: none;
       ${theme.breakpoints.up('md')} {
         display: unset;
       }

@@ -5,6 +5,7 @@ import React, { useCallback } from 'react';
 import { SelectableValue, toOption } from '@grafana/data';
 import { EditorField, Stack } from '@grafana/experimental';
 import { Button, Select, useStyles2 } from '@grafana/ui';
+import { t } from 'app/core/internationalization';
 
 import { QueryEditorExpressionType, QueryEditorFunctionExpression } from '../../expressions';
 import { SQLExpression, QueryFormat } from '../../types';
@@ -112,7 +113,7 @@ export function SelectRow({ sql, format, columns, onSqlChange, functions }: Sele
       {sql.columns?.map((item, index) => (
         <div key={index}>
           <Stack gap={2} alignItems="end">
-            <EditorField label="Column" width={25}>
+            <EditorField label={t('plugins.sql.column', 'Column')} width={25}>
               <Select
                 value={getColumnValue(item)}
                 options={columnsWithAsterisk}
@@ -123,7 +124,7 @@ export function SelectRow({ sql, format, columns, onSqlChange, functions }: Sele
               />
             </EditorField>
 
-            <EditorField label="Aggregation" optional width={25}>
+            <EditorField label={t('plugins.sql.aggregation', 'Aggregation')} optional width={25}>
               <Select
                 value={item.name ? toOption(item.name) : null}
                 inputId={`select-aggregation-${index}-${uniqueId()}`}
@@ -134,7 +135,7 @@ export function SelectRow({ sql, format, columns, onSqlChange, functions }: Sele
                 onChange={onAggregationChange(item, index)}
               />
             </EditorField>
-            <EditorField label="Alias" optional width={15}>
+            <EditorField label={t('plugins.sql.alias', 'Alias')} optional width={15}>
               <Select
                 value={item.alias ? toOption(item.alias) : null}
                 inputId={`select-alias-${index}-${uniqueId()}`}

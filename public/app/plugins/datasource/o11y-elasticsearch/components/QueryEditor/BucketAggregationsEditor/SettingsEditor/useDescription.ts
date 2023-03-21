@@ -21,7 +21,7 @@ export const useDescription = (bucketAgg: BucketAggregation): string => {
       let description = '';
 
       if (size !== '0') {
-        const orderLabel = orderOptions.find(hasValue(order))?.label!;
+        const orderLabel = orderOptions().find(hasValue(order))?.label!;
         description = `${orderLabel} ${size}, `;
       }
 
@@ -30,7 +30,7 @@ export const useDescription = (bucketAgg: BucketAggregation): string => {
       }
 
       description += 'Order by: ';
-      const orderByOption = orderByOptions.find(hasValue(orderBy));
+      const orderByOption = orderByOptions().find(hasValue(orderBy));
       if (orderByOption) {
         description += orderByOption.label;
       } else {
@@ -56,7 +56,7 @@ export const useDescription = (bucketAgg: BucketAggregation): string => {
     }
 
     case 'filters': {
-      const filters = bucketAgg.settings?.filters || bucketAggregationConfig['filters'].defaultSettings?.filters;
+      const filters = bucketAgg.settings?.filters || bucketAggregationConfig()['filters'].defaultSettings?.filters;
       return `Filter Queries (${filters!.length})`;
     }
 

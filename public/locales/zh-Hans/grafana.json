@@ -6,6 +6,10 @@
       "can": "可以",
       "choose": "选择",
       "inherited-permission": "继承权限",
+      "navigation": {
+        "an-unexpected-error-happened": "发生了意外错误",
+        "error-details": "错误详情"
+      },
       "no-teams-found": "未找到团队",
       "optionsUi": {
         "registry": {
@@ -70,8 +74,8 @@
       "service": {
         "failed-to-update-datasource": "更新数据源失败",
         "testing": "测试中...",
-        "Unexpected-error": "未知错误",
-        "Unknown-error": "未知错误"
+        "Unknown-error": "未知错误",
+        "Unexpected-error": "未知错误"
       },
       "team": "团队",
       "team-picker": "团队选择器",
@@ -524,6 +528,7 @@
     "contact-admin": "联系管理员",
     "explanation": "解释",
     "new-dashboard": "新看板",
+    "panel-title": "面板标题",
     "preferred": "首选的",
     "sampleData": "样本数据",
     "viewAll": "查看全部",
@@ -1053,7 +1058,7 @@
       "Dashboard-name": "看板名称",
       "Discard": "放弃",
       "do-you-really-want-to-unlink-this-panel": "您真的想要取消链接这个面板吗？",
-      "if-you-unlink-this-panel": "如果您取消链接此面板，您将能够在不影响任何其他仪表板的情况下编辑它。 然而，一旦您做了更改，您将无法恢复到其原有的可复用面板。",
+      "if-you-unlink-this-panel": "如果您取消链接此面板，您将能够在不影响任何其他看板的情况下编辑它。 然而，一旦您做了更改，您将无法恢复到其原有的可复用面板。",
       "Last-edited-on": "最后编辑于 {{date}} ",
       "Loading-connected-dashboards": "加载已连接的看板",
       "no-library-panels-found": "没有找到面板库。",
@@ -1101,7 +1106,7 @@
       "Options": "选项",
       "tags-expected-array": "标签预期数组",
       "tags-expected-array-of-strings": "标签预期字符串数组",
-      "The-unique-identifier-UID": "仪表盘的唯一标识符(UID)，可以用于在多个Ticos安装之间独特识别仪表板。 UID 允许访问仪表板时使用一致的 URL，所以更改仪表板的标题将不会破坏到该仪表板的任何书签链接。",
+      "The-unique-identifier-UID": "仪表盘的唯一标识符(UID)，可以用于在多个Ticos安装之间独特识别看板。 UID 允许访问看板时使用一致的 URL，所以更改看板的标题将不会破坏到该看板的任何书签链接。",
       "Unique-identifier-UID": "唯一标识符 (UID)",
       "Upload-dashboard-JSON-file": "上传看板JSON文件"
     },
@@ -1170,6 +1175,21 @@
       "regex": "正则表达式",
       "selection-options": "选择选项",
       "sort": "排序"
+    },
+    "save-dashboard": {
+      "checking-dashboard-validity": "检查看板的有效性",
+      "dashboard-failed-schema-validation": "看板模式验证失败",
+      "error-checking-dashboard-validity": "检查看板有效性出错",
+      "unknown-error": "未知错误",
+      "validation-is-provided-for-development": "验证是为开发目的提供的，应该安全地忽略。如果您是Ticos开发者，请考虑检查和更新看板schema"
+    },
+    "services": {
+      "validation": {
+        "a-dashboard-or-a-folder": "已存在相同名称的仪表盘或文件夹",
+        "a-folder-or-dashboard": "已存在具有相同名称的普通文件夹中的文件夹或看板",
+        "name-is-required": "名称是必填项",
+        "this-is-a-reserved-name": "这是一个保留名称，无法用于文件夹。"
+      }
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -2370,9 +2390,16 @@
       "text": "文本"
     },
     "data-source": {
+      "bottom": "底部",
+      "browser-access-mode-in-the": "Elasticsearch 数据源中的浏览器访问模式不再可用。切换到服务器访问模式。",
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": "此看板没有其他面板。 添加其他面板的查询，然后重试。"
       },
+      "date-histogram": "日期直方图",
+      "doc-count": "Doc 计数",
+      "filters": "筛选器",
+      "geo-hash-grid": "Geo 散列网格",
+      "histogram": "直方图",
       "loki": {
         "add": "添加",
         "derived-fields": "衍生字段",
@@ -2384,7 +2411,12 @@
         "raw-value": "初始值",
         "raw-value-of-the-field": "字段原始值",
         "show-example-log-message": "显示示例日志消息"
-      }
+      },
+      "no-limit": "无限制",
+      "support-for-elasticsearch-versions": "Elasticsearch 版本寿命终结后的支持已经取消(目前版本小于7.10)。",
+      "term-value": "字数值",
+      "terms": "条款",
+      "top": "顶部"
     },
     "gauge": {
       "auto": "自动",
@@ -2430,6 +2462,25 @@
       "pie-chart-type": "饼图类型",
       "select-the-labels-to-be-displayed": "选择将显示在饼图中的标签",
       "value": "值"
+    },
+    "sql": {
+      "aggregation": "聚合",
+      "alias": "别名",
+      "builder": "生成器",
+      "code": "代码",
+      "column": "列",
+      "dataset": "数据集",
+      "filter": "筛选器",
+      "filter-by-column-value": "按列值过滤",
+      "format": "格式",
+      "group": "组",
+      "group-by-column": "按列分组",
+      "metric-name": "公式名称",
+      "order": "排序",
+      "preview": "预览",
+      "select-format": "选择格式",
+      "table": "表格",
+      "time-series": "时间序列"
     },
     "table": {
       "all-numeric-fields": "全部数字字段",

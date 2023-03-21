@@ -6,6 +6,10 @@
       "can": "Cäŉ",
       "choose": "Cĥőőşę",
       "inherited-permission": "Ĩŉĥęřįŧęđ Pęřmįşşįőŉ",
+      "navigation": {
+        "an-unexpected-error-happened": "Åŉ ūŉęχpęčŧęđ ęřřőř ĥäppęŉęđ",
+        "error-details": "Ēřřőř đęŧäįľş"
+      },
       "no-teams-found": "Ńő ŧęämş ƒőūŉđ",
       "optionsUi": {
         "registry": {
@@ -524,6 +528,7 @@
     "contact-admin": "Pľęäşę čőŉŧäčŧ yőūř äđmįŉįşŧřäŧőř ŧő čőŉƒįģūřę đäŧä şőūřčęş.",
     "explanation": "Ŧő vįşūäľįžę yőūř đäŧä, yőū'ľľ ŉęęđ ŧő čőŉŉęčŧ įŧ ƒįřşŧ.",
     "new-dashboard": "Ńęŵ đäşĥþőäřđ",
+    "panel-title": "Päŉęľ Ŧįŧľę",
     "preferred": "Cőŉŉęčŧ yőūř přęƒęřřęđ đäŧä şőūřčę:",
     "sampleData": "Øř şęŧ ūp ä ŉęŵ đäşĥþőäřđ ŵįŧĥ şämpľę đäŧä",
     "viewAll": "Vįęŵ äľľ",
@@ -1170,6 +1175,21 @@
       "regex": "Ŗęģęχ",
       "selection-options": "Ŝęľęčŧįőŉ őpŧįőŉş",
       "sort": "Ŝőřŧ"
+    },
+    "save-dashboard": {
+      "checking-dashboard-validity": "Cĥęčĸįŉģ đäşĥþőäřđ väľįđįŧy",
+      "dashboard-failed-schema-validation": "Đäşĥþőäřđ ƒäįľęđ şčĥęmä väľįđäŧįőŉ",
+      "error-checking-dashboard-validity": "Ēřřőř čĥęčĸįŉģ đäşĥþőäřđ väľįđįŧy",
+      "unknown-error": "Ůŉĸŉőŵŉ ęřřőř",
+      "validation-is-provided-for-development": "Väľįđäŧįőŉ įş přővįđęđ ƒőř đęvęľőpmęŉŧ pūřpőşęş äŉđ şĥőūľđ þę şäƒę ŧő įģŉőřę. Ĩƒ yőū äřę ä Ğřäƒäŉä đęvęľőpęř, čőŉşįđęř čĥęčĸįŉģ äŉđ ūpđäŧįŉģ ŧĥę đäşĥþőäřđ şčĥęmä"
+    },
+    "services": {
+      "validation": {
+        "a-dashboard-or-a-folder": "Å đäşĥþőäřđ őř ä ƒőľđęř ŵįŧĥ ŧĥę şämę ŉämę äľřęäđy ęχįşŧş",
+        "a-folder-or-dashboard": "Å ƒőľđęř őř đäşĥþőäřđ įŉ ŧĥę ģęŉęřäľ ƒőľđęř ŵįŧĥ ŧĥę şämę ŉämę äľřęäđy ęχįşŧş",
+        "name-is-required": "Ńämę įş řęqūįřęđ",
+        "this-is-a-reserved-name": "Ŧĥįş įş ä řęşęřvęđ ŉämę äŉđ čäŉŉőŧ þę ūşęđ ƒőř ä ƒőľđęř."
+      }
     },
     "transformers": {
       "add-field-from-calculation": {
@@ -2370,9 +2390,16 @@
       "text": "ŧęχŧ"
     },
     "data-source": {
+      "bottom": "ßőŧŧőm",
+      "browser-access-mode-in-the": "ßřőŵşęř äččęşş mőđę įŉ ŧĥę Ēľäşŧįčşęäřčĥ đäŧäşőūřčę įş ŉő ľőŉģęř äväįľäþľę. Ŝŵįŧčĥ ŧő şęřvęř äččęşş mőđę.",
       "dashboard": {
         "this-dashboard-does-not-have-any-other-panels": "Ŧĥįş đäşĥþőäřđ đőęş ŉőŧ ĥävę äŉy őŧĥęř päŉęľş. Åđđ qūęřįęş ŧő őŧĥęř päŉęľş äŉđ ŧřy äģäįŉ."
       },
+      "date-histogram": "Đäŧę Ħįşŧőģřäm",
+      "doc-count": "Đőč Cőūŉŧ",
+      "filters": "Fįľŧęřş",
+      "geo-hash-grid": "Ğęő Ħäşĥ Ğřįđ",
+      "histogram": "Ħįşŧőģřäm",
       "loki": {
         "add": "Åđđ",
         "derived-fields": "Đęřįvęđ ƒįęľđş",
@@ -2384,7 +2411,12 @@
         "raw-value": "Ŗäŵ väľūę",
         "raw-value-of-the-field": "Ŗäŵ väľūę őƒ ŧĥę ƒįęľđ",
         "show-example-log-message": "Ŝĥőŵ ęχämpľę ľőģ męşşäģę"
-      }
+      },
+      "no-limit": "Ńő ľįmįŧ",
+      "support-for-elasticsearch-versions": "Ŝūppőřŧ ƒőř Ēľäşŧįčşęäřčĥ vęřşįőŉş äƒŧęř ŧĥęįř ęŉđ-őƒ-ľįƒę (čūřřęŉŧľy vęřşįőŉş < 7.10) ŵäş řęmővęđ.",
+      "term-value": "Ŧęřm väľūę",
+      "terms": "Ŧęřmş",
+      "top": "Ŧőp"
     },
     "gauge": {
       "auto": "äūŧő",
@@ -2430,6 +2462,25 @@
       "pie-chart-type": "Pįęčĥäřŧ ŧypę",
       "select-the-labels-to-be-displayed": "Ŝęľęčŧ ŧĥę ľäþęľş ŧő þę đįşpľäyęđ įŉ ŧĥę pįę čĥäřŧ",
       "value": "Väľūę"
+    },
+    "sql": {
+      "aggregation": "Åģģřęģäŧįőŉ",
+      "alias": "Åľįäş",
+      "builder": "ßūįľđęř",
+      "code": "Cőđę",
+      "column": "Cőľūmŉ",
+      "dataset": "Đäŧäşęŧ",
+      "filter": "Fįľŧęř",
+      "filter-by-column-value": "Fįľŧęř þy čőľūmŉ väľūę",
+      "format": "Főřmäŧ",
+      "group": "Ğřőūp",
+      "group-by-column": "Ğřőūp þy čőľūmŉ",
+      "metric-name": "Męŧřįč ŉämę",
+      "order": "Øřđęř",
+      "preview": "Přęvįęŵ",
+      "select-format": "Ŝęľęčŧ ƒőřmäŧ",
+      "table": "Ŧäþľę",
+      "time-series": "Ŧįmę şęřįęş"
     },
     "table": {
       "all-numeric-fields": "Åľľ Ńūmęřįč Fįęľđş",

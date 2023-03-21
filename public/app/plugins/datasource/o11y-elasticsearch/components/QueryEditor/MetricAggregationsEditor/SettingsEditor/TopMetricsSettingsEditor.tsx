@@ -43,7 +43,7 @@ export const TopMetricsSettingsEditor: FunctionComponent<Props> = ({ metric }) =
       <InlineField label="Order" labelWidth={16}>
         <Select
           onChange={(e) => dispatch(changeMetricSetting({ metric, settingName: 'order', newValue: e.value }))}
-          options={orderOptions}
+          options={orderOptions()}
           value={metric.settings?.order}
         />
       </InlineField>

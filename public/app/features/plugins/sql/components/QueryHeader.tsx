@@ -24,11 +24,6 @@ export interface QueryHeaderProps {
   isDatasetSelectorHidden?: boolean;
 }
 
-const editorModes = [
-  { label: 'Builder', value: EditorMode.Builder },
-  { label: 'Code', value: EditorMode.Code },
-];
-
 export function QueryHeader({
   db,
   query,
@@ -39,6 +34,10 @@ export function QueryHeader({
   isQueryRunnable,
   isDatasetSelectorHidden,
 }: QueryHeaderProps) {
+  const editorModes = [
+    { label: t('plugins.sql.builder', 'Builder'), value: EditorMode.Builder },
+    { label: t('plugins.sql.code', 'Code'), value: EditorMode.Code },
+  ];
   const { editorMode } = query;
   const [_, copyToClipboard] = useCopyToClipboard();
   const [showConfirm, setShowConfirm] = useState(false);
@@ -94,19 +93,19 @@ export function QueryHeader({
     <>
       <EditorHeader>
         <InlineSelect
-          label="Format"
+          label={t('plugins.sql.format', 'Format')}
           value={query.format}
-          placeholder="Select format"
+          placeholder={t('plugins.sql.select-format', 'Select format')}
           menuShouldPortal
           onChange={onFormatChange}
-          options={QUERY_FORMAT_OPTIONS}
+          options={QUERY_FORMAT_OPTIONS()}
         />
 
         {editorMode === EditorMode.Builder && (
           <>
             <InlineSwitch
               id="sql-filter"
-              label="Filter"
+              label={t('plugins.sql.filter', 'Filter')}
               transparent={true}
               showLabel={true}
               value={queryRowFilter.filter}
@@ -118,7 +117,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id="sql-group"
-              label="Group"
+              label={t('plugins.sql.group', 'Group')}
               transparent={true}
               showLabel={true}
               value={queryRowFilter.group}
@@ -130,7 +129,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id="sql-order"
-              label="Order"
+              label={t('plugins.sql.order', 'Order')}
               transparent={true}
               showLabel={true}
               value={queryRowFilter.order}
@@ -142,7 +141,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id="sql-preview"
-              label="Preview"
+              label={t('plugins.sql.preview', 'Preview')}
               transparent={true}
               showLabel={true}
               value={queryRowFilter.preview}
@@ -207,7 +206,7 @@ export function QueryHeader({
           <Space v={0.5} />
           <EditorRow>
             {isDatasetSelectorHidden ? null : (
-              <EditorField label="Dataset" width={25}>
+              <EditorField label={t('plugins.sql.dataset', 'Dataset')} width={25}>
                 <DatasetSelector
                   db={db}
                   value={query.dataset === undefined ? null : query.dataset}
@@ -216,7 +215,7 @@ export function QueryHeader({
               </EditorField>
             )}
 
-            <EditorField label="Table" width={25}>
+            <EditorField label={t('plugins.sql.table', 'Table')} width={25}>
               <TableSelector
                 db={db}
                 query={query}

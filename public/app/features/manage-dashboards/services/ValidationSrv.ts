@@ -1,3 +1,4 @@
+import { t } from 'app/core/internationalization';
 import { backendSrv } from 'app/core/services/backend_srv';
 
 const hitTypes = {
@@ -18,11 +19,25 @@ export class ValidationSrv {
   rootName = 'general';
 
   validateNewDashboardName(folderUid: any, name: string) {
-    return this.validate(folderUid, name, 'A dashboard or a folder with the same name already exists');
+    return this.validate(
+      folderUid,
+      name,
+      t(
+        'features.services.validation.a-dashboard-or-a-folder',
+        'A dashboard or a folder with the same name already exists'
+      )
+    );
   }
 
   validateNewFolderName(name?: string) {
-    return this.validate(0, name, 'A folder or dashboard in the general folder with the same name already exists');
+    return this.validate(
+      0,
+      name,
+      t(
+        'features.services.validation.a-folder-or-dashboard',
+        'A folder or dashboard in the general folder with the same name already exists'
+      )
+    );
   }
 
   private async validate(folderId: any, name: string | undefined, existingErrorMessage: string) {
@@ -30,11 +45,17 @@ export class ValidationSrv {
     const nameLowerCased = name.toLowerCase();
 
     if (name.length === 0) {
-      throw new ValidationError('REQUIRED', 'Name is required');
+      throw new ValidationError('REQUIRED', t('features.services.validation.name-is-required', 'Name is required'));
     }
 
     if (folderId === 0 && nameLowerCased === this.rootName) {
-      throw new ValidationError('EXISTING', 'This is a reserved name and cannot be used for a folder.');
+      throw new ValidationError(
+        'EXISTING',
+        t(
+          'features.services.validation.this-is-a-reserved-name',
+          'This is a reserved name and cannot be used for a folder.'
+        )
+      );
     }
 
     const promises = [];
