@@ -7,10 +7,5 @@ export function getCustomStyles(theme: GrafanaTheme2) {
     .css-1gmyc7n {
       background: none !important;
     }
-    .css-xcflq3,
-    .css-1vgnjsk,
-    .css-pfdq40 {
-      display: none !important;
-    }
   `;
 }
