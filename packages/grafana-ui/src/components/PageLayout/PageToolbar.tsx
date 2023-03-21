@@ -228,7 +228,6 @@ const getStyles = (theme: GrafanaTheme2) => {
       }
     `,
     parentLink: css`
-      display: none;
       ${theme.breakpoints.up('md')} {
         display: unset;
         flex: 1;
