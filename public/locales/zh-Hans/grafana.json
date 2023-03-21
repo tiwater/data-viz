@@ -1338,7 +1338,7 @@
         "select-label": "(可选) 选择标签"
       },
       "limit": {
-        "description": "限制显示的项目数量。",
+        "description": "限制显示的条目数量。",
         "limit-count": "限制数量",
         "name": "限制"
       },
@@ -1422,7 +1422,7 @@
       "sort-by": {
         "description": "按框架排序字段",
         "field": "字段",
-        "name": "排序按",
+        "name": "排序",
         "reverse": "反转",
         "select-field": "选择字段"
       },
@@ -2803,7 +2803,7 @@
       "alertlist-description": "显示警报列表及其当前状态",
       "annolist": "注释列表",
       "annolist-description": "列表注释",
-      "barchart": "柱形图",
+      "barchart": "柱状图",
       "barchart-description": "分组支持分类图表",
       "bargauge": "条形图",
       "bargauge-description": "水平和垂直测量图",
