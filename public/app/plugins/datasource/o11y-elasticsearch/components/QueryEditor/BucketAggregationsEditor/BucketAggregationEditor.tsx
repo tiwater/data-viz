@@ -12,7 +12,7 @@ import { BucketAggregation, BucketAggregationType, isBucketAggregationWithField 
 import { changeBucketAggregationField, changeBucketAggregationType } from './state/actions';
 import { bucketAggregationConfig } from './utils';
 
-const bucketAggOptions: Array<SelectableValue<BucketAggregationType>> = Object.entries(bucketAggregationConfig).map(
+const bucketAggOptions: Array<SelectableValue<BucketAggregationType>> = Object.entries(bucketAggregationConfig()).map(
   ([key, { label }]) => ({
     label,
     value: key as BucketAggregationType,
@@ -20,7 +20,7 @@ const bucketAggOptions: Array<SelectableValue<BucketAggregationType>> = Object.e
 );
 
 const toOption = (bucketAgg: BucketAggregation) => ({
-  label: bucketAggregationConfig[bucketAgg.type].label,
+  label: bucketAggregationConfig()[bucketAgg.type].label,
   value: bucketAgg.type,
 });
 
