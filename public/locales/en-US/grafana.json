@@ -1636,6 +1636,9 @@
       "visibility": "Visibility",
       "width": "Width"
     },
+    "page-loayout": {
+      "go-back": "Go back (Esc)"
+    },
     "segment": {
       "failed-to-load-options": "Failed to load options",
       "loading-options": "Loading options...",

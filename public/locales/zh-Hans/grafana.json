@@ -74,8 +74,8 @@
       "service": {
         "failed-to-update-datasource": "更新数据源失败",
         "testing": "测试中...",
-        "Unknown-error": "未知错误",
-        "Unexpected-error": "未知错误"
+        "Unexpected-error": "未知错误",
+        "Unknown-error": "未知错误"
       },
       "team": "团队",
       "team-picker": "团队选择器",
@@ -1635,6 +1635,9 @@
       "values-sort-order": "值排序顺序",
       "visibility": "显示",
       "width": "宽"
+    },
+    "page-loayout": {
+      "go-back": "后退(Esc)"
     },
     "segment": {
       "failed-to-load-options": "加载选项失败",

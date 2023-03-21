@@ -1636,6 +1636,9 @@
       "visibility": "",
       "width": ""
     },
+    "page-loayout": {
+      "go-back": ""
+    },
     "segment": {
       "failed-to-load-options": "",
       "loading-options": "",

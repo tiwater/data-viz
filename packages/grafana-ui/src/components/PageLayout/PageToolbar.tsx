@@ -5,6 +5,7 @@ import { GrafanaTheme2 } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 
 import { Link, ToolbarButtonRow } from '..';
+import { t } from '../../../src/utils/i18n';
 import { useStyles2 } from '../../themes/ThemeContext';
 import { getFocusStyles } from '../../themes/mixins';
 import { IconName } from '../../types';
@@ -82,7 +83,7 @@ export const PageToolbar: FC<Props> = React.memo(
             <div className={styles.pageIcon}>
               <IconButton
                 name="arrow-left"
-                tooltip="Go back (Esc)"
+                tooltip={t('grafana-ui.page-loayout.go-back', 'Go back (Esc)')}
                 tooltipPlacement="bottom"
                 size="xxl"
                 aria-label={selectors.components.BackButton.backArrow}
