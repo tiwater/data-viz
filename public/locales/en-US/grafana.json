@@ -68,8 +68,9 @@
       "save": "Save",
       "select-a-team": "Select a team",
       "service": {
-        "unexpected-error": "Unknown error",
-        "Unknown-error": "Unknown error",
+        "failed-to-update-datasource": "Failed to update datasource",
+        "testing": "Testing...",
+        "Unexpected-error": "Unexpected error",
         "Unknown-error": "Unknown error"
       },
       "team": "Team",
@@ -888,7 +889,6 @@
       "choose-a-data-source-type": "Choose a data source type",
       "configure-your-mainDS": "Configure your {{mainDS}} data source below",
       "delete": "Delete",
-      "explore": "Explore",
       "filter-by-name-or-type": "Filter by name or type",
       "how-to-map-graphite-metrics-to-labels": "How to map Graphite metrics to labels?",
       "import": "Import",
@@ -902,6 +902,10 @@
       "sort-by–z-a": "Sort by Z–A",
       "test": "Test",
       "type": "Type"
+    },
+    "datasources": {
+      "missing-rights": "Missing rights",
+      "you-are-not-allowed-modify": "You are not allowed to modify this data source. Please contact your server admin to update this data source."
     },
     "dimensions": {
       "addBooleanSwitchName": "Highlight full area on hover",
@@ -1116,6 +1120,16 @@
       "no-data": "No data",
       "open-visualization-suggestions": "Open visualization suggestions",
       "switch-to-table": "Switch to table"
+    },
+    "plugins": {
+      "sql": {
+        "builder-mode-does-not-display": "Builder mode does not display changes made in code. The query builder will display the last changes you made in builder mode.",
+        "cancel": "Cancel",
+        "copy-code-and-switch": "Copy code and switch",
+        "discard-code-and-switch": "Discard code and switch",
+        "do-you-want-to-copy-your": "Do you want to copy your code to the clipboard?",
+        "warning": "Warning"
+      }
     },
     "query": {
       "alphabetical-asc": "Alphabetical (asc)",
@@ -1942,6 +1956,15 @@
       "error": "Error saving library panel: \"{{errorMsg}}\"",
       "success": "Library panel saved"
     }
+  },
+  "message": {
+    "access-denied": "Access denied",
+    "data-source-deleted": "Data source deleted",
+    "datasource-added": "Datasource added",
+    "datasource-updated": "Datasource updated",
+    "error": "Error",
+    "need-additional-permissions-to-perform-this-action": "You'll need additional permissions to perform this action. Permissions needed: datasources:create",
+    "validation-failed": "Validation failed"
   },
   "nav": {
     "admin": {

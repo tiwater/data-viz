@@ -68,8 +68,9 @@
       "save": "Ŝävę",
       "select-a-team": "Ŝęľęčŧ ä ŧęäm",
       "service": {
-        "unexpected-error": "Ůŉĸŉőŵŉ ęřřőř",
-        "Unknown-error": "Ůŉĸŉőŵŉ ęřřőř",
+        "failed-to-update-datasource": "Fäįľęđ ŧő ūpđäŧę đäŧäşőūřčę",
+        "testing": "Ŧęşŧįŉģ...",
+        "Unexpected-error": "Ůŉęχpęčŧęđ ęřřőř",
         "Unknown-error": "Ůŉĸŉőŵŉ ęřřőř"
       },
       "team": "Ŧęäm",
@@ -888,7 +889,6 @@
       "choose-a-data-source-type": "Cĥőőşę ä đäŧä şőūřčę ŧypę",
       "configure-your-mainDS": "Cőŉƒįģūřę yőūř {{mainDS}} đäŧä şőūřčę þęľőŵ",
       "delete": "Đęľęŧę",
-      "explore": "Ēχpľőřę",
       "filter-by-name-or-type": "Fįľŧęř þy ŉämę őř ŧypę",
       "how-to-map-graphite-metrics-to-labels": "Ħőŵ ŧő mäp Ğřäpĥįŧę męŧřįčş ŧő ľäþęľş?",
       "import": "Ĩmpőřŧ",
@@ -902,6 +902,10 @@
       "sort-by–z-a": "Ŝőřŧ þy Ż–Å",
       "test": "Ŧęşŧ",
       "type": "Ŧypę"
+    },
+    "datasources": {
+      "missing-rights": "Mįşşįŉģ řįģĥŧş",
+      "you-are-not-allowed-modify": "Ÿőū äřę ŉőŧ äľľőŵęđ ŧő mőđįƒy ŧĥįş đäŧä şőūřčę. Pľęäşę čőŉŧäčŧ yőūř şęřvęř äđmįŉ ŧő ūpđäŧę ŧĥįş đäŧä şőūřčę."
     },
     "dimensions": {
       "addBooleanSwitchName": "Ħįģĥľįģĥŧ ƒūľľ äřęä őŉ ĥővęř",
@@ -1116,6 +1120,16 @@
       "no-data": "Ńő đäŧä",
       "open-visualization-suggestions": "Øpęŉ vįşūäľįžäŧįőŉ şūģģęşŧįőŉş",
       "switch-to-table": "Ŝŵįŧčĥ ŧő ŧäþľę"
+    },
+    "plugins": {
+      "sql": {
+        "builder-mode-does-not-display": "ßūįľđęř mőđę đőęş ŉőŧ đįşpľäy čĥäŉģęş mäđę įŉ čőđę. Ŧĥę qūęřy þūįľđęř ŵįľľ đįşpľäy ŧĥę ľäşŧ čĥäŉģęş yőū mäđę įŉ þūįľđęř mőđę.",
+        "cancel": "Cäŉčęľ",
+        "copy-code-and-switch": "Cőpy čőđę äŉđ şŵįŧčĥ",
+        "discard-code-and-switch": "Đįşčäřđ čőđę äŉđ şŵįŧčĥ",
+        "do-you-want-to-copy-your": "Đő yőū ŵäŉŧ ŧő čőpy yőūř čőđę ŧő ŧĥę čľįpþőäřđ?",
+        "warning": "Ŵäřŉįŉģ"
+      }
     },
     "query": {
       "alphabetical-asc": "Åľpĥäþęŧįčäľ (äşč)",
@@ -1942,6 +1956,15 @@
       "error": "Ēřřőř şävįŉģ ľįþřäřy päŉęľ: \"{{errorMsg}}\"",
       "success": "Ŀįþřäřy päŉęľ şävęđ"
     }
+  },
+  "message": {
+    "access-denied": "Åččęşş đęŉįęđ",
+    "data-source-deleted": "Đäŧä şőūřčę đęľęŧęđ",
+    "datasource-added": "Đäŧäşőūřčę äđđęđ",
+    "datasource-updated": "Đäŧäşőūřčę ūpđäŧęđ",
+    "error": "Ēřřőř",
+    "need-additional-permissions-to-perform-this-action": "Ÿőū'ľľ ŉęęđ äđđįŧįőŉäľ pęřmįşşįőŉş ŧő pęřƒőřm ŧĥįş äčŧįőŉ. Pęřmįşşįőŉş ŉęęđęđ: đäŧäşőūřčęş:čřęäŧę",
+    "validation-failed": "Väľįđäŧįőŉ ƒäįľęđ"
   },
   "nav": {
     "admin": {

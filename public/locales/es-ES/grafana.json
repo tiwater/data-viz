@@ -68,9 +68,10 @@
       "save": "",
       "select-a-team": "",
       "service": {
-        "unexpected-error": "",
-        "Unknown-error": "",
-        "Unexpected-error": ""
+        "failed-to-update-datasource": "",
+        "testing": "",
+        "Unexpected-error": "",
+        "Unknown-error": ""
       },
       "team": "",
       "team-picker": "",
@@ -888,7 +889,6 @@
       "choose-a-data-source-type": "",
       "configure-your-mainDS": "",
       "delete": "",
-      "explore": "",
       "filter-by-name-or-type": "",
       "how-to-map-graphite-metrics-to-labels": "",
       "import": "",
@@ -902,6 +902,10 @@
       "sort-by–z-a": "",
       "test": "",
       "type": ""
+    },
+    "datasources": {
+      "missing-rights": "",
+      "you-are-not-allowed-modify": ""
     },
     "dimensions": {
       "addBooleanSwitchName": "",
@@ -1116,6 +1120,16 @@
       "no-data": "",
       "open-visualization-suggestions": "",
       "switch-to-table": ""
+    },
+    "plugins": {
+      "sql": {
+        "builder-mode-does-not-display": "",
+        "cancel": "",
+        "copy-code-and-switch": "",
+        "discard-code-and-switch": "",
+        "do-you-want-to-copy-your": "",
+        "warning": ""
+      }
     },
     "query": {
       "alphabetical-asc": "",
@@ -1942,6 +1956,15 @@
       "error": "",
       "success": ""
     }
+  },
+  "message": {
+    "access-denied": "",
+    "data-source-deleted": "",
+    "datasource-added": "",
+    "datasource-updated": "",
+    "error": "",
+    "need-additional-permissions-to-perform-this-action": "",
+    "validation-failed": ""
   },
   "nav": {
     "admin": {

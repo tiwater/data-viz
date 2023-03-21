@@ -38,6 +38,7 @@ import { FetchQueue } from './FetchQueue';
 import { FetchQueueWorker } from './FetchQueueWorker';
 import { ResponseQueue } from './ResponseQueue';
 import { ContextSrv, contextSrv } from './context_srv';
+import { getServiceMessage } from './utils';
 
 const CANCEL_ALL_REQUESTS_REQUEST_ID = 'cancel_all_requests_request_id';
 
@@ -313,7 +314,7 @@ export class BackendSrv implements BackendService {
     const data: { message: string } = response.data as any;
 
     if (data?.message) {
-      this.dependencies.appEvents.emit(AppEvents.alertSuccess, [data.message]);
+      this.dependencies.appEvents.emit(AppEvents.alertSuccess, [getServiceMessage(data.message)]);
     }
   }
 
@@ -347,8 +348,8 @@ export class BackendSrv implements BackendService {
     }
 
     this.dependencies.appEvents.emit(err.status < 500 ? AppEvents.alertWarning : AppEvents.alertError, [
-      message,
-      description,
+      getServiceMessage(message),
+      getServiceMessage(description),
       err.data.traceID,
     ]);
   }
