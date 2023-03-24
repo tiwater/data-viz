@@ -439,7 +439,7 @@ export class BackendSrv implements BackendService {
         ...options,
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
-          'X-Tiwater-Org-Id': getQueryVariable('ticosOrgId') || localStorage.getItem('orgId'),
+          'X-Tiwater-Org-Id': getQueryVariable('ticosOrgId') || localStorage.getItem('orgId') || '',
         },
       },
       method: 'GET',
@@ -456,7 +456,7 @@ export class BackendSrv implements BackendService {
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
           'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId') || '',
         },
       },
       method: 'DELETE',
@@ -471,7 +471,7 @@ export class BackendSrv implements BackendService {
         ...options,
         headers: {
           'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId') || '',
         },
       },
       method: 'POST',
@@ -487,7 +487,7 @@ export class BackendSrv implements BackendService {
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
           'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId') || '',
         },
       },
       method: 'PATCH',
@@ -503,7 +503,7 @@ export class BackendSrv implements BackendService {
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
           'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId') || '',
         },
       },
       method: 'PUT',
