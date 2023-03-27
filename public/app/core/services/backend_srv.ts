@@ -66,6 +66,10 @@ function getQueryVariable(variable: string) {
   }
   return false;
 }
+
+const getOrgId = () => getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId') || '';
+
+
 export class BackendSrv implements BackendService {
   private inFlightRequests: Subject<string> = new Subject<string>();
   private HTTP_REQUEST_CANCELED = -1;
@@ -185,7 +189,7 @@ export class BackendSrv implements BackendService {
   }
 
   private parseRequestOptions(options: BackendSrvRequest): BackendSrvRequest {
-    const orgId = getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId');
+    const orgId = getOrgId();
 
     options.retry = options.retry ?? 0;
 
@@ -439,7 +443,7 @@ export class BackendSrv implements BackendService {
         ...options,
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
-          'X-Tiwater-Org-Id': getQueryVariable('ticosOrgId') || localStorage.getItem('orgId'),
+          'X-Tiwater-Org-Id': getOrgId(),
         },
       },
       method: 'GET',
@@ -455,8 +459,7 @@ export class BackendSrv implements BackendService {
         ...options,
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
-          'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+          'X-Tiwater-Org-Id': getOrgId(),
         },
       },
       method: 'DELETE',
@@ -470,8 +473,7 @@ export class BackendSrv implements BackendService {
       ...{
         ...options,
         headers: {
-          'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+          'X-Tiwater-Org-Id': getOrgId(),
         },
       },
       method: 'POST',
@@ -486,8 +488,7 @@ export class BackendSrv implements BackendService {
         ...options,
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
-          'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+          'X-Tiwater-Org-Id': getOrgId()
         },
       },
       method: 'PATCH',
@@ -502,8 +503,7 @@ export class BackendSrv implements BackendService {
         ...options,
         headers: {
           ...(options && options['headers'] ? options.headers : {}),
-          'X-Tiwater-Org-Id':
-            getQueryVariable('ticosOrgId') || localStorage.getItem('ticosOrgId') || localStorage.getItem('orgId'),
+          'X-Tiwater-Org-Id': getOrgId()
         },
       },
       method: 'PUT',
